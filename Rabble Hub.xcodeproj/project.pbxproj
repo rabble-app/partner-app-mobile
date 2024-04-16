@@ -26,6 +26,10 @@
 		86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */; };
 		86D17AA72BCE696100464511 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AA62BCE696100464511 /* Color.xcassets */; };
 		86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D17AA82BCE6ACB00464511 /* Colors.swift */; };
+		86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AB22BCEB58D00464511 /* CreateATeamPopUpView.storyboard */; };
+		86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D17AB32BCEB58D00464511 /* CreateATeamPopUpViewController.swift */; };
+		86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D17AB52BCEB58D00464511 /* PaymentPopUpViewController.swift */; };
+		86D17ABC2BCEB58D00464511 /* PaymentPopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AB62BCEB58D00464511 /* PaymentPopView.storyboard */; };
 		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */; };
@@ -79,6 +83,10 @@
 		86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpInputViewController.swift; sourceTree = "<group>"; };
 		86D17AA62BCE696100464511 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		86D17AA82BCE6ACB00464511 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		86D17AB22BCEB58D00464511 /* CreateATeamPopUpView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateATeamPopUpView.storyboard; sourceTree = "<group>"; };
+		86D17AB32BCEB58D00464511 /* CreateATeamPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateATeamPopUpViewController.swift; sourceTree = "<group>"; };
+		86D17AB52BCEB58D00464511 /* PaymentPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPopUpViewController.swift; sourceTree = "<group>"; };
+		86D17AB62BCEB58D00464511 /* PaymentPopView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaymentPopView.storyboard; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
@@ -223,8 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				86A60DF62BCCF8AC00496390 /* Onboarding */,
+				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86A60DEC2BCCEF6400496390 /* SignUp */,
-				86A60DFB2BCCFB1F00496390 /* GettingStarted */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -290,29 +298,6 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		86A60DFB2BCCFB1F00496390 /* GettingStarted */ = {
-			isa = PBXGroup;
-			children = (
-				86A60DFD2BCCFBB100496390 /* CreateATeamPopUp */,
-				86A60DFC2BCCFB2A00496390 /* PaymentPopUp */,
-			);
-			path = GettingStarted;
-			sourceTree = "<group>";
-		};
-		86A60DFC2BCCFB2A00496390 /* PaymentPopUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PaymentPopUp;
-			sourceTree = "<group>";
-		};
-		86A60DFD2BCCFBB100496390 /* CreateATeamPopUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CreateATeamPopUp;
-			sourceTree = "<group>";
-		};
 		86A60DFF2BCD39B600496390 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +311,33 @@
 				86D17AA62BCE696100464511 /* Color.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		86D17AB42BCEB58D00464511 /* CreateATeamPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				86D17AB22BCEB58D00464511 /* CreateATeamPopUpView.storyboard */,
+				86D17AB32BCEB58D00464511 /* CreateATeamPopUpViewController.swift */,
+			);
+			path = CreateATeamPopUp;
+			sourceTree = "<group>";
+		};
+		86D17AB72BCEB58D00464511 /* PaymentPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				86D17AB52BCEB58D00464511 /* PaymentPopUpViewController.swift */,
+				86D17AB62BCEB58D00464511 /* PaymentPopView.storyboard */,
+			);
+			path = PaymentPopUp;
+			sourceTree = "<group>";
+		};
+		86D17AB82BCEB58D00464511 /* GettingStarted */ = {
+			isa = PBXGroup;
+			children = (
+				86D17AB42BCEB58D00464511 /* CreateATeamPopUp */,
+				86D17AB72BCEB58D00464511 /* PaymentPopUp */,
+			);
+			path = GettingStarted;
 			sourceTree = "<group>";
 		};
 		F9873F1048C84A57B09C1D65 /* Pods */ = {
@@ -457,6 +469,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A60DBF2BCCEE3400496390 /* Assets.xcassets in Resources */,
+				86D17ABC2BCEB58D00464511 /* PaymentPopView.storyboard in Resources */,
+				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
 				AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */,
@@ -593,11 +607,13 @@
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
+				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
+				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
