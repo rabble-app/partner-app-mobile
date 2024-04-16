@@ -60,6 +60,15 @@ class OtpInputViewController: UIViewController {
             self.otpField.heightAnchor.constraint(equalToConstant: ontpContainer.frame.height)
         ])
     }
+    
+    @IBAction func continueButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "PaymentPopView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "PaymentPopUpViewController") as? PaymentPopUpViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
+        
+    }
 }
 
 

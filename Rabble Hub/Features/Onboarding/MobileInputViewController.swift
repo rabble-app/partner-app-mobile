@@ -51,12 +51,12 @@ class MobileInputViewController: UIViewController {
     @IBAction func continueButtonTap(_ sender: Any) {
         
         // temporary call
-        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
-        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: false, completion: nil)
-        
-        return
+//        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
+//        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: false, completion: nil)
+//        
+//        return
         
         
         guard let phoneNumber = phoneNumberTextfield.text, !phoneNumber.isEmpty else {
