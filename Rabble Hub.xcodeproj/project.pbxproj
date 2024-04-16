@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4946FD860B5A906A55ADEC62 /* Pods_Rabble_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26202751A6B3608CE74E240 /* Pods_Rabble_Partner.framework */; };
+		4B0AEEA1A8761E9245E3412F /* Pods_Rabble_HubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -26,8 +26,8 @@
 		86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */; };
 		86D17AA72BCE696100464511 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AA62BCE696100464511 /* Color.xcassets */; };
 		86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D17AA82BCE6ACB00464511 /* Colors.swift */; };
-		A58EFD2A7FB37CE02C234ADE /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24EE4A0BD79BF1753A18 /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework */; };
-		AC719B814B50AB04C53A1462 /* Pods_Rabble_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */; };
+		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
+		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,10 +49,14 @@
 
 /* Begin PBXFileReference section */
 		04374FFF633BB67430372319 /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		086975A3A160FAF3BFD5ED2D /* Pods-Rabble HubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble HubTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble HubTests/Pods-Rabble HubTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2EDC3540C1B0555762252F08 /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F40DD1EAD6CF1B0BA5EEA81 /* Pods-Rabble PartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.release.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		52B0B99EC639808B1C781047 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5C4B12569FD318D949D2375C /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub-Rabble HubUITests.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6043952D761C00A580FE90F4 /* Pods-Rabble Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.debug.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.debug.xcconfig"; sourceTree = "<group>"; };
-		86A60DB22BCCEE3200496390 /* Rabble Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Partner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		739F1150616511C46993FEDA /* Pods-Rabble HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble HubTests.release.xcconfig"; path = "Target Support Files/Pods-Rabble HubTests/Pods-Rabble HubTests.release.xcconfig"; sourceTree = "<group>"; };
+		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		86A60DB92BCCEE3200496390 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +64,9 @@
 		86A60DBE2BCCEE3400496390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86A60DC12BCCEE3400496390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86A60DC32BCCEE3400496390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86A60DC82BCCEE3500496390 /* Rabble PartnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble PartnerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A60DC82BCCEE3500496390 /* Rabble HubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble HubTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DCC2BCCEE3500496390 /* Rabble_PartnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerTests.swift; sourceTree = "<group>"; };
-		86A60DD22BCCEE3500496390 /* Rabble PartnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble PartnerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A60DD22BCCEE3500496390 /* Rabble HubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble HubUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DD62BCCEE3500496390 /* Rabble_PartnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerUITests.swift; sourceTree = "<group>"; };
 		86A60DD82BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86A60DE92BCCEEF500496390 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -75,10 +79,12 @@
 		86D17AA62BCE696100464511 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		86D17AA82BCE6ACB00464511 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
+		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEFF24EE4A0BD79BF1753A18 /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Partner_Rabble_PartnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F26202751A6B3608CE74E240 /* Pods_Rabble_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F1E460C10294D1303CD2A6 /* Pods-Rabble Hub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.debug.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4946FD860B5A906A55ADEC62 /* Pods_Rabble_Partner.framework in Frameworks */,
+				9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC719B814B50AB04C53A1462 /* Pods_Rabble_PartnerTests.framework in Frameworks */,
+				4B0AEEA1A8761E9245E3412F /* Pods_Rabble_HubTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58EFD2A7FB37CE02C234ADE /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework in Frameworks */,
+				8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,9 +118,9 @@
 		0EEB1EC49CA8BF1EB61F55BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F26202751A6B3608CE74E240 /* Pods_Rabble_Partner.framework */,
-				CEFF24EE4A0BD79BF1753A18 /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework */,
-				B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */,
+				D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */,
+				9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */,
+				CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,9 +128,9 @@
 		86A60DA92BCCEE3200496390 = {
 			isa = PBXGroup;
 			children = (
-				86A60DB42BCCEE3200496390 /* Rabble Partner */,
-				86A60DCB2BCCEE3500496390 /* Rabble PartnerTests */,
-				86A60DD52BCCEE3500496390 /* Rabble PartnerUITests */,
+				86A60DB42BCCEE3200496390 /* Rabble Hub */,
+				86A60DCB2BCCEE3500496390 /* Rabble HubTests */,
+				86A60DD52BCCEE3500496390 /* Rabble HubUITests */,
 				86A60DB32BCCEE3200496390 /* Products */,
 				F9873F1048C84A57B09C1D65 /* Pods */,
 				0EEB1EC49CA8BF1EB61F55BA /* Frameworks */,
@@ -134,14 +140,14 @@
 		86A60DB32BCCEE3200496390 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86A60DB22BCCEE3200496390 /* Rabble Partner.app */,
-				86A60DC82BCCEE3500496390 /* Rabble PartnerTests.xctest */,
-				86A60DD22BCCEE3500496390 /* Rabble PartnerUITests.xctest */,
+				86A60DB22BCCEE3200496390 /* Rabble Hub.app */,
+				86A60DC82BCCEE3500496390 /* Rabble HubTests.xctest */,
+				86A60DD22BCCEE3500496390 /* Rabble HubUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		86A60DB42BCCEE3200496390 /* Rabble Partner */ = {
+		86A60DB42BCCEE3200496390 /* Rabble Hub */ = {
 			isa = PBXGroup;
 			children = (
 				86D17AA52BCE693D00464511 /* Assets */,
@@ -159,24 +165,24 @@
 				86A60DC02BCCEE3400496390 /* LaunchScreen.storyboard */,
 				86A60DC32BCCEE3400496390 /* Info.plist */,
 			);
-			path = "Rabble Partner";
+			path = "Rabble Hub";
 			sourceTree = "<group>";
 		};
-		86A60DCB2BCCEE3500496390 /* Rabble PartnerTests */ = {
+		86A60DCB2BCCEE3500496390 /* Rabble HubTests */ = {
 			isa = PBXGroup;
 			children = (
 				86A60DCC2BCCEE3500496390 /* Rabble_PartnerTests.swift */,
 			);
-			path = "Rabble PartnerTests";
+			path = "Rabble HubTests";
 			sourceTree = "<group>";
 		};
-		86A60DD52BCCEE3500496390 /* Rabble PartnerUITests */ = {
+		86A60DD52BCCEE3500496390 /* Rabble HubUITests */ = {
 			isa = PBXGroup;
 			children = (
 				86A60DD62BCCEE3500496390 /* Rabble_PartnerUITests.swift */,
 				86A60DD82BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift */,
 			);
-			path = "Rabble PartnerUITests";
+			path = "Rabble HubUITests";
 			sourceTree = "<group>";
 		};
 		86A60DE52BCCEEA100496390 /* ThirdPartySDK */ = {
@@ -326,6 +332,12 @@
 				52B0B99EC639808B1C781047 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */,
 				B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */,
 				4F40DD1EAD6CF1B0BA5EEA81 /* Pods-Rabble PartnerTests.release.xcconfig */,
+				E7F1E460C10294D1303CD2A6 /* Pods-Rabble Hub.debug.xcconfig */,
+				B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */,
+				2EDC3540C1B0555762252F08 /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */,
+				5C4B12569FD318D949D2375C /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */,
+				086975A3A160FAF3BFD5ED2D /* Pods-Rabble HubTests.debug.xcconfig */,
+				739F1150616511C46993FEDA /* Pods-Rabble HubTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -333,9 +345,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86A60DB12BCCEE3200496390 /* Rabble Partner */ = {
+		86A60DB12BCCEE3200496390 /* Rabble Hub */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86A60DDC2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble Partner" */;
+			buildConfigurationList = 86A60DDC2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble Hub" */;
 			buildPhases = (
 				A3AC8377CD57EDD319B800B1 /* [CP] Check Pods Manifest.lock */,
 				86A60DAE2BCCEE3200496390 /* Sources */,
@@ -347,14 +359,14 @@
 			);
 			dependencies = (
 			);
-			name = "Rabble Partner";
+			name = "Rabble Hub";
 			productName = "Rabble Partner";
-			productReference = 86A60DB22BCCEE3200496390 /* Rabble Partner.app */;
+			productReference = 86A60DB22BCCEE3200496390 /* Rabble Hub.app */;
 			productType = "com.apple.product-type.application";
 		};
-		86A60DC72BCCEE3500496390 /* Rabble PartnerTests */ = {
+		86A60DC72BCCEE3500496390 /* Rabble HubTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86A60DDF2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble PartnerTests" */;
+			buildConfigurationList = 86A60DDF2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble HubTests" */;
 			buildPhases = (
 				072A36C2B47305972D4F602B /* [CP] Check Pods Manifest.lock */,
 				86A60DC42BCCEE3500496390 /* Sources */,
@@ -366,14 +378,14 @@
 			dependencies = (
 				86A60DCA2BCCEE3500496390 /* PBXTargetDependency */,
 			);
-			name = "Rabble PartnerTests";
+			name = "Rabble HubTests";
 			productName = "Rabble PartnerTests";
-			productReference = 86A60DC82BCCEE3500496390 /* Rabble PartnerTests.xctest */;
+			productReference = 86A60DC82BCCEE3500496390 /* Rabble HubTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		86A60DD12BCCEE3500496390 /* Rabble PartnerUITests */ = {
+		86A60DD12BCCEE3500496390 /* Rabble HubUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86A60DE22BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble PartnerUITests" */;
+			buildConfigurationList = 86A60DE22BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble HubUITests" */;
 			buildPhases = (
 				2BBF58BB4FA06F18BF6F23B5 /* [CP] Check Pods Manifest.lock */,
 				86A60DCE2BCCEE3500496390 /* Sources */,
@@ -386,9 +398,9 @@
 			dependencies = (
 				86A60DD42BCCEE3500496390 /* PBXTargetDependency */,
 			);
-			name = "Rabble PartnerUITests";
+			name = "Rabble HubUITests";
 			productName = "Rabble PartnerUITests";
-			productReference = 86A60DD22BCCEE3500496390 /* Rabble PartnerUITests.xctest */;
+			productReference = 86A60DD22BCCEE3500496390 /* Rabble HubUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -427,9 +439,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86A60DB12BCCEE3200496390 /* Rabble Partner */,
-				86A60DC72BCCEE3500496390 /* Rabble PartnerTests */,
-				86A60DD12BCCEE3500496390 /* Rabble PartnerUITests */,
+				86A60DB12BCCEE3200496390 /* Rabble Hub */,
+				86A60DC72BCCEE3500496390 /* Rabble HubTests */,
+				86A60DD12BCCEE3500496390 /* Rabble HubUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -480,7 +492,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rabble PartnerTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Rabble HubTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -493,15 +505,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2BBF58BB4FA06F18BF6F23B5 /* [CP] Check Pods Manifest.lock */ = {
@@ -519,7 +531,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rabble Partner-Rabble PartnerUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Rabble Hub-Rabble HubUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -532,15 +544,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3AC8377CD57EDD319B800B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -558,7 +570,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rabble Partner-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Rabble Hub-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -606,12 +618,12 @@
 /* Begin PBXTargetDependency section */
 		86A60DCA2BCCEE3500496390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 86A60DB12BCCEE3200496390 /* Rabble Partner */;
+			target = 86A60DB12BCCEE3200496390 /* Rabble Hub */;
 			targetProxy = 86A60DC92BCCEE3500496390 /* PBXContainerItemProxy */;
 		};
 		86A60DD42BCCEE3500496390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 86A60DB12BCCEE3200496390 /* Rabble Partner */;
+			target = 86A60DB12BCCEE3200496390 /* Rabble Hub */;
 			targetProxy = 86A60DD32BCCEE3500496390 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -757,7 +769,7 @@
 		};
 		86A60DDD2BCCEE3500496390 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6043952D761C00A580FE90F4 /* Pods-Rabble Partner.debug.xcconfig */;
+			baseConfigurationReference = E7F1E460C10294D1303CD2A6 /* Pods-Rabble Hub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -766,7 +778,7 @@
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rabble Partner/Info.plist";
+				INFOPLIST_FILE = "Rabble Hub/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -778,7 +790,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-Partner";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-Hub";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -788,7 +800,7 @@
 		};
 		86A60DDE2BCCEE3500496390 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */;
+			baseConfigurationReference = B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -797,7 +809,7 @@
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rabble Partner/Info.plist";
+				INFOPLIST_FILE = "Rabble Hub/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -809,7 +821,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-Partner";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-Hub";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -819,7 +831,7 @@
 		};
 		86A60DE02BCCEE3500496390 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */;
+			baseConfigurationReference = 086975A3A160FAF3BFD5ED2D /* Pods-Rabble HubTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -840,7 +852,7 @@
 		};
 		86A60DE12BCCEE3500496390 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F40DD1EAD6CF1B0BA5EEA81 /* Pods-Rabble PartnerTests.release.xcconfig */;
+			baseConfigurationReference = 739F1150616511C46993FEDA /* Pods-Rabble HubTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -861,7 +873,7 @@
 		};
 		86A60DE32BCCEE3500496390 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04374FFF633BB67430372319 /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */;
+			baseConfigurationReference = 2EDC3540C1B0555762252F08 /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -880,7 +892,7 @@
 		};
 		86A60DE42BCCEE3500496390 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52B0B99EC639808B1C781047 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */;
+			baseConfigurationReference = 5C4B12569FD318D949D2375C /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -909,7 +921,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86A60DDC2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble Partner" */ = {
+		86A60DDC2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble Hub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A60DDD2BCCEE3500496390 /* Debug */,
@@ -918,7 +930,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86A60DDF2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble PartnerTests" */ = {
+		86A60DDF2BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble HubTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A60DE02BCCEE3500496390 /* Debug */,
@@ -927,7 +939,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86A60DE22BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble PartnerUITests" */ = {
+		86A60DE22BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble HubUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A60DE32BCCEE3500496390 /* Debug */,

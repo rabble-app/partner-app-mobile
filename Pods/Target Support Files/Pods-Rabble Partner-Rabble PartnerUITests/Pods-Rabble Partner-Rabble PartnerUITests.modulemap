@@ -1,6 +1,0 @@
-framework module Pods_Rabble_Partner_Rabble_PartnerUITests {
-  umbrella header "Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
