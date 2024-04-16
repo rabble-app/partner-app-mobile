@@ -6,6 +6,8 @@ target 'Rabble Partner' do
   use_frameworks!
 
   # Pods for Rabble Partner
+  pod 'DialCountries'
+  pod 'EliteOTPField'
 
   target 'Rabble PartnerTests' do
     inherit! :search_paths

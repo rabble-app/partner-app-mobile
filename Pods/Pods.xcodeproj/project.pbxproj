@@ -7,65 +7,165 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17C51917271849D69D8A55D6AF2EE57D /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3436B9EFB4716C8D9FF247190A5C184 /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m */; };
+		0FEB61693E16B7A1C2E189620353DBFA /* Pods-Rabble Partner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5115052E9E634F0EEE966E4026324811 /* Pods-Rabble Partner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19478D2F0FD27A3AB082304FB54E7B66 /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 11FEFC378DC1AAD52B7EDA0C60F0537D /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19BD15BC1C1C7FCBAC012033107D41E6 /* Pods-Rabble Partner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E962A73DB9CCE5B5273A8885AC4E0A /* Pods-Rabble Partner-dummy.m */; };
+		2067562ED8D002DD1DA23B138D1E8B6E /* DialCountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129834C0970191CA618E9D98DED4C532 /* DialCountriesController.swift */; };
+		231C4CBF826F94462939C3C75D5E3636 /* EliteOTPField + UITextFieldDelegete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1564E2238817492A05FAF4DB92D8003 /* EliteOTPField + UITextFieldDelegete.swift */; };
 		2932809CC4E1E6AB6EFCFAF8083E6332 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5C74D9FD330D1CE8EF154A91CF1580A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		7DFB22A19BA52F4A171E42E209E4A111 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		956EADC59AB7EBFA286113038ED58E1B /* Pods-Rabble Partner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDBC6E1CD02D630EE602FEDC3262756 /* Pods-Rabble Partner-dummy.m */; };
-		9A45E0EC9C8893AA1669BBBF739E0BD3 /* Pods-Rabble Partner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE462042039CD3C8FC6B5154F62DAE21 /* Pods-Rabble Partner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAC6246D24F182AF37FC0CEACD04FA01 /* Pods-Rabble PartnerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6505AD3876D598FBFAFB1547C0F6EFD /* Pods-Rabble PartnerTests-dummy.m */; };
-		AE98600C1809E368E18F047D419BE45C /* Pods-Rabble PartnerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6270FFF02B4C2EC8F487FEF41CFB5924 /* Pods-Rabble PartnerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0E2C6D275C738A8647460CCF64F0AFA /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C56D89D51147CECAD0D6CA2D6387713 /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F1AE46BD3C152E69ADE4996F9548B47 /* CountriesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40E1D5C30F5DEEFCD99127948A96F47 /* CountriesFetcher.swift */; };
+		33A381A823A594A6A3C11E3ED57B2343 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3EF1D4C6704CD0062B1CAA8F0924791B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C18630C53D717F730141621F048932 /* Bundle.swift */; };
+		47656A014649F2897E0E36913F19D285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		47F5F591458FE4C062C7EC46369A9A3C /* EliteOTPField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C56280151B53A25E8EE1B2F13B279DB /* EliteOTPField-dummy.m */; };
+		4A9639D3F336D4180B926E99CB30EA9C /* String+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2A04778A5A7EA5AAC946C0D6FA3F6 /* String+Numbers.swift */; };
+		54AA92D3A91027EDD7096ADC67E8C448 /* EliteOTPField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FCF0E704D39101E9CD7778D4DF5A8DBA /* EliteOTPField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6910B3460D943C283EC9CE3629F3F84F /* DialCountries-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF9650085AD0DE8FFCE48FD196BC0BA /* DialCountries-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B772A3FB13C2A2647B5EA479EB98F13 /* EliteOTPFieldBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E16F1037B9AE65E8BB6256786D0AC /* EliteOTPFieldBuilder.swift */; };
+		7B2BEE51873A6BB7433241E4CF010BFD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E341FEC8727E1047BB00A33ADD3AB4C /* Config.swift */; };
+		84B51B16B9F6058270BFFCC91DA6AA7F /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2EBAD2FC7D1398783CAF9F55E2770 /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m */; };
+		90C10BF2BA2C11A1A11ABC6B35AA1E8E /* DialCountries-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFED4B48571D39A8BF6047D912B1EB9F /* DialCountries-dummy.m */; };
+		A9EDB00B3B1F3B535070FD5CC0C2FA78 /* EliteOTPAnimationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EFC9B446FB30FA35084BF7A73E08A7 /* EliteOTPAnimationTypes.swift */; };
+		AAC6246D24F182AF37FC0CEACD04FA01 /* Pods-Rabble PartnerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA9F9C00EC31C5E21174C5699A8EC20 /* Pods-Rabble PartnerTests-dummy.m */; };
+		AE98600C1809E368E18F047D419BE45C /* Pods-Rabble PartnerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 142076B90486C9B7C91E13F3A1DE4BB7 /* Pods-Rabble PartnerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B126280A0A4DD54A93418B3BFF59BD8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B23485D33C4AAB4C5DB877908421E2E4 /* countries.json in Sources */ = {isa = PBXBuildFile; fileRef = C145BAAC99D132BFCE18D64093052CF9 /* countries.json */; };
+		BC24580640280783E47390DCC8ECAC29 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = C145BAAC99D132BFCE18D64093052CF9 /* countries.json */; };
+		BFE8F2D4302621D99E5B4BB0C4A0866E /* EliteOTPField + Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D83A2AAC610179F5D19A2160AB630 /* EliteOTPField + Animations.swift */; };
+		C60A25C15861B8361472AC3D31F29814 /* OTPEditingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1360B07A5C314F09C48241C481F14 /* OTPEditingStatus.swift */; };
+		CF768B06B42869E8A015268ECCE67EF7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD7039316649EF0B167E5E7339D8629 /* Country.swift */; };
+		D237560603FE6CB46C53872358F23FCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D45BF1DADEFBEB2D31F4DB3449528CFB /* CountriesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66E15C6DFE3150C0A9210757740866C /* CountriesAdapter.swift */; };
+		EA3A5B5C64E0A757D6DAD27E82BE84E6 /* DialCountries-DialCountries in Resources */ = {isa = PBXBuildFile; fileRef = 833DC5F4F9CD08CAC365746A33DB43A7 /* DialCountries-DialCountries */; };
+		F17F4C5E3B46E7725F205BE3AAA38418 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8246FDAA3BE8D3970937A67AD7335 /* Vibration.swift */; };
+		F1FECF28B06EB9A6E39704A2FD8E6451 /* EliteOTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF34C34694490E34606641827B22EDE /* EliteOTPField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BEC51069F713EE5D16C950A3F447794A /* PBXContainerItemProxy */ = {
+		2562E871FAFAA11AFBA54611CF39A4AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 704823084523357C0FDD5873EEAF8759;
+			remoteInfo = EliteOTPField;
+		};
+		57DE90B52EF31BB96903249B941DA7D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 026265C153A44AFD10A82AC2EE8A48AE;
 			remoteInfo = "Pods-Rabble Partner";
 		};
+		668E89048071ED9D83525A46A65A8BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80A9CB4F96ABEE0F4724AC4CA346D702;
+			remoteInfo = DialCountries;
+		};
+		98B9C4B10EE12C6E06B7C6DA70E1E875 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3845717074531A7A89BAA05907850A7;
+			remoteInfo = "DialCountries-DialCountries";
+		};
+		C8623B78A531969913ABDAD543345875 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 704823084523357C0FDD5873EEAF8759;
+			remoteInfo = EliteOTPField;
+		};
+		F170DB4F389A7A5E2962567B2046F560 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80A9CB4F96ABEE0F4724AC4CA346D702;
+			remoteInfo = DialCountries;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B3B117BB2668A538B4F7814AE98FED1 /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		103E05DAE05DB479D5A847DD1A606091 /* Pods-Rabble Partner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble Partner.modulemap"; sourceTree = "<group>"; };
-		4063A4CC3776683A3BC97D2B370C599B /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		42101D2635BC0F562F6977E56F11B9B6 /* Pods-Rabble PartnerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble PartnerTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		49F690C838209042CADA446986EE269A /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
-		4DE9FFCA0331FEC556E9D5EC1FB47DF2 /* Pods-Rabble PartnerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble PartnerTests.modulemap"; sourceTree = "<group>"; };
+		01F06DF08D42DE236D52C3176C03991E /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0289E21E78A93A8E1E07B3A14667B1BF /* DialCountries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DialCountries.release.xcconfig; sourceTree = "<group>"; };
+		07E2EBAD2FC7D1398783CAF9F55E2770 /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble Partner-Rabble PartnerUITests-dummy.m"; sourceTree = "<group>"; };
+		087D1DFC773F75120544D0F2EC51C9C9 /* EliteOTPField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EliteOTPField-Info.plist"; sourceTree = "<group>"; };
+		0A0C6FDBE7AA6C07EA9AA927A053F3E4 /* Pods-Rabble Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner.debug.xcconfig"; sourceTree = "<group>"; };
+		11FEFC378DC1AAD52B7EDA0C60F0537D /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h"; sourceTree = "<group>"; };
+		123E2D56D83820122F9E097924A14375 /* Pods-Rabble Partner-Rabble PartnerUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rabble Partner-Rabble PartnerUITests-frameworks.sh"; sourceTree = "<group>"; };
+		129834C0970191CA618E9D98DED4C532 /* DialCountriesController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DialCountriesController.swift; path = DialCountries/Classes/Views/DialCountriesController.swift; sourceTree = "<group>"; };
+		13C18630C53D717F730141621F048932 /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bundle.swift; path = DialCountries/Classes/Core/Bundle.swift; sourceTree = "<group>"; };
+		142076B90486C9B7C91E13F3A1DE4BB7 /* Pods-Rabble PartnerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble PartnerTests-umbrella.h"; sourceTree = "<group>"; };
+		1C2DC836067D6CDA51273C7846787610 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
+		1C50CAAAF7FF4314EF92B947C74EBB45 /* Pods-Rabble Partner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-Info.plist"; sourceTree = "<group>"; };
+		1D93DECC35BF2A0CA8BD5993AE7EC4C6 /* EliteOTPField */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EliteOTPField; path = EliteOTPField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21E962A73DB9CCE5B5273A8885AC4E0A /* Pods-Rabble Partner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble Partner-dummy.m"; sourceTree = "<group>"; };
+		25F816C10CFF3A4E3A456E222CFDF8A5 /* Pods-Rabble Partner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble Partner-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2A8D44CB712D4BF9A74D6706EF345A92 /* DialCountries-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DialCountries-Info.plist"; sourceTree = "<group>"; };
+		2D7E16F1037B9AE65E8BB6256786D0AC /* EliteOTPFieldBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EliteOTPFieldBuilder.swift; path = EliteOTPField/Classes/Builder/EliteOTPFieldBuilder.swift; sourceTree = "<group>"; };
+		2FAFFD22BD7793B519399E0946C48D62 /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3329C84F22B293A4364F256A9808206C /* EliteOTPField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EliteOTPField.modulemap; sourceTree = "<group>"; };
+		3EF9650085AD0DE8FFCE48FD196BC0BA /* DialCountries-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DialCountries-umbrella.h"; sourceTree = "<group>"; };
+		40AB4A766B6A358A8826122E96A9FA5A /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		41F5E4AADCC148811475778FA44B2C55 /* ResourceBundle-DialCountries-DialCountries-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DialCountries-DialCountries-Info.plist"; sourceTree = "<group>"; };
+		4ED2A04778A5A7EA5AAC946C0D6FA3F6 /* String+Numbers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Numbers.swift"; path = "DialCountries/Classes/Core/String+Numbers.swift"; sourceTree = "<group>"; };
+		4FF34C34694490E34606641827B22EDE /* EliteOTPField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EliteOTPField.swift; path = EliteOTPField/Classes/Components/EliteOTPField.swift; sourceTree = "<group>"; };
+		5115052E9E634F0EEE966E4026324811 /* Pods-Rabble Partner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble Partner-umbrella.h"; sourceTree = "<group>"; };
 		52072611D065A9804506CC572589D793 /* Pods-Rabble Partner */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Rabble Partner"; path = Pods_Rabble_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6270FFF02B4C2EC8F487FEF41CFB5924 /* Pods-Rabble PartnerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble PartnerTests-umbrella.h"; sourceTree = "<group>"; };
-		6FA26C70A4ABD8F959BEB3FCBE3E83EE /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		573AA9840AFDBAE07B5EA96E66F0EFEF /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B694B16B0C12DE680170BD6BB4307F8 /* EliteOTPField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EliteOTPField.release.xcconfig; sourceTree = "<group>"; };
+		71EC17BACBB7444A280478E13AA4D778 /* Pods-Rabble Partner-Rabble PartnerUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-Rabble PartnerUITests-Info.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		793788A656AE3755935C3A70D433D0DD /* Pods-Rabble Partner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-acknowledgements.plist"; sourceTree = "<group>"; };
-		83AD1FB248B478277C5FFBE8819874A2 /* Pods-Rabble PartnerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble PartnerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		906604D4F8488052938AC62BE97F394F /* Pods-Rabble PartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble PartnerTests.release.xcconfig"; sourceTree = "<group>"; };
-		982167414CF768C9973A3BFCECB09193 /* Pods-Rabble Partner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-Info.plist"; sourceTree = "<group>"; };
-		9C56D89D51147CECAD0D6CA2D6387713 /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h"; sourceTree = "<group>"; };
+		76782A51FAF0C1F5B8A5215D8D4EA510 /* DialCountries-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DialCountries-prefix.pch"; sourceTree = "<group>"; };
+		7C56280151B53A25E8EE1B2F13B279DB /* EliteOTPField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EliteOTPField-dummy.m"; sourceTree = "<group>"; };
+		7E341FEC8727E1047BB00A33ADD3AB4C /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = DialCountries/Classes/Core/Config.swift; sourceTree = "<group>"; };
+		833DC5F4F9CD08CAC365746A33DB43A7 /* DialCountries-DialCountries */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "DialCountries-DialCountries"; path = DialCountries.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		85EFC9B446FB30FA35084BF7A73E08A7 /* EliteOTPAnimationTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EliteOTPAnimationTypes.swift; path = EliteOTPField/Classes/Components/Entities/EliteOTPAnimationTypes.swift; sourceTree = "<group>"; };
+		926E686E0B221BEF3B383404EC719FEB /* Pods-Rabble Partner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble Partner.modulemap"; sourceTree = "<group>"; };
+		94F1360B07A5C314F09C48241C481F14 /* OTPEditingStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OTPEditingStatus.swift; path = EliteOTPField/Classes/Components/Entities/OTPEditingStatus.swift; sourceTree = "<group>"; };
+		988EF6F4675C0C19807FCEFD93336A04 /* DialCountries */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DialCountries; path = DialCountries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F8246FDAA3BE8D3970937A67AD7335 /* Vibration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Vibration.swift; path = EliteOTPField/Classes/Utills/Vibration.swift; sourceTree = "<group>"; };
+		9B4FD66B4EF7EDB5AED3A6C6E6E6BDBA /* DialCountries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DialCountries.debug.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A447D1CC65261F1CF88372DA26D711E8 /* Pods-Rabble Partner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble Partner-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AD12830A055A3F82DD830BA2377EC314 /* Pods-Rabble PartnerTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble PartnerTests-Info.plist"; sourceTree = "<group>"; };
-		AEDBC6E1CD02D630EE602FEDC3262756 /* Pods-Rabble Partner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble Partner-dummy.m"; sourceTree = "<group>"; };
+		A1564E2238817492A05FAF4DB92D8003 /* EliteOTPField + UITextFieldDelegete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "EliteOTPField + UITextFieldDelegete.swift"; path = "EliteOTPField/Classes/Components/EliteOTPField + UITextFieldDelegete.swift"; sourceTree = "<group>"; };
+		AB81267F93A16F1A9F418D1BADCD0A2B /* Pods-Rabble PartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble PartnerTests.release.xcconfig"; sourceTree = "<group>"; };
+		ACAD9065541C85BA92CEA95E7F7892A7 /* Pods-Rabble Partner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rabble Partner-frameworks.sh"; sourceTree = "<group>"; };
+		ACD7039316649EF0B167E5E7339D8629 /* Country.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Country.swift; path = DialCountries/Classes/Module/Country.swift; sourceTree = "<group>"; };
+		AFAE221B732FA1A15641DE9E2EFECB98 /* EliteOTPField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EliteOTPField-prefix.pch"; sourceTree = "<group>"; };
+		AFC0481F482860E586F2556D6CB03694 /* EliteOTPField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EliteOTPField.debug.xcconfig; sourceTree = "<group>"; };
 		B410EF8693CC2A58BE1133A71B949212 /* Pods-Rabble Partner-Rabble PartnerUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Rabble Partner-Rabble PartnerUITests"; path = Pods_Rabble_Partner_Rabble_PartnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3436B9EFB4716C8D9FF247190A5C184 /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble Partner-Rabble PartnerUITests-dummy.m"; sourceTree = "<group>"; };
+		BF24D00D6498B192EF8A67596552FDAD /* Pods-Rabble Partner-Rabble PartnerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble Partner-Rabble PartnerUITests.modulemap"; sourceTree = "<group>"; };
+		C0B3BAF3B80DA57A63E3B7D4C14C3287 /* Pods-Rabble PartnerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble PartnerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C145BAAC99D132BFCE18D64093052CF9 /* countries.json */ = {isa = PBXFileReference; includeInIndex = 1; name = countries.json; path = DialCountries/Classes/Resources/countries.json; sourceTree = "<group>"; };
+		C40E1D5C30F5DEEFCD99127948A96F47 /* CountriesFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountriesFetcher.swift; path = DialCountries/Classes/Core/CountriesFetcher.swift; sourceTree = "<group>"; };
+		CFF76F90E71C944CEEF4536881EF6489 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D66E15C6DFE3150C0A9210757740866C /* CountriesAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountriesAdapter.swift; path = DialCountries/Classes/Views/CountriesAdapter.swift; sourceTree = "<group>"; };
 		DAFF5B7664C8536E4DCC2386CC8C15E5 /* Pods-Rabble PartnerTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Rabble PartnerTests"; path = Pods_Rabble_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E537F75A8908D8003C978A9D1E88810D /* Pods-Rabble Partner-Rabble PartnerUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-Rabble PartnerUITests-Info.plist"; sourceTree = "<group>"; };
-		E7B753E7CCF255E1B9B2F9C1E3407C57 /* Pods-Rabble Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner.debug.xcconfig"; sourceTree = "<group>"; };
-		EE928F5E92E2CE73CDD55534DBCF90C7 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F6505AD3876D598FBFAFB1547C0F6EFD /* Pods-Rabble PartnerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble PartnerTests-dummy.m"; sourceTree = "<group>"; };
-		FAECDDF8E571A73908F41AE648359CC8 /* Pods-Rabble Partner-Rabble PartnerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble Partner-Rabble PartnerUITests.modulemap"; sourceTree = "<group>"; };
-		FE462042039CD3C8FC6B5154F62DAE21 /* Pods-Rabble Partner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble Partner-umbrella.h"; sourceTree = "<group>"; };
-		FEC617E27445597FB58F8D6360043EEB /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DBA9F9C00EC31C5E21174C5699A8EC20 /* Pods-Rabble PartnerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble PartnerTests-dummy.m"; sourceTree = "<group>"; };
+		DCD197EFC623A7E99D6C38128C2B27C5 /* Pods-Rabble PartnerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble PartnerTests.modulemap"; sourceTree = "<group>"; };
+		E31463DE2ECADF71F02D29F2F95D33DB /* DialCountries.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DialCountries.modulemap; sourceTree = "<group>"; };
+		EB6D83A2AAC610179F5D19A2160AB630 /* EliteOTPField + Animations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "EliteOTPField + Animations.swift"; path = "EliteOTPField/Classes/Components/EliteOTPField + Animations.swift"; sourceTree = "<group>"; };
+		EC4A39D2E3659C6061ACC2ECCD7D8231 /* Pods-Rabble Partner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Partner-acknowledgements.plist"; sourceTree = "<group>"; };
+		F2AD6D25AD64EDBFD91830E8F8339686 /* Pods-Rabble PartnerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble PartnerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FB1E25AFE9E1EED88B4162C986211A87 /* Pods-Rabble PartnerTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble PartnerTests-Info.plist"; sourceTree = "<group>"; };
+		FCF0E704D39101E9CD7778D4DF5A8DBA /* EliteOTPField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EliteOTPField-umbrella.h"; sourceTree = "<group>"; };
+		FFED4B48571D39A8BF6047D912B1EB9F /* DialCountries-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DialCountries-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7AC984AC86E00DCB2AC4EDA59ABFB538 /* Frameworks */ = {
+		372A350E3077DE308173B5EFBB5803E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C74D9FD330D1CE8EF154A91CF1580A2 /* Foundation.framework in Frameworks */,
+				47656A014649F2897E0E36913F19D285 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F64257F46521ACB90F8F1F2E888E0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,31 +177,86 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5916316460D3A3D41AA9C54ADB28B6E /* Frameworks */ = {
+		C566311834163CA122136ED4EC296238 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DFB22A19BA52F4A171E42E209E4A111 /* Foundation.framework in Frameworks */,
+				D237560603FE6CB46C53872358F23FCD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED8B191986740D2ADC909D1F65225E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33A381A823A594A6A3C11E3ED57B2343 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49BDE85385D78128F827AD2DD3AFD4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B126280A0A4DD54A93418B3BFF59BD8F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15FFC86580EFCB144DD7B345FF38992E /* Pods-Rabble PartnerTests */ = {
+		187CCECDE8F2177DF48B0D5820568639 /* Pods-Rabble Partner */ = {
 			isa = PBXGroup;
 			children = (
-				4DE9FFCA0331FEC556E9D5EC1FB47DF2 /* Pods-Rabble PartnerTests.modulemap */,
-				83AD1FB248B478277C5FFBE8819874A2 /* Pods-Rabble PartnerTests-acknowledgements.markdown */,
-				42101D2635BC0F562F6977E56F11B9B6 /* Pods-Rabble PartnerTests-acknowledgements.plist */,
-				F6505AD3876D598FBFAFB1547C0F6EFD /* Pods-Rabble PartnerTests-dummy.m */,
-				AD12830A055A3F82DD830BA2377EC314 /* Pods-Rabble PartnerTests-Info.plist */,
-				6270FFF02B4C2EC8F487FEF41CFB5924 /* Pods-Rabble PartnerTests-umbrella.h */,
-				4063A4CC3776683A3BC97D2B370C599B /* Pods-Rabble PartnerTests.debug.xcconfig */,
-				906604D4F8488052938AC62BE97F394F /* Pods-Rabble PartnerTests.release.xcconfig */,
+				926E686E0B221BEF3B383404EC719FEB /* Pods-Rabble Partner.modulemap */,
+				25F816C10CFF3A4E3A456E222CFDF8A5 /* Pods-Rabble Partner-acknowledgements.markdown */,
+				EC4A39D2E3659C6061ACC2ECCD7D8231 /* Pods-Rabble Partner-acknowledgements.plist */,
+				21E962A73DB9CCE5B5273A8885AC4E0A /* Pods-Rabble Partner-dummy.m */,
+				ACAD9065541C85BA92CEA95E7F7892A7 /* Pods-Rabble Partner-frameworks.sh */,
+				1C50CAAAF7FF4314EF92B947C74EBB45 /* Pods-Rabble Partner-Info.plist */,
+				5115052E9E634F0EEE966E4026324811 /* Pods-Rabble Partner-umbrella.h */,
+				0A0C6FDBE7AA6C07EA9AA927A053F3E4 /* Pods-Rabble Partner.debug.xcconfig */,
+				1C2DC836067D6CDA51273C7846787610 /* Pods-Rabble Partner.release.xcconfig */,
 			);
-			name = "Pods-Rabble PartnerTests";
-			path = "Target Support Files/Pods-Rabble PartnerTests";
+			name = "Pods-Rabble Partner";
+			path = "Target Support Files/Pods-Rabble Partner";
+			sourceTree = "<group>";
+		};
+		2D38F20E8FC148BDDD9C3A1AA1A73FB4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E31463DE2ECADF71F02D29F2F95D33DB /* DialCountries.modulemap */,
+				FFED4B48571D39A8BF6047D912B1EB9F /* DialCountries-dummy.m */,
+				2A8D44CB712D4BF9A74D6706EF345A92 /* DialCountries-Info.plist */,
+				76782A51FAF0C1F5B8A5215D8D4EA510 /* DialCountries-prefix.pch */,
+				3EF9650085AD0DE8FFCE48FD196BC0BA /* DialCountries-umbrella.h */,
+				9B4FD66B4EF7EDB5AED3A6C6E6E6BDBA /* DialCountries.debug.xcconfig */,
+				0289E21E78A93A8E1E07B3A14667B1BF /* DialCountries.release.xcconfig */,
+				41F5E4AADCC148811475778FA44B2C55 /* ResourceBundle-DialCountries-DialCountries-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DialCountries";
+			sourceTree = "<group>";
+		};
+		41ABAF72CEB8CB1E0689123F963C66CE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3329C84F22B293A4364F256A9808206C /* EliteOTPField.modulemap */,
+				7C56280151B53A25E8EE1B2F13B279DB /* EliteOTPField-dummy.m */,
+				087D1DFC773F75120544D0F2EC51C9C9 /* EliteOTPField-Info.plist */,
+				AFAE221B732FA1A15641DE9E2EFECB98 /* EliteOTPField-prefix.pch */,
+				FCF0E704D39101E9CD7778D4DF5A8DBA /* EliteOTPField-umbrella.h */,
+				AFC0481F482860E586F2556D6CB03694 /* EliteOTPField.debug.xcconfig */,
+				6B694B16B0C12DE680170BD6BB4307F8 /* EliteOTPField.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EliteOTPField";
+			sourceTree = "<group>";
+		};
+		42FBBBD3A93656FB02D010160F47999A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -112,56 +267,39 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6AD0F84B4E0B679E6A1ECFD747534FB5 /* Products */ = {
+		82293540204EF14D3A7C99F8CE60F70D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				52072611D065A9804506CC572589D793 /* Pods-Rabble Partner */,
-				B410EF8693CC2A58BE1133A71B949212 /* Pods-Rabble Partner-Rabble PartnerUITests */,
-				DAFF5B7664C8536E4DCC2386CC8C15E5 /* Pods-Rabble PartnerTests */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		749F6EC555CA9F24AF9240BA05A4BA17 /* Pods-Rabble Partner-Rabble PartnerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FAECDDF8E571A73908F41AE648359CC8 /* Pods-Rabble Partner-Rabble PartnerUITests.modulemap */,
-				0B3B117BB2668A538B4F7814AE98FED1 /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.markdown */,
-				FEC617E27445597FB58F8D6360043EEB /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.plist */,
-				D3436B9EFB4716C8D9FF247190A5C184 /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m */,
-				E537F75A8908D8003C978A9D1E88810D /* Pods-Rabble Partner-Rabble PartnerUITests-Info.plist */,
-				9C56D89D51147CECAD0D6CA2D6387713 /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h */,
-				6FA26C70A4ABD8F959BEB3FCBE3E83EE /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */,
-				EE928F5E92E2CE73CDD55534DBCF90C7 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */,
-			);
-			name = "Pods-Rabble Partner-Rabble PartnerUITests";
-			path = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests";
-			sourceTree = "<group>";
-		};
-		A026AD6E351F0C5ED96ACB1C04758CD5 /* Pods-Rabble Partner */ = {
-			isa = PBXGroup;
-			children = (
-				103E05DAE05DB479D5A847DD1A606091 /* Pods-Rabble Partner.modulemap */,
-				A447D1CC65261F1CF88372DA26D711E8 /* Pods-Rabble Partner-acknowledgements.markdown */,
-				793788A656AE3755935C3A70D433D0DD /* Pods-Rabble Partner-acknowledgements.plist */,
-				AEDBC6E1CD02D630EE602FEDC3262756 /* Pods-Rabble Partner-dummy.m */,
-				982167414CF768C9973A3BFCECB09193 /* Pods-Rabble Partner-Info.plist */,
-				FE462042039CD3C8FC6B5154F62DAE21 /* Pods-Rabble Partner-umbrella.h */,
-				E7B753E7CCF255E1B9B2F9C1E3407C57 /* Pods-Rabble Partner.debug.xcconfig */,
-				49F690C838209042CADA446986EE269A /* Pods-Rabble Partner.release.xcconfig */,
-			);
-			name = "Pods-Rabble Partner";
-			path = "Target Support Files/Pods-Rabble Partner";
-			sourceTree = "<group>";
-		};
-		B72321B6DFDE8487C1C67C260DE7D7C5 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A026AD6E351F0C5ED96ACB1C04758CD5 /* Pods-Rabble Partner */,
-				749F6EC555CA9F24AF9240BA05A4BA17 /* Pods-Rabble Partner-Rabble PartnerUITests */,
-				15FFC86580EFCB144DD7B345FF38992E /* Pods-Rabble PartnerTests */,
+				187CCECDE8F2177DF48B0D5820568639 /* Pods-Rabble Partner */,
+				FDC21E7A3882AEB644EDB93C23A895C5 /* Pods-Rabble Partner-Rabble PartnerUITests */,
+				D48B3AEBAE706462D1D4DAE14793CCA0 /* Pods-Rabble PartnerTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		914ACF23B8810D7698F8C2F2F1B5D55D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4333B2535B4AF2458B94A2C38AE6E0D /* DialCountries */,
+				A59A704B88A4FED02DC02FEDDA7CDE11 /* EliteOTPField */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A59A704B88A4FED02DC02FEDDA7CDE11 /* EliteOTPField */ = {
+			isa = PBXGroup;
+			children = (
+				85EFC9B446FB30FA35084BF7A73E08A7 /* EliteOTPAnimationTypes.swift */,
+				4FF34C34694490E34606641827B22EDE /* EliteOTPField.swift */,
+				EB6D83A2AAC610179F5D19A2160AB630 /* EliteOTPField + Animations.swift */,
+				A1564E2238817492A05FAF4DB92D8003 /* EliteOTPField + UITextFieldDelegete.swift */,
+				2D7E16F1037B9AE65E8BB6256786D0AC /* EliteOTPFieldBuilder.swift */,
+				94F1360B07A5C314F09C48241C481F14 /* OTPEditingStatus.swift */,
+				98F8246FDAA3BE8D3970937A67AD7335 /* Vibration.swift */,
+				41ABAF72CEB8CB1E0689123F963C66CE /* Support Files */,
+			);
+			name = EliteOTPField;
+			path = EliteOTPField;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -169,8 +307,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				6AD0F84B4E0B679E6A1ECFD747534FB5 /* Products */,
-				B72321B6DFDE8487C1C67C260DE7D7C5 /* Targets Support Files */,
+				914ACF23B8810D7698F8C2F2F1B5D55D /* Pods */,
+				D5F127BE302257FAEB2E911596B50D28 /* Products */,
+				82293540204EF14D3A7C99F8CE60F70D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,22 +321,102 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D48B3AEBAE706462D1D4DAE14793CCA0 /* Pods-Rabble PartnerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCD197EFC623A7E99D6C38128C2B27C5 /* Pods-Rabble PartnerTests.modulemap */,
+				C0B3BAF3B80DA57A63E3B7D4C14C3287 /* Pods-Rabble PartnerTests-acknowledgements.markdown */,
+				F2AD6D25AD64EDBFD91830E8F8339686 /* Pods-Rabble PartnerTests-acknowledgements.plist */,
+				DBA9F9C00EC31C5E21174C5699A8EC20 /* Pods-Rabble PartnerTests-dummy.m */,
+				FB1E25AFE9E1EED88B4162C986211A87 /* Pods-Rabble PartnerTests-Info.plist */,
+				142076B90486C9B7C91E13F3A1DE4BB7 /* Pods-Rabble PartnerTests-umbrella.h */,
+				573AA9840AFDBAE07B5EA96E66F0EFEF /* Pods-Rabble PartnerTests.debug.xcconfig */,
+				AB81267F93A16F1A9F418D1BADCD0A2B /* Pods-Rabble PartnerTests.release.xcconfig */,
+			);
+			name = "Pods-Rabble PartnerTests";
+			path = "Target Support Files/Pods-Rabble PartnerTests";
+			sourceTree = "<group>";
+		};
+		D5F127BE302257FAEB2E911596B50D28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				988EF6F4675C0C19807FCEFD93336A04 /* DialCountries */,
+				833DC5F4F9CD08CAC365746A33DB43A7 /* DialCountries-DialCountries */,
+				1D93DECC35BF2A0CA8BD5993AE7EC4C6 /* EliteOTPField */,
+				52072611D065A9804506CC572589D793 /* Pods-Rabble Partner */,
+				B410EF8693CC2A58BE1133A71B949212 /* Pods-Rabble Partner-Rabble PartnerUITests */,
+				DAFF5B7664C8536E4DCC2386CC8C15E5 /* Pods-Rabble PartnerTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4333B2535B4AF2458B94A2C38AE6E0D /* DialCountries */ = {
+			isa = PBXGroup;
+			children = (
+				13C18630C53D717F730141621F048932 /* Bundle.swift */,
+				7E341FEC8727E1047BB00A33ADD3AB4C /* Config.swift */,
+				C145BAAC99D132BFCE18D64093052CF9 /* countries.json */,
+				D66E15C6DFE3150C0A9210757740866C /* CountriesAdapter.swift */,
+				C40E1D5C30F5DEEFCD99127948A96F47 /* CountriesFetcher.swift */,
+				ACD7039316649EF0B167E5E7339D8629 /* Country.swift */,
+				129834C0970191CA618E9D98DED4C532 /* DialCountriesController.swift */,
+				4ED2A04778A5A7EA5AAC946C0D6FA3F6 /* String+Numbers.swift */,
+				42FBBBD3A93656FB02D010160F47999A /* Resources */,
+				2D38F20E8FC148BDDD9C3A1AA1A73FB4 /* Support Files */,
+			);
+			name = DialCountries;
+			path = DialCountries;
+			sourceTree = "<group>";
+		};
+		FDC21E7A3882AEB644EDB93C23A895C5 /* Pods-Rabble Partner-Rabble PartnerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF24D00D6498B192EF8A67596552FDAD /* Pods-Rabble Partner-Rabble PartnerUITests.modulemap */,
+				40AB4A766B6A358A8826122E96A9FA5A /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.markdown */,
+				2FAFFD22BD7793B519399E0946C48D62 /* Pods-Rabble Partner-Rabble PartnerUITests-acknowledgements.plist */,
+				07E2EBAD2FC7D1398783CAF9F55E2770 /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m */,
+				123E2D56D83820122F9E097924A14375 /* Pods-Rabble Partner-Rabble PartnerUITests-frameworks.sh */,
+				71EC17BACBB7444A280478E13AA4D778 /* Pods-Rabble Partner-Rabble PartnerUITests-Info.plist */,
+				11FEFC378DC1AAD52B7EDA0C60F0537D /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h */,
+				01F06DF08D42DE236D52C3176C03991E /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */,
+				CFF76F90E71C944CEEF4536881EF6489 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */,
+			);
+			name = "Pods-Rabble Partner-Rabble PartnerUITests";
+			path = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1FA68F2703A85237BF03061EE1CCA0D3 /* Headers */ = {
+		25D7A8E5CE5C1BB34473442B32003CC4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0E2C6D275C738A8647460CCF64F0AFA /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h in Headers */,
+				6910B3460D943C283EC9CE3629F3F84F /* DialCountries-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A28360165A975D033664AB3139281CD3 /* Headers */ = {
+		4A0A8D8EFE38AD72504F93105A6EEA31 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A45E0EC9C8893AA1669BBBF739E0BD3 /* Pods-Rabble Partner-umbrella.h in Headers */,
+				19478D2F0FD27A3AB082304FB54E7B66 /* Pods-Rabble Partner-Rabble PartnerUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B362878F3EB661B9A1FDF4A1DA84B8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54AA92D3A91027EDD7096ADC67E8C448 /* EliteOTPField-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA17429A4A719B72FBC38C6D5F5A29C4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FEB61693E16B7A1C2E189620353DBFA /* Pods-Rabble Partner-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,16 +433,18 @@
 /* Begin PBXNativeTarget section */
 		026265C153A44AFD10A82AC2EE8A48AE /* Pods-Rabble Partner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 278A7B051B50697767B716793672DCEF /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner" */;
+			buildConfigurationList = 6C8BE843D5168834AF5BA766AC3190D9 /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner" */;
 			buildPhases = (
-				A28360165A975D033664AB3139281CD3 /* Headers */,
-				25985607F758C6676DD9E31786B6B1D5 /* Sources */,
-				C5916316460D3A3D41AA9C54ADB28B6E /* Frameworks */,
-				A03D5CBB81BD4781F88FADE3C6F27985 /* Resources */,
+				EA17429A4A719B72FBC38C6D5F5A29C4 /* Headers */,
+				8420A467747E8146A2E4BA32D4CC1948 /* Sources */,
+				ED8B191986740D2ADC909D1F65225E88 /* Frameworks */,
+				7C87F4895C9765F0AD6C73FB49242DA0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E568DA620870ED09A886802E5CDC228D /* PBXTargetDependency */,
+				C0C1548405E1B5D3CF58616DE13F18AA /* PBXTargetDependency */,
 			);
 			name = "Pods-Rabble Partner";
 			productName = Pods_Rabble_Partner;
@@ -232,20 +453,40 @@
 		};
 		20C5782BC464806EB4AD6D39286D9572 /* Pods-Rabble Partner-Rabble PartnerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 137ACB02C28E3409ACAE12C76927B655 /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner-Rabble PartnerUITests" */;
+			buildConfigurationList = 780E3F9E9596A17F2C923991E44F5AD3 /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner-Rabble PartnerUITests" */;
 			buildPhases = (
-				1FA68F2703A85237BF03061EE1CCA0D3 /* Headers */,
-				38A0D45C08C73B2A497DD60035551E4F /* Sources */,
-				7AC984AC86E00DCB2AC4EDA59ABFB538 /* Frameworks */,
-				2FF04E4CF267B3791A17E54BCAB70249 /* Resources */,
+				4A0A8D8EFE38AD72504F93105A6EEA31 /* Headers */,
+				90AE08590285F8ACF9709212D9DC60A4 /* Sources */,
+				F49BDE85385D78128F827AD2DD3AFD4D /* Frameworks */,
+				FBEE770346202F762B7B57541870785C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FA144716D96A6D16D8ED78715A75DDE /* PBXTargetDependency */,
+				04510FB0D3DC4DF5D3F7855C3A542C28 /* PBXTargetDependency */,
+			);
+			name = "Pods-Rabble Partner-Rabble PartnerUITests";
+			productName = Pods_Rabble_Partner_Rabble_PartnerUITests;
+			productReference = B410EF8693CC2A58BE1133A71B949212 /* Pods-Rabble Partner-Rabble PartnerUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		704823084523357C0FDD5873EEAF8759 /* EliteOTPField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AA9A8476611245DD9A7DEC3501624B7 /* Build configuration list for PBXNativeTarget "EliteOTPField" */;
+			buildPhases = (
+				81B362878F3EB661B9A1FDF4A1DA84B8 /* Headers */,
+				E3E16A6F9989F5DD0FAC94B711DC0416 /* Sources */,
+				372A350E3077DE308173B5EFBB5803E4 /* Frameworks */,
+				97C5CCDAA132B927C55457ACC1345614 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Rabble Partner-Rabble PartnerUITests";
-			productName = Pods_Rabble_Partner_Rabble_PartnerUITests;
-			productReference = B410EF8693CC2A58BE1133A71B949212 /* Pods-Rabble Partner-Rabble PartnerUITests */;
+			name = EliteOTPField;
+			productName = EliteOTPField;
+			productReference = 1D93DECC35BF2A0CA8BD5993AE7EC4C6 /* EliteOTPField */;
 			productType = "com.apple.product-type.framework";
 		};
 		731FDBE5A3CEFAD497F62641F161B426 /* Pods-Rabble PartnerTests */ = {
@@ -260,12 +501,48 @@
 			buildRules = (
 			);
 			dependencies = (
-				7957012769554442BAE31A5C3B401DA5 /* PBXTargetDependency */,
+				27794E32964AB9B6DC635E858258E14A /* PBXTargetDependency */,
 			);
 			name = "Pods-Rabble PartnerTests";
 			productName = Pods_Rabble_PartnerTests;
 			productReference = DAFF5B7664C8536E4DCC2386CC8C15E5 /* Pods-Rabble PartnerTests */;
 			productType = "com.apple.product-type.framework";
+		};
+		80A9CB4F96ABEE0F4724AC4CA346D702 /* DialCountries */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB335740002B53FBD03B7276E8EF7E72 /* Build configuration list for PBXNativeTarget "DialCountries" */;
+			buildPhases = (
+				25D7A8E5CE5C1BB34473442B32003CC4 /* Headers */,
+				650210711E5844312F3FB5D4BF91A9D8 /* Sources */,
+				C566311834163CA122136ED4EC296238 /* Frameworks */,
+				76F24B846689A7FC3507190E79351F62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61FC409C76C506C9C2529E5A0EFD65D5 /* PBXTargetDependency */,
+			);
+			name = DialCountries;
+			productName = DialCountries;
+			productReference = 988EF6F4675C0C19807FCEFD93336A04 /* DialCountries */;
+			productType = "com.apple.product-type.framework";
+		};
+		E3845717074531A7A89BAA05907850A7 /* DialCountries-DialCountries */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3309878215B93CE65D224344C3DFDFCD /* Build configuration list for PBXNativeTarget "DialCountries-DialCountries" */;
+			buildPhases = (
+				B09CDDF17F326C5D03945719AAE451D1 /* Sources */,
+				65F64257F46521ACB90F8F1F2E888E0D /* Frameworks */,
+				888360B34FBC7327DEE260BD9CEA6D8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DialCountries-DialCountries";
+			productName = DialCountries;
+			productReference = 833DC5F4F9CD08CAC365746A33DB43A7 /* DialCountries-DialCountries */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -285,10 +562,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 6AD0F84B4E0B679E6A1ECFD747534FB5 /* Products */;
+			productRefGroup = D5F127BE302257FAEB2E911596B50D28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				80A9CB4F96ABEE0F4724AC4CA346D702 /* DialCountries */,
+				E3845717074531A7A89BAA05907850A7 /* DialCountries-DialCountries */,
+				704823084523357C0FDD5873EEAF8759 /* EliteOTPField */,
 				026265C153A44AFD10A82AC2EE8A48AE /* Pods-Rabble Partner */,
 				20C5782BC464806EB4AD6D39286D9572 /* Pods-Rabble Partner-Rabble PartnerUITests */,
 				731FDBE5A3CEFAD497F62641F161B426 /* Pods-Rabble PartnerTests */,
@@ -297,10 +577,26 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2FF04E4CF267B3791A17E54BCAB70249 /* Resources */ = {
+		76F24B846689A7FC3507190E79351F62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3A5B5C64E0A757D6DAD27E82BE84E6 /* DialCountries-DialCountries in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C87F4895C9765F0AD6C73FB49242DA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888360B34FBC7327DEE260BD9CEA6D8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC24580640280783E47390DCC8ECAC29 /* countries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +607,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A03D5CBB81BD4781F88FADE3C6F27985 /* Resources */ = {
+		97C5CCDAA132B927C55457ACC1345614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBEE770346202F762B7B57541870785C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,22 +624,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		25985607F758C6676DD9E31786B6B1D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				956EADC59AB7EBFA286113038ED58E1B /* Pods-Rabble Partner-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38A0D45C08C73B2A497DD60035551E4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17C51917271849D69D8A55D6AF2EE57D /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42436F336963D6CD6207614EB831CD79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,19 +632,286 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		650210711E5844312F3FB5D4BF91A9D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF1D4C6704CD0062B1CAA8F0924791B /* Bundle.swift in Sources */,
+				7B2BEE51873A6BB7433241E4CF010BFD /* Config.swift in Sources */,
+				B23485D33C4AAB4C5DB877908421E2E4 /* countries.json in Sources */,
+				D45BF1DADEFBEB2D31F4DB3449528CFB /* CountriesAdapter.swift in Sources */,
+				2F1AE46BD3C152E69ADE4996F9548B47 /* CountriesFetcher.swift in Sources */,
+				CF768B06B42869E8A015268ECCE67EF7 /* Country.swift in Sources */,
+				90C10BF2BA2C11A1A11ABC6B35AA1E8E /* DialCountries-dummy.m in Sources */,
+				2067562ED8D002DD1DA23B138D1E8B6E /* DialCountriesController.swift in Sources */,
+				4A9639D3F336D4180B926E99CB30EA9C /* String+Numbers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8420A467747E8146A2E4BA32D4CC1948 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19BD15BC1C1C7FCBAC012033107D41E6 /* Pods-Rabble Partner-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AE08590285F8ACF9709212D9DC60A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B51B16B9F6058270BFFCC91DA6AA7F /* Pods-Rabble Partner-Rabble PartnerUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B09CDDF17F326C5D03945719AAE451D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E16A6F9989F5DD0FAC94B711DC0416 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9EDB00B3B1F3B535070FD5CC0C2FA78 /* EliteOTPAnimationTypes.swift in Sources */,
+				F1FECF28B06EB9A6E39704A2FD8E6451 /* EliteOTPField.swift in Sources */,
+				BFE8F2D4302621D99E5B4BB0C4A0866E /* EliteOTPField + Animations.swift in Sources */,
+				231C4CBF826F94462939C3C75D5E3636 /* EliteOTPField + UITextFieldDelegete.swift in Sources */,
+				47F5F591458FE4C062C7EC46369A9A3C /* EliteOTPField-dummy.m in Sources */,
+				6B772A3FB13C2A2647B5EA479EB98F13 /* EliteOTPFieldBuilder.swift in Sources */,
+				C60A25C15861B8361472AC3D31F29814 /* OTPEditingStatus.swift in Sources */,
+				F17F4C5E3B46E7725F205BE3AAA38418 /* Vibration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7957012769554442BAE31A5C3B401DA5 /* PBXTargetDependency */ = {
+		04510FB0D3DC4DF5D3F7855C3A542C28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EliteOTPField;
+			target = 704823084523357C0FDD5873EEAF8759 /* EliteOTPField */;
+			targetProxy = C8623B78A531969913ABDAD543345875 /* PBXContainerItemProxy */;
+		};
+		27794E32964AB9B6DC635E858258E14A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Rabble Partner";
 			target = 026265C153A44AFD10A82AC2EE8A48AE /* Pods-Rabble Partner */;
-			targetProxy = BEC51069F713EE5D16C950A3F447794A /* PBXContainerItemProxy */;
+			targetProxy = 57DE90B52EF31BB96903249B941DA7D7 /* PBXContainerItemProxy */;
+		};
+		61FC409C76C506C9C2529E5A0EFD65D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DialCountries-DialCountries";
+			target = E3845717074531A7A89BAA05907850A7 /* DialCountries-DialCountries */;
+			targetProxy = 98B9C4B10EE12C6E06B7C6DA70E1E875 /* PBXContainerItemProxy */;
+		};
+		7FA144716D96A6D16D8ED78715A75DDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DialCountries;
+			target = 80A9CB4F96ABEE0F4724AC4CA346D702 /* DialCountries */;
+			targetProxy = F170DB4F389A7A5E2962567B2046F560 /* PBXContainerItemProxy */;
+		};
+		C0C1548405E1B5D3CF58616DE13F18AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EliteOTPField;
+			target = 704823084523357C0FDD5873EEAF8759 /* EliteOTPField */;
+			targetProxy = 2562E871FAFAA11AFBA54611CF39A4AF /* PBXContainerItemProxy */;
+		};
+		E568DA620870ED09A886802E5CDC228D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DialCountries;
+			target = 80A9CB4F96ABEE0F4724AC4CA346D702 /* DialCountries */;
+			targetProxy = 668E89048071ED9D83525A46A65A8BAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		39F5B7CD9D2655A0D1F7D42E37920E8B /* Debug */ = {
+		035B85F17F88EDD88622E089473925D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFF76F90E71C944CEEF4536881EF6489 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		393291C129185A1A10F3ACBF953D32DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0289E21E78A93A8E1E07B3A14667B1BF /* DialCountries.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DialCountries/DialCountries-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DialCountries/DialCountries-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DialCountries/DialCountries.modulemap";
+				PRODUCT_MODULE_NAME = DialCountries;
+				PRODUCT_NAME = DialCountries;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50C9FF0C98F24DCEA1D7259361BC9157 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFC0481F482860E586F2556D6CB03694 /* EliteOTPField.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EliteOTPField/EliteOTPField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EliteOTPField/EliteOTPField-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EliteOTPField/EliteOTPField.modulemap";
+				PRODUCT_MODULE_NAME = EliteOTPField;
+				PRODUCT_NAME = EliteOTPField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C2B2FC89448065F3CD9AC1397678FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A0C6FDBE7AA6C07EA9AA927A053F3E4 /* Pods-Rabble Partner.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		734A250704B7B27A1B453458C5893CD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 573AA9840AFDBAE07B5EA96E66F0EFEF /* Pods-Rabble PartnerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -410,7 +964,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -423,157 +977,7 @@
 			};
 			name = Debug;
 		};
-		494D2E72C1C861431F24770F140F91FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4063A4CC3776683A3BC97D2B370C599B /* Pods-Rabble PartnerTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		58E0F86B7230C207182654B1B4701E36 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE928F5E92E2CE73CDD55534DBCF90C7 /* Pods-Rabble Partner-Rabble PartnerUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7D344F3E77A46742AE9047BCD3B62E46 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49F690C838209042CADA446986EE269A /* Pods-Rabble Partner.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		894E2E892F5664034A25214D8C9CF63D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7B753E7CCF255E1B9B2F9C1E3407C57 /* Pods-Rabble Partner.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C873D3C071BDDC046D6E8F63C69C2591 /* Release */ = {
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -623,7 +1027,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -635,9 +1039,9 @@
 			};
 			name = Release;
 		};
-		D4CB19029D6EC9AE732B8C020C3FDAA7 /* Release */ = {
+		B31D2426484DB1E929FFDBDB9518C145 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 906604D4F8488052938AC62BE97F394F /* Pods-Rabble PartnerTests.release.xcconfig */;
+			baseConfigurationReference = AB81267F93A16F1A9F418D1BADCD0A2B /* Pods-Rabble PartnerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -651,7 +1055,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -673,9 +1077,152 @@
 			};
 			name = Release;
 		};
-		F25AEB70E7451FFDF2F626FAC5E9CF70 /* Debug */ = {
+		B9A58366A1DF81B80969B1CFA92FD111 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FA26C70A4ABD8F959BEB3FCBE3E83EE /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */;
+			baseConfigurationReference = 9B4FD66B4EF7EDB5AED3A6C6E6E6BDBA /* DialCountries.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DialCountries";
+				IBSC_MODULE = DialCountries;
+				INFOPLIST_FILE = "Target Support Files/DialCountries/ResourceBundle-DialCountries-DialCountries-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = DialCountries;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D376EA79BD1FAB42351D3A8DF6E26D7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B694B16B0C12DE680170BD6BB4307F8 /* EliteOTPField.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EliteOTPField/EliteOTPField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EliteOTPField/EliteOTPField-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EliteOTPField/EliteOTPField.modulemap";
+				PRODUCT_MODULE_NAME = EliteOTPField;
+				PRODUCT_NAME = EliteOTPField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EDB0FD5DF7F7A155A1D5875984988111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B4FD66B4EF7EDB5AED3A6C6E6E6BDBA /* DialCountries.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DialCountries/DialCountries-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DialCountries/DialCountries-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DialCountries/DialCountries.modulemap";
+				PRODUCT_MODULE_NAME = DialCountries;
+				PRODUCT_NAME = DialCountries;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F5B588711F9521FC23DDA5497F86ACCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0289E21E78A93A8E1E07B3A14667B1BF /* DialCountries.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DialCountries";
+				IBSC_MODULE = DialCountries;
+				INFOPLIST_FILE = "Target Support Files/DialCountries/ResourceBundle-DialCountries-DialCountries-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = DialCountries;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FEAEAC807FCC59D038C53E76E473AB72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C2DC836067D6CDA51273C7846787610 /* Pods-Rabble Partner.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FF67BB85607E391F3948392717EFD342 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01F06DF08D42DE236D52C3176C03991E /* Pods-Rabble Partner-Rabble PartnerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -689,7 +1236,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -713,20 +1260,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		137ACB02C28E3409ACAE12C76927B655 /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner-Rabble PartnerUITests" */ = {
+		2AA9A8476611245DD9A7DEC3501624B7 /* Build configuration list for PBXNativeTarget "EliteOTPField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F25AEB70E7451FFDF2F626FAC5E9CF70 /* Debug */,
-				58E0F86B7230C207182654B1B4701E36 /* Release */,
+				50C9FF0C98F24DCEA1D7259361BC9157 /* Debug */,
+				D376EA79BD1FAB42351D3A8DF6E26D7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		278A7B051B50697767B716793672DCEF /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner" */ = {
+		3309878215B93CE65D224344C3DFDFCD /* Build configuration list for PBXNativeTarget "DialCountries-DialCountries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				894E2E892F5664034A25214D8C9CF63D /* Debug */,
-				7D344F3E77A46742AE9047BCD3B62E46 /* Release */,
+				B9A58366A1DF81B80969B1CFA92FD111 /* Debug */,
+				F5B588711F9521FC23DDA5497F86ACCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -734,8 +1281,26 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39F5B7CD9D2655A0D1F7D42E37920E8B /* Debug */,
-				C873D3C071BDDC046D6E8F63C69C2591 /* Release */,
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C8BE843D5168834AF5BA766AC3190D9 /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C2B2FC89448065F3CD9AC1397678FDF /* Debug */,
+				FEAEAC807FCC59D038C53E76E473AB72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		780E3F9E9596A17F2C923991E44F5AD3 /* Build configuration list for PBXNativeTarget "Pods-Rabble Partner-Rabble PartnerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF67BB85607E391F3948392717EFD342 /* Debug */,
+				035B85F17F88EDD88622E089473925D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -743,8 +1308,17 @@
 		85C1AE9936656662FE0B2A6F04BC2A37 /* Build configuration list for PBXNativeTarget "Pods-Rabble PartnerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				494D2E72C1C861431F24770F140F91FD /* Debug */,
-				D4CB19029D6EC9AE732B8C020C3FDAA7 /* Release */,
+				734A250704B7B27A1B453458C5893CD2 /* Debug */,
+				B31D2426484DB1E929FFDBDB9518C145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB335740002B53FBD03B7276E8EF7E72 /* Build configuration list for PBXNativeTarget "DialCountries" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB0FD5DF7F7A155A1D5875984988111 /* Debug */,
+				393291C129185A1A10F3ACBF953D32DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

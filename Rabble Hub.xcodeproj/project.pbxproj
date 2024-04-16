@@ -21,7 +21,11 @@
 		86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DED2BCCEF7600496390 /* SignUpView.storyboard */; };
 		86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */; };
 		86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */; };
-		86A60DFA2BCCF8D200496390 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */; };
+		86A60E052BCE0EFD00496390 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */; };
+		86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */; };
+		86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */; };
+		86D17AA72BCE696100464511 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AA62BCE696100464511 /* Color.xcassets */; };
+		86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D17AA82BCE6ACB00464511 /* Colors.swift */; };
 		A58EFD2A7FB37CE02C234ADE /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24EE4A0BD79BF1753A18 /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework */; };
 		AC719B814B50AB04C53A1462 /* Pods_Rabble_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */; };
 /* End PBXBuildFile section */
@@ -65,7 +69,11 @@
 		86A60DED2BCCEF7600496390 /* SignUpView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpView.storyboard; sourceTree = "<group>"; };
 		86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
-		86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileInputViewController.swift; sourceTree = "<group>"; };
+		86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpInputViewController.swift; sourceTree = "<group>"; };
+		86D17AA62BCE696100464511 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		86D17AA82BCE6ACB00464511 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +144,7 @@
 		86A60DB42BCCEE3200496390 /* Rabble Partner */ = {
 			isa = PBXGroup;
 			children = (
+				86D17AA52BCE693D00464511 /* Assets */,
 				86A60DE52BCCEEA100496390 /* ThirdPartySDK */,
 				86A60DE62BCCEEAF00496390 /* Translation */,
 				86A60DE72BCCEEBC00496390 /* Font */,
@@ -247,6 +256,7 @@
 		86A60DF42BCCF02500496390 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				86D17AA82BCE6ACB00464511 /* Colors.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -262,7 +272,9 @@
 			isa = PBXGroup;
 			children = (
 				86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */,
-				86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */,
+				86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */,
+				86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */,
+				86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -297,6 +309,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		86D17AA52BCE693D00464511 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				86D17AA62BCE696100464511 /* Color.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		F9873F1048C84A57B09C1D65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +327,6 @@
 				B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */,
 				4F40DD1EAD6CF1B0BA5EEA81 /* Pods-Rabble PartnerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -322,6 +341,7 @@
 				86A60DAE2BCCEE3200496390 /* Sources */,
 				86A60DAF2BCCEE3200496390 /* Frameworks */,
 				86A60DB02BCCEE3200496390 /* Resources */,
+				275495E3CB118D874C401C30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,6 +379,7 @@
 				86A60DCE2BCCEE3500496390 /* Sources */,
 				86A60DCF2BCCEE3500496390 /* Frameworks */,
 				86A60DD02BCCEE3500496390 /* Resources */,
+				530D2211B42A2B9F24677BBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,7 +414,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Partner" */;
+			buildConfigurationList = 86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Hub" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -421,6 +442,7 @@
 				86A60DBF2BCCEE3400496390 /* Assets.xcassets in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
+				86D17AA72BCE696100464511 /* Color.xcassets in Resources */,
 				86A60DC22BCCEE3400496390 /* Base in Resources */,
 				86A60DBD2BCCEE3200496390 /* Base in Resources */,
 			);
@@ -465,6 +487,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		275495E3CB118D874C401C30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2BBF58BB4FA06F18BF6F23B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +524,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		530D2211B42A2B9F24677BBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3AC8377CD57EDD319B800B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -517,11 +573,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
-				86A60DFA2BCCF8D200496390 /* OnboardingViewController.swift in Sources */,
+				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
+				86A60E052BCE0EFD00496390 /* OnboardingViewController.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
+				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
+				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,13 +764,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M463L9U7L5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Partner/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -734,13 +795,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M463L9U7L5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Partner/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -837,7 +900,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Partner" */ = {
+		86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Hub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A60DDA2BCCEE3500496390 /* Debug */,
