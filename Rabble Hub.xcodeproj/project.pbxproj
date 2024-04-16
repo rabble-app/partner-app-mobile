@@ -22,6 +22,7 @@
 		86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */; };
 		86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */; };
 		86A60DFA2BCCF8D200496390 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */; };
+		86A60E032BCD850600496390 /* InputPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E022BCD850600496390 /* InputPhoneViewController.swift */; };
 		A58EFD2A7FB37CE02C234ADE /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24EE4A0BD79BF1753A18 /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework */; };
 		AC719B814B50AB04C53A1462 /* Pods_Rabble_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
 		86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		86A60E022BCD850600496390 /* InputPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneViewController.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +265,7 @@
 			children = (
 				86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */,
 				86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */,
+				86A60E022BCD850600496390 /* InputPhoneViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -307,7 +310,6 @@
 				B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */,
 				4F40DD1EAD6CF1B0BA5EEA81 /* Pods-Rabble PartnerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -322,6 +324,7 @@
 				86A60DAE2BCCEE3200496390 /* Sources */,
 				86A60DAF2BCCEE3200496390 /* Frameworks */,
 				86A60DB02BCCEE3200496390 /* Resources */,
+				275495E3CB118D874C401C30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,6 +362,7 @@
 				86A60DCE2BCCEE3500496390 /* Sources */,
 				86A60DCF2BCCEE3500496390 /* Frameworks */,
 				86A60DD02BCCEE3500496390 /* Resources */,
+				530D2211B42A2B9F24677BBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,7 +397,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Partner" */;
+			buildConfigurationList = 86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Hub" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -465,6 +469,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		275495E3CB118D874C401C30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2BBF58BB4FA06F18BF6F23B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +506,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		530D2211B42A2B9F24677BBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Partner-Rabble PartnerUITests/Pods-Rabble Partner-Rabble PartnerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3AC8377CD57EDD319B800B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -520,6 +558,7 @@
 				86A60DFA2BCCF8D200496390 /* OnboardingViewController.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
+				86A60E032BCD850600496390 /* InputPhoneViewController.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 			);
@@ -707,6 +746,7 @@
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Partner/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -736,6 +776,7 @@
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Partner/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -837,7 +878,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Partner" */ = {
+		86A60DAD2BCCEE3200496390 /* Build configuration list for PBXProject "Rabble Hub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A60DDA2BCCEE3500496390 /* Debug */,

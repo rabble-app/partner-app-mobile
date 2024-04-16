@@ -6,6 +6,7 @@ target 'Rabble Partner' do
   use_frameworks!
 
   # Pods for Rabble Partner
+  pod 'SKCountryPicker'
 
   target 'Rabble PartnerTests' do
     inherit! :search_paths

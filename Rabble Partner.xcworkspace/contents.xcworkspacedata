@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Rabble Partner.xcodeproj">
+      location = "group:/Users/franzhenrideguzman/Documents/Projects/partner-app-mobile/Rabble Hub.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
