@@ -1,16 +1,16 @@
 PODS:
-  - SKCountryPicker (3.0.0)
+  - DialCountries (0.1.3)
 
 DEPENDENCIES:
-  - SKCountryPicker
+  - DialCountries
 
 SPEC REPOS:
   trunk:
-    - SKCountryPicker
+    - DialCountries
 
 SPEC CHECKSUMS:
-  SKCountryPicker: 983a96826644fd6b3e5a1f8946ae44e0cf011881
+  DialCountries: 098cb20d88eba888dcc0474060694b545fb36ce1
 
-PODFILE CHECKSUM: 5b7d243b7d23529d57854bcc5628d32f0837cf22
+PODFILE CHECKSUM: e3620b425750ea04faa97780b5cf45c806ffd8d6
 
 COCOAPODS: 1.15.0

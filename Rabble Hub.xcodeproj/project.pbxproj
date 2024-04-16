@@ -21,8 +21,9 @@
 		86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DED2BCCEF7600496390 /* SignUpView.storyboard */; };
 		86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */; };
 		86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */; };
-		86A60DFA2BCCF8D200496390 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */; };
-		86A60E032BCD850600496390 /* InputPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E022BCD850600496390 /* InputPhoneViewController.swift */; };
+		86A60E052BCE0EFD00496390 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */; };
+		86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */; };
+		86A60E092BCE1DE800496390 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E082BCE1DE800496390 /* ColorExtension.swift */; };
 		A58EFD2A7FB37CE02C234ADE /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24EE4A0BD79BF1753A18 /* Pods_Rabble_Partner_Rabble_PartnerUITests.framework */; };
 		AC719B814B50AB04C53A1462 /* Pods_Rabble_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,8 +67,9 @@
 		86A60DED2BCCEF7600496390 /* SignUpView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpView.storyboard; sourceTree = "<group>"; };
 		86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
-		86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		86A60E022BCD850600496390 /* InputPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneViewController.swift; sourceTree = "<group>"; };
+		86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileInputViewController.swift; sourceTree = "<group>"; };
+		86A60E082BCE1DE800496390 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B75CCBC6A84DC58A7594AF4B /* Pods_Rabble_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +251,7 @@
 		86A60DF42BCCF02500496390 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				86A60E082BCE1DE800496390 /* ColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -264,8 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */,
-				86A60DF92BCCF8D200496390 /* OnboardingViewController.swift */,
-				86A60E022BCD850600496390 /* InputPhoneViewController.swift */,
+				86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */,
+				86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -555,12 +558,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
-				86A60DFA2BCCF8D200496390 /* OnboardingViewController.swift in Sources */,
+				86A60E052BCE0EFD00496390 /* OnboardingViewController.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
+				86A60E092BCE1DE800496390 /* ColorExtension.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
-				86A60E032BCD850600496390 /* InputPhoneViewController.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
+				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
