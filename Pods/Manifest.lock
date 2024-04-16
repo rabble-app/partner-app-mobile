@@ -1,16 +1,20 @@
 PODS:
   - DialCountries (0.1.3)
+  - EliteOTPField (0.1.3)
 
 DEPENDENCIES:
   - DialCountries
+  - EliteOTPField
 
 SPEC REPOS:
   trunk:
     - DialCountries
+    - EliteOTPField
 
 SPEC CHECKSUMS:
   DialCountries: 098cb20d88eba888dcc0474060694b545fb36ce1
+  EliteOTPField: 40f227886c6c9601f714f301b2a2c23bb92c8be0
 
-PODFILE CHECKSUM: e3620b425750ea04faa97780b5cf45c806ffd8d6
+PODFILE CHECKSUM: 5de0b699ed6c6ba4dccc160f211113071c581803
 
 COCOAPODS: 1.15.0
