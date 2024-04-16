@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Je-OB-sks">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Je-OB-sks">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +13,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="02I-mC-T8E">
             <objects>
-                <viewController id="UZP-jl-37B" customClass="OnboardingViewController" customModule="Rabble_Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UZP-jl-37B" customClass="OnboardingViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IW1-0p-1mY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,9 +85,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V5j-0c-4Yi"/>
-                    <connections>
-                        <outlet property="mainImg" destination="P5L-1I-ftv" id="8vi-cW-IH0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycd-Nt-H3q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +93,7 @@
         <!--Mobile Input View Controller-->
         <scene sceneID="xkc-gB-JyH">
             <objects>
-                <viewController id="FA9-nC-ZWL" customClass="MobileInputViewController" customModule="Rabble_Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FA9-nC-ZWL" customClass="MobileInputViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2N-o3-h6W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +236,7 @@
         <!--Otp Input View Controller-->
         <scene sceneID="GXB-ij-bSz">
             <objects>
-                <viewController storyboardIdentifier="OtpInputViewController" id="Ddy-Cp-dIg" customClass="OtpInputViewController" customModule="Rabble_Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OtpInputViewController" id="Ddy-Cp-dIg" customClass="OtpInputViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Syb-Ue-Iis">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

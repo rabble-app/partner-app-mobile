@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import UIKit
+
+class SignUpViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? SignUpStepIndicatorViewController {
+            vc.currentStep = .one
+        }
+    }
+}
