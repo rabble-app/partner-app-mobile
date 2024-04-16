@@ -26,7 +26,7 @@ class OtpInputViewController: UIViewController {
         field.emptySlotBackgroundColor = backgroundColor
         field.filledSlotBackgroundColor = backgroundColor
         field.slotCornerRaduis = 12
-        field.filledSlotTextColor = UIColor.darkGray
+        field.filledSlotTextColor = Colors.Gray1
         field.isBorderEnabled = true
         field.emptySlotBorderColor = borderColor
         field.emptySlotBorderWidth = 1
