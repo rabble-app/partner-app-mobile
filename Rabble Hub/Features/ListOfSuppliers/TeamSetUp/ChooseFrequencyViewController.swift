@@ -13,6 +13,9 @@ class ChooseFrequencyViewController: UIViewController {
     @IBOutlet var twoWeekButton: UIButton!
     @IBOutlet var weekButton: UIButton!
     @IBOutlet var progressBar: UIView!
+    @IBOutlet var weekButtonContainer: UIView!
+    @IBOutlet var twoWeekButtonContainer: UIView!
+    @IBOutlet var monthButtonContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,12 @@ class ChooseFrequencyViewController: UIViewController {
         
         let completedView = UIView(frame: greenProgressBarFrame)
         completedView.backgroundColor = Colors.ButtonPrimary
-        
         progressBar.addSubview(completedView)
+        
+        weekButton.showsTouchWhenHighlighted = false
+        twoWeekButton.showsTouchWhenHighlighted = false
+        monthButton.showsTouchWhenHighlighted = false
+        
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
@@ -56,10 +63,8 @@ class ChooseFrequencyViewController: UIViewController {
         
         // Update button images based on selection state
         updateButtonImages()
-        
-        // Perform any other necessary actions based on selection state
     }
-
+    
     @IBAction func twoWeekButtonTap(_ sender: Any) {
         // Deselect other buttons
         weekButton.isSelected = false
@@ -70,10 +75,8 @@ class ChooseFrequencyViewController: UIViewController {
         
         // Update button images based on selection state
         updateButtonImages()
-        
-        // Perform any other necessary actions based on selection state
     }
-
+    
     @IBAction func monthButtonTap(_ sender: Any) {
         // Deselect other buttons
         weekButton.isSelected = false
@@ -84,16 +87,14 @@ class ChooseFrequencyViewController: UIViewController {
         
         // Update button images based on selection state
         updateButtonImages()
-        
-        // Perform any other necessary actions based on selection state
     }
-
+    
     func updateButtonImages() {
         // Update button images based on selection state
-        weekButton.setImage(UIImage(named: weekButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
-        twoWeekButton.setImage(UIImage(named: twoWeekButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
-        monthButton.setImage(UIImage(named: monthButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
+        weekButton.setBackgroundImage(UIImage(named: weekButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
+        twoWeekButton.setBackgroundImage(UIImage(named: twoWeekButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
+        monthButton.setBackgroundImage(UIImage(named: monthButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
     }
-
+    
     
 }

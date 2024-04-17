@@ -10,6 +10,7 @@ import UIKit
 class ChooseDeliveryDayViewController: UIViewController {
     
     @IBOutlet var progressBar: UIView!
+    @IBOutlet var calendarContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class ChooseDeliveryDayViewController: UIViewController {
         completedView.backgroundColor = Colors.ButtonPrimary
         
         progressBar.addSubview(completedView)
+        
+        calendarContainer.layer.cornerRadius = 10
+        calendarContainer.clipsToBounds = true
     }
     
     
