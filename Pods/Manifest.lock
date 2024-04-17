@@ -1,20 +1,24 @@
 PODS:
   - DialCountries (0.1.3)
   - EliteOTPField (0.1.3)
+  - IQKeyboardManagerSwift (7.0.2)
 
 DEPENDENCIES:
   - DialCountries
   - EliteOTPField
+  - IQKeyboardManagerSwift
 
 SPEC REPOS:
   trunk:
     - DialCountries
     - EliteOTPField
+    - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   DialCountries: 098cb20d88eba888dcc0474060694b545fb36ce1
   EliteOTPField: 40f227886c6c9601f714f301b2a2c23bb92c8be0
+  IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
 
-PODFILE CHECKSUM: a42f8054c5853498ad903d25ab06df00bd284f8c
+PODFILE CHECKSUM: 92fa7d542f38de4ce9096f62ca5c2f886c56555c
 
-COCOAPODS: 1.15.0
+COCOAPODS: 1.15.2

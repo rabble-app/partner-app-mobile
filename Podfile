@@ -8,6 +8,7 @@ target 'Rabble Hub' do
   # Pods for Rabble Hub
   pod 'DialCountries'
   pod 'EliteOTPField'
+  pod 'IQKeyboardManagerSwift'
 
   target 'Rabble HubTests' do
     inherit! :search_paths
