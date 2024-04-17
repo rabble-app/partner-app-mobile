@@ -8,7 +8,21 @@
 import Foundation
 import UIKit
 
-class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class PushAnimator: NSObject, UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return nil
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+}
+
+extension PushAnimator: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3 // Set your desired animation duration
     }
@@ -24,26 +38,25 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         let containerView = transitionContext.containerView
         
-        // Set the initial position of the toView
-        toView.frame = CGRect(x: containerView.frame.width, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-        containerView.addSubview(toView)
-        
-        // Perform the animation
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            fromView.frame = CGRect(x: -containerView.frame.width / 2, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-            toView.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-        }) { _ in
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        if toVC.isBeingPresented { // Presenting animation
+            // Set the initial position of the toView
+            toView.frame = CGRect(x: containerView.frame.width, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+            containerView.addSubview(toView)
+            
+            // Perform the animation
+            UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+                toView.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+            }) { _ in
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            }
+        } else if fromVC.isBeingDismissed { // Dismissing animation
+            // Perform the animation
+            UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+                fromView.frame = CGRect(x: containerView.frame.width, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+            }) { _ in
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            }
         }
     }
 }
 
-extension PushAnimator: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
-    }
-}

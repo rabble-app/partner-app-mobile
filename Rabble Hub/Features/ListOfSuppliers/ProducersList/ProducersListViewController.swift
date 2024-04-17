@@ -47,7 +47,7 @@ extension ProducersListViewController: UITableViewDelegate, UITableViewDataSourc
         if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseFrequencyViewController") as? ChooseFrequencyViewController {
             vc.modalPresentationStyle = .custom
             let pushAnimator = PushAnimator()
-            vc.transitioningDelegate = pushAnimator
+            vc.transitioningDelegate = pushAnimator 
             self.title = "Team Settings"
             self.present(vc, animated: true)
         }
