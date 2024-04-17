@@ -33,6 +33,7 @@
 		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */; };
+		AC5EEFFC2BCF547E0002A8D7 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
 		AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro.ttf"; path = "../../../../../../../../../../Library/Fonts/SF-Pro.ttf"; sourceTree = "<group>"; };
+		AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Italic.ttf"; path = "../../../../../../../../../../Library/Fonts/SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */,
+				AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				86D17AA72BCE696100464511 /* Color.xcassets in Resources */,
 				86A60DC22BCCEE3400496390 /* Base in Resources */,
 				86A60DBD2BCCEE3200496390 /* Base in Resources */,
+				AC5EEFFC2BCF547E0002A8D7 /* SF-Pro-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

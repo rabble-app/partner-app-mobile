@@ -47,28 +47,28 @@ class SignUpStepIndicatorViewController: UIViewController {
         
         switch currentStep {
         case .one:
-            step1ImageView.tintColor = .blue1
+            step1ImageView.tintColor = .stepTintBlue
             break
         case .two:
             step1LineView.backgroundColor = .orange1
-            step1ImageView.tintColor = .blue1
-            step2ImageView.tintColor = .blue1
+            step1ImageView.tintColor = .stepTintBlue
+            step2ImageView.tintColor = .stepTintBlue
             break
         case .three:
             step1LineView.backgroundColor = .orange1
             step2LineView.backgroundColor = .orange1
-            step1ImageView.tintColor = .blue1
-            step2ImageView.tintColor = .blue1
-            step3ImageView.tintColor = .blue1
+            step1ImageView.tintColor = .stepTintBlue
+            step2ImageView.tintColor = .stepTintBlue
+            step3ImageView.tintColor = .stepTintBlue
             break
         case .four:
             step1LineView.backgroundColor = .orange1
             step2LineView.backgroundColor = .orange1
             step3LineView.backgroundColor = .orange1
-            step1ImageView.tintColor = .blue1
-            step2ImageView.tintColor = .blue1
-            step3ImageView.tintColor = .blue1
-            step4ImageView.tintColor = .blue1
+            step1ImageView.tintColor = .stepTintBlue
+            step2ImageView.tintColor = .stepTintBlue
+            step3ImageView.tintColor = .stepTintBlue
+            step4ImageView.tintColor = .stepTintBlue
             break
         }
     }
