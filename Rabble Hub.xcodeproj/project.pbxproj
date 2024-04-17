@@ -30,6 +30,8 @@
 		86C0F5D62BCFB9AB00B78747 /* TeamSetUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86C0F5D52BCFB9AB00B78747 /* TeamSetUp.storyboard */; };
 		86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5D72BCFB9EA00B78747 /* ChooseFrequencyViewController.swift */; };
 		86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */; };
+		86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */; };
+		86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */; };
 		86D17AA72BCE696100464511 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AA62BCE696100464511 /* Color.xcassets */; };
 		86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D17AA82BCE6ACB00464511 /* Colors.swift */; };
 		86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AB22BCEB58D00464511 /* CreateATeamPopUpView.storyboard */; };
@@ -93,6 +95,8 @@
 		86C0F5D52BCFB9AB00B78747 /* TeamSetUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamSetUp.storyboard; sourceTree = "<group>"; };
 		86C0F5D72BCFB9EA00B78747 /* ChooseFrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFrequencyViewController.swift; sourceTree = "<group>"; };
 		86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
+		86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeliveryDayViewController.swift; sourceTree = "<group>"; };
+		86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateALimitViewController.swift; sourceTree = "<group>"; };
 		86D17AA62BCE696100464511 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		86D17AA82BCE6ACB00464511 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		86D17AB22BCEB58D00464511 /* CreateATeamPopUpView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateATeamPopUpView.storyboard; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 			children = (
 				86C0F5D52BCFB9AB00B78747 /* TeamSetUp.storyboard */,
 				86C0F5D72BCFB9EA00B78747 /* ChooseFrequencyViewController.swift */,
+				86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */,
+				86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */,
 			);
 			path = TeamSetUp;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 			files = (
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
+				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
@@ -654,6 +661,7 @@
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
+				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

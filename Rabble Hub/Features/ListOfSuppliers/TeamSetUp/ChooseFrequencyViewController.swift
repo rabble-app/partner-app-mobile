@@ -8,16 +8,92 @@
 import UIKit
 
 class ChooseFrequencyViewController: UIViewController {
-
+    
+    @IBOutlet var monthButton: UIButton!
+    @IBOutlet var twoWeekButton: UIButton!
+    @IBOutlet var weekButton: UIButton!
+    @IBOutlet var progressBar: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setUpView()
+    }
+    
+    func setUpView() {
+        let progressBarWidth = progressBar.frame.width / 3.0
+        let completedProgressBarWidth = progressBarWidth
+        let greenProgressBarFrame = CGRect(x: 0, y: 0, width: completedProgressBarWidth, height: progressBar.frame.height)
+        
+        let completedView = UIView(frame: greenProgressBarFrame)
+        completedView.backgroundColor = Colors.ButtonPrimary
+        
+        progressBar.addSubview(completedView)
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func nextButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseDeliveryDayViewController") as? ChooseDeliveryDayViewController {
+            vc.modalPresentationStyle = .custom
+            let pushAnimator = PushAnimator()
+            vc.transitioningDelegate = pushAnimator
+            self.title = "Team Settings"
+            self.present(vc, animated: true)
+        }
+    }
+    
+    @IBAction func weekButtonTap(_ sender: Any) {
+        // Deselect other buttons
+        twoWeekButton.isSelected = false
+        monthButton.isSelected = false
+        
+        // Toggle the button's selected state
+        weekButton.isSelected = true
+        
+        // Update button images based on selection state
+        updateButtonImages()
+        
+        // Perform any other necessary actions based on selection state
+    }
 
+    @IBAction func twoWeekButtonTap(_ sender: Any) {
+        // Deselect other buttons
+        weekButton.isSelected = false
+        monthButton.isSelected = false
+        
+        // Toggle the button's selected state
+        twoWeekButton.isSelected = true
+        
+        // Update button images based on selection state
+        updateButtonImages()
+        
+        // Perform any other necessary actions based on selection state
+    }
+
+    @IBAction func monthButtonTap(_ sender: Any) {
+        // Deselect other buttons
+        weekButton.isSelected = false
+        twoWeekButton.isSelected = false
+        
+        // Toggle the button's selected state
+        monthButton.isSelected = true
+        
+        // Update button images based on selection state
+        updateButtonImages()
+        
+        // Perform any other necessary actions based on selection state
+    }
+
+    func updateButtonImages() {
+        // Update button images based on selection state
+        weekButton.setImage(UIImage(named: weekButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
+        twoWeekButton.setImage(UIImage(named: twoWeekButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
+        monthButton.setImage(UIImage(named: monthButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
+    }
+
+    
 }

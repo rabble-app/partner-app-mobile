@@ -9,9 +9,6 @@ import Foundation
 import UIKit
 
 class PushAnimator: NSObject, UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return nil
-    }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
@@ -52,11 +49,10 @@ extension PushAnimator: UIViewControllerAnimatedTransitioning {
         } else if fromVC.isBeingDismissed { // Dismissing animation
             // Perform the animation
             UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-                fromView.frame = CGRect(x: containerView.frame.width, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+                fromView.frame = CGRect(x: -containerView.frame.width, y: 0, width: containerView.frame.width, height: containerView.frame.height)
             }) { _ in
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         }
     }
 }
-
