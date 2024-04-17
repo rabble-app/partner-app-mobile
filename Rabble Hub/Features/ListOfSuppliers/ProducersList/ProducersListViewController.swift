@@ -9,6 +9,7 @@ import UIKit
 
 class ProducersListViewController: UIViewController {
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var producersTableview: UITableView!
     
 
@@ -39,6 +40,17 @@ extension ProducersListViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseFrequencyViewController") as? ChooseFrequencyViewController {
+            vc.modalPresentationStyle = .custom
+            let pushAnimator = PushAnimator()
+            vc.transitioningDelegate = pushAnimator
+            self.title = "Team Settings"
+            self.present(vc, animated: true)
+        }
     }
     
     
