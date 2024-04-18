@@ -20,15 +20,15 @@ class PaymentPopUpViewController: UIViewController {
     }
     
     @IBAction func connectButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ProducersListView", bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "ProducersListViewController") as? ProducersListViewController {
-            vc.modalPresentationStyle = .formSheet
-            self.present(vc, animated: true)
-        }
+      
     }
     
     @IBAction func skipButtonTap(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "CreateATeamPopUpView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "CreateATeamPopUpViewController") as? CreateATeamPopUpViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
     }
     
 }
