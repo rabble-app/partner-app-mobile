@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B0AEEA1A8761E9245E3412F /* Pods_Rabble_HubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */; };
+		8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -24,6 +25,14 @@
 		86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */; };
 		86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */; };
 		86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */; };
+		86C0F5CE2BCFA2F700B78747 /* ProducersListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86C0F5CD2BCFA2F700B78747 /* ProducersListView.storyboard */; };
+		86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5D02BCFA30D00B78747 /* ProducersListViewController.swift */; };
+		86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5D22BCFAFF400B78747 /* ProducersListTableViewCell.swift */; };
+		86C0F5D62BCFB9AB00B78747 /* TeamSetUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86C0F5D52BCFB9AB00B78747 /* TeamSetUp.storyboard */; };
+		86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5D72BCFB9EA00B78747 /* ChooseFrequencyViewController.swift */; };
+		86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */; };
+		86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */; };
+		86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */; };
 		86D17AA72BCE696100464511 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AA62BCE696100464511 /* Color.xcassets */; };
 		86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D17AA82BCE6ACB00464511 /* Colors.swift */; };
 		86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AB22BCEB58D00464511 /* CreateATeamPopUpView.storyboard */; };
@@ -61,6 +70,7 @@
 		5C4B12569FD318D949D2375C /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub-Rabble HubUITests.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6043952D761C00A580FE90F4 /* Pods-Rabble Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.debug.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		739F1150616511C46993FEDA /* Pods-Rabble HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble HubTests.release.xcconfig"; path = "Target Support Files/Pods-Rabble HubTests/Pods-Rabble HubTests.release.xcconfig"; sourceTree = "<group>"; };
+		8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTeamSuccessViewController.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +91,14 @@
 		86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileInputViewController.swift; sourceTree = "<group>"; };
 		86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpInputViewController.swift; sourceTree = "<group>"; };
+		86C0F5CD2BCFA2F700B78747 /* ProducersListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProducersListView.storyboard; sourceTree = "<group>"; };
+		86C0F5D02BCFA30D00B78747 /* ProducersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersListViewController.swift; sourceTree = "<group>"; };
+		86C0F5D22BCFAFF400B78747 /* ProducersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersListTableViewCell.swift; sourceTree = "<group>"; };
+		86C0F5D52BCFB9AB00B78747 /* TeamSetUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamSetUp.storyboard; sourceTree = "<group>"; };
+		86C0F5D72BCFB9EA00B78747 /* ChooseFrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFrequencyViewController.swift; sourceTree = "<group>"; };
+		86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
+		86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeliveryDayViewController.swift; sourceTree = "<group>"; };
+		86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateALimitViewController.swift; sourceTree = "<group>"; };
 		86D17AA62BCE696100464511 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		86D17AA82BCE6ACB00464511 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		86D17AB22BCEB58D00464511 /* CreateATeamPopUpView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateATeamPopUpView.storyboard; sourceTree = "<group>"; };
@@ -233,6 +251,7 @@
 				86A60DF62BCCF8AC00496390 /* Onboarding */,
 				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86A60DEC2BCCEF6400496390 /* SignUp */,
+				86C0F5CC2BCF9DBC00B78747 /* ListOfSuppliers */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -250,8 +269,8 @@
 		86A60DF12BCCEFAA00496390 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				86C0F5D92BCFC6E600B78747 /* Common */,
 				86A60DF42BCCF02500496390 /* Extension */,
-				86A60DF32BCCF00500496390 /* Common */,
 				86A60DF22BCCEFC100496390 /* Network */,
 			);
 			path = App;
@@ -264,27 +283,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		86A60DF32BCCF00500496390 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				86A60DF52BCCF03F00496390 /* Components */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		86A60DF42BCCF02500496390 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				86D17AA82BCE6ACB00464511 /* Colors.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		86A60DF52BCCF03F00496390 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		86A60DF62BCCF8AC00496390 /* Onboarding */ = {
@@ -303,6 +307,45 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		86C0F5CC2BCF9DBC00B78747 /* ListOfSuppliers */ = {
+			isa = PBXGroup;
+			children = (
+				86C0F5CF2BCFA2FB00B78747 /* ProducersList */,
+				86C0F5D42BCFB3C600B78747 /* TeamSetUp */,
+			);
+			path = ListOfSuppliers;
+			sourceTree = "<group>";
+		};
+		86C0F5CF2BCFA2FB00B78747 /* ProducersList */ = {
+			isa = PBXGroup;
+			children = (
+				86C0F5CD2BCFA2F700B78747 /* ProducersListView.storyboard */,
+				86C0F5D02BCFA30D00B78747 /* ProducersListViewController.swift */,
+				86C0F5D22BCFAFF400B78747 /* ProducersListTableViewCell.swift */,
+			);
+			path = ProducersList;
+			sourceTree = "<group>";
+		};
+		86C0F5D42BCFB3C600B78747 /* TeamSetUp */ = {
+			isa = PBXGroup;
+			children = (
+				86C0F5D52BCFB9AB00B78747 /* TeamSetUp.storyboard */,
+				86C0F5D72BCFB9EA00B78747 /* ChooseFrequencyViewController.swift */,
+				86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */,
+				86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */,
+				8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */,
+			);
+			path = TeamSetUp;
+			sourceTree = "<group>";
+		};
+		86C0F5D92BCFC6E600B78747 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		86D17AA52BCE693D00464511 /* Assets */ = {
@@ -468,8 +511,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C0F5CE2BCFA2F700B78747 /* ProducersListView.storyboard in Resources */,
 				86A60DBF2BCCEE3400496390 /* Assets.xcassets in Resources */,
 				86D17ABC2BCEB58D00464511 /* PaymentPopView.storyboard in Resources */,
+				86C0F5D62BCFB9AB00B78747 /* TeamSetUp.storyboard in Resources */,
 				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
@@ -606,15 +651,22 @@
 			files = (
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
+				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
+				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
+				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
+				86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */,
+				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
+				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
+				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
