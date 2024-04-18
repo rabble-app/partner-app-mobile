@@ -8,6 +8,7 @@
 import UIKit
 
 class SignUpScheduleViewController: UIViewController {
+    
     var defaultHeight = 0.0
     var currentSegmentIndex = 0
     @IBOutlet weak var scrollView: UIScrollView!
@@ -59,7 +60,7 @@ class SignUpScheduleViewController: UIViewController {
         }
         // Custom
         else {
-            self.segmentContentViewConstraintHeight.constant = 800
+            self.segmentContentViewConstraintHeight.constant = 864
             segmentFirstView.isHidden = true
             tableViewContainerView.isHidden = false
         }
@@ -72,7 +73,32 @@ class SignUpScheduleViewController: UIViewController {
     }
     
     @IBAction func nextButtonStep(_ sender: Any) {
-        
+        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpAgreementViewController") as! SignUpAgreementViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false, completion: nil)
+    }
+    
+    // Helper
+    func getIndexDayFromInt(index: Int) -> CellIndexDay {
+        switch index {
+        case 0:
+            return .mon
+        case 1:
+            return .tue
+        case 2:
+            return .wed
+        case 3:
+            return .thu
+        case 4:
+            return .fri
+        case 5:
+            return .sat
+        case 6:
+            return .sun
+        default:
+            return .mon
+        }
     }
 }
 
@@ -98,13 +124,13 @@ extension SignUpScheduleViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        var cell:SignUpScheduleTableViewCell = cell as! SignUpScheduleTableViewCell
+        let cell:SignUpScheduleTableViewCell = cell as! SignUpScheduleTableViewCell
             
         if self.currentSegmentIndex == 1 {
-            cell.configureCell(mode: .monFri)
+            cell.configureCell(mode: .monFri, index: getIndexDayFromInt(index: indexPath.row))
         }
         else if self.currentSegmentIndex == 2 {
-            cell.configureCell(mode: .custom)
+            cell.configureCell(mode: .custom, index: getIndexDayFromInt(index: indexPath.row))
         }
     }
 

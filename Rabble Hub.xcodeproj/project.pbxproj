@@ -51,6 +51,8 @@
 		AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */; };
 		AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */; };
 		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
+		AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0032BD0F1660002A8D7 /* RabbleEnums.swift */; };
+		AC5EF0062BD114820002A8D7 /* SignUpAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0052BD114820002A8D7 /* SignUpAgreementViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleViewController.swift; sourceTree = "<group>"; };
 		AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		AC5EF0032BD0F1660002A8D7 /* RabbleEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleEnums.swift; sourceTree = "<group>"; };
+		AC5EF0052BD114820002A8D7 /* SignUpAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAgreementViewController.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,12 +295,12 @@
 		86A60DEC2BCCEF6400496390 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				AC5EF0072BD115460002A8D7 /* Subviews */,
 				86A60DED2BCCEF7600496390 /* SignUpView.storyboard */,
 				86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */,
 				AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */,
 				AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */,
-				AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */,
-				AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */,
+				AC5EF0052BD114820002A8D7 /* SignUpAgreementViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -379,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */,
+				AC5EF0032BD0F1660002A8D7 /* RabbleEnums.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -416,6 +421,15 @@
 				86D17AB42BCEB58D00464511 /* CreateATeamPopUp */,
 			);
 			path = GettingStarted;
+			sourceTree = "<group>";
+		};
+		AC5EF0072BD115460002A8D7 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */,
+				AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		F9873F1048C84A57B09C1D65 /* Pods */ = {
@@ -708,6 +722,8 @@
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
+				AC5EF0062BD114820002A8D7 /* SignUpAgreementViewController.swift in Sources */,
+				AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */,
 				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,

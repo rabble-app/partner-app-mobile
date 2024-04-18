@@ -8,10 +8,6 @@
 import UIKit
 
 class SignUpStepIndicatorViewController: UIViewController {
-
-    enum Step {
-      case one, two, three, four
-    }
     
     @IBOutlet weak var step1LineView: UIView!
     @IBOutlet weak var step2LineView: UIView!
