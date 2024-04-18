@@ -34,6 +34,9 @@
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */; };
 		AC5EEFFC2BCF547E0002A8D7 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */; };
+		AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */; };
+		AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */; };
+		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
 		AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro.ttf"; path = "../../../../../../../../../../Library/Fonts/SF-Pro.ttf"; sourceTree = "<group>"; };
 		AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Italic.ttf"; path = "../../../../../../../../../../Library/Fonts/SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
+		AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
+		AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleViewController.swift; sourceTree = "<group>"; };
+		AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,7 +251,10 @@
 			children = (
 				86A60DED2BCCEF7600496390 /* SignUpView.storyboard */,
 				86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */,
+				AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */,
+				AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */,
 				AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */,
+				AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -611,9 +620,12 @@
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
+				AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
+				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
+				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
@@ -810,6 +822,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -841,6 +854,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
