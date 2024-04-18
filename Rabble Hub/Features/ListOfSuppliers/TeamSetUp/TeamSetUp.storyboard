@@ -546,46 +546,103 @@
                                 <color key="textColor" name="gray_3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much shelf space do you want to make available for storing customer orders?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNT-kc-qdQ">
+                                <rect key="frame" x="16" y="348.66666666666669" width="361" height="38.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="gray_3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk0-L6-5p2">
+                                <rect key="frame" x="16" y="391" width="361" height="67"/>
+                                <string key="text">Remember it is only for 48 hours and more space will allow us to direct more footfall to your store. 1 shelf is defined as one side of a standard display fridge. (Circa 60cm deep x 60cm wide x 25cm tall)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="blue_1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppm-1V-oJ7">
+                                <rect key="frame" x="16" y="474" width="361" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="TQw-Tn-a9q"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="selectOptionButtonTap:" destination="1df-s6-z72" eventType="touchUpInside" id="Hcl-cg-NKb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8s-zV-aug">
+                                <rect key="frame" x="31.999999999999993" y="491.66666666666669" width="123.33333333333331" height="21.000000000000057"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="gray_2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="mUi-dg-SwR">
+                                <rect key="frame" x="337" y="494" width="16" height="16"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MuN-u8-XDQ"/>
                         <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="oaM-2N-m73" firstAttribute="top" secondItem="Jmb-6h-fAG" secondAttribute="bottom" id="5hl-S1-mBi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mUi-dg-SwR" secondAttribute="trailing" constant="24" id="6M9-C9-tFH"/>
+                            <constraint firstItem="ppm-1V-oJ7" firstAttribute="trailing" secondItem="jk0-L6-5p2" secondAttribute="trailing" id="7Gu-Fw-9W5"/>
                             <constraint firstItem="Jmb-6h-fAG" firstAttribute="top" secondItem="MuN-u8-XDQ" secondAttribute="top" id="9sQ-e7-0ql"/>
                             <constraint firstItem="MuN-u8-XDQ" firstAttribute="trailing" secondItem="bSF-2u-VTb" secondAttribute="trailing" constant="16" id="BN0-nO-fux"/>
                             <constraint firstItem="oaM-2N-m73" firstAttribute="leading" secondItem="piL-Zb-uuD" secondAttribute="leading" id="DYd-AI-nfA"/>
                             <constraint firstItem="a9k-Hm-g89" firstAttribute="leading" secondItem="MuN-u8-XDQ" secondAttribute="leading" id="Diu-yj-1as"/>
+                            <constraint firstItem="ppm-1V-oJ7" firstAttribute="leading" secondItem="jk0-L6-5p2" secondAttribute="leading" id="EtV-gY-3Pm"/>
                             <constraint firstItem="a9k-Hm-g89" firstAttribute="top" secondItem="oaM-2N-m73" secondAttribute="bottom" id="HT0-Nd-Zop"/>
+                            <constraint firstItem="iNT-kc-qdQ" firstAttribute="leading" secondItem="LIo-fD-M6b" secondAttribute="leading" id="LoU-pV-mHn"/>
                             <constraint firstAttribute="trailing" secondItem="oaM-2N-m73" secondAttribute="trailing" id="Nh4-C3-LTz"/>
+                            <constraint firstItem="jk0-L6-5p2" firstAttribute="leading" secondItem="iNT-kc-qdQ" secondAttribute="leading" id="OsQ-E9-jki"/>
+                            <constraint firstItem="t8s-zV-aug" firstAttribute="centerY" secondItem="ppm-1V-oJ7" secondAttribute="centerY" id="SMQ-EG-CyL"/>
                             <constraint firstItem="LIo-fD-M6b" firstAttribute="leading" secondItem="MuN-u8-XDQ" secondAttribute="leading" constant="16" id="W4W-Cd-KE6"/>
+                            <constraint firstItem="t8s-zV-aug" firstAttribute="leading" secondItem="piL-Zb-uuD" secondAttribute="leadingMargin" constant="16" id="WfT-B8-BeR"/>
                             <constraint firstItem="KQb-wW-PZ8" firstAttribute="top" secondItem="a9k-Hm-g89" secondAttribute="bottom" constant="24" id="Wgv-Aa-RYy"/>
+                            <constraint firstItem="iNT-kc-qdQ" firstAttribute="top" secondItem="LIo-fD-M6b" secondAttribute="bottom" constant="24" id="X2S-hT-YU7"/>
+                            <constraint firstItem="mUi-dg-SwR" firstAttribute="centerY" secondItem="ppm-1V-oJ7" secondAttribute="centerY" id="Xsl-hy-BCL"/>
+                            <constraint firstItem="ppm-1V-oJ7" firstAttribute="top" secondItem="jk0-L6-5p2" secondAttribute="bottom" constant="16" id="aoH-CS-hxr"/>
                             <constraint firstItem="MuN-u8-XDQ" firstAttribute="bottom" secondItem="bSF-2u-VTb" secondAttribute="bottom" constant="16" id="bS8-6p-hap"/>
                             <constraint firstItem="a9k-Hm-g89" firstAttribute="trailing" secondItem="MuN-u8-XDQ" secondAttribute="trailing" id="dSe-xD-bkE"/>
                             <constraint firstItem="LIo-fD-M6b" firstAttribute="top" secondItem="KQb-wW-PZ8" secondAttribute="bottom" constant="8" id="g6C-4c-7Be"/>
+                            <constraint firstItem="jk0-L6-5p2" firstAttribute="top" secondItem="iNT-kc-qdQ" secondAttribute="bottom" constant="4" id="igR-q1-jxC"/>
                             <constraint firstItem="MuN-u8-XDQ" firstAttribute="trailing" secondItem="LIo-fD-M6b" secondAttribute="trailing" constant="16" id="ixb-3p-g2h"/>
                             <constraint firstItem="MuN-u8-XDQ" firstAttribute="trailing" secondItem="Jmb-6h-fAG" secondAttribute="trailing" id="kcH-HW-cGV"/>
                             <constraint firstItem="Jmb-6h-fAG" firstAttribute="leading" secondItem="MuN-u8-XDQ" secondAttribute="leading" id="lGg-zl-zBD"/>
                             <constraint firstItem="KQb-wW-PZ8" firstAttribute="leading" secondItem="MuN-u8-XDQ" secondAttribute="leading" constant="16" id="nUt-z5-ltT"/>
                             <constraint firstItem="bSF-2u-VTb" firstAttribute="leading" secondItem="MuN-u8-XDQ" secondAttribute="leading" constant="16" id="sDS-F3-llX"/>
+                            <constraint firstItem="jk0-L6-5p2" firstAttribute="trailing" secondItem="iNT-kc-qdQ" secondAttribute="trailing" id="uC5-g9-3p0"/>
+                            <constraint firstItem="iNT-kc-qdQ" firstAttribute="trailing" secondItem="LIo-fD-M6b" secondAttribute="trailing" id="xVY-QA-ayA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="primaryDescLabel" destination="LIo-fD-M6b" id="AYB-Vj-JBy"/>
                         <outlet property="progressBar" destination="FoM-lC-dcq" id="Rfn-K6-zic"/>
+                        <outlet property="reminderLabel" destination="jk0-L6-5p2" id="QxT-an-Q16"/>
+                        <outlet property="secondaryDescLabel" destination="iNT-kc-qdQ" id="qIC-9F-M0p"/>
+                        <outlet property="selectOptionButton" destination="ppm-1V-oJ7" id="EY3-ZZ-HR2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUb-Pc-fNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1323" y="4"/>
+            <point key="canvasLocation" x="1316.793893129771" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon_back" width="12" height="20"/>
+        <image name="icon_dropdown" width="16" height="16"/>
         <image name="unselected_radioButton" width="22" height="22"/>
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="blue_1">
+            <color red="0.18431372549019609" green="0.50196078431372548" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="button_primary">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_2">
+            <color red="0.31000000238418579" green="0.31000000238418579" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_3">
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,6 +10,10 @@ import UIKit
 class CreateALimitViewController: UIViewController {
 
     @IBOutlet var progressBar: UIView!
+    @IBOutlet var selectOptionButton: UIButton!
+    @IBOutlet var primaryDescLabel: UILabel!
+    @IBOutlet var secondaryDescLabel: UILabel!
+    @IBOutlet var reminderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,12 @@ class CreateALimitViewController: UIViewController {
         completedView.backgroundColor = Colors.ButtonPrimary
         
         progressBar.addSubview(completedView)
+        
+        selectOptionButton.layer.borderWidth = 1.0
+        selectOptionButton.layer.borderColor = Colors.Gray5.cgColor
+        selectOptionButton.layer.cornerRadius = 12.0
+        selectOptionButton.clipsToBounds = true
+        
     }
     
     
@@ -37,6 +47,9 @@ class CreateALimitViewController: UIViewController {
            presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func selectOptionButtonTap(_ sender: Any) {
+        
+    }
     @IBAction func nextButtonTap(_ sender: Any) {
         
     }
