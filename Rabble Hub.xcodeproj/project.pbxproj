@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4B0AEEA1A8761E9245E3412F /* Pods_Rabble_HubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */; };
 		8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */; };
+		8617C4D52BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8617C4D42BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard */; };
+		8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */; };
+		8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -71,6 +74,9 @@
 		6043952D761C00A580FE90F4 /* Pods-Rabble Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.debug.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		739F1150616511C46993FEDA /* Pods-Rabble HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble HubTests.release.xcconfig"; path = "Target Support Files/Pods-Rabble HubTests/Pods-Rabble HubTests.release.xcconfig"; sourceTree = "<group>"; };
 		8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTeamSuccessViewController.swift; sourceTree = "<group>"; };
+		8617C4D42BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCollectionView.storyboard; sourceTree = "<group>"; };
+		8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionListViewController.swift; sourceTree = "<group>"; };
+		8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +158,16 @@
 				CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8617C4D32BD0D97A007A0BA6 /* Customer Collection */ = {
+			isa = PBXGroup;
+			children = (
+				8617C4D42BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard */,
+				8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */,
+				8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */,
+			);
+			path = "Customer Collection";
 			sourceTree = "<group>";
 		};
 		86A60DA92BCCEE3200496390 = {
@@ -248,6 +264,7 @@
 		86A60DEB2BCCEF4400496390 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8617C4D32BD0D97A007A0BA6 /* Customer Collection */,
 				86A60DF62BCCF8AC00496390 /* Onboarding */,
 				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86A60DEC2BCCEF6400496390 /* SignUp */,
@@ -518,6 +535,7 @@
 				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
+				8617C4D52BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard in Resources */,
 				AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */,
 				86D17AA72BCE696100464511 /* Color.xcassets in Resources */,
 				86A60DC22BCCEE3400496390 /* Base in Resources */,
@@ -654,6 +672,7 @@
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
+				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
@@ -661,6 +680,7 @@
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */,
+				8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */,
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
