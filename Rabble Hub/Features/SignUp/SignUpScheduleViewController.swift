@@ -73,7 +73,10 @@ class SignUpScheduleViewController: UIViewController {
     }
     
     @IBAction func nextButtonStep(_ sender: Any) {
-        
+        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpAgreementViewController") as! SignUpAgreementViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false, completion: nil)
     }
     
     // Helper
