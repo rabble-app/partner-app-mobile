@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Producers List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ProducersListViewController" id="Y6W-OH-hqX" customClass="ProducersListViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a producer to create a team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC8-hC-tFo">
+                                <rect key="frame" x="91.666666666666671" y="59" width="209.66666666666663" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="wEa-91-stp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xay-n2-wMS">
+                                <rect key="frame" x="16" y="100" width="163" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5Jd-hn-wxp">
+                                <rect key="frame" x="8" y="142" width="377" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="LEQ-fM-v5U"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="mLD-S0-IN4"/>
+                                </connections>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-AW-5FA">
+                                <rect key="frame" x="0.0" y="186" width="393" height="1"/>
+                                <color key="backgroundColor" name="gray_4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="pqR-jz-qHl"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vVj-Z5-uQL">
+                                <rect key="frame" x="16" y="203" width="361" height="615"/>
+                                <color key="backgroundColor" name="background_primary"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProducersListTableViewCell" rowHeight="372" id="t2w-he-cec" customClass="ProducersListTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="372"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t2w-he-cec" id="H8H-4R-QWj">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="372"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jeD-xe-SHM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="280"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="280" id="2KO-zY-5gV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-Oj-yGu">
+                                                    <rect key="frame" x="0.0" y="289" width="361" height="72"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-t5-sGE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="21"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.25098039215686274" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm &amp; Dairy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2J-9e-PZd">
+                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="361" height="14.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.4392156862745098" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ5-3N-sXy">
+                                                            <rect key="frame" x="0.0" y="43.333333333333314" width="361" height="24"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="gHS-6V-Wgs"/>
+                                                            </constraints>
+                                                            <string key="text">Cackleberry Farm is nestled at the foot of a hill just outside Stow-on-the-Wold. Run by Paddy and Steph Bourns, their rare breed flocks are entirely free range and live in traditional chicken houses on 12 acres of land, with lots of perches.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.43921568630000002" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Df5-t5-sGE" firstAttribute="leading" secondItem="bUf-Oj-yGu" secondAttribute="leading" id="4Vc-AW-j3f"/>
+                                                        <constraint firstAttribute="trailing" secondItem="t2J-9e-PZd" secondAttribute="trailing" id="9aR-cO-mmK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CZ5-3N-sXy" secondAttribute="trailing" id="BUQ-Kh-8mV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Df5-t5-sGE" secondAttribute="trailing" id="GiE-LJ-iTL"/>
+                                                        <constraint firstItem="CZ5-3N-sXy" firstAttribute="leading" secondItem="bUf-Oj-yGu" secondAttribute="leading" id="LIY-VC-gDf"/>
+                                                        <constraint firstItem="CZ5-3N-sXy" firstAttribute="top" secondItem="t2J-9e-PZd" secondAttribute="bottom" constant="4" id="Lqq-4B-lVs"/>
+                                                        <constraint firstItem="t2J-9e-PZd" firstAttribute="leading" secondItem="bUf-Oj-yGu" secondAttribute="leading" id="dse-Ae-Dqr"/>
+                                                        <constraint firstItem="Df5-t5-sGE" firstAttribute="top" secondItem="bUf-Oj-yGu" secondAttribute="top" id="guJ-Xt-7OL"/>
+                                                        <constraint firstItem="t2J-9e-PZd" firstAttribute="top" secondItem="Df5-t5-sGE" secondAttribute="bottom" constant="4" id="olC-vI-3md"/>
+                                                        <constraint firstAttribute="height" constant="72" id="uSR-eu-7xm"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background_primary"/>
+                                            <constraints>
+                                                <constraint firstItem="bUf-Oj-yGu" firstAttribute="bottom" secondItem="H8H-4R-QWj" secondAttribute="bottomMargin" id="Bde-rZ-nAi"/>
+                                                <constraint firstItem="jeD-xe-SHM" firstAttribute="top" secondItem="H8H-4R-QWj" secondAttribute="top" id="Tav-CZ-9SO"/>
+                                                <constraint firstAttribute="trailing" secondItem="bUf-Oj-yGu" secondAttribute="trailing" id="Y5S-Lc-aHB"/>
+                                                <constraint firstItem="jeD-xe-SHM" firstAttribute="leading" secondItem="H8H-4R-QWj" secondAttribute="leading" id="lD5-jb-ze3"/>
+                                                <constraint firstItem="bUf-Oj-yGu" firstAttribute="leading" secondItem="H8H-4R-QWj" secondAttribute="leading" id="tmU-7I-1q2"/>
+                                                <constraint firstAttribute="trailing" secondItem="jeD-xe-SHM" secondAttribute="trailing" id="yTH-8T-ryE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="background_primary"/>
+                                        <connections>
+                                            <outlet property="producerDesc" destination="CZ5-3N-sXy" id="MPZ-KQ-xkS"/>
+                                            <outlet property="producerImage" destination="jeD-xe-SHM" id="DKU-aj-2TO"/>
+                                            <outlet property="producerName" destination="Df5-t5-sGE" id="ggh-FV-C8o"/>
+                                            <outlet property="producerType" destination="t2J-9e-PZd" id="3UV-eG-5LQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="background_primary"/>
+                        <constraints>
+                            <constraint firstItem="5Jd-hn-wxp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="4Ih-Vh-zH7"/>
+                            <constraint firstItem="AC8-hC-tFo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9IW-wp-X1v"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vVj-Z5-uQL" secondAttribute="bottom" id="Afd-4U-CpT"/>
+                            <constraint firstItem="5Jd-hn-wxp" firstAttribute="top" secondItem="Xay-n2-wMS" secondAttribute="bottom" constant="1" id="CRn-0u-fTi"/>
+                            <constraint firstItem="vVj-Z5-uQL" firstAttribute="top" secondItem="zv9-AW-5FA" secondAttribute="bottom" constant="16" id="GXL-AE-J9L"/>
+                            <constraint firstItem="AC8-hC-tFo" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="LG9-ON-k89"/>
+                            <constraint firstItem="zv9-AW-5FA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="LqX-f6-n7V"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vVj-Z5-uQL" secondAttribute="trailing" constant="16" id="VgT-n4-vVa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5Jd-hn-wxp" secondAttribute="trailing" constant="8" id="ZEp-O5-Giu"/>
+                            <constraint firstItem="zv9-AW-5FA" firstAttribute="top" secondItem="5Jd-hn-wxp" secondAttribute="bottom" constant="8" id="a3D-OL-JEZ"/>
+                            <constraint firstItem="vVj-Z5-uQL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="e89-Gb-GeY"/>
+                            <constraint firstItem="Xay-n2-wMS" firstAttribute="top" secondItem="AC8-hC-tFo" secondAttribute="bottom" constant="3" id="m7l-JD-Ekp"/>
+                            <constraint firstItem="Xay-n2-wMS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="nBu-Lb-R4a"/>
+                            <constraint firstAttribute="trailing" secondItem="zv9-AW-5FA" secondAttribute="trailing" id="uSS-B5-fEA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="producersTableview" destination="vVj-Z5-uQL" id="Vg6-eQ-gy6"/>
+                        <outlet property="searchBar" destination="5Jd-hn-wxp" id="haN-X4-ujn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35.877862595419849" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder" width="408" height="292"/>
+        <namedColor name="background_primary">
+            <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_4">
+            <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
