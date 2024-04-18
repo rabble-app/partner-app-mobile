@@ -564,8 +564,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="TQw-Tn-a9q"/>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
                                 <connections>
                                     <action selector="selectOptionButtonTap:" destination="1df-s6-z72" eventType="touchUpInside" id="Hcl-cg-NKb"/>
                                 </connections>
@@ -627,16 +628,76 @@
             </objects>
             <point key="canvasLocation" x="1316.793893129771" y="3.5211267605633805"/>
         </scene>
+        <!--Setup Team Success View Controller-->
+        <scene sceneID="5ey-pu-X2q">
+            <objects>
+                <viewController storyboardIdentifier="SetupTeamSuccessViewController" id="IEb-MJ-nRf" customClass="SetupTeamSuccessViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LJE-v3-IWX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-Ee-Won">
+                                <rect key="frame" x="16" y="752" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AIE-Ww-R9z"/>
+                                </constraints>
+                                <color key="tintColor" name="button_primary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go to Team Page"/>
+                                <connections>
+                                    <action selector="goToTeamPageButtonTap:" destination="IEb-MJ-nRf" eventType="touchUpInside" id="BZV-1U-GWz"/>
+                                    <action selector="nextButtonTap:" destination="1df-s6-z72" eventType="touchUpInside" id="hti-4f-u2A"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team_setup_success" translatesAutoresizingMaskIntoConstraints="NO" id="Lxu-Xi-dAZ">
+                                <rect key="frame" x="0.0" y="138" width="393" height="429"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbn-tL-SAf">
+                                <rect key="frame" x="16" y="594.33333333333337" width="361" height="133.66666666666663"/>
+                                <string key="text">Your buying team is now available to everyone in your surrounding area to sign up. We will now market your buying team to your surrounding customer base. We will notify you when customers sign up and if enough of them sign up for your team to pass Supplier.name's minimum order and trigger a delivery</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Created Successfully" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNU-fn-XfU">
+                                <rect key="frame" x="68.666666666666686" y="562.33333333333337" width="256" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OCl-mF-yuT"/>
+                        <color key="backgroundColor" name="background_primary"/>
+                        <constraints>
+                            <constraint firstItem="Jbn-tL-SAf" firstAttribute="top" secondItem="UNU-fn-XfU" secondAttribute="bottom" constant="8" id="4dg-oZ-tBx"/>
+                            <constraint firstItem="Lxu-Xi-dAZ" firstAttribute="leading" secondItem="OCl-mF-yuT" secondAttribute="leading" id="QmM-w4-MfY"/>
+                            <constraint firstItem="OCl-mF-yuT" firstAttribute="trailing" secondItem="Lxu-Xi-dAZ" secondAttribute="trailing" id="ZbN-4Z-3Xd"/>
+                            <constraint firstItem="OCl-mF-yuT" firstAttribute="bottom" secondItem="fxe-Ee-Won" secondAttribute="bottom" constant="16" id="dPw-5L-9d8"/>
+                            <constraint firstItem="OCl-mF-yuT" firstAttribute="trailing" secondItem="Jbn-tL-SAf" secondAttribute="trailing" constant="16" id="eXm-Ic-xjh"/>
+                            <constraint firstItem="fxe-Ee-Won" firstAttribute="leading" secondItem="OCl-mF-yuT" secondAttribute="leading" constant="16" id="m0g-gH-LLD"/>
+                            <constraint firstItem="OCl-mF-yuT" firstAttribute="trailing" secondItem="fxe-Ee-Won" secondAttribute="trailing" constant="16" id="mhO-mY-ysy"/>
+                            <constraint firstItem="UNU-fn-XfU" firstAttribute="centerX" secondItem="Jbn-tL-SAf" secondAttribute="centerX" id="usE-S2-guv"/>
+                            <constraint firstItem="Lxu-Xi-dAZ" firstAttribute="top" secondItem="OCl-mF-yuT" secondAttribute="top" constant="79" id="wGM-If-FYa"/>
+                            <constraint firstItem="Jbn-tL-SAf" firstAttribute="leading" secondItem="OCl-mF-yuT" secondAttribute="leading" constant="16" id="xih-GR-TZg"/>
+                            <constraint firstItem="fxe-Ee-Won" firstAttribute="top" secondItem="Jbn-tL-SAf" secondAttribute="bottom" constant="24" id="ypQ-K3-bRi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIc-zY-th2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1987" y="4"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_back" width="12" height="20"/>
         <image name="icon_dropdown" width="16" height="16"/>
+        <image name="team_setup_success" width="428" height="429"/>
         <image name="unselected_radioButton" width="22" height="22"/>
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="blue_1">
-            <color red="0.18431372549019609" green="0.50196078431372548" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

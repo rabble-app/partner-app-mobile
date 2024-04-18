@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B0AEEA1A8761E9245E3412F /* Pods_Rabble_HubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */; };
+		8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -69,6 +70,7 @@
 		5C4B12569FD318D949D2375C /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub-Rabble HubUITests.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6043952D761C00A580FE90F4 /* Pods-Rabble Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.debug.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		739F1150616511C46993FEDA /* Pods-Rabble HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble HubTests.release.xcconfig"; path = "Target Support Files/Pods-Rabble HubTests/Pods-Rabble HubTests.release.xcconfig"; sourceTree = "<group>"; };
+		8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTeamSuccessViewController.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				86C0F5D72BCFB9EA00B78747 /* ChooseFrequencyViewController.swift */,
 				86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */,
 				86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */,
+				8617C4D12BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift */,
 			);
 			path = TeamSetUp;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
 				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
+				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

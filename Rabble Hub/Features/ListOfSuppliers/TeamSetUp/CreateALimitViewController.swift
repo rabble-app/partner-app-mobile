@@ -51,7 +51,13 @@ class CreateALimitViewController: UIViewController {
         
     }
     @IBAction func nextButtonTap(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "SetupTeamSuccessViewController") as? SetupTeamSuccessViewController {
+            vc.modalPresentationStyle = .custom
+            let pushAnimator = PushAnimator()
+            vc.transitioningDelegate = pushAnimator
+            self.present(vc, animated: true)
+        }
     }
 
 }
