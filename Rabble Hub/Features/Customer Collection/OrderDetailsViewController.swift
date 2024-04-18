@@ -1,5 +1,5 @@
 //
-//  CustomerCollectionListViewController.swift
+//  OrderDetailsViewController.swift
 //  Rabble Hub
 //
 //  Created by Franz Henri De Guzman on 4/18/24.
@@ -7,34 +7,35 @@
 
 import UIKit
 
-class CustomerCollectionListViewController: UIViewController {
+class OrderDetailsViewController: UIViewController {
 
-    @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var segmentedBar: UISegmentedControl!
-    @IBOutlet var collectionTableview: UITableView!
+    @IBOutlet var ordersTableview: UITableView!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var teamnameLabel: UILabel!
+    @IBOutlet var categoryValueLabel: UILabel!
+    @IBOutlet var dateTimeValueLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionTableview.delegate = self
-        collectionTableview.dataSource = self
+        ordersTableview.delegate = self
+        ordersTableview.dataSource = self
     }
-
 }
 
-extension CustomerCollectionListViewController: UITableViewDelegate, UITableViewDataSource {
+extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 77
+        return 95
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerCollectionTableViewCell", for: indexPath) as? CustomerCollectionTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OrderDetailsTableViewCell", for: indexPath) as? OrderDetailsTableViewCell else {
             return UITableViewCell()
         }
         
@@ -54,4 +55,5 @@ extension CustomerCollectionListViewController: UITableViewDelegate, UITableView
     
     
 }
+
 
