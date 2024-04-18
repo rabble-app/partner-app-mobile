@@ -1,32 +1,35 @@
 //
-//  SignUpViewController.swift
-//  Rabble Partner
+//  SignUpProfileViewController.swift
+//  Rabble Hub
 //
-//  Created by Franz Henri De Guzman on 4/15/24.
+//  Created by aljon antiola on 4/17/24.
 //
 
-import Foundation
 import UIKit
 
-class SignUpViewController: UIViewController {
-    
+class SignUpProfileViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.isHidden = true
+        // Do any additional setup after loading the view.
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? SignUpStepIndicatorViewController {
-            vc.currentStep = .one
+            vc.currentStep = .two
         }
+    }
+
+    @IBAction func previousStepButtonTap(_ sender: Any) {
+        self.dismiss(animated: false)
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
-        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpProfileViewController") as! SignUpProfileViewController
+        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpScheduleViewController") as! SignUpScheduleViewController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false, completion: nil)
     }
-    
 }
