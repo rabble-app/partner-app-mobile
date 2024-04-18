@@ -16,6 +16,8 @@ class CustomerCollectionListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
 
         collectionTableview.delegate = self
         collectionTableview.dataSource = self
@@ -42,16 +44,13 @@ extension CustomerCollectionListViewController: UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
-//        if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseFrequencyViewController") as? ChooseFrequencyViewController {
-//            vc.modalPresentationStyle = .custom
-//            let pushAnimator = PushAnimator()
-//            vc.transitioningDelegate = pushAnimator
-//            self.title = "Team Settings"
-//            self.present(vc, animated: true)
-//        }
+        let storyboard = UIStoryboard(name: "CustomerCollectionView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as? OrderDetailsViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
-    
     
 }
 

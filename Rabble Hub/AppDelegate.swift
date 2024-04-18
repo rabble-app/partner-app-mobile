@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         IQKeyboardManager.shared.enable = true
+        
+        guard let window = UIApplication.shared.windows.first else {
+            return true
+        }
+
+        let customerCollectionListViewController = CustomerCollectionListViewController()
+        let navigationController = UINavigationController(rootViewController: customerCollectionListViewController)
+        window.rootViewController = navigationController
+
         return true
     }
 

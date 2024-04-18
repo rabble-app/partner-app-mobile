@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lBY-A0-Wch">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -81,7 +81,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" estimatedRowHeight="77" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UdD-YS-kSM">
-                                <rect key="frame" x="16" y="239" width="361" height="555"/>
+                                <rect key="frame" x="16" y="239" width="361" height="506"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomerCollectionTableViewCell" rowHeight="77" id="WND-9t-5ho" customClass="CustomerCollectionTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
@@ -120,7 +120,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7i-HV-Dew">
-                                                    <rect key="frame" x="80" y="20.666666666666668" width="79.666666666666686" height="20.000000000000004"/>
+                                                    <rect key="frame" x="80" y="20.666666666666664" width="79.666666666666686" height="18.666666666666664"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Username">
                                                             <attributes>
@@ -132,13 +132,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teamname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0r-vc-O4u">
-                                                    <rect key="frame" x="80" y="42.333333333333336" width="61.333333333333343" height="14.333333333333336"/>
+                                                    <rect key="frame" x="80" y="42.666666666666664" width="61.333333333333343" height="14"/>
                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-kB-Ox1">
-                                                    <rect key="frame" x="149.33333333333334" y="47.333333333333336" width="4" height="4"/>
+                                                    <rect key="frame" x="149.33333333333334" y="47.666666666666664" width="4" height="4"/>
                                                     <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="4" id="ZxL-qb-sw5"/>
@@ -146,7 +146,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpz-9i-CCd">
-                                                    <rect key="frame" x="161.33333333333334" y="42.333333333333336" width="47.333333333333343" height="14.333333333333336"/>
+                                                    <rect key="frame" x="161.33333333333334" y="42.666666666666664" width="47.333333333333343" height="14"/>
                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -200,17 +200,19 @@
                             <constraint firstItem="fNz-Mz-49G" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="yBi-lR-uh7"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="XhM-zj-FnO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionTableview" destination="UdD-YS-kSM" id="P22-Xj-jH3"/>
                         <outlet property="searchBar" destination="vls-Pk-7C7" id="e0k-Mc-Bt9"/>
                         <outlet property="segmentedBar" destination="pKY-Zk-RLB" id="gg8-kS-2Jb"/>
-                        <segue destination="xCm-Ag-o3o" kind="show" id="avP-au-wXb"/>
+                        <segue destination="xCm-Ag-o3o" kind="show" id="dUY-gC-zkw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.58778625954199" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1860.3053435114502" y="3.5211267605633805"/>
         </scene>
         <!--Order Details-->
         <scene sceneID="gbf-bY-GRn">
@@ -420,32 +422,32 @@
                     <connections>
                         <outlet property="categoryValueLabel" destination="YGh-O7-3p1" id="Z4Y-dY-KEd"/>
                         <outlet property="dateTimeValueLabel" destination="Y7M-a9-fWi" id="Cmk-ig-Rgl"/>
-                        <outlet property="ordersTableview" destination="z8w-98-ZPZ" id="i12-C9-ouW"/>
+                        <outlet property="ordersTableview" destination="z8w-98-ZPZ" id="kE8-CM-ZRi"/>
                         <outlet property="teamnameLabel" destination="3LL-4V-STB" id="snx-dl-EPo"/>
                         <outlet property="usernameLabel" destination="fGu-Ni-1DR" id="awI-GH-g2x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPH-BA-NxU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600.7633587786258" y="6.3380281690140849"/>
+            <point key="canvasLocation" x="2527.4809160305344" y="6.3380281690140849"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="lah-vl-iKd">
+        <scene sceneID="YZj-gH-xK1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sWK-Np-4c3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lBY-A0-Wch" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cvl-2p-jb4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kWo-Ts-ZIn">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="mLG-ap-L5V"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="ZKo-Fw-6cN"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XKE-d3-Be3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGY-1k-SDY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="4"/>
+            <point key="canvasLocation" x="1201" y="4"/>
         </scene>
     </scenes>
     <resources>

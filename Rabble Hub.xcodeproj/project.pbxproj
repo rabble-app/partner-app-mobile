@@ -177,8 +177,8 @@
 			children = (
 				8617C4D42BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard */,
 				8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */,
-				8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */,
 				86DD74AC2BD107D0001FEBBD /* OrderDetailsViewController.swift */,
+				8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */,
 				86DD74AE2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift */,
 			);
 			path = "Customer Collection";
@@ -279,11 +279,11 @@
 		86A60DEB2BCCEF4400496390 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				8617C4D32BD0D97A007A0BA6 /* Customer Collection */,
 				86A60DF62BCCF8AC00496390 /* Onboarding */,
-				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86A60DEC2BCCEF6400496390 /* SignUp */,
+				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86C0F5CC2BCF9DBC00B78747 /* ListOfSuppliers */,
+				8617C4D32BD0D97A007A0BA6 /* Customer Collection */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -412,8 +412,8 @@
 		86D17AB82BCEB58D00464511 /* GettingStarted */ = {
 			isa = PBXGroup;
 			children = (
-				86D17AB42BCEB58D00464511 /* CreateATeamPopUp */,
 				86D17AB72BCEB58D00464511 /* PaymentPopUp */,
+				86D17AB42BCEB58D00464511 /* CreateATeamPopUp */,
 			);
 			path = GettingStarted;
 			sourceTree = "<group>";
