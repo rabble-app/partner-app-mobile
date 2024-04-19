@@ -12,7 +12,7 @@
         <!--Payment Pop Up View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PaymentPopUpViewController" id="Y6W-OH-hqX" customClass="PaymentPopUpViewController" customModule="Rabble_Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentPopUpViewController" id="Y6W-OH-hqX" customClass="PaymentPopUpViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" name="background_secondary"/>
+                                <color key="backgroundColor" name="gray_5"/>
                                 <constraints>
                                     <constraint firstItem="0jw-CM-cVz" firstAttribute="trailing" secondItem="nkf-ZV-wZt" secondAttribute="trailing" id="9uX-BN-WRH"/>
                                     <constraint firstAttribute="height" constant="405" id="F1M-Tn-LCo"/>
@@ -122,14 +122,14 @@
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="background_secondary">
-            <color red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="button_primary">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_4">
             <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_5">
+            <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
