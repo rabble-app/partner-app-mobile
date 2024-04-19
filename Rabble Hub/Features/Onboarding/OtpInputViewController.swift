@@ -62,11 +62,13 @@ class OtpInputViewController: UIViewController {
     }
     
     @IBAction func continueButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "PaymentPopView", bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "PaymentPopUpViewController") as? PaymentPopUpViewController {
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
-        }
+        
+        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false, completion: nil)
+
+        return
         
     }
 }
