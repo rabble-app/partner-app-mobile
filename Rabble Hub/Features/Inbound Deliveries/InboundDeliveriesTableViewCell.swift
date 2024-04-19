@@ -9,9 +9,11 @@ import UIKit
 
 class InboundDeliveriesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var initialBackgroundView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.initialBackgroundView.layer.cornerRadius = self.initialBackgroundView.frame.size.height/2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

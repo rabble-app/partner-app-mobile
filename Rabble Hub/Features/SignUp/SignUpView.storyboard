@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -204,7 +204,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="0BY-oS-kBE" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="12C-ZD-wxb"/>
                                                     <constraint firstAttribute="trailing" secondItem="XEw-lz-jIn" secondAttribute="trailing" constant="16" id="23y-om-tkr"/>
@@ -260,7 +259,6 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="pH6-Fy-LBu" secondAttribute="bottom" id="ZqB-g1-6IG"/>
                                             <constraint firstItem="pH6-Fy-LBu" firstAttribute="leading" secondItem="coD-Gm-Ibg" secondAttribute="leading" id="dnV-Od-gna"/>
@@ -281,7 +279,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="BaY-0z-hbB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="6W8-Wt-DLG"/>
                             <constraint firstItem="BaY-0z-hbB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JVh-W8-ubF"/>
@@ -363,7 +361,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ePr-G0-xnI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="QYc-K4-d58" firstAttribute="centerY" secondItem="5fV-4o-4RM" secondAttribute="centerY" id="2kV-CE-Cjo"/>
                             <constraint firstItem="5zK-FB-jHN" firstAttribute="trailing" secondItem="iBg-nN-0Tq" secondAttribute="trailing" constant="-22" id="G0B-ZD-Wyd"/>
@@ -496,7 +494,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uXx-iV-qbr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="Aq0-dT-pm2" firstAttribute="top" secondItem="rWi-Sp-i0z" secondAttribute="bottom" constant="16" id="4ke-eW-LtD"/>
                             <constraint firstItem="ehs-CB-FM4" firstAttribute="leading" secondItem="uXx-iV-qbr" secondAttribute="leading" constant="16" id="7iW-tA-UNL"/>
@@ -536,8 +534,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lub-Ap-Ib1">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lub-Ap-Ib1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="784"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFf-km-Qvg">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="812"/>
@@ -614,7 +612,7 @@
                                                                 <rect key="frame" x="156" y="235.66666666666663" width="51" height="31"/>
                                                             </switch>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="background_primary"/>
                                                         <constraints>
                                                             <constraint firstItem="kYA-xN-Rk1" firstAttribute="centerY" secondItem="9kV-mu-9VY" secondAttribute="centerY" constant="-1.0000000000000142" id="53s-Y4-x1r"/>
                                                             <constraint firstItem="DAy-QE-cRg" firstAttribute="top" secondItem="kYA-xN-Rk1" secondAttribute="bottom" constant="8" id="6jC-jz-p2c"/>
@@ -1293,7 +1291,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="background_primary"/>
                                         <constraints>
                                             <constraint firstItem="szZ-2O-X03" firstAttribute="leading" secondItem="nFf-km-Qvg" secondAttribute="leading" constant="16" id="9YW-9m-g9x"/>
                                             <constraint firstItem="o0E-ng-aiQ" firstAttribute="width" secondItem="nFf-km-Qvg" secondAttribute="width" multiplier="0.44" id="B1S-Jr-Zud"/>
@@ -1329,7 +1327,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x1Y-hS-u8u"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="lub-Ap-Ib1" firstAttribute="top" secondItem="G6Z-B9-1g6" secondAttribute="top" id="4qk-jC-cHo"/>
                             <constraint firstItem="lub-Ap-Ib1" firstAttribute="leading" secondItem="G6Z-B9-1g6" secondAttribute="leading" id="53j-Mw-eff"/>
@@ -1419,7 +1417,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" secondItem="ZC2-L1-6Q4" secondAttribute="height" id="FqY-dM-JSC"/>
                                                     <constraint firstItem="6NP-kK-ib0" firstAttribute="top" secondItem="qay-jw-EEy" secondAttribute="top" id="K4Z-IU-bcO"/>
@@ -1449,7 +1446,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="jj7-IU-45N" firstAttribute="top" secondItem="EMP-Oy-eVD" secondAttribute="top" id="BP7-O4-cLK"/>
                                                     <constraint firstAttribute="bottom" secondItem="jj7-IU-45N" secondAttribute="bottom" id="Wxl-Lj-TcA"/>
@@ -1479,7 +1475,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="NFD-Hb-QND" firstAttribute="leading" secondItem="1YF-XA-aHO" secondAttribute="leading" id="2ag-Ld-61h"/>
                                                     <constraint firstAttribute="height" secondItem="Aad-Vq-tZ3" secondAttribute="height" id="2nY-0c-fsY"/>
@@ -1544,7 +1539,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="background_primary"/>
                                         <constraints>
                                             <constraint firstItem="mBf-au-vhJ" firstAttribute="top" secondItem="ouB-Zu-cnW" secondAttribute="bottom" constant="37" id="2rm-ob-OSu"/>
                                             <constraint firstItem="EMP-Oy-eVD" firstAttribute="top" secondItem="qay-jw-EEy" secondAttribute="bottom" constant="24" id="2za-n7-mth"/>
@@ -1588,11 +1583,10 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jVk-cF-zZI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="LYA-vq-Zi6" firstAttribute="top" secondItem="1hh-b3-DuR" secondAttribute="top" id="KO7-As-4zg"/>
                             <constraint firstItem="LYA-vq-Zi6" firstAttribute="leading" secondItem="1hh-b3-DuR" secondAttribute="leading" id="Or3-o4-mKR"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="LYA-vq-Zi6" secondAttribute="bottom" constant="34" id="RPB-3l-eKW"/>
                             <constraint firstItem="AdF-tz-DOJ" firstAttribute="height" relation="greaterThanOrEqual" secondItem="1hh-b3-DuR" secondAttribute="height" constant="-40" id="SaF-kB-X3Z"/>
                             <constraint firstItem="LYA-vq-Zi6" firstAttribute="centerX" secondItem="1hh-b3-DuR" secondAttribute="centerX" id="Vuc-yz-kZr"/>
                             <constraint firstItem="AdF-tz-DOJ" firstAttribute="width" relation="lessThanOrEqual" secondItem="1hh-b3-DuR" secondAttribute="width" id="ZmG-KL-1hD"/>
@@ -1607,7 +1601,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LG3-6j-CS6"/>
+        <segue reference="nyG-45-66W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>
@@ -1617,6 +1611,9 @@
         <image name="icon_dropdown" width="24" height="24"/>
         <image name="icon_left_arrow" width="16" height="14"/>
         <image name="icon_person" width="32" height="33"/>
+        <namedColor name="background_primary">
+            <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="blue_1">
             <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

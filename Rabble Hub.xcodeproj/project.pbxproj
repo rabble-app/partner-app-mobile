@@ -59,6 +59,8 @@
 		AC5EF00B2BD144940002A8D7 /* InboundDeliveriesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */; };
 		AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */; };
 		AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */; };
+		AC5EF0112BD28DA60002A8D7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */; };
+		AC5EF0132BD28FD90002A8D7 /* DeliveryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0122BD28FD90002A8D7 /* DeliveryDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InboundDeliveriesView.storyboard; sourceTree = "<group>"; };
 		AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveriesViewController.swift; sourceTree = "<group>"; };
 		AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveriesTableViewCell.swift; sourceTree = "<group>"; };
+		AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		AC5EF0122BD28FD90002A8D7 /* DeliveryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailsViewController.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -341,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				86D17AA82BCE6ACB00464511 /* Colors.swift */,
+				AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */,
 				AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */,
 				AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */,
+				AC5EF0122BD28FD90002A8D7 /* DeliveryDetailsViewController.swift */,
 			);
 			path = "Inbound Deliveries";
 			sourceTree = "<group>";
@@ -745,6 +751,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
+				AC5EF0132BD28FD90002A8D7 /* DeliveryDetailsViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
@@ -753,6 +760,7 @@
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
+				AC5EF0112BD28DA60002A8D7 /* ButtonExtension.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
