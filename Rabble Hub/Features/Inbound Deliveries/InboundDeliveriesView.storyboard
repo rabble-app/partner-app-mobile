@@ -410,7 +410,7 @@
                                         <buttonConfiguration key="configuration" style="plain" image="phone.fill" catalog="system" title="Call"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="40"/>
+                                                <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>

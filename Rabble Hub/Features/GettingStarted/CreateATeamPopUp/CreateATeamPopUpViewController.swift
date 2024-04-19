@@ -25,8 +25,8 @@ class CreateATeamPopUpViewController: UIViewController {
     }
     
     @IBAction func skipButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "CustomerCollectionView", bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "CustomerCollectionListViewController") as? CustomerCollectionListViewController {
+        let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         }

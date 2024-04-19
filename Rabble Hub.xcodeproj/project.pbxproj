@@ -61,6 +61,8 @@
 		AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */; };
 		AC5EF0112BD28DA60002A8D7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */; };
 		AC5EF0132BD28FD90002A8D7 /* DeliveryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0122BD28FD90002A8D7 /* DeliveryDetailsViewController.swift */; };
+		AC5EF0152BD2B1310002A8D7 /* MainTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */; };
+		AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveriesTableViewCell.swift; sourceTree = "<group>"; };
 		AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		AC5EF0122BD28FD90002A8D7 /* DeliveryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailsViewController.swift; sourceTree = "<group>"; };
+		AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabStoryboard.storyboard; sourceTree = "<group>"; };
+		AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -476,6 +480,8 @@
 		AC5EF0092BD144540002A8D7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */,
+				AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
 				86DD74B22BD23898001FEBBD /* QrCodeView.storyboard in Resources */,
+				AC5EF0152BD2B1310002A8D7 /* MainTabStoryboard.storyboard in Resources */,
 				8617C4D52BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard in Resources */,
 				AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */,
 				86D17AA72BCE696100464511 /* Color.xcassets in Resources */,
@@ -767,6 +774,7 @@
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
+				AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */,
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
 				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
