@@ -25,4 +25,11 @@ class SignUpAgreementViewController: UIViewController {
         self.dismiss(animated: false)
     }
     
+    @IBAction func acceptButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "PaymentPopView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "PaymentPopUpViewController") as? PaymentPopUpViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
+    }
 }

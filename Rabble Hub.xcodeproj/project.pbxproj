@@ -44,6 +44,9 @@
 		86D17ABC2BCEB58D00464511 /* PaymentPopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D17AB62BCEB58D00464511 /* PaymentPopView.storyboard */; };
 		86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74AC2BD107D0001FEBBD /* OrderDetailsViewController.swift */; };
 		86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74AE2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift */; };
+		86DD74B22BD23898001FEBBD /* QrCodeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DD74B12BD23898001FEBBD /* QrCodeView.storyboard */; };
+		86DD74B42BD238B7001FEBBD /* QrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74B32BD238B7001FEBBD /* QrCodeViewController.swift */; };
+		86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */; };
 		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */; };
@@ -124,6 +127,9 @@
 		86D17AB62BCEB58D00464511 /* PaymentPopView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaymentPopView.storyboard; sourceTree = "<group>"; };
 		86DD74AC2BD107D0001FEBBD /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		86DD74AE2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		86DD74B12BD23898001FEBBD /* QrCodeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QrCodeView.storyboard; sourceTree = "<group>"; };
+		86DD74B32BD238B7001FEBBD /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
+		86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeErrorPopViewController.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 		86A60DEB2BCCEF4400496390 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				86DD74B02BD2384F001FEBBD /* QrCode */,
 				86A60DF62BCCF8AC00496390 /* Onboarding */,
 				86A60DEC2BCCEF6400496390 /* SignUp */,
 				86D17AB82BCEB58D00464511 /* GettingStarted */,
@@ -429,6 +436,16 @@
 				86D17AB42BCEB58D00464511 /* CreateATeamPopUp */,
 			);
 			path = GettingStarted;
+			sourceTree = "<group>";
+		};
+		86DD74B02BD2384F001FEBBD /* QrCode */ = {
+			isa = PBXGroup;
+			children = (
+				86DD74B12BD23898001FEBBD /* QrCodeView.storyboard */,
+				86DD74B32BD238B7001FEBBD /* QrCodeViewController.swift */,
+				86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */,
+			);
+			path = QrCode;
 			sourceTree = "<group>";
 		};
 		AC5EF0072BD115460002A8D7 /* Subviews */ = {
@@ -592,6 +609,7 @@
 				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
+				86DD74B22BD23898001FEBBD /* QrCodeView.storyboard in Resources */,
 				8617C4D52BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard in Resources */,
 				AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */,
 				86D17AA72BCE696100464511 /* Color.xcassets in Resources */,
@@ -733,6 +751,7 @@
 				AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */,
 				86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
+				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
@@ -745,6 +764,7 @@
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */,
+				86DD74B42BD238B7001FEBBD /* QrCodeViewController.swift in Sources */,
 				8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */,
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
