@@ -53,6 +53,9 @@
 		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
 		AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0032BD0F1660002A8D7 /* RabbleEnums.swift */; };
 		AC5EF0062BD114820002A8D7 /* SignUpAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0052BD114820002A8D7 /* SignUpAgreementViewController.swift */; };
+		AC5EF00B2BD144940002A8D7 /* InboundDeliveriesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */; };
+		AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */; };
+		AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,9 @@
 		AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		AC5EF0032BD0F1660002A8D7 /* RabbleEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleEnums.swift; sourceTree = "<group>"; };
 		AC5EF0052BD114820002A8D7 /* SignUpAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAgreementViewController.swift; sourceTree = "<group>"; };
+		AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InboundDeliveriesView.storyboard; sourceTree = "<group>"; };
+		AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveriesViewController.swift; sourceTree = "<group>"; };
+		AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveriesTableViewCell.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +293,7 @@
 				86A60DEC2BCCEF6400496390 /* SignUp */,
 				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86C0F5CC2BCF9DBC00B78747 /* ListOfSuppliers */,
+				AC5EF0082BD143D80002A8D7 /* Inbound Deliveries */,
 				8617C4D32BD0D97A007A0BA6 /* Customer Collection */,
 			);
 			path = Features;
@@ -308,6 +315,7 @@
 		86A60DF12BCCEFAA00496390 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				AC5EF0092BD144540002A8D7 /* Main */,
 				86C0F5D92BCFC6E600B78747 /* Common */,
 				86A60DF42BCCF02500496390 /* Extension */,
 				86A60DF22BCCEFC100496390 /* Network */,
@@ -430,6 +438,23 @@
 				AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		AC5EF0082BD143D80002A8D7 /* Inbound Deliveries */ = {
+			isa = PBXGroup;
+			children = (
+				AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */,
+				AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */,
+				AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */,
+			);
+			path = "Inbound Deliveries";
+			sourceTree = "<group>";
+		};
+		AC5EF0092BD144540002A8D7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F9873F1048C84A57B09C1D65 /* Pods */ = {
@@ -572,6 +597,7 @@
 				86D17AA72BCE696100464511 /* Color.xcassets in Resources */,
 				86A60DC22BCCEE3400496390 /* Base in Resources */,
 				86A60DBD2BCCEE3200496390 /* Base in Resources */,
+				AC5EF00B2BD144940002A8D7 /* InboundDeliveriesView.storyboard in Resources */,
 				AC5EEFFC2BCF547E0002A8D7 /* SF-Pro-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,6 +736,7 @@
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
+				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
@@ -726,6 +753,7 @@
 				AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */,
 				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
+				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
