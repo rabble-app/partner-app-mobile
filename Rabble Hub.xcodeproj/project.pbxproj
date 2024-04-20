@@ -47,6 +47,9 @@
 		86DD74B22BD23898001FEBBD /* QrCodeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DD74B12BD23898001FEBBD /* QrCodeView.storyboard */; };
 		86DD74B42BD238B7001FEBBD /* QrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74B32BD238B7001FEBBD /* QrCodeViewController.swift */; };
 		86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */; };
+		86DD74B92BD247E6001FEBBD /* MyTeamsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DD74B82BD247E6001FEBBD /* MyTeamsView.storyboard */; };
+		86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74BA2BD24823001FEBBD /* PartnersViewController.swift */; };
+		86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */; };
 		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */; };
@@ -127,6 +130,9 @@
 		86DD74B12BD23898001FEBBD /* QrCodeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QrCodeView.storyboard; sourceTree = "<group>"; };
 		86DD74B32BD238B7001FEBBD /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
 		86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeErrorPopViewController.swift; sourceTree = "<group>"; };
+		86DD74B82BD247E6001FEBBD /* MyTeamsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyTeamsView.storyboard; sourceTree = "<group>"; };
+		86DD74BA2BD24823001FEBBD /* PartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
+		86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTableViewCell.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +188,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8617C4D32BD0D97A007A0BA6 /* Customer Collection */ = {
+		8617C4D32BD0D97A007A0BA6 /* CustomerCollection */ = {
 			isa = PBXGroup;
 			children = (
 				8617C4D42BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard */,
@@ -191,7 +197,7 @@
 				8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */,
 				86DD74AE2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift */,
 			);
-			path = "Customer Collection";
+			path = CustomerCollection;
 			sourceTree = "<group>";
 		};
 		86A60DA92BCCEE3200496390 = {
@@ -289,12 +295,13 @@
 		86A60DEB2BCCEF4400496390 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				86DD74B72BD247CD001FEBBD /* MyTeams */,
 				86DD74B02BD2384F001FEBBD /* QrCode */,
 				86A60DF62BCCF8AC00496390 /* Onboarding */,
 				86A60DEC2BCCEF6400496390 /* SignUp */,
 				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86C0F5CC2BCF9DBC00B78747 /* ListOfSuppliers */,
-				8617C4D32BD0D97A007A0BA6 /* Customer Collection */,
+				8617C4D32BD0D97A007A0BA6 /* CustomerCollection */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -440,6 +447,16 @@
 			path = QrCode;
 			sourceTree = "<group>";
 		};
+		86DD74B72BD247CD001FEBBD /* MyTeams */ = {
+			isa = PBXGroup;
+			children = (
+				86DD74B82BD247E6001FEBBD /* MyTeamsView.storyboard */,
+				86DD74BA2BD24823001FEBBD /* PartnersViewController.swift */,
+				86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */,
+			);
+			path = MyTeams;
+			sourceTree = "<group>";
+		};
 		AC5EF0072BD115460002A8D7 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +597,7 @@
 				86C0F5CE2BCFA2F700B78747 /* ProducersListView.storyboard in Resources */,
 				86A60DBF2BCCEE3400496390 /* Assets.xcassets in Resources */,
 				86D17ABC2BCEB58D00464511 /* PaymentPopView.storyboard in Resources */,
+				86DD74B92BD247E6001FEBBD /* MyTeamsView.storyboard in Resources */,
 				86C0F5D62BCFB9AB00B78747 /* TeamSetUp.storyboard in Resources */,
 				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
@@ -739,6 +757,8 @@
 				86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */,
 				86DD74B42BD238B7001FEBBD /* QrCodeViewController.swift in Sources */,
 				8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */,
+				86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */,
+				86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */,
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
