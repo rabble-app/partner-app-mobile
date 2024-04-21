@@ -35,7 +35,7 @@ class InboundDeliveriesViewController: UIViewController {
 extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,12 +52,6 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         if let vc = storyboard.instantiateViewController(withIdentifier: "DeliveryDetailsViewController") as? DeliveryDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
             self.navigationController?.pushViewController(vc, animated: true)
-//            let navController = UINavigationController(rootViewController: InboundDeliveriesViewController())
-//            UIApplication.shared.windows.first?.rootViewController = navController
-//            navController.pushViewController(vc, animated: true)
-
-
-
         }
     }
     

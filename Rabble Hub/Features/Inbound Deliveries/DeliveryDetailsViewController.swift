@@ -10,6 +10,7 @@ import UIKit
 class DeliveryDetailsViewController: UIViewController {
 
     @IBOutlet weak var iconBackgroundView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,11 +18,37 @@ class DeliveryDetailsViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.reloadData()
+    }
+    
     func setupView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.iconBackgroundView.layer.cornerRadius = 12.0
     }
 
     @IBAction func confirmButtonTap(_ sender: Any) {
-        
+        let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "ManuallyCheckItemsViewController") as! ManuallyCheckItemsViewController
+        vc.modalPresentationStyle = .automatic
+        present(vc, animated: true, completion: nil)
+    }
+}
+
+extension DeliveryDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryDetailsTableViewCell", for: indexPath) as? DeliveryDetailsTableViewCell else {
+            return UITableViewCell()
+        }
+
+        return cell
     }
 }
