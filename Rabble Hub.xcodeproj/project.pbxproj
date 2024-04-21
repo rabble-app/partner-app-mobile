@@ -994,6 +994,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Hub/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs to access your camera to capture the products.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "$(PRODUCT_NAME) needs to access your photo to save the products.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1026,6 +1028,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Hub/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs to access your camera to capture the products.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "$(PRODUCT_NAME) needs to access your photo to save the products.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
