@@ -10,9 +10,11 @@ import AVFoundation
 
 class ManuallyCheckItemsViewController: UIViewController {
 
+    var deliveryNavigationController: UINavigationController?
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var checkInButton: UIButton!
     var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var noImageView: UIView!
@@ -81,7 +83,12 @@ class ManuallyCheckItemsViewController: UIViewController {
     }
     
     @IBAction func checkInStoreButtonTap(_ sender: Any) {
-        
+        let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "SuccessStateViewController") as! SuccessStateViewController
+        vc.modalPresentationStyle = .automatic
+        vc.isModalInPresentation = true
+        vc.deliveryNavigationController = self.deliveryNavigationController
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
@@ -112,6 +119,7 @@ extension ManuallyCheckItemsViewController: UINavigationControllerDelegate, UIIm
             self.withImageView.isHidden = false
             self.noImageView.isHidden = true
             self.imageView.image = editedImage
+            self.checkInButton.isEnabled = true
         }
         
         // Dismiss the UIImagePicker after selection

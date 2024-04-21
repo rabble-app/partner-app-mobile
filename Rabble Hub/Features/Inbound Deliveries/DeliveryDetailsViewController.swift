@@ -11,6 +11,7 @@ class DeliveryDetailsViewController: UIViewController {
 
     @IBOutlet weak var iconBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    var deliveryNavigationController: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class DeliveryDetailsViewController: UIViewController {
     @IBAction func confirmButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "ManuallyCheckItemsViewController") as! ManuallyCheckItemsViewController
+        vc.deliveryNavigationController = self.deliveryNavigationController
         vc.modalPresentationStyle = .automatic
         present(vc, animated: true, completion: nil)
     }

@@ -51,6 +51,7 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         let storyboard = UIStoryboard(name: "InboundDeliveriesView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "DeliveryDetailsViewController") as? DeliveryDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
+            vc.deliveryNavigationController = self.navigationController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
