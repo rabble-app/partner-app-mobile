@@ -13,6 +13,8 @@
 		8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */; };
 		8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */; };
 		861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */; };
+		861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC572BD66D5A007AB919 /* ViewExtension.swift */; };
+		861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -103,6 +105,8 @@
 		8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionListViewController.swift; sourceTree = "<group>"; };
 		8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsViewController.swift; sourceTree = "<group>"; };
+		861EFC572BD66D5A007AB919 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamViewController.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 			children = (
 				86D17AA82BCE6ACB00464511 /* Colors.swift */,
 				AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */,
+				861EFC572BD66D5A007AB919 /* ViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 				86DD74BA2BD24823001FEBBD /* PartnersViewController.swift */,
 				86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */,
 				861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */,
+				861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */,
 			);
 			path = MyTeams;
 			sourceTree = "<group>";
@@ -797,6 +803,7 @@
 			files = (
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
 				AC5EF0132BD28FD90002A8D7 /* DeliveryDetailsViewController.swift in Sources */,
+				861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */,
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
@@ -808,6 +815,7 @@
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
 				AC5EF0112BD28DA60002A8D7 /* ButtonExtension.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
+				861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
