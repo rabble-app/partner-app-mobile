@@ -14,13 +14,16 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet var teamnameLabel: UILabel!
     @IBOutlet var categoryValueLabel: UILabel!
     @IBOutlet var dateTimeValueLabel: UILabel!
-    
+    @IBOutlet var tableviewHeaderContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ordersTableview.delegate = self
         ordersTableview.dataSource = self
+        
+        tableviewHeaderContainer.roundCorners([.topLeft, .topRight], radius: 13)
+        ordersTableview.roundCorners([.bottomLeft, .bottomRight], radius: 13)
     }
 }
 
