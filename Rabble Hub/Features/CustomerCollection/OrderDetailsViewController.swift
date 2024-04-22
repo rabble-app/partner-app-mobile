@@ -39,6 +39,10 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
             return UITableViewCell()
         }
         
+        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            cell.border.isHidden = true
+        }
+        
         return cell
     }
     

@@ -17,7 +17,11 @@ class SetupTeamSuccessViewController: UIViewController {
     
 
     @IBAction func goToTeamPageButtonTap(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
     }
     /*
     // MARK: - Navigation

@@ -81,7 +81,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" estimatedRowHeight="77" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UdD-YS-kSM">
-                                <rect key="frame" x="16" y="239" width="361" height="506"/>
+                                <rect key="frame" x="16" y="239" width="361" height="526"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomerCollectionTableViewCell" rowHeight="77" id="WND-9t-5ho" customClass="CustomerCollectionTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
@@ -190,7 +190,7 @@
                             <constraint firstItem="UdD-YS-kSM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="GqG-tj-O3s"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UdD-YS-kSM" secondAttribute="trailing" constant="16" id="KaG-sN-pku"/>
                             <constraint firstItem="UdD-YS-kSM" firstAttribute="top" secondItem="pKY-Zk-RLB" secondAttribute="bottom" constant="24" id="PXt-1F-8ou"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UdD-YS-kSM" secondAttribute="bottom" constant="24" id="SDe-W6-HEr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UdD-YS-kSM" secondAttribute="bottom" constant="4" id="SDe-W6-HEr"/>
                             <constraint firstItem="pKY-Zk-RLB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VAN-Q5-BHO"/>
                             <constraint firstItem="pKY-Zk-RLB" firstAttribute="top" secondItem="nSk-gQ-rLq" secondAttribute="bottom" constant="16" id="aBa-yd-Jxc"/>
                             <constraint firstItem="nSk-gQ-rLq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fhX-9O-Q9d"/>
@@ -230,7 +230,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pq4-QY-sW0">
-                                <rect key="frame" x="0.0" y="104" width="393" height="748"/>
+                                <rect key="frame" x="0.0" y="104" width="393" height="661"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knr-gQ-3vb">
                                         <rect key="frame" x="16" y="30" width="56" height="56"/>
@@ -315,7 +315,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="95" estimatedRowHeight="95" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-98-ZPZ">
-                                        <rect key="frame" x="16" y="314" width="361" height="374"/>
+                                        <rect key="frame" x="16" y="314" width="361" height="287"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderDetailsTableViewCell" rowHeight="95" id="gNh-W2-CQ4" customClass="OrderDetailsTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
@@ -414,8 +414,8 @@
                             <constraint firstItem="Aab-IN-f5Q" firstAttribute="leading" secondItem="xQe-MP-tZ6" secondAttribute="leading" id="Qz1-w5-2oB"/>
                             <constraint firstItem="pq4-QY-sW0" firstAttribute="leading" secondItem="Vfs-HF-grW" secondAttribute="leading" id="RgV-Uv-VIa"/>
                             <constraint firstItem="pq4-QY-sW0" firstAttribute="top" secondItem="Aab-IN-f5Q" secondAttribute="bottom" id="hIY-Xs-yQl"/>
-                            <constraint firstAttribute="bottom" secondItem="pq4-QY-sW0" secondAttribute="bottom" id="lFA-sR-S2U"/>
                             <constraint firstAttribute="trailing" secondItem="Aab-IN-f5Q" secondAttribute="trailing" id="uUL-bY-qhP"/>
+                            <constraint firstItem="Vfs-HF-grW" firstAttribute="bottom" secondItem="pq4-QY-sW0" secondAttribute="bottom" constant="4" id="wkB-aB-Qpf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Order Details" id="j0P-O9-FA4"/>
