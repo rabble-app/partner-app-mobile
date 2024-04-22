@@ -23,13 +23,13 @@ class OrderDetailsViewController: UIViewController {
         ordersTableview.dataSource = self
         
         tableviewHeaderContainer.roundCorners([.topLeft, .topRight], radius: 13)
-        ordersTableview.roundCorners([.bottomLeft, .bottomRight], radius: 13)
+        //ordersTableview.roundCorners([.bottomLeft, .bottomRight], radius: 13)
     }
 }
 
 extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
