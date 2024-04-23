@@ -32,16 +32,27 @@
                                             <action selector="closeButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Unk-y5-h6B"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect Your Stripe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5De-IQ-4Iq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5De-IQ-4Iq">
                                         <rect key="frame" x="16" y="32" width="138" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Connect Your Stripe">
+                                                <attributes>
+                                                    <font key="NSFont" size="15" name="SFPro-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To enable any payouts please connect to Stripe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsm-kl-HVg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsm-kl-HVg">
                                         <rect key="frame" x="16" y="54" width="287" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="To enable any payouts please connect to Stripe">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="13" name="SFPro-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stripe" translatesAutoresizingMaskIntoConstraints="NO" id="nkf-ZV-wZt">
@@ -64,7 +75,16 @@
                                         </constraints>
                                         <color key="tintColor" name="button_primary"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Connect"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Connect">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="connectButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="N4x-dL-sCN"/>
                                         </connections>
@@ -72,13 +92,22 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-MB-L6C">
                                         <rect key="frame" x="136" y="306" width="121" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Skip for Now"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Skip for Now">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="skipButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eEd-jO-Ta1"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" name="gray_5"/>
+                                <color key="backgroundColor" name="popup_background"/>
                                 <constraints>
                                     <constraint firstItem="0jw-CM-cVz" firstAttribute="trailing" secondItem="nkf-ZV-wZt" secondAttribute="trailing" id="9uX-BN-WRH"/>
                                     <constraint firstAttribute="height" constant="405" id="F1M-Tn-LCo"/>
@@ -128,8 +157,8 @@
         <namedColor name="gray_4">
             <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="gray_5">
-            <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="popup_background">
+            <color red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
