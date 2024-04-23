@@ -12,8 +12,6 @@ class MainTabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Instantiate view controllers from different storyboards
-        
         let customerCollectionView = UIStoryboard(name: "CustomerCollectionView", bundle: nil)
         let inboundDeliveriesView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
         let qrCodeView = UIStoryboard(name: "QrCodeView", bundle: nil)

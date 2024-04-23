@@ -11,7 +11,8 @@ class QrCodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController?.tabBar.tintColor = Colors.ButtonPrimary
+        self.tabBarController?.tabBar.backgroundColor = UIColor.white.withAlphaComponent(0.75)
         // Do any additional setup after loading the view.
     }
     
