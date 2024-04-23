@@ -11,7 +11,6 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="SF-Pro.ttf">
-            <string>SFPro-Bold</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
         </array>
@@ -28,13 +27,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-t6-TLM">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="106"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJD-Lt-Tb0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJD-Lt-Tb0">
                                         <rect key="frame" x="16" y="57" width="361" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="bvy-Fb-0aQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="24"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Scan QR">
+                                                <attributes>
+                                                    <font key="NSFont" size="24" name="SFPro-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -157,7 +161,16 @@
                                         </constraints>
                                         <color key="tintColor" name="button_primary"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Need help? Contact Support"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Need help? Contact Support">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="connectButtonTap:" destination="bAc-2l-6hq" eventType="touchUpInside" id="RTk-nQ-Zt2"/>
                                         </connections>
