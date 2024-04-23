@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coD-Gm-Ibg">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1231"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1209"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAB-uD-Kho" userLabel="Step Container View">
                                                 <rect key="frame" x="0.0" y="35" width="393" height="69"/>
@@ -44,7 +44,7 @@
                                                 </connections>
                                             </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-Fy-LBu" userLabel="Company Details View">
-                                                <rect key="frame" x="0.0" y="104" width="393" height="1127"/>
+                                                <rect key="frame" x="0.0" y="104" width="393" height="1105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Company Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxS-b1-CQb">
                                                         <rect key="frame" x="16" y="37" width="199" height="24"/>
@@ -215,7 +215,7 @@
                                                     <constraint firstItem="XEw-lz-jIn" firstAttribute="top" secondItem="zmh-jb-eH9" secondAttribute="bottom" constant="16" id="7QG-5i-HDb"/>
                                                     <constraint firstItem="GIw-cU-qgY" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="8Kw-qO-5bk"/>
                                                     <constraint firstItem="l7o-0v-k2c" firstAttribute="trailing" secondItem="tih-y2-ZyH" secondAttribute="trailing" constant="-16" id="8kv-Um-CY2"/>
-                                                    <constraint firstAttribute="bottom" secondItem="97G-WT-S3k" secondAttribute="bottom" constant="38" id="8vb-Xg-fSV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="97G-WT-S3k" secondAttribute="bottom" constant="16" id="8vb-Xg-fSV"/>
                                                     <constraint firstItem="Mn7-1I-avL" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="A5J-cm-RcJ"/>
                                                     <constraint firstItem="XEw-lz-jIn" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="Afe-la-a9r"/>
                                                     <constraint firstItem="GIw-cU-qgY" firstAttribute="top" secondItem="GsJ-P0-l1A" secondAttribute="bottom" constant="16" id="BHl-ZZ-NAu"/>
