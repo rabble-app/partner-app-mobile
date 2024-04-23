@@ -20,6 +20,13 @@ class PartnersViewController: UIViewController {
         partnerTableview.dataSource = self
     }
 
+    @IBAction func setupNewBuyingTeamButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ProducersListView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ProducersListViewController") as? ProducersListViewController {
+            vc.modalPresentationStyle = .formSheet
+            self.present(vc, animated: true)
+        }
+    }
 }
 
 extension PartnersViewController: UITableViewDelegate, UITableViewDataSource {

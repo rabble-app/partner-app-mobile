@@ -9,8 +9,14 @@ import UIKit
 
 class ChooseDeliveryDayViewController: UIViewController {
     
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet var calendarContainer: UIView!
+    
+    @IBOutlet var stepContainer: UIView!
+    @IBOutlet var stepContainer_height: NSLayoutConstraint!
+    @IBOutlet var nextButton: UIButton!
+    var isFromEdit: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,13 @@ class ChooseDeliveryDayViewController: UIViewController {
         
         calendarContainer.layer.cornerRadius = 10
         calendarContainer.clipsToBounds = true
+        
+        if isFromEdit {
+            nextButton.setTitle("Save Changes", for: .normal)
+            self.titleLabel.text = "Adjust Delivery Day"
+            self.stepContainer.isHidden = true
+            self.stepContainer_height.constant = 0
+        }
     }
     
     
@@ -42,13 +55,17 @@ class ChooseDeliveryDayViewController: UIViewController {
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "CreateALimitViewController") as? CreateALimitViewController {
-            vc.modalPresentationStyle = .custom
-            let pushAnimator = PushAnimator()
-            vc.transitioningDelegate = pushAnimator
-            self.title = "Team Settings"
-            self.present(vc, animated: true)
+        if isFromEdit {
+            dismiss(animated: true, completion: nil)
+        }else{
+            let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+            if let vc = storyboard.instantiateViewController(withIdentifier: "CreateALimitViewController") as? CreateALimitViewController {
+                vc.modalPresentationStyle = .custom
+                let pushAnimator = PushAnimator()
+                vc.transitioningDelegate = pushAnimator
+                self.title = "Team Settings"
+                self.present(vc, animated: true)
+            }
         }
     }
     

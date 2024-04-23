@@ -325,14 +325,14 @@
 		86A60DEB2BCCEF4400496390 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				86DD74B72BD247CD001FEBBD /* MyTeams */,
-				86DD74B02BD2384F001FEBBD /* QrCode */,
 				86A60DF62BCCF8AC00496390 /* Onboarding */,
 				86A60DEC2BCCEF6400496390 /* SignUp */,
 				86D17AB82BCEB58D00464511 /* GettingStarted */,
 				86C0F5CC2BCF9DBC00B78747 /* ListOfSuppliers */,
-				AC5EF0082BD143D80002A8D7 /* Inbound Deliveries */,
 				8617C4D32BD0D97A007A0BA6 /* CustomerCollection */,
+				AC5EF0082BD143D80002A8D7 /* Inbound Deliveries */,
+				86DD74B02BD2384F001FEBBD /* QrCode */,
+				86DD74B72BD247CD001FEBBD /* MyTeams */,
 			);
 			path = Features;
 			sourceTree = "<group>";

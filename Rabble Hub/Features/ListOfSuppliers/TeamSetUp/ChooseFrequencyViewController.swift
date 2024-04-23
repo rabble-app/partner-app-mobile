@@ -9,6 +9,7 @@ import UIKit
 
 class ChooseFrequencyViewController: UIViewController {
     
+    @IBOutlet var titelLabel: UILabel!
     @IBOutlet var monthButton: UIButton!
     @IBOutlet var twoWeekButton: UIButton!
     @IBOutlet var weekButton: UIButton!
@@ -16,6 +17,10 @@ class ChooseFrequencyViewController: UIViewController {
     @IBOutlet var weekButtonContainer: UIView!
     @IBOutlet var twoWeekButtonContainer: UIView!
     @IBOutlet var monthButtonContainer: UIView!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var stepContainer: UIView!
+    @IBOutlet var stepContainer_height: NSLayoutConstraint!
+    var isFromEdit: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,13 @@ class ChooseFrequencyViewController: UIViewController {
         twoWeekButton.showsTouchWhenHighlighted = false
         monthButton.showsTouchWhenHighlighted = false
         
+        if isFromEdit {
+            nextButton.setTitle("Save Changes", for: .normal)
+            self.titelLabel.text = "Edit Shipment Frequency"
+            self.stepContainer.isHidden = true
+            self.stepContainer_height.constant = 0
+        }
+        
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
@@ -43,14 +55,20 @@ class ChooseFrequencyViewController: UIViewController {
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseDeliveryDayViewController") as? ChooseDeliveryDayViewController {
-            vc.modalPresentationStyle = .custom
-            let pushAnimator = PushAnimator()
-            vc.transitioningDelegate = pushAnimator
-            self.title = "Team Settings"
-            self.present(vc, animated: true)
+        
+        if isFromEdit {
+            dismiss(animated: true, completion: nil)
+        }else{
+            let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+            if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseDeliveryDayViewController") as? ChooseDeliveryDayViewController {
+                vc.modalPresentationStyle = .custom
+                let pushAnimator = PushAnimator()
+                vc.transitioningDelegate = pushAnimator
+                self.title = "Team Settings"
+                self.present(vc, animated: true)
+            }
         }
+       
     }
     
     @IBAction func weekButtonTap(_ sender: Any) {

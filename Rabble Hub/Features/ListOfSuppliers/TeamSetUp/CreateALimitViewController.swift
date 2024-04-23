@@ -9,11 +9,16 @@ import UIKit
 
 class CreateALimitViewController: UIViewController {
 
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet var selectOptionButton: UIButton!
     @IBOutlet var primaryDescLabel: UILabel!
     @IBOutlet var secondaryDescLabel: UILabel!
     @IBOutlet var reminderLabel: UILabel!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var stepContainer_height: NSLayoutConstraint!
+    @IBOutlet var stepContainer: UIView!
+    var isFromEdit: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,13 @@ class CreateALimitViewController: UIViewController {
         selectOptionButton.layer.cornerRadius = 12.0
         selectOptionButton.clipsToBounds = true
         
+        if isFromEdit {
+            nextButton.setTitle("Save Changes", for: .normal)
+            self.titleLabel.text = "Edit Product Limit"
+            self.stepContainer.isHidden = true
+            self.stepContainer_height.constant = 0
+        }
+        
     }
     
     
@@ -51,12 +63,16 @@ class CreateALimitViewController: UIViewController {
         
     }
     @IBAction func nextButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "SetupTeamSuccessViewController") as? SetupTeamSuccessViewController {
-            vc.modalPresentationStyle = .custom
-            let pushAnimator = PushAnimator()
-            vc.transitioningDelegate = pushAnimator
-            self.present(vc, animated: true)
+        if isFromEdit {
+            dismiss(animated: true, completion: nil)
+        }else{
+            let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+            if let vc = storyboard.instantiateViewController(withIdentifier: "SetupTeamSuccessViewController") as? SetupTeamSuccessViewController {
+                vc.modalPresentationStyle = .custom
+                let pushAnimator = PushAnimator()
+                vc.transitioningDelegate = pushAnimator
+                self.present(vc, animated: true)
+            }
         }
     }
 

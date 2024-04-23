@@ -23,6 +23,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var contentView_height: NSLayoutConstraint!
     @IBOutlet var orderTableview_height: NSLayoutConstraint!
     @IBOutlet var tableviewHeaderContainer: UIView!
+    @IBOutlet var imageContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +46,11 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         initialContainer.clipsToBounds = true
         hostContainer.layer.cornerRadius = 12.0
         hostContainer.clipsToBounds = true
+        imageContainer.layer.cornerRadius = 8.0
+        imageContainer.clipsToBounds = true
         
-        nextDdeliveryContainer.layer.borderWidth = 1.0
-        nextDdeliveryContainer.layer.borderColor = Colors.Gray5.cgColor
+//        nextDdeliveryContainer.layer.borderWidth = 1.0
+//        nextDdeliveryContainer.layer.borderColor = Colors.Gray5.cgColor
         nextDdeliveryContainer.layer.cornerRadius = 13.0
         nextDdeliveryContainer.clipsToBounds = true
         
