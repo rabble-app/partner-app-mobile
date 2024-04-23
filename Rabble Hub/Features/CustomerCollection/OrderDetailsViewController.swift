@@ -15,6 +15,7 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet var categoryValueLabel: UILabel!
     @IBOutlet var dateTimeValueLabel: UILabel!
     @IBOutlet var tableviewHeaderContainer: UIView!
+    @IBOutlet var iconContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class OrderDetailsViewController: UIViewController {
         ordersTableview.dataSource = self
         
         tableviewHeaderContainer.roundCorners([.topLeft, .topRight], radius: 13)
+        iconContainer.layer.cornerRadius = 12.0
+        iconContainer.clipsToBounds = true
         //ordersTableview.roundCorners([.bottomLeft, .bottomRight], radius: 13)
     }
 }
