@@ -72,8 +72,15 @@
 		AC5EF0152BD2B1310002A8D7 /* MainTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */; };
 		AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */; };
 		AC5EF01A2BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0192BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift */; };
+		AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */; };
+		AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */; };
+		AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */; };
+		AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */; };
+		AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */; };
 		ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */; };
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
+		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
+		ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,8 +178,15 @@
 		AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabStoryboard.storyboard; sourceTree = "<group>"; };
 		AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		AC5EF0192BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
+		AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoreInfoTableViewCell.swift; sourceTree = "<group>"; };
+		AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewModel.swift; sourceTree = "<group>"; };
+		AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonTableViewCell.swift; sourceTree = "<group>"; };
+		AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyCheckItemsViewController.swift; sourceTree = "<group>"; };
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
+		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
+		ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,6 +347,7 @@
 				AC5EF0082BD143D80002A8D7 /* Inbound Deliveries */,
 				86DD74B02BD2384F001FEBBD /* QrCode */,
 				86DD74B72BD247CD001FEBBD /* MyTeams */,
+				ACB78DBD2BD698BA0047D2AF /* Profile */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -535,6 +550,28 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		AC8400A22BD936DF00357E5D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */,
+				AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */,
+				AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */,
+				AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		ACB78DBD2BD698BA0047D2AF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AC8400A22BD936DF00357E5D /* Subviews */,
+				ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */,
+				ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */,
+				AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		F9873F1048C84A57B09C1D65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +705,7 @@
 				86D17ABC2BCEB58D00464511 /* PaymentPopView.storyboard in Resources */,
 				86DD74B92BD247E6001FEBBD /* MyTeamsView.storyboard in Resources */,
 				86C0F5D62BCFB9AB00B78747 /* TeamSetUp.storyboard in Resources */,
+				ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */,
 				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
@@ -816,6 +854,8 @@
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
 				AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */,
 				86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */,
+				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
+				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
@@ -827,7 +867,9 @@
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */,
 				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
+				ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
+				AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */,
 				AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */,
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
 				AC5EF01A2BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift in Sources */,
@@ -840,6 +882,8 @@
 				86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */,
 				86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */,
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
+				AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */,
+				AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
