@@ -25,6 +25,30 @@ class ProfileMainViewController: UIViewController {
 
 extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMenu = self.viewModel.menus[indexPath.row]
+        var vc: UIViewController?
+        
+        if let controllerName = selectedMenu.controllerName {
+            let profileView = UIStoryboard(name: "ProfileView", bundle: nil)
+            if controllerName == "ProfileOwnerViewController" {
+                vc = profileView.instantiateViewController(withIdentifier: "ProfileOwnerViewController") as! ProfileOwnerViewController
+            }
+            else if controllerName == "ProfilePartnerDetailsViewController" {
+                vc = profileView.instantiateViewController(withIdentifier: "ProfilePartnerDetailsViewController") as! ProfilePartnerDetailsViewController
+            }
+            else if controllerName == "ProfileOpenHoursViewController" {
+                vc = profileView.instantiateViewController(withIdentifier: "ProfileOpenHoursViewController") as! ProfileOpenHoursViewController
+            }
+            
+            if let menuVC = vc {
+                menuVC.modalPresentationStyle = .automatic
+                menuVC.isModalInPresentation = true
+                present(menuVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.menus.count
     }

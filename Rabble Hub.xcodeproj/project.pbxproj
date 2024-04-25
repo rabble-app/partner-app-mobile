@@ -81,6 +81,9 @@
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
 		ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */; };
+		ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */; };
+		ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */; };
+		ACC719942BDA881500CF78DC /* ProfileOpenHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +190,9 @@
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
+		ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOwnerViewController.swift; sourceTree = "<group>"; };
+		ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePartnerDetailsViewController.swift; sourceTree = "<group>"; };
+		ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOpenHoursViewController.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -567,6 +573,9 @@
 				AC8400A22BD936DF00357E5D /* Subviews */,
 				ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */,
 				ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */,
+				ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */,
+				ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */,
+				ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */,
 				AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */,
 			);
 			path = Profile;
@@ -855,6 +864,7 @@
 				AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */,
 				86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */,
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
+				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
@@ -862,6 +872,7 @@
 				AC5EF0112BD28DA60002A8D7 /* ButtonExtension.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */,
+				ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
@@ -878,6 +889,7 @@
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */,
 				86DD74B42BD238B7001FEBBD /* QrCodeViewController.swift in Sources */,
+				ACC719942BDA881500CF78DC /* ProfileOpenHoursViewController.swift in Sources */,
 				8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */,
 				86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */,
 				86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */,
