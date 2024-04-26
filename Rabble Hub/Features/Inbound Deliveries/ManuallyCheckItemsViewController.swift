@@ -85,9 +85,9 @@ class ManuallyCheckItemsViewController: UIViewController {
     @IBAction func checkInStoreButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "SuccessStateViewController") as! SuccessStateViewController
-        vc.modalPresentationStyle = .automatic
+        vc.modalPresentationStyle = .overFullScreen
         vc.isModalInPresentation = true
-        vc.deliveryNavigationController = self.deliveryNavigationController
+//        vc.deliveryNavigationController = self.deliveryNavigationController
         present(vc, animated: true, completion: nil)
     }
     

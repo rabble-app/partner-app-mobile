@@ -246,17 +246,55 @@
                                     <constraint firstAttribute="trailing" secondItem="ZOq-p1-WHC" secondAttribute="trailing" constant="8" id="fIJ-P8-klu"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0t-uq-34Y">
+                                <rect key="frame" x="23" y="348.33333333333331" width="24" height="24"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Op-Hv-rfP">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="tickBoxButtonTap:" destination="FA9-nC-ZWL" eventType="touchUpInside" id="Irz-4O-R28"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="4Op-Hv-rfP" firstAttribute="leading" secondItem="R0t-uq-34Y" secondAttribute="leading" id="Vtq-I7-quT"/>
+                                    <constraint firstAttribute="width" constant="24" id="dpU-BQ-QYG"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Op-Hv-rfP" secondAttribute="trailing" id="eHc-Dq-swN"/>
+                                    <constraint firstItem="4Op-Hv-rfP" firstAttribute="top" secondItem="R0t-uq-34Y" secondAttribute="top" id="hbg-Rh-oV9"/>
+                                    <constraint firstAttribute="height" constant="24" id="rm5-9l-tHj"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Op-Hv-rfP" secondAttribute="bottom" id="wye-wX-0hs"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcy-oy-gop">
+                                <rect key="frame" x="55" y="348.33333333333331" width="315" height="38.333333333333314"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="By proceeding you agree to the Service Agreement for Rabble Hubs">
+                                        <attributes>
+                                            <color key="NSColor" name="gray_3"/>
+                                            <font key="NSFont" size="16" name="SFPro-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Szn-Nh-K5h"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background_primary"/>
                         <constraints>
+                            <constraint firstItem="R0t-uq-34Y" firstAttribute="top" secondItem="YAG-Rt-cML" secondAttribute="bottom" constant="24" id="65o-vJ-Gmn"/>
                             <constraint firstItem="lEA-kd-t1V" firstAttribute="top" secondItem="Szn-Nh-K5h" secondAttribute="top" constant="17" id="6xV-Zm-nXc"/>
                             <constraint firstItem="Szn-Nh-K5h" firstAttribute="bottom" secondItem="KOX-JS-QCm" secondAttribute="bottom" constant="16" id="8bc-mB-wVt"/>
+                            <constraint firstItem="R0t-uq-34Y" firstAttribute="leading" secondItem="KhB-MB-RVA" secondAttribute="leading" id="BTN-zM-BJ8"/>
                             <constraint firstItem="9jx-se-sA3" firstAttribute="top" secondItem="sEa-0W-X7P" secondAttribute="bottom" constant="24" id="DpE-1r-OBG"/>
                             <constraint firstItem="hIp-EP-Umw" firstAttribute="leading" secondItem="lEA-kd-t1V" secondAttribute="leading" id="EJV-Tk-4k6"/>
                             <constraint firstItem="Szn-Nh-K5h" firstAttribute="trailing" secondItem="KOX-JS-QCm" secondAttribute="trailing" constant="16" id="FNK-rT-fsB"/>
                             <constraint firstItem="lEA-kd-t1V" firstAttribute="leading" secondItem="Szn-Nh-K5h" secondAttribute="leading" constant="16" id="FZV-VB-CQ9"/>
                             <constraint firstItem="KOX-JS-QCm" firstAttribute="leading" secondItem="Szn-Nh-K5h" secondAttribute="leading" constant="16" id="Kfg-Nk-usT"/>
+                            <constraint firstItem="bcy-oy-gop" firstAttribute="top" secondItem="R0t-uq-34Y" secondAttribute="top" id="LQk-th-9Um"/>
                             <constraint firstItem="hIp-EP-Umw" firstAttribute="top" secondItem="lEA-kd-t1V" secondAttribute="bottom" constant="16" id="Mb0-xq-0sB"/>
                             <constraint firstItem="YAG-Rt-cML" firstAttribute="top" secondItem="sEa-0W-X7P" secondAttribute="bottom" constant="24" id="QaD-pW-vjs"/>
                             <constraint firstItem="Szn-Nh-K5h" firstAttribute="trailing" secondItem="9jx-se-sA3" secondAttribute="trailing" constant="23" id="RdT-u9-32b"/>
@@ -264,16 +302,21 @@
                             <constraint firstItem="sEa-0W-X7P" firstAttribute="leading" secondItem="Szn-Nh-K5h" secondAttribute="leading" constant="16" id="Zcx-ov-Szh"/>
                             <constraint firstItem="sEa-0W-X7P" firstAttribute="top" secondItem="hIp-EP-Umw" secondAttribute="bottom" constant="8" id="Zg9-zv-6RW"/>
                             <constraint firstItem="Szn-Nh-K5h" firstAttribute="trailing" secondItem="sEa-0W-X7P" secondAttribute="trailing" constant="16" id="aoZ-Q8-r1G"/>
+                            <constraint firstItem="bcy-oy-gop" firstAttribute="trailing" secondItem="9jx-se-sA3" secondAttribute="trailing" id="hsY-eB-QV9"/>
+                            <constraint firstItem="bcy-oy-gop" firstAttribute="leading" secondItem="R0t-uq-34Y" secondAttribute="trailing" constant="8" id="laz-k8-KwN"/>
                             <constraint firstItem="9jx-se-sA3" firstAttribute="leading" secondItem="YAG-Rt-cML" secondAttribute="trailing" constant="8" id="mjh-BQ-CFl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d4s-V5-Bom"/>
                     <connections>
+                        <outlet property="agreementLabel" destination="bcy-oy-gop" id="tuw-Zb-oJw"/>
                         <outlet property="codeLabel" destination="4UE-hS-KxF" id="50K-tg-MOv"/>
                         <outlet property="countryPickerButton" destination="KhB-MB-RVA" id="psg-4d-bSA"/>
                         <outlet property="flag" destination="aXM-sT-dy2" id="yDe-07-zd5"/>
                         <outlet property="phoneNumberContainer" destination="9jx-se-sA3" id="z21-B1-0p6"/>
                         <outlet property="phoneNumberTextfield" destination="ZOq-p1-WHC" id="9jG-yf-bUX"/>
+                        <outlet property="tickBox" destination="R0t-uq-34Y" id="H0d-l3-0d2"/>
+                        <outlet property="tickBoxButton" destination="4Op-Hv-rfP" id="COA-Zn-RHB"/>
                         <segue destination="Ddy-Cp-dIg" kind="show" id="wFn-xc-PZw"/>
                     </connections>
                 </viewController>
