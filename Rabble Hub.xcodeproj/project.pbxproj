@@ -78,6 +78,9 @@
 		AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */; };
 		AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */; };
 		AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */; };
+		AC8CDDDB2BDB85030091882B /* ManageEmployeeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDDA2BDB85030091882B /* ManageEmployeeView.storyboard */; };
+		AC8CDDDD2BDBA2E30091882B /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDDC2BDBA2E30091882B /* EmployeeTableViewCell.swift */; };
+		AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDDE2BDBA6E60091882B /* ManageEmployeeViewController.swift */; };
 		ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */; };
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
@@ -188,6 +191,9 @@
 		AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewModel.swift; sourceTree = "<group>"; };
 		AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonTableViewCell.swift; sourceTree = "<group>"; };
 		AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		AC8CDDDA2BDB85030091882B /* ManageEmployeeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageEmployeeView.storyboard; sourceTree = "<group>"; };
+		AC8CDDDC2BDBA2E30091882B /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		AC8CDDDE2BDBA6E60091882B /* ManageEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployeeViewController.swift; sourceTree = "<group>"; };
 		ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyCheckItemsViewController.swift; sourceTree = "<group>"; };
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -356,6 +362,7 @@
 				86DD74B02BD2384F001FEBBD /* QrCode */,
 				86DD74B72BD247CD001FEBBD /* MyTeams */,
 				ACB78DBD2BD698BA0047D2AF /* Profile */,
+				AC8CDDD92BDB7F200091882B /* Manage Employees */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -570,6 +577,24 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		AC8CDDD92BDB7F200091882B /* Manage Employees */ = {
+			isa = PBXGroup;
+			children = (
+				AC8CDDE02BDBA6EE0091882B /* Subviews */,
+				AC8CDDDA2BDB85030091882B /* ManageEmployeeView.storyboard */,
+				AC8CDDDE2BDBA6E60091882B /* ManageEmployeeViewController.swift */,
+			);
+			path = "Manage Employees";
+			sourceTree = "<group>";
+		};
+		AC8CDDE02BDBA6EE0091882B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AC8CDDDC2BDBA2E30091882B /* EmployeeTableViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		ACB78DBD2BD698BA0047D2AF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +743,7 @@
 				86DD74B92BD247E6001FEBBD /* MyTeamsView.storyboard in Resources */,
 				86C0F5D62BCFB9AB00B78747 /* TeamSetUp.storyboard in Resources */,
 				ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */,
+				AC8CDDDB2BDB85030091882B /* ManageEmployeeView.storyboard in Resources */,
 				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
@@ -863,6 +889,7 @@
 				861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */,
+				AC8CDDDD2BDBA2E30091882B /* EmployeeTableViewCell.swift in Sources */,
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
 				AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */,
@@ -888,6 +915,7 @@
 				AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */,
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
 				AC5EF01A2BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift in Sources */,
+				AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */,
 				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,

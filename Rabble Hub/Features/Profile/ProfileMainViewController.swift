@@ -30,15 +30,21 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         var vc: UIViewController?
         
         if let controllerName = selectedMenu.controllerName {
-            let profileView = UIStoryboard(name: "ProfileView", bundle: nil)
             if controllerName == "ProfileOwnerViewController" {
+                let profileView = UIStoryboard(name: "ProfileView", bundle: nil)
                 vc = profileView.instantiateViewController(withIdentifier: "ProfileOwnerViewController") as! ProfileOwnerViewController
             }
             else if controllerName == "ProfilePartnerDetailsViewController" {
+                let profileView = UIStoryboard(name: "ProfileView", bundle: nil)
                 vc = profileView.instantiateViewController(withIdentifier: "ProfilePartnerDetailsViewController") as! ProfilePartnerDetailsViewController
             }
             else if controllerName == "ProfileOpenHoursViewController" {
+                let profileView = UIStoryboard(name: "ProfileView", bundle: nil)
                 vc = profileView.instantiateViewController(withIdentifier: "ProfileOpenHoursViewController") as! ProfileOpenHoursViewController
+            }
+            else if controllerName == "ManageEmployeeViewController" {
+                let profileView = UIStoryboard(name: "ManageEmployeeView", bundle: nil)
+                vc = profileView.instantiateViewController(withIdentifier: "ManageEmployeeViewController") as! ManageEmployeeViewController
             }
             
             if let menuVC = vc {
