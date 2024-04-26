@@ -25,3 +25,8 @@ enum Step {
 enum CellMode {
   case monFri, custom
 }
+
+
+enum ProfileMenuCellMode {
+    case headerUI, textUI, switchUI, buttonUI, infoUI, sectionUI
+}
