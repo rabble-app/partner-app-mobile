@@ -22,6 +22,13 @@ class ManageEmployeeViewController: UIViewController {
     
     @IBAction func addEmployeeButtonTap(_ sender: Any) {
         
+        
+        let storyboard = UIStoryboard(name: "ManageEmployeeView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ManageEmployeeAddEmployeeViewController") as? ManageEmployeeAddEmployeeViewController {
+            vc.modalPresentationStyle = .automatic
+            vc.isModalInPresentation = true
+            self.present(vc, animated: true)
+        }
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
