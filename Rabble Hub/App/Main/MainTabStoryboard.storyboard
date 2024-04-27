@@ -11,10 +11,11 @@
         <scene sceneID="N4S-te-8Uc">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabViewController" id="U7g-ft-Ja7" customClass="MainTabViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lww-1e-Dsc">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="lww-1e-Dsc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SrT-Wi-Pf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

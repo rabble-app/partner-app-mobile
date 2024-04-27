@@ -29,6 +29,8 @@ class DeliveryDetailsViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.iconBackgroundView.layer.cornerRadius = 12.0
+        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
+
     }
 
     @IBAction func confirmButtonTap(_ sender: Any) {

@@ -34,6 +34,8 @@ class ManuallyCheckItemsViewController: UIViewController {
         self.imageContainerViewHeightConstraint.constant = 76
         self.withImageView.isHidden = true
         self.cameraButton.setTitle("", for: .normal)
+        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
+
     }
     
     @IBAction func cameraButtonTap(_ sender: Any) {
