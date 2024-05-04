@@ -58,8 +58,6 @@
 		86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */; };
 		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
-		AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */; };
-		AC5EEFFC2BCF547E0002A8D7 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */; };
 		AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */; };
 		AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */; };
 		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
@@ -82,6 +80,8 @@
 		AC8CDDDD2BDBA2E30091882B /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDDC2BDBA2E30091882B /* EmployeeTableViewCell.swift */; };
 		AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDDE2BDBA6E60091882B /* ManageEmployeeViewController.swift */; };
 		AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDE12BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift */; };
+		AC8CDDE62BE692600091882B /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */; };
+		AC8CDDE72BE692600091882B /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE52BE692600091882B /* SF-Pro.ttf */; };
 		ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */; };
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
@@ -172,8 +172,6 @@
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
-		AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro.ttf"; path = "../../../../../../../../../../Library/Fonts/SF-Pro.ttf"; sourceTree = "<group>"; };
-		AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Italic.ttf"; path = "../../../../../../../../../../Library/Fonts/SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleViewController.swift; sourceTree = "<group>"; };
 		AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleTableViewCell.swift; sourceTree = "<group>"; };
@@ -196,6 +194,8 @@
 		AC8CDDDC2BDBA2E30091882B /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		AC8CDDDE2BDBA6E60091882B /* ManageEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployeeViewController.swift; sourceTree = "<group>"; };
 		AC8CDDE12BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployeeAddEmployeeViewController.swift; sourceTree = "<group>"; };
+		AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
+		AC8CDDE52BE692600091882B /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyCheckItemsViewController.swift; sourceTree = "<group>"; };
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -288,7 +288,6 @@
 				86D17AA52BCE693D00464511 /* Assets */,
 				86A60DE52BCCEEA100496390 /* ThirdPartySDK */,
 				86A60DE62BCCEEAF00496390 /* Translation */,
-				86A60DE72BCCEEBC00496390 /* Font */,
 				86A60DE82BCCEEE000496390 /* Data */,
 				86A60DEB2BCCEF4400496390 /* Features */,
 				86A60DF12BCCEFAA00496390 /* App */,
@@ -332,15 +331,6 @@
 			children = (
 			);
 			path = Translation;
-			sourceTree = "<group>";
-		};
-		86A60DE72BCCEEBC00496390 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				AC5EEFF92BCEA45C0002A8D7 /* SF-Pro.ttf */,
-				AC5EEFFB2BCF547E0002A8D7 /* SF-Pro-Italic.ttf */,
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		86A60DE82BCCEEE000496390 /* Data */ = {
@@ -471,6 +461,7 @@
 		86D17AA52BCE693D00464511 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				AC8CDDE32BE692600091882B /* Font */,
 				86D17AA62BCE696100464511 /* Color.xcassets */,
 			);
 			path = Assets;
@@ -597,6 +588,15 @@
 			);
 			path = Subviews;
 			sourceTree = "<group>";
+		};
+		AC8CDDE32BE692600091882B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */,
+				AC8CDDE52BE692600091882B /* SF-Pro.ttf */,
+			);
+			path = Font;
+			sourceTree = SOURCE_ROOT;
 		};
 		ACB78DBD2BD698BA0047D2AF /* Profile */ = {
 			isa = PBXGroup;
@@ -753,12 +753,12 @@
 				86DD74B22BD23898001FEBBD /* QrCodeView.storyboard in Resources */,
 				AC5EF0152BD2B1310002A8D7 /* MainTabStoryboard.storyboard in Resources */,
 				8617C4D52BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard in Resources */,
-				AC5EEFFA2BCEA45C0002A8D7 /* SF-Pro.ttf in Resources */,
+				AC8CDDE62BE692600091882B /* SF-Pro-Italic.ttf in Resources */,
 				86D17AA72BCE696100464511 /* Color.xcassets in Resources */,
+				AC8CDDE72BE692600091882B /* SF-Pro.ttf in Resources */,
 				86A60DC22BCCEE3400496390 /* Base in Resources */,
 				86A60DBD2BCCEE3200496390 /* Base in Resources */,
 				AC5EF00B2BD144940002A8D7 /* InboundDeliveriesView.storyboard in Resources */,
-				AC5EEFFC2BCF547E0002A8D7 /* SF-Pro-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1130,8 +1130,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Hub/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs to access your camera to capture the products.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "$(PRODUCT_NAME) needs to access your photo to save the products.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Rabble Hub needs to access your camera to capture the products.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Rabble Hub needs to access your photo to save the products.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1167,8 +1167,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rabble Hub/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rabble Hub";
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs to access your camera to capture the products.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "$(PRODUCT_NAME) needs to access your photo to save the products.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Rabble Hub needs to access your camera to capture the products.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Rabble Hub needs to access your photo to save the products.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

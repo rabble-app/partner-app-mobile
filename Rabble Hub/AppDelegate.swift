@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
 
+        let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+        fonts?.forEach({ url in
+            CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+        })
+        
         let customerCollectionListViewController = CustomerCollectionListViewController()
         let navigationController = UINavigationController(rootViewController: customerCollectionListViewController)
         window.rootViewController = navigationController
