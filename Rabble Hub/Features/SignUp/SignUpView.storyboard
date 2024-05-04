@@ -14,7 +14,7 @@
             <string>SFPro-RegularItalic</string>
         </array>
         <array key="SF-Pro.ttf">
-            <string>SFPro-Medium</string>
+            <string>SFPro-Bold</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
         </array>
@@ -47,8 +47,8 @@
                                                 <rect key="frame" x="0.0" y="104" width="393" height="1105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Company Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxS-b1-CQb">
-                                                        <rect key="frame" x="16" y="37" width="199" height="24"/>
-                                                        <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
+                                                        <rect key="frame" x="16" y="37" width="207.33333333333334" height="24"/>
+                                                        <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
                                                         <color key="textColor" name="gray_1"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -409,8 +409,8 @@
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iK-fj-oqR">
-                                <rect key="frame" x="16" y="200" width="122" height="24"/>
-                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
+                                <rect key="frame" x="16" y="200" width="128.33333333333334" height="24"/>
+                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
                                 <color key="textColor" name="gray_1"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -791,11 +791,11 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-2O-X03">
-                                                <rect key="frame" x="16" y="141" width="108" height="24"/>
+                                                <rect key="frame" x="16" y="141" width="112" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="NUJ-yS-3cc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
                                                 <color key="textColor" name="gray_1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -909,11 +909,11 @@
                                                 </connections>
                                             </containerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rabble Partnership Agreement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-au-vhJ">
-                                                <rect key="frame" x="16" y="141" width="275.33333333333331" height="24"/>
+                                                <rect key="frame" x="16" y="141" width="289" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="rLo-VX-jrT"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
                                                 <color key="textColor" name="gray_1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -947,11 +947,17 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-L1-6Q4">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-L1-6Q4">
                                                         <rect key="frame" x="20" y="0.0" width="341" height="76.666666666666671"/>
-                                                        <string key="text">Commission Rabble agree to pay a standard commission on every order completed at your location, subject to Rabble’s Partnership Agreement. </string>
-                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment>
+                                                                <string key="content">Commission Rabble agree to pay a standard commission on every order completed at your location, subject to Rabble’s Partnership Agreement. </string>
+                                                                <attributes>
+                                                                    <font key="NSFont" size="16" name="SFPro-Regular"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1004,7 +1010,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="12" id="wA2-LA-XzH"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1135,6 +1141,10 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="firstAgreementLabel" destination="ZC2-L1-6Q4" id="SbL-6u-ybM"/>
+                        <outlet property="secondAgreementLabel" destination="jj7-IU-45N" id="DF7-G1-hTc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qix-kZ-93W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
