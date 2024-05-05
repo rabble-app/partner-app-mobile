@@ -4,6 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>GoshaSansRegular.otf</string>
+		<string>GoshaSansBold.otf</string>
 		<string>SF-Pro.ttf</string>
 		<string>SF-Pro-Italic.ttf</string>
 	</array>

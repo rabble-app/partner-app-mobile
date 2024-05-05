@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,25 +80,41 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-Oj-yGu">
                                                     <rect key="frame" x="0.0" y="289" width="361" height="72"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-t5-sGE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-t5-sGE">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="21"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" red="0.20000000000000001" green="0.25098039215686274" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Farm Name">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.20000000000000001" green="0.25098039215686274" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <font key="NSFont" size="18" name="GoshaSans-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm &amp; Dairy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2J-9e-PZd">
-                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="361" height="14.333333333333332"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlu-d6-7Ev">
+                                                            <rect key="frame" x="0.0" y="25" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="uct-Vd-H65"/>
+                                                                <constraint firstAttribute="width" constant="20" id="y5R-N5-BOh"/>
+                                                            </constraints>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title=" " image="icon_bookmark"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm &amp; Dairy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2J-9e-PZd">
+                                                            <rect key="frame" x="24" y="25" width="337" height="14"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.4392156862745098" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ5-3N-sXy">
-                                                            <rect key="frame" x="0.0" y="43.333333333333314" width="361" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ5-3N-sXy">
+                                                            <rect key="frame" x="0.0" y="43" width="361" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="gHS-6V-Wgs"/>
                                                             </constraints>
                                                             <string key="text">Cackleberry Farm is nestled at the foot of a hill just outside Stow-on-the-Wold. Run by Paddy and Steph Bourns, their rare breed flocks are entirely free range and live in traditional chicken houses on 12 acres of land, with lots of perches.</string>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.43921568630000002" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -107,13 +123,15 @@
                                                         <constraint firstItem="Df5-t5-sGE" firstAttribute="leading" secondItem="bUf-Oj-yGu" secondAttribute="leading" id="4Vc-AW-j3f"/>
                                                         <constraint firstAttribute="trailing" secondItem="t2J-9e-PZd" secondAttribute="trailing" id="9aR-cO-mmK"/>
                                                         <constraint firstAttribute="trailing" secondItem="CZ5-3N-sXy" secondAttribute="trailing" id="BUQ-Kh-8mV"/>
+                                                        <constraint firstItem="Jlu-d6-7Ev" firstAttribute="leading" secondItem="Df5-t5-sGE" secondAttribute="leading" id="C0Y-US-hnM"/>
                                                         <constraint firstAttribute="trailing" secondItem="Df5-t5-sGE" secondAttribute="trailing" id="GiE-LJ-iTL"/>
                                                         <constraint firstItem="CZ5-3N-sXy" firstAttribute="leading" secondItem="bUf-Oj-yGu" secondAttribute="leading" id="LIY-VC-gDf"/>
                                                         <constraint firstItem="CZ5-3N-sXy" firstAttribute="top" secondItem="t2J-9e-PZd" secondAttribute="bottom" constant="4" id="Lqq-4B-lVs"/>
-                                                        <constraint firstItem="t2J-9e-PZd" firstAttribute="leading" secondItem="bUf-Oj-yGu" secondAttribute="leading" id="dse-Ae-Dqr"/>
+                                                        <constraint firstItem="t2J-9e-PZd" firstAttribute="leading" secondItem="Jlu-d6-7Ev" secondAttribute="trailing" constant="4" id="OZV-Ig-bhO"/>
                                                         <constraint firstItem="Df5-t5-sGE" firstAttribute="top" secondItem="bUf-Oj-yGu" secondAttribute="top" id="guJ-Xt-7OL"/>
                                                         <constraint firstItem="t2J-9e-PZd" firstAttribute="top" secondItem="Df5-t5-sGE" secondAttribute="bottom" constant="4" id="olC-vI-3md"/>
                                                         <constraint firstAttribute="height" constant="72" id="uSR-eu-7xm"/>
+                                                        <constraint firstItem="Jlu-d6-7Ev" firstAttribute="top" secondItem="Df5-t5-sGE" secondAttribute="bottom" constant="4" id="ydQ-nC-XPq"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -168,6 +186,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_bookmark" width="20" height="20"/>
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
