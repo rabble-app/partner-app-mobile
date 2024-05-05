@@ -12,6 +12,7 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet weak var iconBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var deliveryNavigationController: UINavigationController?
+    @IBOutlet var tableviewHeaderContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,16 @@ class DeliveryDetailsViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.iconBackgroundView.layer.cornerRadius = 12.0
-        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
+        
+        tableviewHeaderContainer.clipsToBounds = true
+        tableviewHeaderContainer.layer.cornerRadius = 10
+        tableviewHeaderContainer.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        tableView.clipsToBounds = true
+        tableView.layer.cornerRadius = 10
+        tableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        tableView.showsVerticalScrollIndicator = false
 
     }
 
