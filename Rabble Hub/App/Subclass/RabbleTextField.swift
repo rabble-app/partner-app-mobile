@@ -35,8 +35,8 @@ class RabbleTextField: UITextField {
     func configure() {
         self.borderStyle = .none
         self.layer.cornerRadius = 12.0
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = Colors.Gray5.cgColor
         self.layer.backgroundColor = UIColor.white.cgColor
     }
 
