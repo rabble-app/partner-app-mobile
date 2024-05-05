@@ -129,13 +129,13 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alfredo Johnson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-AX-Pmc">
-                                                            <rect key="frame" x="60" y="24" width="119" height="20"/>
+                                                            <rect key="frame" x="60" y="24" width="119" height="18.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+44 7700900077" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZg-8b-QGC">
-                                                            <rect key="frame" x="60" y="46" width="114" height="17"/>
+                                                            <rect key="frame" x="60.000000000000007" y="44.666666666666664" width="113.66666666666669" height="17"/>
                                                             <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
                                                             <color key="textColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -144,7 +144,7 @@
                                                             <rect key="frame" x="289.66666666666669" y="29" width="57" height="32"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsW-7w-nzL">
-                                                                    <rect key="frame" x="10" y="8.6666666666666643" width="37" height="15"/>
+                                                                    <rect key="frame" x="10" y="9" width="37" height="14"/>
                                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                                     <color key="textColor" systemColor="systemMintColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -382,7 +382,7 @@
                                                 <color key="textColor" name="gray_3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mss-nh-DMF">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mss-nh-DMF" customClass="RabbleTextField" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="284.66666666666669" width="361" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="bel-u4-9pg"/>

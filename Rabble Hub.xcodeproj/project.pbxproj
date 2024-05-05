@@ -82,6 +82,7 @@
 		AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDE12BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift */; };
 		AC8CDDE62BE692600091882B /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */; };
 		AC8CDDE72BE692600091882B /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE52BE692600091882B /* SF-Pro.ttf */; };
+		AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */; };
 		ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */; };
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
@@ -196,6 +197,7 @@
 		AC8CDDE12BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployeeAddEmployeeViewController.swift; sourceTree = "<group>"; };
 		AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		AC8CDDE52BE692600091882B /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
+		AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextField.swift; sourceTree = "<group>"; };
 		ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyCheckItemsViewController.swift; sourceTree = "<group>"; };
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 		86A60DF12BCCEFAA00496390 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				AC8CDDE82BE70B020091882B /* Subclass */,
 				AC5EF0092BD144540002A8D7 /* Main */,
 				86C0F5D92BCFC6E600B78747 /* Common */,
 				86A60DF42BCCF02500496390 /* Extension */,
@@ -597,6 +600,14 @@
 			);
 			path = Font;
 			sourceTree = SOURCE_ROOT;
+		};
+		AC8CDDE82BE70B020091882B /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */,
+			);
+			path = Subclass;
+			sourceTree = "<group>";
 		};
 		ACB78DBD2BD698BA0047D2AF /* Profile */ = {
 			isa = PBXGroup;
@@ -899,6 +910,7 @@
 				86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */,
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
+				AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */,
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
