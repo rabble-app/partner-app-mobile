@@ -37,7 +37,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-ro-qDi">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-ro-qDi">
                                         <rect key="frame" x="8" y="99" width="371" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="9qk-fz-XY6"/>

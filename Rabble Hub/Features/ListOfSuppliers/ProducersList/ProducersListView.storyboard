@@ -42,7 +42,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="5Jd-hn-wxp">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="5Jd-hn-wxp">
                                 <rect key="frame" x="8" y="141.66666666666666" width="377" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="LEQ-fM-v5U"/>

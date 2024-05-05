@@ -19,6 +19,7 @@ class CustomerCollectionListViewController: UIViewController {
 
         collectionTableview.delegate = self
         collectionTableview.dataSource = self
+        
     }
 
 }
