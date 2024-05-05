@@ -23,10 +23,17 @@ class OrderDetailsViewController: UIViewController {
         ordersTableview.delegate = self
         ordersTableview.dataSource = self
         
-        tableviewHeaderContainer.roundCorners([.topLeft, .topRight], radius: 13)
+        tableviewHeaderContainer.clipsToBounds = true
+        tableviewHeaderContainer.layer.cornerRadius = 10
+        tableviewHeaderContainer.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        ordersTableview.clipsToBounds = true
+        ordersTableview.layer.cornerRadius = 10
+        ordersTableview.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
         iconContainer.layer.cornerRadius = 12.0
         iconContainer.clipsToBounds = true
-        //ordersTableview.roundCorners([.bottomLeft, .bottomRight], radius: 13)
+        ordersTableview.showsVerticalScrollIndicator = false
     }
 }
 
