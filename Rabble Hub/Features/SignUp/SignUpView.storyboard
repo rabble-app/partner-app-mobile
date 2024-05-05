@@ -93,7 +93,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GsJ-P0-l1A">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GsJ-P0-l1A" customClass="RabbleTextView" customModule="Rabble_Hub" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="419.33333333333337" width="361" height="110"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -102,6 +102,9 @@
                                                         <color key="textColor" name="gray_2"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Directions"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Store type" borderStyle="roundedRect" placeholder="Store type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GIw-cU-qgY" customClass="RabbleTextField" customModule="Rabble_Hub" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="545.33333333333337" width="361" height="56"/>
@@ -1108,7 +1111,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="45E-XI-PjC"/>
+        <segue reference="nyG-45-66W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>
