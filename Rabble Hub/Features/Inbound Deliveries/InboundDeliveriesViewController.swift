@@ -63,4 +63,8 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         return 77
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+       return 24
+    }
+    
 }
