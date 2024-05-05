@@ -7,17 +7,25 @@
 
 import UIKit
 
+protocol QrCodeStartScanningDelegate {
+    func startScanning()
+}
+
 class QrCodeErrorPopViewController: UIViewController {
+    
+    var delegate: QrCodeStartScanningDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor(white: 1, alpha: 0.6)
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func closeButtonTap(_ sender: Any) {
-        self.dismiss(animated: false)
+        self.dismiss(animated: true) {
+            self.delegate?.startScanning()
+        }
     }
 
 }

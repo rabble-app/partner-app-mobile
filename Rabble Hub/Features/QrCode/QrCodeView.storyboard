@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TQt-Hg-58b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TQt-Hg-58b">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -66,7 +66,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqU-JQ-0Rn">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqU-JQ-0Rn" customClass="QRCodeReaderView" customModule="QRCodeReader">
                                         <rect key="frame" x="16" y="57.999999999999972" width="361" height="477.33333333333326"/>
                                         <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -99,6 +99,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pQX-fT-ltv"/>
+                    <connections>
+                        <outlet property="cameraView" destination="AqU-JQ-0Rn" id="2EY-tH-R4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spe-Vh-uA3">
@@ -154,8 +157,8 @@
                                             <constraint firstAttribute="height" constant="1" id="fhm-jJ-OiQ"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vB-Hp-nq0" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="518.33333333333337" width="326" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vB-Hp-nq0" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="518.33333333333337" width="361" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ebz-H3-1Ic"/>
                                         </constraints>
@@ -231,6 +234,7 @@
                                     <constraint firstItem="2vE-ZZ-ewz" firstAttribute="leading" secondItem="Ll6-sG-Iow" secondAttribute="leading" constant="16" id="1Ql-PE-4Eh"/>
                                     <constraint firstItem="XAS-U6-nBE" firstAttribute="leading" secondItem="Ll6-sG-Iow" secondAttribute="leading" id="7Gh-11-BeK"/>
                                     <constraint firstAttribute="trailing" secondItem="FnF-Uv-wy3" secondAttribute="trailing" constant="16" id="93r-bQ-MoD"/>
+                                    <constraint firstItem="6vB-Hp-nq0" firstAttribute="leading" secondItem="Ll6-sG-Iow" secondAttribute="leading" constant="16" id="AeS-6N-36d"/>
                                     <constraint firstAttribute="height" constant="663" id="Ery-tK-fhx"/>
                                     <constraint firstItem="Ufk-aH-jDz" firstAttribute="leading" secondItem="Ll6-sG-Iow" secondAttribute="leading" constant="16" id="Gn4-cm-SwZ"/>
                                     <constraint firstAttribute="trailing" secondItem="36p-Qc-RwD" secondAttribute="trailing" constant="16" id="H8v-Sg-F2M"/>
@@ -248,6 +252,7 @@
                                     <constraint firstItem="36p-Qc-RwD" firstAttribute="top" secondItem="UIE-7p-TVD" secondAttribute="bottom" constant="16" id="ovR-aq-0bG"/>
                                     <constraint firstItem="WQa-O3-PKi" firstAttribute="top" secondItem="2vE-ZZ-ewz" secondAttribute="bottom" constant="16" id="p6l-W8-Wo1"/>
                                     <constraint firstItem="UIE-7p-TVD" firstAttribute="top" secondItem="XAS-U6-nBE" secondAttribute="bottom" constant="16" id="pCI-Fq-1j5"/>
+                                    <constraint firstAttribute="trailing" secondItem="6vB-Hp-nq0" secondAttribute="trailing" constant="16" id="pFu-7C-VsB"/>
                                     <constraint firstItem="6vB-Hp-nq0" firstAttribute="top" secondItem="WQa-O3-PKi" secondAttribute="bottom" constant="37" id="rct-si-E4D"/>
                                     <constraint firstItem="2vE-ZZ-ewz" firstAttribute="top" secondItem="36p-Qc-RwD" secondAttribute="bottom" constant="40" id="u2a-Xs-ihe"/>
                                     <constraint firstItem="Ooc-QW-GmB" firstAttribute="leading" secondItem="Ufk-aH-jDz" secondAttribute="leading" id="vaJ-Yp-dAz"/>

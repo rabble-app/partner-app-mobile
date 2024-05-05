@@ -9,6 +9,17 @@ target 'Rabble Hub' do
   pod 'DialCountries'
   pod 'EliteOTPField'
   pod 'IQKeyboardManagerSwift'
+  pod 'QRCodeReader.swift', '~> 10.1.0'
+  
+  post_install do |installer|
+      installer.generated_projects.each do |project|
+          project.targets.each do |target|
+              target.build_configurations.each do |config|
+                  config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+              end
+          end
+      end
+  end
 
   target 'Rabble HubTests' do
     inherit! :search_paths
