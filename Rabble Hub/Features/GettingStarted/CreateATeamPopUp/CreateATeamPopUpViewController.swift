@@ -7,16 +7,23 @@
 
 import UIKit
 
+protocol ShowSuppliersDelegate {
+    func onTapShowSuppliers()
+}
+
 class CreateATeamPopUpViewController: UIViewController {
+    
+    var delegate: ShowSuppliersDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor(white: 1, alpha: 0.6)
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func showMeSuppliersButtonTap(_ sender: Any) {
+//        delegate?.onTapShowSuppliers()
         let storyboard = UIStoryboard(name: "ProducersListView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ProducersListViewController") as? ProducersListViewController {
             vc.modalPresentationStyle = .formSheet
@@ -24,6 +31,9 @@ class CreateATeamPopUpViewController: UIViewController {
         }
     }
     
+    @IBAction func closeButtonTap(_ sender: Any) {
+        self.dismiss(animated: false)
+    }
     @IBAction func skipButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {

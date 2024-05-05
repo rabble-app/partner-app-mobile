@@ -7,8 +7,10 @@
 
 import UIKit
 
-class SignUpAgreementViewController: UIViewController {
-
+class SignUpAgreementViewController: UIViewController, PaymentPopUpDelegate {
+    
+    
+    
     @IBOutlet weak var firstAgreementLabel: UILabel!
     @IBOutlet weak var secondAgreementLabel: UILabel!
     
@@ -22,7 +24,7 @@ class SignUpAgreementViewController: UIViewController {
         if let firstAgreementText = configureString(fullString: "Commission Rabble agree to pay a standard commission on every order completed at your location, subject to Rabble’s Partnership Agreement.", boldPartOfString: "Commission") {
             self.firstAgreementLabel.attributedText = firstAgreementText
         }
-
+        
         if let secondAgreementText = configureString(fullString: "Each order will be stored securely in the store. You or an employee is to confirm the customer booking.", boldPartOfString: "Each order will be stored securely in the store.") {
             self.secondAgreementLabel.attributedText = secondAgreementText
         }
@@ -42,6 +44,7 @@ class SignUpAgreementViewController: UIViewController {
         let storyboard = UIStoryboard(name: "PaymentPopView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "PaymentPopUpViewController") as? PaymentPopUpViewController {
             vc.modalPresentationStyle = .overFullScreen
+            vc.delegate = self
             self.present(vc, animated: true)
         }
     }
@@ -59,5 +62,13 @@ class SignUpAgreementViewController: UIViewController {
         let combinedString = NSMutableAttributedString(string: fullString as String, attributes: nonBoldFontAttribute)
         combinedString.addAttributes(boldFontAttribute, range: fullString.range(of: boldPartOfString as String))
         return combinedString
+    }
+    
+    func paymentPopUpDismissed() {
+        let storyboard = UIStoryboard(name: "CreateATeamPopUpView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "CreateATeamPopUpViewController") as? CreateATeamPopUpViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
     }
 }
