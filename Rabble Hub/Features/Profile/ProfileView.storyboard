@@ -14,6 +14,7 @@
             <string>SFPro-RegularItalic</string>
         </array>
         <array key="SF-Pro.ttf">
+            <string>SFPro-Bold</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
         </array>
@@ -216,24 +217,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oJ-5f-FcT">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oJ-5f-FcT" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="8" width="361" height="48"/>
                                                             <color key="backgroundColor" name="button_primary"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="pUG-Sm-rLk"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="17"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain">
-                                                                <attributedString key="attributedTitle">
-                                                                    <fragment content="Log out">
-                                                                        <attributes>
-                                                                            <font key="NSFont" size="17" name="SFPro-Bold"/>
-                                                                            <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
-                                                            </buttonConfiguration>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="Log out"/>
                                                             <connections>
                                                                 <action selector="buttonTap:" destination="Jl6-Mt-qVd" eventType="touchUpInside" id="MGc-ul-wY6"/>
                                                             </connections>
@@ -363,26 +356,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xil-0E-9NB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xil-0E-9NB" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                         <rect key="frame" x="16" y="596.33333333333337" width="361" height="50"/>
+                                        <color key="backgroundColor" name="button_primary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Vct-Vb-DWG"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" name="button_primary"/>
-                                            </backgroundConfiguration>
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Save Changes">
-                                                    <attributes>
-                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Save Changes"/>
                                         <connections>
                                             <action selector="saveChangesButtonTap:" destination="McD-zv-O5q" eventType="touchUpInside" id="4dk-Ub-fU0"/>
                                         </connections>
@@ -664,26 +647,16 @@
                                                             <constraint firstAttribute="height" constant="24" id="wGg-1r-bSU"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-bO-I6W">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-bO-I6W" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="881.66666666666663" width="361" height="50"/>
+                                                        <color key="backgroundColor" name="button_primary"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="I7Y-nF-enj"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <backgroundConfiguration key="background">
-                                                                <color key="backgroundColor" name="button_primary"/>
-                                                            </backgroundConfiguration>
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="Save Changes">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Save Changes"/>
                                                         <connections>
                                                             <action selector="saveChangesButtonTap:" destination="dRA-Bg-sgp" eventType="touchUpInside" id="hh8-yb-U8S"/>
                                                         </connections>
@@ -1056,26 +1029,16 @@
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="tb1-7f-kQI"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-pd-8Cb">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-pd-8Cb" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="633.33333333333337" width="361" height="50"/>
+                                                        <color key="backgroundColor" name="button_primary"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="uSU-zH-MN4"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <backgroundConfiguration key="background">
-                                                                <color key="backgroundColor" name="button_primary"/>
-                                                            </backgroundConfiguration>
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="Save Changes">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Save Changes"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

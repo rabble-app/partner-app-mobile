@@ -179,26 +179,15 @@
                                                             <constraint firstAttribute="width" constant="24" id="mAG-e2-EOD"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97G-WT-S3k">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97G-WT-S3k" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="1087" width="361" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="UK7-5l-5BO"/>
                                                         </constraints>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <backgroundConfiguration key="background">
-                                                                <color key="backgroundColor" name="button_primary"/>
-                                                            </backgroundConfiguration>
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="Next">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </buttonConfiguration>
+                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                                        <color key="tintColor" systemColor="tintColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Next"/>
                                                         <connections>
                                                             <action selector="nextButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tn5-sT-8F7"/>
                                                         </connections>
@@ -468,26 +457,15 @@
                                     <action selector="previousStepButtonTap:" destination="nLc-J8-A0h" eventType="touchUpInside" id="P71-sS-ucu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-Rz-gOt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-Rz-gOt" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="204" y="752" width="173" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hfJ-BM-hdC"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" name="button_primary"/>
-                                    </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Next">
-                                            <attributes>
-                                                <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTap:" destination="nLc-J8-A0h" eventType="touchUpInside" id="BEU-7T-MT5"/>
                                 </connections>
@@ -799,26 +777,15 @@
                                                 <color key="textColor" name="gray_1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0E-ng-aiQ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0E-ng-aiQ" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="204" y="685" width="173" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="H4G-nm-3nB"/>
                                                 </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background">
-                                                        <color key="backgroundColor" name="button_primary"/>
-                                                    </backgroundConfiguration>
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Next">
-                                                            <attributes>
-                                                                <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </buttonConfiguration>
+                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Next"/>
                                                 <connections>
                                                     <action selector="nextButtonStep:" destination="b97-br-g25" eventType="touchUpInside" id="iaW-zn-cO3"/>
                                                 </connections>
@@ -1061,26 +1028,15 @@
                                                     <action selector="previousStepButtonTap:" destination="z31-fD-3DN" eventType="touchUpInside" id="jaw-2J-QXo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dW-Ao-qrR">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dW-Ao-qrR" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="204" y="693" width="173" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="vh7-SN-j2c"/>
                                                 </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background">
-                                                        <color key="backgroundColor" name="button_primary"/>
-                                                    </backgroundConfiguration>
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Accept and Continue">
-                                                            <attributes>
-                                                                <font key="NSFont" size="15" name="SFPro-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </buttonConfiguration>
+                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
+                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Accept and Continue"/>
                                                 <connections>
                                                     <action selector="acceptButtonTap:" destination="z31-fD-3DN" eventType="touchUpInside" id="HJi-g7-o1Q"/>
                                                 </connections>
@@ -1152,7 +1108,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wgv-gz-aM2"/>
+        <segue reference="45E-XI-PjC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>
@@ -1188,6 +1144,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

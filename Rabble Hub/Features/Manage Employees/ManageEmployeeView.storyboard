@@ -72,26 +72,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjL-Pr-oVb">
                                 <rect key="frame" x="0.0" y="157" width="393" height="661"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1M-6U-vFP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1M-6U-vFP" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                         <rect key="frame" x="16" y="595" width="361" height="50"/>
+                                        <color key="backgroundColor" name="button_primary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="tAJ-O1-NW2"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" name="button_primary"/>
-                                            </backgroundConfiguration>
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Add Employee">
-                                                    <attributes>
-                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Add Employee"/>
                                         <connections>
                                             <action selector="addEmployeeButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e45-UG-z6r"/>
                                         </connections>
@@ -428,26 +418,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpG-fu-OV8">
                                 <rect key="frame" x="0.0" y="744" width="393" height="74"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGe-7M-Xgs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGe-7M-Xgs" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
                                         <rect key="frame" x="16" y="8" width="361" height="50"/>
+                                        <color key="backgroundColor" name="button_primary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PFc-pM-yJa"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" name="button_primary"/>
-                                            </backgroundConfiguration>
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Add Employee">
-                                                    <attributes>
-                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Add Employee"/>
                                         <connections>
                                             <action selector="addEmployeeButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aNl-S9-H87"/>
                                             <action selector="addEmployeeButtonTap:" destination="9SZ-FA-zga" eventType="touchUpInside" id="m1L-PS-kJC"/>

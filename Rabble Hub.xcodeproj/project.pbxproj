@@ -58,6 +58,7 @@
 		86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */; };
 		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
+		AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12289E2BE73AFF001EC15F /* Properties.swift */; };
 		AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */; };
 		AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */; };
 		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
@@ -66,7 +67,6 @@
 		AC5EF00B2BD144940002A8D7 /* InboundDeliveriesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */; };
 		AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */; };
 		AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */; };
-		AC5EF0112BD28DA60002A8D7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */; };
 		AC5EF0132BD28FD90002A8D7 /* DeliveryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0122BD28FD90002A8D7 /* DeliveryDetailsViewController.swift */; };
 		AC5EF0152BD2B1310002A8D7 /* MainTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */; };
 		AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */; };
@@ -83,6 +83,7 @@
 		AC8CDDE62BE692600091882B /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */; };
 		AC8CDDE72BE692600091882B /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE52BE692600091882B /* SF-Pro.ttf */; };
 		AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */; };
+		AC8CDDEC2BE719640091882B /* RabbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDEB2BE719640091882B /* RabbleButton.swift */; };
 		ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */; };
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
@@ -172,6 +173,7 @@
 		86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTableViewCell.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC12289E2BE73AFF001EC15F /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +183,6 @@
 		AC5EF00A2BD144940002A8D7 /* InboundDeliveriesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InboundDeliveriesView.storyboard; sourceTree = "<group>"; };
 		AC5EF00C2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveriesViewController.swift; sourceTree = "<group>"; };
 		AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveriesTableViewCell.swift; sourceTree = "<group>"; };
-		AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		AC5EF0122BD28FD90002A8D7 /* DeliveryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailsViewController.swift; sourceTree = "<group>"; };
 		AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabStoryboard.storyboard; sourceTree = "<group>"; };
 		AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 		AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		AC8CDDE52BE692600091882B /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextField.swift; sourceTree = "<group>"; };
+		AC8CDDEB2BE719640091882B /* RabbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleButton.swift; sourceTree = "<group>"; };
 		ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyCheckItemsViewController.swift; sourceTree = "<group>"; };
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			children = (
 				86A60DFF2BCD39B600496390 /* Model */,
 				86A60DE92BCCEEF500496390 /* Constants.swift */,
+				AC12289E2BE73AFF001EC15F /* Properties.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -397,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				86D17AA82BCE6ACB00464511 /* Colors.swift */,
-				AC5EF0102BD28DA60002A8D7 /* ButtonExtension.swift */,
 				861EFC572BD66D5A007AB919 /* ViewExtension.swift */,
 			);
 			path = Extension;
@@ -605,6 +607,7 @@
 			isa = PBXGroup;
 			children = (
 				AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */,
+				AC8CDDEB2BE719640091882B /* RabbleButton.swift */,
 			);
 			path = Subclass;
 			sourceTree = "<group>";
@@ -915,7 +918,6 @@
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
-				AC5EF0112BD28DA60002A8D7 /* ButtonExtension.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */,
 				ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */,
@@ -931,6 +933,7 @@
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
 				AC5EF01A2BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift in Sources */,
 				AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */,
+				AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */,
 				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
 				AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
@@ -944,6 +947,7 @@
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */,
 				AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */,
+				AC8CDDEC2BE719640091882B /* RabbleButton.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,

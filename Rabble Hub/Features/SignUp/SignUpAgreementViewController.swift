@@ -50,8 +50,8 @@ class SignUpAgreementViewController: UIViewController {
     
     func configureString(fullString: NSString, boldPartOfString: NSString) -> NSAttributedString? {
         
-        guard let font = UIFont(name: "SF Pro Regular", size: 16) else { return nil }
-        guard let boldFont = UIFont(name: "SF Pro Semibold", size: 16) else { return nil }
+        guard let font = UIFont(name: Properties.Font.SF_PRO_REGULAR, size: 16) else { return nil }
+        guard let boldFont = UIFont(name: Properties.Font.SF_PRO_SEMIBOLD, size: 16) else { return nil }
         
         let nonBoldFontAttribute = [NSAttributedString.Key.font:font, NSAttributedString.Key.foregroundColor: Colors.Gray3]
         let boldFontAttribute = [NSAttributedString.Key.font:boldFont, NSAttributedString.Key.foregroundColor: Colors.Gray1]
