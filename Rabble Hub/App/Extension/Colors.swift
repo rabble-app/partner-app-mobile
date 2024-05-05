@@ -21,6 +21,10 @@ class Colors: NSObject {
     static let Gray4 = Colors.getColor(named: "gray_4")
     static let Gray5 = Colors.getColor(named: "gray_5")
     
+    static let Today = Colors.getColor(named: "calendar_today")
+    static let Upcoming = Colors.getColor(named: "calendar_upcoming")
+    static let Past = Colors.getColor(named: "calendar_past")
+    
     /*
     /// Color used for content cards in view controller or dialog base background. Secondary level of content background base.
     static let BackgroundSecondary = Colors.getColor(named: "background_secondary")

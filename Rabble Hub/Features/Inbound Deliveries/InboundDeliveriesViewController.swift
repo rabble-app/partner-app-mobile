@@ -9,6 +9,7 @@ import UIKit
 
 class InboundDeliveriesViewController: UIViewController {
 
+    @IBOutlet var segmentedController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,9 +25,13 @@ class InboundDeliveriesViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        self.tableView.reloadData()
+    }
+    
 
     @IBAction func deliveriesSegmentedControlTap(_ sender: Any) {
-        
+        self.tableView.reloadData()
     }
 
 }
@@ -41,6 +46,17 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "InboundDeliveriesTableViewCell", for: indexPath) as? InboundDeliveriesTableViewCell else {
             return UITableViewCell()
+        }
+        
+        if segmentedController.selectedSegmentIndex == 0 {
+            cell.calendarImg.tintColor = Colors.Today
+            cell.dateValue.textColor = Colors.Today
+        } else if segmentedController.selectedSegmentIndex == 1 {
+            cell.calendarImg.tintColor = Colors.Upcoming
+            cell.dateValue.textColor =  Colors.Upcoming
+        } else {
+            cell.calendarImg.tintColor = Colors.Past
+            cell.dateValue.textColor = Colors.Past
         }
 
         return cell

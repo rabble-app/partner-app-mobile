@@ -9,6 +9,9 @@ import UIKit
 
 class InboundDeliveriesTableViewCell: UITableViewCell {
 
+    @IBOutlet var dateValue: UILabel!
+    @IBOutlet var calendarImg: UIImageView!
+    
     @IBOutlet weak var initialBackgroundView: UIView!
     
     override func awakeFromNib() {
