@@ -21,6 +21,8 @@ class ManuallyCheckItemsViewController: UIViewController {
     @IBOutlet weak var withImageView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageContainerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewConstraintHeight: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,8 @@ class ManuallyCheckItemsViewController: UIViewController {
         self.withImageView.isHidden = true
         self.cameraButton.setTitle("", for: .normal)
         self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
+        
+        self.tableViewConstraintHeight.constant = 70 * 5
 
     }
     
@@ -89,7 +93,7 @@ class ManuallyCheckItemsViewController: UIViewController {
         let vc = signUpView.instantiateViewController(withIdentifier: "SuccessStateViewController") as! SuccessStateViewController
         vc.modalPresentationStyle = .overFullScreen
         vc.isModalInPresentation = true
-//        vc.deliveryNavigationController = self.deliveryNavigationController
+        vc.deliveryNavigationController = self.deliveryNavigationController
         present(vc, animated: true, completion: nil)
     }
     
