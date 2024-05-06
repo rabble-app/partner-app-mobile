@@ -17,6 +17,8 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet var iconContainer: UIView!
     
+    @IBOutlet weak var tableViewConstraintHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +36,8 @@ class OrderDetailsViewController: UIViewController {
         iconContainer.layer.cornerRadius = 12.0
         iconContainer.clipsToBounds = true
         ordersTableview.showsVerticalScrollIndicator = false
+        
+        self.tableViewConstraintHeight.constant = 95 * 10 // 10 is the number of orders
     }
 }
 

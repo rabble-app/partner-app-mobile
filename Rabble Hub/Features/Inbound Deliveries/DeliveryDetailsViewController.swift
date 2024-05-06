@@ -13,6 +13,7 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var deliveryNavigationController: UINavigationController?
     @IBOutlet var tableviewHeaderContainer: UIView!
+    @IBOutlet weak var tableViewConstraintHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,10 @@ class DeliveryDetailsViewController: UIViewController {
         tableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         tableView.showsVerticalScrollIndicator = false
+        
+        self.tableViewConstraintHeight.constant = 77 * 5 // 5 is the number of orders
+        
+        self.title = "Delivery Details"
 
     }
 
