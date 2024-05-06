@@ -187,6 +187,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="A8e-xX-41U" firstAttribute="centerY" secondItem="KhB-MB-RVA" secondAttribute="centerY" id="0a8-vz-IrV"/>
                                     <constraint firstItem="KhB-MB-RVA" firstAttribute="centerX" secondItem="YAG-Rt-cML" secondAttribute="centerX" id="2DO-26-0vf"/>
@@ -223,6 +224,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="4UE-hS-KxF" firstAttribute="centerY" secondItem="9jx-se-sA3" secondAttribute="centerY" id="LfJ-vv-L77"/>
                                     <constraint firstAttribute="height" constant="56" id="Wef-ee-UFo"/>
@@ -237,6 +239,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Op-Hv-rfP">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>

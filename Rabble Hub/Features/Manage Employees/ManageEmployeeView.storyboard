@@ -29,9 +29,9 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-IT-9SZ">
-                                        <rect key="frame" x="8" y="4.6666666666666643" width="75.333333333333329" height="35"/>
+                                        <rect key="frame" x="8" y="5" width="75.666666666666671" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="4">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Back">
                                                     <attributes>
@@ -244,9 +244,9 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3F-6C-cLU">
-                                        <rect key="frame" x="8" y="4.6666666666666643" width="75.333333333333329" height="35"/>
+                                        <rect key="frame" x="8" y="5" width="74.666666666666671" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="3">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Back">
                                                     <attributes>
@@ -315,6 +315,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="RZ0-sC-afX" firstAttribute="leading" secondItem="K0W-av-ybL" secondAttribute="trailing" constant="8" id="8Hm-ab-G6p"/>
                                                     <constraint firstItem="RZ0-sC-afX" firstAttribute="centerY" secondItem="cc7-rG-6D8" secondAttribute="centerY" id="9h8-Ex-0Zd"/>
@@ -351,6 +352,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="301-xJ-uAD" firstAttribute="centerY" secondItem="afZ-mR-8xb" secondAttribute="centerY" id="CTc-Sg-n7X"/>
                                                     <constraint firstItem="afZ-mR-8xb" firstAttribute="centerY" secondItem="KUP-RL-tCP" secondAttribute="centerY" id="Kp1-Kj-0ck"/>
@@ -479,11 +481,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfM-KE-cab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573" y="4"/>
+            <point key="canvasLocation" x="1715" y="4"/>
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="icon_back" width="12" height="20"/>
         <image name="icon_dropdown" width="24" height="24"/>
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -504,7 +506,7 @@
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="green_1">
-            <color red="0.12941176470588234" green="0.58823529411764708" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1289999932050705" green="0.58799999952316284" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

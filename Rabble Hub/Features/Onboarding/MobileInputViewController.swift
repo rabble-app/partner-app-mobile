@@ -89,6 +89,7 @@ class MobileInputViewController: UIViewController {
         guard let phoneNumber = phoneNumberTextfield.text, !phoneNumber.isEmpty else {
             // Set border color of phoneNumberContainer to red
             phoneNumberContainer.layer.borderColor = UIColor.red.cgColor
+            phoneNumberTextfield.becomeFirstResponder()
             return
         }
         

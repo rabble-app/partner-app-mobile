@@ -403,9 +403,9 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlA-fe-DB4">
-                                        <rect key="frame" x="8" y="5" width="73.666666666666671" height="34"/>
+                                        <rect key="frame" x="8" y="5" width="75.666666666666671" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="2">
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="4">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Back">
                                                     <attributes>
@@ -481,9 +481,9 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uF-N3-f2Y">
-                                        <rect key="frame" x="8" y="5" width="74.666666666666671" height="34"/>
+                                        <rect key="frame" x="8" y="5" width="75.666666666666671" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="3">
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="4">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Back">
                                                     <attributes>
@@ -769,9 +769,9 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWH-13-nFH">
-                                        <rect key="frame" x="8" y="5" width="74.666666666666671" height="34"/>
+                                        <rect key="frame" x="8" y="5" width="75.666666666666671" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="3">
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_back" imagePadding="4">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Back">
                                                     <attributes>
