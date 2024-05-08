@@ -16,10 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
-    # Print out the directory structure
-    - name: Print directory structure
-      run: ls -R
       
     # Install CocoaPods
     - name: Install CocoaPods
@@ -31,7 +27,6 @@ jobs:
       run: |
         pod install
 
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+    # Xcode build
+    - name: Xcode build
+      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" build
