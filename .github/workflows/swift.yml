@@ -16,7 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
+    
+    # Print out the directory structure
+    - name: Print directory structure
+      run: ls -R
+      
     # Install CocoaPods
     - name: Install CocoaPods
       run: |
