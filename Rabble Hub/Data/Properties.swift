@@ -12,5 +12,6 @@ struct Properties {
     struct Font {
         static let SF_PRO_REGULAR = "SF Pro Regular"
         static let SF_PRO_SEMIBOLD = "SF Pro Semibold"
+        static let GOSHANSANS_BOLD = "GoshaSansBold"
     }
 }

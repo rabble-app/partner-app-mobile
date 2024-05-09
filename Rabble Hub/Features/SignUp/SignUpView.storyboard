@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,7 +14,6 @@
             <string>SFPro-RegularItalic</string>
         </array>
         <array key="SF-Pro.ttf">
-            <string>SFPro-Bold</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
         </array>
@@ -46,10 +45,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-Fy-LBu" userLabel="Company Details View">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="1153"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Company Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxS-b1-CQb">
-                                                        <rect key="frame" x="16" y="37" width="207.33333333333334" height="24"/>
-                                                        <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                                        <color key="textColor" name="gray_1"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxS-b1-CQb">
+                                                        <rect key="frame" x="16" y="37" width="213.66666666666666" height="24"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Your Company Details">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="gray_1"/>
+                                                                    <font key="NSFont" size="20" name="GoshaSans-Bold"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your address so users can know their nearby corner store." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7i-WT-NFM">
@@ -182,15 +187,23 @@
                                                             <constraint firstAttribute="width" constant="24" id="mAG-e2-EOD"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97G-WT-S3k" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97G-WT-S3k" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="1087" width="361" height="50"/>
+                                                        <color key="backgroundColor" name="button_primary"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="UK7-5l-5BO"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                                        <color key="tintColor" systemColor="tintColor"/>
+                                                        <color key="tintColor" name="button_title_color"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Next"/>
+                                                        <state key="normal">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="Next">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
                                                         <connections>
                                                             <action selector="nextButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tn5-sT-8F7"/>
                                                         </connections>
@@ -296,28 +309,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nph-ZH-Qvt" userLabel="Step1 Line View">
-                                <rect key="frame" x="38" y="34" width="75" height="1"/>
+                                <rect key="frame" x="41" y="34" width="75" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="oCi-H6-4UI"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYc-K4-d58" userLabel="Step2 Line View">
-                                <rect key="frame" x="137" y="34" width="75" height="1"/>
+                                <rect key="frame" x="140" y="34" width="75" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="fAC-9T-hgW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zK-FB-jHN" userLabel="Step3 Line View">
-                                <rect key="frame" x="236" y="34" width="78" height="1"/>
+                                <rect key="frame" x="239" y="34" width="116" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="K3y-bE-gSC"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="OAG-ys-o9d" userLabel="Step Indicator Stack View">
-                                <rect key="frame" x="13" y="21.666666666666671" width="323" height="26"/>
+                                <rect key="frame" x="16" y="21.666666666666671" width="361" height="26"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cart" translatesAutoresizingMaskIntoConstraints="NO" id="lN6-sf-Z24">
                                         <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
@@ -342,7 +355,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_agreement" translatesAutoresizingMaskIntoConstraints="NO" id="iBg-nN-0Tq">
-                                        <rect key="frame" x="297" y="0.0" width="26" height="26"/>
+                                        <rect key="frame" x="297" y="0.0" width="64" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="26" id="AkU-Ql-xyR"/>
                                             <constraint firstAttribute="height" constant="26" id="tBs-0L-gTT"/>
@@ -361,8 +374,9 @@
                             <constraint firstItem="5zK-FB-jHN" firstAttribute="leading" secondItem="IUc-dD-Zw6" secondAttribute="leading" constant="25" id="SrB-aN-X3Q"/>
                             <constraint firstItem="Nph-ZH-Qvt" firstAttribute="trailing" secondItem="SqQ-pC-fpE" secondAttribute="trailing" constant="-25" id="SrR-ig-AAq"/>
                             <constraint firstItem="Nph-ZH-Qvt" firstAttribute="leading" secondItem="lN6-sf-Z24" secondAttribute="leading" constant="25" id="WzR-fk-qGs"/>
+                            <constraint firstItem="ePr-G0-xnI" firstAttribute="trailing" secondItem="OAG-ys-o9d" secondAttribute="trailing" constant="16" id="Xpy-jR-ouJ"/>
                             <constraint firstItem="QYc-K4-d58" firstAttribute="leading" secondItem="SqQ-pC-fpE" secondAttribute="leading" constant="25" id="bF2-55-Kxh"/>
-                            <constraint firstItem="OAG-ys-o9d" firstAttribute="leading" secondItem="5fV-4o-4RM" secondAttribute="leading" constant="13" id="eND-wW-a9D"/>
+                            <constraint firstItem="OAG-ys-o9d" firstAttribute="leading" secondItem="5fV-4o-4RM" secondAttribute="leading" constant="16" id="eND-wW-a9D"/>
                             <constraint firstItem="QYc-K4-d58" firstAttribute="trailing" secondItem="IUc-dD-Zw6" secondAttribute="trailing" constant="-25" id="rk1-eU-v9B"/>
                             <constraint firstItem="5zK-FB-jHN" firstAttribute="centerY" secondItem="5fV-4o-4RM" secondAttribute="centerY" id="tuA-cT-aZF"/>
                             <constraint firstItem="Nph-ZH-Qvt" firstAttribute="centerY" secondItem="5fV-4o-4RM" secondAttribute="centerY" id="vv0-US-PYa"/>
@@ -400,10 +414,16 @@
                                     <segue destination="Vw4-fL-9zQ" kind="embed" id="wgv-gz-aM2"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iK-fj-oqR">
-                                <rect key="frame" x="16" y="165" width="128.33333333333334" height="24"/>
-                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                <color key="textColor" name="gray_1"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iK-fj-oqR">
+                                <rect key="frame" x="16" y="165" width="132.66666666666666" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Owner Profile">
+                                        <attributes>
+                                            <color key="NSColor" name="gray_1"/>
+                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your details so users can know their owner nearby corner store." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="990-dn-6sM">
@@ -439,18 +459,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-QQ-Flr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-QQ-Flr" customClass="TertiaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="16" y="752" width="173" height="50"/>
+                                <color key="backgroundColor" name="button_tertiary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7lU-ae-qMm"/>
                                 </constraints>
-                                <color key="tintColor" name="button_primary"/>
+                                <color key="tintColor" name="button_title_color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="icon_left_arrow">
                                     <attributedString key="attributedTitle">
                                         <fragment content=" Previous Step">
                                             <attributes>
-                                                <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -460,15 +482,24 @@
                                     <action selector="previousStepButtonTap:" destination="nLc-J8-A0h" eventType="touchUpInside" id="P71-sS-ucu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-Rz-gOt" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-Rz-gOt" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="204" y="752" width="173" height="50"/>
+                                <color key="backgroundColor" name="button_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hfJ-BM-hdC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                <color key="tintColor" systemColor="tintColor"/>
+                                <color key="tintColor" name="button_title_color"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next">
+                                            <attributes>
+                                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonTap:" destination="nLc-J8-A0h" eventType="touchUpInside" id="BEU-7T-MT5"/>
                                 </connections>
@@ -553,18 +584,19 @@
                                                     <action selector="scheduleSegmentedControlTap:" destination="b97-br-g25" eventType="valueChanged" id="QXa-gy-fgD"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-dj-ode">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-dj-ode" customClass="TertiaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="616" width="173" height="50"/>
+                                                <color key="backgroundColor" name="button_tertiary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="eSC-wM-5Cq"/>
                                                 </constraints>
-                                                <color key="tintColor" name="button_primary"/>
+                                                <color key="tintColor" name="button_title_color"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="icon_left_arrow">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content=" Previous Step">
                                                             <attributes>
-                                                                <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -580,10 +612,16 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kV-mu-9VY" userLabel="First View">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="377"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep it open 24/7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5i-qf-A6A">
-                                                                <rect key="frame" x="85.333333333333329" y="123" width="190.33333333333337" height="28"/>
-                                                                <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="24"/>
-                                                                <color key="textColor" name="gray_1"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5i-qf-A6A">
+                                                                <rect key="frame" x="77.666666666666686" y="122" width="206" height="29"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Keep it open 24/7">
+                                                                        <attributes>
+                                                                            <color key="NSColor" name="gray_1"/>
+                                                                            <font key="NSFont" size="24" name="GoshaSans-Bold"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYA-xN-Rk1">
@@ -594,6 +632,7 @@
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-QE-cRg">
                                                                 <rect key="frame" x="156" y="224.33333333333337" width="51" height="31"/>
+                                                                <color key="onTintColor" name="button_primary"/>
                                                             </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" name="background_primary"/>
@@ -694,6 +733,7 @@
                                                                                         </button>
                                                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9K-eF-AHx">
                                                                                             <rect key="frame" x="16" y="11" width="51" height="31"/>
+                                                                                            <color key="onTintColor" name="button_primary"/>
                                                                                             <connections>
                                                                                                 <action selector="daySwitchTap:" destination="jo4-eB-bcC" eventType="valueChanged" id="hvZ-Iv-DKc"/>
                                                                                             </connections>
@@ -771,24 +811,38 @@
                                                     <constraint firstItem="9kV-mu-9VY" firstAttribute="leading" secondItem="PWf-3h-5rw" secondAttribute="leading" id="xbe-Uo-vVx"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-2O-X03">
-                                                <rect key="frame" x="16" y="37" width="112" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szZ-2O-X03">
+                                                <rect key="frame" x="15.999999999999993" y="37" width="113.33333333333331" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="NUJ-yS-3cc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                                <color key="textColor" name="gray_1"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Open Hours">
+                                                        <attributes>
+                                                            <color key="NSColor" name="gray_1"/>
+                                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0E-ng-aiQ" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o0E-ng-aiQ" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="204" y="616" width="173" height="50"/>
+                                                <color key="backgroundColor" name="button_primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="H4G-nm-3nB"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" name="button_title_color"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Next"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Next">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <connections>
                                                     <action selector="nextButtonStep:" destination="b97-br-g25" eventType="touchUpInside" id="iaW-zn-cO3"/>
                                                 </connections>
@@ -853,7 +907,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGG-V9-WZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938.1679389312976" y="-39.436619718309863"/>
+            <point key="canvasLocation" x="2779" y="-39"/>
         </scene>
         <!--Sign Up Agreement View Controller-->
         <scene sceneID="vxw-Q6-oXG">
@@ -878,13 +932,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdF-tz-DOJ">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="690"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rabble Partnership Agreement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-au-vhJ">
-                                                <rect key="frame" x="16" y="37" width="289" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-au-vhJ">
+                                                <rect key="frame" x="16" y="37" width="292.33333333333331" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="rLo-VX-jrT"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                                <color key="textColor" name="gray_1"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Rabble Partnership Agreement">
+                                                        <attributes>
+                                                            <color key="NSColor" name="gray_1"/>
+                                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carefully read and accept the agreement between the owner and Rabble." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faL-RV-tVF">
@@ -1009,18 +1069,19 @@
                                                 <color key="textColor" name="gray_3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeK-Py-F0C">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeK-Py-F0C" customClass="TertiaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="624" width="173" height="50"/>
+                                                <color key="backgroundColor" name="button_tertiary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="LPG-1R-dw1"/>
                                                 </constraints>
-                                                <color key="tintColor" name="button_primary"/>
+                                                <color key="tintColor" name="button_title_color"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="icon_left_arrow">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content=" Previous Step">
                                                             <attributes>
-                                                                <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -1031,15 +1092,23 @@
                                                     <action selector="previousStepButtonTap:" destination="z31-fD-3DN" eventType="touchUpInside" id="jaw-2J-QXo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dW-Ao-qrR" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dW-Ao-qrR" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="204" y="624" width="173" height="50"/>
+                                                <color key="backgroundColor" name="button_primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="vh7-SN-j2c"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" name="button_title_color"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Accept and Continue"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Accept and Continue">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <connections>
                                                     <action selector="acceptButtonTap:" destination="z31-fD-3DN" eventType="touchUpInside" id="HJi-g7-o1Q"/>
                                                 </connections>
@@ -1112,7 +1181,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="45E-XI-PjC"/>
+        <segue reference="LG3-6j-CS6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>
@@ -1129,7 +1198,13 @@
             <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_tertiary">
+            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_title_color">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_1">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1148,9 +1223,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

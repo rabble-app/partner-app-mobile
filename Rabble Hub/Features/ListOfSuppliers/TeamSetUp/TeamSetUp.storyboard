@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro.ttf">
-            <string>SFPro-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Choose Frequency View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -41,7 +36,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="supplier.name@partner.name">
                                                 <attributes>
-                                                    <color key="NSColor" name="button_primary"/>
+                                                    <color key="NSColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="13" name="SFPro-Regular"/>
                                                 </attributes>
                                             </fragment>
@@ -51,7 +46,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTG-ad-mTM">
                                         <rect key="frame" x="27.999999999999996" y="37" width="37.666666666666657" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="button_primary"/>
+                                        <color key="textColor" name="button_secondary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgN-sb-his">
@@ -65,6 +60,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content=" ">
                                                     <attributes>
+                                                        <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" size="17" name="SFPro-Regular"/>
                                                         <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                     </attributes>
@@ -109,15 +105,23 @@
                                     <constraint firstAttribute="height" constant="1" id="bXA-bJ-6xz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7Q-6D-XcP" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7Q-6D-XcP" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="16" y="752" width="361" height="50"/>
+                                <color key="backgroundColor" name="button_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Jgb-G9-alU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                <color key="tintColor" name="button_primary"/>
+                                <color key="tintColor" name="button_title_color"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="q1c-eX-h7L"/>
                                 </connections>
@@ -142,12 +146,12 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csT-ei-n6H">
-                                <rect key="frame" x="16" y="197" width="176" height="24"/>
+                                <rect key="frame" x="16" y="197" width="174.66666666666666" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Choose Frequency">
                                         <attributes>
                                             <color key="NSColor" name="gray_1"/>
-                                            <font key="NSFont" size="20" name="SFPro-Bold"/>
+                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -422,15 +426,23 @@
                                     <constraint firstAttribute="height" constant="1" id="NAO-Cr-ZjN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzM-RI-vo8" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OzM-RI-vo8" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="16" y="752" width="361" height="50"/>
+                                <color key="backgroundColor" name="button_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1HH-zK-Gat"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                <color key="tintColor" name="button_primary"/>
+                                <color key="tintColor" name="button_title_color"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonTap:" destination="U7E-Jw-eSz" eventType="touchUpInside" id="gBb-b8-lXc"/>
                                 </connections>
@@ -455,12 +467,12 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcU-tQ-bzU">
-                                <rect key="frame" x="16" y="197" width="197.33333333333334" height="24"/>
+                                <rect key="frame" x="16" y="197" width="206.33333333333334" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Select a Delivery Day">
                                         <attributes>
                                             <color key="NSColor" name="gray_1"/>
-                                            <font key="NSFont" size="20" name="SFPro-Bold"/>
+                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -618,15 +630,23 @@
                                     <constraint firstAttribute="height" constant="1" id="Uii-ad-CjR"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSF-2u-VTb" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSF-2u-VTb" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="16" y="752" width="361" height="50"/>
+                                <color key="backgroundColor" name="button_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aQt-Ij-qig"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                <color key="tintColor" name="button_primary"/>
+                                <color key="tintColor" name="button_title_color"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Finish Team Setup"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Finish Team Setup">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonTap:" destination="1df-s6-z72" eventType="touchUpInside" id="Kfr-j3-S90"/>
                                 </connections>
@@ -651,12 +671,12 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQb-wW-PZ8">
-                                <rect key="frame" x="16" y="197" width="133" height="24"/>
+                                <rect key="frame" x="16" y="197" width="138.33333333333334" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Create A Limit">
                                         <attributes>
                                             <color key="NSColor" name="gray_1"/>
-                                            <font key="NSFont" size="20" name="SFPro-Bold"/>
+                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -787,15 +807,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-Ee-Won" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-Ee-Won" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="16" y="752" width="361" height="50"/>
+                                <color key="backgroundColor" name="button_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AIE-Ww-R9z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                <color key="tintColor" name="button_primary"/>
+                                <color key="tintColor" name="button_title_color"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Go to Team Page"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Go to Team Page">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="goToTeamPageButtonTap:" destination="IEb-MJ-nRf" eventType="touchUpInside" id="BZV-1U-GWz"/>
                                     <action selector="nextButtonTap:" destination="1df-s6-z72" eventType="touchUpInside" id="hti-4f-u2A"/>
@@ -819,11 +847,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNU-fn-XfU">
-                                <rect key="frame" x="56.666666666666657" y="558.33333333333337" width="279.66666666666674" height="28"/>
+                                <rect key="frame" x="41.333333333333343" y="557.33333333333337" width="310.33333333333326" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Team Created Successfully">
                                         <attributes>
-                                            <font key="NSFont" size="24" name="SFPro-Regular"/>
+                                            <font key="NSFont" size="24" name="GoshaSans-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -864,7 +892,13 @@
             <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_secondary">
+            <color red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_title_color">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_1">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

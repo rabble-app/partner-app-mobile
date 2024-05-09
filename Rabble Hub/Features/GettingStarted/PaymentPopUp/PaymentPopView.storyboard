@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro.ttf">
-            <string>SFPro-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Payment Pop Up View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -38,18 +33,18 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5De-IQ-4Iq">
-                                        <rect key="frame" x="16" y="32" width="138" height="18"/>
+                                        <rect key="frame" x="16" y="32" width="195.33333333333334" height="24"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Connect Your Stripe">
                                                 <attributes>
-                                                    <font key="NSFont" size="15" name="SFPro-Regular"/>
+                                                    <font key="NSFont" size="20" name="GoshaSans-Bold"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsm-kl-HVg">
-                                        <rect key="frame" x="16" y="54" width="287" height="16"/>
+                                        <rect key="frame" x="16" y="60" width="287" height="16"/>
                                         <attributedString key="attributedText">
                                             <fragment content="To enable any payouts please connect to Stripe">
                                                 <attributes>
@@ -61,39 +56,49 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stripe" translatesAutoresizingMaskIntoConstraints="NO" id="nkf-ZV-wZt">
-                                        <rect key="frame" x="33.666666666666657" y="109" width="326" height="94"/>
+                                        <rect key="frame" x="33.666666666666657" y="115" width="326" height="94"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="94" id="Q21-Ft-wFR"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZC-oT-LUw">
-                                        <rect key="frame" x="0.0" y="92" width="393" height="1"/>
+                                        <rect key="frame" x="0.0" y="98" width="393" height="1"/>
                                         <color key="backgroundColor" name="gray_4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="w7n-A0-XVQ"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jw-CM-cVz" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
-                                        <rect key="frame" x="33.666666666666657" y="240" width="326" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jw-CM-cVz" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                        <rect key="frame" x="33.666666666666657" y="246" width="326" height="50"/>
+                                        <color key="backgroundColor" name="button_primary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0GK-u2-fRy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                        <color key="tintColor" name="button_primary"/>
+                                        <color key="tintColor" name="button_title_color"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Connect"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Connect">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
                                         <connections>
                                             <action selector="connectButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="N4x-dL-sCN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-MB-L6C">
-                                        <rect key="frame" x="136" y="306" width="121" height="34.333333333333314"/>
+                                        <rect key="frame" x="133" y="312" width="127.33333333333331" height="34.333333333333314"/>
+                                        <color key="tintColor" name="button_title_color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Skip for Now">
                                                     <attributes>
-                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                        <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
                                                         <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                     </attributes>
                                                 </fragment>
@@ -149,7 +154,10 @@
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_title_color">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_4">
             <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

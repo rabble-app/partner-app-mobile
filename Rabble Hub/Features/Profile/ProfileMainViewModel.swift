@@ -38,17 +38,17 @@ class ProfileMainViewModel {
         let storeName = Menu(titleName: "Store name", subtitleNameLabel: "email@email.com", mode: .headerUI, iconViewBgColor: .gray3, separatorLine: true)
         // Section: STORE PROFILE
         let sectionProfile = Menu(titleName: "STORE PROFILE", mode: .sectionUI, separatorLine: false)
-        let ownerProfile = Menu(titleName: "Owner profile", subtitleNameLabel: "Maxwell Beard", mode: .textUI, iconImageName: "person.fill", iconViewBgColor: .iconBgBlue, separatorLine: true, controllerName: "ProfileOwnerViewController")
-        let partnerDetails = Menu(titleName: "Partner details", subtitleNameLabel: "Postcode", mode: .textUI, iconImageName: "at", iconViewBgColor: .iconBgBlue, separatorLine: true, controllerName: "ProfilePartnerDetailsViewController")
-        let openHours = Menu(titleName: "Open hours", subtitleNameLabel: "24/7", mode: .textUI, iconImageName: "phone.fill", iconViewBgColor: .iconBgBlue, separatorLine: false, controllerName: "ProfileOpenHoursViewController")
+        let ownerProfile = Menu(titleName: "Owner profile", subtitleNameLabel: "Maxwell Beard", mode: .textUI, iconImageName: "person", iconViewBgColor: .black, separatorLine: true, controllerName: "ProfileOwnerViewController")
+        let partnerDetails = Menu(titleName: "Partner details", subtitleNameLabel: "Postcode", mode: .textUI, iconImageName: "partner", iconViewBgColor: .black, separatorLine: true, controllerName: "ProfilePartnerDetailsViewController")
+        let openHours = Menu(titleName: "Open hours", subtitleNameLabel: "24/7", mode: .textUI, iconImageName: "openhrs", iconViewBgColor: .black, separatorLine: false, controllerName: "ProfileOpenHoursViewController")
         // Section: MANAGE EMPLOYEES
         let sectionManageEmployees = Menu(titleName: "MANAGE EMPLOYEES", mode: .sectionUI, separatorLine: false)
-        let employees = Menu(titleName: "Employees", subtitleNameLabel: "3", mode: .textUI, iconImageName: "person.2.fill", iconViewBgColor: .iconBgBlue, separatorLine: false, controllerName: "ManageEmployeeViewController")
+        let employees = Menu(titleName: "Employees", subtitleNameLabel: "3", mode: .textUI, iconImageName: "employees", iconViewBgColor: .black, separatorLine: false, controllerName: "ManageEmployeeViewController")
         // Section: SYSTEM
         let sectionSystem = Menu(titleName: "SYSTEM", mode: .sectionUI, separatorLine: true)
-        let darkMode = Menu(titleName: "Dark mode", mode: .switchUI, iconImageName: "moon.fill", iconViewBgColor: .iconBgPurple, separatorLine: true)
-        let notifications = Menu(titleName: "Notifications", subtitleNameLabel: "Enabled", mode: .textUI, iconImageName: "bell.fill", iconViewBgColor: .iconBgRed, separatorLine: true)
-        let help = Menu(titleName: "Help", mode: .infoUI, iconImageName: "info", iconViewBgColor: .iconBgBlue, separatorLine: false)
+        let darkMode = Menu(titleName: "Dark mode", mode: .switchUI, iconImageName: "darkmode", iconViewBgColor: .iconBgPurple, separatorLine: true)
+        let notifications = Menu(titleName: "Notifications", subtitleNameLabel: "Enabled", mode: .textUI, iconImageName: "notifications", iconViewBgColor: .iconBgRed, separatorLine: true)
+        let help = Menu(titleName: "Help", mode: .infoUI, iconImageName: "help", iconViewBgColor: .black, separatorLine: false)
         let logout = Menu(titleName: "Log out", mode: .buttonUI, separatorLine: false)
         
 

@@ -9,11 +9,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro.ttf">
-            <string>SFPro-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--CreateA Team Pop Up View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -41,18 +36,18 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQS-4u-DZT">
-                                        <rect key="frame" x="15.999999999999993" y="32" width="118.33333333333331" height="18"/>
+                                        <rect key="frame" x="16" y="32" width="169.66666666666666" height="24"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Create your team">
                                                 <attributes>
-                                                    <font key="NSFont" size="15" name="SFPro-Regular"/>
+                                                    <font key="NSFont" size="20" name="GoshaSans-Bold"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1w-dq-Hmc">
-                                        <rect key="frame" x="16" y="54.000000000000007" width="361" height="31.333333333333336"/>
+                                        <rect key="frame" x="16" y="60.000000000000007" width="361" height="31.333333333333336"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Choose a supplier your customers can subscribe to and start driving traffic through your store">
                                                 <attributes>
@@ -64,34 +59,43 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKo-7b-Rmn">
-                                        <rect key="frame" x="0.0" y="107.33333333333337" width="393" height="1"/>
+                                        <rect key="frame" x="0.0" y="113.33333333333337" width="393" height="1"/>
                                         <color key="backgroundColor" name="gray_4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Yfa-kC-5iH"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlJ-2q-nUS" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
-                                        <rect key="frame" x="33.666666666666657" y="129.33333333333337" width="326" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlJ-2q-nUS" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                        <rect key="frame" x="33.666666666666657" y="135.33333333333337" width="326" height="50"/>
+                                        <color key="backgroundColor" name="button_primary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ilh-sf-qtd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                        <color key="tintColor" name="button_primary"/>
+                                        <color key="tintColor" name="button_title_color"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Show Me The Suppliers"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Show Me The Suppliers">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
                                         <connections>
                                             <action selector="showMeSuppliersButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DiK-Gn-Ej2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIS-uS-KjN">
-                                        <rect key="frame" x="136" y="195.33333333333337" width="121" height="34"/>
+                                        <rect key="frame" x="133" y="201.33333333333337" width="127.33333333333331" height="33"/>
                                         <color key="tintColor" name="button_primary"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Skip for Now">
                                                     <attributes>
-                                                        <font key="NSFont" size="17" name="SFPro-Regular"/>
+                                                        <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
                                                         <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                     </attributes>
                                                 </fragment>
@@ -140,7 +144,10 @@
     <resources>
         <image name="icon_close" width="30" height="30"/>
         <namedColor name="button_primary">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_title_color">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_4">
             <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

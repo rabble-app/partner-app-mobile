@@ -30,7 +30,7 @@ class DeliveryDetailsViewController: UIViewController {
     func setupView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.iconBackgroundView.layer.cornerRadius = 12.0
+        self.iconBackgroundView.layer.cornerRadius = 28.0
         
         tableviewHeaderContainer.clipsToBounds = true
         tableviewHeaderContainer.layer.cornerRadius = 10

@@ -95,6 +95,7 @@ class QrCodeViewController: UIViewController {
     func goToOrderDetails() {
         let storyboard = UIStoryboard(name: "CustomerCollectionView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as? OrderDetailsViewController {
+            vc.isFromScanning = true
             vc.modalPresentationStyle = .overFullScreen
             self.navigationController?.pushViewController(vc, animated: true)
         }

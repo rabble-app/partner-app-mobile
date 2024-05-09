@@ -30,7 +30,7 @@ class ChooseDeliveryDayViewController: UIViewController {
         let greenProgressBarFrame = CGRect(x: 0, y: 0, width: completedProgressBarWidth, height: progressBar.frame.height)
         
         let completedView = UIView(frame: greenProgressBarFrame)
-        completedView.backgroundColor = Colors.ButtonPrimary
+        completedView.backgroundColor = Colors.ButtonSecondary
         
         progressBar.addSubview(completedView)
         

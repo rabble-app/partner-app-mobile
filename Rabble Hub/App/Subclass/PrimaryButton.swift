@@ -8,7 +8,7 @@
 import UIKit
 
 /// A custom subclass of UIButton with a predefined style for use in Rabble's user interface.
-class RabbleButton: UIButton {
+class PrimaryButton: UIButton {
 
     /// Initializes a new instance of the RabbleButton class with the specified frame rectangle.
     ///
@@ -34,7 +34,8 @@ class RabbleButton: UIButton {
     private func configure() {
         self.backgroundColor = Colors.ButtonPrimary
         self.layer.cornerRadius = 12
-        self.setTitleColor(UIColor.white, for: .normal)
+        self.setTitleColor(Colors.ButtonTitleColor, for: .normal)
+      //  self.titleLabel?.font = UIFont(name: Properties.Font.GOSHANSANS_BOLD, size: 16)
         self.clipsToBounds = true
     }
     

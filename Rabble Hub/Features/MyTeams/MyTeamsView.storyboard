@@ -28,13 +28,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3U-ur-Cis">
                                 <rect key="frame" x="6" y="0.0" width="387" height="158"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner Name Teams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-Mv-Vav">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-Mv-Vav">
                                         <rect key="frame" x="16" y="57" width="355" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="gdK-Y1-N95"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="24"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Partner Name Teams">
+                                                <attributes>
+                                                    <font key="NSFont" size="32" name="GoshaSans-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-ro-qDi">
@@ -82,7 +88,7 @@
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yKn-8D-cbF">
                                                                     <rect key="frame" x="8" y="8" width="337" height="180"/>
-                                                                    <color key="backgroundColor" name="gray_5"/>
+                                                                    <color key="backgroundColor" name="gray_1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="180" id="T3K-aj-qYD"/>
                                                                     </constraints>
@@ -119,7 +125,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb2-6S-pdf">
-                                                                    <rect key="frame" x="277.66666666666669" y="203.66666666666666" width="67.333333333333314" height="14"/>
+                                                                    <rect key="frame" x="277.66666666666669" y="198" width="67.333333333333314" height="25"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="12members">
                                                                             <attributes>
@@ -186,6 +192,43 @@
                                                                     </attributedString>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0P-Fp-STG">
+                                                                    <rect key="frame" x="279" y="158" width="58" height="22"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52S-HX-L2B">
+                                                                            <rect key="frame" x="11.666666666666686" y="5" width="35" height="12"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="Weekly">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.83921568629999999" green="0.95294117649999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <font key="NSFont" size="10" name="SFPro-Regular"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="22" id="AtI-ZY-AFO"/>
+                                                                        <constraint firstAttribute="width" constant="58" id="F04-j8-QWC"/>
+                                                                        <constraint firstItem="52S-HX-L2B" firstAttribute="centerX" secondItem="C0P-Fp-STG" secondAttribute="centerX" id="X55-sH-VIQ"/>
+                                                                        <constraint firstItem="52S-HX-L2B" firstAttribute="centerY" secondItem="C0P-Fp-STG" secondAttribute="centerY" id="dlZ-Hh-w7L"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LS-X9-ESj">
+                                                                    <rect key="frame" x="24" y="52" width="305" height="94"/>
+                                                                    <attributedString key="attributedText">
+                                                                        <fragment content="Cacklebean Farm @partner.name">
+                                                                            <attributes>
+                                                                                <color key="NSColor" red="0.83921568627450982" green="0.95294117647058818" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <font key="NSFont" size="32" name="GoshaSans-Bold"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" name="background_primary"/>
                                                             <constraints>
@@ -194,7 +237,9 @@
                                                                 <constraint firstItem="cbe-3C-Xo2" firstAttribute="top" secondItem="ILk-Wy-pNQ" secondAttribute="bottom" constant="8" id="1JX-gA-SUA"/>
                                                                 <constraint firstItem="7Kt-qn-YHq" firstAttribute="leading" secondItem="yKn-8D-cbF" secondAttribute="leading" id="B13-0e-X73"/>
                                                                 <constraint firstItem="Pb2-6S-pdf" firstAttribute="leading" secondItem="N7c-Wu-2gW" secondAttribute="trailing" constant="3" id="Boe-1i-u6n"/>
+                                                                <constraint firstItem="7LS-X9-ESj" firstAttribute="centerX" secondItem="yKn-8D-cbF" secondAttribute="centerX" id="Eym-Ao-PhU"/>
                                                                 <constraint firstItem="N7c-Wu-2gW" firstAttribute="centerY" secondItem="Pb2-6S-pdf" secondAttribute="centerY" id="H1y-eD-Pav"/>
+                                                                <constraint firstItem="C0P-Fp-STG" firstAttribute="top" secondItem="7LS-X9-ESj" secondAttribute="bottom" constant="12" id="KB9-aB-plS"/>
                                                                 <constraint firstItem="EbH-Z0-k4N" firstAttribute="top" secondItem="cbe-3C-Xo2" secondAttribute="bottom" constant="8" id="MgO-ZZ-7xe"/>
                                                                 <constraint firstItem="Pb2-6S-pdf" firstAttribute="centerY" secondItem="lo9-vP-8H8" secondAttribute="centerY" id="P8Q-Z0-WiG"/>
                                                                 <constraint firstItem="cbe-3C-Xo2" firstAttribute="leading" secondItem="yKn-8D-cbF" secondAttribute="leading" id="PsJ-s1-Bmb"/>
@@ -203,14 +248,20 @@
                                                                 <constraint firstItem="wbD-pz-dkd" firstAttribute="centerY" secondItem="7Kt-qn-YHq" secondAttribute="centerY" id="Whj-ag-B6x"/>
                                                                 <constraint firstItem="rHy-9Y-MY5" firstAttribute="centerY" secondItem="EbH-Z0-k4N" secondAttribute="centerY" id="XDF-zs-AL1"/>
                                                                 <constraint firstAttribute="trailing" secondItem="yKn-8D-cbF" secondAttribute="trailing" constant="8" id="ZK4-ml-amD"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="7LS-X9-ESj" secondAttribute="trailing" constant="16" id="bc4-Si-0rN"/>
                                                                 <constraint firstItem="rgb-kf-p4Y" firstAttribute="top" secondItem="yKn-8D-cbF" secondAttribute="bottom" constant="10" id="fNJ-s5-obg"/>
                                                                 <constraint firstItem="rgb-kf-p4Y" firstAttribute="leading" secondItem="yKn-8D-cbF" secondAttribute="leading" id="fYf-FF-dzl"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="C0P-Fp-STG" secondAttribute="trailing" constant="8" id="fdC-ps-JLH"/>
+                                                                <constraint firstItem="7LS-X9-ESj" firstAttribute="top" secondItem="yKr-oj-dX1" secondAttribute="top" constant="52" id="fmr-kN-Zth"/>
                                                                 <constraint firstItem="ILk-Wy-pNQ" firstAttribute="trailing" secondItem="Pb2-6S-pdf" secondAttribute="trailing" id="gId-CM-HL8"/>
+                                                                <constraint firstItem="7LS-X9-ESj" firstAttribute="leading" secondItem="yKr-oj-dX1" secondAttribute="leadingMargin" constant="16" id="ijs-tp-e88"/>
                                                                 <constraint firstItem="ILk-Wy-pNQ" firstAttribute="leading" secondItem="yKn-8D-cbF" secondAttribute="leading" id="inR-qw-uGx"/>
                                                                 <constraint firstAttribute="height" constant="323" id="mJj-kp-bp0"/>
+                                                                <constraint firstItem="rgb-kf-p4Y" firstAttribute="top" secondItem="7LS-X9-ESj" secondAttribute="bottom" constant="52" id="njx-1p-wc9"/>
                                                                 <constraint firstItem="wbD-pz-dkd" firstAttribute="leading" secondItem="7Kt-qn-YHq" secondAttribute="trailing" constant="4" id="pcm-qF-A7z"/>
                                                                 <constraint firstItem="yKn-8D-cbF" firstAttribute="top" secondItem="yKr-oj-dX1" secondAttribute="top" constant="8" id="wP8-RU-ON5"/>
                                                                 <constraint firstItem="Pb2-6S-pdf" firstAttribute="trailing" secondItem="yKn-8D-cbF" secondAttribute="trailing" id="xa9-ma-SJx"/>
+                                                                <constraint firstItem="Pb2-6S-pdf" firstAttribute="top" secondItem="C0P-Fp-STG" secondAttribute="bottom" constant="18" id="yOl-6K-cDt"/>
                                                                 <constraint firstItem="yKn-8D-cbF" firstAttribute="leading" secondItem="yKr-oj-dX1" secondAttribute="leading" constant="8" id="zui-Af-8KL"/>
                                                             </constraints>
                                                         </view>
@@ -225,16 +276,19 @@
                                                 <connections>
                                                     <outlet property="container" destination="yKr-oj-dX1" id="SwY-be-MGj"/>
                                                     <outlet property="deliveryDetailsLabel" destination="wbD-pz-dkd" id="fgR-EO-Lak"/>
+                                                    <outlet property="frequencyContainer" destination="C0P-Fp-STG" id="FU8-jj-NTt"/>
+                                                    <outlet property="frequencyLabel" destination="52S-HX-L2B" id="6db-9w-Ph9"/>
                                                     <outlet property="hostContainer" destination="rgb-kf-p4Y" id="u4S-2h-hYQ"/>
                                                     <outlet property="hostLabel" destination="lo9-vP-8H8" id="N5e-UP-9px"/>
                                                     <outlet property="img" destination="yKn-8D-cbF" id="aYk-a5-6KU"/>
                                                     <outlet property="membersCount" destination="Pb2-6S-pdf" id="btf-TY-DpD"/>
                                                     <outlet property="partnerCategory" destination="rHy-9Y-MY5" id="8pI-aR-S8u"/>
+                                                    <outlet property="titleLabel" destination="7LS-X9-ESj" id="kTc-J3-bBy"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFE-Dq-x1t" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dFE-Dq-x1t" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                         <rect key="frame" x="16" y="589" width="361" height="50"/>
                                         <color key="backgroundColor" name="button_primary"/>
                                         <constraints>
@@ -242,7 +296,16 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Setup New Buying Team"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Setup New Buying Team">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
                                         <connections>
                                             <action selector="deleteTeamButtonTap:" destination="jFa-Gf-6eK" eventType="touchUpInside" id="4Po-V2-zaf"/>
                                             <action selector="setupNewBuyingTeamButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4hN-RB-d6B"/>
@@ -345,15 +408,23 @@
                                                     <constraint firstAttribute="height" constant="297" id="Bec-Es-leO"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgp-Fu-8Vf" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rgp-Fu-8Vf" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="870" width="361" height="50"/>
                                                 <color key="backgroundColor" name="button_primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="HAB-4Q-ANd"/>
                                                 </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="button_title_color"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Manage My Team"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Manage My Team">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <connections>
                                                     <action selector="manageTeamButtonTap:" destination="wNU-gU-CPV" eventType="touchUpInside" id="inn-sl-pJ8"/>
                                                 </connections>
@@ -405,10 +476,16 @@
                                                             <constraint firstAttribute="trailing" secondItem="KA0-Ie-9Fe" secondAttribute="trailing" constant="10" id="z9i-8v-Nzz"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWX-EV-a7O">
-                                                        <rect key="frame" x="80" y="8" width="110.66666666666669" height="24"/>
-                                                        <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                                        <color key="textColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWX-EV-a7O">
+                                                        <rect key="frame" x="80" y="8" width="112.66666666666669" height="24"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Store Name">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="20" name="GoshaSans-Bold"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivers Weekly" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRf-Hm-yEv">
@@ -512,12 +589,12 @@
                                                 <rect key="frame" x="16" y="618" width="361" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HS-2x-ERK">
-                                                        <rect key="frame" x="14" y="23" width="125" height="17"/>
+                                                        <rect key="frame" x="14" y="20.666666666666629" width="142.33333333333334" height="19.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Team order details">
                                                                 <attributes>
-                                                                    <color key="NSColor" name="button_primary"/>
-                                                                    <font key="NSFont" size="14" name="SFPro-Semibold"/>
+                                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="16" name="GoshaSans-Bold"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -654,7 +731,9 @@
                             <constraint firstItem="jAV-NU-biz" firstAttribute="trailing" secondItem="2Te-FM-d3b" secondAttribute="trailing" id="piJ-4P-DdJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cacklebean Farm" id="iyY-iF-Kug"/>
+                    <navigationItem key="navigationItem" title="Cacklebean Farm" id="iyY-iF-Kug">
+                        <barButtonItem key="rightBarButtonItem" image="icon_share" id="hZV-tl-FgX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentView_height" destination="ik2-Ln-29O" id="HzS-NO-wIC"/>
                         <outlet property="deliveryFrequency" destination="XRf-Hm-yEv" id="xBy-8Q-snG"/>
@@ -885,7 +964,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JU-fb-nLw" customClass="RabbleButton" customModule="Rabble_Hub" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0JU-fb-nLw" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
                                 <rect key="frame" x="16" y="752" width="361" height="50"/>
                                 <color key="backgroundColor" name="button_primary"/>
                                 <constraints>
@@ -893,7 +972,16 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Delete Team"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Delete Team">
+                                            <attributes>
+                                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="deleteTeamButtonTap:" destination="jFa-Gf-6eK" eventType="touchUpInside" id="DUi-Wk-Qb1"/>
                                 </connections>
@@ -962,6 +1050,7 @@
         <image name="icon_frequency" width="19" height="14"/>
         <image name="icon_members" width="20" height="21"/>
         <image name="icon_next_closure" width="8" height="14"/>
+        <image name="icon_share" width="25" height="25"/>
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -969,7 +1058,13 @@
             <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_title_color">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_1">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_2">
             <color red="0.31000000238418579" green="0.31000000238418579" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

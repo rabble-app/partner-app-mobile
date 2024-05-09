@@ -16,8 +16,9 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet var dateTimeValueLabel: UILabel!
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet var iconContainer: UIView!
-    
     @IBOutlet weak var tableViewConstraintHeight: NSLayoutConstraint!
+    
+    var isFromScanning: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class OrderDetailsViewController: UIViewController {
         ordersTableview.layer.cornerRadius = 10
         ordersTableview.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        iconContainer.layer.cornerRadius = 12.0
+        iconContainer.layer.cornerRadius = 28.0
         iconContainer.clipsToBounds = true
         ordersTableview.showsVerticalScrollIndicator = false
         
@@ -43,7 +44,7 @@ class OrderDetailsViewController: UIViewController {
 
 extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

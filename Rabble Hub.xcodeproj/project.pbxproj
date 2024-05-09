@@ -42,6 +42,8 @@
 		86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */; };
 		86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */; };
 		86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */; };
+		86C2E2A72BEC8F2700DB4494 /* TertiaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */; };
+		86C2E2A92BECA5C700DB4494 /* OrderCollectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2E2A82BECA5C700DB4494 /* OrderCollectedViewController.swift */; };
 		86D014412BEA14220004B1C6 /* GoshaSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86D0143F2BEA14220004B1C6 /* GoshaSansBold.otf */; };
 		86D014422BEA14220004B1C6 /* GoshaSansRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86D014402BEA14220004B1C6 /* GoshaSansRegular.otf */; };
 		86D014552BEA14350004B1C6 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86D014432BEA14340004B1C6 /* Poppins-ExtraLight.ttf */; };
@@ -104,7 +106,7 @@
 		AC8CDDE62BE692600091882B /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */; };
 		AC8CDDE72BE692600091882B /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE52BE692600091882B /* SF-Pro.ttf */; };
 		AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */; };
-		AC8CDDEC2BE719640091882B /* RabbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDEB2BE719640091882B /* RabbleButton.swift */; };
+		AC8CDDEC2BE719640091882B /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDEB2BE719640091882B /* PrimaryButton.swift */; };
 		ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */; };
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
@@ -178,6 +180,8 @@
 		86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
 		86C0F5DE2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeliveryDayViewController.swift; sourceTree = "<group>"; };
 		86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateALimitViewController.swift; sourceTree = "<group>"; };
+		86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TertiaryButton.swift; sourceTree = "<group>"; };
+		86C2E2A82BECA5C700DB4494 /* OrderCollectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectedViewController.swift; sourceTree = "<group>"; };
 		86D0143F2BEA14220004B1C6 /* GoshaSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoshaSansBold.otf; sourceTree = "<group>"; };
 		86D014402BEA14220004B1C6 /* GoshaSansRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoshaSansRegular.otf; sourceTree = "<group>"; };
 		86D014432BEA14340004B1C6 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -241,7 +245,7 @@
 		AC8CDDE42BE692600091882B /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		AC8CDDE52BE692600091882B /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextField.swift; sourceTree = "<group>"; };
-		AC8CDDEB2BE719640091882B /* RabbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleButton.swift; sourceTree = "<group>"; };
+		AC8CDDEB2BE719640091882B /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyCheckItemsViewController.swift; sourceTree = "<group>"; };
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -547,6 +551,7 @@
 				86DD74B12BD23898001FEBBD /* QrCodeView.storyboard */,
 				86DD74B32BD238B7001FEBBD /* QrCodeViewController.swift */,
 				86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */,
+				86C2E2A82BECA5C700DB4494 /* OrderCollectedViewController.swift */,
 			);
 			path = QrCode;
 			sourceTree = "<group>";
@@ -669,8 +674,9 @@
 			isa = PBXGroup;
 			children = (
 				AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */,
-				AC8CDDEB2BE719640091882B /* RabbleButton.swift */,
+				AC8CDDEB2BE719640091882B /* PrimaryButton.swift */,
 				AC1228A02BE74635001EC15F /* RabbleTextView.swift */,
+				86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */,
 			);
 			path = Subclass;
 			sourceTree = "<group>";
@@ -993,6 +999,7 @@
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
 				AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */,
+				86C2E2A72BEC8F2700DB4494 /* TertiaryButton.swift in Sources */,
 				86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */,
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
@@ -1021,6 +1028,7 @@
 				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
 				AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
+				86C2E2A92BECA5C700DB4494 /* OrderCollectedViewController.swift in Sources */,
 				86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */,
 				86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */,
 				86DD74B42BD238B7001FEBBD /* QrCodeViewController.swift in Sources */,
@@ -1031,7 +1039,7 @@
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */,
 				AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */,
-				AC8CDDEC2BE719640091882B /* RabbleButton.swift in Sources */,
+				AC8CDDEC2BE719640091882B /* PrimaryButton.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,

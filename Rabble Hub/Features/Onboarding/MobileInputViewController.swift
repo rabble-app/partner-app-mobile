@@ -72,7 +72,7 @@ class MobileInputViewController: UIViewController {
     @objc func didTapOnLink(_ sender: UITapGestureRecognizer) {
         guard let url = URL(string: "https://rabble.notion.site/Service-Agreement-for-Rabble-Hubs-569c8b4f5ca54a0297587815dd6fe651") else { return }
         let safariViewController = SFSafariViewController(url: url)
-        safariViewController.modalPresentationStyle = .popover
+        safariViewController.modalPresentationStyle = .overFullScreen
         present(safariViewController, animated: true, completion: nil)
     }
     

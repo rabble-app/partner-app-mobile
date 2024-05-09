@@ -16,6 +16,9 @@ class PartnerTableViewCell: UITableViewCell {
     @IBOutlet var membersCount: UILabel!
     @IBOutlet var partnerCategory: UILabel!
     @IBOutlet var deliveryDetailsLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var frequencyContainer: UIView!
+    @IBOutlet var frequencyLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +30,9 @@ class PartnerTableViewCell: UITableViewCell {
         
         hostContainer.layer.cornerRadius = 12.5
         hostContainer.clipsToBounds = true
+        
+        frequencyContainer.layer.cornerRadius = 11.0
+        frequencyContainer.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

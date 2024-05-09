@@ -32,7 +32,8 @@ class ProfileMenuTableViewCell: UITableViewCell {
     func configureCell(menu: Menu) {
         self.titleLabel.text = menu.titleName
         self.iconView.backgroundColor = menu.iconViewBgColor
-        self.iconImageView.image = UIImage(systemName: menu.iconImageName ?? "")?.withRenderingMode(.alwaysTemplate)
+        self.iconImageView.image = UIImage(named: menu.iconImageName ?? "")
+//        self.iconImageView.image = UIImage(systemName: menu.iconImageName ?? "")?.withRenderingMode(.alwaysTemplate)
         self.switchButton.isHidden = true
         self.subtitleLabel.isHidden = true
         self.accessoryType = .disclosureIndicator
