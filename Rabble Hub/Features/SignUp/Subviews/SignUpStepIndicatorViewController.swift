@@ -13,6 +13,11 @@ class SignUpStepIndicatorViewController: UIViewController {
     @IBOutlet weak var step2LineView: UIView!
     @IBOutlet weak var step3LineView: UIView!
     
+    @IBOutlet weak var step1View: UIView!
+    @IBOutlet weak var step2View: UIView!
+    @IBOutlet weak var step3View: UIView!
+    @IBOutlet weak var step4View: UIView!
+    
     @IBOutlet weak var step1ImageView: UIImageView!
     @IBOutlet weak var step2ImageView: UIImageView!
     @IBOutlet weak var step3ImageView: UIImageView!
@@ -32,9 +37,14 @@ class SignUpStepIndicatorViewController: UIViewController {
     }
     
     func setCurrentStep(currentStep: Step) {
-        step1LineView.backgroundColor = .gray4
-        step2LineView.backgroundColor = .gray4
-        step3LineView.backgroundColor = .gray4
+        step1LineView.backgroundColor = .gray5
+        step2LineView.backgroundColor = .gray5
+        step3LineView.backgroundColor = .gray5
+        
+        step1View.backgroundColor = .gray5
+        step2View.backgroundColor = .gray5
+        step3View.backgroundColor = .gray5
+        step4View.backgroundColor = .gray5
         
         step1ImageView.tintColor = .gray4
         step2ImageView.tintColor = .gray4
@@ -43,28 +53,38 @@ class SignUpStepIndicatorViewController: UIViewController {
         
         switch currentStep {
         case .one:
-            step1ImageView.tintColor = .stepTintBlue
+            step1View.backgroundColor = .black
+            step1ImageView.tintColor = .buttonPrimary
             break
         case .two:
-            step1LineView.backgroundColor = .orange1
-            step1ImageView.tintColor = .stepTintBlue
-            step2ImageView.tintColor = .stepTintBlue
+            step1View.backgroundColor = .black
+            step2View.backgroundColor = .black
+            step1LineView.backgroundColor = .buttonPrimary
+            step1ImageView.tintColor = .buttonPrimary
+            step2ImageView.tintColor = .buttonPrimary
             break
         case .three:
-            step1LineView.backgroundColor = .orange1
-            step2LineView.backgroundColor = .orange1
-            step1ImageView.tintColor = .stepTintBlue
-            step2ImageView.tintColor = .stepTintBlue
-            step3ImageView.tintColor = .stepTintBlue
+            step1View.backgroundColor = .black
+            step2View.backgroundColor = .black
+            step3View.backgroundColor = .black
+            step1LineView.backgroundColor = .buttonPrimary
+            step2LineView.backgroundColor = .buttonPrimary
+            step1ImageView.tintColor = .buttonPrimary
+            step2ImageView.tintColor = .buttonPrimary
+            step3ImageView.tintColor = .buttonPrimary
             break
         case .four:
-            step1LineView.backgroundColor = .orange1
-            step2LineView.backgroundColor = .orange1
-            step3LineView.backgroundColor = .orange1
-            step1ImageView.tintColor = .stepTintBlue
-            step2ImageView.tintColor = .stepTintBlue
-            step3ImageView.tintColor = .stepTintBlue
-            step4ImageView.tintColor = .stepTintBlue
+            step1View.backgroundColor = .black
+            step2View.backgroundColor = .black
+            step3View.backgroundColor = .black
+            step4View.backgroundColor = .black
+            step1LineView.backgroundColor = .buttonPrimary
+            step2LineView.backgroundColor = .buttonPrimary
+            step3LineView.backgroundColor = .buttonPrimary
+            step1ImageView.tintColor = .buttonPrimary
+            step2ImageView.tintColor = .buttonPrimary
+            step3ImageView.tintColor = .buttonPrimary
+            step4ImageView.tintColor = .buttonPrimary
             break
         }
     }
