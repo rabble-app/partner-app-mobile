@@ -18,6 +18,8 @@ class ProfileMainViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        
+        
         self.tableView.reloadData()
     }
 

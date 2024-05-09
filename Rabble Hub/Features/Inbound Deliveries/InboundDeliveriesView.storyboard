@@ -371,8 +371,8 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="Order details">
                                                                 <attributes>
-                                                                    <color key="NSColor" name="button_primary"/>
-                                                                    <font key="NSFont" size="14" name="SFPro-Semibold"/>
+                                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="14" name="GoshaSans-Bold"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>

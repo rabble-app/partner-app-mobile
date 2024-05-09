@@ -911,7 +911,7 @@
                                                             <rect key="frame" x="8.6666666666666679" y="11" width="19" height="14"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="button_primary"/>
+                                                    <color key="backgroundColor" name="button_secondary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="36" id="NRQ-Vl-Zzl"/>
                                                         <constraint firstItem="gJL-pW-dId" firstAttribute="centerY" secondItem="QZw-B4-b9M" secondAttribute="centerY" id="baL-TZ-lab"/>
@@ -1059,6 +1059,9 @@
         </namedColor>
         <namedColor name="button_primary">
             <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_secondary">
+            <color red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_title_color">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
