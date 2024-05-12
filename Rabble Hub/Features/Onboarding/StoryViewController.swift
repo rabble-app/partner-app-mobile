@@ -77,6 +77,28 @@ class StoryViewController: UIViewController {
         
         self.currentProgressIndex = index
         self.delegate?.currentProgressIndexChanged(index: index)
+        
+        self.setImageForIndex(index: index)
+    }
+    
+    func setImageForIndex(index: Int) {
+        switch index {
+        case 0:
+            self.imageView.image = UIImage(named: "onboarding1")
+            break
+        case 1:
+            self.imageView.image = UIImage(named: "onboarding2")
+            break
+        case 2:
+            self.imageView.image = UIImage(named: "onboarding3")
+            break
+        case 3:
+            self.imageView.image = UIImage(named: "onboarding4")
+            break
+        default:
+            self.imageView.image = UIImage(named: "onboarding1")
+            break
+        }
     }
     
     func previousStory() {
