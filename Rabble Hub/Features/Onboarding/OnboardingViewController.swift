@@ -46,7 +46,7 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController: StoryViewControllerDelegate {
     
     func currentProgressIndexChanged(index: Int) {
-        print("Index: " + "\(index)")
+        print("Index changed to: " + "\(index)")
     }
     
 }

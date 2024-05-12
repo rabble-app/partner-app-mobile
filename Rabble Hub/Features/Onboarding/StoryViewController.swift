@@ -19,8 +19,8 @@ class StoryViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
-    // Progress views
     
+    // Progress views
     @IBOutlet weak var progressView1: RabbleProgressView!
     @IBOutlet weak var progressView2: RabbleProgressView!
     @IBOutlet weak var progressView3: RabbleProgressView!
@@ -34,7 +34,7 @@ class StoryViewController: UIViewController {
         backButton.setTitle("", for: .normal)
         nextButton.setTitle("", for: .normal)
         
-        resetProgressBar()
+        setProgressBar()
         setCurrentProgressIndex(index: 0)
     }
     
@@ -44,7 +44,12 @@ class StoryViewController: UIViewController {
         
     }
     
-    func resetProgressBar() {
+    func setProgressBar() {
+        progressView1.tag = 0
+        progressView2.tag = 1
+        progressView3.tag = 2
+        progressView4.tag = 3
+        
         progressView1.progress = 0.0
         progressView2.progress = 0.0
         progressView3.progress = 0.0
@@ -78,7 +83,7 @@ class StoryViewController: UIViewController {
         DispatchQueue.main.async{
             switch self.currentProgressIndex {
             case 0:
-                self.progressView1.stopProgress(finishAnimation: false)
+                self.progressView1.stopProgress(finishAnimation: true)
                 self.progressView1.progress = 0.0
                 
                 break
@@ -118,33 +123,29 @@ class StoryViewController: UIViewController {
         DispatchQueue.main.async{
             switch self.currentProgressIndex {
             case 0:
-                self.currentProgressIndex += 1
-                self.progressView1.progress = 1.0
+                self.progressView1.stopProgress(finishAnimation: true)
                 break
             case 1:
-                self.currentProgressIndex += 1
-                self.progressView2.progress = 1.0
+                self.progressView2.stopProgress(finishAnimation: true)
                 break
             case 2:
-                self.currentProgressIndex += 1
-                self.progressView3.progress = 1.0
+                self.progressView3.stopProgress(finishAnimation: true)
                 break
             case 3:
-                self.progressView4.progress = 1.0
+                self.progressView4.stopProgress(finishAnimation: true)
+                return
                 
-                break
             default:
-                break
+                return
             }
-            
-            self.setCurrentProgressIndex(index: self.currentProgressIndex)
         }
     }
     
     func animateProgress(progressView: RabbleProgressView) {
-        
-        progressView.setProgress(1.0, duration: 3.0, animated: true) {
-            self.setCurrentProgressIndex(index: self.currentProgressIndex + 1)
+        DispatchQueue.main.async{
+            progressView.setProgress(1.0, duration: 5.0, animated: true) { index in
+                self.setCurrentProgressIndex(index: index + 1)
+            }
         }
     }
     

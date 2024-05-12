@@ -10,7 +10,7 @@ import UIKit
 class RabbleProgressView: UIProgressView {
     
     // Completion block type
-    typealias CompletionBlock = () -> Void
+    typealias CompletionBlock = (Int) -> Void
     
     // Property to hold the completion block
     var completion: CompletionBlock?
@@ -46,8 +46,9 @@ class RabbleProgressView: UIProgressView {
     }
     
     /// Sets progress with animation and allows specifying a completion block to execute when the animation finishes.
-    func setProgress(_ progress: Float, duration: TimeInterval, animated: Bool, completion: (() -> Void)? = nil) {
+    func setProgress(_ progress: Float, duration: TimeInterval, animated: Bool, completion: @escaping CompletionBlock) {
  
+        print("setProgress: " + "\(self.tag)")
         // Set the completion block
         self.completion = completion
 
@@ -72,7 +73,11 @@ class RabbleProgressView: UIProgressView {
             case .current:
                 break
             case .end:
-                self.completion?()
+                
+                if self.completion != nil {
+                    self.completion?(self.tag)
+                }
+                
                 break
             @unknown default:
                 break
@@ -84,10 +89,11 @@ class RabbleProgressView: UIProgressView {
     
     /// Stops the progress animation, optionally allowing to finish or reset the progress.
     func stopProgress(finishAnimation: Bool) {
-        if let currentAnimator = self.animator {
+        if self.animator != nil {
             if isInProgress() {
                 if finishAnimation {
-                    self.progress = 1.0
+                    self.animator?.stopAnimation(false)
+                    self.animator?.finishAnimation(at: .end)
                 }
                 else {
                     self.progress = 0.0
@@ -105,7 +111,7 @@ class RabbleProgressView: UIProgressView {
             return false
         }
 
-        return fractionComplete != 1.0
+        return fractionComplete != 0.0 || fractionComplete != 1.0
     }
     
     /// Checks if progress is half or more than half completed.
