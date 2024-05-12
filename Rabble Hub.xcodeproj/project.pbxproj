@@ -82,6 +82,8 @@
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12289E2BE73AFF001EC15F /* Properties.swift */; };
 		AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1228A02BE74635001EC15F /* RabbleTextView.swift */; };
+		AC159FA92BED145E00926222 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC159FA82BED145E00926222 /* Media.xcassets */; };
+		AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC401FBD2BED225800FA2F3F /* StoryViewController.swift */; };
 		AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */; };
 		AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */; };
 		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
@@ -111,6 +113,9 @@
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
 		ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */; };
+		ACC28D302BED2653006C6CAE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D2F2BED2653006C6CAE /* OnboardingViewController.swift */; };
+		ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */; };
+		ACC28D342BEF52AE006C6CAE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D332BEF52AE006C6CAE /* Image.swift */; };
 		ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */; };
 		ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */; };
 		ACC719942BDA881500CF78DC /* ProfileOpenHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */; };
@@ -169,7 +174,6 @@
 		86A60DED2BCCEF7600496390 /* SignUpView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpView.storyboard; sourceTree = "<group>"; };
 		86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
-		86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileInputViewController.swift; sourceTree = "<group>"; };
 		86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpInputViewController.swift; sourceTree = "<group>"; };
 		86C0F5CD2BCFA2F700B78747 /* ProducersListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProducersListView.storyboard; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC12289E2BE73AFF001EC15F /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		AC1228A02BE74635001EC15F /* RabbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextView.swift; sourceTree = "<group>"; };
+		AC159FA82BED145E00926222 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		AC401FBD2BED225800FA2F3F /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +256,9 @@
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
+		ACC28D2F2BED2653006C6CAE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleProgressView.swift; sourceTree = "<group>"; };
+		ACC28D332BEF52AE006C6CAE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOwnerViewController.swift; sourceTree = "<group>"; };
 		ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePartnerDetailsViewController.swift; sourceTree = "<group>"; };
 		ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOpenHoursViewController.swift; sourceTree = "<group>"; };
@@ -446,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				86D17AA82BCE6ACB00464511 /* Colors.swift */,
+				ACC28D332BEF52AE006C6CAE /* Image.swift */,
 				861EFC572BD66D5A007AB919 /* ViewExtension.swift */,
 			);
 			path = Extension;
@@ -455,9 +465,10 @@
 			isa = PBXGroup;
 			children = (
 				86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */,
-				86A60E042BCE0EFD00496390 /* OnboardingViewController.swift */,
+				ACC28D2F2BED2653006C6CAE /* OnboardingViewController.swift */,
 				86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */,
 				86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */,
+				AC401FBD2BED225800FA2F3F /* StoryViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -514,6 +525,7 @@
 			children = (
 				AC8CDDE32BE692600091882B /* Font */,
 				86D17AA62BCE696100464511 /* Color.xcassets */,
+				AC159FA82BED145E00926222 /* Media.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -677,6 +689,7 @@
 				AC8CDDEB2BE719640091882B /* PrimaryButton.swift */,
 				AC1228A02BE74635001EC15F /* RabbleTextView.swift */,
 				86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */,
+				ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */,
 			);
 			path = Subclass;
 			sourceTree = "<group>";
@@ -833,6 +846,7 @@
 				ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */,
 				AC8CDDDB2BDB85030091882B /* ManageEmployeeView.storyboard in Resources */,
 				86D17AB92BCEB58D00464511 /* CreateATeamPopUpView.storyboard in Resources */,
+				AC159FA92BED145E00926222 /* Media.xcassets in Resources */,
 				86D0145D2BEA14350004B1C6 /* Poppins-Regular.ttf in Resources */,
 				86D014582BEA14350004B1C6 /* Poppins-MediumItalic.ttf in Resources */,
 				86D014562BEA14350004B1C6 /* Poppins-LightItalic.ttf in Resources */,
@@ -1001,6 +1015,7 @@
 				AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */,
 				86C2E2A72BEC8F2700DB4494 /* TertiaryButton.swift in Sources */,
 				86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */,
+				AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */,
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
 				AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */,
@@ -1019,6 +1034,7 @@
 				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
 				ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
+				ACC28D342BEF52AE006C6CAE /* Image.swift in Sources */,
 				AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */,
 				AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */,
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
@@ -1026,6 +1042,7 @@
 				AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */,
 				AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */,
 				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
+				ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */,
 				AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
 				86C2E2A92BECA5C700DB4494 /* OrderCollectedViewController.swift in Sources */,
@@ -1047,6 +1064,7 @@
 				AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */,
 				ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */,
 				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
+				ACC28D302BED2653006C6CAE /* OnboardingViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 				865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
