@@ -44,7 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-ro-qDi">
-                                        <rect key="frame" x="8" y="99" width="371" height="36"/>
+                                        <rect key="frame" x="8" y="106" width="371" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="9qk-fz-XY6"/>
                                         </constraints>
@@ -55,7 +55,7 @@
                                 <constraints>
                                     <constraint firstItem="kEL-Mv-Vav" firstAttribute="leading" secondItem="J3U-ur-Cis" secondAttribute="leading" constant="16" id="B4j-A0-nui"/>
                                     <constraint firstItem="kEL-Mv-Vav" firstAttribute="top" secondItem="J3U-ur-Cis" secondAttribute="top" constant="57" id="IBV-U2-yVu"/>
-                                    <constraint firstItem="Dta-ro-qDi" firstAttribute="top" secondItem="kEL-Mv-Vav" secondAttribute="bottom" constant="1" id="Pi5-CN-zce"/>
+                                    <constraint firstItem="Dta-ro-qDi" firstAttribute="top" secondItem="kEL-Mv-Vav" secondAttribute="bottom" constant="8" id="Pi5-CN-zce"/>
                                     <constraint firstItem="Dta-ro-qDi" firstAttribute="leading" secondItem="J3U-ur-Cis" secondAttribute="leading" constant="8" id="bF2-cu-tH9"/>
                                     <constraint firstAttribute="trailing" secondItem="Dta-ro-qDi" secondAttribute="trailing" constant="8" id="dR1-Mz-3Tz"/>
                                     <constraint firstAttribute="trailing" secondItem="kEL-Mv-Vav" secondAttribute="trailing" constant="16" id="dbu-FW-zC7"/>

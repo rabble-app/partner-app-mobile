@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="5Jd-hn-wxp">
-                                <rect key="frame" x="8" y="139.66666666666666" width="377" height="36"/>
+                                <rect key="frame" x="8" y="146.66666666666666" width="377" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="LEQ-fM-v5U"/>
                                 </constraints>
@@ -64,14 +64,14 @@
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-AW-5FA">
-                                <rect key="frame" x="0.0" y="183.66666666666666" width="393" height="1"/>
+                                <rect key="frame" x="0.0" y="190.66666666666666" width="393" height="1"/>
                                 <color key="backgroundColor" name="gray_4"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="pqR-jz-qHl"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vVj-Z5-uQL">
-                                <rect key="frame" x="16" y="200.66666666666669" width="361" height="617.33333333333326"/>
+                                <rect key="frame" x="16" y="207.66666666666669" width="361" height="610.33333333333326"/>
                                 <color key="backgroundColor" name="background_primary"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProducersListTableViewCell" rowHeight="372" id="t2w-he-cec" customClass="ProducersListTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
@@ -166,7 +166,7 @@
                             <constraint firstItem="5Jd-hn-wxp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="4Ih-Vh-zH7"/>
                             <constraint firstItem="AC8-hC-tFo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9IW-wp-X1v"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vVj-Z5-uQL" secondAttribute="bottom" id="Afd-4U-CpT"/>
-                            <constraint firstItem="5Jd-hn-wxp" firstAttribute="top" secondItem="Xay-n2-wMS" secondAttribute="bottom" constant="1" id="CRn-0u-fTi"/>
+                            <constraint firstItem="5Jd-hn-wxp" firstAttribute="top" secondItem="Xay-n2-wMS" secondAttribute="bottom" constant="8" id="CRn-0u-fTi"/>
                             <constraint firstItem="vVj-Z5-uQL" firstAttribute="top" secondItem="zv9-AW-5FA" secondAttribute="bottom" constant="16" id="GXL-AE-J9L"/>
                             <constraint firstItem="AC8-hC-tFo" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="LG9-ON-k89"/>
                             <constraint firstItem="zv9-AW-5FA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="LqX-f6-n7V"/>

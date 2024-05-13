@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-fx-l7l">
-                                        <rect key="frame" x="8" y="99" width="377" height="36"/>
+                                        <rect key="frame" x="8" y="106" width="377" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="ewL-rT-SHj"/>
                                         </constraints>
@@ -54,7 +54,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="VRw-o3-y4B" secondAttribute="trailing" constant="16" id="4rj-pC-lBw"/>
                                     <constraint firstAttribute="trailing" secondItem="0GV-fx-l7l" secondAttribute="trailing" constant="8" id="MdF-Uy-smX"/>
-                                    <constraint firstItem="0GV-fx-l7l" firstAttribute="top" secondItem="VRw-o3-y4B" secondAttribute="bottom" constant="1" id="NsD-mS-GVd"/>
+                                    <constraint firstItem="0GV-fx-l7l" firstAttribute="top" secondItem="VRw-o3-y4B" secondAttribute="bottom" constant="8" id="NsD-mS-GVd"/>
                                     <constraint firstItem="VRw-o3-y4B" firstAttribute="top" secondItem="UsR-Ti-pap" secondAttribute="top" constant="57" id="bOh-jc-w8D"/>
                                     <constraint firstItem="VRw-o3-y4B" firstAttribute="leading" secondItem="UsR-Ti-pap" secondAttribute="leading" constant="16" id="bat-5E-oa8"/>
                                     <constraint firstAttribute="height" constant="158" id="e9g-eP-HDn"/>
@@ -367,7 +367,7 @@
                                                 <rect key="frame" x="16" y="379" width="361" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pc-XR-Sxl">
-                                                        <rect key="frame" x="14" y="23" width="87.666666666666671" height="17"/>
+                                                        <rect key="frame" x="14" y="23" width="87.333333333333329" height="17"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Order details">
                                                                 <attributes>
@@ -1007,7 +1007,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-jj-xO5">
-                                <rect key="frame" x="42" y="552" width="309.33333333333331" height="38.333333333333371"/>
+                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333326" height="38.666666666666629"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Delivery Checked In!">
                                         <attributes>
@@ -1277,13 +1277,13 @@
             <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84299999475479126" green="0.95300000905990601" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_secondary">
-            <color red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.039000000804662704" green="0.51800000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_title_color">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="calendar_today">
             <color red="1" green="0.23100000619888306" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
