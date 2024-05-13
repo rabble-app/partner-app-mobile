@@ -21,6 +21,9 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewDidLayoutSubviews() {
         self.setupView()
     }
     
