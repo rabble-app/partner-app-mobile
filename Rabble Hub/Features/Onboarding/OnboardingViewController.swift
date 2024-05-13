@@ -25,7 +25,6 @@ class OnboardingViewController: UIViewController {
     }
     
     func setupView() {
-        
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.gradientBGView.bounds
         gradientLayer.colors = [UIColor.black.withAlphaComponent(1.0).cgColor,
@@ -38,7 +37,6 @@ class OnboardingViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)   // End at the top
 
         self.infoContainerView.layer.insertSublayer(gradientLayer, at: 0)
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
