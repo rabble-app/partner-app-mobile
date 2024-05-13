@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2  # Update to the latest version
+      uses: actions/checkout@v3  # Update to the latest version
 
     # Install CocoaPods
     - name: Install CocoaPods
@@ -27,7 +27,7 @@ jobs:
 
     # Cache CocoaPods dependencies
     - name: Cache CocoaPods dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.cocoapods
         key: ${{ runner.os }}-cocoapods-${{ hashFiles('**/Podfile.lock') }}
@@ -36,4 +36,4 @@ jobs:
 
     # Xcode build
     - name: Xcode build
-      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" build
+      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble
