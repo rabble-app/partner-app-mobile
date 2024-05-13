@@ -91,15 +91,17 @@ class RabbleProgressView: UIProgressView {
     func stopProgress(finishAnimation: Bool) {
         if self.animator != nil {
             if isInProgress() {
+                self.completion = nil
+                self.animator?.stopAnimation(false)
+                self.animator?.finishAnimation(at: .end)
+                
                 if finishAnimation {
-                    self.animator?.stopAnimation(false)
-                    self.animator?.finishAnimation(at: .end)
+                    self.progress = 1.0
                 }
                 else {
                     self.progress = 0.0
                 }
                 
-                self.completion = nil
                 self.animator = nil
             }
         }

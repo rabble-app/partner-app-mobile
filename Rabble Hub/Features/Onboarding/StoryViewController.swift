@@ -87,32 +87,28 @@ class StoryViewController: UIViewController {
             switch self.currentProgressIndex {
             case 0:
                 self.progressView1.stopProgress(finishAnimation: false)
-                self.progressView1.progress = 0.0
-                
+
                 break
             case 1:
                 if !self.progressView2.isProgressMoreThanHalf() {
                     self.currentProgressIndex -= 1
                 }
                 self.progressView2.stopProgress(finishAnimation: false)
-                self.progressView2.progress = 0.0
-                
+
                 break
             case 2:
                 if !self.progressView3.isProgressMoreThanHalf() {
                     self.currentProgressIndex -= 1
                 }
                 self.progressView3.stopProgress(finishAnimation: false)
-                self.progressView3.progress = 0.0
-                
+
                 break
             case 3:
                 if !self.progressView4.isProgressMoreThanHalf() {
                     self.currentProgressIndex -= 1
                 }
                 self.progressView4.stopProgress(finishAnimation: false)
-                self.progressView4.progress = 0.0
-                
+
                 break
             default:
                 break
@@ -127,12 +123,15 @@ class StoryViewController: UIViewController {
             switch self.currentProgressIndex {
             case 0:
                 self.progressView1.stopProgress(finishAnimation: true)
+                self.currentProgressIndex += 1
                 break
             case 1:
                 self.progressView2.stopProgress(finishAnimation: true)
+                self.currentProgressIndex += 1
                 break
             case 2:
                 self.progressView3.stopProgress(finishAnimation: true)
+                self.currentProgressIndex += 1
                 break
             case 3:
                 self.progressView4.stopProgress(finishAnimation: true)
@@ -141,6 +140,8 @@ class StoryViewController: UIViewController {
             default:
                 return
             }
+            
+            self.setCurrentProgressIndex(index: self.currentProgressIndex)
         }
     }
     
