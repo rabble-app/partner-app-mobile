@@ -36,9 +36,11 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
            
     }
     
+    
     func setUpView() {
-        
         orderTableview_height.constant = 2 * 95
+        view.layoutIfNeeded()
+        
         contentView_height.constant = 780 + orderTableview_height.constant
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: contentView_height.constant)
         
