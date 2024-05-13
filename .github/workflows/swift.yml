@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      
+
     - name: Install CocoaPods
       run: |
         sudo gem install cocoapods
@@ -30,4 +30,4 @@ jobs:
           ${{ runner.os }}-cocoapods-
 
     - name: Xcode build
-      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" build
+      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates build
