@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,9 +11,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="SF-Pro.ttf">
-            <string>SFPro-Bold</string>
             <string>SFPro-Regular</string>
-            <string>SFPro-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -52,13 +51,18 @@
                                     <constraint firstItem="4rv-IT-9SZ" firstAttribute="centerY" secondItem="veL-qd-OuY" secondAttribute="centerY" id="SRC-CY-78Z"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Employees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8R-iy-LP9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8R-iy-LP9">
                                 <rect key="frame" x="16" y="106" width="361" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="sgd-s9-Dgv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="34"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Manage Employees">
+                                        <attributes>
+                                            <font key="NSFont" size="32" name="GoshaSans-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5K-aQ-oen" userLabel="Line View">
@@ -223,13 +227,18 @@
                                 <rect key="frame" x="0.0" y="156" width="393" height="662"/>
                                 <color key="backgroundColor" name="background_primary"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Employees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-tz-jlX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-tz-jlX">
                                 <rect key="frame" x="16" y="106" width="361" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="jFD-sx-sIZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="34"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Add Employees">
+                                        <attributes>
+                                            <font key="NSFont" size="32" name="GoshaSans-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SF4-iS-olf" userLabel="Line View">
@@ -271,22 +280,28 @@
                                 <rect key="frame" x="0.0" y="156" width="393" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDE-R3-1kM" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="402.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="404.66666666666669"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee’s phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfO-6x-caz">
-                                                <rect key="frame" x="15.999999999999986" y="24" width="238.66666666666663" height="24"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                                <color key="textColor" name="gray_1"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfO-6x-caz">
+                                                <rect key="frame" x="15.999999999999986" y="24" width="248.66666666666663" height="24"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Employee’s phone number">
+                                                        <attributes>
+                                                            <color key="NSColor" name="gray_1"/>
+                                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your employee’s phone number to manage your account." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tt-K8-fYN">
-                                                <rect key="frame" x="16" y="56" width="361" height="37.333333333333343"/>
+                                                <rect key="frame" x="16" y="56" width="361" height="38.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                                 <color key="textColor" name="gray_3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFc-dD-b3K" userLabel="Code View">
-                                                <rect key="frame" x="14" y="117.33333333333331" width="100" height="56"/>
+                                                <rect key="frame" x="14" y="118.33333333333331" width="100" height="56"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-rG-6D8">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="56"/>
@@ -331,10 +346,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUP-RL-tCP" userLabel="Phone View">
-                                                <rect key="frame" x="122" y="117.33333333333331" width="255" height="56"/>
+                                                <rect key="frame" x="122" y="118.33333333333331" width="255" height="56"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-mR-8xb">
-                                                        <rect key="frame" x="16.000000000000004" y="18.333333333333371" width="36.333333333333343" height="19.333333333333329"/>
+                                                        <rect key="frame" x="16.000000000000004" y="18.333333333333371" width="39.333333333333343" height="19.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="+000">
                                                                 <attributes>
@@ -346,7 +361,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="301-xJ-uAD">
-                                                        <rect key="frame" x="60.333333333333357" y="17" width="186.66666666666663" height="22"/>
+                                                        <rect key="frame" x="63.333333333333357" y="17" width="183.66666666666663" height="22"/>
                                                         <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
@@ -361,20 +376,26 @@
                                                     <constraint firstAttribute="height" constant="56" id="x99-SP-eUd"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee’s name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kP-Ox-fgz">
-                                                <rect key="frame" x="16" y="197.33333333333331" width="158" height="24"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                                <color key="textColor" name="gray_1"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kP-Ox-fgz">
+                                                <rect key="frame" x="16" y="198.33333333333331" width="164" height="24"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Employee’s name">
+                                                        <attributes>
+                                                            <color key="NSColor" name="gray_1"/>
+                                                            <font key="NSFont" size="20" name="GoshaSans-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your employee’s phone number to manage your account." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-qf-7FY">
-                                                <rect key="frame" x="16" y="229.33333333333331" width="361" height="37.333333333333314"/>
+                                                <rect key="frame" x="16" y="230.33333333333331" width="361" height="38.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                                 <color key="textColor" name="gray_3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mss-nh-DMF" customClass="RabbleTextField" customModule="Rabble_Hub" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="282.66666666666669" width="361" height="56"/>
+                                                <rect key="frame" x="16" y="284.66666666666669" width="361" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="bel-u4-9pg"/>
                                                 </constraints>
@@ -493,7 +514,7 @@
             <color red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="0.97000002861022949" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84299999475479126" green="0.95300000905990601" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_1">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
