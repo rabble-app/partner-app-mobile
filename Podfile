@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
 
 target 'Rabble Hub' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -23,11 +23,11 @@ target 'Rabble Hub' do
 
   target 'Rabble HubTests' do
     inherit! :search_paths
-    # Pods for testing
+    # Pods for testing (if needed)
   end
 
   target 'Rabble HubUITests' do
-    # Pods for testing
+    # Pods for testing (if needed)
   end
 
 end
