@@ -8,24 +8,19 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
-
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Update to the latest version
-
-    # Install CocoaPods
+      uses: actions/checkout@v3
+      
     - name: Install CocoaPods
       run: |
         sudo gem install cocoapods
 
-    # Install project dependencies using CocoaPods
     - name: Install project dependencies
       run: |
         pod install --repo-update
 
-    # Cache CocoaPods dependencies
     - name: Cache CocoaPods dependencies
       uses: actions/cache@v3
       with:
@@ -34,6 +29,5 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-cocoapods-
 
-    # Xcode build
     - name: Xcode build
-      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble
+      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" build
