@@ -12,7 +12,7 @@ protocol StoryViewControllerDelegate {
 }
 
 class StoryViewController: UIViewController {
-
+    
     var delegate: StoryViewControllerDelegate?
     
     @IBOutlet weak var backButton: UIButton!
@@ -27,21 +27,16 @@ class StoryViewController: UIViewController {
     @IBOutlet weak var progressView4: RabbleProgressView!
     
     var currentProgressIndex = 0
+    let onboardingImages = ["onboarding1" ,"onboarding2", "onboarding3", "onboarding4"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         backButton.setTitle("", for: .normal)
         nextButton.setTitle("", for: .normal)
         
         setProgressBar()
         setCurrentProgressIndex(index: 0)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        
     }
     
     func setProgressBar() {
@@ -57,7 +52,7 @@ class StoryViewController: UIViewController {
     }
     
     func setCurrentProgressIndex(index: Int) {
-
+        
         switch index {
         case 0:
             self.animateProgress(progressView: progressView1)
@@ -82,22 +77,8 @@ class StoryViewController: UIViewController {
     }
     
     func setImageForIndex(index: Int) {
-        switch index {
-        case 0:
-            self.imageView.image = UIImage(named: "onboarding1")
-            break
-        case 1:
-            self.imageView.image = UIImage(named: "onboarding2")
-            break
-        case 2:
-            self.imageView.image = UIImage(named: "onboarding3")
-            break
-        case 3:
-            self.imageView.image = UIImage(named: "onboarding4")
-            break
-        default:
-            self.imageView.image = UIImage(named: "onboarding1")
-            break
+        if onboardingImages.indices.contains(index) {
+            self.imageView.image = UIImage(named: onboardingImages[index])
         }
     }
     
@@ -105,7 +86,7 @@ class StoryViewController: UIViewController {
         DispatchQueue.main.async{
             switch self.currentProgressIndex {
             case 0:
-                self.progressView1.stopProgress(finishAnimation: true)
+                self.progressView1.stopProgress(finishAnimation: false)
                 self.progressView1.progress = 0.0
                 
                 break
@@ -180,5 +161,4 @@ class StoryViewController: UIViewController {
     @IBAction func nextButtonTap(_ sender: Any) {
         nextStory()
     }
-    
 }
