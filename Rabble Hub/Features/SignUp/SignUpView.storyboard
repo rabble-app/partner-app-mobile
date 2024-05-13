@@ -1078,7 +1078,7 @@
                                 <rect key="frame" x="0.0" y="238.33333333333334" width="393" height="490.66666666666663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdF-tz-DOJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="690"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="429.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I would like to sign up on the Rabble Partner Store Platform. I agree to the following terms and conditions." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lre-V7-u5a">
                                                 <rect key="frame" x="16" y="8.0000000000000036" width="361" height="57.333333333333343"/>
@@ -1187,7 +1187,10 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOQ-sg-CmQ">
-                                                <rect key="frame" x="16" y="333.66666666666663" width="361" height="340.33333333333337"/>
+                                                <rect key="frame" x="16" y="333.66666666666663" width="361" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="WEn-UI-elG"/>
+                                                </constraints>
                                                 <string key="text">By proceeding, I agree to Rabble’s Partner Agreement Terms and Use, and acknowledge that I have read the Privacy Notice. I also accept the terms of the general agreement as listed above.</string>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                                 <color key="textColor" name="gray_3"/>
@@ -1198,7 +1201,7 @@
                                         <constraints>
                                             <constraint firstItem="EMP-Oy-eVD" firstAttribute="top" secondItem="qay-jw-EEy" secondAttribute="bottom" constant="24" id="2za-n7-mth"/>
                                             <constraint firstAttribute="trailing" secondItem="1YF-XA-aHO" secondAttribute="trailing" constant="16" id="3Wv-Bd-Inq"/>
-                                            <constraint firstAttribute="bottom" secondItem="yOQ-sg-CmQ" secondAttribute="bottom" constant="16" id="7GD-8s-fDo"/>
+                                            <constraint firstAttribute="bottom" secondItem="yOQ-sg-CmQ" secondAttribute="bottom" constant="16" id="8dU-a7-daf"/>
                                             <constraint firstAttribute="trailing" secondItem="EMP-Oy-eVD" secondAttribute="trailing" constant="16" id="HLg-yE-fjt"/>
                                             <constraint firstAttribute="trailing" secondItem="qay-jw-EEy" secondAttribute="trailing" constant="16" id="HMw-7j-RZp"/>
                                             <constraint firstAttribute="trailing" secondItem="lre-V7-u5a" secondAttribute="trailing" constant="16" id="Vh4-6k-qtw"/>
@@ -1327,7 +1330,6 @@
                             <constraint firstItem="AdF-tz-DOJ" firstAttribute="width" secondItem="1hh-b3-DuR" secondAttribute="width" id="D7a-ag-ybl"/>
                             <constraint firstItem="FKM-qL-Web" firstAttribute="top" secondItem="LYA-vq-Zi6" secondAttribute="bottom" id="G85-Uw-m77"/>
                             <constraint firstAttribute="trailing" secondItem="faL-RV-tVF" secondAttribute="trailing" constant="16" id="HdJ-wb-o5C"/>
-                            <constraint firstItem="AdF-tz-DOJ" firstAttribute="height" relation="greaterThanOrEqual" secondItem="jVk-cF-zZI" secondAttribute="height" constant="-69" id="Iae-3h-gM6"/>
                             <constraint firstItem="faL-RV-tVF" firstAttribute="leading" secondItem="jVk-cF-zZI" secondAttribute="leading" constant="16" id="Kog-Vh-lWd"/>
                             <constraint firstItem="LYA-vq-Zi6" firstAttribute="leading" secondItem="1hh-b3-DuR" secondAttribute="leading" id="Or3-o4-mKR"/>
                             <constraint firstItem="LYA-vq-Zi6" firstAttribute="top" secondItem="faL-RV-tVF" secondAttribute="bottom" constant="16" id="R28-cC-Zwf"/>
