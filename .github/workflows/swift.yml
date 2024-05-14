@@ -30,4 +30,4 @@ jobs:
           ${{ runner.os }}-cocoapods-
 
     - name: Xcode build
-      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates build
+      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" build
