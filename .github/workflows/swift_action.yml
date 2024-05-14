@@ -20,4 +20,4 @@ jobs:
       run: |
         pod install
     - name: Xcode build
-      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" build
+      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates build
