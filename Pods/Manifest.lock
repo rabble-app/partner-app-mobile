@@ -1,28 +1,24 @@
 PODS:
-  - DialCountries (0.1.3)
   - EliteOTPField (0.1.3)
   - IQKeyboardManagerSwift (7.0.2)
   - QRCodeReader.swift (10.1.0)
 
 DEPENDENCIES:
-  - DialCountries
   - EliteOTPField
   - IQKeyboardManagerSwift
   - QRCodeReader.swift (~> 10.1.0)
 
 SPEC REPOS:
   trunk:
-    - DialCountries
     - EliteOTPField
     - IQKeyboardManagerSwift
     - QRCodeReader.swift
 
 SPEC CHECKSUMS:
-  DialCountries: 098cb20d88eba888dcc0474060694b545fb36ce1
   EliteOTPField: 40f227886c6c9601f714f301b2a2c23bb92c8be0
   IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
   QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
 
-PODFILE CHECKSUM: 2cfaedabe6b4c9883f7638c9ac0b80dd831a29a1
+PODFILE CHECKSUM: e1cc77fe0e16af05c49ddc6a55d9787f83c39efb
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.15.0
