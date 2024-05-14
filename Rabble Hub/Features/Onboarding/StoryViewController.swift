@@ -34,6 +34,10 @@ class StoryViewController: UIViewController {
         
         backButton.setTitle("", for: .normal)
         nextButton.setTitle("", for: .normal)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setProgressBar()
         setCurrentProgressIndex(index: 0)
@@ -144,6 +148,8 @@ class StoryViewController: UIViewController {
             self.setCurrentProgressIndex(index: self.currentProgressIndex)
         }
     }
+    
+    // MARK: RabbleProgressView delegate
     
     func animateProgress(progressView: RabbleProgressView) {
         DispatchQueue.main.async{

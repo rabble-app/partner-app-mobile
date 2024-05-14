@@ -10,7 +10,6 @@ import UIKit
 class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var infoContainerView: UIView!
-    @IBOutlet weak var gradientBGView: UIView!
     
     // Contents
     @IBOutlet weak var titleLabel: UILabel!
@@ -24,12 +23,13 @@ class OnboardingViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        self.setupView()
+        self.setupGradientView()
     }
     
-    func setupView() {
+    func setupGradientView() {
+        
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.gradientBGView.bounds
+        gradientLayer.frame = self.infoContainerView.bounds
         gradientLayer.colors = [UIColor.black.withAlphaComponent(1.0).cgColor,
                                 UIColor.black.withAlphaComponent(0.0).cgColor]
 
@@ -39,7 +39,12 @@ class OnboardingViewController: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0) // Start from the bottom
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)   // End at the top
 
-        self.infoContainerView.layer.insertSublayer(gradientLayer, at: 0)
+        if let _ = self.infoContainerView.layer.sublayers?.first as? CAGradientLayer {
+            self.infoContainerView.layer.sublayers?[0] = gradientLayer
+        }
+        else {
+            self.infoContainerView.layer.insertSublayer(gradientLayer, at: 0)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,6 +56,8 @@ class OnboardingViewController: UIViewController {
 }
 
 extension OnboardingViewController: StoryViewControllerDelegate {
+    
+    // MARK: StoryViewController delegate
     
     func currentProgressIndexChanged(index: Int) {
         switch index {
