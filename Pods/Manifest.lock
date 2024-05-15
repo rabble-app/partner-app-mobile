@@ -1,24 +1,38 @@
 PODS:
+  - Alamofire (5.9.1)
+  - DialCountries (0.1.3)
   - EliteOTPField (0.1.3)
   - IQKeyboardManagerSwift (7.0.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - QRCodeReader.swift (10.1.0)
 
 DEPENDENCIES:
+  - DialCountries
   - EliteOTPField
   - IQKeyboardManagerSwift
+  - Moya (~> 15.0)
   - QRCodeReader.swift (~> 10.1.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - DialCountries
     - EliteOTPField
     - IQKeyboardManagerSwift
+    - Moya
     - QRCodeReader.swift
 
 SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  DialCountries: 098cb20d88eba888dcc0474060694b545fb36ce1
   EliteOTPField: 40f227886c6c9601f714f301b2a2c23bb92c8be0
   IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
 
-PODFILE CHECKSUM: e1cc77fe0e16af05c49ddc6a55d9787f83c39efb
+PODFILE CHECKSUM: 6885a5bacc388d8576ea56b39be106bf96de8fb8
 
 COCOAPODS: 1.15.0

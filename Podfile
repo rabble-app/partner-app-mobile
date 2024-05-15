@@ -6,10 +6,11 @@ target 'Rabble Hub' do
   use_frameworks!
 
   # Pods for Rabble Hub
-#  pod 'DialCountries'
+  pod 'DialCountries'
   pod 'EliteOTPField'
   pod 'IQKeyboardManagerSwift'
   pod 'QRCodeReader.swift', '~> 10.1.0'
+  pod 'Moya', '~> 15.0'
   
   post_install do |installer|
       installer.generated_projects.each do |project|

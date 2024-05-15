@@ -10,7 +10,10 @@ import EliteOTPField
 
 class OtpInputViewController: UIViewController {
     
-    var phoneNumber: String = ""
+    public var phoneNumber: String = ""
+    public var sid: String = ""
+    private var code: String = ""
+    
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var ontpContainer: UIView!
     
@@ -61,15 +64,36 @@ class OtpInputViewController: UIViewController {
         ])
     }
     
-    @IBAction func continueButtonTap(_ sender: Any) {
-        
+    func verifyOTP() {
+        apiprovider.request(.verifyOtp(phone: self.phoneNumber, sid: self.sid, code: self.code, baseURL: environment.baseURL)) { result in
+            switch result {
+            case let .success(response):
+                // Handle successful response
+                do {
+                    let response = try response.map(VerifyOTPResponse.self)
+                    let tokenManager = UserDefaultsTokenManager()
+                    let token = response.data?.token
+                    tokenManager.saveToken(token ?? "")
+                    self.goToSignUp()
+                } catch {
+                    print("Failed to map response data: \(error)")
+                }
+            case let .failure(error):
+                // Handle error
+                print("Request failed with error: \(error)")
+            }
+        }
+    }
+    
+    func goToSignUp() {
         let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false, completion: nil)
-
-        return
-        
+    }
+    
+    @IBAction func continueButtonTap(_ sender: Any) {
+        self.verifyOTP()
     }
 }
 
@@ -77,5 +101,6 @@ class OtpInputViewController: UIViewController {
 extension OtpInputViewController : EliteOTPFieldDelegete {
    func didEnterLastDigit(otp: String) {
        print(otp) // Here's the Digits
+       self.code = otp
    }
 }
