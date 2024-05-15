@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import DialCountries
+//import DialCountries
 import SafariServices
 
 class MobileInputViewController: UIViewController {
@@ -27,9 +27,9 @@ class MobileInputViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.BackgroundPrimary
         setUpView()
-        let country = Country.getCurrentCountry()
-        self.codeLabel.text = country?.dialCode
-        self.flag.text = country?.flag
+//        let country = Country.getCurrentCountry()
+//        self.codeLabel.text = country?.dialCode
+//        self.flag.text = country?.flag
     }
     
     func setUpView(){
@@ -78,11 +78,11 @@ class MobileInputViewController: UIViewController {
     
     
     @IBAction func countryPickerButtonTap(_ sender: Any) {
-        DispatchQueue.main.async {
-            let cv = DialCountriesController(locale: Locale(identifier: "en"))
-            cv.delegate = self
-            cv.show(vc: self)
-        }
+//        DispatchQueue.main.async {
+//            let cv = DialCountriesController(locale: Locale(identifier: "en"))
+//            cv.delegate = self
+//            cv.show(vc: self)
+//        }
     }
     
     @IBAction func continueButtonTap(_ sender: Any) {
@@ -119,9 +119,9 @@ class MobileInputViewController: UIViewController {
     
 }
 
-extension MobileInputViewController: DialCountriesControllerDelegate {
-    func didSelected(with country: Country) {
-        self.codeLabel.text = country.dialCode
-        self.flag.text = country.flag
-    }
-}
+//extension MobileInputViewController: DialCountriesControllerDelegate {
+//    func didSelected(with country: Country) {
+//        self.codeLabel.text = country.dialCode
+//        self.flag.text = country.flag
+//    }
+//}
