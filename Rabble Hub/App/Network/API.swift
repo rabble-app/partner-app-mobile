@@ -65,6 +65,7 @@ private extension String {
 public enum RabbleHubAPI {
     case sendOtp(phone: String, baseURL: URL)
     case verifyOtp(phone: String, sid: String, code: String, baseURL: URL)
+    case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String, baseURL: URL)
     case getSuppliers(baseURL: URL)
 }
 
@@ -75,28 +76,33 @@ extension RabbleHubAPI: TargetType {
         switch self {
         case    .sendOtp(_, let baseURL),
                 .verifyOtp(_, _, _, let baseURL),
+                .saveStoreProfile(_, _, _,_, _, _,_, _, let baseURL),
                 .getSuppliers(let baseURL):
             return baseURL
         }
     }
     
     public var path: String {
-         switch self {
-         case .sendOtp:
-             return "/auth/send-otp"
-         case .verifyOtp:
-             return "/auth/verify-otp"
-         case .getSuppliers:
-             return "/users/producers"
-        
-         }
-     }
+        switch self {
+        case .sendOtp:
+            return "/auth/send-otp"
+        case .verifyOtp:
+            return "/auth/verify-otp"
+        case .saveStoreProfile:
+            return "/store/create"
+        case .getSuppliers:
+            return "/users/producers"
+            
+        }
+    }
     
     public var method: Moya.Method {
         switch self {
         case .sendOtp:
             return .post
         case .verifyOtp:
+            return .post
+        case .saveStoreProfile:
             return .post
         case .getSuppliers:
             return .get
@@ -116,6 +122,18 @@ extension RabbleHubAPI: TargetType {
                 "sid": sid,
                 "code": code,
                 "role": "PARTNER"
+            ]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .saveStoreProfile(let name, let postalCode, let city, let streetAddress, let direction, let storeType, let shelfSpace, let dryStorageSpace, _):
+            let parameters: [String: Any] = [
+                "name": name,
+                "postalCode": postalCode,
+                "city": city,
+                "streetAddress": streetAddress,
+                "direction": direction,
+                "storeType": storeType,
+                "shelfSpace": shelfSpace,
+                "dryStorageSpace": dryStorageSpace
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .getSuppliers:
