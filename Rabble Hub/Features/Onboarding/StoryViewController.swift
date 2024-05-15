@@ -150,7 +150,6 @@ class StoryViewController: UIViewController {
     }
     
     // MARK: RabbleProgressView delegate
-    
     func animateProgress(progressView: RabbleProgressView) {
         DispatchQueue.main.async{
             progressView.setProgress(1.0, duration: 5.0, animated: true) { index in
@@ -160,7 +159,6 @@ class StoryViewController: UIViewController {
     }
     
     // MARK: Actions
-    
     @IBAction func backButtonTap(_ sender: Any) {
         previousStory()
     }
