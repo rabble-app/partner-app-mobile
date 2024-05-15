@@ -65,8 +65,7 @@ private extension String {
 public enum RabbleHubAPI {
     case sendOtp(phone: String, baseURL: URL)
     case verifyOtp(phone: String, sid: String, code: String, baseURL: URL)
-    case register(phone: String, email: String, password: String, businessName: String, businessAddress: String, baseURL: URL)
-    case deliveryDays(baseURL: URL)
+    case getSuppliers(baseURL: URL)
 }
 
 
@@ -74,7 +73,9 @@ extension RabbleHubAPI: TargetType {
     
     public var baseURL: URL {
         switch self {
-        case .sendOtp(_, let baseURL), .verifyOtp(_, _, _, let baseURL), .register(_, _, _, _, _, let baseURL), .deliveryDays(let baseURL):
+        case    .sendOtp(_, let baseURL),
+                .verifyOtp(_, _, _, let baseURL),
+                .getSuppliers(let baseURL):
             return baseURL
         }
     }
@@ -85,10 +86,8 @@ extension RabbleHubAPI: TargetType {
              return "/auth/send-otp"
          case .verifyOtp:
              return "/auth/verify-otp"
-         case .register:
-             return "/auth/register"
-         case .deliveryDays:
-             return "postal-code/producer/delivery-days"
+         case .getSuppliers:
+             return "/users/producers"
         
          }
      }
@@ -99,11 +98,9 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .verifyOtp:
             return .post
-        case .register:
-            return .post
-        case .deliveryDays:
+        case .getSuppliers:
             return .get
-            }
+        }
     }
     
     public var task: Task {
@@ -117,19 +114,11 @@ extension RabbleHubAPI: TargetType {
             let parameters: [String: Any] = [
                 "phone": phone,
                 "sid": sid,
-                "code": code
+                "code": code,
+                "role": "PARTNER"
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .register(let phone, let email, let password, let businessName, let businessAddress, _):
-            let parameters: [String: Any] = [
-                "phone": phone,
-                "email": email,
-                "password": password,
-                "businessName": businessName,
-                "businessAddress": businessAddress
-            ]
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .deliveryDays:
+        case .getSuppliers:
             return .requestPlain
         }
     }

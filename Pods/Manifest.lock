@@ -8,6 +8,9 @@ PODS:
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - QRCodeReader.swift (10.1.0)
+  - SDWebImage (5.19.1):
+    - SDWebImage/Core (= 5.19.1)
+  - SDWebImage/Core (5.19.1)
 
 DEPENDENCIES:
   - DialCountries
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Moya (~> 15.0)
   - QRCodeReader.swift (~> 10.1.0)
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -24,6 +28,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Moya
     - QRCodeReader.swift
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
@@ -32,7 +37,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
+  SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
 
-PODFILE CHECKSUM: 6885a5bacc388d8576ea56b39be106bf96de8fb8
+PODFILE CHECKSUM: 2ca1af07f44c8b6b456a6054d981e0995b7167c9
 
 COCOAPODS: 1.15.0

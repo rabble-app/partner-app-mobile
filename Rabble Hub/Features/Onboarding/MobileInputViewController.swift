@@ -89,19 +89,38 @@ class MobileInputViewController: UIViewController {
     }
     
     @IBAction func continueButtonTap(_ sender: Any) {
+        guard validatePhoneNumber() else { return }
+        guard validateTickBox() else { return }
+        
+        sendOTP()
+    }
+    
+    private func validatePhoneNumber() -> Bool {
         guard let phoneNumber = phoneNumberTextfield.text, !phoneNumber.isEmpty else {
-            // Set border color of phoneNumberContainer to red
-            phoneNumberContainer.layer.borderColor = UIColor.red.cgColor
+            setBorderColor(of: phoneNumberContainer, to: UIColor.red)
             phoneNumberTextfield.becomeFirstResponder()
-            return
+            return false
         }
         
-        
-        
-        // Reset border color of phoneNumberContainer
-        phoneNumberContainer.layer.borderColor = Colors.Gray5.cgColor
-        self.sendOTP()
+        setBorderColor(of: phoneNumberContainer, to: Colors.Gray5)
+        return true
     }
+    
+    private func validateTickBox() -> Bool {
+        if !isTickBoxSelected {
+            setBorderColor(of: tickBoxButton, to: UIColor.red)
+            return false
+        }
+        
+        setBorderColor(of: tickBoxButton, to: Colors.Gray5)
+        return true
+    }
+
+    
+    private func setBorderColor(of view: UIView, to color: UIColor) {
+        view.layer.borderColor = color.cgColor
+    }
+    
     
     func sendOTP() {
         self.phoneNumber = "\(codeLabel.text ?? "")\(phoneNumberTextfield.text ?? "")"
@@ -111,8 +130,13 @@ class MobileInputViewController: UIViewController {
                 // Handle successful response
                 do {
                     let response = try response.map(SendOTPResponse.self)
-                    self.sid = response.data.sid
-                    self.goToVerifyOTP()
+                    if response.statusCode == 200 {
+                        self.sid = response.data.sid
+                        self.goToVerifyOTP()
+                    }else{
+                        print("Error Message: \(response.message)")
+                    }
+                    
                 } catch {
                     print("Failed to map response data: \(error)")
                 }
@@ -135,6 +159,7 @@ class MobileInputViewController: UIViewController {
     }
     
     func updateTickBoxButtonUI() {
+        setBorderColor(of: tickBoxButton, to: Colors.Gray5)
         let image = isTickBoxSelected ? UIImage(named: "icon_tickbox") : UIImage()
         tickBoxButton.setImage(image, for: .normal)
     }

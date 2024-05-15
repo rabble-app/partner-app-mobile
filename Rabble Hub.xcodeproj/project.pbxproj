@@ -19,11 +19,10 @@
 		865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */; };
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
 		8673494B2BF5108600F82570 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673494A2BF5108600F82570 /* API.swift */; };
-		8673494E2BF51D6100F82570 /* DeliveryDaysResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673494D2BF51D6100F82570 /* DeliveryDaysResponse.swift */; };
-		867349522BF525C700F82570 /* RegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349512BF525C700F82570 /* RegistrationResponse.swift */; };
 		867349542BF5287200F82570 /* SendOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349532BF5287200F82570 /* SendOTPResponse.swift */; };
 		867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */; };
 		867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349572BF5300A00F82570 /* VerifyOTPResponse.swift */; };
+		8673495A2BF535FB00F82570 /* GetSuppliersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349592BF535FB00F82570 /* GetSuppliersResponse.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -164,11 +163,10 @@
 		865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationFailedViewController.swift; path = Subviews/VerificationFailedViewController.swift; sourceTree = "<group>"; };
 		8673494A2BF5108600F82570 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		8673494D2BF51D6100F82570 /* DeliveryDaysResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDaysResponse.swift; sourceTree = "<group>"; };
-		867349512BF525C700F82570 /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
 		867349532BF5287200F82570 /* SendOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOTPResponse.swift; sourceTree = "<group>"; };
 		867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenManager.swift; sourceTree = "<group>"; };
 		867349572BF5300A00F82570 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
+		867349592BF535FB00F82570 /* GetSuppliersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuppliersResponse.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -345,8 +343,7 @@
 			children = (
 				867349532BF5287200F82570 /* SendOTPResponse.swift */,
 				867349572BF5300A00F82570 /* VerifyOTPResponse.swift */,
-				867349512BF525C700F82570 /* RegistrationResponse.swift */,
-				8673494D2BF51D6100F82570 /* DeliveryDaysResponse.swift */,
+				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1036,7 +1033,6 @@
 				AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */,
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
-				867349522BF525C700F82570 /* RegistrationResponse.swift in Sources */,
 				AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */,
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
@@ -1052,7 +1048,6 @@
 				AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */,
-				8673494E2BF51D6100F82570 /* DeliveryDaysResponse.swift in Sources */,
 				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
 				ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
@@ -1076,6 +1071,7 @@
 				8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */,
 				86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */,
 				86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */,
+				8673495A2BF535FB00F82570 /* GetSuppliersResponse.swift in Sources */,
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */,
 				AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */,

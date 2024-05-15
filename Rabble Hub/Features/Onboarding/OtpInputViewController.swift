@@ -71,10 +71,17 @@ class OtpInputViewController: UIViewController {
                 // Handle successful response
                 do {
                     let response = try response.map(VerifyOTPResponse.self)
-                    let tokenManager = UserDefaultsTokenManager()
-                    let token = response.data?.token
-                    tokenManager.saveToken(token ?? "")
-                    self.goToSignUp()
+                    
+                    if response.statusCode == 200 {
+                        let tokenManager = UserDefaultsTokenManager()
+                        let token = response.data?.token
+                        tokenManager.saveToken(token ?? "")
+                        self.goToSignUp()
+                    }else{
+                        print("Error Message: \(response.message)")
+                    }
+                    
+                    
                 } catch {
                     print("Failed to map response data: \(error)")
                 }
@@ -95,6 +102,34 @@ class OtpInputViewController: UIViewController {
     @IBAction func continueButtonTap(_ sender: Any) {
         self.verifyOTP()
     }
+    
+    @IBAction func resendOTPTap(_ sender: Any) {
+        self.sendOTP()
+    }
+    
+    func sendOTP() {
+        apiprovider.request(.sendOtp(phone: self.phoneNumber, baseURL: environment.baseURL)) { result in
+            switch result {
+            case let .success(response):
+                // Handle successful response
+                do {
+                    let response = try response.map(SendOTPResponse.self)
+                    if response.statusCode == 200 {
+                        self.sid = response.data.sid
+                    }else{
+                        print("Error Message: \(response.message)")
+                    }
+                   
+                } catch {
+                    print("Failed to map response data: \(error)")
+                }
+            case let .failure(error):
+                // Handle error
+                print("Request failed with error: \(error)")
+            }
+        }
+    }
+    
 }
 
 
