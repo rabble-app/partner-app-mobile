@@ -2,10 +2,10 @@ name: Swift Build
 
 on:
   push:
-    branches: 
+    branches:
       - develop
   pull_request:
-    branches: 
+    branches:
       - develop
 
 jobs:
@@ -23,4 +23,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build
-        run: swift build
+        run: |
+          cd path/to/your/swift/package/directory
+          swift build
