@@ -6,7 +6,7 @@ target 'Rabble Hub' do
   use_frameworks!
 
   # Pods for Rabble Hub
-#  pod 'DialCountries'
+  pod 'DialCountries'
   pod 'EliteOTPField'
   pod 'IQKeyboardManagerSwift'
   pod 'QRCodeReader.swift', '~> 10.1.0'

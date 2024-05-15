@@ -1,4 +1,4 @@
-name: Swift with CocoaPods
+name: Swift
 
 on:
   push:
@@ -9,25 +9,36 @@ on:
 jobs:
   build:
     runs-on: macos-latest
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Install CocoaPods
-      run: |
-        sudo gem install cocoapods
+      - name: Install CocoaPods
+        run: sudo gem install cocoapods
 
-    - name: Install project dependencies
-      run: |
-        pod install --repo-update
+      - name: Install dependencies
+        run: pod install --repo-update
+        working-directory: .
+        
+      - name: Create Provisioning Profiles Directory
+        run: mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
-    - name: Cache CocoaPods dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.cocoapods
-        key: ${{ runner.os }}-cocoapods-${{ hashFiles('**/Podfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-cocoapods-
+      - name: Decode provisioning profile
+        run: echo "${{ secrets.PROVISIONING_PROFILE }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/$(uuidgen).mobileprovision
 
-    - name: Xcode build
-      run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" build
+      - name: Decode signing certificate
+        run: |
+            echo "${{ secrets.BUILD_CERTIFICATE }}" | openssl base64 -d -out Certificates.p12
+        
+      - name: Import certificate to keychain
+        run: |
+          security create-keychain -p "" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "" build.keychain
+          security import Certificates.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_PASSWORD }} -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" build.keychain
+          security list-keychains -s build.keychain
+        
+      - name: Xcode build
+        run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates
+        working-directory: .
