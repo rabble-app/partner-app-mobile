@@ -1,5 +1,6 @@
-name: Swift
-
+name: Action
+# Runs unit test - soon
+# Build the project
 on:
   push:
     branches: [ "develop" ]
