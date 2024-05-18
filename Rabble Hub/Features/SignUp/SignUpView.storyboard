@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -321,6 +321,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gnE-Gc-NAc"/>
+                    <connections>
+                        <outlet property="city" destination="XEw-lz-jIn" id="WHY-2w-iwJ"/>
+                        <outlet property="direction" destination="GsJ-P0-l1A" id="b0R-y0-agB"/>
+                        <outlet property="dryStorageSpace" destination="Mn7-1I-avL" id="jTM-Vq-NEa"/>
+                        <outlet property="postalCode" destination="zmh-jb-eH9" id="bxY-RP-56W"/>
+                        <outlet property="shelfSpace" destination="tih-y2-ZyH" id="aLl-2l-s2t"/>
+                        <outlet property="storeName" destination="0BY-oS-kBE" id="5TJ-qR-ri1"/>
+                        <outlet property="storeType" destination="GIw-cU-qgY" id="uBE-2b-Nkv"/>
+                        <outlet property="street" destination="KY9-Dn-DnL" id="pur-8x-gRR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1357,7 +1367,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="45E-XI-PjC"/>
+        <segue reference="nyG-45-66W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>

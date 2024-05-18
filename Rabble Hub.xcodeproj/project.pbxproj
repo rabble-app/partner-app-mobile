@@ -15,6 +15,8 @@
 		861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */; };
 		861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC572BD66D5A007AB919 /* ViewExtension.swift */; };
 		861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */; };
+		8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */; };
+		8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3532BF8CAEC00DF5045 /* StoreManager.swift */; };
 		865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */; };
 		865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */; };
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
@@ -159,6 +161,8 @@
 		861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsViewController.swift; sourceTree = "<group>"; };
 		861EFC572BD66D5A007AB919 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamViewController.swift; sourceTree = "<group>"; };
+		8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStoreProfileResponse.swift; sourceTree = "<group>"; };
+		8631B3532BF8CAEC00DF5045 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamTableViewCell.swift; sourceTree = "<group>"; };
 		865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationFailedViewController.swift; path = Subviews/VerificationFailedViewController.swift; sourceTree = "<group>"; };
@@ -329,11 +333,19 @@
 			path = CustomerCollection;
 			sourceTree = "<group>";
 		};
+		8631B3522BF8CAD700DF5045 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8631B3532BF8CAEC00DF5045 /* StoreManager.swift */,
+				867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		867349492BF5106D00F82570 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				8673494A2BF5108600F82570 /* API.swift */,
-				867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -344,6 +356,7 @@
 				867349532BF5287200F82570 /* SendOTPResponse.swift */,
 				867349572BF5300A00F82570 /* VerifyOTPResponse.swift */,
 				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
+				8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -424,6 +437,7 @@
 		86A60DE82BCCEEE000496390 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8631B3522BF8CAD700DF5045 /* Cache */,
 				8673494C2BF51D3900F82570 /* ResponseModel */,
 				86A60DE92BCCEEF500496390 /* Constants.swift */,
 				AC12289E2BE73AFF001EC15F /* Properties.swift */,
@@ -1044,6 +1058,7 @@
 				ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */,
 				8673494B2BF5108600F82570 /* API.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
+				8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
@@ -1087,6 +1102,7 @@
 				ACC28D302BED2653006C6CAE /* OnboardingViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 				865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */,
+				8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 			);
