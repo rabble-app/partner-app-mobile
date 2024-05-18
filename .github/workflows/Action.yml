@@ -1,0 +1,45 @@
+name: Action
+# Runs unit test - soon
+# Build the project
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install CocoaPods
+        run: sudo gem install cocoapods
+
+      - name: Install dependencies
+        run: pod install --repo-update
+        working-directory: .
+        
+      - name: Create Provisioning Profiles Directory
+        run: mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+
+      - name: Decode provisioning profile
+        run: echo "${{ secrets.PROVISIONING_PROFILE }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/$(uuidgen).mobileprovision
+
+      - name: Decode signing certificate
+        run: |
+            echo "${{ secrets.BUILD_CERTIFICATE }}" | openssl base64 -d -out Certificates.p12
+        
+      - name: Import certificate to keychain
+        run: |
+          security create-keychain -p "" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "" build.keychain
+          security import Certificates.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_PASSWORD }} -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" build.keychain
+          security list-keychains -s build.keychain
+        
+      - name: Xcode build
+        run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates
+        working-directory: .
