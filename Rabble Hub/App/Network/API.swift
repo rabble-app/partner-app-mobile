@@ -66,6 +66,7 @@ public enum RabbleHubAPI {
     case sendOtp(phone: String, baseURL: URL)
     case verifyOtp(phone: String, sid: String, code: String, baseURL: URL)
     case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String, baseURL: URL)
+    case updateUserRecord(firstName: String, lastName: String, email: String, baseURL: URL)
     case getSuppliers(baseURL: URL)
 }
 
@@ -77,6 +78,7 @@ extension RabbleHubAPI: TargetType {
         case    .sendOtp(_, let baseURL),
                 .verifyOtp(_, _, _, let baseURL),
                 .saveStoreProfile(_, _, _,_, _, _,_, _, let baseURL),
+                .updateUserRecord(_, _, _, let baseURL),
                 .getSuppliers(let baseURL):
             return baseURL
         }
@@ -90,6 +92,8 @@ extension RabbleHubAPI: TargetType {
             return "/auth/verify-otp"
         case .saveStoreProfile:
             return "/store/create"
+        case .updateUserRecord:
+            return "/users/update"
         case .getSuppliers:
             return "/users/producers"
             
@@ -104,6 +108,8 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .saveStoreProfile:
             return .post
+        case .updateUserRecord:
+            return .patch
         case .getSuppliers:
             return .get
         }
@@ -134,6 +140,13 @@ extension RabbleHubAPI: TargetType {
                 "storeType": storeType,
                 "shelfSpace": shelfSpace,
                 "dryStorageSpace": dryStorageSpace
+            ]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .updateUserRecord(let firstName, let lastName, let email, _):
+            let parameters: [String: Any] = [
+                "firstName": firstName,
+                "lastName": lastName,
+                "email": email
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .getSuppliers:

@@ -41,7 +41,7 @@ class SignUpViewController: UIViewController {
                     if response.statusCode == 200 || response.statusCode == 201 {
                         print(response.data)
                         self.saveStore(response.data)
-                        self.goToSavePartnerProfile()
+                        self.goToCreateUserProfile()
                     }else{
                         print("Error Message: \(response.message)")
                     }
@@ -54,6 +54,7 @@ class SignUpViewController: UIViewController {
                 print("Request failed with error: \(error)")
             }
         }
+        self.goToCreateUserProfile()
     }
     
     func saveStore(_ store: Store) {
@@ -64,7 +65,7 @@ class SignUpViewController: UIViewController {
         self.saveStoreProfile()
     }
     
-    func goToSavePartnerProfile(){
+    func goToCreateUserProfile(){
         let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "SignUpProfileViewController") as! SignUpProfileViewController
         vc.modalPresentationStyle = .fullScreen

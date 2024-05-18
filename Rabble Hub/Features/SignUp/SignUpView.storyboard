@@ -669,6 +669,11 @@
                             <constraint firstItem="2UT-m8-8RB" firstAttribute="top" secondItem="uXx-iV-qbr" secondAttribute="top" id="z57-Ud-4v6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="ehs-CB-FM4" id="GqO-aQ-ams"/>
+                        <outlet property="firstName" destination="rWi-Sp-i0z" id="2ME-T7-0sJ"/>
+                        <outlet property="lastName" destination="Aq0-dT-pm2" id="Q2T-EW-2WQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iqx-8L-6rH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1367,7 +1372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nyG-45-66W"/>
+        <segue reference="wgv-gz-aM2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>
