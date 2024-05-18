@@ -32,7 +32,7 @@ class SignUpViewController: UIViewController {
     }
     
     func saveStoreProfile(){
-        apiprovider.request(.saveStoreProfile(name: storeName.text ?? "", postalCode: postalCode.text ?? "", city: city.text ?? "", streetAddress: street.text ?? "", direction: direction.text ?? "", storeType: storeType.text ?? "", shelfSpace: shelfSpace.text ?? "", dryStorageSpace: dryStorageSpace.text ?? "", baseURL: environment.baseURL)) { result in
+        apiprovider.request(.saveStoreProfile(name: storeName.text ?? "", postalCode: postalCode.text ?? "", city: city.text ?? "", streetAddress: street.text ?? "", direction: direction.text ?? "", storeType: storeType.text ?? "", shelfSpace: shelfSpace.text ?? "", dryStorageSpace: dryStorageSpace.text ?? "")) { result in
             switch result {
             case let .success(response):
                 // Handle successful response

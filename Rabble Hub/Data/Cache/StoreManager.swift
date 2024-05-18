@@ -12,7 +12,9 @@ class StoreManager {
     
     private let userDefaultsKey = "storedStore"
     
-    private init() { }
+    private init() {
+        //nothing to do
+    }
     
     var store: Store? {
         get {

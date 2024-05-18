@@ -12,7 +12,9 @@ class UserManager {
     
     private let userDefaultsKey = "storedUser"
     
-    private init() { }
+    private init() {
+        //nothing to do
+    }
     
     var user: User? {
         get {

@@ -8,8 +8,21 @@
 import Foundation
 import Moya
 
+struct APIConfig {
+    static let developmentBaseURL = "https://api.dev.rabble.market"
+    static let productionBaseURL = "https://api.rabble.market"
+}
+
+struct URLConfig {
+    static let sendOtp = "/auth/send-otp"
+    static let verifyOtp = "/auth/verify-otp"
+    static let saveStoreProfile = "/store/create"
+    static let updateUserRecord = "/users/update"
+    static let getSuppliers = "/users/producers"
+}
+
 // MARK: - Provider setup
-private func JSONResponseDataFormatter(_ data: Data) -> String {
+private func jsonResponseDataFormatter(_ data: Data) -> String {
     do {
         let dataAsJSON = try JSONSerialization.jsonObject(with: data)
         let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
@@ -22,10 +35,9 @@ private func JSONResponseDataFormatter(_ data: Data) -> String {
 let environment = Environment.development // or .production
 let tokenManager = UserDefaultsTokenManager()
 let apiprovider = MoyaProvider<RabbleHubAPI>(plugins: [
-    NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter), logOptions: .verbose)),
+    NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: jsonResponseDataFormatter), logOptions: .verbose)),
     AuthPlugin(tokenManager: tokenManager)
 ])
-
 
 // Define the Environment enum
 enum Environment {
@@ -35,9 +47,9 @@ enum Environment {
     var baseURL: URL {
         switch self {
         case .development:
-            return URL(string: "https://api.dev.rabble.market")!
+            return URL(string: APIConfig.developmentBaseURL)!
         case .production:
-            return URL(string: "https://api.rabble.market")!
+            return URL(string: APIConfig.productionBaseURL)!
         }
     }
 }
@@ -54,7 +66,6 @@ struct AuthPlugin: PluginType {
     }
 }
 
-
 // MARK: - Provider support
 private extension String {
     var urlEscaped: String {
@@ -63,40 +74,30 @@ private extension String {
 }
 
 public enum RabbleHubAPI {
-    case sendOtp(phone: String, baseURL: URL)
-    case verifyOtp(phone: String, sid: String, code: String, baseURL: URL)
-    case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String, baseURL: URL)
-    case updateUserRecord(firstName: String, lastName: String, email: String, baseURL: URL)
-    case getSuppliers(baseURL: URL)
+    case sendOtp(phone: String)
+    case verifyOtp(phone: String, sid: String, code: String)
+    case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
+    case updateUserRecord(firstName: String, lastName: String, email: String)
+    case getSuppliers
 }
 
-
 extension RabbleHubAPI: TargetType {
-    
     public var baseURL: URL {
-        switch self {
-        case    .sendOtp(_, let baseURL),
-                .verifyOtp(_, _, _, let baseURL),
-                .saveStoreProfile(_, _, _,_, _, _,_, _, let baseURL),
-                .updateUserRecord(_, _, _, let baseURL),
-                .getSuppliers(let baseURL):
-            return baseURL
-        }
+        return environment.baseURL
     }
     
     public var path: String {
         switch self {
         case .sendOtp:
-            return "/auth/send-otp"
+            return URLConfig.sendOtp
         case .verifyOtp:
-            return "/auth/verify-otp"
+            return URLConfig.verifyOtp
         case .saveStoreProfile:
-            return "/store/create"
+            return URLConfig.saveStoreProfile
         case .updateUserRecord:
-            return "/users/update"
+            return URLConfig.updateUserRecord
         case .getSuppliers:
-            return "/users/producers"
-            
+            return URLConfig.getSuppliers
         }
     }
     
@@ -117,12 +118,12 @@ extension RabbleHubAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .sendOtp(let phone, _):
+        case .sendOtp(let phone):
             let parameters: [String: Any] = [
                 "phone": phone
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .verifyOtp(let phone, let sid, let code, _):
+        case .verifyOtp(let phone, let sid, let code):
             let parameters: [String: Any] = [
                 "phone": phone,
                 "sid": sid,
@@ -130,7 +131,7 @@ extension RabbleHubAPI: TargetType {
                 "role": "PARTNER"
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .saveStoreProfile(let name, let postalCode, let city, let streetAddress, let direction, let storeType, let shelfSpace, let dryStorageSpace, _):
+        case .saveStoreProfile(let name, let postalCode, let city, let streetAddress, let direction, let storeType, let shelfSpace, let dryStorageSpace):
             let parameters: [String: Any] = [
                 "name": name,
                 "postalCode": postalCode,
@@ -142,7 +143,7 @@ extension RabbleHubAPI: TargetType {
                 "dryStorageSpace": dryStorageSpace
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .updateUserRecord(let firstName, let lastName, let email, _):
+        case .updateUserRecord(let firstName, let lastName, let email):
             let parameters: [String: Any] = [
                 "firstName": firstName,
                 "lastName": lastName,
@@ -162,7 +163,6 @@ extension RabbleHubAPI: TargetType {
         return ["Content-Type": "application/json"]
     }
 }
-
 
 public func url(_ route: TargetType) -> String {
     route.baseURL.appendingPathComponent(route.path).absoluteString
