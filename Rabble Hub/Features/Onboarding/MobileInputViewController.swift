@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import DialCountries
+import DialCountries
 import SafariServices
 
 class MobileInputViewController: UIViewController {
@@ -23,13 +23,16 @@ class MobileInputViewController: UIViewController {
     
     var isTickBoxSelected = false
     
+    private var phoneNumber: String = ""
+    private var sid: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.BackgroundPrimary
         setUpView()
-//        let country = Country.getCurrentCountry()
-//        self.codeLabel.text = country?.dialCode
-//        self.flag.text = country?.flag
+        let country = Country.getCurrentCountry()
+        self.codeLabel.text = country?.dialCode
+        self.flag.text = country?.flag
     }
     
     func setUpView(){
@@ -78,39 +81,89 @@ class MobileInputViewController: UIViewController {
     
     
     @IBAction func countryPickerButtonTap(_ sender: Any) {
-//        DispatchQueue.main.async {
-//            let cv = DialCountriesController(locale: Locale(identifier: "en"))
-//            cv.delegate = self
-//            cv.show(vc: self)
-//        }
+        DispatchQueue.main.async {
+            let cv = DialCountriesController(locale: Locale(identifier: "en"))
+            cv.delegate = self
+            cv.show(vc: self)
+        }
     }
     
     @IBAction func continueButtonTap(_ sender: Any) {
+        guard validatePhoneNumber() else { return }
+        guard validateTickBox() else { return }
+        
+        sendOTP()
+    }
+    
+    private func validatePhoneNumber() -> Bool {
         guard let phoneNumber = phoneNumberTextfield.text, !phoneNumber.isEmpty else {
-            // Set border color of phoneNumberContainer to red
-            phoneNumberContainer.layer.borderColor = UIColor.red.cgColor
+            setBorderColor(of: phoneNumberContainer, to: UIColor.red)
             phoneNumberTextfield.becomeFirstResponder()
-            return
+            return false
         }
         
-        // Reset border color of phoneNumberContainer
-        phoneNumberContainer.layer.borderColor = Colors.Gray5.cgColor
+        setBorderColor(of: phoneNumberContainer, to: Colors.Gray5)
+        return true
+    }
+    
+    private func validateTickBox() -> Bool {
+        if !isTickBoxSelected {
+            setBorderColor(of: tickBoxButton, to: UIColor.red)
+            return false
+        }
         
-        
+        setBorderColor(of: tickBoxButton, to: Colors.Gray5)
+        return true
+    }
+
+    
+    private func setBorderColor(of view: UIView, to color: UIColor) {
+        view.layer.borderColor = color.cgColor
+    }
+    
+    
+    func sendOTP() {
+        self.phoneNumber = "\(codeLabel.text ?? "")\(phoneNumberTextfield.text ?? "")"
+        apiprovider.request(.sendOtp(phone: self.phoneNumber)) { result in
+            switch result {
+            case let .success(response):
+                // Handle successful response
+                do {
+                    let response = try response.map(SendOTPResponse.self)
+                    if response.statusCode == 200 {
+                        self.sid = response.data.sid
+                        self.goToVerifyOTP()
+                    }else{
+                        print("Error Message: \(response.message)")
+                    }
+                    
+                } catch {
+                    print("Failed to map response data: \(error)")
+                }
+            case let .failure(error):
+                // Handle error
+                print("Request failed with error: \(error)")
+            }
+        }
+    }
+    
+    
+    func goToVerifyOTP() {
         let storyboard = UIStoryboard(name: "OnboardingView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "OtpInputViewController") as? OtpInputViewController {
             vc.modalPresentationStyle = .overFullScreen
-            
-            vc.phoneNumber = "\(codeLabel.text ?? "") \(phoneNumberTextfield.text ?? "")"
+            vc.phoneNumber = self.phoneNumber
+            vc.sid = self.sid
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     func updateTickBoxButtonUI() {
+        setBorderColor(of: tickBoxButton, to: Colors.Gray5)
         let image = isTickBoxSelected ? UIImage(named: "icon_tickbox") : UIImage()
         tickBoxButton.setImage(image, for: .normal)
     }
-
+    
     
     @IBAction func tickBoxButtonTap(_ sender: Any) {
         isTickBoxSelected.toggle()
@@ -119,9 +172,9 @@ class MobileInputViewController: UIViewController {
     
 }
 
-//extension MobileInputViewController: DialCountriesControllerDelegate {
-//    func didSelected(with country: Country) {
-//        self.codeLabel.text = country.dialCode
-//        self.flag.text = country.flag
-//    }
-//}
+extension MobileInputViewController: DialCountriesControllerDelegate {
+    func didSelected(with country: Country) {
+        self.codeLabel.text = country.dialCode
+        self.flag.text = country.flag
+    }
+}

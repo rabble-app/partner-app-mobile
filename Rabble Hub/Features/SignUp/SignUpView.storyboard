@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -321,6 +321,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gnE-Gc-NAc"/>
+                    <connections>
+                        <outlet property="city" destination="XEw-lz-jIn" id="WHY-2w-iwJ"/>
+                        <outlet property="direction" destination="GsJ-P0-l1A" id="b0R-y0-agB"/>
+                        <outlet property="dryStorageSpace" destination="Mn7-1I-avL" id="jTM-Vq-NEa"/>
+                        <outlet property="postalCode" destination="zmh-jb-eH9" id="bxY-RP-56W"/>
+                        <outlet property="shelfSpace" destination="tih-y2-ZyH" id="aLl-2l-s2t"/>
+                        <outlet property="storeName" destination="0BY-oS-kBE" id="5TJ-qR-ri1"/>
+                        <outlet property="storeType" destination="GIw-cU-qgY" id="uBE-2b-Nkv"/>
+                        <outlet property="street" destination="KY9-Dn-DnL" id="pur-8x-gRR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -659,6 +669,11 @@
                             <constraint firstItem="2UT-m8-8RB" firstAttribute="top" secondItem="uXx-iV-qbr" secondAttribute="top" id="z57-Ud-4v6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="ehs-CB-FM4" id="GqO-aQ-ams"/>
+                        <outlet property="firstName" destination="rWi-Sp-i0z" id="2ME-T7-0sJ"/>
+                        <outlet property="lastName" destination="Aq0-dT-pm2" id="Q2T-EW-2WQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iqx-8L-6rH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1357,7 +1372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="45E-XI-PjC"/>
+        <segue reference="wgv-gz-aM2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>

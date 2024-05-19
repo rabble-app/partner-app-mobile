@@ -15,9 +15,18 @@
 		861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */; };
 		861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC572BD66D5A007AB919 /* ViewExtension.swift */; };
 		861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */; };
+		8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */; };
+		8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3532BF8CAEC00DF5045 /* StoreManager.swift */; };
+		8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */; };
+		8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3572BF8D0D200DF5045 /* UserManager.swift */; };
 		865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */; };
 		865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */; };
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
+		8673494B2BF5108600F82570 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673494A2BF5108600F82570 /* API.swift */; };
+		867349542BF5287200F82570 /* SendOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349532BF5287200F82570 /* SendOTPResponse.swift */; };
+		867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */; };
+		867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349572BF5300A00F82570 /* VerifyOTPResponse.swift */; };
+		8673495A2BF535FB00F82570 /* GetSuppliersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349592BF535FB00F82570 /* GetSuppliersResponse.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -154,9 +163,18 @@
 		861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsViewController.swift; sourceTree = "<group>"; };
 		861EFC572BD66D5A007AB919 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamViewController.swift; sourceTree = "<group>"; };
+		8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStoreProfileResponse.swift; sourceTree = "<group>"; };
+		8631B3532BF8CAEC00DF5045 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRecordResponse.swift; sourceTree = "<group>"; };
+		8631B3572BF8D0D200DF5045 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamTableViewCell.swift; sourceTree = "<group>"; };
 		865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationFailedViewController.swift; path = Subviews/VerificationFailedViewController.swift; sourceTree = "<group>"; };
+		8673494A2BF5108600F82570 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		867349532BF5287200F82570 /* SendOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOTPResponse.swift; sourceTree = "<group>"; };
+		867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenManager.swift; sourceTree = "<group>"; };
+		867349572BF5300A00F82570 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
+		867349592BF535FB00F82570 /* GetSuppliersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuppliersResponse.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -319,6 +337,36 @@
 			path = CustomerCollection;
 			sourceTree = "<group>";
 		};
+		8631B3522BF8CAD700DF5045 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8631B3572BF8D0D200DF5045 /* UserManager.swift */,
+				8631B3532BF8CAEC00DF5045 /* StoreManager.swift */,
+				867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		867349492BF5106D00F82570 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8673494A2BF5108600F82570 /* API.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8673494C2BF51D3900F82570 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				867349532BF5287200F82570 /* SendOTPResponse.swift */,
+				867349572BF5300A00F82570 /* VerifyOTPResponse.swift */,
+				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
+				8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */,
+				8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */,
+			);
+			path = ResponseModel;
+			sourceTree = "<group>";
+		};
 		86A60DA92BCCEE3200496390 = {
 			isa = PBXGroup;
 			children = (
@@ -395,7 +443,8 @@
 		86A60DE82BCCEEE000496390 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				86A60DFF2BCD39B600496390 /* Model */,
+				8631B3522BF8CAD700DF5045 /* Cache */,
+				8673494C2BF51D3900F82570 /* ResponseModel */,
 				86A60DE92BCCEEF500496390 /* Constants.swift */,
 				AC12289E2BE73AFF001EC15F /* Properties.swift */,
 			);
@@ -435,20 +484,13 @@
 		86A60DF12BCCEFAA00496390 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				867349492BF5106D00F82570 /* Network */,
 				AC8CDDE82BE70B020091882B /* Subclass */,
 				AC5EF0092BD144540002A8D7 /* Main */,
 				86C0F5D92BCFC6E600B78747 /* Common */,
 				86A60DF42BCCF02500496390 /* Extension */,
-				86A60DF22BCCEFC100496390 /* Network */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		86A60DF22BCCEFC100496390 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		86A60DF42BCCF02500496390 /* Extension */ = {
@@ -471,13 +513,6 @@
 				AC401FBD2BED225800FA2F3F /* StoryViewController.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		86A60DFF2BCD39B600496390 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		86C0F5CC2BCF9DBC00B78747 /* ListOfSuppliers */ = {
@@ -1021,12 +1056,17 @@
 				AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */,
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
+				8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */,
+				867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */,
 				ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */,
+				8673494B2BF5108600F82570 /* API.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
+				8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */,
+				8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
@@ -1050,9 +1090,11 @@
 				86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */,
 				86DD74B42BD238B7001FEBBD /* QrCodeViewController.swift in Sources */,
 				ACC719942BDA881500CF78DC /* ProfileOpenHoursViewController.swift in Sources */,
+				867349542BF5287200F82570 /* SendOTPResponse.swift in Sources */,
 				8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */,
 				86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */,
 				86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */,
+				8673495A2BF535FB00F82570 /* GetSuppliersResponse.swift in Sources */,
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */,
 				AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */,
@@ -1063,10 +1105,12 @@
 				AC5EF0062BD114820002A8D7 /* SignUpAgreementViewController.swift in Sources */,
 				AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */,
 				ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */,
+				867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */,
 				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
 				ACC28D302BED2653006C6CAE /* OnboardingViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 				865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */,
+				8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 			);
