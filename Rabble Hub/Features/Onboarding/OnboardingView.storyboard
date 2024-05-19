@@ -97,7 +97,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="FA9-nC-ZWL" kind="show" id="h7Q-Fy-PgR"/>
+                                    <segue destination="FA9-nC-ZWL" kind="show" identifier="" id="h7Q-Fy-PgR"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_phone" translatesAutoresizingMaskIntoConstraints="NO" id="SEt-a9-y8N">
@@ -141,7 +141,7 @@
         <!--Mobile Input View Controller-->
         <scene sceneID="xkc-gB-JyH">
             <objects>
-                <viewController id="FA9-nC-ZWL" customClass="MobileInputViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MobileInputViewController" id="FA9-nC-ZWL" customClass="MobileInputViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2N-o3-h6W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

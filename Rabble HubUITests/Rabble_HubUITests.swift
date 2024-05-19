@@ -1,16 +1,13 @@
 //
-//  Rabble_PartnerUITests.swift
-//  Rabble PartnerUITests
+//  Rabble_HubUITests.swift
+//  Rabble HubUITests
 //
-//  Created by Franz Henri De Guzman on 4/15/24.
+//  Created by Franz Henri De Guzman on 5/19/24.
 //
 
 import XCTest
-@testable import Rabble_Hub
-@testable import Pods_Rabble_Hub
-@testable import Pods_Rabble_HubTests
 
-final class Rabble_PartnerUITests: XCTestCase {
+final class Rabble_HubUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
