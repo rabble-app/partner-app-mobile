@@ -33,9 +33,6 @@
 		86A60DBD2BCCEE3200496390 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DBC2BCCEE3200496390 /* Base */; };
 		86A60DBF2BCCEE3400496390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DBE2BCCEE3400496390 /* Assets.xcassets */; };
 		86A60DC22BCCEE3400496390 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DC12BCCEE3400496390 /* Base */; };
-		86A60DCD2BCCEE3500496390 /* Rabble_PartnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DCC2BCCEE3500496390 /* Rabble_PartnerTests.swift */; };
-		86A60DD72BCCEE3500496390 /* Rabble_PartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DD62BCCEE3500496390 /* Rabble_PartnerUITests.swift */; };
-		86A60DD92BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DD82BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift */; };
 		86A60DEA2BCCEEF500496390 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DE92BCCEEF500496390 /* Constants.swift */; };
 		86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A60DED2BCCEF7600496390 /* SignUpView.storyboard */; };
 		86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */; };
@@ -86,8 +83,10 @@
 		86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */; };
 		86DD74B92BD247E6001FEBBD /* MyTeamsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DD74B82BD247E6001FEBBD /* MyTeamsView.storyboard */; };
 		86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD74BA2BD24823001FEBBD /* PartnersViewController.swift */; };
+		86ED8D942BF9BE9B0089E36A /* MobileInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED8D932BF9BE9B0089E36A /* MobileInputViewControllerTests.swift */; };
+		86ED8D9C2BF9DEC00089E36A /* Rabble_HubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED8D9B2BF9DEC00089E36A /* Rabble_HubUITests.swift */; };
+		86ED8D9E2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED8D9D2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift */; };
 		86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */; };
-		8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12289E2BE73AFF001EC15F /* Properties.swift */; };
 		AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1228A02BE74635001EC15F /* RabbleTextView.swift */; };
@@ -138,12 +137,12 @@
 			remoteGlobalIDString = 86A60DB12BCCEE3200496390;
 			remoteInfo = "Rabble Partner";
 		};
-		86A60DD32BCCEE3500496390 /* PBXContainerItemProxy */ = {
+		86ED8D9F2BF9DEC00089E36A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A60DAA2BCCEE3200496390 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 86A60DB12BCCEE3200496390;
-			remoteInfo = "Rabble Partner";
+			remoteInfo = "Rabble Hub";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -184,8 +183,6 @@
 		86A60DC12BCCEE3400496390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86A60DC32BCCEE3400496390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A60DC82BCCEE3500496390 /* Rabble HubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble HubTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86A60DCC2BCCEE3500496390 /* Rabble_PartnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerTests.swift; sourceTree = "<group>"; };
-		86A60DD22BCCEE3500496390 /* Rabble HubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble HubUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DD62BCCEE3500496390 /* Rabble_PartnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerUITests.swift; sourceTree = "<group>"; };
 		86A60DD82BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86A60DE92BCCEEF500496390 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -237,6 +234,10 @@
 		86DD74B52BD2419C001FEBBD /* QrCodeErrorPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeErrorPopViewController.swift; sourceTree = "<group>"; };
 		86DD74B82BD247E6001FEBBD /* MyTeamsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyTeamsView.storyboard; sourceTree = "<group>"; };
 		86DD74BA2BD24823001FEBBD /* PartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
+		86ED8D932BF9BE9B0089E36A /* MobileInputViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInputViewControllerTests.swift; sourceTree = "<group>"; };
+		86ED8D992BF9DEC00089E36A /* Rabble HubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble HubUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86ED8D9B2BF9DEC00089E36A /* Rabble_HubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_HubUITests.swift; sourceTree = "<group>"; };
+		86ED8D9D2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_HubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTableViewCell.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,11 +305,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		86A60DCF2BCCEE3500496390 /* Frameworks */ = {
+		86ED8D962BF9DEC00089E36A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FCB679D61C4D215F9252325 /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +373,7 @@
 				86A60DB42BCCEE3200496390 /* Rabble Hub */,
 				86A60DCB2BCCEE3500496390 /* Rabble HubTests */,
 				86A60DD52BCCEE3500496390 /* Rabble HubUITests */,
+				86ED8D9A2BF9DEC00089E36A /* Rabble HubUITests */,
 				86A60DB32BCCEE3200496390 /* Products */,
 				F9873F1048C84A57B09C1D65 /* Pods */,
 				0EEB1EC49CA8BF1EB61F55BA /* Frameworks */,
@@ -384,7 +385,7 @@
 			children = (
 				86A60DB22BCCEE3200496390 /* Rabble Hub.app */,
 				86A60DC82BCCEE3500496390 /* Rabble HubTests.xctest */,
-				86A60DD22BCCEE3500496390 /* Rabble HubUITests.xctest */,
+				86ED8D992BF9DEC00089E36A /* Rabble HubUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -412,7 +413,7 @@
 		86A60DCB2BCCEE3500496390 /* Rabble HubTests */ = {
 			isa = PBXGroup;
 			children = (
-				86A60DCC2BCCEE3500496390 /* Rabble_PartnerTests.swift */,
+				86ED8D932BF9BE9B0089E36A /* MobileInputViewControllerTests.swift */,
 			);
 			path = "Rabble HubTests";
 			sourceTree = "<group>";
@@ -617,6 +618,15 @@
 			path = MyTeams;
 			sourceTree = "<group>";
 		};
+		86ED8D9A2BF9DEC00089E36A /* Rabble HubUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86ED8D9B2BF9DEC00089E36A /* Rabble_HubUITests.swift */,
+				86ED8D9D2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift */,
+			);
+			path = "Rabble HubUITests";
+			sourceTree = "<group>";
+		};
 		AC5EF0072BD115460002A8D7 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,24 +813,22 @@
 			productReference = 86A60DC82BCCEE3500496390 /* Rabble HubTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		86A60DD12BCCEE3500496390 /* Rabble HubUITests */ = {
+		86ED8D982BF9DEC00089E36A /* Rabble HubUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86A60DE22BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble HubUITests" */;
+			buildConfigurationList = 86ED8DA12BF9DEC00089E36A /* Build configuration list for PBXNativeTarget "Rabble HubUITests" */;
 			buildPhases = (
-				2BBF58BB4FA06F18BF6F23B5 /* [CP] Check Pods Manifest.lock */,
-				86A60DCE2BCCEE3500496390 /* Sources */,
-				86A60DCF2BCCEE3500496390 /* Frameworks */,
-				86A60DD02BCCEE3500496390 /* Resources */,
-				530D2211B42A2B9F24677BBD /* [CP] Embed Pods Frameworks */,
+				86ED8D952BF9DEC00089E36A /* Sources */,
+				86ED8D962BF9DEC00089E36A /* Frameworks */,
+				86ED8D972BF9DEC00089E36A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				86A60DD42BCCEE3500496390 /* PBXTargetDependency */,
+				86ED8DA02BF9DEC00089E36A /* PBXTargetDependency */,
 			);
 			name = "Rabble HubUITests";
-			productName = "Rabble PartnerUITests";
-			productReference = 86A60DD22BCCEE3500496390 /* Rabble HubUITests.xctest */;
+			productName = "Rabble HubUITests";
+			productReference = 86ED8D992BF9DEC00089E36A /* Rabble HubUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -830,7 +838,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					86A60DB12BCCEE3200496390 = {
@@ -840,8 +848,8 @@
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 86A60DB12BCCEE3200496390;
 					};
-					86A60DD12BCCEE3500496390 = {
-						CreatedOnToolsVersion = 15.3;
+					86ED8D982BF9DEC00089E36A = {
+						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 86A60DB12BCCEE3200496390;
 					};
 				};
@@ -861,7 +869,7 @@
 			targets = (
 				86A60DB12BCCEE3200496390 /* Rabble Hub */,
 				86A60DC72BCCEE3500496390 /* Rabble HubTests */,
-				86A60DD12BCCEE3500496390 /* Rabble HubUITests */,
+				86ED8D982BF9DEC00089E36A /* Rabble HubUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -921,7 +929,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		86A60DD02BCCEE3500496390 /* Resources */ = {
+		86ED8D972BF9DEC00089E36A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -968,45 +976,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2BBF58BB4FA06F18BF6F23B5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rabble Hub-Rabble HubUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		530D2211B42A2B9F24677BBD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3AC8377CD57EDD319B800B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -1120,16 +1089,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86A60DCD2BCCEE3500496390 /* Rabble_PartnerTests.swift in Sources */,
+				86ED8D942BF9BE9B0089E36A /* MobileInputViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		86A60DCE2BCCEE3500496390 /* Sources */ = {
+		86ED8D952BF9DEC00089E36A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86A60DD72BCCEE3500496390 /* Rabble_PartnerUITests.swift in Sources */,
-				86A60DD92BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift in Sources */,
+				86ED8D9E2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift in Sources */,
+				86ED8D9C2BF9DEC00089E36A /* Rabble_HubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,10 +1110,10 @@
 			target = 86A60DB12BCCEE3200496390 /* Rabble Hub */;
 			targetProxy = 86A60DC92BCCEE3500496390 /* PBXContainerItemProxy */;
 		};
-		86A60DD42BCCEE3500496390 /* PBXTargetDependency */ = {
+		86ED8DA02BF9DEC00089E36A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 86A60DB12BCCEE3200496390 /* Rabble Hub */;
-			targetProxy = 86A60DD32BCCEE3500496390 /* PBXContainerItemProxy */;
+			targetProxy = 86ED8D9F2BF9DEC00089E36A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1291,6 +1260,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7F1E460C10294D1303CD2A6 /* Pods-Rabble Hub.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1330,6 +1300,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1369,20 +1340,25 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 086975A3A160FAF3BFD5ED2D /* Pods-Rabble HubTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M463L9U7L5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-PartnerTests";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-HubTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rabble Partner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rabble Partner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rabble Hub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rabble Hub";
 			};
 			name = Debug;
 		};
@@ -1390,58 +1366,60 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 739F1150616511C46993FEDA /* Pods-Rabble HubTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M463L9U7L5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-PartnerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-HubTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rabble Partner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rabble Partner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rabble Hub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rabble Hub";
 			};
 			name = Release;
 		};
-		86A60DE32BCCEE3500496390 /* Debug */ = {
+		86ED8DA22BF9DEC00089E36A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EDC3540C1B0555762252F08 /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-PartnerUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-HubUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Rabble Partner";
+				TEST_TARGET_NAME = "Rabble Hub";
 			};
 			name = Debug;
 		};
-		86A60DE42BCCEE3500496390 /* Release */ = {
+		86ED8DA32BF9DEC00089E36A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C4B12569FD318D949D2375C /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-PartnerUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postcodecollectiveltd.Rabble-HubUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Rabble Partner";
+				TEST_TARGET_NAME = "Rabble Hub";
 			};
 			name = Release;
 		};
@@ -1475,11 +1453,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86A60DE22BCCEE3500496390 /* Build configuration list for PBXNativeTarget "Rabble HubUITests" */ = {
+		86ED8DA12BF9DEC00089E36A /* Build configuration list for PBXNativeTarget "Rabble HubUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				86A60DE32BCCEE3500496390 /* Debug */,
-				86A60DE42BCCEE3500496390 /* Release */,
+				86ED8DA22BF9DEC00089E36A /* Debug */,
+				86ED8DA32BF9DEC00089E36A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

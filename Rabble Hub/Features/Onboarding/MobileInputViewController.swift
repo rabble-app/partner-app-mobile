@@ -37,10 +37,10 @@ class MobileInputViewController: UIViewController {
     
     func setUpView(){
         
-        phoneNumberContainer.layer.borderWidth = 1.0
-        phoneNumberContainer.layer.borderColor = Colors.Gray5.cgColor
-        phoneNumberContainer.layer.cornerRadius = 12.0
-        phoneNumberContainer.clipsToBounds = true
+        self.phoneNumberContainer.layer.borderWidth = 1.0
+        self.phoneNumberContainer.layer.borderColor = Colors.Gray5.cgColor
+        self.phoneNumberContainer.layer.cornerRadius = 12.0
+        self.phoneNumberContainer.clipsToBounds = true
         
         countryPickerButton.layer.borderWidth = 1.0
         countryPickerButton.layer.borderColor = Colors.Gray5.cgColor
@@ -95,7 +95,7 @@ class MobileInputViewController: UIViewController {
         sendOTP()
     }
     
-    private func validatePhoneNumber() -> Bool {
+    func validatePhoneNumber() -> Bool {
         guard let phoneNumber = phoneNumberTextfield.text, !phoneNumber.isEmpty else {
             setBorderColor(of: phoneNumberContainer, to: UIColor.red)
             phoneNumberTextfield.becomeFirstResponder()
@@ -106,7 +106,7 @@ class MobileInputViewController: UIViewController {
         return true
     }
     
-    private func validateTickBox() -> Bool {
+    func validateTickBox() -> Bool {
         if !isTickBoxSelected {
             setBorderColor(of: tickBoxButton, to: UIColor.red)
             return false

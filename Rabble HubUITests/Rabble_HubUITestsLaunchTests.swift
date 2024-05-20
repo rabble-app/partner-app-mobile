@@ -1,16 +1,13 @@
 //
-//  Rabble_PartnerUITestsLaunchTests.swift
-//  Rabble PartnerUITests
+//  Rabble_HubUITestsLaunchTests.swift
+//  Rabble HubUITests
 //
-//  Created by Franz Henri De Guzman on 4/15/24.
+//  Created by Franz Henri De Guzman on 5/19/24.
 //
 
 import XCTest
-@testable import Rabble_Hub
-@testable import Pods_Rabble_Hub
-@testable import Pods_Rabble_HubTests
 
-final class Rabble_PartnerUITestsLaunchTests: XCTestCase {
+final class Rabble_HubUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
