@@ -65,7 +65,7 @@ class OtpInputViewController: UIViewController {
     }
     
     func verifyOTP() {
-        apiprovider.request(.verifyOtp(phone: self.phoneNumber, sid: self.sid, code: self.code)) { result in
+        APIProvider.request(.verifyOtp(phone: self.phoneNumber, sid: self.sid, code: self.code)) { result in
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -108,7 +108,7 @@ class OtpInputViewController: UIViewController {
     }
     
     func sendOTP() {
-        apiprovider.request(.sendOtp(phone: self.phoneNumber)) { result in
+        APIProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
             switch result {
             case let .success(response):
                 // Handle successful response
