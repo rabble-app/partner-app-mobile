@@ -55,7 +55,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "86A60DD12BCCEE3500496390"
+               BlueprintIdentifier = "86ED8D982BF9DEC00089E36A"
                BuildableName = "Rabble HubUITests.xctest"
                BlueprintName = "Rabble HubUITests"
                ReferencedContainer = "container:Rabble Hub.xcodeproj">

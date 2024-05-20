@@ -183,8 +183,6 @@
 		86A60DC12BCCEE3400496390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86A60DC32BCCEE3400496390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A60DC82BCCEE3500496390 /* Rabble HubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabble HubTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86A60DD62BCCEE3500496390 /* Rabble_PartnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerUITests.swift; sourceTree = "<group>"; };
-		86A60DD82BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_PartnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86A60DE92BCCEEF500496390 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		86A60DED2BCCEF7600496390 /* SignUpView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpView.storyboard; sourceTree = "<group>"; };
 		86A60DEF2BCCEF8C00496390 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -372,7 +370,6 @@
 			children = (
 				86A60DB42BCCEE3200496390 /* Rabble Hub */,
 				86A60DCB2BCCEE3500496390 /* Rabble HubTests */,
-				86A60DD52BCCEE3500496390 /* Rabble HubUITests */,
 				86ED8D9A2BF9DEC00089E36A /* Rabble HubUITests */,
 				86A60DB32BCCEE3200496390 /* Products */,
 				F9873F1048C84A57B09C1D65 /* Pods */,
@@ -416,15 +413,6 @@
 				86ED8D932BF9BE9B0089E36A /* MobileInputViewControllerTests.swift */,
 			);
 			path = "Rabble HubTests";
-			sourceTree = "<group>";
-		};
-		86A60DD52BCCEE3500496390 /* Rabble HubUITests */ = {
-			isa = PBXGroup;
-			children = (
-				86A60DD62BCCEE3500496390 /* Rabble_PartnerUITests.swift */,
-				86A60DD82BCCEE3500496390 /* Rabble_PartnerUITestsLaunchTests.swift */,
-			);
-			path = "Rabble HubUITests";
 			sourceTree = "<group>";
 		};
 		86A60DE52BCCEEA100496390 /* ThirdPartySDK */ = {
