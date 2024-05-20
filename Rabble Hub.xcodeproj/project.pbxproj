@@ -22,7 +22,6 @@
 		865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */; };
 		865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */; };
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
-		8673494B2BF5108600F82570 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673494A2BF5108600F82570 /* API.swift */; };
 		867349542BF5287200F82570 /* SendOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349532BF5287200F82570 /* SendOTPResponse.swift */; };
 		867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */; };
 		867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349572BF5300A00F82570 /* VerifyOTPResponse.swift */; };
@@ -104,6 +103,9 @@
 		AC5EF0152BD2B1310002A8D7 /* MainTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */; };
 		AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */; };
 		AC5EF01A2BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0192BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift */; };
+		AC6417EB2BFB7C8000B8A61B /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417EA2BFB7C8000B8A61B /* APIConfig.swift */; };
+		AC6417ED2BFB7CE500B8A61B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417EC2BFB7CE500B8A61B /* APIService.swift */; };
+		AC6417EF2BFB7D2C00B8A61B /* RabbleHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417EE2BFB7D2C00B8A61B /* RabbleHubAPI.swift */; };
 		AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */; };
 		AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */; };
 		AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */; };
@@ -169,7 +171,6 @@
 		865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamTableViewCell.swift; sourceTree = "<group>"; };
 		865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationFailedViewController.swift; path = Subviews/VerificationFailedViewController.swift; sourceTree = "<group>"; };
-		8673494A2BF5108600F82570 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		867349532BF5287200F82570 /* SendOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOTPResponse.swift; sourceTree = "<group>"; };
 		867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenManager.swift; sourceTree = "<group>"; };
 		867349572BF5300A00F82570 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
@@ -256,6 +257,9 @@
 		AC5EF0142BD2B1310002A8D7 /* MainTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabStoryboard.storyboard; sourceTree = "<group>"; };
 		AC5EF0162BD2B5D80002A8D7 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		AC5EF0192BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		AC6417EA2BFB7C8000B8A61B /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		AC6417EC2BFB7CE500B8A61B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AC6417EE2BFB7D2C00B8A61B /* RabbleHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleHubAPI.swift; sourceTree = "<group>"; };
 		AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoreInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewModel.swift; sourceTree = "<group>"; };
@@ -348,7 +352,9 @@
 		867349492BF5106D00F82570 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8673494A2BF5108600F82570 /* API.swift */,
+				AC6417EA2BFB7C8000B8A61B /* APIConfig.swift */,
+				AC6417EC2BFB7CE500B8A61B /* APIService.swift */,
+				AC6417EE2BFB7D2C00B8A61B /* RabbleHubAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1010,6 +1016,7 @@
 				AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */,
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
+				AC6417ED2BFB7CE500B8A61B /* APIService.swift in Sources */,
 				AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */,
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
@@ -1020,7 +1027,6 @@
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
 				861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */,
 				ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */,
-				8673494B2BF5108600F82570 /* API.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
 				8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */,
 				8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */,
@@ -1061,12 +1067,14 @@
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
 				AC5EF0062BD114820002A8D7 /* SignUpAgreementViewController.swift in Sources */,
 				AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */,
+				AC6417EB2BFB7C8000B8A61B /* APIConfig.swift in Sources */,
 				ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */,
 				867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */,
 				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
 				ACC28D302BED2653006C6CAE /* OnboardingViewController.swift in Sources */,
 				86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */,
 				865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */,
+				AC6417EF2BFB7D2C00B8A61B /* RabbleHubAPI.swift in Sources */,
 				8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,

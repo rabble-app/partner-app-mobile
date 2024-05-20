@@ -124,7 +124,7 @@ class MobileInputViewController: UIViewController {
     
     func sendOTP() {
         self.phoneNumber = "\(codeLabel.text ?? "")\(phoneNumberTextfield.text ?? "")"
-        apiprovider.request(.sendOtp(phone: self.phoneNumber)) { result in
+        APIProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
             switch result {
             case let .success(response):
                 // Handle successful response

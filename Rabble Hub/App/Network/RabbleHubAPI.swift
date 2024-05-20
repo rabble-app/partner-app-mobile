@@ -1,77 +1,12 @@
 //
-//  API.swift
+//  RabbleHubAPI.swift
 //  Rabble Hub
 //
-//  Created by Franz Henri De Guzman on 5/15/24.
+//  Created by aljon antiola on 5/20/24.
 //
 
 import Foundation
 import Moya
-
-struct APIConfig {
-    static let developmentBaseURL = "https://api.dev.rabble.market"
-    static let productionBaseURL = "https://api.rabble.market"
-}
-
-struct URLConfig {
-    static let sendOtp = "/auth/send-otp"
-    static let verifyOtp = "/auth/verify-otp"
-    static let saveStoreProfile = "/store/create"
-    static let updateUserRecord = "/users/update"
-    static let getSuppliers = "/users/producers"
-}
-
-// MARK: - Provider setup
-private func jsonResponseDataFormatter(_ data: Data) -> String {
-    do {
-        let dataAsJSON = try JSONSerialization.jsonObject(with: data)
-        let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
-        return String(data: prettyData, encoding: .utf8) ?? String(data: data, encoding: .utf8) ?? ""
-    } catch {
-        return String(data: data, encoding: .utf8) ?? ""
-    }
-}
-
-let environment = Environment.development // or .production
-let tokenManager = UserDefaultsTokenManager()
-let apiprovider = MoyaProvider<RabbleHubAPI>(plugins: [
-    NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: jsonResponseDataFormatter), logOptions: .verbose)),
-    AuthPlugin(tokenManager: tokenManager)
-])
-
-// Define the Environment enum
-enum Environment {
-    case development
-    case production
-    
-    var baseURL: URL {
-        switch self {
-        case .development:
-            return URL(string: APIConfig.developmentBaseURL)!
-        case .production:
-            return URL(string: APIConfig.productionBaseURL)!
-        }
-    }
-}
-
-// Define the AuthPlugin struct
-struct AuthPlugin: PluginType {
-    let tokenManager: TokenManager
-    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-        var request = request
-        if let token = tokenManager.getToken() {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        return request
-    }
-}
-
-// MARK: - Provider support
-private extension String {
-    var urlEscaped: String {
-        self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-    }
-}
 
 public enum RabbleHubAPI {
     case sendOtp(phone: String)
@@ -103,11 +38,7 @@ extension RabbleHubAPI: TargetType {
     
     public var method: Moya.Method {
         switch self {
-        case .sendOtp:
-            return .post
-        case .verifyOtp:
-            return .post
-        case .saveStoreProfile:
+        case .sendOtp, .verifyOtp, .saveStoreProfile:
             return .post
         case .updateUserRecord:
             return .patch
@@ -162,14 +93,14 @@ extension RabbleHubAPI: TargetType {
     public var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
-}
-
-public func url(_ route: TargetType) -> String {
-    route.baseURL.appendingPathComponent(route.path).absoluteString
+    
+    // MARK: - Helper Function
+    public func url(_ route: TargetType) -> String {
+        return route.baseURL.appendingPathComponent(route.path).absoluteString
+    }
 }
 
 // MARK: - Response Handlers
-
 extension Moya.Response {
     func mapNSArray() throws -> NSArray {
         let any = try self.mapJSON()

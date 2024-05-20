@@ -29,7 +29,7 @@ class SignUpProfileViewController: UIViewController {
     
     
     func updateUserRecord() {
-        apiprovider.request(.updateUserRecord(firstName: firstName.text ?? "", lastName: lastName.text ?? "", email: email.text ?? "")) { result in
+        APIProvider.request(.updateUserRecord(firstName: firstName.text ?? "", lastName: lastName.text ?? "", email: email.text ?? "")) { result in
             switch result {
             case let .success(response):
                 // Handle successful response

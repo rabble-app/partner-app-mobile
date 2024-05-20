@@ -29,7 +29,7 @@ class ProducersListViewController: UIViewController {
     }
     
     func getSuppliers() {
-        apiprovider.request(.getSuppliers) { result in
+        APIProvider.request(.getSuppliers) { result in
             switch result {
             case let .success(response):
                 // Handle successful response
