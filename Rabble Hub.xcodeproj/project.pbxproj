@@ -109,6 +109,7 @@
 		AC6417EB2BFB7C8000B8A61B /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417EA2BFB7C8000B8A61B /* APIConfig.swift */; };
 		AC6417ED2BFB7CE500B8A61B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417EC2BFB7CE500B8A61B /* APIService.swift */; };
 		AC6417EF2BFB7D2C00B8A61B /* RabbleHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417EE2BFB7D2C00B8A61B /* RabbleHubAPI.swift */; };
+		AC6417F12BFB910D00B8A61B /* AddStoreHoursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */; };
 		AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */; };
 		AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */; };
 		AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */; };
@@ -263,6 +264,7 @@
 		AC6417EA2BFB7C8000B8A61B /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		AC6417EC2BFB7CE500B8A61B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AC6417EE2BFB7D2C00B8A61B /* RabbleHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleHubAPI.swift; sourceTree = "<group>"; };
+		AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreHoursResponse.swift; sourceTree = "<group>"; };
 		AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoreInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewModel.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
 				8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */,
 				8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */,
+				AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1006,6 +1009,7 @@
 			files = (
 				86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */,
 				AC5EF0132BD28FD90002A8D7 /* DeliveryDetailsViewController.swift in Sources */,
+				AC6417F12BFB910D00B8A61B /* AddStoreHoursResponse.swift in Sources */,
 				865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */,
 				861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
