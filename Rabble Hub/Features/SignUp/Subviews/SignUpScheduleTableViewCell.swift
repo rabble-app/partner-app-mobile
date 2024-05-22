@@ -74,7 +74,7 @@ class SignUpScheduleTableViewCell: UITableViewCell {
     }
     
     func refreshButtons() {
-        if let isWholeDay = customObject?.open24Hours, isWholeDay == true {
+        if let isWholeDay = customObject?.open24Hours, isWholeDay {
             if let image = UIImage(systemName: "checkmark.circle.fill") {
                 dayButton.setImage(image, for: .normal)
             }
@@ -101,7 +101,7 @@ class SignUpScheduleTableViewCell: UITableViewCell {
     }
     
     @IBAction func daySwitchTap(_ sender: Any) {
-        if daySwitch.isOn == false {
+        if daySwitch.isOn {
             customObject?.startTimeExpanded = false
             customObject?.endTimeExpanded = false
         }
@@ -111,7 +111,7 @@ class SignUpScheduleTableViewCell: UITableViewCell {
     }
     
     @IBAction func dayButtonTap(_ sender: Any) {
-        if let isWholeDay = customObject?.open24Hours, isWholeDay == true {
+        if let isWholeDay = customObject?.open24Hours, isWholeDay {
             customObject?.open24Hours = false
         }
         else {
@@ -130,7 +130,7 @@ class SignUpScheduleTableViewCell: UITableViewCell {
     
     @IBAction func startTimeButtonTap(_ sender: Any) {
         // toggle time picker view
-        if let expanded = customObject?.startTimeExpanded, expanded == true {
+        if let expanded = customObject?.startTimeExpanded, expanded {
             resetExpandedProperties?()
             customObject?.startTimeExpanded = false
         }
@@ -145,7 +145,7 @@ class SignUpScheduleTableViewCell: UITableViewCell {
     
     @IBAction func endTimeButtonTap(_ sender: Any) {
         // toggle time picker view
-        if let expanded = customObject?.endTimeExpanded, expanded == true {
+        if let expanded = customObject?.endTimeExpanded, expanded {
             resetExpandedProperties?()
             customObject?.endTimeExpanded = false
         }
@@ -163,7 +163,7 @@ class SignUpScheduleTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "h:mm a" // 12-hour format with AM/PM
         let timeString = dateFormatter.string(from: timePicker.date)
         
-        if let expanded = customObject?.startTimeExpanded, expanded == true {
+        if let expanded = customObject?.startTimeExpanded, expanded {
             customObject?.startTime = timeString
         }
         else {

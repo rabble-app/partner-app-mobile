@@ -63,26 +63,29 @@ public class CustomOpenHoursModel {
     }
     
     func populateCustomOpenHours() {
+        let initialStartTime = "9:00 AM"
+        let initialEndTime = "10:00 PM"
+        
         switch type {
         case .custom:
             customOpenHours = [
-                CustomOpenHour(scheduleDay: .monday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .tuesday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .wednesday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .thursday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .friday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .saturday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .sunday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .monday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .tuesday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .wednesday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .thursday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .friday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .saturday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .sunday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
             ]
         case .allTheTime:
             break
         case .monToFri:
             customOpenHours = [
-                CustomOpenHour(scheduleDay: .monday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .tuesday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .wednesday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .thursday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
-                CustomOpenHour(scheduleDay: .friday, startTime: "9:00 AM", endTime: "10:00 PM", enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .monday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .tuesday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .wednesday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .thursday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
+                CustomOpenHour(scheduleDay: .friday, startTime: initialStartTime, endTime: initialEndTime, enabled: true, startTimeExpanded: false, endTimeExpanded: false),
             ]
         }
     }
