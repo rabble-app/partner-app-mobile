@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Moya
 
 class ProducersListViewController: UIViewController {
     
@@ -29,7 +30,11 @@ class ProducersListViewController: UIViewController {
     }
     
     func getSuppliers() {
-        APIProvider.request(.getSuppliers) { result in
+        guard let postalCode = StoreManager.shared.postalCode else {
+             return
+         }
+        
+        APIProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in
             switch result {
             case let .success(response):
                 // Handle successful response

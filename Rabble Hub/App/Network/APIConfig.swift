@@ -32,4 +32,5 @@ struct URLConfig {
     static let saveStoreProfile = "/store/create"
     static let updateUserRecord = "/users/update"
     static let getSuppliers = "/users/producers"
+    static let createBuyingTeams = "/teams/create"
 }
