@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class SignUpProfileViewController: UIViewController {
     
@@ -13,6 +14,7 @@ class SignUpProfileViewController: UIViewController {
     @IBOutlet var lastName: RabbleTextField!
     @IBOutlet var email: RabbleTextField!
     
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,7 @@ class SignUpProfileViewController: UIViewController {
     
     
     func updateUserRecord() {
-        APIProvider.request(.updateUserRecord(firstName: firstName.text ?? "", lastName: lastName.text ?? "", email: email.text ?? "")) { result in
+        apiProvider.request(.updateUserRecord(firstName: firstName.text ?? "", lastName: lastName.text ?? "", email: email.text ?? "")) { result in
             switch result {
             case let .success(response):
                 // Handle successful response
