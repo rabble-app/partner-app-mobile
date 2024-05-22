@@ -14,7 +14,7 @@ public enum RabbleHubAPI {
     case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
     case updateUserRecord(firstName: String, lastName: String, email: String)
     case getSuppliers
-    case addStoreHours(storeId: String, type: String, customOpenHours: Dictionary<String, Any>? = nil)
+    case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -86,15 +86,8 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .getSuppliers:
             return .requestPlain
-        case .addStoreHours(let storeId, let type, let customOpenHours):
-            var parameters: [String: Any] = [
-                "storeId": storeId,
-                "type": type
-            ]
-            if let customOpenHours = customOpenHours {
-                parameters["customOpenHours"] = customOpenHours
-            }
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .addStoreHours(let customOpenHoursModel):
+            return .requestParameters(parameters: (customOpenHoursModel?.asDictionary())!, encoding: JSONEncoding.default)
         }
     }
     
