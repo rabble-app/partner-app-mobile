@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Moya
 
 class SignUpViewController: UIViewController {
     
@@ -18,6 +19,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet var storeType: RabbleTextField!
     @IBOutlet var shelfSpace: RabbleTextField!
     @IBOutlet var dryStorageSpace: RabbleTextField!
+    
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,7 @@ class SignUpViewController: UIViewController {
     }
     
     func saveStoreProfile(){
-        APIProvider.request(.saveStoreProfile(name: storeName.text ?? "", postalCode: postalCode.text ?? "", city: city.text ?? "", streetAddress: street.text ?? "", direction: direction.text ?? "", storeType: storeType.text ?? "", shelfSpace: shelfSpace.text ?? "", dryStorageSpace: dryStorageSpace.text ?? "")) { result in
+        apiProvider.request(.saveStoreProfile(name: storeName.text ?? "", postalCode: postalCode.text ?? "", city: city.text ?? "", streetAddress: street.text ?? "", direction: direction.text ?? "", storeType: storeType.text ?? "", shelfSpace: shelfSpace.text ?? "", dryStorageSpace: dryStorageSpace.text ?? "")) { result in
             switch result {
             case let .success(response):
                 // Handle successful response

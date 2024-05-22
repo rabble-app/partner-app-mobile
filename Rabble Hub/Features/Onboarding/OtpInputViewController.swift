@@ -7,12 +7,13 @@
 
 import UIKit
 import EliteOTPField
+import Moya
 
 class OtpInputViewController: UIViewController {
     
     public var phoneNumber: String = ""
     public var sid: String = ""
-    private var code: String = ""
+    public var code: String = ""
     
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var ontpContainer: UIView!
@@ -38,6 +39,8 @@ class OtpInputViewController: UIViewController {
         field.build()
         return field
     }()
+    
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +68,7 @@ class OtpInputViewController: UIViewController {
     }
     
     func verifyOTP() {
-        APIProvider.request(.verifyOtp(phone: self.phoneNumber, sid: self.sid, code: self.code)) { result in
+        apiProvider.request(.verifyOtp(phone: self.phoneNumber, sid: self.sid, code: self.code)) { result in
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -77,11 +80,9 @@ class OtpInputViewController: UIViewController {
                         let token = response.data?.token
                         tokenManager.saveToken(token ?? "")
                         self.goToSignUp()
-                    }else{
+                    } else {
                         print("Error Message: \(response.message)")
                     }
-                    
-                    
                 } catch {
                     print("Failed to map response data: \(error)")
                 }
@@ -108,7 +109,7 @@ class OtpInputViewController: UIViewController {
     }
     
     func sendOTP() {
-        APIProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
+        apiProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -116,10 +117,9 @@ class OtpInputViewController: UIViewController {
                     let response = try response.map(SendOTPResponse.self)
                     if response.statusCode == 200 {
                         self.sid = response.data.sid
-                    }else{
+                    } else {
                         print("Error Message: \(response.message)")
                     }
-                   
                 } catch {
                     print("Failed to map response data: \(error)")
                 }
@@ -129,13 +129,11 @@ class OtpInputViewController: UIViewController {
             }
         }
     }
-    
 }
 
-
-extension OtpInputViewController : EliteOTPFieldDelegete {
-   func didEnterLastDigit(otp: String) {
-       print(otp) // Here's the Digits
-       self.code = otp
-   }
+extension OtpInputViewController: EliteOTPFieldDelegete {
+    func didEnterLastDigit(otp: String) {
+        print(otp) // Here's the Digits
+        self.code = otp
+    }
 }
