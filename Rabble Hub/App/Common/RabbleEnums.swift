@@ -18,6 +18,12 @@ enum CellIndexDay: String {
     case sun = "Sunday"
 }
 
+enum StoreHoursType: String {
+    case allTheTime = "ALL_THE_TIME"
+    case monToFri = "MON_TO_FRI"
+    case custom = "CUSTOM"
+}
+
 enum Step {
   case one, two, three, four
 }

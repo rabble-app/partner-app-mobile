@@ -15,6 +15,11 @@ class ProfileOpenHoursViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentContentViewConstraintHeight: NSLayoutConstraint!
     
+    var customDays: CustomOpenHoursModel?
+    var customMonToFri: CustomOpenHoursModel?
+    var allTheTimeSched: CustomOpenHoursModel?
+    
+    var selectedStoreHoursType: StoreHoursType = .allTheTime
     var currentSegmentIndex = 0
     var defaultHeight = 0.0
     
@@ -27,6 +32,19 @@ class ProfileOpenHoursViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.initiateCustomDaysObjects()
+    }
+    
+    func initiateCustomDaysObjects() {
+        let storeId = StoreManager.shared.store?.id ?? ""
+        self.customMonToFri = CustomOpenHoursModel(storeId: storeId, type: .monToFri, customOpenHours: [])
+        self.customMonToFri?.populateCustomOpenHours()
+        
+        self.customDays = CustomOpenHoursModel(storeId: storeId, type: .custom, customOpenHours: [])
+        self.customDays?.populateCustomOpenHours()
+        
+        self.allTheTimeSched = CustomOpenHoursModel(storeId: storeId, type: .allTheTime, customOpenHours: [])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,18 +60,21 @@ class ProfileOpenHoursViewController: UIViewController {
             self.segmentContentViewConstraintHeight.constant = defaultHeight
             firstView.isHidden = false
             tableViewContainerView.isHidden = true
+            selectedStoreHoursType = .allTheTime
         }
         // Mon - Fri
         else if (sender as AnyObject).selectedSegmentIndex == 1 {
             self.segmentContentViewConstraintHeight.constant = 617
             firstView.isHidden = true
             tableViewContainerView.isHidden = false
+            selectedStoreHoursType = .monToFri
         }
         // Custom
         else {
             self.segmentContentViewConstraintHeight.constant = 864
             firstView.isHidden = true
             tableViewContainerView.isHidden = false
+            selectedStoreHoursType = .custom
         }
         
         self.tableView.reloadData()
@@ -94,11 +115,11 @@ extension ProfileOpenHoursViewController: UITableViewDelegate, UITableViewDataSo
         
         let cell:SignUpScheduleTableViewCell = cell as! SignUpScheduleTableViewCell
             
-        if self.currentSegmentIndex == 1 {
-            cell.configureCell(mode: .monFri, index: getIndexDayFromInt(index: indexPath.row))
+        if self.selectedStoreHoursType == .monToFri {
+            cell.configureCell(mode: .monFri, object: self.customMonToFri!.customOpenHours[indexPath.row])
         }
-        else if self.currentSegmentIndex == 2 {
-            cell.configureCell(mode: .custom, index: getIndexDayFromInt(index: indexPath.row))
+        else if self.selectedStoreHoursType == .custom {
+            cell.configureCell(mode: .custom, object: self.customDays!.customOpenHours[indexPath.row])
         }
     }
 

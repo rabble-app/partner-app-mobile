@@ -9,7 +9,17 @@ import UIKit
 
 /// A custom subclass of UIButton with a predefined style for use in Rabble's user interface.
 class PrimaryButton: UIButton {
-
+    
+    override var isEnabled: Bool {
+        didSet {
+            updateBackgroundColor()
+        }
+    }
+    
+    /// Set the default background colors for enabled and disabled states
+    private let enabledBackgroundColor: UIColor = Colors.ButtonPrimary
+    private let disabledBackgroundColor: UIColor = Colors.ButtonTertiary
+    
     /// Initializes a new instance of the RabbleButton class with the specified frame rectangle.
     ///
     /// - Parameter frame: The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it.
@@ -35,8 +45,12 @@ class PrimaryButton: UIButton {
         self.backgroundColor = Colors.ButtonPrimary
         self.layer.cornerRadius = 12
         self.setTitleColor(Colors.ButtonTitleColor, for: .normal)
-      //  self.titleLabel?.font = UIFont(name: Properties.Font.GOSHANSANS_BOLD, size: 16)
+        //  self.titleLabel?.font = UIFont(name: Properties.Font.GOSHANSANS_BOLD, size: 16)
         self.clipsToBounds = true
+    }
+    
+    private func updateBackgroundColor() {
+        self.backgroundColor = isEnabled ? enabledBackgroundColor : disabledBackgroundColor
     }
     
     // MARK: - Overrides
