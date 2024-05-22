@@ -19,6 +19,9 @@
 		8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3532BF8CAEC00DF5045 /* StoreManager.swift */; };
 		8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */; };
 		8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3572BF8D0D200DF5045 /* UserManager.swift */; };
+		8656188C2BFD9ED1001E65EB /* OtpInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656188B2BFD9ED0001E65EB /* OtpInputViewControllerTests.swift */; };
+		8656188E2BFDA064001E65EB /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656188D2BFDA064001E65EB /* SignUpViewControllerTests.swift */; };
+		865618902BFDA36C001E65EB /* SignUpProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656188F2BFDA36C001E65EB /* SignUpProfileViewControllerTests.swift */; };
 		865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */; };
 		865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */; };
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
