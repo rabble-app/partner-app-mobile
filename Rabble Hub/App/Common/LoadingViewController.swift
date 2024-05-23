@@ -23,7 +23,8 @@ class LoadingViewController: UIViewController {
         // Container view for the spinner
         let containerView = UIView()
         containerView.frame = CGRect(x: (view.frame.width - 100) / 2, y: (view.frame.height - 98) / 2, width: 100, height: 98)
-        containerView.backgroundColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.7)
+//        containerView.backgroundColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.7)
+        containerView.backgroundColor = .clear
         containerView.layer.cornerRadius = 12
         containerView.clipsToBounds = true
         view.addSubview(containerView)
