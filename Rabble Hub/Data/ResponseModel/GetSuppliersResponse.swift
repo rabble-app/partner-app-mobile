@@ -10,7 +10,7 @@ import Foundation
 struct GetSuppliersResponse: Codable {
     let statusCode: Int
     let message: String
-    let data: [Supplier]
+    let data: [Supplier]?
 }
 
 struct Supplier: Codable {

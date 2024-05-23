@@ -10,7 +10,7 @@ import Foundation
 struct SaveStoreProfileResponse: Codable {
     let statusCode: Int
     let message: String
-    let data: Store
+    let data: Store?
 }
 
 struct Store: Codable {

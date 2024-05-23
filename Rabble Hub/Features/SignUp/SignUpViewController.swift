@@ -26,6 +26,9 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.isHidden = true
+        
+        //MARK: postal code that returns suppliers
+        self.postalCode.text = "SE154NX"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,8 +45,11 @@ class SignUpViewController: UIViewController {
                 do {
                     let response = try response.map(SaveStoreProfileResponse.self)
                     if response.statusCode == 200 || response.statusCode == 201 {
-                        print(response.data)
-                        self.saveStore(response.data)
+                        print(response.data as Any)
+                        guard let store = response.data else {
+                            return
+                        }
+                        self.saveStore(store)
                         self.goToCreateUserProfile()
                     }else{
                         print("Error Message: \(response.message)")
@@ -57,7 +63,7 @@ class SignUpViewController: UIViewController {
                 print("Request failed with error: \(error)")
             }
         }
-        self.goToCreateUserProfile()
+        
     }
     
     func saveStore(_ store: Store) {

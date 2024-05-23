@@ -38,8 +38,11 @@ class SignUpProfileViewController: UIViewController {
                 do {
                     let response = try response.map(UpdateUserRecordResponse.self)
                     if response.statusCode == 200 || response.statusCode == 201 {
-                        print(response.data)
-                        self.saveUser(response.data)
+                        print(response.data as Any)
+                        guard let user = response.data else {
+                            return
+                        }
+                        self.saveUser(user)
                         self.goToAddStoreOpenHours()
                     }else{
                         print("Error Message: \(response.message)")

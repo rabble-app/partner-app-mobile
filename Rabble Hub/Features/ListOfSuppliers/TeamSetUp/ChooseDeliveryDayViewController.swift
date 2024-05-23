@@ -17,6 +17,8 @@ class ChooseDeliveryDayViewController: UIViewController {
     @IBOutlet var stepContainer_height: NSLayoutConstraint!
     @IBOutlet var nextButton: UIButton!
     var isFromEdit: Bool = false
+    var frequency = Int()
+    var selectedSupplier: Supplier?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,8 @@ class ChooseDeliveryDayViewController: UIViewController {
                 vc.modalPresentationStyle = .custom
                 let pushAnimator = PushAnimator()
                 vc.transitioningDelegate = pushAnimator
+                vc.frequency = self.frequency
+                vc.selectedSupplier = self.selectedSupplier
                 self.title = "Team Settings"
                 self.present(vc, animated: true)
             }

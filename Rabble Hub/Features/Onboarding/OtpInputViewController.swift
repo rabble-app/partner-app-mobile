@@ -116,7 +116,7 @@ class OtpInputViewController: UIViewController {
                 do {
                     let response = try response.map(SendOTPResponse.self)
                     if response.statusCode == 200 {
-                        self.sid = response.data.sid
+                        self.sid = response.data?.sid ?? ""
                     } else {
                         print("Error Message: \(response.message)")
                     }

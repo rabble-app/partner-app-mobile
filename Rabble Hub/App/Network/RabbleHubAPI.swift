@@ -13,7 +13,8 @@ public enum RabbleHubAPI {
     case verifyOtp(phone: String, sid: String, code: String)
     case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
     case updateUserRecord(firstName: String, lastName: String, email: String)
-    case getSuppliers
+    case getSuppliers(offset: Int, postalId: String)
+    case createBuyingTeam(name: String, postalCode: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
     case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
 }
 
@@ -34,6 +35,8 @@ extension RabbleHubAPI: TargetType {
             return URLConfig.updateUserRecord
         case .getSuppliers:
             return URLConfig.getSuppliers
+        case .createBuyingTeam:
+            return URLConfig.createBuyingTeams
         case .addStoreHours:
             return URLConfig.addStoreHours
         }
@@ -41,7 +44,7 @@ extension RabbleHubAPI: TargetType {
     
     public var method: Moya.Method {
         switch self {
-        case .sendOtp, .verifyOtp, .saveStoreProfile:
+        case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam:
             return .post
         case .updateUserRecord, .addStoreHours:
             return .patch
@@ -84,8 +87,27 @@ extension RabbleHubAPI: TargetType {
                 "email": email
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .getSuppliers:
-            return .requestPlain
+        case .getSuppliers(let offset, let postalId):
+            let parameters: [String: Any] = [
+                "offset": offset,
+                "postalCode": postalId
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .createBuyingTeam(name: let name, postalCode: let postalCode, producerId: let producerId, hostId: let hostId, partnerId: let partnerId, frequency: let frequency, description: let description, productLimit: let productLimit, deliveryDay: let deliveryDay, nextDeliveryDate: let nextDeliveryDate, orderCutOffDate: let orderCutOffDate):
+            let parameters: [String: Any] = [
+                "name": name,
+                "postalCode": postalCode,
+                "producerId": producerId,
+                "hostId": hostId,
+                "partnerId": partnerId,
+                "frequency": frequency,
+                "description": description,
+                "productLimit": productLimit,
+                "deliveryDay": deliveryDay,
+                "nextDeliveryDate": nextDeliveryDate,
+                "orderCutOffDate": orderCutOffDate
+            ]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .addStoreHours(let customOpenHoursModel):
             return .requestParameters(parameters: (customOpenHoursModel?.asDictionary())!, encoding: JSONEncoding.default)
         }

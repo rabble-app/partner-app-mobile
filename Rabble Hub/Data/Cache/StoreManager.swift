@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StoreManager {
+public class StoreManager {
     static let shared = StoreManager()
     
     private let userDefaultsKey = "storedStore"
@@ -30,5 +30,19 @@ class StoreManager {
                 UserDefaults.standard.removeObject(forKey: userDefaultsKey)
             }
         }
+    }
+}
+
+extension StoreManager {
+    var postalCode: String? {
+        return store?.postalCode
+    }
+    
+    var storeId: String? {
+        return store?.id
+    }
+    
+    var userId: String? {
+        return store?.userId
     }
 }

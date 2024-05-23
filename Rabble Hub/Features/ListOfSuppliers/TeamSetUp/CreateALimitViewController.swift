@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class CreateALimitViewController: UIViewController {
 
@@ -19,6 +20,10 @@ class CreateALimitViewController: UIViewController {
     @IBOutlet var stepContainer_height: NSLayoutConstraint!
     @IBOutlet var stepContainer: UIView!
     var isFromEdit: Bool = false
+    var frequency = Int()
+    var selectedSupplier: Supplier?
+    
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,17 +67,77 @@ class CreateALimitViewController: UIViewController {
     @IBAction func selectOptionButtonTap(_ sender: Any) {
         
     }
+    
     @IBAction func nextButtonTap(_ sender: Any) {
         if isFromEdit {
             dismiss(animated: true, completion: nil)
         }else{
-            let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
-            if let vc = storyboard.instantiateViewController(withIdentifier: "SetupTeamSuccessViewController") as? SetupTeamSuccessViewController {
-                vc.modalPresentationStyle = .custom
-                let pushAnimator = PushAnimator()
-                vc.transitioningDelegate = pushAnimator
-                self.present(vc, animated: true)
+            self.createBuyingTeam()
+           
+        }
+    }
+    
+    func goToSetUpTeamSuccess() {
+        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "SetupTeamSuccessViewController") as? SetupTeamSuccessViewController {
+            vc.modalPresentationStyle = .custom
+            let pushAnimator = PushAnimator()
+            vc.transitioningDelegate = pushAnimator
+            self.present(vc, animated: true)
+        }
+    }
+    
+    func createBuyingTeam() {
+        
+        guard let postalCode = StoreManager.shared.postalCode else {
+             return
+         }
+        
+        guard let storeId = StoreManager.shared.storeId else {
+             return
+         }
+        
+        guard let userId = StoreManager.shared.userId else {
+             return
+         }
+        
+        
+       
+        //MARK: Some values are still placeholder
+        apiProvider.request(.createBuyingTeam(
+            name: self.selectedSupplier?.businessName ?? "",
+            postalCode: postalCode,
+            producerId: selectedSupplier?.id ?? "",
+            hostId: userId,
+            partnerId: storeId,
+            frequency: self.frequency,
+            description: "",
+            productLimit: 100, //placeholder
+            deliveryDay: "MONDAY", //placeholder
+            nextDeliveryDate: "2024-07-10 15:00:00.000", //placeholder
+            orderCutOffDate: "2024-07-07 15:00:00.000" //placeholder
+        )) { result in
+            
+            switch result {
+            case let .success(response):
+                // Handle successful response
+                do {
+                    let response = try response.map(CreateBuyingTeamResponse.self)
+                    if response.statusCode == 200 || response.statusCode == 201 {
+                        print(response.data as Any)
+                        self.goToSetUpTeamSuccess()
+                    }else{
+                        print("Error Message: \(response.message)")
+                    }
+                    
+                } catch {
+                    print("Failed to map response data: \(error)")
+                }
+            case let .failure(error):
+                // Handle error
+                print("Request failed with error: \(error)")
             }
+            
         }
     }
 

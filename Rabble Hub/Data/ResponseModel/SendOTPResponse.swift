@@ -10,7 +10,7 @@ import Foundation
 struct SendOTPResponse: Codable {
     let statusCode: Int
     let message: String
-    let data: SendOTPData
+    let data: SendOTPData?
 }
 
 struct SendOTPData: Codable {
