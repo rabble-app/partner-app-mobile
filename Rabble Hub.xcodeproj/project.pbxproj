@@ -20,6 +20,9 @@
 		8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */; };
 		8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3572BF8D0D200DF5045 /* UserManager.swift */; };
 		865618922BFE18FC001E65EB /* CreateBuyingTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */; };
+		8656189C2BFF99BA001E65EB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189B2BFF99BA001E65EB /* ToastView.swift */; };
+		8656189E2BFFA475001E65EB /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189D2BFFA475001E65EB /* Snackbar.swift */; };
+		865618A02BFFA9E8001E65EB /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189F2BFFA9E8001E65EB /* LoadingViewController.swift */; };
 		865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */; };
 		865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */; };
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
@@ -132,6 +135,7 @@
 		ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */; };
 		ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */; };
 		ACC719942BDA881500CF78DC /* ProfileOpenHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */; };
+		F8D2C92CAF1DC7DCE8544E4F /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F619219FCC83F2154E2E139 /* Pods_Rabble_Hub_Rabble_HubUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +176,9 @@
 		8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRecordResponse.swift; sourceTree = "<group>"; };
 		8631B3572BF8D0D200DF5045 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBuyingTeamResponse.swift; sourceTree = "<group>"; };
+		8656189B2BFF99BA001E65EB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		8656189D2BFFA475001E65EB /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
+		8656189F2BFFA9E8001E65EB /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamTableViewCell.swift; sourceTree = "<group>"; };
 		865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationFailedViewController.swift; path = Subviews/VerificationFailedViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +324,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D2C92CAF1DC7DCE8544E4F /* Pods_Rabble_Hub_Rabble_HubUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +563,9 @@
 			children = (
 				86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */,
 				AC5EF0032BD0F1660002A8D7 /* RabbleEnums.swift */,
+				8656189B2BFF99BA001E65EB /* ToastView.swift */,
+				8656189D2BFFA475001E65EB /* Snackbar.swift */,
+				8656189F2BFFA9E8001E65EB /* LoadingViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -828,9 +839,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86ED8DA12BF9DEC00089E36A /* Build configuration list for PBXNativeTarget "Rabble HubUITests" */;
 			buildPhases = (
+				0D8421FB15042DCCD15C5E4E /* [CP] Check Pods Manifest.lock */,
 				86ED8D952BF9DEC00089E36A /* Sources */,
 				86ED8D962BF9DEC00089E36A /* Frameworks */,
 				86ED8D972BF9DEC00089E36A /* Resources */,
+				731BF93146AB9EA8BADB0AB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -972,6 +985,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		0D8421FB15042DCCD15C5E4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rabble Hub-Rabble HubUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		275495E3CB118D874C401C30 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -987,6 +1022,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		731BF93146AB9EA8BADB0AB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3AC8377CD57EDD319B800B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -1051,6 +1103,7 @@
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
+				865618A02BFFA9E8001E65EB /* LoadingViewController.swift in Sources */,
 				AC6417F42BFCBDB400B8A61B /* CustomOpenHoursModel.swift in Sources */,
 				865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */,
 				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
@@ -1084,10 +1137,12 @@
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
 				861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
+				8656189E2BFFA475001E65EB /* Snackbar.swift in Sources */,
 				AC5EF0062BD114820002A8D7 /* SignUpAgreementViewController.swift in Sources */,
 				AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */,
 				AC6417EB2BFB7C8000B8A61B /* APIConfig.swift in Sources */,
 				865618922BFE18FC001E65EB /* CreateBuyingTeamResponse.swift in Sources */,
+				8656189C2BFF99BA001E65EB /* ToastView.swift in Sources */,
 				ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */,
 				867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */,
 				86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */,
@@ -1405,6 +1460,7 @@
 		};
 		86ED8DA22BF9DEC00089E36A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EDC3540C1B0555762252F08 /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1423,6 +1479,7 @@
 		};
 		86ED8DA32BF9DEC00089E36A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C4B12569FD318D949D2375C /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

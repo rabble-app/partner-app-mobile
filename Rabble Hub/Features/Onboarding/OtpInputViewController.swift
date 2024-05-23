@@ -68,7 +68,9 @@ class OtpInputViewController: UIViewController {
     }
     
     func verifyOTP() {
+        LoadingViewController.present(from: self)
         apiProvider.request(.verifyOtp(phone: self.phoneNumber, sid: self.sid, code: self.code)) { result in
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -76,18 +78,27 @@ class OtpInputViewController: UIViewController {
                     let response = try response.map(VerifyOTPResponse.self)
                     
                     if response.statusCode == 200 {
-                        let tokenManager = UserDefaultsTokenManager()
-                        let token = response.data?.token
-                        tokenManager.saveToken(token ?? "")
-                        self.goToSignUp()
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            let tokenManager = UserDefaultsTokenManager()
+                            let token = response.data?.token
+                            tokenManager.saveToken(token ?? "")
+                            self.goToSignUp()
+                        }
+                        
+                       
                     } else {
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
         }
@@ -109,22 +120,28 @@ class OtpInputViewController: UIViewController {
     }
     
     func sendOTP() {
+        LoadingViewController.present(from: self)
         apiProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
                 do {
                     let response = try response.map(SendOTPResponse.self)
                     if response.statusCode == 200 {
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
                         self.sid = response.data?.sid ?? ""
                     } else {
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
         }

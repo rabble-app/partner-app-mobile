@@ -12,6 +12,7 @@ target 'Rabble Hub' do
   pod 'QRCodeReader.swift', '~> 10.1.0'
   pod 'Moya', '~> 15.0'
   pod 'SDWebImage', '~> 5.0'
+  pod 'Toast-Swift', '~> 5.1.1'
   
   post_install do |installer|
       installer.generated_projects.each do |project|

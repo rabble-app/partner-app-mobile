@@ -28,6 +28,16 @@ class Colors: NSObject {
     static let Upcoming = Colors.getColor(named: "calendar_upcoming")
     static let Past = Colors.getColor(named: "calendar_past")
     
+    static let ToastSuccessFontColor = Colors.getColor(named: "toast_success_font_color")
+    static let ToastErrorFontColor = Colors.getColor(named: "toast_error_font_color")
+    static let ToastInfoFontColor = Colors.getColor(named: "toast_info_font_color")
+    static let ToastWarningFontColor = Colors.getColor(named: "toast_warning_font_color")
+    
+    static let ToastSuccessBackgroundColor = Colors.getColor(named: "toast_success_background_color")
+    static let ToastErrorBackgroundColor = Colors.getColor(named: "toast_error_background_color")
+    static let ToastInfoBackgroundColor = Colors.getColor(named: "toast_info_background_color")
+    static let ToastWarningBackgroundColor = Colors.getColor(named: "toast_warning_background_color")
+    
     /*
     /// Color used for content cards in view controller or dialog base background. Secondary level of content background base.
     static let BackgroundSecondary = Colors.getColor(named: "background_secondary")

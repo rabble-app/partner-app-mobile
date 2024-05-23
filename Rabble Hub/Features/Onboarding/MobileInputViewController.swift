@@ -8,6 +8,8 @@
 import UIKit
 import DialCountries
 import SafariServices
+import Toast_Swift
+import Moya
 
 class MobileInputViewController: UIViewController {
     
@@ -26,6 +28,8 @@ class MobileInputViewController: UIViewController {
     private var phoneNumber: String = ""
     private var sid: String = ""
     
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.BackgroundPrimary
@@ -39,8 +43,8 @@ class MobileInputViewController: UIViewController {
         //method:Delete
         /// url: auth/quit/e6378db9-daba-4aef-ace7-17d12ac95fc1
         guard let userId = StoreManager.shared.userId else {
-             return
-         }
+            return
+        }
         
         print(userId)
     }
@@ -125,33 +129,43 @@ class MobileInputViewController: UIViewController {
         setBorderColor(of: tickBoxButton, to: Colors.Gray5)
         return true
     }
-
+    
     
     private func setBorderColor(of view: UIView, to color: UIColor) {
         view.layer.borderColor = color.cgColor
     }
     
-    
     func sendOTP() {
+        LoadingViewController.present(from: self)
         self.phoneNumber = "\(codeLabel.text ?? "")\(phoneNumberTextfield.text ?? "")"
-        APIProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
+        apiProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
                 do {
                     let response = try response.map(SendOTPResponse.self)
                     if response.statusCode == 200 {
-                        self.sid = response.data?.sid ?? ""
-                        self.goToVerifyOTP()
+                        
+                        //ToastView.shared.showToast(true, message: response.message, in: self.view)
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.sid = response.data?.sid ?? ""
+                            self.goToVerifyOTP()
+                        }
                     }else{
+                        //ToastView.shared.showToast(false, message: response.message, in: self.view)
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
-                    
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
         }
