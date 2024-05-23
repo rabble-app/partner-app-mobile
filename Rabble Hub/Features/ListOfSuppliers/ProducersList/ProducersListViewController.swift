@@ -34,6 +34,7 @@ class ProducersListViewController: UIViewController {
              return
          }
         
+        
         APIProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in
             switch result {
             case let .success(response):
@@ -42,8 +43,8 @@ class ProducersListViewController: UIViewController {
                     let response = try response.map(GetSuppliersResponse.self)
                     if response.statusCode == 200 {
                         print("Suppliers: \(response.data)")
-                        self.suppliers = response.data
-                        self.filteredSuppliers = response.data // Initialize filteredSuppliers with all suppliers initially
+                        self.suppliers = response.data ?? []
+                        self.filteredSuppliers = response.data ?? [] // Initialize filteredSuppliers with all suppliers initially
                         self.producersTableview.reloadData()
                     } else {
                         print("Error Message: \(response.message)")
@@ -91,6 +92,7 @@ extension ProducersListViewController: UITableViewDelegate, UITableViewDataSourc
             vc.modalPresentationStyle = .custom
             let pushAnimator = PushAnimator()
             vc.transitioningDelegate = pushAnimator
+            vc.selectedSupplier = filteredSuppliers[indexPath.row]
             self.title = "Team Settings"
             self.present(vc, animated: true)
         }

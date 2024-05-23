@@ -22,6 +22,9 @@ class ChooseFrequencyViewController: UIViewController {
     @IBOutlet var stepContainer_height: NSLayoutConstraint!
     var isFromEdit: Bool = false
     
+    var selectedFrequency: DeliveryFrequency?
+    var selectedSupplier: Supplier?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK: library for calendar https://github.com/patchthecode/JTAppleCalendar?tab=readme-ov-file
@@ -55,6 +58,13 @@ class ChooseFrequencyViewController: UIViewController {
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
+        guard let selectedFrequency = selectedFrequency else {
+                   // Handle the case where no frequency is selected
+                   print("No frequency selected")
+                   return
+               }
+        
+        let deliveryFrequencyInSeconds = selectedFrequency.seconds
         
         if isFromEdit {
             dismiss(animated: true, completion: nil)
@@ -64,44 +74,23 @@ class ChooseFrequencyViewController: UIViewController {
                 vc.modalPresentationStyle = .custom
                 let pushAnimator = PushAnimator()
                 vc.transitioningDelegate = pushAnimator
+                vc.frequency = deliveryFrequencyInSeconds
+                vc.selectedSupplier = selectedSupplier
                 self.title = "Team Settings"
                 self.present(vc, animated: true)
             }
         }
-       
+        
     }
     
-    @IBAction func weekButtonTap(_ sender: Any) {
-        // Deselect other buttons
+    func updateButtonStates(selectedButton: UIButton) {
+        // Deselect all buttons
+        weekButton.isSelected = false
         twoWeekButton.isSelected = false
         monthButton.isSelected = false
         
-        // Toggle the button's selected state
-        weekButton.isSelected = true
-        
-        // Update button images based on selection state
-        updateButtonImages()
-    }
-    
-    @IBAction func twoWeekButtonTap(_ sender: Any) {
-        // Deselect other buttons
-        weekButton.isSelected = false
-        monthButton.isSelected = false
-        
-        // Toggle the button's selected state
-        twoWeekButton.isSelected = true
-        
-        // Update button images based on selection state
-        updateButtonImages()
-    }
-    
-    @IBAction func monthButtonTap(_ sender: Any) {
-        // Deselect other buttons
-        weekButton.isSelected = false
-        twoWeekButton.isSelected = false
-        
-        // Toggle the button's selected state
-        monthButton.isSelected = true
+        // Select the specified button
+        selectedButton.isSelected = true
         
         // Update button images based on selection state
         updateButtonImages()
@@ -114,5 +103,36 @@ class ChooseFrequencyViewController: UIViewController {
         monthButton.setBackgroundImage(UIImage(named: monthButton.isSelected ? "selected_radioButton" : "unselected_radioButton"), for: .normal)
     }
     
+    @IBAction func weekButtonTap(_ sender: Any) {
+        selectedFrequency = .everyWeek
+        updateButtonStates(selectedButton: weekButton)
+    }
     
+    @IBAction func twoWeekButtonTap(_ sender: Any) {
+        selectedFrequency = .everyTwoWeeks
+        updateButtonStates(selectedButton: twoWeekButton)
+    }
+    
+    @IBAction func monthButtonTap(_ sender: Any) {
+        selectedFrequency = .everyMonth
+        updateButtonStates(selectedButton: monthButton)
+    }
+}
+
+
+enum DeliveryFrequency: String {
+    case everyWeek = "every week"
+    case everyTwoWeeks = "every two weeks"
+    case everyMonth = "every month"
+    
+    var seconds: Int {
+        switch self {
+        case .everyWeek:
+            return 7 * 24 * 60 * 60 // 7 days in seconds
+        case .everyTwoWeeks:
+            return 14 * 24 * 60 * 60 // 14 days in seconds
+        case .everyMonth:
+            return 30 * 24 * 60 * 60 // 30 days in seconds
+        }
+    }
 }

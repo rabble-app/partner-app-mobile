@@ -10,9 +10,8 @@ import Foundation
 struct UpdateUserRecordResponse: Codable {
     let statusCode: Int
     let message: String
-    let data: User
+    let data: User?
 }
-
 
 struct User: Codable {
     let id: String
@@ -21,7 +20,7 @@ struct User: Codable {
     let firstName: String
     let lastName: String
     let postalCode: String?
-    let stripeCustomerId: String
+    let stripeCustomerId: String?
     let imageUrl: String?
     let role: String
     let createdAt: String

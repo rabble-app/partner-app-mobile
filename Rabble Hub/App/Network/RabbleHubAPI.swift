@@ -14,7 +14,7 @@ public enum RabbleHubAPI {
     case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
     case updateUserRecord(firstName: String, lastName: String, email: String)
     case getSuppliers(offset: Int, postalId: String)
-    case createBuyingTeam(name: String, postalId: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
+    case createBuyingTeam(name: String, postalCode: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -90,10 +90,10 @@ extension RabbleHubAPI: TargetType {
                 "postalCode": postalId
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case .createBuyingTeam(name: let name, postalId: let postalId, producerId: let producerId, hostId: let hostId, partnerId: let partnerId, frequency: let frequency, description: let description, productLimit: let productLimit, deliveryDay: let deliveryDay, nextDeliveryDate: let nextDeliveryDate, orderCutOffDate: let orderCutOffDate):
+        case .createBuyingTeam(name: let name, postalCode: let postalCode, producerId: let producerId, hostId: let hostId, partnerId: let partnerId, frequency: let frequency, description: let description, productLimit: let productLimit, deliveryDay: let deliveryDay, nextDeliveryDate: let nextDeliveryDate, orderCutOffDate: let orderCutOffDate):
             let parameters: [String: Any] = [
                 "name": name,
-                "postalId": postalId,
+                "postalCode": postalCode,
                 "producerId": producerId,
                 "hostId": hostId,
                 "partnerId": partnerId,
@@ -101,9 +101,10 @@ extension RabbleHubAPI: TargetType {
                 "description": description,
                 "productLimit": productLimit,
                 "deliveryDay": deliveryDay,
-                "nextDeliveryDate": nextDeliveryDate
+                "nextDeliveryDate": nextDeliveryDate,
+                "orderCutOffDate": orderCutOffDate
             ]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

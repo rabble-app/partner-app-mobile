@@ -33,6 +33,16 @@ class MobileInputViewController: UIViewController {
         let country = Country.getCurrentCountry()
         self.codeLabel.text = country?.dialCode
         self.flag.text = country?.flag
+        
+        
+        //MARK: Use this user id to delete the user
+        //method:Delete
+        /// url: auth/quit/e6378db9-daba-4aef-ace7-17d12ac95fc1
+        guard let userId = StoreManager.shared.userId else {
+             return
+         }
+        
+        print(userId)
     }
     
     func setUpView(){
@@ -131,7 +141,7 @@ class MobileInputViewController: UIViewController {
                 do {
                     let response = try response.map(SendOTPResponse.self)
                     if response.statusCode == 200 {
-                        self.sid = response.data.sid
+                        self.sid = response.data?.sid ?? ""
                         self.goToVerifyOTP()
                     }else{
                         print("Error Message: \(response.message)")
