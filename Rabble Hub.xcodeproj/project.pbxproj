@@ -113,6 +113,7 @@
 		AC6417F12BFB910D00B8A61B /* AddStoreHoursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */; };
 		AC6417F42BFCBDB400B8A61B /* CustomOpenHoursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F32BFCBDB400B8A61B /* CustomOpenHoursModel.swift */; };
 		AC6417F82C00D8C000B8A61B /* StandardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F72C00D8C000B8A61B /* StandardResponse.swift */; };
+		AC6417F62C007ED900B8A61B /* SignUpScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F52C007ED900B8A61B /* SignUpScheduleTests.swift */; };
 		AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */; };
 		AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */; };
 		AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */; };
@@ -275,6 +276,7 @@
 		AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreHoursResponse.swift; sourceTree = "<group>"; };
 		AC6417F32BFCBDB400B8A61B /* CustomOpenHoursModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOpenHoursModel.swift; sourceTree = "<group>"; };
 		AC6417F72C00D8C000B8A61B /* StandardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardResponse.swift; sourceTree = "<group>"; };
+		AC6417F52C007ED900B8A61B /* SignUpScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleTests.swift; sourceTree = "<group>"; };
 		AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoreInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewModel.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				86ED8D932BF9BE9B0089E36A /* MobileInputViewControllerTests.swift */,
+				AC6417F52C007ED900B8A61B /* SignUpScheduleTests.swift */,
 			);
 			path = "Rabble HubTests";
 			sourceTree = "<group>";
@@ -1164,6 +1167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6417F62C007ED900B8A61B /* SignUpScheduleTests.swift in Sources */,
 				86ED8D942BF9BE9B0089E36A /* MobileInputViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
