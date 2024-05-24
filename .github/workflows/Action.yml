@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pod install --repo-update
         working-directory: .
-        
+
       - name: Create Provisioning Profiles Directory
         run: mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
@@ -29,8 +29,8 @@ jobs:
 
       - name: Decode signing certificate
         run: |
-            echo "${{ secrets.BUILD_CERTIFICATE }}" | openssl base64 -d -out Certificates.p12
-        
+          echo "${{ secrets.BUILD_CERTIFICATE }}" | openssl base64 -d -out Certificates.p12
+
       - name: Import certificate to keychain
         run: |
           security create-keychain -p "" build.keychain
@@ -39,11 +39,11 @@ jobs:
           security import Certificates.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_PASSWORD }} -T /usr/bin/codesign
           security set-key-partition-list -S apple-tool:,apple: -s -k "" build.keychain
           security list-keychains -s build.keychain
-        
+
       - name: Xcode build
         run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates
         working-directory: .
         
       - name: Run tests
-        run: xcodebuild -scheme "Rabble HubTests" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates
-        working-directory: . -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13' test
+        run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13' -allowProvisioningUpdates test
+        working-directory: .
