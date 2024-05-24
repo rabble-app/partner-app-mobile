@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class SignUpScheduleViewController: UIViewController {
     
@@ -14,6 +15,8 @@ class SignUpScheduleViewController: UIViewController {
     var customDays = CustomOpenHoursModel()
     var customMonToFri = CustomOpenHoursModel()
     var allTheTimeSched = CustomOpenHoursModel()
+    
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentContentViewConstraintHeight: NSLayoutConstraint!
@@ -122,8 +125,9 @@ class SignUpScheduleViewController: UIViewController {
         }
         
         print(param?.asDictionary() as Any)
-        
-        APIProvider.request(.addStoreHours(customOpenHoursModel: param)) { result in
+        LoadingViewController.present(from: self)
+        apiProvider.request(.addStoreHours(customOpenHoursModel: param)) { result in
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -131,16 +135,22 @@ class SignUpScheduleViewController: UIViewController {
                     let response = try response.map(AddStoreHoursResponse.self)
                     if response.statusCode == 200 || response.statusCode == 201 {
                         print(response.data)
-                        self.goToSignUpAgreementView()
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.goToSignUpAgreementView()
+                        }
                     } else {
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
-                    
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
         }

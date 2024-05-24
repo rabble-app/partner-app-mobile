@@ -38,7 +38,9 @@ class SignUpViewController: UIViewController {
     }
     
     func saveStoreProfile(){
+        LoadingViewController.present(from: self)
         apiProvider.request(.saveStoreProfile(name: storeName.text ?? "", postalCode: postalCode.text ?? "", city: city.text ?? "", streetAddress: street.text ?? "", direction: direction.text ?? "", storeType: storeType.text ?? "", shelfSpace: shelfSpace.text ?? "", dryStorageSpace: dryStorageSpace.text ?? "")) { result in
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -49,17 +51,27 @@ class SignUpViewController: UIViewController {
                         guard let store = response.data else {
                             return
                         }
-                        self.saveStore(store)
-                        self.goToCreateUserProfile()
+                        
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.saveStore(store)
+                            self.goToCreateUserProfile()
+                        }
+                        
+                       
                     }else{
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
                     
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
         }

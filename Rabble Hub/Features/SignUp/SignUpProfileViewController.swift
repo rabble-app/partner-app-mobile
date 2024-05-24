@@ -31,7 +31,9 @@ class SignUpProfileViewController: UIViewController {
     
     
     func updateUserRecord() {
+        LoadingViewController.present(from: self)
         apiProvider.request(.updateUserRecord(firstName: firstName.text ?? "", lastName: lastName.text ?? "", email: email.text ?? "")) { result in
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -42,17 +44,25 @@ class SignUpProfileViewController: UIViewController {
                         guard let user = response.data else {
                             return
                         }
-                        self.saveUser(user)
-                        self.goToAddStoreOpenHours()
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.saveUser(user)
+                            self.goToAddStoreOpenHours()
+                        }
+                       
                     }else{
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
                     
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
         }

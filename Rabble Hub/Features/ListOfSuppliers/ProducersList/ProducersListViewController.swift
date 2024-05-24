@@ -17,6 +17,8 @@ class ProducersListViewController: UIViewController {
     var suppliers = [Supplier]()
     var filteredSuppliers = [Supplier]() // Array to hold filtered suppliers
     
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,8 +36,9 @@ class ProducersListViewController: UIViewController {
              return
          }
         
-        
-        APIProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in
+        LoadingViewController.present(from: self)
+        apiProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -43,17 +46,21 @@ class ProducersListViewController: UIViewController {
                     let response = try response.map(GetSuppliersResponse.self)
                     if response.statusCode == 200 {
                         print("Suppliers: \(response.data)")
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
                         self.suppliers = response.data ?? []
                         self.filteredSuppliers = response.data ?? [] // Initialize filteredSuppliers with all suppliers initially
                         self.producersTableview.reloadData()
                     } else {
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
         }

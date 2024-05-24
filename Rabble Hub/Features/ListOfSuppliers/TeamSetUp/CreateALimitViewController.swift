@@ -101,8 +101,7 @@ class CreateALimitViewController: UIViewController {
              return
          }
         
-        
-       
+        LoadingViewController.present(from: self)
         //MARK: Some values are still placeholder
         apiProvider.request(.createBuyingTeam(
             name: self.selectedSupplier?.businessName ?? "",
@@ -117,7 +116,7 @@ class CreateALimitViewController: UIViewController {
             nextDeliveryDate: "2024-07-10 15:00:00.000", //placeholder
             orderCutOffDate: "2024-07-07 15:00:00.000" //placeholder
         )) { result in
-            
+            LoadingViewController.dismiss(from: self)
             switch result {
             case let .success(response):
                 // Handle successful response
@@ -125,16 +124,24 @@ class CreateALimitViewController: UIViewController {
                     let response = try response.map(CreateBuyingTeamResponse.self)
                     if response.statusCode == 200 || response.statusCode == 201 {
                         print(response.data as Any)
-                        self.goToSetUpTeamSuccess()
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.goToSetUpTeamSuccess()
+                        }
+                       
                     }else{
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                         print("Error Message: \(response.message)")
                     }
                     
                 } catch {
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                     print("Failed to map response data: \(error)")
                 }
             case let .failure(error):
                 // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
                 print("Request failed with error: \(error)")
             }
             
