@@ -17,7 +17,7 @@ class LoadingViewController: UIViewController {
         
         // Background view
         let backgroundView = UIView(frame: UIScreen.main.bounds)
-        backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+        backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         view.addSubview(backgroundView)
         
         // Container view for the spinner

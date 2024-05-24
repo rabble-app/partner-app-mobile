@@ -11,6 +11,7 @@ PODS:
   - SDWebImage (5.19.2):
     - SDWebImage/Core (= 5.19.2)
   - SDWebImage/Core (5.19.2)
+  - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
   - DialCountries
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - Moya (~> 15.0)
   - QRCodeReader.swift (~> 10.1.0)
   - SDWebImage (~> 5.0)
+  - Toast-Swift (~> 5.1.1)
 
 SPEC REPOS:
   trunk:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - Moya
     - QRCodeReader.swift
     - SDWebImage
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
@@ -38,7 +41,8 @@ SPEC CHECKSUMS:
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
   SDWebImage: dfe95b2466a9823cf9f0c6d01217c06550d7b29a
+  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 2ca1af07f44c8b6b456a6054d981e0995b7167c9
+PODFILE CHECKSUM: 0dd089bd042870bcaa2ddcf2fbc9adbc95d51e4b
 
 COCOAPODS: 1.15.2
