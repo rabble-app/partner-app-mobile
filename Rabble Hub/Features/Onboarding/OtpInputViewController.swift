@@ -93,8 +93,13 @@ class OtpInputViewController: UIViewController {
                         print("Error Message: \(response.message)")
                     }
                 } catch {
-                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
-                    print("Failed to map response data: \(error)")
+                    do {
+                        let response = try response.map(StandardResponse.self)
+                        SnackBar().alert(withMessage: response.message[0], isSuccess: false, parent: self.view)
+                    } catch {
+                        SnackBar().alert(withMessage: "An error has occured", isSuccess: false, parent: self.view)
+                        print("Failed to map response data: \(error)")
+                    }
                 }
             case let .failure(error):
                 // Handle error
@@ -136,8 +141,13 @@ class OtpInputViewController: UIViewController {
                         print("Error Message: \(response.message)")
                     }
                 } catch {
-                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
-                    print("Failed to map response data: \(error)")
+                    do {
+                        let response = try response.map(StandardResponse.self)
+                        SnackBar().alert(withMessage: response.message[0], isSuccess: false, parent: self.view)
+                    } catch {
+                        SnackBar().alert(withMessage: "An error has occured", isSuccess: false, parent: self.view)
+                        print("Failed to map response data: \(error)")
+                    }
                 }
             case let .failure(error):
                 // Handle error

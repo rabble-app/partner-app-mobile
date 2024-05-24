@@ -34,15 +34,17 @@ class SnackBar {
         var backgroundColor: UIColor
         var messageColor: UIColor
         var image: UIImage?
-        
+        var duration = 2.0
         if isSuccess {
             backgroundColor = Colors.ToastSuccessBackgroundColor
             messageColor =  Colors.ToastSuccessFontColor
             image = UIImage(named: "toast_success")
+            duration = 2.0
         } else {
             backgroundColor = Colors.ToastErrorBackgroundColor
             messageColor = Colors.ToastErrorFontColor
             image = UIImage(named: "toast_error")
+            duration = 3.0
         }
         
         if let image = image {
@@ -92,7 +94,7 @@ class SnackBar {
                 self.tview?.frame = frame2
             }, completion: { finished in
                 if finished {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                         UIView.animate(withDuration: 1.0, animations: {
                             self.tview?.frame = frame
                         }, completion: { finished in
