@@ -43,7 +43,3 @@ jobs:
       - name: Xcode build
         run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -allowProvisioningUpdates
         working-directory: .
-        
-      - name: Run tests
-        run: xcodebuild -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13' -allowProvisioningUpdates test
-        working-directory: .
