@@ -39,7 +39,7 @@
 		149FDD80A26F399AFBD57325998EFDF6 /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FFAEDFCBE4427DBAA97751BD6A9A7B63 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14CD7E5A556FE8ED2CD06E81839F3B0E /* SDImageCacheConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = AC984343BCE0DC30C8258DDBCD0446FC /* SDImageCacheConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1501440AF1C85CB575F269E26BCEC459 /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D8EAC2ECE26160703AEC0CEE666B886C /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1506CFF00940F9863C9375D6BDA79A30 /* Pods-Rabble HubTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB0F1EDF6E950FBAFE3D1798773A11 /* Pods-Rabble HubTests-dummy.m */; };
+		1506CFF00940F9863C9375D6BDA79A30 /* Pods-Rabble HubTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 428F38DD88309D8D90CFA6C6918D51B1 /* Pods-Rabble HubTests-dummy.m */; };
 		154362EFC8EC0F61F54E24B09266DEB1 /* IQKeyboardReturnKeyHandler+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CA52883018B8A20FA6DF9D3568E1F /* IQKeyboardReturnKeyHandler+TextFieldDelegate.swift */; };
 		15F04D15A4DC87FF877C2857720F8D72 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C371721D4919E0651C8567E745B96A /* Toast-Swift-dummy.m */; };
 		16E7B447883B3E6CD5DA0C0F799AEE09 /* SDImageCodersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FD09E8A3F4CA44F90D0435D417B9ED /* SDImageCodersManager.m */; };
@@ -51,7 +51,7 @@
 		1EADA61A88A52EBF1F841282FB177F9D /* SDCallbackQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DE289955D500A0D039F11631FD6C5615 /* SDCallbackQueue.m */; };
 		1EC1EB5F3B98D4BCB6A057344815682C /* SDWebImageTransitionInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 23904DA81B56AB7E0C4D01A92C28FB53 /* SDWebImageTransitionInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		2067562ED8D002DD1DA23B138D1E8B6E /* DialCountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D8C061F1CC6131F853CC4F3EDCAA37 /* DialCountriesController.swift */; };
-		21225B941EA2E9ACFD912FA738ABC0B7 /* Pods-Rabble Hub-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 791B2B4DB48D3DE9C39269E54915B02C /* Pods-Rabble Hub-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21225B941EA2E9ACFD912FA738ABC0B7 /* Pods-Rabble Hub-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C7E76C614893164BDF6F39C6480842C /* Pods-Rabble Hub-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2177290E4AC6DAFDD746C8BA7EEF8B45 /* SDWebImageDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7856E3EF92CEC75C2669EADF4C924803 /* SDWebImageDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		231C4CBF826F94462939C3C75D5E3636 /* EliteOTPField + UITextFieldDelegete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1BDE3CD2E419A0153B3D84FFF4856 /* EliteOTPField + UITextFieldDelegete.swift */; };
 		237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift-Toast-Swift in Resources */ = {isa = PBXBuildFile; fileRef = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */; };
@@ -101,9 +101,8 @@
 		449F6DDFDA01061F0B001BCB31ED4455 /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDE7AEDA3CB16DA013DDAB35971A61FF /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45C47D2E7DC2AC0332CDD2323355F483 /* SDImageCachesManagerOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9E3972C4976FD0745317E7BA1CFDC1 /* SDImageCachesManagerOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4624831E1C1A912E31BA028AD4C1FA7C /* SDWebImageDownloaderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A4CF3574E855FEF5D640CFB4E22A14 /* SDWebImageDownloaderConfig.m */; };
-		46C5A13A2861F43505DAD2FFEE5F5D8D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A57A41792889072A3FB5C94A7DBDAE8 /* Foundation.framework */; };
 		47656A014649F2897E0E36913F19D285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A57A41792889072A3FB5C94A7DBDAE8 /* Foundation.framework */; };
-		47C1E91690411A917669EC84AD1BB5BE /* Pods-Rabble HubTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E632BBAD3D749B1D2B570FFFAC291A0 /* Pods-Rabble HubTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47C1E91690411A917669EC84AD1BB5BE /* Pods-Rabble HubTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8613CD3A33E46F92A84E031BC84739 /* Pods-Rabble HubTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47F5F591458FE4C062C7EC46369A9A3C /* EliteOTPField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB2B4395BE7E5E1F824C626274ABC26 /* EliteOTPField-dummy.m */; };
 		480C90679D30599E736F886A01D5EC27 /* SDImageLoadersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EECBAA868A90551319C2E9B66B3E21F0 /* SDImageLoadersManager.m */; };
 		480EB117CA823BBA38F531F048DC5D9B /* SDInternalMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DFC17B14797EE83582C75B512CC71837 /* SDInternalMacros.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -128,7 +127,6 @@
 		59C42C2827C8752D9488E217C5DDD820 /* SDWebImageDownloaderDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D13CED221DD5C707746DCA2216F4915 /* SDWebImageDownloaderDecryptor.m */; };
 		59D76AD0378678CB0D3236021BF96A09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17590781DEA5955B8582282CFA9D9E19 /* QuartzCore.framework */; };
 		5B92A66A66BD639411C3D839A0F87B0C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378C14B945F369984E1FD7B9B65F402B /* Request.swift */; };
-		5D184DC69F7D97CBE1D33D0C8BA2133D /* Pods-Rabble Hub-Rabble HubUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B7A4B7641821679FD80AC6A696E093 /* Pods-Rabble Hub-Rabble HubUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D9A37A8D628C6BB9FCA2EF74E352C9C /* SDWebImageDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4473533B1CDA17475B5828491F642E21 /* SDWebImageDefine.m */; };
 		5EC172A3A600E629AF4AD75C304DA2C9 /* SDImageIOCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E8ACF901D9A53CE87BDB3D33288920 /* SDImageIOCoder.m */; };
 		5F0469C5B154DC20B844EA2A9B7F8D42 /* IQPlaceholderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BB6F9836FEA529C4E9E6B2B76C60B0 /* IQPlaceholderable.swift */; };
@@ -212,13 +210,12 @@
 		A1623A8868E9AC8BBEAAB9BC0421F463 /* SDImageCacheDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F4D436817768655AB2D8402905C8F0 /* SDImageCacheDefine.m */; };
 		A2DCD1D36D93DFF9EBA04C27FD6523E8 /* SDAssociatedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FB1DD3D58BFEEB9E46AA75424318FD4 /* SDAssociatedObject.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A4A3E992003457010F66F3D6BCC2A5C3 /* SDWebImageDownloaderResponseModifier.h in Headers */ = {isa = PBXBuildFile; fileRef = C8EA87F301637B6B3C6A4A63B02CFC07 /* SDWebImageDownloaderResponseModifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4A7A4C88B7203DA2CF68246CC8DE084 /* Pods-Rabble Hub-Rabble HubUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6688DA89CC81113D735596D5C635148 /* Pods-Rabble Hub-Rabble HubUITests-dummy.m */; };
 		A4E7010E8D87921AE6F9D645B7CDA53A /* SDImageAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8AD236642F46FC0014EF358AD6251D /* SDImageAssetManager.m */; };
 		A523488C60BF961290D0B1ABB9ADACEC /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9614326F8551C436F34B180D94B0E /* RequestCompression.swift */; };
 		A5BBB698DF1D4480FD47F982C5252205 /* SDCallbackQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EE7908FEDF567AD7F63406AA526D931 /* SDCallbackQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5E69CC013C4311C8AF52C7F7AB095C9 /* IQUITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08210EC17103681968AC7401DD9E87 /* IQUITableView+Additions.swift */; };
 		A755043CEE0384C2BB9238AF2F200F4B /* AccessTokenPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDF4BD1C810891623CEA8E02F7077F /* AccessTokenPlugin.swift */; };
-		A80F58F2AD3241329ED3EB5AD1585809 /* Pods-Rabble Hub-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C80EEC4B5DA2B36A09C4726F76C9DE /* Pods-Rabble Hub-dummy.m */; };
+		A80F58F2AD3241329ED3EB5AD1585809 /* Pods-Rabble Hub-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3740DF15F51D2149E80EDA1033B2F5E6 /* Pods-Rabble Hub-dummy.m */; };
 		A8A9DA6C580EAE3E50B590CEDF0A45CC /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE312EE52718D0811DCF8E844633F435 /* UIImageView+HighlightedWebCache.m */; };
 		A9EDB00B3B1F3B535070FD5CC0C2FA78 /* EliteOTPAnimationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4427E19B100BEC1E5872D7CF4808AF1 /* EliteOTPAnimationTypes.swift */; };
 		AA721ECC2B36AFB7D9FE70C83E6D63F9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ADFE246B6EA0CF1FBEBE38E07F2C86 /* Response.swift */; };
@@ -350,13 +347,6 @@
 			remoteGlobalIDString = E3845717074531A7A89BAA05907850A7;
 			remoteInfo = "DialCountries-DialCountries";
 		};
-		15CD3BAD204468EF37F34DF12B8D085F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
-			remoteInfo = "Toast-Swift";
-		};
 		16AC7F594FF08088AE9BAD21C9967451 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -377,27 +367,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 17F9141D333DA1A7BE5937F227221070;
 			remoteInfo = Moya;
-		};
-		3967776899F2CE00593E615AFA6B9963 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
-		3B807574E336DAF58C94CE6F05288757 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3847153A6E5EEFB86565BA840768F429;
-			remoteInfo = SDWebImage;
-		};
-		5C02DC00F1D715A2648FF26890C28BDD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 29F475E46142FCD224E52A385AD26DB6;
-			remoteInfo = QRCodeReader.swift;
 		};
 		6455ED796B20854B357AA20A73CD5665 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -420,26 +389,12 @@
 			remoteGlobalIDString = 94CFBA7D633ECA58DF85C327B035E6A3;
 			remoteInfo = "SDWebImage-SDWebImage";
 		};
-		8CBAF883BC429BC7ADB9609A1CAFC992 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 80A9CB4F96ABEE0F4724AC4CA346D702;
-			remoteInfo = DialCountries;
-		};
 		90580E2085537DF2B24A7331B0D66290 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
 			remoteInfo = "Toast-Swift";
-		};
-		95E88E44D0F2EDB366CA5290A4CC4702 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 704823084523357C0FDD5873EEAF8759;
-			remoteInfo = EliteOTPField;
 		};
 		A2532A3EDC6035A8DA50B037B1C23CC2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -469,13 +424,6 @@
 			remoteGlobalIDString = 8807EC29F143CE8205B7E4A42CF61CF4;
 			remoteInfo = "Pods-Rabble Hub";
 		};
-		DE71F87437D0C8AC8F73F730353EF9BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
-			remoteInfo = IQKeyboardManagerSwift;
-		};
 		E7C6E769162BD01F1783CEB44666E805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -483,18 +431,12 @@
 			remoteGlobalIDString = 704823084523357C0FDD5873EEAF8759;
 			remoteInfo = EliteOTPField;
 		};
-		F2FB94743A54F0A3BBA156B3673DC1EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17F9141D333DA1A7BE5937F227221070;
-			remoteInfo = Moya;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008346A6F7087AAB046D55D506FDBA0D /* SDImageAPNGCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAPNGCoder.h; path = SDWebImage/Core/SDImageAPNGCoder.h; sourceTree = "<group>"; };
 		009EC61E5C5EBD050E3B0E05908B9B3B /* IQTextFieldViewListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextFieldViewListener.swift; path = IQKeyboardManagerSwift/LIsteners/IQTextFieldViewListener.swift; sourceTree = "<group>"; };
+		00E6E666978C1F2D8939296C9171731D /* Pods-Rabble HubTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble HubTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		020EAE779453C4B86B01492456BC3B79 /* SDImageTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageTransformer.h; path = SDWebImage/Core/SDImageTransformer.h; sourceTree = "<group>"; };
 		021427E9A281FE3F2E6947A2EA9A319F /* SDImageLoadersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoadersManager.h; path = SDWebImage/Core/SDImageLoadersManager.h; sourceTree = "<group>"; };
 		02B1B27191CEF1F2BB0577045BB944D1 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
@@ -510,13 +452,13 @@
 		0B0AD9A3FD40B61A2E5B7576E34F86F4 /* QRCodeReader.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QRCodeReader.swift.debug.xcconfig; sourceTree = "<group>"; };
 		0B67914021C5E435C5B84CA817D349A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		0B687A1CC21EFC48D98AD07E59DD27C1 /* ResourceBundle-SDWebImage-SDWebImage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SDWebImage-SDWebImage-Info.plist"; sourceTree = "<group>"; };
-		0BA22E3CFCEA7E0D67CCF18E05ED1468 /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Hub-Rabble HubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0CC46C87E3A602BC89E700E0D59B80CF /* SDWebImageCacheKeyFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheKeyFilter.m; path = SDWebImage/Core/SDWebImageCacheKeyFilter.m; sourceTree = "<group>"; };
 		0D59F40E50447CA9E13E812A38BF62EF /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/Core/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		0DBC46617D22269C9E899896CB864731 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = WebImage/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		0E48CEB8B95CD6F4966CA38BE3BEFF85 /* Pods-Rabble Hub-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Hub-Info.plist"; sourceTree = "<group>"; };
 		0E5C43010E4A3DF5652F3A59F2FD2DB2 /* TargetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TargetType.swift; path = Sources/Moya/TargetType.swift; sourceTree = "<group>"; };
+		0E735F03986D0CCE892EB4B128D87675 /* Pods-Rabble Hub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Hub.debug.xcconfig"; sourceTree = "<group>"; };
 		0E8D8A1B78DD33BA39704D749E966893 /* IQScrollViewConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQScrollViewConfiguration.swift; path = IQKeyboardManagerSwift/Configuration/IQScrollViewConfiguration.swift; sourceTree = "<group>"; };
-		0EA644EF10E4B68335C4498975D2479F /* Pods-Rabble Hub-Rabble HubUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble Hub-Rabble HubUITests.modulemap"; sourceTree = "<group>"; };
 		0EACE08D33D67CD764B3D9F6C03B928F /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		0F05D394CAB41D5EF97418CF91172D12 /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
 		0F20FE58A7923F68220481FC86DDE085 /* URL+Moya.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+Moya.swift"; path = "Sources/Moya/URL+Moya.swift"; sourceTree = "<group>"; };
@@ -533,12 +475,12 @@
 		162F48FD359275503549BDD4CB923D1A /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		17590781DEA5955B8582282CFA9D9E19 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		1855FED41B450120FE474ADC8437793A /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/Core/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
-		193769343160C9F2689DBFA23B08D351 /* Pods-Rabble Hub-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rabble Hub-frameworks.sh"; sourceTree = "<group>"; };
 		19E479310CF1D647F3771E9B41D7F7E1 /* SDWebImageDownloaderRequestModifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderRequestModifier.h; path = SDWebImage/Core/SDWebImageDownloaderRequestModifier.h; sourceTree = "<group>"; };
 		1A075501EE04423C71B6ED6C70E5FACA /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		1A75FEF05093CCC4788945012A787EA2 /* NSImage+Compatibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+Compatibility.m"; path = "SDWebImage/Core/NSImage+Compatibility.m"; sourceTree = "<group>"; };
 		1BE229D54FC174A4CF336100152D3969 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/Core/SDWebImageOperation.h; sourceTree = "<group>"; };
 		1C176C44CA2E34F35FAB03FB16D45615 /* RequestTypeWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTypeWrapper.swift; path = Sources/Moya/RequestTypeWrapper.swift; sourceTree = "<group>"; };
+		1C7E76C614893164BDF6F39C6480842C /* Pods-Rabble Hub-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble Hub-umbrella.h"; sourceTree = "<group>"; };
 		1D20A2F643F7EC7C548A4044598C700E /* IQKeyboardReturnKeyHandler+TextViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardReturnKeyHandler+TextViewDelegate.swift"; path = "IQKeyboardManagerSwift/ReturnKeyHandler/IQKeyboardReturnKeyHandler+TextViewDelegate.swift"; sourceTree = "<group>"; };
 		1D93DECC35BF2A0CA8BD5993AE7EC4C6 /* EliteOTPField */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EliteOTPField; path = EliteOTPField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F151C3910905C813B58563F3CBFD462 /* DialCountries-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DialCountries-umbrella.h"; sourceTree = "<group>"; };
@@ -550,14 +492,13 @@
 		21ADFE246B6EA0CF1FBEBE38E07F2C86 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		22BF007BB8F1F04D47311A4DB791455E /* IQTextFieldViewInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextFieldViewInfo.swift; path = IQKeyboardManagerSwift/LIsteners/Info/IQTextFieldViewInfo.swift; sourceTree = "<group>"; };
 		23904DA81B56AB7E0C4D01A92C28FB53 /* SDWebImageTransitionInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransitionInternal.h; path = SDWebImage/Private/SDWebImageTransitionInternal.h; sourceTree = "<group>"; };
-		25D579E56F57B3D45E98A6760AD46AC6 /* Pods-Rabble Hub-Rabble HubUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble Hub-Rabble HubUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		25E3A748FB12F99D90BC1E55CE273690 /* SDImageGraphics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageGraphics.h; path = SDWebImage/Core/SDImageGraphics.h; sourceTree = "<group>"; };
 		28785707ADA6C05EAB1675AD89E476C5 /* UIView+WebCacheState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheState.m"; path = "SDWebImage/Core/UIView+WebCacheState.m"; sourceTree = "<group>"; };
 		28D8C061F1CC6131F853CC4F3EDCAA37 /* DialCountriesController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DialCountriesController.swift; path = DialCountries/Classes/Views/DialCountriesController.swift; sourceTree = "<group>"; };
 		290B700DDEB2DE79950AA661C1B53DC4 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		29A734212E347D28A3F477646A9E392A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		29E8ACF901D9A53CE87BDB3D33288920 /* SDImageIOCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOCoder.m; path = SDWebImage/Core/SDImageIOCoder.m; sourceTree = "<group>"; };
-		2AC649DE3626736CF56A9F246DF2C435 /* Pods-Rabble Hub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Hub.debug.xcconfig"; sourceTree = "<group>"; };
+		2A66C8AAC8E1E75178FBA7BB55E64892 /* Pods-Rabble HubTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble HubTests-Info.plist"; sourceTree = "<group>"; };
 		2ACAABEF9B5A2BDE87238EE601A35658 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/Core/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		2ADB093A505C4DAE4BBC67F8E40F3FAE /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/UIKitExtensions/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		2B08210EC17103681968AC7401DD9E87 /* IQUITableView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITableView+Additions.swift"; path = "IQKeyboardManagerSwift/UIKitExtensions/IQUITableView+Additions.swift"; sourceTree = "<group>"; };
@@ -574,7 +515,6 @@
 		2FB1DD3D58BFEEB9E46AA75424318FD4 /* SDAssociatedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAssociatedObject.h; path = SDWebImage/Private/SDAssociatedObject.h; sourceTree = "<group>"; };
 		303AFEFBBA157241D89EAC3A474BF1C2 /* SDGraphicsImageRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDGraphicsImageRenderer.h; path = SDWebImage/Core/SDGraphicsImageRenderer.h; sourceTree = "<group>"; };
 		30AC8484AB44FA803F1BBE3EFB07C260 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
-		3124833E49C3B1DDF1C59F824DBA0EC9 /* Pods-Rabble Hub-Rabble HubUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Rabble Hub-Rabble HubUITests"; path = Pods_Rabble_Hub_Rabble_HubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BA4D6A1584508F190EB3000E8400A0 /* EliteOTPField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EliteOTPField.release.xcconfig; sourceTree = "<group>"; };
 		32F7D6E3FBA2C2587DE023B20E71096E /* SDWebImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.release.xcconfig; sourceTree = "<group>"; };
 		331C530A49F7458F169CC04CF580036B /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
@@ -585,32 +525,32 @@
 		36747C2686AF54E6A5C0EDBFB2FD64A1 /* UIImage+Metadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Metadata.h"; path = "SDWebImage/Core/UIImage+Metadata.h"; sourceTree = "<group>"; };
 		36AE071937869EEC8D237539BA8052C4 /* EliteOTPField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EliteOTPField-umbrella.h"; sourceTree = "<group>"; };
 		36F7FD0796C9A42890613588F9CC4A30 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
+		3740DF15F51D2149E80EDA1033B2F5E6 /* Pods-Rabble Hub-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble Hub-dummy.m"; sourceTree = "<group>"; };
 		3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Moya; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		378C14B945F369984E1FD7B9B65F402B /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		37DEBF57C604BD59C1314B921266335B /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3884BB39AA257BFA9FDD153CD1DB0F07 /* DialCountries-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DialCountries-dummy.m"; sourceTree = "<group>"; };
 		394C9B7A2C8FBDEC812B915B4B802B34 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
 		394FC085AEA4240CE7C07C0CAA0B640D /* SDWebImageOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOperation.m; path = SDWebImage/Core/SDWebImageOperation.m; sourceTree = "<group>"; };
 		3990D333BAF6014C33A921B43BC5A051 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		3992337DAB15AE3A2C13F0F6E8138CCA /* Pods-Rabble Hub-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rabble Hub-frameworks.sh"; sourceTree = "<group>"; };
 		3A9E3972C4976FD0745317E7BA1CFDC1 /* SDImageCachesManagerOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCachesManagerOperation.h; path = SDWebImage/Private/SDImageCachesManagerOperation.h; sourceTree = "<group>"; };
 		3ACF5120BA7149B0EB1384D5EED4D431 /* DialCountries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DialCountries.debug.xcconfig; sourceTree = "<group>"; };
-		3B01F60EC37A2847B8DA969931C73E18 /* Pods-Rabble Hub.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble Hub.modulemap"; sourceTree = "<group>"; };
 		3B45E9DBCE3378BA40A7719AD24C195B /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/Core/SDWebImageDownloader.m; sourceTree = "<group>"; };
 		3C2017A8FA8EF4AB267649622DD9AECD /* SDDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDiskCache.h; path = SDWebImage/Core/SDDiskCache.h; sourceTree = "<group>"; };
 		3C5C1FAA337294B470C670FC0168E4F1 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		3D14F2B4DA25BF858C55384502A2BF9C /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		3D2513207C60C3901BFAC7F1EA6A344C /* SDFileAttributeHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDFileAttributeHelper.m; path = SDWebImage/Private/SDFileAttributeHelper.m; sourceTree = "<group>"; };
 		3E8F691C9B132B803B3C3445BFC2DF3F /* IQTextFieldViewInfoModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextFieldViewInfoModel.swift; path = IQKeyboardManagerSwift/ReturnKeyHandler/IQTextFieldViewInfoModel.swift; sourceTree = "<group>"; };
-		3ED09B3C3380C19463992CAEA4258AA7 /* Pods-Rabble HubTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble HubTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3EF157B21F86DC269B1F700EE1899C45 /* Pods-Rabble Hub-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble Hub-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4057466362C806AC1831A3657E2F2107 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		410DC7928D6D9D3C521CC54550E2D093 /* SDImageAssetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAssetManager.h; path = SDWebImage/Private/SDImageAssetManager.h; sourceTree = "<group>"; };
 		41289EABE5984BC8C22F49F5F3190E89 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/Core/UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		428F38DD88309D8D90CFA6C6918D51B1 /* Pods-Rabble HubTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble HubTests-dummy.m"; sourceTree = "<group>"; };
 		434721CCC88E51EAE0B5A59AD58868FA /* SDImageCoderHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCoderHelper.h; path = SDWebImage/Core/SDImageCoderHelper.h; sourceTree = "<group>"; };
 		4473533B1CDA17475B5828491F642E21 /* SDWebImageDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDefine.m; path = SDWebImage/Core/SDWebImageDefine.m; sourceTree = "<group>"; };
 		45268A1E07716EAD4A7A44E0CC4C2328 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/UIKitExtensions/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
 		45CA997CAE6582B41B824BF47CBD617D /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		463C711AFBFF380B253D226BC3491DBB /* SDWebImageDownloaderConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderConfig.h; path = SDWebImage/Core/SDWebImageDownloaderConfig.h; sourceTree = "<group>"; };
+		468282030A541551CB8430B505F01978 /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		49CEF02036220CBDB9402C55D6E7A219 /* QRCodeReader.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "QRCodeReader.swift-Info.plist"; sourceTree = "<group>"; };
 		49DD42F79A7CFA1FC3BB30988549E4C2 /* SDWebImageCacheSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheSerializer.m; path = SDWebImage/Core/SDWebImageCacheSerializer.m; sourceTree = "<group>"; };
 		4A41B43C33260AF7BF0EF07A960AA292 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
@@ -620,7 +560,6 @@
 		4D13CED221DD5C707746DCA2216F4915 /* SDWebImageDownloaderDecryptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderDecryptor.m; path = SDWebImage/Core/SDWebImageDownloaderDecryptor.m; sourceTree = "<group>"; };
 		4D29D1D7F2B0CC70E623A75F54CCCE29 /* SDImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCoder.h; path = SDWebImage/Core/SDImageCoder.h; sourceTree = "<group>"; };
 		4D34E391FCEB8FBD945B3D987C32733C /* SDMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDMemoryCache.m; path = SDWebImage/Core/SDMemoryCache.m; sourceTree = "<group>"; };
-		4E632BBAD3D749B1D2B570FFFAC291A0 /* Pods-Rabble HubTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble HubTests-umbrella.h"; sourceTree = "<group>"; };
 		4ED3D2E7AF87C0596B824226E50ED3F5 /* ResourceBundle-Toast-Swift-Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Toast-Swift-Toast-Swift-Info.plist"; sourceTree = "<group>"; };
 		4F49F4151F1D08B8E1A10380327D4425 /* UIImage+NextPrevious.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+NextPrevious.swift"; path = "IQKeyboardManagerSwift/UIKitExtensions/UIImage+NextPrevious.swift"; sourceTree = "<group>"; };
 		50D4C7B8566B7B9A775794BA8C9623B3 /* SDImageCacheDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheDefine.h; path = SDWebImage/Core/SDImageCacheDefine.h; sourceTree = "<group>"; };
@@ -629,13 +568,11 @@
 		5341A77F4BD996CB1DEBD1CFE052E6BC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		53FDA18725EA83745137DE1F6CA4E909 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		545C819B3FB7AF3519156D8672617567 /* SDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.debug.xcconfig; sourceTree = "<group>"; };
-		54C6A06EA7B9250B74F2F8BEBBB4957E /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		557637C82703818B1CABB622CBA45D61 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		559CA52883018B8A20FA6DF9D3568E1F /* IQKeyboardReturnKeyHandler+TextFieldDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardReturnKeyHandler+TextFieldDelegate.swift"; path = "IQKeyboardManagerSwift/ReturnKeyHandler/IQKeyboardReturnKeyHandler+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		56131CB0E36FA0EBB6ED3EB40A40D3A1 /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bundle.swift; path = DialCountries/Classes/Core/Bundle.swift; sourceTree = "<group>"; };
 		565096291419B59FBFC25BAD5010A950 /* EliteOTPField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EliteOTPField-Info.plist"; sourceTree = "<group>"; };
 		571263F344FC0E9694811688D32747EC /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
-		57BC977252AC7BBFB2647C946E3CA4BC /* Pods-Rabble HubTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble HubTests.modulemap"; sourceTree = "<group>"; };
 		5929568FE04A274E378B65E6A1F3F804 /* SDImageIOAnimatedCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOAnimatedCoder.m; path = SDWebImage/Core/SDImageIOAnimatedCoder.m; sourceTree = "<group>"; };
 		5968C76CDD1F2841A85B037140A23213 /* IQToolbarConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbarConfiguration.swift; path = IQKeyboardManagerSwift/Configuration/IQToolbarConfiguration.swift; sourceTree = "<group>"; };
 		59985E4A3B57398982959FEF2EBF6B05 /* SDImageHEICCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageHEICCoder.h; path = SDWebImage/Core/SDImageHEICCoder.h; sourceTree = "<group>"; };
@@ -647,8 +584,6 @@
 		5AEF6ABC4FD945E933E817D85EF82BFF /* NSBezierPath+SDRoundedCorners.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBezierPath+SDRoundedCorners.h"; path = "SDWebImage/Private/NSBezierPath+SDRoundedCorners.h"; sourceTree = "<group>"; };
 		5B9293BD851063E124B6B6A3129D070E /* DialCountries-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DialCountries-prefix.pch"; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EB3AC12CADDA5937F59251407AD1D9B /* Pods-Rabble Hub-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Hub-Info.plist"; sourceTree = "<group>"; };
-		5EC146F7BA460FA40FE5461AC972F977 /* Pods-Rabble Hub-Rabble HubUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Hub-Rabble HubUITests-Info.plist"; sourceTree = "<group>"; };
 		5EF06FDEFD53BC529B16FCDE8C68DBFE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		60098FCC7DDCD0EC7CBF18D542C61973 /* UIImage+MemoryCacheCost.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MemoryCacheCost.h"; path = "SDWebImage/Core/UIImage+MemoryCacheCost.h"; sourceTree = "<group>"; };
 		6090BF6867587A8076247BBFDB8EA18C /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
@@ -658,6 +593,7 @@
 		614A2FDEAEA12FEC420A70B3A4A61243 /* SDWebImageOptionsProcessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOptionsProcessor.m; path = SDWebImage/Core/SDWebImageOptionsProcessor.m; sourceTree = "<group>"; };
 		622F9CC147CF66CD5787B2F1D0E7D56B /* SDWebImageError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageError.m; path = SDWebImage/Core/SDWebImageError.m; sourceTree = "<group>"; };
 		627EBE2FC15CCA8E8947F37C3AC5A0A2 /* CountriesFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountriesFetcher.swift; path = DialCountries/Classes/Core/CountriesFetcher.swift; sourceTree = "<group>"; };
+		650D18DA5A1D29BBC84A3AC0053021D3 /* Pods-Rabble HubTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble HubTests.modulemap"; sourceTree = "<group>"; };
 		65DE6B66C9821B41FF29932DE0B79AE1 /* SDImageGraphics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageGraphics.m; path = SDWebImage/Core/SDImageGraphics.m; sourceTree = "<group>"; };
 		66BAC3BD0AFD0B5B405FB03A65AA358A /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Sources/Moya/MultipartFormData.swift; sourceTree = "<group>"; };
 		672180B63FD504868009E5990F80F88F /* Moya-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-prefix.pch"; sourceTree = "<group>"; };
@@ -666,10 +602,10 @@
 		68DB340620F65CC5F9B41CE9A2DEA266 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/Core/UIButton+WebCache.m"; sourceTree = "<group>"; };
 		68EB060781F33AE386A493E7C8E47990 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/UIKitExtensions/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		6971F331A38BF7DA95ECECEAF50382E0 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/Core/SDWebImageCompat.h; sourceTree = "<group>"; };
-		69B7A4B7641821679FD80AC6A696E093 /* Pods-Rabble Hub-Rabble HubUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble Hub-Rabble HubUITests-umbrella.h"; sourceTree = "<group>"; };
+		6AE20AEE347185F5681430BB7D84BE5F /* Pods-Rabble HubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble HubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B346AA8A4AC73B161552893426B1388 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		6B8D5DA761671F1C27EAEECD9F783D37 /* SDImageCoderHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCoderHelper.m; path = SDWebImage/Core/SDImageCoderHelper.m; sourceTree = "<group>"; };
-		6B9A65D42C1F3A6D59B00F62492B6E67 /* Pods-Rabble HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble HubTests.release.xcconfig"; sourceTree = "<group>"; };
+		6F8613CD3A33E46F92A84E031BC84739 /* Pods-Rabble HubTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble HubTests-umbrella.h"; sourceTree = "<group>"; };
 		6FD5E8F343A69A537B45E9D008217213 /* IQKeyboardInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardInfo.swift; path = IQKeyboardManagerSwift/LIsteners/Info/IQKeyboardInfo.swift; sourceTree = "<group>"; };
 		7055B47E9C2D2AACA714103CBB5DEEF2 /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
 		706DD47A7460CBA1021452132C15858F /* UIImage+Transform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Transform.m"; path = "SDWebImage/Core/UIImage+Transform.m"; sourceTree = "<group>"; };
@@ -684,9 +620,7 @@
 		77BE047A6C5A4BDE1931A03CB5421165 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchCameraButton.swift; path = Sources/SwitchCameraButton.swift; sourceTree = "<group>"; };
 		7856E3EF92CEC75C2669EADF4C924803 /* SDWebImageDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDefine.h; path = SDWebImage/Core/SDWebImageDefine.h; sourceTree = "<group>"; };
 		78E9614326F8551C436F34B180D94B0E /* RequestCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestCompression.swift; path = Source/RequestCompression.swift; sourceTree = "<group>"; };
-		791B2B4DB48D3DE9C39269E54915B02C /* Pods-Rabble Hub-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rabble Hub-umbrella.h"; sourceTree = "<group>"; };
 		7AAE3864B5E7DBF1F117CA307BA6F0AB /* SDImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoader.h; path = SDWebImage/Core/SDImageLoader.h; sourceTree = "<group>"; };
-		7ADB0F1EDF6E950FBAFE3D1798773A11 /* Pods-Rabble HubTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble HubTests-dummy.m"; sourceTree = "<group>"; };
 		7B0A0436C1F36A0A17A2487A2EDD417F /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/Core/SDImageCache.h; sourceTree = "<group>"; };
 		7B6AB72DAD04FFEB19882467145703BE /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
 		7B6CBFA9B9B1A19B2B1DECDC4DF812F5 /* AnyEncodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyEncodable.swift; path = Sources/Moya/AnyEncodable.swift; sourceTree = "<group>"; };
@@ -715,9 +649,9 @@
 		8A2D56AEF4F618E72E3A2F58436A6B05 /* SDGraphicsImageRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDGraphicsImageRenderer.m; path = SDWebImage/Core/SDGraphicsImageRenderer.m; sourceTree = "<group>"; };
 		8BD009216B1DF7BCA705E247BB78C7E9 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager/IQKeyboardManager.swift; sourceTree = "<group>"; };
 		8D8069D3964814114ACEC3084C010B59 /* IQKeyboardManagerSwift-IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "IQKeyboardManagerSwift-IQKeyboardManagerSwift"; path = IQKeyboardManagerSwift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DD9E0C61972A96FB11FFA46B46C7F5A /* Pods-Rabble Hub-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Hub-acknowledgements.plist"; sourceTree = "<group>"; };
 		8DEF184B1F98868966B5A5C2232949FC /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		8EE7908FEDF567AD7F63406AA526D931 /* SDCallbackQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCallbackQueue.h; path = SDWebImage/Core/SDCallbackQueue.h; sourceTree = "<group>"; };
+		8F16A080E9BF50B78853A03C9E2F03AC /* Pods-Rabble HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble HubTests.release.xcconfig"; sourceTree = "<group>"; };
 		8F553C9047041F494A916B799C9DC487 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/ReturnKeyHandler/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
 		8F74AAECA162E41E5DAD8404F6D7138E /* QRCodeReaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderView.swift; path = Sources/QRCodeReaderView.swift; sourceTree = "<group>"; };
 		8F871E1F62084869A5675BDD18BDF9AE /* Pods-Rabble Hub */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Rabble Hub"; path = Pods_Rabble_Hub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -739,16 +673,16 @@
 		97B15D877FCE3DF29F4E57131238281B /* MoyaProvider+Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MoyaProvider+Defaults.swift"; path = "Sources/Moya/MoyaProvider+Defaults.swift"; sourceTree = "<group>"; };
 		988EF6F4675C0C19807FCEFD93336A04 /* DialCountries */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DialCountries; path = DialCountries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9899E280BB224C2F7B9C84E37E27BB42 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/Core/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
-		9A4DFDE0EA04AE3AB6AD3F586D0BB32C /* Pods-Rabble HubTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble HubTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9977F3654C5B561321C8A11869B99DB7 /* Pods-Rabble Hub.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rabble Hub.modulemap"; sourceTree = "<group>"; };
 		9B47FF13FD5D0725C870E7331E054A35 /* IQUIView+IQKeyboardToolbarDeprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbarDeprecated.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbarDeprecated.swift"; sourceTree = "<group>"; };
 		9BC312C1ED4D22B88544F017E54AD2AD /* Moya+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Moya+Alamofire.swift"; path = "Sources/Moya/Moya+Alamofire.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E75A9B00227AEB14B7FEAAE6EB9D5D0 /* Pods-Rabble HubTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Rabble HubTests"; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ED28874478CD46BDBDC5B264AEE36B6 /* Pods-Rabble Hub-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Hub-acknowledgements.plist"; sourceTree = "<group>"; };
 		A0066B774BD684F9D9C0111AF16E9358 /* SDWebImageError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageError.h; path = SDWebImage/Core/SDWebImageError.h; sourceTree = "<group>"; };
 		A2423FA01B633739EB5727F0E5F6AD51 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		A2D3479A5543658F0C80758C657C9BB5 /* SDAssociatedObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAssociatedObject.m; path = SDWebImage/Private/SDAssociatedObject.m; sourceTree = "<group>"; };
 		A2ED27C08C1B58BE57EAFA9C3DE7CC62 /* SDImageCacheConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCacheConfig.m; path = SDWebImage/Core/SDImageCacheConfig.m; sourceTree = "<group>"; };
-		A4447B63DF48AC749E344CEC2C151EF8 /* Pods-Rabble HubTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble HubTests-Info.plist"; sourceTree = "<group>"; };
 		A7304A2F580F26797B0B20BACA187604 /* SDImageIOAnimatedCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOAnimatedCoder.h; path = SDWebImage/Core/SDImageIOAnimatedCoder.h; sourceTree = "<group>"; };
 		A74FCBDE55024A6522C23968ACE93A1C /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/Core/UIImage+GIF.h"; sourceTree = "<group>"; };
 		A8121105A96312EBC095D581FC32CF1C /* QRCodeReaderViewContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewContainer.swift; path = Sources/QRCodeReaderViewContainer.swift; sourceTree = "<group>"; };
@@ -760,8 +694,8 @@
 		AC984343BCE0DC30C8258DDBCD0446FC /* SDImageCacheConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheConfig.h; path = SDWebImage/Core/SDImageCacheConfig.h; sourceTree = "<group>"; };
 		AD2D259FA2EDD72E9C00852894DA0A42 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		ADC47D88CD4C8C44D0F8CBC38E335564 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
-		AE09DB107C9D2F60FC0320641EE769DB /* Pods-Rabble Hub-Rabble HubUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble Hub-Rabble HubUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AE312EE52718D0811DCF8E844633F435 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/Core/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		AFA214C6FF663210163819279375A692 /* Pods-Rabble HubTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rabble HubTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B0066D4814D049289BBE63023F49B5C8 /* UIView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCache.m"; path = "SDWebImage/Core/UIView+WebCache.m"; sourceTree = "<group>"; };
 		B037910537825BC9BAA15D89E37F45A2 /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
 		B053A29F2D0DFC2027900566BA790015 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/Core/UIButton+WebCache.h"; sourceTree = "<group>"; };
@@ -794,7 +728,6 @@
 		C23CC87BDE8E38E277AB090F00DB3CE5 /* Task.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Sources/Moya/Task.swift; sourceTree = "<group>"; };
 		C26AF7F8206B7A6FC6BCC48B02EFC978 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		C3682C86EFF15E33486F4C3EF8A4A954 /* SDWebImageDownloaderResponseModifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderResponseModifier.m; path = SDWebImage/Core/SDWebImageDownloaderResponseModifier.m; sourceTree = "<group>"; };
-		C3A2ACF658FA35F3EC4480909D81D213 /* Pods-Rabble HubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rabble HubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5A4CF3574E855FEF5D640CFB4E22A14 /* SDWebImageDownloaderConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderConfig.m; path = SDWebImage/Core/SDWebImageDownloaderConfig.m; sourceTree = "<group>"; };
 		C5CB03A3A4CCED6B59FB465998D4C6EB /* SDAnimatedImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SDAnimatedImageView+WebCache.h"; path = "SDWebImage/Core/SDAnimatedImageView+WebCache.h"; sourceTree = "<group>"; };
 		C698F89A2EAAAB1E224F6E6C2CC8EAFA /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/Core/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
@@ -820,6 +753,7 @@
 		D268B7E7BDC842DAA6C6153B65B24D75 /* SDAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageView.m; path = SDWebImage/Core/SDAnimatedImageView.m; sourceTree = "<group>"; };
 		D3BF7437A6C9A855669B6E9761152B86 /* DialCountries.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DialCountries.modulemap; sourceTree = "<group>"; };
 		D3FD09E8A3F4CA44F90D0435D417B9ED /* SDImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCodersManager.m; path = SDWebImage/Core/SDImageCodersManager.m; sourceTree = "<group>"; };
+		D4033D3AEE046BFCAC3E04A9E3CC6754 /* Pods-Rabble Hub-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rabble Hub-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D4FC0E9A0560058C0270053A03D0D7F3 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToggleTorchButton.swift; path = Sources/ToggleTorchButton.swift; sourceTree = "<group>"; };
 		D5FF2BD968A2A468BAF0F9A8BC0235C9 /* IQKeyboardManager+Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Deprecated.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager/IQKeyboardManager+Deprecated.swift"; sourceTree = "<group>"; };
 		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Toast-Swift"; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -842,7 +776,6 @@
 		E35972CF6700D728A02AE8557E10D350 /* SDDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDiskCache.m; path = SDWebImage/Core/SDDiskCache.m; sourceTree = "<group>"; };
 		E455B7A206B65FE43D23B407C93D99EA /* SDDeviceHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDeviceHelper.m; path = SDWebImage/Private/SDDeviceHelper.m; sourceTree = "<group>"; };
 		E609ABD35FD23ACFA1C9DCCDA9A114E8 /* EliteOTPField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EliteOTPField.debug.xcconfig; sourceTree = "<group>"; };
-		E6C80EEC4B5DA2B36A09C4726F76C9DE /* Pods-Rabble Hub-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble Hub-dummy.m"; sourceTree = "<group>"; };
 		E72DCC368068CFEB10B7197BE8AE921C /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/UIKitExtensions/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		E87A7EBADBA871C870CAFA108477F7C5 /* Atomic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Atomic.swift; path = Sources/Moya/Atomic.swift; sourceTree = "<group>"; };
 		EA1854130168293CBFA57A2082FF3205 /* SDDeviceHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDeviceHelper.h; path = SDWebImage/Private/SDDeviceHelper.h; sourceTree = "<group>"; };
@@ -862,7 +795,6 @@
 		F07CDD7F6E3D559720404D8CD4BA264D /* SDAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageView.h; path = SDWebImage/Core/SDAnimatedImageView.h; sourceTree = "<group>"; };
 		F08473280D7245A67C8CB244008C16F2 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/UIKitExtensions/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		F0EC6249390D0626078A4CBC851FC85B /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/Core/SDWebImageManager.m; sourceTree = "<group>"; };
-		F0F9A70DE130B6A10525C2AE0BF7243B /* Pods-Rabble Hub-Rabble HubUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rabble Hub-Rabble HubUITests-frameworks.sh"; sourceTree = "<group>"; };
 		F12FAE04E9A58A87B2CCDD02526DFA13 /* SDWebImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImage.h; path = WebImage/SDWebImage.h; sourceTree = "<group>"; };
 		F1AB2964B0291C36EA3C528C24A769E3 /* IQKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardListener.swift; path = IQKeyboardManagerSwift/LIsteners/IQKeyboardListener.swift; sourceTree = "<group>"; };
 		F26F3EADAE58838FCACBF607A27A4485 /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Sources/Moya/Endpoint.swift; sourceTree = "<group>"; };
@@ -870,7 +802,6 @@
 		F4427E19B100BEC1E5872D7CF4808AF1 /* EliteOTPAnimationTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EliteOTPAnimationTypes.swift; path = EliteOTPField/Classes/Components/Entities/EliteOTPAnimationTypes.swift; sourceTree = "<group>"; };
 		F5169C67DB79CDF1B59B45D3D289C58F /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/Core/NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		F5B4EF65FC722945A219B6CB619EFE22 /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		F6688DA89CC81113D735596D5C635148 /* Pods-Rabble Hub-Rabble HubUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rabble Hub-Rabble HubUITests-dummy.m"; sourceTree = "<group>"; };
 		F73C49674ADEF65C9DD2E8F2B873853F /* SDWebImageDownloaderRequestModifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderRequestModifier.m; path = SDWebImage/Core/SDWebImageDownloaderRequestModifier.m; sourceTree = "<group>"; };
 		F74CE0034920561D62A8A565D85A1AB2 /* UIImage+Metadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Metadata.m"; path = "SDWebImage/Core/UIImage+Metadata.m"; sourceTree = "<group>"; };
 		F7BA1D8E20B7EB655EF92242F48F3ECB /* SDImageHEICCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageHEICCoder.m; path = SDWebImage/Core/SDImageHEICCoder.m; sourceTree = "<group>"; };
@@ -998,14 +929,6 @@
 			files = (
 				E377EFE16FB8C700C69171DD7AE4FFA9 /* Foundation.framework in Frameworks */,
 				62B9FB2BAB0F70C3705B33D50FEEFBD2 /* ImageIO.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E308030BC0781FBC68499AA289FBFB5A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46C5A13A2861F43505DAD2FFEE5F5D8D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1244,29 +1167,33 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		27BFB2ECFEAF5A05B7891A49EECAA83F /* Pods-Rabble Hub */ = {
-			isa = PBXGroup;
-			children = (
-				3B01F60EC37A2847B8DA969931C73E18 /* Pods-Rabble Hub.modulemap */,
-				3EF157B21F86DC269B1F700EE1899C45 /* Pods-Rabble Hub-acknowledgements.markdown */,
-				8DD9E0C61972A96FB11FFA46B46C7F5A /* Pods-Rabble Hub-acknowledgements.plist */,
-				E6C80EEC4B5DA2B36A09C4726F76C9DE /* Pods-Rabble Hub-dummy.m */,
-				193769343160C9F2689DBFA23B08D351 /* Pods-Rabble Hub-frameworks.sh */,
-				5EB3AC12CADDA5937F59251407AD1D9B /* Pods-Rabble Hub-Info.plist */,
-				791B2B4DB48D3DE9C39269E54915B02C /* Pods-Rabble Hub-umbrella.h */,
-				2AC649DE3626736CF56A9F246DF2C435 /* Pods-Rabble Hub.debug.xcconfig */,
-				54C6A06EA7B9250B74F2F8BEBBB4957E /* Pods-Rabble Hub.release.xcconfig */,
-			);
-			name = "Pods-Rabble Hub";
-			path = "Target Support Files/Pods-Rabble Hub";
-			sourceTree = "<group>";
-		};
 		303E470972568DE1DC75366DD2DA3CF7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				5341A77F4BD996CB1DEBD1CFE052E6BC /* PrivacyInfo.xcprivacy */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		38DC6AC86DE9BC797F779BEF5D928A47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				988EF6F4675C0C19807FCEFD93336A04 /* DialCountries */,
+				833DC5F4F9CD08CAC365746A33DB43A7 /* DialCountries-DialCountries */,
+				1D93DECC35BF2A0CA8BD5993AE7EC4C6 /* EliteOTPField */,
+				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
+				8D8069D3964814114ACEC3084C010B59 /* IQKeyboardManagerSwift-IQKeyboardManagerSwift */,
+				3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */,
+				8F871E1F62084869A5675BDD18BDF9AE /* Pods-Rabble Hub */,
+				9E75A9B00227AEB14B7FEAAE6EB9D5D0 /* Pods-Rabble HubTests */,
+				3652B113DC334A3FDA0C14F6794A5F69 /* QRCodeReader.swift */,
+				B0B214D775196BA7CA8E17E53048A493 /* SDWebImage */,
+				CF1281E58AA1045D4B7F33FC56691C42 /* SDWebImage-SDWebImage */,
+				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */,
+				13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3CF3CD81C4BAF198FA2F6B08DFC46B05 /* iOS */ = {
@@ -1308,45 +1235,6 @@
 				5EF06FDEFD53BC529B16FCDE8C68DBFE /* PrivacyInfo.xcprivacy */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		5296B791B570B3E8B5B5C954E925C04E /* Pods-Rabble Hub-Rabble HubUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0EA644EF10E4B68335C4498975D2479F /* Pods-Rabble Hub-Rabble HubUITests.modulemap */,
-				25D579E56F57B3D45E98A6760AD46AC6 /* Pods-Rabble Hub-Rabble HubUITests-acknowledgements.markdown */,
-				AE09DB107C9D2F60FC0320641EE769DB /* Pods-Rabble Hub-Rabble HubUITests-acknowledgements.plist */,
-				F6688DA89CC81113D735596D5C635148 /* Pods-Rabble Hub-Rabble HubUITests-dummy.m */,
-				F0F9A70DE130B6A10525C2AE0BF7243B /* Pods-Rabble Hub-Rabble HubUITests-frameworks.sh */,
-				5EC146F7BA460FA40FE5461AC972F977 /* Pods-Rabble Hub-Rabble HubUITests-Info.plist */,
-				69B7A4B7641821679FD80AC6A696E093 /* Pods-Rabble Hub-Rabble HubUITests-umbrella.h */,
-				37DEBF57C604BD59C1314B921266335B /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */,
-				0BA22E3CFCEA7E0D67CCF18E05ED1468 /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */,
-			);
-			name = "Pods-Rabble Hub-Rabble HubUITests";
-			path = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests";
-			sourceTree = "<group>";
-		};
-		5873DDF053D3D027401A949E9F7EF901 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				988EF6F4675C0C19807FCEFD93336A04 /* DialCountries */,
-				833DC5F4F9CD08CAC365746A33DB43A7 /* DialCountries-DialCountries */,
-				1D93DECC35BF2A0CA8BD5993AE7EC4C6 /* EliteOTPField */,
-				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
-				8D8069D3964814114ACEC3084C010B59 /* IQKeyboardManagerSwift-IQKeyboardManagerSwift */,
-				3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */,
-				8F871E1F62084869A5675BDD18BDF9AE /* Pods-Rabble Hub */,
-				3124833E49C3B1DDF1C59F824DBA0EC9 /* Pods-Rabble Hub-Rabble HubUITests */,
-				9E75A9B00227AEB14B7FEAAE6EB9D5D0 /* Pods-Rabble HubTests */,
-				3652B113DC334A3FDA0C14F6794A5F69 /* QRCodeReader.swift */,
-				B0B214D775196BA7CA8E17E53048A493 /* SDWebImage */,
-				CF1281E58AA1045D4B7F33FC56691C42 /* SDWebImage-SDWebImage */,
-				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */,
-				13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		606D91F72DE488AC4B0BFB09CCF31159 /* Toast-Swift */ = {
@@ -1469,6 +1357,32 @@
 			path = "../Target Support Files/QRCodeReader.swift";
 			sourceTree = "<group>";
 		};
+		A83B0399591731268515E8191C7E8282 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AADC7D6DCED34DACEAF15CE8FC98B168 /* Pods-Rabble Hub */,
+				CC6C2E71076077F8A1087C6C9EF43B60 /* Pods-Rabble HubTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AADC7D6DCED34DACEAF15CE8FC98B168 /* Pods-Rabble Hub */ = {
+			isa = PBXGroup;
+			children = (
+				9977F3654C5B561321C8A11869B99DB7 /* Pods-Rabble Hub.modulemap */,
+				D4033D3AEE046BFCAC3E04A9E3CC6754 /* Pods-Rabble Hub-acknowledgements.markdown */,
+				9ED28874478CD46BDBDC5B264AEE36B6 /* Pods-Rabble Hub-acknowledgements.plist */,
+				3740DF15F51D2149E80EDA1033B2F5E6 /* Pods-Rabble Hub-dummy.m */,
+				3992337DAB15AE3A2C13F0F6E8138CCA /* Pods-Rabble Hub-frameworks.sh */,
+				0E48CEB8B95CD6F4966CA38BE3BEFF85 /* Pods-Rabble Hub-Info.plist */,
+				1C7E76C614893164BDF6F39C6480842C /* Pods-Rabble Hub-umbrella.h */,
+				0E735F03986D0CCE892EB4B128D87675 /* Pods-Rabble Hub.debug.xcconfig */,
+				468282030A541551CB8430B505F01978 /* Pods-Rabble Hub.release.xcconfig */,
+			);
+			name = "Pods-Rabble Hub";
+			path = "Target Support Files/Pods-Rabble Hub";
+			sourceTree = "<group>";
+		};
 		AF89C5FFB31CEF7123B698E43D8FA0B5 /* EliteOTPField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1511,6 +1425,22 @@
 			path = "../Target Support Files/Toast-Swift";
 			sourceTree = "<group>";
 		};
+		CC6C2E71076077F8A1087C6C9EF43B60 /* Pods-Rabble HubTests */ = {
+			isa = PBXGroup;
+			children = (
+				650D18DA5A1D29BBC84A3AC0053021D3 /* Pods-Rabble HubTests.modulemap */,
+				00E6E666978C1F2D8939296C9171731D /* Pods-Rabble HubTests-acknowledgements.markdown */,
+				AFA214C6FF663210163819279375A692 /* Pods-Rabble HubTests-acknowledgements.plist */,
+				428F38DD88309D8D90CFA6C6918D51B1 /* Pods-Rabble HubTests-dummy.m */,
+				2A66C8AAC8E1E75178FBA7BB55E64892 /* Pods-Rabble HubTests-Info.plist */,
+				6F8613CD3A33E46F92A84E031BC84739 /* Pods-Rabble HubTests-umbrella.h */,
+				6AE20AEE347185F5681430BB7D84BE5F /* Pods-Rabble HubTests.debug.xcconfig */,
+				8F16A080E9BF50B78853A03C9E2F03AC /* Pods-Rabble HubTests.release.xcconfig */,
+			);
+			name = "Pods-Rabble HubTests";
+			path = "Target Support Files/Pods-Rabble HubTests";
+			sourceTree = "<group>";
+		};
 		CD63589A676D2A279BB948196F3F4DF2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1527,41 +1457,15 @@
 			path = "../Target Support Files/DialCountries";
 			sourceTree = "<group>";
 		};
-		CEA1F98EE5CC14BA68B4A86D0CFBB10B /* Pods-Rabble HubTests */ = {
-			isa = PBXGroup;
-			children = (
-				57BC977252AC7BBFB2647C946E3CA4BC /* Pods-Rabble HubTests.modulemap */,
-				9A4DFDE0EA04AE3AB6AD3F586D0BB32C /* Pods-Rabble HubTests-acknowledgements.markdown */,
-				3ED09B3C3380C19463992CAEA4258AA7 /* Pods-Rabble HubTests-acknowledgements.plist */,
-				7ADB0F1EDF6E950FBAFE3D1798773A11 /* Pods-Rabble HubTests-dummy.m */,
-				A4447B63DF48AC749E344CEC2C151EF8 /* Pods-Rabble HubTests-Info.plist */,
-				4E632BBAD3D749B1D2B570FFFAC291A0 /* Pods-Rabble HubTests-umbrella.h */,
-				C3A2ACF658FA35F3EC4480909D81D213 /* Pods-Rabble HubTests.debug.xcconfig */,
-				6B9A65D42C1F3A6D59B00F62492B6E67 /* Pods-Rabble HubTests.release.xcconfig */,
-			);
-			name = "Pods-Rabble HubTests";
-			path = "Target Support Files/Pods-Rabble HubTests";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				8275CCB4E8732497B1021FCBC240F3C2 /* Frameworks */,
 				86FD7C1AA76403175A41482326661C18 /* Pods */,
-				5873DDF053D3D027401A949E9F7EF901 /* Products */,
-				D05F8C912B76D02DA56276A4B361824B /* Targets Support Files */,
+				38DC6AC86DE9BC797F779BEF5D928A47 /* Products */,
+				A83B0399591731268515E8191C7E8282 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D05F8C912B76D02DA56276A4B361824B /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				27BFB2ECFEAF5A05B7891A49EECAA83F /* Pods-Rabble Hub */,
-				5296B791B570B3E8B5B5C954E925C04E /* Pods-Rabble Hub-Rabble HubUITests */,
-				CEA1F98EE5CC14BA68B4A86D0CFBB10B /* Pods-Rabble HubTests */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		D9FBA94A05EE3DF47BF099363CB3BF77 /* Support Files */ = {
@@ -1818,14 +1722,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF91D0C3C6E75B725264A3AB07516F3C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D184DC69F7D97CBE1D33D0C8BA2133D /* Pods-Rabble Hub-Rabble HubUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F82DF6E77589CD598FFCCBF6A57E5D12 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2064,32 +1960,6 @@
 			productReference = 9E75A9B00227AEB14B7FEAAE6EB9D5D0 /* Pods-Rabble HubTests */;
 			productType = "com.apple.product-type.framework";
 		};
-		CDE6A27B009890B1229836332770A76F /* Pods-Rabble Hub-Rabble HubUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D20F0A8567D9FA1C5D22E186A96F8521 /* Build configuration list for PBXNativeTarget "Pods-Rabble Hub-Rabble HubUITests" */;
-			buildPhases = (
-				EF91D0C3C6E75B725264A3AB07516F3C /* Headers */,
-				062263AACE926CC2421E61E6250C4E00 /* Sources */,
-				E308030BC0781FBC68499AA289FBFB5A /* Frameworks */,
-				A736A860CFF7ADA990D42B047E7E9A7E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4EC29721BB9470558BDD1B391EC8A746 /* PBXTargetDependency */,
-				4CCBC210B54ABBC9C122AAF4615C38DD /* PBXTargetDependency */,
-				13C3255D3905F2561D910B6F19C0A078 /* PBXTargetDependency */,
-				4B7C65DD4B52FB2A446DA74850D61616 /* PBXTargetDependency */,
-				701ABF45E86B6221110AE9DAAEC36D7C /* PBXTargetDependency */,
-				CDF1E52BB27F5F53CD7D201B4B840DB2 /* PBXTargetDependency */,
-				6663BA266D6A31D57EA24219A19AE624 /* PBXTargetDependency */,
-				643D79C72363D3D9E34AAA505DAEAD22 /* PBXTargetDependency */,
-			);
-			name = "Pods-Rabble Hub-Rabble HubUITests";
-			productName = Pods_Rabble_Hub_Rabble_HubUITests;
-			productReference = 3124833E49C3B1DDF1C59F824DBA0EC9 /* Pods-Rabble Hub-Rabble HubUITests */;
-			productType = "com.apple.product-type.framework";
-		};
 		E3845717074531A7A89BAA05907850A7 /* DialCountries-DialCountries */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66583C8E813267D6C1A9B9579F61701A /* Build configuration list for PBXNativeTarget "DialCountries-DialCountries" */;
@@ -2143,7 +2013,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 5873DDF053D3D027401A949E9F7EF901 /* Products */;
+			productRefGroup = 38DC6AC86DE9BC797F779BEF5D928A47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -2155,7 +2025,6 @@
 				982A68D37F5DCBC1FC1FDC0BB2F0EB8E /* IQKeyboardManagerSwift-IQKeyboardManagerSwift */,
 				17F9141D333DA1A7BE5937F227221070 /* Moya */,
 				8807EC29F143CE8205B7E4A42CF61CF4 /* Pods-Rabble Hub */,
-				CDE6A27B009890B1229836332770A76F /* Pods-Rabble Hub-Rabble HubUITests */,
 				C6C93FF5C98D1ACF779B83D5D5A0835C /* Pods-Rabble HubTests */,
 				29F475E46142FCD224E52A385AD26DB6 /* QRCodeReader.swift */,
 				3847153A6E5EEFB86565BA840768F429 /* SDWebImage */,
@@ -2265,13 +2134,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A736A860CFF7ADA990D42B047E7E9A7E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F7C0CC2CF9E43466CF842FCC6397F349 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2283,14 +2145,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		062263AACE926CC2421E61E6250C4E00 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4A7A4C88B7203DA2CF68246CC8DE084 /* Pods-Rabble Hub-Rabble HubUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0F059D90C50CD829E3DBCB5EB514E8DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2616,12 +2470,6 @@
 			target = 704823084523357C0FDD5873EEAF8759 /* EliteOTPField */;
 			targetProxy = E7C6E769162BD01F1783CEB44666E805 /* PBXContainerItemProxy */;
 		};
-		13C3255D3905F2561D910B6F19C0A078 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EliteOTPField;
-			target = 704823084523357C0FDD5873EEAF8759 /* EliteOTPField */;
-			targetProxy = 95E88E44D0F2EDB366CA5290A4CC4702 /* PBXContainerItemProxy */;
-		};
 		21A34253B4D5C6A9E0FF03771169FC03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SDWebImage;
@@ -2646,24 +2494,6 @@
 			target = 29F475E46142FCD224E52A385AD26DB6 /* QRCodeReader.swift */;
 			targetProxy = A2532A3EDC6035A8DA50B037B1C23CC2 /* PBXContainerItemProxy */;
 		};
-		4B7C65DD4B52FB2A446DA74850D61616 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IQKeyboardManagerSwift;
-			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
-			targetProxy = DE71F87437D0C8AC8F73F730353EF9BA /* PBXContainerItemProxy */;
-		};
-		4CCBC210B54ABBC9C122AAF4615C38DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DialCountries;
-			target = 80A9CB4F96ABEE0F4724AC4CA346D702 /* DialCountries */;
-			targetProxy = 8CBAF883BC429BC7ADB9609A1CAFC992 /* PBXContainerItemProxy */;
-		};
-		4EC29721BB9470558BDD1B391EC8A746 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 3967776899F2CE00593E615AFA6B9963 /* PBXContainerItemProxy */;
-		};
 		535CEB4BE9982588F692E89DB91AC2CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Moya;
@@ -2681,24 +2511,6 @@
 			name = IQKeyboardManagerSwift;
 			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
 			targetProxy = 6455ED796B20854B357AA20A73CD5665 /* PBXContainerItemProxy */;
-		};
-		643D79C72363D3D9E34AAA505DAEAD22 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Toast-Swift";
-			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
-			targetProxy = 15CD3BAD204468EF37F34DF12B8D085F /* PBXContainerItemProxy */;
-		};
-		6663BA266D6A31D57EA24219A19AE624 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SDWebImage;
-			target = 3847153A6E5EEFB86565BA840768F429 /* SDWebImage */;
-			targetProxy = 3B807574E336DAF58C94CE6F05288757 /* PBXContainerItemProxy */;
-		};
-		701ABF45E86B6221110AE9DAAEC36D7C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Moya;
-			target = 17F9141D333DA1A7BE5937F227221070 /* Moya */;
-			targetProxy = F2FB94743A54F0A3BBA156B3673DC1EB /* PBXContainerItemProxy */;
 		};
 		7F4FAA7A575AC97F2317425B4AE8B1E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2718,12 +2530,6 @@
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 1C8D6BDAC065173CD64DC6C32A5FAE4D /* PBXContainerItemProxy */;
 		};
-		CDF1E52BB27F5F53CD7D201B4B840DB2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = QRCodeReader.swift;
-			target = 29F475E46142FCD224E52A385AD26DB6 /* QRCodeReader.swift */;
-			targetProxy = 5C02DC00F1D715A2648FF26890C28BDD /* PBXContainerItemProxy */;
-		};
 		CE29531199DC4B7C75BCBBBAF5365722 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "DialCountries-DialCountries";
@@ -2741,7 +2547,7 @@
 /* Begin XCBuildConfiguration section */
 		13B9FB6DACCB08CC720A7B1FF7E558BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AC649DE3626736CF56A9F246DF2C435 /* Pods-Rabble Hub.debug.xcconfig */;
+			baseConfigurationReference = 0E735F03986D0CCE892EB4B128D87675 /* Pods-Rabble Hub.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2778,7 +2584,7 @@
 		};
 		17440AF332F925575EFA8D2191AE2642 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B9A65D42C1F3A6D59B00F62492B6E67 /* Pods-Rabble HubTests.release.xcconfig */;
+			baseConfigurationReference = 8F16A080E9BF50B78853A03C9E2F03AC /* Pods-Rabble HubTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2866,43 +2672,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
-		};
-		1EFA68F8E12814F32FC64811C136D8BD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37DEBF57C604BD59C1314B921266335B /* Pods-Rabble Hub-Rabble HubUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		2309F5E408B21339D6EAFEA4C896054F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3185,7 +2954,7 @@
 		};
 		661A46BC6746BF3C9BC75895B5EC994D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3A2ACF658FA35F3EC4480909D81D213 /* Pods-Rabble HubTests.debug.xcconfig */;
+			baseConfigurationReference = 6AE20AEE347185F5681430BB7D84BE5F /* Pods-Rabble HubTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -3364,44 +3133,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
-		};
-		A644A2FB4E999C97812281A04D9D45B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BA22E3CFCEA7E0D67CCF18E05ED1468 /* Pods-Rabble Hub-Rabble HubUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rabble Hub-Rabble HubUITests/Pods-Rabble Hub-Rabble HubUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		B3CF11682A60F02B60820C17EE93D35E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3721,7 +3452,7 @@
 		};
 		F9845F52C5FA21694A6981C977E93A79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54C6A06EA7B9250B74F2F8BEBBB4957E /* Pods-Rabble Hub.release.xcconfig */;
+			baseConfigurationReference = 468282030A541551CB8430B505F01978 /* Pods-Rabble Hub.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -3899,15 +3630,6 @@
 			buildConfigurations = (
 				13B9FB6DACCB08CC720A7B1FF7E558BF /* Debug */,
 				F9845F52C5FA21694A6981C977E93A79 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D20F0A8567D9FA1C5D22E186A96F8521 /* Build configuration list for PBXNativeTarget "Pods-Rabble Hub-Rabble HubUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1EFA68F8E12814F32FC64811C136D8BD /* Debug */,
-				A644A2FB4E999C97812281A04D9D45B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -29,8 +29,4 @@ target 'Rabble Hub' do
     # Pods for testing (if needed)
   end
 
-  target 'Rabble HubUITests' do
-    # Pods for testing (if needed)
-  end
-
 end
