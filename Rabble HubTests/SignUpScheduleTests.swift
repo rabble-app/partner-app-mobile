@@ -26,7 +26,10 @@ final class SignUpScheduleTests: XCTestCase {
         super.tearDown()
     }
 
-
+    func testForcedFailure() {
+        XCTFail("This test is forced to fail")
+    }
+    
     func testWholeDaySwitchButtonChanged() {
         // Given
         viewController.wholeDaySwitchButton.isOn = true
