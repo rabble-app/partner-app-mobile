@@ -45,5 +45,5 @@ jobs:
         working-directory: .
         
       - name: Run unit tests
-        run: xcodebuild test -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -destination 'platform=iOS Simulator,name=iPhone 13,OS=latest' -only-testing:Rabble\ HubTests
+        run: xcodebuild test -scheme "Rabble Hub" -workspace "Rabble Hub.xcworkspace" -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' -only-testing:Rabble\ HubTests
         working-directory: .
