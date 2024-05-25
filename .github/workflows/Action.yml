@@ -1,5 +1,5 @@
 name: Action
-# Runs unit test - soon
+# Runs unit test
 # Build the project
 on:
   push:
