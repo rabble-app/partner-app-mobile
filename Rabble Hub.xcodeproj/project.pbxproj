@@ -114,6 +114,9 @@
 		AC6417F42BFCBDB400B8A61B /* CustomOpenHoursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F32BFCBDB400B8A61B /* CustomOpenHoursModel.swift */; };
 		AC6417F62C007ED900B8A61B /* SignUpScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F52C007ED900B8A61B /* SignUpScheduleTests.swift */; };
 		AC6417F82C00D8C000B8A61B /* StandardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417F72C00D8C000B8A61B /* StandardResponse.swift */; };
+		AC6418012C020A0C00B8A61B /* OtpInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417FE2C020A0B00B8A61B /* OtpInputViewControllerTests.swift */; };
+		AC6418022C020A0C00B8A61B /* SignUpProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417FF2C020A0B00B8A61B /* SignUpProfileViewControllerTests.swift */; };
+		AC6418032C020A0C00B8A61B /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6418002C020A0B00B8A61B /* SignUpViewControllerTests.swift */; };
 		AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */; };
 		AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */; };
 		AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */; };
@@ -273,6 +276,9 @@
 		AC6417F32BFCBDB400B8A61B /* CustomOpenHoursModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOpenHoursModel.swift; sourceTree = "<group>"; };
 		AC6417F52C007ED900B8A61B /* SignUpScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleTests.swift; sourceTree = "<group>"; };
 		AC6417F72C00D8C000B8A61B /* StandardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardResponse.swift; sourceTree = "<group>"; };
+		AC6417FE2C020A0B00B8A61B /* OtpInputViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpInputViewControllerTests.swift; sourceTree = "<group>"; };
+		AC6417FF2C020A0B00B8A61B /* SignUpProfileViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		AC6418002C020A0B00B8A61B /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoreInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewModel.swift; sourceTree = "<group>"; };
@@ -432,6 +438,9 @@
 			isa = PBXGroup;
 			children = (
 				86ED8D932BF9BE9B0089E36A /* MobileInputViewControllerTests.swift */,
+				AC6417FE2C020A0B00B8A61B /* OtpInputViewControllerTests.swift */,
+				AC6417FF2C020A0B00B8A61B /* SignUpProfileViewControllerTests.swift */,
+				AC6418002C020A0B00B8A61B /* SignUpViewControllerTests.swift */,
 				AC6417F52C007ED900B8A61B /* SignUpScheduleTests.swift */,
 			);
 			path = "Rabble HubTests";
@@ -1118,7 +1127,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6418032C020A0C00B8A61B /* SignUpViewControllerTests.swift in Sources */,
+				AC6418012C020A0C00B8A61B /* OtpInputViewControllerTests.swift in Sources */,
 				AC6417F62C007ED900B8A61B /* SignUpScheduleTests.swift in Sources */,
+				AC6418022C020A0C00B8A61B /* SignUpProfileViewControllerTests.swift in Sources */,
 				86ED8D942BF9BE9B0089E36A /* MobileInputViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
