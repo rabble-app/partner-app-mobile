@@ -34,4 +34,5 @@ struct URLConfig {
     static let getSuppliers = "/users/producers"
     static let createBuyingTeams = "/teams/create"
     static let addStoreHours = "/store/open-hours"
+    static let getDaysOfDelivery = "/postal-code/producer/days-of-delivery"
 }

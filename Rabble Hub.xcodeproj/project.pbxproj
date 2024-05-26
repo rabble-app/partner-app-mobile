@@ -117,6 +117,7 @@
 		AC6418012C020A0C00B8A61B /* OtpInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417FE2C020A0B00B8A61B /* OtpInputViewControllerTests.swift */; };
 		AC6418022C020A0C00B8A61B /* SignUpProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6417FF2C020A0B00B8A61B /* SignUpProfileViewControllerTests.swift */; };
 		AC6418032C020A0C00B8A61B /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6418002C020A0B00B8A61B /* SignUpViewControllerTests.swift */; };
+		AC6418072C0378DA00B8A61B /* DeliveryDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6418062C0378DA00B8A61B /* DeliveryDayResponse.swift */; };
 		AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */; };
 		AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */; };
 		AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */; };
@@ -280,6 +281,7 @@
 		AC6417FE2C020A0B00B8A61B /* OtpInputViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpInputViewControllerTests.swift; sourceTree = "<group>"; };
 		AC6417FF2C020A0B00B8A61B /* SignUpProfileViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewControllerTests.swift; sourceTree = "<group>"; };
 		AC6418002C020A0B00B8A61B /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
+		AC6418062C0378DA00B8A61B /* DeliveryDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDayResponse.swift; sourceTree = "<group>"; };
 		AC8400962BD8F26000357E5D /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoreInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AC84009C2BD918A000357E5D /* ProfileMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewModel.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */,
 				AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */,
 				AC6417F72C00D8C000B8A61B /* StandardResponse.swift */,
+				AC6418062C0378DA00B8A61B /* DeliveryDayResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1070,6 +1073,7 @@
 				8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */,
 				8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
+				AC6418072C0378DA00B8A61B /* DeliveryDayResponse.swift in Sources */,
 				AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				865618A02BFFA9E8001E65EB /* LoadingViewController.swift in Sources */,
