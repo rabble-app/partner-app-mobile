@@ -106,14 +106,14 @@ extension ProfileOpenHoursViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:SignUpScheduleTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "SignUpScheduleCell") as! SignUpScheduleTableViewCell
+        let cell:ProfileScheduleTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "ProfileScheduleCell") as! ProfileScheduleTableViewCell
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        let cell:SignUpScheduleTableViewCell = cell as! SignUpScheduleTableViewCell
+        let cell:ProfileScheduleTableViewCell = cell as! ProfileScheduleTableViewCell
             
         if self.selectedStoreHoursType == .monToFri {
             cell.configureCell(mode: .monFri, object: self.customMonToFri!.customOpenHours[indexPath.row])
