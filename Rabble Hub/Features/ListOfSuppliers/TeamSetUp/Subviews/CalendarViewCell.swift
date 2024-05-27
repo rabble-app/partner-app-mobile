@@ -18,7 +18,7 @@ class CalendarViewCell: JTAppleCell {
         self.backgroundContentView.layer.cornerRadius = self.backgroundContentView.frame.height / 2
     }
     
-    func configureCell(cellState: CellState) {
+    func configureCell(cellState: CellState, selectedDate: Date?) {
         
         self.isHidden = !cellState.date.isThisMonth()
         
@@ -30,6 +30,16 @@ class CalendarViewCell: JTAppleCell {
         }
         else {
             self.dateLabel.textColor = .gray4
+        }
+        
+        if let date = selectedDate, date.isSameDay(as: cellState.date) {
+            self.dateLabel.textColor = .calendarTextHighlight
+            self.dateLabel.font = self.dateLabel.font.withSize(24)
+            self.backgroundContentView.backgroundColor = .calendarDayBackground
+        }
+        else {
+            self.backgroundContentView.backgroundColor = .clear
+            self.dateLabel.font = self.dateLabel.font.withSize(20)
         }
     }
 }

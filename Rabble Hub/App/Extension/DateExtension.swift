@@ -37,4 +37,20 @@ extension Date {
         return currentComponents.year == givenComponents.year &&
         currentComponents.month == givenComponents.month
     }
+    
+    /// Compares the date with another date down to the day level (ignoring time components).
+    /// - Parameter otherDate: The other date to compare with.
+    /// - Returns: A boolean value indicating whether the two dates are the same at the day level.
+    func isSameDay(as otherDate: Date) -> Bool {
+        let calendar = Calendar.current
+        
+        // Extract year, month, and day components from both dates
+        let selfComponents = calendar.dateComponents([.year, .month, .day], from: self)
+        let otherComponents = calendar.dateComponents([.year, .month, .day], from: otherDate)
+        
+        // Compare the components
+        return selfComponents.year == otherComponents.year &&
+        selfComponents.month == otherComponents.month &&
+        selfComponents.day == otherComponents.day
+    }
 }

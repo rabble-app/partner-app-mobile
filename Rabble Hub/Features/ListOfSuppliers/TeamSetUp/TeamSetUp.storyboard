@@ -12,6 +12,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="SF-Pro.ttf">
+            <string>SFPro-Medium</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
         </array>
@@ -499,10 +500,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuQ-eu-2tD" userLabel="Calendar View">
-                                <rect key="frame" x="16" y="329.66666666666669" width="361" height="287.00000000000006"/>
+                                <rect key="frame" x="16" y="329.66666666666674" width="361" height="387"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rDX-da-UVV" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                        <rect key="frame" x="8" y="25" width="345" height="262"/>
+                                        <rect key="frame" x="8" y="25" width="345" height="282"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ayf-r5-hlx">
                                             <size key="itemSize" width="128" height="128"/>
@@ -519,10 +520,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu2-DO-osO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                            <rect key="frame" x="1" y="1" width="42" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgb-q0-d4r">
-                                                                    <rect key="frame" x="10" y="10" width="24" height="24"/>
+                                                                    <rect key="frame" x="9" y="9" width="24" height="24"/>
                                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
                                                                     <color key="textColor" name="blue_1"/>
                                                                     <nil key="highlightedColor"/>
@@ -530,16 +531,17 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="0.11746094558412666" colorSpace="calibratedRGB"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" secondItem="uu2-DO-osO" secondAttribute="height" multiplier="1:1" id="89B-ag-VcK"/>
+                                                                <constraint firstAttribute="width" constant="42" id="JMW-vb-kXS"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerX" secondItem="uu2-DO-osO" secondAttribute="centerX" id="aF1-8k-pbz"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerY" secondItem="uu2-DO-osO" secondAttribute="centerY" id="bGb-3f-udF"/>
+                                                                <constraint firstAttribute="height" constant="42" id="xUH-MW-YKT"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="uu2-DO-osO" secondAttribute="bottom" id="2qW-jY-KQR"/>
-                                                        <constraint firstAttribute="trailing" secondItem="uu2-DO-osO" secondAttribute="trailing" id="Abo-6G-L69"/>
-                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="leading" secondItem="gtB-qa-iYN" secondAttribute="leading" id="b9m-cP-UUZ"/>
-                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="top" secondItem="gtB-qa-iYN" secondAttribute="top" id="wAr-1n-NJu"/>
+                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="centerY" secondItem="gtB-qa-iYN" secondAttribute="centerY" id="4HR-7y-J8g"/>
+                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="centerX" secondItem="gtB-qa-iYN" secondAttribute="centerX" id="8NB-D6-490"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="44" height="44"/>
@@ -600,17 +602,73 @@
                                             <constraint firstAttribute="height" constant="20" id="O02-Qg-0Ih"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQO-fG-jfv" userLabel="Separator View">
+                                        <rect key="frame" x="16" y="306.99999999999994" width="345" height="0.33333333333331439"/>
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.38123215429040769" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.33000000000000002" id="lBh-Js-4mw"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWZ-e7-Ne7">
+                                        <rect key="frame" x="16" y="338.66666666666669" width="8" height="8"/>
+                                        <color key="backgroundColor" name="calendar_view_today"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="Apj-tq-59u"/>
+                                            <constraint firstAttribute="height" constant="8" id="Bfn-rE-Fpd"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today’s Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHJ-yf-9SX">
+                                        <rect key="frame" x="31.999999999999993" y="334.33333333333331" width="85.333333333333314" height="17"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvT-63-qot">
+                                        <rect key="frame" x="16" y="361.99999999999994" width="8" height="8"/>
+                                        <color key="backgroundColor" name="calendar_text_highlight"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="DcZ-59-fTs"/>
+                                            <constraint firstAttribute="height" constant="8" id="rHi-Ds-K9M"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{supplier.name}'s available delivery days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JES-xd-rsc">
+                                        <rect key="frame" x="32" y="357.66666666666669" width="268" height="17"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="JES-xd-rsc" firstAttribute="centerY" secondItem="rvT-63-qot" secondAttribute="centerY" id="2WO-05-pei"/>
+                                    <constraint firstItem="tQO-fG-jfv" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="16" id="3D2-i4-LWr"/>
+                                    <constraint firstItem="tQO-fG-jfv" firstAttribute="top" secondItem="rDX-da-UVV" secondAttribute="bottom" id="3ty-vK-Ngb"/>
+                                    <constraint firstItem="dWZ-e7-Ne7" firstAttribute="top" secondItem="tQO-fG-jfv" secondAttribute="bottom" constant="31.5" id="8a1-Ty-3hs"/>
+                                    <constraint firstItem="nHJ-yf-9SX" firstAttribute="centerY" secondItem="dWZ-e7-Ne7" secondAttribute="centerY" id="9PF-0l-yKl"/>
                                     <constraint firstItem="rDX-da-UVV" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="8" id="Bx2-hx-SAW"/>
-                                    <constraint firstAttribute="bottom" secondItem="rDX-da-UVV" secondAttribute="bottom" id="LtH-Rd-Pdi"/>
+                                    <constraint firstItem="rvT-63-qot" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="16" id="FY0-0H-pR1"/>
+                                    <constraint firstAttribute="bottom" secondItem="rDX-da-UVV" secondAttribute="bottom" constant="80" id="LtH-Rd-Pdi"/>
                                     <constraint firstAttribute="trailing" secondItem="rDX-da-UVV" secondAttribute="trailing" constant="8" id="PGY-iz-mjW"/>
                                     <constraint firstItem="rDX-da-UVV" firstAttribute="top" secondItem="sm3-ib-wlq" secondAttribute="bottom" id="TEk-xa-kCi"/>
+                                    <constraint firstAttribute="trailing" secondItem="tQO-fG-jfv" secondAttribute="trailing" id="Xgr-Pf-o2f"/>
+                                    <constraint firstItem="dWZ-e7-Ne7" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="16" id="aHN-Ix-zdZ"/>
+                                    <constraint firstItem="JES-xd-rsc" firstAttribute="leading" secondItem="rvT-63-qot" secondAttribute="trailing" constant="8" id="cnS-OD-39p"/>
                                     <constraint firstItem="sm3-ib-wlq" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="12" id="lNr-oL-ptR"/>
                                     <constraint firstAttribute="trailing" secondItem="sm3-ib-wlq" secondAttribute="trailing" constant="12" id="mHj-ne-9ol"/>
-                                    <constraint firstAttribute="height" constant="287" id="qnG-MM-Fgc"/>
+                                    <constraint firstAttribute="height" constant="387" id="qnG-MM-Fgc"/>
                                     <constraint firstItem="sm3-ib-wlq" firstAttribute="top" secondItem="cuQ-eu-2tD" secondAttribute="top" constant="5" id="qzW-Y4-A2l"/>
+                                    <constraint firstItem="rvT-63-qot" firstAttribute="top" secondItem="dWZ-e7-Ne7" secondAttribute="bottom" constant="15.33" id="vWn-cT-mNS"/>
+                                    <constraint firstItem="nHJ-yf-9SX" firstAttribute="leading" secondItem="dWZ-e7-Ne7" secondAttribute="trailing" constant="8" id="y88-wq-6gM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -651,7 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZE-Ud-1s1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="4"/>
+            <point key="canvasLocation" x="635.87786259541986" y="3.5211267605633805"/>
         </scene>
         <!--CreateA Limit View Controller-->
         <scene sceneID="ZT7-wo-eXX">
@@ -1015,6 +1073,12 @@
         </namedColor>
         <namedColor name="button_title_color">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="calendar_text_highlight">
+            <color red="0.0" green="0.32549019607843138" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="calendar_view_today">
+            <color red="0.73299998044967651" green="0.39599999785423279" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_1">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
