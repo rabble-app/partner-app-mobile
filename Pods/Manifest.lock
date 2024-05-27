@@ -3,6 +3,7 @@ PODS:
   - DialCountries (0.1.3)
   - EliteOTPField (0.1.3)
   - IQKeyboardManagerSwift (7.0.2)
+  - JTAppleCalendar (7.1.8)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - DialCountries
   - EliteOTPField
   - IQKeyboardManagerSwift
+  - JTAppleCalendar (~> 7.1)
   - Moya (~> 15.0)
   - QRCodeReader.swift (~> 10.1.0)
   - SDWebImage (~> 5.0)
@@ -28,6 +30,7 @@ SPEC REPOS:
     - DialCountries
     - EliteOTPField
     - IQKeyboardManagerSwift
+    - JTAppleCalendar
     - Moya
     - QRCodeReader.swift
     - SDWebImage
@@ -38,11 +41,12 @@ SPEC CHECKSUMS:
   DialCountries: 098cb20d88eba888dcc0474060694b545fb36ce1
   EliteOTPField: 40f227886c6c9601f714f301b2a2c23bb92c8be0
   IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
+  JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
   SDWebImage: dfe95b2466a9823cf9f0c6d01217c06550d7b29a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: a01eb8dd320d54a6d33c3784a39da3cc8ede8956
+PODFILE CHECKSUM: 847a4dcdb30f8c043cf04f6d161b1e5932edabaf
 
 COCOAPODS: 1.15.2

@@ -7,6 +7,7 @@
 
 import UIKit
 import Moya
+import JTAppleCalendar
 
 class ChooseDeliveryDayViewController: UIViewController {
     
@@ -23,10 +24,18 @@ class ChooseDeliveryDayViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
 
+    @IBOutlet weak var calendarCollectionView: JTAppleCalendarView!
+    let formatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // fetch the available delivery days
         getDeliveryDays()
     }
     
@@ -49,12 +58,17 @@ class ChooseDeliveryDayViewController: UIViewController {
             self.stepContainer.isHidden = true
             self.stepContainer_height.constant = 0
         }
+        
+        self.calendarCollectionView.calendarDelegate = self
+        self.calendarCollectionView.calendarDataSource = self
     }
     
     func getDeliveryDays() {
         
+        guard let supplierId = selectedSupplier?.id else { return }
+        
         LoadingViewController.present(from: self)
-        apiProvider.request(.getDeliveryDays(supplierId: selectedSupplier?.id)) { result in
+        apiProvider.request(.getDeliveryDays(supplierId: supplierId)) { result in
             LoadingViewController.dismiss(from: self)
             
             switch result {
@@ -68,6 +82,7 @@ class ChooseDeliveryDayViewController: UIViewController {
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                             // reload calendar
+                            self.calendarCollectionView.reloadData()
                         }
                         
                     }else{
@@ -116,6 +131,35 @@ class ChooseDeliveryDayViewController: UIViewController {
                 self.present(vc, animated: true)
             }
         }
+    }
+    
+}
+
+
+extension ChooseDeliveryDayViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func configureCalendar(_ calendar: JTAppleCalendar.JTAppleCalendarView) -> JTAppleCalendar.ConfigurationParameters {
+        
+        let parameters = ConfigurationParameters(startDate: Date(), endDate: Date())
+        return parameters
+    }
+    
+
+    func calendar(_ calendar: JTAppleCalendar.JTAppleCalendarView, cellForItemAt date: Date, cellState: JTAppleCalendar.CellState, indexPath: IndexPath) -> JTAppleCalendar.JTAppleCell {
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CalendarViewCell", for: indexPath) as! CalendarViewCell
+        cell.configureCell(cellState: cellState)
+        return cell
+    }
+    
+    
+    func calendar(_ calendar: JTAppleCalendar.JTAppleCalendarView, willDisplay cell: JTAppleCalendar.JTAppleCell, forItemAt date: Date, cellState: JTAppleCalendar.CellState, indexPath: IndexPath) {
+//        let cell:CalendarViewCell = cell as! CalendarViewCell
+//        cell.configureCell(cellState: cellState)
+    }
+
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 44, height: 44)
     }
     
 }
