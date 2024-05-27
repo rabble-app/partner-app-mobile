@@ -30,12 +30,18 @@ struct UserData: Codable {
     let createdAt: Date
     let updatedAt: Date
     let notificationToken: String?
+    let producer: String?
+    let partner: PartnerData?
     let token: String
+}
+
+struct PartnerData: Codable {
+    let id: String
 }
 
 extension UserData {
     private enum CodingKeys: String, CodingKey {
-        case id, phone, email, password, firstName, lastName, postalCode, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, token
+        case id, phone, email, password, firstName, lastName, postalCode, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token
         case createdAt = "createdAt"
         case updatedAt = "updatedAt"
     }
@@ -56,6 +62,8 @@ extension UserData {
         imageKey = try container.decodeIfPresent(String.self, forKey: .imageKey)
         role = try container.decode(String.self, forKey: .role)
         notificationToken = try container.decodeIfPresent(String.self, forKey: .notificationToken)
+        producer = try container.decodeIfPresent(String.self, forKey: .producer)
+        partner = try container.decodeIfPresent(PartnerData.self, forKey: .partner)
         token = try container.decode(String.self, forKey: .token)
         
         let createdAtString = try container.decode(String.self, forKey: .createdAt)
