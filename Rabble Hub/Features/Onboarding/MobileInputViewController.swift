@@ -11,8 +11,9 @@ import SafariServices
 import Toast_Swift
 import Moya
 
-class MobileInputViewController: UIViewController {
+class MobileInputViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var continueButton: PrimaryButton!
     @IBOutlet var tickBoxButton: UIButton!
     @IBOutlet var agreementLabel: UILabel!
     @IBOutlet var tickBox: UIView!
@@ -56,7 +57,21 @@ class MobileInputViewController: UIViewController {
         tickBoxButton.clipsToBounds = true
         tickBoxButton.setTitle("", for: .normal)
         
+        phoneNumberTextfield.delegate = self
+        
         updateTickBoxButtonUI()
+        
+        continueButton.isEnabled = false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Call updateContinueButtonState after text is changed in the text field
+        updateContinueButtonState()
+        return true
+    }
+    
+    func updateContinueButtonState() {
+        continueButton.isEnabled = validatePhoneNumber() && validateTickBox()
     }
     
     func createAttributedAgreementText() -> NSAttributedString {
@@ -202,6 +217,7 @@ class MobileInputViewController: UIViewController {
     @IBAction func tickBoxButtonTap(_ sender: Any) {
         isTickBoxSelected.toggle()
         updateTickBoxButtonUI()
+        updateContinueButtonState()
     }
 }
 

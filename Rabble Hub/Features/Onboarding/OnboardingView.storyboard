@@ -334,6 +334,7 @@
                     <connections>
                         <outlet property="agreementLabel" destination="bcy-oy-gop" id="tuw-Zb-oJw"/>
                         <outlet property="codeLabel" destination="4UE-hS-KxF" id="50K-tg-MOv"/>
+                        <outlet property="continueButton" destination="KOX-JS-QCm" id="uzN-IG-LJ3"/>
                         <outlet property="countryPickerButton" destination="KhB-MB-RVA" id="psg-4d-bSA"/>
                         <outlet property="flag" destination="aXM-sT-dy2" id="yDe-07-zd5"/>
                         <outlet property="phoneNumberContainer" destination="9jx-se-sA3" id="z21-B1-0p6"/>
