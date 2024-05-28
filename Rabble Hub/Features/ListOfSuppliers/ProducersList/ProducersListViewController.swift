@@ -17,7 +17,7 @@ class ProducersListViewController: UIViewController {
     private var suppliers = [Supplier]()
     private var filteredSuppliers = [Supplier]()
     
-    private var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()

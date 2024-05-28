@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet var shelfSpace: RabbleTextField!
     @IBOutlet var dryStorageSpace: RabbleTextField!
     
-    private var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +91,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    private func saveStore(_ store: Store) {
+    func saveStore(_ store: Store) {
         StoreManager.shared.store = store
     }
     

@@ -24,7 +24,7 @@ class MobileInputViewController: UIViewController {
     
     private var phoneNumber: String = ""
     private var sid: String = ""
-    private var isTickBoxSelected = false
+    var isTickBoxSelected = false
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
