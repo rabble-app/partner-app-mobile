@@ -16,6 +16,7 @@ public enum RabbleHubAPI {
     case getSuppliers(offset: Int, postalId: String)
     case createBuyingTeam(name: String, postalCode: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
     case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
+    case getDeliveryDays(supplierId: String?)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -39,6 +40,8 @@ extension RabbleHubAPI: TargetType {
             return URLConfig.createBuyingTeams
         case .addStoreHours:
             return URLConfig.addStoreHours
+        case .getDeliveryDays(let supplierId):
+            return "\(URLConfig.getDaysOfDelivery)/\(supplierId!)"
         }
     }
     
@@ -48,7 +51,7 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .updateUserRecord, .addStoreHours:
             return .patch
-        case .getSuppliers:
+        case .getSuppliers, .getDeliveryDays:
             return .get
         }
     }
@@ -110,6 +113,8 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .addStoreHours(let customOpenHoursModel):
             return .requestParameters(parameters: (customOpenHoursModel?.asDictionary())!, encoding: JSONEncoding.default)
+        case .getDeliveryDays:
+            return .requestPlain
         }
     }
     
