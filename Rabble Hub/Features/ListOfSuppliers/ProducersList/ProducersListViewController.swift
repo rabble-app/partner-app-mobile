@@ -14,68 +14,88 @@ class ProducersListViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var producersTableview: UITableView!
     
-    var suppliers = [Supplier]()
-    var filteredSuppliers = [Supplier]() // Array to hold filtered suppliers
+    private var suppliers = [Supplier]()
+    private var filteredSuppliers = [Supplier]()
     
-    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = Colors.BackgroundPrimary
         
+        setupView()
+        fetchSuppliers()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = Colors.BackgroundPrimary
         producersTableview.delegate = self
         producersTableview.dataSource = self
         searchBar.delegate = self
-        
-        self.getSuppliers()
     }
     
-    func getSuppliers() {
-        guard let postalCode = StoreManager.shared.postalCode else {
-             return
-         }
+    private func fetchSuppliers() {
+        guard let postalCode = StoreManager.shared.postalCode else { return }
         
         LoadingViewController.present(from: self)
+        
         apiProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in
-            LoadingViewController.dismiss(from: self)
-            switch result {
-            case let .success(response):
-                // Handle successful response
-                do {
-                    let response = try response.map(GetSuppliersResponse.self)
-                    if response.statusCode == 200 {
-                        print("Suppliers: \(response.data)")
-                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
-                        self.suppliers = response.data ?? []
-                        self.filteredSuppliers = response.data ?? [] // Initialize filteredSuppliers with all suppliers initially
-                        self.producersTableview.reloadData()
-                    } else {
-                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
-                        print("Error Message: \(response.message)")
-                    }
-                } catch {
-                    do {
-                        let response = try response.map(StandardResponse.self)
-                        SnackBar().alert(withMessage: response.message[0], isSuccess: false, parent: self.view)
-                    } catch {
-                        SnackBar().alert(withMessage: "An error has occured", isSuccess: false, parent: self.view)
-                        print("Failed to map response data: \(error)")
-                    }
-                }
-            case let .failure(error):
-                // Handle error
-                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
-                print("Request failed with error: \(error)")
+            guard let presentingViewController = self.presentingViewController else {
+                // Unable to get presenting view controller
+                return
             }
+            
+            LoadingViewController.present(from: presentingViewController)
+            self.handleSuppliersResponse(result)
         }
+    }
+    
+    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            self.handleSuccessResponse(response)
+        case .failure(let error):
+            self.showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessResponse(_ response: Response) {
+        do {
+            let suppliersResponse = try response.map(GetSuppliersResponse.self)
+            if suppliersResponse.statusCode == 200 {
+                self.updateSuppliers(suppliersResponse.data ?? [])
+                SnackBar().alert(withMessage: suppliersResponse.message, isSuccess: true, parent: self.view)
+            } else {
+                self.showError(suppliersResponse.message)
+            }
+        } catch {
+            self.handleMappingError(response)
+        }
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            self.showError(errorResponse.message.first ?? "An error occurred")
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
+    }
+    
+    private func updateSuppliers(_ newSuppliers: [Supplier]) {
+        suppliers = newSuppliers
+        filteredSuppliers = newSuppliers
+        producersTableview.reloadData()
     }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProducersListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredSuppliers.count // Use filteredSuppliers for number of rows
+        return filteredSuppliers.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -87,14 +107,9 @@ extension ProducersListViewController: UITableViewDelegate, UITableViewDataSourc
             return UITableViewCell()
         }
         
-        let supplier = self.filteredSuppliers[indexPath.row] // Use filteredSuppliers to populate cells
-        cell.producerName.text = supplier.businessName
-        cell.producerDesc.text = supplier.description
-        cell.producerType.text = supplier.categories.first?.category.name
+        let supplier = filteredSuppliers[indexPath.row]
+        cell.configure(with: supplier)
         
-        if let imageUrl = URL(string: supplier.imageUrl) {
-            cell.producerImage?.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
-        }
         return cell
     }
     
@@ -105,8 +120,8 @@ extension ProducersListViewController: UITableViewDelegate, UITableViewDataSourc
             let pushAnimator = PushAnimator()
             vc.transitioningDelegate = pushAnimator
             vc.selectedSupplier = filteredSuppliers[indexPath.row]
-            self.title = "Team Settings"
-            self.present(vc, animated: true)
+            title = "Team Settings"
+            present(vc, animated: true)
         }
     }
 }
@@ -114,13 +129,21 @@ extension ProducersListViewController: UITableViewDelegate, UITableViewDataSourc
 // MARK: - UISearchBarDelegate
 extension ProducersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            // If search text is empty, show all suppliers
-            filteredSuppliers = suppliers
-        } else {
-            // Filter suppliers based on business name containing the search text
-            filteredSuppliers = suppliers.filter { $0.businessName.localizedCaseInsensitiveContains(searchText) }
+        filteredSuppliers = searchText.isEmpty ? suppliers : suppliers.filter {
+            $0.businessName.localizedCaseInsensitiveContains(searchText)
         }
-        producersTableview.reloadData() // Reload table view to reflect filtered data
+        producersTableview.reloadData()
+    }
+}
+
+// MARK: - ProducersListTableViewCell Extension
+extension ProducersListTableViewCell {
+    func configure(with supplier: Supplier) {
+        producerName.text = supplier.businessName
+        producerDesc.text = supplier.description
+        producerType.text = supplier.categories.first?.category.name
+        if let imageUrl = URL(string: supplier.imageUrl) {
+            producerImage?.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
+        }
     }
 }

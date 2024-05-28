@@ -18,10 +18,7 @@ class SignUpProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? SignUpStepIndicatorViewController {
@@ -29,48 +26,61 @@ class SignUpProfileViewController: UIViewController {
         }
     }
     
-    
     func updateUserRecord() {
+        guard let firstName = firstName.text, let lastName = lastName.text, let email = email.text else {
+            return
+        }
+        
         LoadingViewController.present(from: self)
-        apiProvider.request(.updateUserRecord(firstName: firstName.text ?? "", lastName: lastName.text ?? "", email: email.text ?? "")) { result in
+        apiProvider.request(.updateUserRecord(firstName: firstName, lastName: lastName, email: email)) { [weak self] result in
+            guard let self = self else { return }
+            
             LoadingViewController.dismiss(from: self)
+            
             switch result {
             case let .success(response):
-                // Handle successful response
-                do {
-                    let response = try response.map(UpdateUserRecordResponse.self)
-                    if response.statusCode == 200 || response.statusCode == 201 {
-                        print(response.data as Any)
-                        guard let user = response.data else {
-                            return
-                        }
-                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                            self.saveUser(user)
-                            self.goToAddStoreOpenHours()
-                        }
-                       
-                    }else{
-                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
-                        print("Error Message: \(response.message)")
-                    }
-                    
-                } catch {
-                    do {
-                        let response = try response.map(StandardResponse.self)
-                        SnackBar().alert(withMessage: response.message[0], isSuccess: false, parent: self.view)
-                    } catch {
-                        SnackBar().alert(withMessage: "An error has occured", isSuccess: false, parent: self.view)
-                        print("Failed to map response data: \(error)")
-                    }
-                }
+                self.handleSuccessResponse(response)
             case let .failure(error):
-                // Handle error
-                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
-                print("Request failed with error: \(error)")
+                self.handleFailure(error)
             }
         }
+    }
+    
+    private func handleSuccessResponse(_ response: Response) {
+        do {
+            let response = try response.map(UpdateUserRecordResponse.self)
+            if response.statusCode == 200 || response.statusCode == 201 {
+                if let user = response.data {
+                    saveUser(user)
+                    SnackBar().alert(withMessage: response.message, isSuccess: true, parent: view)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.goToAddStoreOpenHours()
+                    }
+                } else {
+                    SnackBar().alert(withMessage: "Failed to update user record", isSuccess: false, parent: view)
+                }
+            } else {
+                SnackBar().alert(withMessage: response.message, isSuccess: false, parent: view)
+            }
+        } catch {
+            handleErrorResponse(response)
+        }
+    }
+
+    private func handleErrorResponse(_ response: Response) {
+        do {
+            let response = try response.map(StandardResponse.self)
+            SnackBar().alert(withMessage: response.message.first ?? "An error occurred", isSuccess: false, parent: view)
+        } catch {
+            SnackBar().alert(withMessage: "An error occurred", isSuccess: false, parent: view)
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func handleFailure(_ error: MoyaError) {
+        SnackBar().alert(withMessage: error.localizedDescription, isSuccess: false, parent: view)
+        print("Request failed with error: \(error)")
     }
     
     func saveUser(_ user: User) {
@@ -78,11 +88,11 @@ class SignUpProfileViewController: UIViewController {
     }
     
     @IBAction func previousStepButtonTap(_ sender: Any) {
-        self.dismiss(animated: false)
+        dismiss(animated: false)
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
-        self.updateUserRecord()
+        updateUserRecord()
     }
     
     func goToAddStoreOpenHours() {
@@ -91,6 +101,4 @@ class SignUpProfileViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false, completion: nil)
     }
-    
-    
 }

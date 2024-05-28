@@ -17,6 +17,10 @@ class SetupTeamSuccessViewController: UIViewController {
     
 
     @IBAction func goToTeamPageButtonTap(_ sender: Any) {
+        goToMainTab()
+    }
+    
+    func goToMainTab() {
         let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
             vc.modalPresentationStyle = .overFullScreen
