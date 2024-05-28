@@ -35,6 +35,10 @@ class CreateATeamPopUpViewController: UIViewController {
         self.dismiss(animated: false)
     }
     @IBAction func skipButtonTap(_ sender: Any) {
+        goToMainTab()
+    }
+    
+    func goToMainTab() {
         let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
             vc.modalPresentationStyle = .overFullScreen

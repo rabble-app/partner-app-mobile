@@ -124,7 +124,6 @@ class SignUpScheduleViewController: UIViewController {
             param = self.allTheTimeSched
         }
         
-        print(param?.asDictionary() as Any)
         LoadingViewController.present(from: self)
         apiProvider.request(.addStoreHours(customOpenHoursModel: param)) { result in
             LoadingViewController.dismiss(from: self)
@@ -149,7 +148,6 @@ class SignUpScheduleViewController: UIViewController {
                         let response = try response.map(StandardResponse.self)
                         SnackBar().alert(withMessage: response.message[0], isSuccess: false, parent: self.view)
                     } catch {
-                        SnackBar().alert(withMessage: "An error has occured", isSuccess: false, parent: self.view)
                         print("Failed to map response data: \(error)")
                     }
                 }
