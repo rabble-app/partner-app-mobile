@@ -84,7 +84,13 @@ class OtpInputViewController: UIViewController {
                             let tokenManager = UserDefaultsTokenManager()
                             let token = response.data?.token
                             tokenManager.saveToken(token ?? "")
-                            self.goToSignUp()
+                            
+                            if let partnerId = response.data?.partner?.id {
+                                self.goToMainTab()
+                            }
+                            else {
+                                self.goToSignUp()
+                            }
                         }
                         
                        
@@ -114,6 +120,14 @@ class OtpInputViewController: UIViewController {
         let vc = signUpView.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false, completion: nil)
+    }
+    
+    func goToMainTab() {
+        let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
     }
     
     @IBAction func continueButtonTap(_ sender: Any) {

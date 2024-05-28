@@ -140,6 +140,7 @@
 		ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */; };
 		ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */; };
 		ACC719942BDA881500CF78DC /* ProfileOpenHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */; };
+		ACFD592D2C04BC6A00F772E8 /* ProfileScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD592C2C04BC6A00F772E8 /* ProfileScheduleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +303,7 @@
 		ACC7198F2BDA87DB00CF78DC /* ProfileOwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOwnerViewController.swift; sourceTree = "<group>"; };
 		ACC719912BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePartnerDetailsViewController.swift; sourceTree = "<group>"; };
 		ACC719932BDA881500CF78DC /* ProfileOpenHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOpenHoursViewController.swift; sourceTree = "<group>"; };
+		ACFD592C2C04BC6A00F772E8 /* ProfileScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		B07752F0C1FC2C9A494FC64B /* Pods-Rabble Hub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Hub.release.xcconfig"; path = "Target Support Files/Pods-Rabble Hub/Pods-Rabble Hub.release.xcconfig"; sourceTree = "<group>"; };
 		B6C3CEDBAB1932F4A8E5E68D /* Pods-Rabble PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble PartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-Rabble PartnerTests/Pods-Rabble PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDD4D1F3F5AA5E6E3CCB332 /* Pods_Rabble_HubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabble_HubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -706,6 +708,7 @@
 				AC8400982BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift */,
 				AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */,
 				AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */,
+				ACFD592C2C04BC6A00F772E8 /* ProfileScheduleTableViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1096,6 +1099,7 @@
 				86DD74BB2BD24824001FEBBD /* PartnersViewController.swift in Sources */,
 				86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */,
 				8673495A2BF535FB00F82570 /* GetSuppliersResponse.swift in Sources */,
+				ACFD592D2C04BC6A00F772E8 /* ProfileScheduleTableViewCell.swift in Sources */,
 				86C0F5D82BCFB9EA00B78747 /* ChooseFrequencyViewController.swift in Sources */,
 				AC8400972BD8F26000357E5D /* ProfileMenuTableViewCell.swift in Sources */,
 				AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */,
