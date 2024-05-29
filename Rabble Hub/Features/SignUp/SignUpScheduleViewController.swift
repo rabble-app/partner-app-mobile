@@ -214,6 +214,14 @@ extension SignUpScheduleViewController: UITableViewDelegate, UITableViewDataSour
                 }
                 else if self.selectedStoreHoursType == .custom {
                     self.customDays.updateCustomOpenHour(object)
+                    
+                    // Check if all custom days are disabled
+                    if self.customDays.allCustomOpenHoursDisabled() {
+                        // Perform action if all custom days are disabled
+                        self.nextButton.isEnabled = false
+                    } else {
+                        self.nextButton.isEnabled = true
+                    }
                 }
                 
                 let range = NSMakeRange(0, self.tableView.numberOfSections)
