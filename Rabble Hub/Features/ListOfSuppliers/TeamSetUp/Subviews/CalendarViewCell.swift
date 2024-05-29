@@ -11,6 +11,7 @@ import JTAppleCalendar
 class CalendarViewCell: JTAppleCell {
     @IBOutlet weak var backgroundContentView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
+    var deliveryDays: [DeliveryDay]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,11 +23,19 @@ class CalendarViewCell: JTAppleCell {
         
         self.isHidden = !cellState.date.isThisMonth()
         
+        self.isUserInteractionEnabled = false
+        if let deliveryDays = self.deliveryDays {
+            self.isUserInteractionEnabled = isDeliveryDay(for: cellState.date, deliveryDays: deliveryDays)
+        }
+
         self.dateLabel.text = cellState.text
         self.backgroundContentView.backgroundColor = .clear
         
         if cellState.date.isToday() {
             self.dateLabel.textColor = .calendarViewToday
+        }
+        else if self.isUserInteractionEnabled {
+            self.dateLabel.textColor = .calendarTextHighlight
         }
         else {
             self.dateLabel.textColor = .gray4
@@ -41,5 +50,15 @@ class CalendarViewCell: JTAppleCell {
             self.backgroundContentView.backgroundColor = .clear
             self.dateLabel.font = self.dateLabel.font.withSize(20)
         }
+    }
+    
+    func isDeliveryDay(for date: Date, deliveryDays: [DeliveryDay]) -> Bool {
+        guard let weekday = date.getDayOfWeek() else { return false }
+        for deliveryDay in deliveryDays {
+            if let day = deliveryDay.day, let deliveryDayEnum = Weekday(rawValue: day.uppercased()), deliveryDayEnum == weekday {
+                return true
+            }
+        }
+        return false
     }
 }

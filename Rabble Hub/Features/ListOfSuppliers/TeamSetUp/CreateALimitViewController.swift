@@ -23,6 +23,7 @@ class CreateALimitViewController: UIViewController {
     var isFromEdit: Bool = false
     var frequency: Int = 0
     var selectedSupplier: Supplier?
+    var deliveryDay: DeliveryDay?
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
@@ -85,6 +86,11 @@ class CreateALimitViewController: UIViewController {
               let storeId = StoreManager.shared.storeId,
               let userId = StoreManager.shared.userId else { return }
         
+        guard let deliveryDayStr = self.deliveryDay?.day,
+              let nextDeliveryDateStr = self.deliveryDay?.getNextDeliveryDate()?.toString(),
+              let nextCutOffDateStr = self.deliveryDay?.getNextCutoffDate()?.toString()
+        else { return }
+        
         LoadingViewController.present(from: self)
         
         apiProvider.request(.createBuyingTeam(
@@ -96,9 +102,9 @@ class CreateALimitViewController: UIViewController {
             frequency: frequency,
             description: "",
             productLimit: 100, // placeholder
-            deliveryDay: "MONDAY", // placeholder
-            nextDeliveryDate: "2024-07-10 15:00:00.000", // placeholder
-            orderCutOffDate: "2024-07-07 15:00:00.000" // placeholder
+            deliveryDay: deliveryDayStr,
+            nextDeliveryDate: nextDeliveryDateStr,
+            orderCutOffDate: nextCutOffDateStr
         )) { result in
             LoadingViewController.dismiss(from: self)
             self.handleResponse(result)
@@ -129,7 +135,7 @@ class CreateALimitViewController: UIViewController {
     private func handleErrorResponse(_ response: Response) {
         do {
             let standardResponse = try response.map(StandardResponse.self)
-            self.showSnackBar(message: standardResponse.message ?? "An error occurred", isSuccess: false)
+            self.showSnackBar(message: standardResponse.message , isSuccess: false)
         } catch {
             print("Failed to map response data: \(error)")
         }
