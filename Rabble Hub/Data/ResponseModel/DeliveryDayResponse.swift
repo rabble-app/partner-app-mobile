@@ -24,28 +24,34 @@ struct DeliveryDay: Codable {
     /// Function to get the next delivery date.
     /// - Returns: The next delivery date as a `Date` object.
     func getNextDeliveryDate() -> Date? {
-        guard let day = self.day, let deliveryDayEnum = Weekday(rawValue: day.uppercased()) else {
-            return nil
-        }
-        return Date().next(deliveryDayEnum)
+        return getNextDate(for: self.day, at: "10:00")
     }
     
     /// Function to get the next cutoff date including the cutoff time.
     /// - Returns: The next cutoff date as a `Date` object.
     func getNextCutoffDate() -> Date? {
-        guard let day = self.cutOffDay, let cutoffDayEnum = Weekday(rawValue: day.uppercased()) else {
-            return nil
-        }
-        guard let nextCutoffDate = Date().next(cutoffDayEnum) else {
+        return getNextDate(for: self.cutOffDay, at: self.cutOffTime)
+    }
+    
+    /// Function to get the next date based on the given day and time.
+    /// - Parameters:
+    ///   - day: The day as a string.
+    ///   - time: The time as a string in "HH:mm" format.
+    /// - Returns: The next date as a `Date` object.
+    private func getNextDate(for day: String?, at time: String? = nil) -> Date? {
+        guard let day = day, let dayEnum = Weekday(rawValue: day.uppercased()) else {
             return nil
         }
         
-        // If cutOffTime is provided, adjust the time components
-        if let cutOffTime = self.cutOffTime {
-            let timeComponents = cutOffTime.split(separator: ":").map { Int($0) }
+        guard let nextDate = Date().next(dayEnum) else {
+            return nil
+        }
+        
+        if let time = time {
+            let timeComponents = time.split(separator: ":").map { Int($0) }
             if timeComponents.count == 2, let hour = timeComponents[0], let minute = timeComponents[1] {
                 let calendar = Calendar.current
-                var dateComponents = calendar.dateComponents([.year, .month, .day], from: nextCutoffDate)
+                var dateComponents = calendar.dateComponents([.year, .month, .day], from: nextDate)
                 dateComponents.hour = hour
                 dateComponents.minute = minute
                 dateComponents.second = 0
@@ -55,7 +61,7 @@ struct DeliveryDay: Codable {
             }
         }
         
-        return nextCutoffDate
+        return nextDate
     }
 }
 

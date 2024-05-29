@@ -90,6 +90,8 @@ extension Date {
     /// - Returns: A string representation of the `Date` instance.
     func toString() -> String {
         let formatter = DateFormatter()
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         return formatter.string(from: self)
     }
