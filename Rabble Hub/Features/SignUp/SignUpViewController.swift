@@ -8,8 +8,9 @@
 import UIKit
 import Moya
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var continueButton: PrimaryButton!
     @IBOutlet var storeName: RabbleTextField!
     @IBOutlet var postalCode: RabbleTextField!
     @IBOutlet var city: RabbleTextField!
@@ -24,7 +25,27 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        continueButton.isEnabled = false
         postalCode.text = "SE154NX" // Postal code that returns suppliers
+        
+        // Add observers for text change events in text fields
+        [storeName, postalCode, city, street, storeType, shelfSpace, dryStorageSpace].compactMap { $0 }.forEach { textField in
+            textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
+        
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        updateContinueButtonState()
+    }
+    
+    private func updateContinueButtonState() {
+        // Check if all text fields have input
+        let allFieldsFilled = [storeName, postalCode, city, street, storeType, shelfSpace, dryStorageSpace].compactMap { $0 }.allSatisfy { textField in
+            guard let text = textField.text else { return false }
+            return !text.isEmpty
+        }
+        continueButton.isEnabled = allFieldsFilled
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,7 +105,7 @@ class SignUpViewController: UIViewController {
     private func handleErrorResponse(_ response: Response) {
         do {
             let response = try response.map(StandardResponse.self)
-            SnackBar().alert(withMessage: response.message[0], isSuccess: false, parent: self.view)
+            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
         } catch {
             SnackBar().alert(withMessage: "An error has occurred", isSuccess: false, parent: self.view)
             print("Failed to map response data: \(error)")

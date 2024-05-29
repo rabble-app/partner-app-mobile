@@ -62,6 +62,10 @@ public class CustomOpenHoursModel {
         }
     }
     
+    func allCustomOpenHoursDisabled() -> Bool {
+         return customOpenHours.allSatisfy { !$0.enabled }
+     }
+    
     func populateCustomOpenHours() {
         let initialStartTime = "9:00 AM"
         let initialEndTime = "10:00 PM"

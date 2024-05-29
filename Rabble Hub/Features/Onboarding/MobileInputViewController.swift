@@ -11,8 +11,9 @@ import SafariServices
 import Toast_Swift
 import Moya
 
-class MobileInputViewController: UIViewController {
+class MobileInputViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var continueButton: PrimaryButton!
     @IBOutlet var tickBoxButton: UIButton!
     @IBOutlet var agreementLabel: UILabel!
     @IBOutlet var tickBox: UIView!
@@ -56,7 +57,21 @@ class MobileInputViewController: UIViewController {
         tickBoxButton.clipsToBounds = true
         tickBoxButton.setTitle("", for: .normal)
         
+        phoneNumberTextfield.delegate = self
+        
         updateTickBoxButtonUI()
+        
+        continueButton.isEnabled = false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Call updateContinueButtonState after text is changed in the text field
+        updateContinueButtonState()
+        return true
+    }
+    
+    func updateContinueButtonState() {
+        continueButton.isEnabled = validatePhoneNumber() && validateTickBox()
     }
     
     func createAttributedAgreementText() -> NSAttributedString {
@@ -109,7 +124,7 @@ class MobileInputViewController: UIViewController {
     
     func validatePhoneNumber() -> Bool {
         guard let phoneNumber = phoneNumberTextfield.text, !phoneNumber.isEmpty else {
-            setBorderColor(of: phoneNumberContainer, to: UIColor.red)
+//            setBorderColor(of: phoneNumberContainer, to: UIColor.red)
             phoneNumberTextfield.becomeFirstResponder()
             return false
         }
@@ -119,7 +134,7 @@ class MobileInputViewController: UIViewController {
     
     func validateTickBox() -> Bool {
         if !isTickBoxSelected {
-            setBorderColor(of: tickBoxButton, to: UIColor.red)
+//            setBorderColor(of: tickBoxButton, to: UIColor.red)
             return false
         }
         setBorderColor(of: tickBoxButton, to: Colors.Gray5)
@@ -171,7 +186,7 @@ class MobileInputViewController: UIViewController {
     private func handleMappingError(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            self.showErrorMessage(errorResponse.message.first ?? "An error occurred")
+            self.showErrorMessage(errorResponse.message ?? "An error occurred")
         } catch {
             print("Failed to map response data: \(error)")
         }
@@ -202,6 +217,7 @@ class MobileInputViewController: UIViewController {
     @IBAction func tickBoxButtonTap(_ sender: Any) {
         isTickBoxSelected.toggle()
         updateTickBoxButtonUI()
+        updateContinueButtonState()
     }
 }
 

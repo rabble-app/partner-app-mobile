@@ -75,7 +75,7 @@ class ProducersListViewController: UIViewController {
     private func handleMappingError(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            self.showError(errorResponse.message.first ?? "An error occurred")
+            self.showError(errorResponse.message ?? "An error occurred")
         } catch {
             print("Failed to map response data: \(error)")
         }

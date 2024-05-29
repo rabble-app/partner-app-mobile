@@ -17,7 +17,8 @@ class ChooseFrequencyViewController: UIViewController {
     @IBOutlet var weekButtonContainer: UIView!
     @IBOutlet var twoWeekButtonContainer: UIView!
     @IBOutlet var monthButtonContainer: UIView!
-    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var nextButton: PrimaryButton!
+    
     @IBOutlet var stepContainer: UIView!
     @IBOutlet var stepContainer_height: NSLayoutConstraint!
     var isFromEdit: Bool = false
@@ -28,6 +29,8 @@ class ChooseFrequencyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        
+        
     }
     
     func setUpView() {
@@ -49,6 +52,8 @@ class ChooseFrequencyViewController: UIViewController {
             self.stepContainer.isHidden = true
             self.stepContainer_height.constant = 0
         }
+        
+        nextButton.isEnabled = false
         
     }
     
@@ -83,6 +88,7 @@ class ChooseFrequencyViewController: UIViewController {
     }
     
     func updateButtonStates(selectedButton: UIButton) {
+        nextButton.isEnabled = true
         // Deselect all buttons
         weekButton.isSelected = false
         twoWeekButton.isSelected = false

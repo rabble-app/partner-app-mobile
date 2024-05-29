@@ -334,6 +334,7 @@
                     <connections>
                         <outlet property="agreementLabel" destination="bcy-oy-gop" id="tuw-Zb-oJw"/>
                         <outlet property="codeLabel" destination="4UE-hS-KxF" id="50K-tg-MOv"/>
+                        <outlet property="continueButton" destination="KOX-JS-QCm" id="uzN-IG-LJ3"/>
                         <outlet property="countryPickerButton" destination="KhB-MB-RVA" id="psg-4d-bSA"/>
                         <outlet property="flag" destination="aXM-sT-dy2" id="yDe-07-zd5"/>
                         <outlet property="phoneNumberContainer" destination="9jx-se-sA3" id="z21-B1-0p6"/>
@@ -488,6 +489,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mPU-iJ-x4W"/>
                     <connections>
+                        <outlet property="continueButton" destination="8JQ-dX-kTV" id="g3F-eV-uQS"/>
                         <outlet property="descLabel" destination="Z5A-nA-4Xo" id="WFN-kE-3gc"/>
                         <outlet property="ontpContainer" destination="FNE-VS-4rh" id="E1r-kB-hvp"/>
                     </connections>
