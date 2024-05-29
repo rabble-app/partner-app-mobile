@@ -146,7 +146,7 @@ class SignUpScheduleViewController: UIViewController {
                 } catch {
                     do {
                         let response = try response.map(StandardResponse.self)
-                        SnackBar().alert(withMessage: response.message[0], isSuccess: false, parent: self.view)
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                     } catch {
                         print("Failed to map response data: \(error)")
                     }

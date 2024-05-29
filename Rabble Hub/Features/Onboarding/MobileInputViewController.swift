@@ -124,7 +124,7 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
     
     func validatePhoneNumber() -> Bool {
         guard let phoneNumber = phoneNumberTextfield.text, !phoneNumber.isEmpty else {
-            setBorderColor(of: phoneNumberContainer, to: UIColor.red)
+//            setBorderColor(of: phoneNumberContainer, to: UIColor.red)
             phoneNumberTextfield.becomeFirstResponder()
             return false
         }
@@ -134,7 +134,7 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
     
     func validateTickBox() -> Bool {
         if !isTickBoxSelected {
-            setBorderColor(of: tickBoxButton, to: UIColor.red)
+//            setBorderColor(of: tickBoxButton, to: UIColor.red)
             return false
         }
         setBorderColor(of: tickBoxButton, to: Colors.Gray5)
@@ -186,7 +186,7 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
     private func handleMappingError(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            self.showErrorMessage(errorResponse.message.first ?? "An error occurred")
+            self.showErrorMessage(errorResponse.message ?? "An error occurred")
         } catch {
             print("Failed to map response data: \(error)")
         }

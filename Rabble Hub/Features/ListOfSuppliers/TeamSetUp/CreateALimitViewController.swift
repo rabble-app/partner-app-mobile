@@ -129,7 +129,7 @@ class CreateALimitViewController: UIViewController {
     private func handleErrorResponse(_ response: Response) {
         do {
             let standardResponse = try response.map(StandardResponse.self)
-            self.showSnackBar(message: standardResponse.message.first ?? "An error occurred", isSuccess: false)
+            self.showSnackBar(message: standardResponse.message ?? "An error occurred", isSuccess: false)
         } catch {
             print("Failed to map response data: \(error)")
         }

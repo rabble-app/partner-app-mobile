@@ -11,6 +11,7 @@ import Moya
 
 class OtpInputViewController: UIViewController {
     
+    @IBOutlet var continueButton: PrimaryButton!
     public var phoneNumber: String = ""
     public var sid: String = ""
     public var code: String = ""
@@ -49,6 +50,7 @@ class OtpInputViewController: UIViewController {
         view.backgroundColor = Colors.BackgroundPrimary
         descLabel.text = "Enter the 6 digit verification code we sent to you on \(phoneNumber)"
         highlightPhoneNumberInDescLabel()
+        continueButton.isEnabled = false
     }
     
     private func highlightPhoneNumberInDescLabel() {
@@ -83,7 +85,7 @@ class OtpInputViewController: UIViewController {
     private func handleErrorResponse(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            SnackBar().alert(withMessage: errorResponse.message[0], isSuccess: false, parent: view)
+            SnackBar().alert(withMessage: errorResponse.message, isSuccess: false, parent: view)
         } catch {
             SnackBar().alert(withMessage: "An error has occurred", isSuccess: false, parent: view)
             print("Failed to map response data: \(error)")
@@ -178,5 +180,6 @@ extension OtpInputViewController: EliteOTPFieldDelegete {
     func didEnterLastDigit(otp: String) {
         print(otp) // Digits entered
         code = otp
+        continueButton.isEnabled = true
     }
 }

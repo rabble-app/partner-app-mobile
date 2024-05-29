@@ -9,6 +9,6 @@ import Foundation
 
 struct StandardResponse: Codable {
     let statusCode: Int
-    let message: [String]
-    let error: String
+    let message: String
+    let error: String?
 }
