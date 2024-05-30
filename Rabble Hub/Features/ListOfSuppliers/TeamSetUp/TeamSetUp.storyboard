@@ -700,10 +700,12 @@
                     <connections>
                         <outlet property="calendarCollectionView" destination="rDX-da-UVV" id="OgK-gm-zXe"/>
                         <outlet property="calendarContainer" destination="cuQ-eu-2tD" id="BME-k0-Z5v"/>
+                        <outlet property="deliveryDayInstructionsLabel" destination="O0x-PI-fcK" id="qnL-Ai-Nia"/>
                         <outlet property="nextButton" destination="OzM-RI-vo8" id="VMY-F0-kSB"/>
                         <outlet property="progressBar" destination="9RD-ho-bPx" id="DU3-Mi-Sbq"/>
                         <outlet property="stepContainer" destination="EFm-HI-3eP" id="7NQ-Za-Dq3"/>
                         <outlet property="stepContainer_height" destination="jtZ-Po-fZd" id="zAV-53-4PT"/>
+                        <outlet property="suppliersAvailableDaysLabel" destination="JES-xd-rsc" id="88S-su-7l4"/>
                         <outlet property="titleLabel" destination="E6I-2G-a4Z" id="DfC-D5-BYB"/>
                     </connections>
                 </viewController>
