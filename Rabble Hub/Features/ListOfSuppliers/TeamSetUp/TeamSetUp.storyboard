@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,6 +12,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="SF-Pro.ttf">
+            <string>SFPro-Bold</string>
             <string>SFPro-Medium</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
@@ -503,7 +504,7 @@
                                 <rect key="frame" x="16" y="329.66666666666674" width="361" height="387"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rDX-da-UVV" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                        <rect key="frame" x="8" y="25" width="345" height="282"/>
+                                        <rect key="frame" x="8" y="72" width="345" height="235"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ayf-r5-hlx">
                                             <size key="itemSize" width="128" height="128"/>
@@ -553,7 +554,7 @@
                                         </cells>
                                     </collectionView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sm3-ib-wlq">
-                                        <rect key="frame" x="12" y="5" width="337" height="20"/>
+                                        <rect key="frame" x="12" y="52" width="337" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSY-i2-NRw" userLabel="SUN">
                                                 <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="20"/>
@@ -647,6 +648,30 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuO-cc-B5B">
+                                        <rect key="frame" x="16" y="16" width="94.666666666666671" height="24"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-NX-rPP">
+                                        <rect key="frame" x="266" y="10" width="38" height="36"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_back_calendar"/>
+                                        <connections>
+                                            <action selector="previousMonthButtonTapped:" destination="U7E-Jw-eSz" eventType="touchUpInside" id="Jo5-IC-8GQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezz-iP-6sh">
+                                        <rect key="frame" x="312" y="10" width="37" height="36"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_next_calendar"/>
+                                        <connections>
+                                            <action selector="nextMonthButtonTapped:" destination="U7E-Jw-eSz" eventType="touchUpInside" id="j5z-I5-bcY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -655,7 +680,9 @@
                                     <constraint firstItem="tQO-fG-jfv" firstAttribute="top" secondItem="rDX-da-UVV" secondAttribute="bottom" id="3ty-vK-Ngb"/>
                                     <constraint firstItem="dWZ-e7-Ne7" firstAttribute="top" secondItem="tQO-fG-jfv" secondAttribute="bottom" constant="31.5" id="8a1-Ty-3hs"/>
                                     <constraint firstItem="nHJ-yf-9SX" firstAttribute="centerY" secondItem="dWZ-e7-Ne7" secondAttribute="centerY" id="9PF-0l-yKl"/>
+                                    <constraint firstItem="Ezz-iP-6sh" firstAttribute="leading" secondItem="1RC-NX-rPP" secondAttribute="trailing" constant="8" id="A8r-mi-ROT"/>
                                     <constraint firstItem="rDX-da-UVV" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="8" id="Bx2-hx-SAW"/>
+                                    <constraint firstItem="Ezz-iP-6sh" firstAttribute="centerY" secondItem="SuO-cc-B5B" secondAttribute="centerY" id="Cqk-u8-num"/>
                                     <constraint firstItem="rvT-63-qot" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="16" id="FY0-0H-pR1"/>
                                     <constraint firstAttribute="bottom" secondItem="rDX-da-UVV" secondAttribute="bottom" constant="80" id="LtH-Rd-Pdi"/>
                                     <constraint firstAttribute="trailing" secondItem="rDX-da-UVV" secondAttribute="trailing" constant="8" id="PGY-iz-mjW"/>
@@ -663,12 +690,16 @@
                                     <constraint firstAttribute="trailing" secondItem="tQO-fG-jfv" secondAttribute="trailing" id="Xgr-Pf-o2f"/>
                                     <constraint firstItem="dWZ-e7-Ne7" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="16" id="aHN-Ix-zdZ"/>
                                     <constraint firstItem="JES-xd-rsc" firstAttribute="leading" secondItem="rvT-63-qot" secondAttribute="trailing" constant="8" id="cnS-OD-39p"/>
+                                    <constraint firstItem="1RC-NX-rPP" firstAttribute="centerY" secondItem="Ezz-iP-6sh" secondAttribute="centerY" id="gVF-KC-47i"/>
+                                    <constraint firstItem="SuO-cc-B5B" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="16" id="gsv-YM-jwZ"/>
                                     <constraint firstItem="sm3-ib-wlq" firstAttribute="leading" secondItem="cuQ-eu-2tD" secondAttribute="leading" constant="12" id="lNr-oL-ptR"/>
                                     <constraint firstAttribute="trailing" secondItem="sm3-ib-wlq" secondAttribute="trailing" constant="12" id="mHj-ne-9ol"/>
                                     <constraint firstAttribute="height" constant="387" id="qnG-MM-Fgc"/>
-                                    <constraint firstItem="sm3-ib-wlq" firstAttribute="top" secondItem="cuQ-eu-2tD" secondAttribute="top" constant="5" id="qzW-Y4-A2l"/>
+                                    <constraint firstItem="SuO-cc-B5B" firstAttribute="top" secondItem="cuQ-eu-2tD" secondAttribute="top" constant="16" id="tGa-ji-vNl"/>
                                     <constraint firstItem="rvT-63-qot" firstAttribute="top" secondItem="dWZ-e7-Ne7" secondAttribute="bottom" constant="15.33" id="vWn-cT-mNS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ezz-iP-6sh" secondAttribute="trailing" constant="12" id="wdW-qQ-5YE"/>
                                     <constraint firstItem="nHJ-yf-9SX" firstAttribute="leading" secondItem="dWZ-e7-Ne7" secondAttribute="trailing" constant="8" id="y88-wq-6gM"/>
+                                    <constraint firstItem="sm3-ib-wlq" firstAttribute="top" secondItem="SuO-cc-B5B" secondAttribute="bottom" constant="12" id="zV4-s7-nkO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -701,7 +732,10 @@
                         <outlet property="calendarCollectionView" destination="rDX-da-UVV" id="OgK-gm-zXe"/>
                         <outlet property="calendarContainer" destination="cuQ-eu-2tD" id="BME-k0-Z5v"/>
                         <outlet property="deliveryDayInstructionsLabel" destination="O0x-PI-fcK" id="qnL-Ai-Nia"/>
+                        <outlet property="monthYearLabel" destination="SuO-cc-B5B" id="9Py-G0-4Ub"/>
                         <outlet property="nextButton" destination="OzM-RI-vo8" id="VMY-F0-kSB"/>
+                        <outlet property="nextMonthButton" destination="Ezz-iP-6sh" id="FHv-9t-XHH"/>
+                        <outlet property="previousMonthButton" destination="1RC-NX-rPP" id="po0-RT-2fy"/>
                         <outlet property="progressBar" destination="9RD-ho-bPx" id="DU3-Mi-Sbq"/>
                         <outlet property="stepContainer" destination="EFm-HI-3eP" id="7NQ-Za-Dq3"/>
                         <outlet property="stepContainer_height" destination="jtZ-Po-fZd" id="zAV-53-4PT"/>
@@ -1058,7 +1092,9 @@
     </scenes>
     <resources>
         <image name="icon_back" width="12" height="20"/>
+        <image name="icon_back_calendar" width="14" height="22"/>
         <image name="icon_dropdown" width="24" height="24"/>
+        <image name="icon_next_calendar" width="13" height="22"/>
         <image name="team_setup_success" width="428" height="429"/>
         <image name="unselected_radioButton" width="22" height="22"/>
         <namedColor name="background_primary">

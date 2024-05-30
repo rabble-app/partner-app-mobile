@@ -17,6 +17,9 @@ class ChooseDeliveryDayViewController: UIViewController {
     @IBOutlet weak var deliveryDayInstructionsLabel: UILabel!
     @IBOutlet weak var suppliersAvailableDaysLabel: UILabel!
     
+    @IBOutlet weak var previousMonthButton: UIButton!
+    @IBOutlet weak var nextMonthButton: UIButton!
+    @IBOutlet weak var monthYearLabel: UILabel!
     @IBOutlet var stepContainer: UIView!
     @IBOutlet var stepContainer_height: NSLayoutConstraint!
     @IBOutlet var nextButton: UIButton!
@@ -72,6 +75,15 @@ class ChooseDeliveryDayViewController: UIViewController {
         
         self.calendarCollectionView.minimumLineSpacing = 0
         self.calendarCollectionView.minimumInteritemSpacing = 0
+        
+        self.previousMonthButton.setTitle("", for: .normal)
+        self.nextMonthButton.setTitle("", for: .normal)
+        
+        self.calendarCollectionView.visibleDates { (visibleDates) in
+            let date = visibleDates.monthDates.first!.date
+            self.formatter.dateFormat = "MMM yyyy"
+            self.monthYearLabel.text = self.formatter.string(from: date)
+        }
     }
     
     func getDeliveryDays() {
@@ -115,6 +127,16 @@ class ChooseDeliveryDayViewController: UIViewController {
         }
     }
     
+    @IBAction func previousMonthButtonTapped(_ sender: Any) {
+        
+        self.calendarCollectionView.scrollToSegment(.previous)
+    }
+
+    
+    @IBAction func nextMonthButtonTapped(_ sender: Any) {
+        
+        self.calendarCollectionView.scrollToSegment(.next)
+    }
     
     @IBAction func backButtonTap(_ sender: Any) {
         if let presentingViewController = presentingViewController {
@@ -153,7 +175,11 @@ class ChooseDeliveryDayViewController: UIViewController {
 extension ChooseDeliveryDayViewController: JTAppleCalendarViewDataSource {
     
     func configureCalendar(_ calendar: JTAppleCalendar.JTAppleCalendarView) -> JTAppleCalendar.ConfigurationParameters {
-        let parameters = ConfigurationParameters(startDate: Date(), endDate: Date())
+        let range = Date().dateRangeFrom2ndTo10thWeek()
+        print("Start date: \(range.startDate)")
+        print("End date: \(range.endDate)")
+        
+        let parameters = ConfigurationParameters(startDate: range.startDate, endDate: range.endDate)
         return parameters
     }
 }
@@ -177,5 +203,11 @@ extension ChooseDeliveryDayViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         selectedDate = date
         calendar.reloadData()
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        let date = visibleDates.monthDates.first!.date
+        formatter.dateFormat = "MMM yyyy"
+        self.monthYearLabel.text = formatter.string(from: date)
     }
 }

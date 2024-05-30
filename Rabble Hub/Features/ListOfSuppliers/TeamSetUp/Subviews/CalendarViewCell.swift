@@ -21,13 +21,17 @@ class CalendarViewCell: JTAppleCell {
     
     func configureCell(cellState: CellState, selectedDate: Date?) {
         
-        self.isHidden = !cellState.date.isThisMonth()
+        self.isHidden = cellState.dateBelongsTo != .thisMonth
         
         self.isUserInteractionEnabled = false
         if let deliveryDays = self.deliveryDays {
             self.isUserInteractionEnabled = isDeliveryDay(for: cellState.date, deliveryDays: deliveryDays)
         }
 
+        if cellState.date.isDateOutside2ndTo10thWeekRange(date: Date()) {
+            self.isUserInteractionEnabled = false
+        }
+        
         self.dateLabel.text = cellState.text
         self.backgroundContentView.backgroundColor = .clear
         
