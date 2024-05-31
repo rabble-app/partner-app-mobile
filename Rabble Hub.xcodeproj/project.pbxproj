@@ -133,6 +133,7 @@
 		AC8CDDE72BE692600091882B /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDE52BE692600091882B /* SF-Pro.ttf */; };
 		AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */; };
 		AC8CDDEC2BE719640091882B /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDEB2BE719640091882B /* PrimaryButton.swift */; };
+		ACB5ED9A2C0A111F000C2C33 /* DeliveryDaysResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5ED992C0A111F000C2C33 /* DeliveryDaysResponseTests.swift */; };
 		ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */; };
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
@@ -299,6 +300,7 @@
 		AC8CDDE52BE692600091882B /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		AC8CDDE92BE70B1E0091882B /* RabbleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextField.swift; sourceTree = "<group>"; };
 		AC8CDDEB2BE719640091882B /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		ACB5ED992C0A111F000C2C33 /* DeliveryDaysResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDaysResponseTests.swift; sourceTree = "<group>"; };
 		ACB78DB92BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyCheckItemsViewController.swift; sourceTree = "<group>"; };
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 		86A60DCB2BCCEE3500496390 /* Rabble HubTests */ = {
 			isa = PBXGroup;
 			children = (
+				ACB5ED982C0A1101000C2C33 /* Model Tests */,
 				86ED8D932BF9BE9B0089E36A /* MobileInputViewControllerTests.swift */,
 				AC6417FE2C020A0B00B8A61B /* OtpInputViewControllerTests.swift */,
 				AC6417FF2C020A0B00B8A61B /* SignUpProfileViewControllerTests.swift */,
@@ -788,6 +791,14 @@
 				ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */,
 			);
 			path = Subclass;
+			sourceTree = "<group>";
+		};
+		ACB5ED982C0A1101000C2C33 /* Model Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ACB5ED992C0A111F000C2C33 /* DeliveryDaysResponseTests.swift */,
+			);
+			path = "Model Tests";
 			sourceTree = "<group>";
 		};
 		ACB78DBD2BD698BA0047D2AF /* Profile */ = {
@@ -1152,6 +1163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC6418032C020A0C00B8A61B /* SignUpViewControllerTests.swift in Sources */,
+				ACB5ED9A2C0A111F000C2C33 /* DeliveryDaysResponseTests.swift in Sources */,
 				AC6418012C020A0C00B8A61B /* OtpInputViewControllerTests.swift in Sources */,
 				AC6417F62C007ED900B8A61B /* SignUpScheduleTests.swift in Sources */,
 				AC6418022C020A0C00B8A61B /* SignUpProfileViewControllerTests.swift in Sources */,
