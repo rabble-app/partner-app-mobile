@@ -521,10 +521,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu2-DO-osO">
-                                                            <rect key="frame" x="1" y="1" width="42" height="42"/>
+                                                            <rect key="frame" x="2" y="2" width="40" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgb-q0-d4r">
-                                                                    <rect key="frame" x="9" y="9" width="24" height="24"/>
+                                                                    <rect key="frame" x="8" y="8" width="24" height="24"/>
                                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
                                                                     <color key="textColor" name="blue_1"/>
                                                                     <nil key="highlightedColor"/>
@@ -533,18 +533,16 @@
                                                             <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="0.11746094558412666" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="uu2-DO-osO" secondAttribute="height" multiplier="1:1" id="89B-ag-VcK"/>
+                                                                <constraint firstAttribute="width" constant="40" id="Raz-tv-6yX"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerX" secondItem="uu2-DO-osO" secondAttribute="centerX" id="aF1-8k-pbz"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerY" secondItem="uu2-DO-osO" secondAttribute="centerY" id="bGb-3f-udF"/>
+                                                                <constraint firstAttribute="width" secondItem="uu2-DO-osO" secondAttribute="height" multiplier="1:1" id="oLy-v4-685"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="uu2-DO-osO" firstAttribute="centerY" secondItem="gtB-qa-iYN" secondAttribute="centerY" id="4HR-7y-J8g"/>
-                                                        <constraint firstAttribute="bottom" secondItem="uu2-DO-osO" secondAttribute="bottom" constant="1" id="4n4-f6-SdW"/>
                                                         <constraint firstItem="uu2-DO-osO" firstAttribute="centerX" secondItem="gtB-qa-iYN" secondAttribute="centerX" id="8NB-D6-490"/>
-                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="top" secondItem="gtB-qa-iYN" secondAttribute="top" constant="1" id="AmW-zL-haM"/>
-                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="leading" secondItem="gtB-qa-iYN" secondAttribute="leading" constant="1" id="Coh-7f-Ywd"/>
-                                                        <constraint firstAttribute="trailing" secondItem="uu2-DO-osO" secondAttribute="trailing" constant="1" id="DnG-An-Lyg"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="44" height="44"/>
