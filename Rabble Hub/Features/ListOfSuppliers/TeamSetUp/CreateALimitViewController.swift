@@ -24,6 +24,7 @@ class CreateALimitViewController: UIViewController {
     var frequency: Int = 0
     var selectedSupplier: Supplier?
     var deliveryDay: DeliveryDay?
+    var deliveryDate: Date?
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
@@ -87,8 +88,8 @@ class CreateALimitViewController: UIViewController {
               let userId = StoreManager.shared.userId else { return }
         
         guard let deliveryDayStr = self.deliveryDay?.day,
-              let nextDeliveryDateStr = self.deliveryDay?.getNextDeliveryDate()?.toString(),
-              let nextCutOffDateStr = self.deliveryDay?.getNextCutoffDate()?.toString()
+              let deliveryDateStr = self.deliveryDate?.toString(),
+              let nextCutOffDateStr = self.deliveryDay?.getCutoffDate(from: self.deliveryDate!)?.toString()
         else { return }
         
         LoadingViewController.present(from: self)
@@ -103,7 +104,7 @@ class CreateALimitViewController: UIViewController {
             description: "",
             productLimit: 100, // placeholder
             deliveryDay: deliveryDayStr,
-            nextDeliveryDate: nextDeliveryDateStr,
+            nextDeliveryDate: deliveryDateStr,
             orderCutOffDate: nextCutOffDateStr
         )) { result in
             LoadingViewController.dismiss(from: self)

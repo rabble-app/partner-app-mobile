@@ -533,16 +533,18 @@
                                                             <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="0.11746094558412666" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="uu2-DO-osO" secondAttribute="height" multiplier="1:1" id="89B-ag-VcK"/>
-                                                                <constraint firstAttribute="width" constant="42" id="JMW-vb-kXS"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerX" secondItem="uu2-DO-osO" secondAttribute="centerX" id="aF1-8k-pbz"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerY" secondItem="uu2-DO-osO" secondAttribute="centerY" id="bGb-3f-udF"/>
-                                                                <constraint firstAttribute="height" constant="42" id="xUH-MW-YKT"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="uu2-DO-osO" firstAttribute="centerY" secondItem="gtB-qa-iYN" secondAttribute="centerY" id="4HR-7y-J8g"/>
+                                                        <constraint firstAttribute="bottom" secondItem="uu2-DO-osO" secondAttribute="bottom" constant="1" id="4n4-f6-SdW"/>
                                                         <constraint firstItem="uu2-DO-osO" firstAttribute="centerX" secondItem="gtB-qa-iYN" secondAttribute="centerX" id="8NB-D6-490"/>
+                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="top" secondItem="gtB-qa-iYN" secondAttribute="top" constant="1" id="AmW-zL-haM"/>
+                                                        <constraint firstItem="uu2-DO-osO" firstAttribute="leading" secondItem="gtB-qa-iYN" secondAttribute="leading" constant="1" id="Coh-7f-Ywd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="uu2-DO-osO" secondAttribute="trailing" constant="1" id="DnG-An-Lyg"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="44" height="44"/>
@@ -655,7 +657,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-NX-rPP">
-                                        <rect key="frame" x="266" y="10" width="38" height="36"/>
+                                        <rect key="frame" x="275" y="13.666666666666629" width="33" height="29"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icon_back_calendar"/>
@@ -664,7 +666,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezz-iP-6sh">
-                                        <rect key="frame" x="312" y="10" width="37" height="36"/>
+                                        <rect key="frame" x="316" y="13.666666666666629" width="33" height="29"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icon_next_calendar"/>
@@ -726,6 +728,7 @@
                             <constraint firstItem="cuQ-eu-2tD" firstAttribute="leading" secondItem="cbS-Kf-iBA" secondAttribute="leading" constant="16" id="Ym5-B1-e7u"/>
                             <constraint firstItem="OzM-RI-vo8" firstAttribute="leading" secondItem="cbS-Kf-iBA" secondAttribute="leading" constant="16" id="Z9g-mG-7ao"/>
                             <constraint firstItem="cbS-Kf-iBA" firstAttribute="trailing" secondItem="OzM-RI-vo8" secondAttribute="trailing" constant="16" id="ltu-Mw-Id3"/>
+                            <constraint firstItem="OzM-RI-vo8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cuQ-eu-2tD" secondAttribute="bottom" constant="12" id="uuq-p7-arY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1092,9 +1095,9 @@
     </scenes>
     <resources>
         <image name="icon_back" width="12" height="20"/>
-        <image name="icon_back_calendar" width="14" height="22"/>
+        <image name="icon_back_calendar" width="9" height="15"/>
         <image name="icon_dropdown" width="24" height="24"/>
-        <image name="icon_next_calendar" width="13" height="22"/>
+        <image name="icon_next_calendar" width="9" height="15"/>
         <image name="team_setup_success" width="428" height="429"/>
         <image name="unselected_radioButton" width="22" height="22"/>
         <namedColor name="background_primary">
