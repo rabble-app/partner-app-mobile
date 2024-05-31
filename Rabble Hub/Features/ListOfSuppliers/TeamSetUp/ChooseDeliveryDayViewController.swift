@@ -159,6 +159,7 @@ class ChooseDeliveryDayViewController: UIViewController {
                     vc.transitioningDelegate = pushAnimator
                     vc.frequency = self.frequency
                     vc.selectedSupplier = self.selectedSupplier
+                    vc.deliveryDate = selectedDate
                     vc.deliveryDay = deliveryDay
                     self.title = "Team Settings"
                     self.present(vc, animated: true)

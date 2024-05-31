@@ -521,10 +521,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu2-DO-osO">
-                                                            <rect key="frame" x="1" y="1" width="42" height="42"/>
+                                                            <rect key="frame" x="2" y="2" width="40" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgb-q0-d4r">
-                                                                    <rect key="frame" x="9" y="9" width="24" height="24"/>
+                                                                    <rect key="frame" x="8" y="8" width="24" height="24"/>
                                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
                                                                     <color key="textColor" name="blue_1"/>
                                                                     <nil key="highlightedColor"/>
@@ -533,10 +533,10 @@
                                                             <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="0.11746094558412666" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="uu2-DO-osO" secondAttribute="height" multiplier="1:1" id="89B-ag-VcK"/>
-                                                                <constraint firstAttribute="width" constant="42" id="JMW-vb-kXS"/>
+                                                                <constraint firstAttribute="width" constant="40" id="Raz-tv-6yX"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerX" secondItem="uu2-DO-osO" secondAttribute="centerX" id="aF1-8k-pbz"/>
                                                                 <constraint firstItem="Jgb-q0-d4r" firstAttribute="centerY" secondItem="uu2-DO-osO" secondAttribute="centerY" id="bGb-3f-udF"/>
-                                                                <constraint firstAttribute="height" constant="42" id="xUH-MW-YKT"/>
+                                                                <constraint firstAttribute="width" secondItem="uu2-DO-osO" secondAttribute="height" multiplier="1:1" id="oLy-v4-685"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -655,7 +655,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-NX-rPP">
-                                        <rect key="frame" x="266" y="10" width="38" height="36"/>
+                                        <rect key="frame" x="275" y="13.666666666666629" width="33" height="29"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icon_back_calendar"/>
@@ -664,7 +664,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezz-iP-6sh">
-                                        <rect key="frame" x="312" y="10" width="37" height="36"/>
+                                        <rect key="frame" x="316" y="13.666666666666629" width="33" height="29"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icon_next_calendar"/>
@@ -726,6 +726,7 @@
                             <constraint firstItem="cuQ-eu-2tD" firstAttribute="leading" secondItem="cbS-Kf-iBA" secondAttribute="leading" constant="16" id="Ym5-B1-e7u"/>
                             <constraint firstItem="OzM-RI-vo8" firstAttribute="leading" secondItem="cbS-Kf-iBA" secondAttribute="leading" constant="16" id="Z9g-mG-7ao"/>
                             <constraint firstItem="cbS-Kf-iBA" firstAttribute="trailing" secondItem="OzM-RI-vo8" secondAttribute="trailing" constant="16" id="ltu-Mw-Id3"/>
+                            <constraint firstItem="OzM-RI-vo8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cuQ-eu-2tD" secondAttribute="bottom" constant="12" id="uuq-p7-arY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1092,9 +1093,9 @@
     </scenes>
     <resources>
         <image name="icon_back" width="12" height="20"/>
-        <image name="icon_back_calendar" width="14" height="22"/>
+        <image name="icon_back_calendar" width="9" height="15"/>
         <image name="icon_dropdown" width="24" height="24"/>
-        <image name="icon_next_calendar" width="13" height="22"/>
+        <image name="icon_next_calendar" width="9" height="15"/>
         <image name="team_setup_success" width="428" height="429"/>
         <image name="unselected_radioButton" width="22" height="22"/>
         <namedColor name="background_primary">

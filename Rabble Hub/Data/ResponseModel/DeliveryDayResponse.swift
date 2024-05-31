@@ -4,7 +4,6 @@
 //
 //  Created by aljon antiola on 5/26/24.
 //
-
 import Foundation
 
 /// Struct representing the response containing delivery days.
@@ -21,47 +20,38 @@ struct DeliveryDay: Codable {
     let cutOffDay: String?
     let cutOffTime: String?
     
-    /// Function to get the next delivery date.
-    /// - Returns: The next delivery date as a `Date` object.
-    func getNextDeliveryDate() -> Date? {
-        return getNextDate(for: self.day, at: "10:00")
-    }
-    
-    /// Function to get the next cutoff date including the cutoff time.
-    /// - Returns: The next cutoff date as a `Date` object.
-    func getNextCutoffDate() -> Date? {
-        return getNextDate(for: self.cutOffDay, at: self.cutOffTime)
-    }
-    
-    /// Function to get the next date based on the given day and time.
-    /// - Parameters:
-    ///   - day: The day as a string.
-    ///   - time: The time as a string in "HH:mm" format.
-    /// - Returns: The next date as a `Date` object.
-    private func getNextDate(for day: String?, at time: String? = nil) -> Date? {
-        guard let day = day, let dayEnum = Weekday(rawValue: day.uppercased()) else {
-            return nil
+    /// Calculates the cutoff date based on the provided date and the cutoff day and time.
+    /// - Parameter date: The selected date.
+    /// - Returns: The cutoff date as a `Date` object, or `nil` if calculation fails.
+    func getCutoffDate(from date: Date) -> Date? {
+        guard let cutOffDayString = cutOffDay,
+              let cutOffDay = Weekday(rawValue: cutOffDayString.uppercased()),
+              let cutOffTime = cutOffTime else { return nil }
+        
+        let calendar = Calendar.current
+        guard let selectedWeekday = Weekday.from(date: date) else { return nil }
+        
+        let targetWeekdayIndex = cutOffDay.weekdayIndex()
+        let currentWeekdayIndex = selectedWeekday.weekdayIndex()
+        
+        var dayDifference = targetWeekdayIndex - currentWeekdayIndex
+        if dayDifference >= 0 {
+            dayDifference -= 7
         }
         
-        guard let nextDate = Date().next(dayEnum) else {
-            return nil
-        }
+        guard let cutoffDate = calendar.date(byAdding: .day, value: dayDifference, to: date) else { return nil }
         
-        if let time = time {
-            let timeComponents = time.split(separator: ":").map { Int($0) }
-            if timeComponents.count == 2, let hour = timeComponents[0], let minute = timeComponents[1] {
-                let calendar = Calendar.current
-                var dateComponents = calendar.dateComponents([.year, .month, .day], from: nextDate)
-                dateComponents.hour = hour
-                dateComponents.minute = minute
-                dateComponents.second = 0
-                dateComponents.nanosecond = 0
-                
-                return calendar.date(from: dateComponents)
-            }
-        }
+        let timeComponents = cutOffTime.split(separator: ":").compactMap { Int($0) }
+        guard timeComponents.count == 2 else { return nil }
         
-        return nextDate
+        let hour = timeComponents[0]
+        let minute = timeComponents[1]
+        
+        var cutoffDateComponents = calendar.dateComponents([.year, .month, .day], from: cutoffDate)
+        cutoffDateComponents.hour = hour
+        cutoffDateComponents.minute = minute
+        
+        return calendar.date(from: cutoffDateComponents)
     }
 }
 
@@ -106,6 +96,19 @@ enum Weekday: String {
         case 6: return .friday
         case 7: return .saturday
         default: return nil
+        }
+    }
+    
+    /// Returns the index of the weekday (Sunday = 1, Monday = 2, ..., Saturday = 7)
+    func weekdayIndex() -> Int {
+        switch self {
+        case .sunday: return 1
+        case .monday: return 2
+        case .tuesday: return 3
+        case .wednesday: return 4
+        case .thursday: return 5
+        case .friday: return 6
+        case .saturday: return 7
         }
     }
 }
