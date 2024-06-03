@@ -63,7 +63,7 @@ class ProducersListViewController: UIViewController {
             let suppliersResponse = try response.map(GetSuppliersResponse.self)
             if suppliersResponse.statusCode == 200 {
                 self.updateSuppliers(suppliersResponse.data ?? [])
-                SnackBar().alert(withMessage: suppliersResponse.message, isSuccess: true, parent: self.view)
+//                SnackBar().alert(withMessage: suppliersResponse.message, isSuccess: true, parent: self.view)
             } else {
                 self.showError(suppliersResponse.message)
             }
