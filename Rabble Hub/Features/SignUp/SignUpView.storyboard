@@ -1170,12 +1170,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" secondItem="ZC2-L1-6Q4" secondAttribute="height" id="FqY-dM-JSC"/>
                                                     <constraint firstItem="6NP-kK-ib0" firstAttribute="top" secondItem="qay-jw-EEy" secondAttribute="top" id="K4Z-IU-bcO"/>
-                                                    <constraint firstItem="ZC2-L1-6Q4" firstAttribute="top" secondItem="qay-jw-EEy" secondAttribute="top" id="ZQK-fC-sjX"/>
-                                                    <constraint firstAttribute="height" constant="76.670000000000002" id="dXV-ot-zjJ"/>
                                                     <constraint firstItem="6NP-kK-ib0" firstAttribute="leading" secondItem="qay-jw-EEy" secondAttribute="leading" id="hR3-TF-CYc"/>
                                                     <constraint firstAttribute="bottom" secondItem="ZC2-L1-6Q4" secondAttribute="bottom" id="nE2-MY-dzP"/>
                                                     <constraint firstItem="ZC2-L1-6Q4" firstAttribute="leading" secondItem="6NP-kK-ib0" secondAttribute="trailing" constant="8" id="nHz-O4-bmR"/>
                                                     <constraint firstAttribute="trailing" secondItem="ZC2-L1-6Q4" secondAttribute="trailing" id="oMY-df-Wft"/>
+                                                    <constraint firstItem="ZC2-L1-6Q4" firstAttribute="top" secondItem="6NP-kK-ib0" secondAttribute="top" id="wdV-qm-UtU"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMP-Oy-eVD" userLabel="Item 2 View">
@@ -1198,14 +1197,13 @@
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="jj7-IU-45N" firstAttribute="top" secondItem="EMP-Oy-eVD" secondAttribute="top" id="BP7-O4-cLK"/>
-                                                    <constraint firstAttribute="height" constant="57.329999999999998" id="OTb-Zt-PyC"/>
                                                     <constraint firstAttribute="bottom" secondItem="jj7-IU-45N" secondAttribute="bottom" id="Wxl-Lj-TcA"/>
                                                     <constraint firstItem="WnE-w7-q1s" firstAttribute="top" secondItem="EMP-Oy-eVD" secondAttribute="top" id="feq-tm-Ixm"/>
                                                     <constraint firstItem="WnE-w7-q1s" firstAttribute="leading" secondItem="EMP-Oy-eVD" secondAttribute="leading" id="g7m-uT-wzD"/>
                                                     <constraint firstAttribute="height" secondItem="jj7-IU-45N" secondAttribute="height" id="gmD-9o-1Qb"/>
                                                     <constraint firstItem="jj7-IU-45N" firstAttribute="leading" secondItem="WnE-w7-q1s" secondAttribute="trailing" constant="8" id="hrr-hx-mN2"/>
                                                     <constraint firstAttribute="trailing" secondItem="jj7-IU-45N" secondAttribute="trailing" id="pP8-qN-jTU"/>
+                                                    <constraint firstItem="jj7-IU-45N" firstAttribute="top" secondItem="WnE-w7-q1s" secondAttribute="top" id="vLP-hC-eej"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YF-XA-aHO" userLabel="Item 3 View">
@@ -1230,10 +1228,9 @@
                                                 <constraints>
                                                     <constraint firstItem="NFD-Hb-QND" firstAttribute="leading" secondItem="1YF-XA-aHO" secondAttribute="leading" id="2ag-Ld-61h"/>
                                                     <constraint firstAttribute="height" secondItem="Aad-Vq-tZ3" secondAttribute="height" id="2nY-0c-fsY"/>
+                                                    <constraint firstItem="Aad-Vq-tZ3" firstAttribute="top" secondItem="NFD-Hb-QND" secondAttribute="top" id="3lP-yG-bCE"/>
                                                     <constraint firstItem="NFD-Hb-QND" firstAttribute="top" secondItem="1YF-XA-aHO" secondAttribute="top" id="7mu-ba-9Gh"/>
-                                                    <constraint firstItem="Aad-Vq-tZ3" firstAttribute="top" secondItem="1YF-XA-aHO" secondAttribute="top" id="JNA-Lj-nLm"/>
                                                     <constraint firstAttribute="trailing" secondItem="Aad-Vq-tZ3" secondAttribute="trailing" id="KKj-tw-KUa"/>
-                                                    <constraint firstAttribute="height" constant="38.329999999999998" id="Rmm-8q-sBB"/>
                                                     <constraint firstAttribute="bottom" secondItem="Aad-Vq-tZ3" secondAttribute="bottom" id="Sa9-g0-EzK"/>
                                                     <constraint firstItem="Aad-Vq-tZ3" firstAttribute="leading" secondItem="NFD-Hb-QND" secondAttribute="trailing" constant="8" id="s7L-IV-IfV"/>
                                                 </constraints>
@@ -1405,7 +1402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qix-kZ-93W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3628" y="-40"/>
+            <point key="canvasLocation" x="3626.7175572519081" y="-40.140845070422536"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
