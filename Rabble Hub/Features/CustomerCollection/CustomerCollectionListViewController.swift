@@ -27,6 +27,7 @@ class CustomerCollectionListViewController: UIViewController {
 
         collectionTableview.delegate = self
         collectionTableview.dataSource = self
+        searchBar.delegate = self
         
         fetchCustomerCollections()
         segmentedBar.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
@@ -48,11 +49,8 @@ class CustomerCollectionListViewController: UIViewController {
     
     func fetchCustomerCollections() {
         let id = userDataManager.getUserData()?.partner?.id ?? ""
-       // LoadingViewController.present(from: self)
         apiProvider.request(.getCustomerCollection(storeId: id, offset: 0, period: period, search: searchStr)) { result in
-           // LoadingViewController.dismiss(from: self)
             self.handleSuppliersResponse(result)
-            
         }
     }
     
@@ -129,10 +127,25 @@ extension CustomerCollectionListViewController: UITableViewDelegate, UITableView
         let storyboard = UIStoryboard(name: "CustomerCollectionView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as? OrderDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
+            vc.selectedCollectionData = self.collectionData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
-    
 }
 
+extension CustomerCollectionListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchStr = searchText
+        if searchText.count >= 3 {
+            fetchCustomerCollections()
+        }else{
+            searchStr = ""
+            fetchCustomerCollections()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        fetchCustomerCollections()
+    }
+}
