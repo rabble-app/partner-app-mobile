@@ -12,7 +12,7 @@ public class StoreManager {
     
     private let userDefaultsKey = "storedStore"
     
-    private init() {
+    public init() {
         //nothing to do
     }
     
@@ -44,5 +44,9 @@ extension StoreManager {
     
     var userId: String? {
         return store?.userId
+    }
+    
+    func removeStore() {
+        UserDefaults.standard.removeObject(forKey: userDefaultsKey)
     }
 }

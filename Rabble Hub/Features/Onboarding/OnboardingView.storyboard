@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Je-OB-sks">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Je-OB-sks">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +22,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="02I-mC-T8E">
             <objects>
-                <viewController storyboardIdentifier="rdingViewController" id="UZP-jl-37B" customClass="OnboardingViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="UZP-jl-37B" customClass="OnboardingViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IW1-0p-1mY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -501,7 +501,7 @@
         <!--Navigation Controller-->
         <scene sceneID="njZ-Eg-ajD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Je-OB-sks" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OnboardingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="0Je-OB-sks" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Edd-gx-ryA">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
