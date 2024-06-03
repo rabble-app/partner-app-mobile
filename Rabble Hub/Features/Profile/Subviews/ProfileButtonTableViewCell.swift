@@ -10,6 +10,8 @@ import UIKit
 class ProfileButtonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var button: UIButton!
+    var buttonTapped: (() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -23,6 +25,6 @@ class ProfileButtonTableViewCell: UITableViewCell {
     }
 
     @IBAction func buttonTap(_ sender: Any) {
-        
+        self.buttonTapped?()
     }
 }

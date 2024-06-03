@@ -31,4 +31,10 @@ class UserManager {
             }
         }
     }
+    
+    func logoutUser() {
+        UserDefaults.standard.removeObject(forKey: userDefaultsKey)
+        UserDefaultsTokenManager().removeToken()
+        StoreManager().removeStore()
+    }
 }

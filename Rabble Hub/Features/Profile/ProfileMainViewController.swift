@@ -18,11 +18,20 @@ class ProfileMainViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        
-        
         self.tableView.reloadData()
     }
+    
+    
+    func navigateToLoginScreen() {
 
+        let storyboard = UIStoryboard(name: "OnboardingView", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingNavigationController") as? UINavigationController {
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+                window.rootViewController = vc
+                UIView.transition(with: window, duration: 0.1, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            }
+        }
+    }
 }
 
 extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,8 +75,16 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return self.viewModel.getCellForMode(mode: self.viewModel.menus[indexPath.row].mode ?? .infoUI, tableView: tableView, indexPath: indexPath)
+        var cell = self.viewModel.getCellForMode(mode: self.viewModel.menus[indexPath.row].mode ?? .infoUI, tableView: tableView, indexPath: indexPath)
+        if let cell = cell as? ProfileButtonTableViewCell {
+            cell.buttonTapped = {
+                UserManager.shared.logoutUser()
+                DispatchQueue.main.async {
+                    self.navigateToLoginScreen()
+                }
+            }
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
