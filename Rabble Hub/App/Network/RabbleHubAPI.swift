@@ -17,6 +17,7 @@ public enum RabbleHubAPI {
     case createBuyingTeam(name: String, postalCode: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
     case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
     case getDeliveryDays(supplierId: String?, postalCode: String?)
+    case getCustomerCollection(storeId: String, offset: Int, period: String, search: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -42,6 +43,28 @@ extension RabbleHubAPI: TargetType {
             return URLConfig.addStoreHours
         case .getDeliveryDays(let supplierId, let postalCode):
             return "\(URLConfig.getDaysOfDelivery)/\(supplierId!)/\(postalCode!)"
+        case .getCustomerCollection(let storeId, let offset, let period, let search):
+            var path = "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
+            
+//            var queryItems: [String] = []
+//            
+//            if let offset = offset {
+//                queryItems.append("offset=\(offset)")
+//            }
+//            
+//            queryItems.append("period=\(period)")
+//            
+//            if let search = search, !search.isEmpty {
+//                queryItems.append("search=\(search)")
+//            }
+//            
+//            if !queryItems.isEmpty {
+//                let queryString = queryItems.joined(separator: "&")
+//                path += "?\(queryString)"
+//            }
+            
+            return path
+
         }
     }
     
@@ -51,7 +74,7 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .updateUserRecord, .addStoreHours:
             return .patch
-        case .getSuppliers, .getDeliveryDays:
+        case .getSuppliers, .getDeliveryDays, .getCustomerCollection:
             return .get
         }
     }
@@ -115,6 +138,23 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: (customOpenHoursModel?.asDictionary())!, encoding: JSONEncoding.default)
         case .getDeliveryDays:
             return .requestPlain
+        case .getCustomerCollection(let storeId, let offset, let period, let search):
+            var path = "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
+            var parameters: [String: Any] = [:]
+            
+            // Add offset parameter
+            parameters["offset"] = offset
+            
+            // Add period parameter
+            parameters["period"] = period
+            
+            // Add search parameter if not empty
+            if !search.isEmpty {
+                parameters["search"] = search
+            }
+            
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+
         }
     }
     
