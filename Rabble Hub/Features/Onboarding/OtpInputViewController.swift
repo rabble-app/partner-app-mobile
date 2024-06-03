@@ -19,6 +19,8 @@ class OtpInputViewController: UIViewController {
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var ontpContainer: UIView!
     
+    private let userDataManager = UserDataManager()
+    
     lazy var otpField: EliteOTPField = {
         let field = EliteOTPField()
         field.slotCount = 6
@@ -118,6 +120,11 @@ class OtpInputViewController: UIViewController {
     }
     
     private func handleVerificationSuccess(_ response: VerifyOTPResponse) {
+        
+        if let userData = response.data {
+            userDataManager.saveUserData(userData)
+        }
+        
         SnackBar().alert(withMessage: response.message, isSuccess: true, parent: view)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             let tokenManager = UserDefaultsTokenManager()

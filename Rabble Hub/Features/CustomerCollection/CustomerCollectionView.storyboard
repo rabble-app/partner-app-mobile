@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -260,12 +260,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-O7-3p1">
-                                                <rect key="frame" x="284.33333333333331" y="204" width="92.666666666666686" height="19.333333333333343"/>
+                                                <rect key="frame" x="346.33333333333331" y="204" width="30.666666666666686" height="19.333333333333343"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Farm &amp; Dairy">
+                                                    <fragment content="Test">
                                                         <attributes>
-                                                            <color key="NSColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <font key="NSFont" size="16" name="SFPro-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -285,15 +286,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7M-a9-fWi">
-                                                <rect key="frame" x="280" y="256.33333333333331" width="97" height="19.333333333333314"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="22 Jan, 17:38">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="16" name="SFPro-Regular"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                                <rect key="frame" x="377" y="266" width="0.0" height="0.0"/>
+                                                <attributedString key="attributedText"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-VA-1dm">
@@ -324,34 +318,20 @@
                                                                         <constraint firstAttribute="height" constant="1" id="mau-Z0-A73"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pV-GC-yUd">
-                                                                    <rect key="frame" x="320.66666666666669" y="35.666666666666664" width="24.333333333333314" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pV-GC-yUd">
+                                                                    <rect key="frame" x="321" y="35.666666666666664" width="24" height="24"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4S-P2-2ts">
-                                                                    <rect key="frame" x="16" y="27" width="157.33333333333334" height="24"/>
-                                                                    <attributedString key="attributedText">
-                                                                        <fragment content="Cacklebean Eggs.">
-                                                                            <attributes>
-                                                                                <color key="NSColor" name="gray_2"/>
-                                                                                <font key="NSFont" metaFont="system" size="20"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
+                                                                    <rect key="frame" x="16" y="27" width="0.0" height="0.0"/>
+                                                                    <attributedString key="attributedText"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDU-xF-dxb">
-                                                                    <rect key="frame" x="16.000000000000004" y="51" width="46.333333333333343" height="17"/>
-                                                                    <attributedString key="attributedText">
-                                                                        <fragment content="6 Eggs">
-                                                                            <attributes>
-                                                                                <color key="NSColor" name="blue_1"/>
-                                                                                <font key="NSFont" size="14" name="SFPro-Semibold"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
+                                                                    <rect key="frame" x="16" y="27" width="0.0" height="0.0"/>
+                                                                    <attributedString key="attributedText"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -502,17 +482,11 @@
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="blue_1">
-            <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="button_primary">
             <color red="0.84299999475479126" green="0.95300000905990601" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_secondary">
             <color red="0.039000000804662704" green="0.51800000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray_2">
-            <color red="0.31000000238418579" green="0.31000000238418579" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
