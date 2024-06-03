@@ -38,6 +38,7 @@ class RabbleTextField: UITextField {
         self.layer.borderWidth = 1.0
         self.layer.borderColor = Colors.Gray5.cgColor
         self.layer.backgroundColor = UIColor.white.cgColor
+        self.autocapitalizationType = .words
     }
 
     // MARK: - Overrides
