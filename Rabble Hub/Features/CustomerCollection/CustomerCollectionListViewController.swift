@@ -116,8 +116,7 @@ extension CustomerCollectionListViewController: UITableViewDelegate, UITableView
         
         let word = collection.user.firstName.prefix(1).uppercased()
         if let firstLetter = word.first {
-            let firstLetterString = String(firstLetter).uppercased()
-            cell.initialNameLabel.text = "\(firstLetter)"
+            cell.initialNameLabel.text = String(firstLetter).uppercased()
         }
         
         return cell

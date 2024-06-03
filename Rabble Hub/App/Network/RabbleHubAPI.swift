@@ -44,26 +44,7 @@ extension RabbleHubAPI: TargetType {
         case .getDeliveryDays(let supplierId, let postalCode):
             return "\(URLConfig.getDaysOfDelivery)/\(supplierId!)/\(postalCode!)"
         case .getCustomerCollection(let storeId, let offset, let period, let search):
-            var path = "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
-            
-//            var queryItems: [String] = []
-//            
-//            if let offset = offset {
-//                queryItems.append("offset=\(offset)")
-//            }
-//            
-//            queryItems.append("period=\(period)")
-//            
-//            if let search = search, !search.isEmpty {
-//                queryItems.append("search=\(search)")
-//            }
-//            
-//            if !queryItems.isEmpty {
-//                let queryString = queryItems.joined(separator: "&")
-//                path += "?\(queryString)"
-//            }
-            
-            return path
+            return "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
 
         }
     }
@@ -139,16 +120,9 @@ extension RabbleHubAPI: TargetType {
         case .getDeliveryDays:
             return .requestPlain
         case .getCustomerCollection(let storeId, let offset, let period, let search):
-            var path = "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
             var parameters: [String: Any] = [:]
-            
-            // Add offset parameter
             parameters["offset"] = offset
-            
-            // Add period parameter
             parameters["period"] = period
-            
-            // Add search parameter if not empty
             if !search.isEmpty {
                 parameters["search"] = search
             }
