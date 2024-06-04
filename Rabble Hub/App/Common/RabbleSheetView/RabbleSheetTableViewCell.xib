@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RabbleSheetTableViewCell" rowHeight="69" id="KGk-i7-Jjw" customClass="RabbleSheetTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="527" height="69"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="527" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r86-2o-dAg">
+                        <rect key="frame" x="0.0" y="24.666666666666671" width="495" height="20"/>
+                        <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="16"/>
+                        <color key="textColor" name="gray_2"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ENt-Oe-NCg">
+                        <rect key="frame" x="503" y="23.666666666666664" width="24" height="22.666666666666664"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Pjc-Fb-0h0"/>
+                            <constraint firstAttribute="width" constant="24" id="w9c-Di-puu"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ENt-Oe-NCg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8pV-wl-iOw"/>
+                    <constraint firstItem="r86-2o-dAg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RkT-yd-7pc"/>
+                    <constraint firstItem="r86-2o-dAg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UjS-xu-wYG"/>
+                    <constraint firstAttribute="trailing" secondItem="ENt-Oe-NCg" secondAttribute="trailing" id="kLQ-q5-OfP"/>
+                    <constraint firstItem="ENt-Oe-NCg" firstAttribute="leading" secondItem="r86-2o-dAg" secondAttribute="trailing" constant="8" id="kts-VU-VuU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="optionLabel" destination="r86-2o-dAg" id="fhH-vV-DhU"/>
+                <outlet property="selectedIndicatorImage" destination="ENt-Oe-NCg" id="VcD-rJ-r4c"/>
+            </connections>
+            <point key="canvasLocation" x="238.93129770992365" y="28.52112676056338"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="gray_2">
+            <color red="0.31000000238418579" green="0.31000000238418579" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

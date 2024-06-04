@@ -61,7 +61,13 @@ class CreateALimitViewController: UIViewController {
     }
     
     @IBAction private func selectOptionButtonTap(_ sender: Any) {
-        // Add your functionality here
+        let rabbleSheetViewController = RabbleSheetViewController()
+        rabbleSheetViewController.headerTitle = "Select an option"
+        rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
+        rabbleSheetViewController.itemSelected = { item in
+            self.selectOptionButton.setTitle(item, for: .normal)
+        }
+        present(rabbleSheetViewController, animated: true, completion: nil)
     }
     
     @IBAction private func nextButtonTap(_ sender: Any) {

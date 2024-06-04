@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </containerView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaY-0z-hbB">
-                                <rect key="frame" x="0.0" y="238.33333333333334" width="393" height="490.66666666666663"/>
+                                <rect key="frame" x="0.0" y="238.33333333333334" width="393" height="490.66666666666674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coD-Gm-Ibg">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="911.66666666666663"/>
@@ -104,6 +104,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewj-tP-wJz" userLabel="Store Type Button">
+                                                        <rect key="frame" x="16" y="422" width="361" height="56"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="storeTypeButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xYY-To-rzm"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="4S7-Za-G7W">
                                                         <rect key="frame" x="337" y="438" width="24" height="24"/>
                                                         <color key="tintColor" name="gray_2"/>
@@ -121,6 +129,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN6-lv-7xQ" userLabel="Shelf Space Button">
+                                                        <rect key="frame" x="16" y="655.33333333333326" width="361" height="56"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="shelfSpaceButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Hex-ER-35w"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-0v-k2c">
                                                         <rect key="frame" x="337" y="671.33333333333326" width="24" height="24"/>
                                                         <color key="tintColor" name="gray_2"/>
@@ -163,6 +179,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQv-gy-mWo" userLabel="Dry Storage Button">
+                                                        <rect key="frame" x="16" y="839.66666666666663" width="361" height="56"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="dryStorageButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WF7-n6-avI"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="KLw-kj-evv">
                                                         <rect key="frame" x="337" y="855.66666666666663" width="24" height="24"/>
                                                         <color key="tintColor" name="gray_2"/>
@@ -177,6 +201,7 @@
                                                     <constraint firstItem="0BY-oS-kBE" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="12C-ZD-wxb"/>
                                                     <constraint firstItem="0BY-oS-kBE" firstAttribute="top" secondItem="pH6-Fy-LBu" secondAttribute="top" constant="8" id="1sv-OK-UJa"/>
                                                     <constraint firstAttribute="trailing" secondItem="XEw-lz-jIn" secondAttribute="trailing" constant="16" id="23y-om-tkr"/>
+                                                    <constraint firstItem="ewj-tP-wJz" firstAttribute="width" secondItem="GIw-cU-qgY" secondAttribute="width" id="3Un-2a-0F6"/>
                                                     <constraint firstItem="ldo-qq-6KT" firstAttribute="top" secondItem="9Jx-dm-BED" secondAttribute="bottom" constant="17" id="4Ov-Jc-zJE"/>
                                                     <constraint firstItem="GsJ-P0-l1A" firstAttribute="top" secondItem="KY9-Dn-DnL" secondAttribute="bottom" constant="16" id="50u-cC-Mal"/>
                                                     <constraint firstItem="4S7-Za-G7W" firstAttribute="centerY" secondItem="GIw-cU-qgY" secondAttribute="centerY" id="5Ya-EU-JXO"/>
@@ -193,11 +218,16 @@
                                                     <constraint firstItem="ldo-qq-6KT" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="KmO-zi-iFK"/>
                                                     <constraint firstItem="9Jx-dm-BED" firstAttribute="top" secondItem="tih-y2-ZyH" secondAttribute="bottom" constant="40" id="Kot-Bd-ELp"/>
                                                     <constraint firstAttribute="trailing" secondItem="9Jx-dm-BED" secondAttribute="trailing" constant="16" id="MlP-yG-lO8"/>
+                                                    <constraint firstItem="hN6-lv-7xQ" firstAttribute="width" secondItem="tih-y2-ZyH" secondAttribute="width" id="NAf-N7-msL"/>
                                                     <constraint firstAttribute="trailing" secondItem="ldo-qq-6KT" secondAttribute="trailing" constant="16" id="Ocy-cl-PNu"/>
                                                     <constraint firstItem="tih-y2-ZyH" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="QM7-Uu-AVw"/>
                                                     <constraint firstItem="KY9-Dn-DnL" firstAttribute="top" secondItem="XEw-lz-jIn" secondAttribute="bottom" constant="16" id="Szf-aa-tMi"/>
                                                     <constraint firstItem="Kjv-HF-nic" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="Tw6-Qz-bQ9"/>
+                                                    <constraint firstItem="hN6-lv-7xQ" firstAttribute="centerY" secondItem="tih-y2-ZyH" secondAttribute="centerY" id="Uh8-BZ-qQb"/>
+                                                    <constraint firstItem="pQv-gy-mWo" firstAttribute="centerY" secondItem="Mn7-1I-avL" secondAttribute="centerY" id="W0G-w7-paE"/>
                                                     <constraint firstAttribute="trailing" secondItem="0BY-oS-kBE" secondAttribute="trailing" constant="16" id="YKx-FX-WTS"/>
+                                                    <constraint firstItem="hN6-lv-7xQ" firstAttribute="centerX" secondItem="tih-y2-ZyH" secondAttribute="centerX" id="YUX-KT-Dkt"/>
+                                                    <constraint firstItem="ewj-tP-wJz" firstAttribute="centerX" secondItem="GIw-cU-qgY" secondAttribute="centerX" id="YsK-Wv-64I"/>
                                                     <constraint firstItem="l7o-0v-k2c" firstAttribute="centerY" secondItem="tih-y2-ZyH" secondAttribute="centerY" id="Z6B-C2-6Ke"/>
                                                     <constraint firstAttribute="trailing" secondItem="KY9-Dn-DnL" secondAttribute="trailing" constant="16" id="ZjS-Lz-5nK"/>
                                                     <constraint firstItem="KY9-Dn-DnL" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="aQk-Rk-KH5"/>
@@ -208,14 +238,21 @@
                                                     <constraint firstItem="GsJ-P0-l1A" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="dqR-ZD-gqW"/>
                                                     <constraint firstAttribute="trailing" secondItem="zmh-jb-eH9" secondAttribute="trailing" constant="16" id="eHU-5H-MlN"/>
                                                     <constraint firstItem="Kjv-HF-nic" firstAttribute="top" secondItem="qi9-RA-p8n" secondAttribute="bottom" constant="16" id="eIV-kR-GnY"/>
+                                                    <constraint firstItem="ewj-tP-wJz" firstAttribute="centerY" secondItem="GIw-cU-qgY" secondAttribute="centerY" id="esx-j1-hcc"/>
+                                                    <constraint firstItem="pQv-gy-mWo" firstAttribute="height" secondItem="Mn7-1I-avL" secondAttribute="height" id="ffI-K3-fS8"/>
                                                     <constraint firstAttribute="trailing" secondItem="tih-y2-ZyH" secondAttribute="trailing" constant="16" id="gx7-Xs-6hY"/>
                                                     <constraint firstItem="4S7-Za-G7W" firstAttribute="trailing" secondItem="GIw-cU-qgY" secondAttribute="trailing" constant="-16" id="hxX-fL-FUa"/>
                                                     <constraint firstAttribute="trailing" secondItem="GIw-cU-qgY" secondAttribute="trailing" constant="16" id="iey-tC-Fzm"/>
+                                                    <constraint firstItem="hN6-lv-7xQ" firstAttribute="height" secondItem="tih-y2-ZyH" secondAttribute="height" id="kCk-3z-6lN"/>
                                                     <constraint firstItem="Mn7-1I-avL" firstAttribute="top" secondItem="ldo-qq-6KT" secondAttribute="bottom" constant="16" id="oyb-Y6-I57"/>
+                                                    <constraint firstItem="KLw-kj-evv" firstAttribute="width" secondItem="Mn7-1I-avL" secondAttribute="width" multiplier="0.066482" id="pj9-zB-1Eh"/>
                                                     <constraint firstItem="KLw-kj-evv" firstAttribute="centerY" secondItem="Mn7-1I-avL" secondAttribute="centerY" id="r4M-Cn-XaU"/>
+                                                    <constraint firstItem="pQv-gy-mWo" firstAttribute="centerX" secondItem="Mn7-1I-avL" secondAttribute="centerX" id="rB7-ws-UyJ"/>
+                                                    <constraint firstItem="pQv-gy-mWo" firstAttribute="width" secondItem="Mn7-1I-avL" secondAttribute="width" id="s2e-Bt-fVr"/>
                                                     <constraint firstAttribute="trailing" secondItem="qi9-RA-p8n" secondAttribute="trailing" constant="16" id="v3R-12-ncE"/>
                                                     <constraint firstItem="qi9-RA-p8n" firstAttribute="leading" secondItem="pH6-Fy-LBu" secondAttribute="leading" constant="16" id="x4Z-QT-6WS"/>
                                                     <constraint firstAttribute="trailing" secondItem="Mn7-1I-avL" secondAttribute="trailing" constant="16" id="xQw-E7-Xcl"/>
+                                                    <constraint firstItem="ewj-tP-wJz" firstAttribute="height" secondItem="GIw-cU-qgY" secondAttribute="height" id="zGa-d4-Jiq"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -326,11 +363,14 @@
                         <outlet property="city" destination="XEw-lz-jIn" id="WHY-2w-iwJ"/>
                         <outlet property="continueButton" destination="97G-WT-S3k" id="U7A-se-tq1"/>
                         <outlet property="direction" destination="GsJ-P0-l1A" id="b0R-y0-agB"/>
+                        <outlet property="dryStorageButton" destination="pQv-gy-mWo" id="uQN-CM-28k"/>
                         <outlet property="dryStorageSpace" destination="Mn7-1I-avL" id="jTM-Vq-NEa"/>
                         <outlet property="postalCode" destination="zmh-jb-eH9" id="bxY-RP-56W"/>
                         <outlet property="shelfSpace" destination="tih-y2-ZyH" id="aLl-2l-s2t"/>
+                        <outlet property="shelfSpaceButton" destination="hN6-lv-7xQ" id="fWc-6k-ZmX"/>
                         <outlet property="storeName" destination="0BY-oS-kBE" id="5TJ-qR-ri1"/>
                         <outlet property="storeType" destination="GIw-cU-qgY" id="uBE-2b-Nkv"/>
+                        <outlet property="storeTypeButton" destination="ewj-tP-wJz" id="v2K-9d-9iM"/>
                         <outlet property="street" destination="KY9-Dn-DnL" id="pur-8x-gRR"/>
                     </connections>
                 </viewController>
@@ -1406,7 +1446,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wgv-gz-aM2"/>
+        <segue reference="nyG-45-66W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_agreement" width="27" height="35"/>

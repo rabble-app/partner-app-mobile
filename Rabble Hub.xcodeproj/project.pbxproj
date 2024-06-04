@@ -95,10 +95,14 @@
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
 		AC0EE1E52C04168A0047293F /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE1E42C0416890047293F /* CalendarViewCell.swift */; };
 		AC0EE1E72C04686E0047293F /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE1E62C04686E0047293F /* DateExtension.swift */; };
+		AC119CB02C0EFE6A00056441 /* RabbleSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC119CAE2C0EFE6A00056441 /* RabbleSheetTableViewCell.swift */; };
+		AC119CB12C0EFE6A00056441 /* RabbleSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC119CAF2C0EFE6A00056441 /* RabbleSheetTableViewCell.xib */; };
 		AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12289E2BE73AFF001EC15F /* Properties.swift */; };
 		AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1228A02BE74635001EC15F /* RabbleTextView.swift */; };
 		AC159FA92BED145E00926222 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC159FA82BED145E00926222 /* Media.xcassets */; };
 		AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC401FBD2BED225800FA2F3F /* StoryViewController.swift */; };
+		AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */; };
+		AC45D16E2C0E1A3C00731F1F /* RabbleSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */; };
 		AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */; };
 		AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */; };
 		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
@@ -263,10 +267,14 @@
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
 		AC0EE1E42C0416890047293F /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
 		AC0EE1E62C04686E0047293F /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		AC119CAE2C0EFE6A00056441 /* RabbleSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleSheetTableViewCell.swift; sourceTree = "<group>"; };
+		AC119CAF2C0EFE6A00056441 /* RabbleSheetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RabbleSheetTableViewCell.xib; sourceTree = "<group>"; };
 		AC12289E2BE73AFF001EC15F /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		AC1228A02BE74635001EC15F /* RabbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextView.swift; sourceTree = "<group>"; };
 		AC159FA82BED145E00926222 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		AC401FBD2BED225800FA2F3F /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleSheetViewController.swift; sourceTree = "<group>"; };
+		AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RabbleSheetViewController.xib; sourceTree = "<group>"; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleViewController.swift; sourceTree = "<group>"; };
@@ -590,6 +598,7 @@
 		86C0F5D92BCFC6E600B78747 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AC45D16A2C0E195400731F1F /* RabbleSheetView */,
 				86C0F5DC2BCFC71200B78747 /* PushAnimator.swift */,
 				AC5EF0032BD0F1660002A8D7 /* RabbleEnums.swift */,
 				8656189B2BFF99BA001E65EB /* ToastView.swift */,
@@ -676,6 +685,17 @@
 				AC0EE1E42C0416890047293F /* CalendarViewCell.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		AC45D16A2C0E195400731F1F /* RabbleSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */,
+				AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */,
+				AC119CAE2C0EFE6A00056441 /* RabbleSheetTableViewCell.swift */,
+				AC119CAF2C0EFE6A00056441 /* RabbleSheetTableViewCell.xib */,
+			);
+			path = RabbleSheetView;
 			sourceTree = "<group>";
 		};
 		AC5EF0072BD115460002A8D7 /* Subviews */ = {
@@ -959,6 +979,7 @@
 				86D0145D2BEA14350004B1C6 /* Poppins-Regular.ttf in Resources */,
 				86D014582BEA14350004B1C6 /* Poppins-MediumItalic.ttf in Resources */,
 				86D014562BEA14350004B1C6 /* Poppins-LightItalic.ttf in Resources */,
+				AC45D16E2C0E1A3C00731F1F /* RabbleSheetViewController.xib in Resources */,
 				86A60DEE2BCCEF7600496390 /* SignUpView.storyboard in Resources */,
 				86A60DF82BCCF8C200496390 /* OnboardingView.storyboard in Resources */,
 				86DD74B22BD23898001FEBBD /* QrCodeView.storyboard in Resources */,
@@ -967,6 +988,7 @@
 				8617C4D52BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard in Resources */,
 				86D0145A2BEA14350004B1C6 /* Poppins-BlackItalic.ttf in Resources */,
 				86D014422BEA14220004B1C6 /* GoshaSansRegular.otf in Resources */,
+				AC119CB12C0EFE6A00056441 /* RabbleSheetTableViewCell.xib in Resources */,
 				86D014642BEA14350004B1C6 /* Poppins-ExtraBold.ttf in Resources */,
 				AC8CDDE62BE692600091882B /* SF-Pro-Italic.ttf in Resources */,
 				86D014592BEA14350004B1C6 /* Poppins-ExtraBoldItalic.ttf in Resources */,
@@ -1096,6 +1118,7 @@
 				AC0EE1E52C04168A0047293F /* CalendarViewCell.swift in Sources */,
 				8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */,
 				867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */,
+				AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
 				8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */,
 				86C0F5DD2BCFC71200B78747 /* PushAnimator.swift in Sources */,
@@ -1108,6 +1131,7 @@
 				86E08F772C0DDF0200AE6D58 /* UserDataManager.swift in Sources */,
 				AC6418072C0378DA00B8A61B /* DeliveryDayResponse.swift in Sources */,
 				AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */,
+				AC119CB02C0EFE6A00056441 /* RabbleSheetTableViewCell.swift in Sources */,
 				86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */,
 				865618A02BFFA9E8001E65EB /* LoadingViewController.swift in Sources */,
 				AC6417F42BFCBDB400B8A61B /* CustomOpenHoursModel.swift in Sources */,
