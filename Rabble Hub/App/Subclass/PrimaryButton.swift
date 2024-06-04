@@ -13,6 +13,7 @@ class PrimaryButton: UIButton {
     override var isEnabled: Bool {
         didSet {
             updateBackgroundColor()
+            updatTitleColor()
         }
     }
     
@@ -51,6 +52,10 @@ class PrimaryButton: UIButton {
     
     private func updateBackgroundColor() {
         self.backgroundColor = isEnabled ? enabledBackgroundColor : disabledBackgroundColor
+    }
+    
+    private func updatTitleColor() {
+        self.setTitleColor(isEnabled ? Colors.ButtonTitleColor : Colors.ButtonTitleColor.withAlphaComponent(0.40), for: .normal)
     }
     
     // MARK: - Overrides

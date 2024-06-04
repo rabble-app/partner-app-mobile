@@ -17,8 +17,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var street: RabbleTextField!
     @IBOutlet var direction: RabbleTextView!
     @IBOutlet var storeType: RabbleTextField!
+    @IBOutlet weak var storeTypeButton: UIButton!
     @IBOutlet var shelfSpace: RabbleTextField!
+    @IBOutlet weak var shelfSpaceButton: UIButton!
     @IBOutlet var dryStorageSpace: RabbleTextField!
+    @IBOutlet weak var dryStorageButton: UIButton!
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
@@ -33,6 +36,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
         
+        self.storeTypeButton.setTitle("", for: .normal)
+        self.shelfSpaceButton.setTitle("", for: .normal)
+        self.dryStorageButton.setTitle("", for: .normal)
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
@@ -56,6 +62,36 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nextButtonTap(_ sender: Any) {
         fetchSuppliers()
+    }
+    
+    @IBAction func storeTypeButtonTapped(_ sender: Any) {
+        let rabbleSheetViewController = RabbleSheetViewController()
+        rabbleSheetViewController.headerTitle = "Store Type"
+        rabbleSheetViewController.items =  ["Item 1", "Item 2", "Item 3", "Item 4"]
+        rabbleSheetViewController.itemSelected = { item in
+            self.storeType.text = item
+        }
+        present(rabbleSheetViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func shelfSpaceButtonTapped(_ sender: Any) {
+        let rabbleSheetViewController = RabbleSheetViewController()
+        rabbleSheetViewController.headerTitle = "Select an option"
+        rabbleSheetViewController.items =  ["5 cubic feet", "10 cubic feet", "15 cubic feet", "20 cubic feet", "25 cubic feet"]
+        rabbleSheetViewController.itemSelected = { item in
+            self.shelfSpace.text = item
+        }
+        present(rabbleSheetViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func dryStorageButtonTapped(_ sender: Any) {
+        let rabbleSheetViewController = RabbleSheetViewController()
+        rabbleSheetViewController.headerTitle = "Select an option"
+        rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
+        rabbleSheetViewController.itemSelected = { item in
+            self.dryStorageSpace.text = item
+        }
+        present(rabbleSheetViewController, animated: true, completion: nil)
     }
     
     private func fetchSuppliers() {

@@ -646,6 +646,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyh-k2-NJA" userLabel="Store Type Button">
+                                                        <rect key="frame" x="16" y="438" width="361" height="56"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="storeTypeButtonTapped:" destination="dRA-Bg-sgp" eventType="touchUpInside" id="hOo-nS-CBu"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="4pz-pT-8jL">
                                                         <rect key="frame" x="337" y="454" width="24" height="24"/>
                                                         <color key="tintColor" name="gray_2"/>
@@ -663,6 +671,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-qe-W1k" userLabel="Fridge Space Button">
+                                                        <rect key="frame" x="16" y="597.33333333333337" width="361" height="56"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="fridgeSpaceButtonTapped:" destination="dRA-Bg-sgp" eventType="touchUpInside" id="HTU-cP-6aF"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="hBM-Uw-V8j">
                                                         <rect key="frame" x="337" y="613.33333333333337" width="24" height="24"/>
                                                         <color key="tintColor" name="gray_2"/>
@@ -704,6 +720,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huG-CC-GsD" userLabel="Dry Storage Button">
+                                                        <rect key="frame" x="16" y="757.66666666666674" width="361" height="56"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="dryStorageButtonTapped:" destination="dRA-Bg-sgp" eventType="touchUpInside" id="wEG-kK-FLK"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="gMj-LP-BMb">
                                                         <rect key="frame" x="337" y="773.66666666666674" width="24" height="24"/>
                                                         <color key="tintColor" name="gray_2"/>
@@ -740,7 +764,10 @@
                                                     <constraint firstItem="hBM-Uw-V8j" firstAttribute="trailing" secondItem="Pi5-oG-YkK" secondAttribute="trailing" constant="-16" id="20p-OP-v7W"/>
                                                     <constraint firstItem="AXP-2d-FpI" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="2Vm-Bj-jUV"/>
                                                     <constraint firstAttribute="trailing" secondItem="rO6-9U-B2S" secondAttribute="trailing" constant="16" id="3Wn-dw-TNm"/>
+                                                    <constraint firstItem="rcS-qe-W1k" firstAttribute="width" secondItem="Pi5-oG-YkK" secondAttribute="width" id="3bs-sJ-GeF"/>
+                                                    <constraint firstItem="fyh-k2-NJA" firstAttribute="width" secondItem="s2K-Ve-LUN" secondAttribute="width" id="3k5-D5-csZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="AXP-2d-FpI" secondAttribute="trailing" constant="16" id="3zf-4R-v0f"/>
+                                                    <constraint firstItem="huG-CC-GsD" firstAttribute="centerX" secondItem="AXP-2d-FpI" secondAttribute="centerX" id="7Xe-Ly-ux2"/>
                                                     <constraint firstItem="4pz-pT-8jL" firstAttribute="centerY" secondItem="s2K-Ve-LUN" secondAttribute="centerY" id="7wK-T4-RP9"/>
                                                     <constraint firstItem="gMj-LP-BMb" firstAttribute="centerY" secondItem="AXP-2d-FpI" secondAttribute="centerY" id="87u-NU-hhx"/>
                                                     <constraint firstItem="4jK-1Y-vCr" firstAttribute="top" secondItem="rO6-9U-B2S" secondAttribute="bottom" constant="16" id="AEa-Df-Fbu"/>
@@ -751,27 +778,36 @@
                                                     <constraint firstItem="rO6-9U-B2S" firstAttribute="top" secondItem="Gwg-Wf-keY" secondAttribute="bottom" constant="16" id="JIb-MY-aGl"/>
                                                     <constraint firstAttribute="trailing" secondItem="cZf-g9-agi" secondAttribute="trailing" constant="16" id="LMD-1v-QkQ"/>
                                                     <constraint firstItem="Gwg-Wf-keY" firstAttribute="top" secondItem="HeD-Uu-SuJ" secondAttribute="top" constant="24" id="LQq-pA-Xhd"/>
+                                                    <constraint firstItem="rcS-qe-W1k" firstAttribute="centerY" secondItem="Pi5-oG-YkK" secondAttribute="centerY" id="Md0-zR-sLi"/>
                                                     <constraint firstItem="hFP-uy-z4b" firstAttribute="top" secondItem="xzA-oH-YtT" secondAttribute="bottom" constant="17" id="Ol0-Xh-bho"/>
                                                     <constraint firstItem="RRx-Ot-G4r" firstAttribute="top" secondItem="cZf-g9-agi" secondAttribute="bottom" constant="16" id="P07-ci-kJs"/>
                                                     <constraint firstAttribute="trailing" secondItem="hJ4-Wk-Ntp" secondAttribute="trailing" constant="16" id="RB5-8C-NPa"/>
+                                                    <constraint firstItem="rcS-qe-W1k" firstAttribute="centerX" secondItem="Pi5-oG-YkK" secondAttribute="centerX" id="RPV-64-vvT"/>
                                                     <constraint firstItem="DnQ-bO-I6W" firstAttribute="top" secondItem="AXP-2d-FpI" secondAttribute="bottom" constant="68" id="RxM-pg-bIG"/>
+                                                    <constraint firstItem="fyh-k2-NJA" firstAttribute="centerX" secondItem="s2K-Ve-LUN" secondAttribute="centerX" id="Tvx-pl-eA6"/>
                                                     <constraint firstItem="Pi5-oG-YkK" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="W3e-kV-2ue"/>
                                                     <constraint firstItem="rO6-9U-B2S" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="WKZ-Uw-PM5"/>
+                                                    <constraint firstItem="rcS-qe-W1k" firstAttribute="height" secondItem="Pi5-oG-YkK" secondAttribute="height" id="XAe-aB-hKi"/>
+                                                    <constraint firstItem="huG-CC-GsD" firstAttribute="width" secondItem="AXP-2d-FpI" secondAttribute="width" id="Xv9-lT-JNc"/>
                                                     <constraint firstItem="s2K-Ve-LUN" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="aWh-Fy-Hhz"/>
                                                     <constraint firstAttribute="trailing" secondItem="RRx-Ot-G4r" secondAttribute="trailing" constant="16" id="ag2-fH-44q"/>
                                                     <constraint firstItem="cZf-g9-agi" firstAttribute="top" secondItem="4jK-1Y-vCr" secondAttribute="bottom" constant="16" id="b46-QZ-Wtp"/>
+                                                    <constraint firstItem="huG-CC-GsD" firstAttribute="centerY" secondItem="AXP-2d-FpI" secondAttribute="centerY" id="bda-Vk-qEu"/>
                                                     <constraint firstItem="Gwg-Wf-keY" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="ckL-Im-jSp"/>
                                                     <constraint firstItem="hJ4-Wk-Ntp" firstAttribute="top" secondItem="s2K-Ve-LUN" secondAttribute="bottom" constant="16" id="e5R-Z5-MdT"/>
                                                     <constraint firstItem="UlT-Cs-YnG" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="eQU-04-Yz0"/>
                                                     <constraint firstItem="hBM-Uw-V8j" firstAttribute="centerY" secondItem="Pi5-oG-YkK" secondAttribute="centerY" id="eUo-sB-am0"/>
                                                     <constraint firstItem="AXP-2d-FpI" firstAttribute="top" secondItem="hFP-uy-z4b" secondAttribute="bottom" constant="16" id="hIG-gJ-rzp"/>
+                                                    <constraint firstItem="fyh-k2-NJA" firstAttribute="height" secondItem="s2K-Ve-LUN" secondAttribute="height" id="hoI-PL-JGW"/>
                                                     <constraint firstItem="xzA-oH-YtT" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="huJ-0W-aFg"/>
+                                                    <constraint firstItem="huG-CC-GsD" firstAttribute="height" secondItem="AXP-2d-FpI" secondAttribute="height" id="iRD-E7-6nW"/>
                                                     <constraint firstItem="hFP-uy-z4b" firstAttribute="leading" secondItem="HeD-Uu-SuJ" secondAttribute="leading" constant="16" id="iVw-80-WZJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="s2K-Ve-LUN" secondAttribute="trailing" constant="16" id="jGc-MX-KWd"/>
                                                     <constraint firstAttribute="trailing" secondItem="UlT-Cs-YnG" secondAttribute="trailing" constant="16" id="l2C-Hh-XqB"/>
                                                     <constraint firstItem="gMj-LP-BMb" firstAttribute="trailing" secondItem="AXP-2d-FpI" secondAttribute="trailing" constant="-16" id="oiT-8D-AWg"/>
                                                     <constraint firstAttribute="trailing" secondItem="xzA-oH-YtT" secondAttribute="trailing" constant="16" id="p0n-ym-Pxt"/>
                                                     <constraint firstItem="4pz-pT-8jL" firstAttribute="trailing" secondItem="s2K-Ve-LUN" secondAttribute="trailing" constant="-16" id="pWO-iI-rp6"/>
+                                                    <constraint firstItem="fyh-k2-NJA" firstAttribute="centerY" secondItem="s2K-Ve-LUN" secondAttribute="centerY" id="piS-wM-nrT"/>
                                                     <constraint firstAttribute="trailing" secondItem="Gwg-Wf-keY" secondAttribute="trailing" constant="16" id="qiq-F7-98Z"/>
                                                     <constraint firstItem="s2K-Ve-LUN" firstAttribute="top" secondItem="RRx-Ot-G4r" secondAttribute="bottom" constant="16" id="r8n-LY-Kym"/>
                                                     <constraint firstAttribute="trailing" secondItem="hFP-uy-z4b" secondAttribute="trailing" constant="16" id="uYK-eM-prB"/>
@@ -821,6 +857,14 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="dryStorageButton" destination="huG-CC-GsD" id="REt-X2-uTg"/>
+                        <outlet property="dryStorageTextField" destination="AXP-2d-FpI" id="TIg-9p-6oj"/>
+                        <outlet property="fridgeSpaceButton" destination="rcS-qe-W1k" id="AUI-Jd-9wR"/>
+                        <outlet property="fridgeSpaceTextField" destination="Pi5-oG-YkK" id="BTj-ru-Jwa"/>
+                        <outlet property="storeTypeButton" destination="fyh-k2-NJA" id="eRU-WN-Id6"/>
+                        <outlet property="storeTypeTextfield" destination="s2K-Ve-LUN" id="wiX-UC-nbD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRW-l0-uEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
