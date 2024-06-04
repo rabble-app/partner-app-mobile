@@ -36,5 +36,6 @@ class UserManager {
         UserDefaults.standard.removeObject(forKey: userDefaultsKey)
         UserDefaultsTokenManager().removeToken()
         StoreManager().removeStore()
+        UserDataManager().clearUserData()
     }
 }
