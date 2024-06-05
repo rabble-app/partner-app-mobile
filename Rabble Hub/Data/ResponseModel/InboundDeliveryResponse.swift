@@ -37,7 +37,13 @@ struct BasketItem: Codable {
     let id: String
     let price: String
     let quantity: Int
+    let product: Product
 }
+
+// MARK: - Product
+//struct ProductName: Codable {
+//    let name: String
+//}
 
 // MARK: - InboundDeliveryTeam
 struct InboundDeliveryTeam: Codable {

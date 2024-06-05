@@ -28,12 +28,11 @@ class DeliveryDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         setupView()
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.tableView.reloadData()
     }
     
     private func setupView() {
@@ -61,7 +60,7 @@ class DeliveryDetailsViewController: UIViewController {
         self.producerName.text = self.inboundDeliveryDetail?.team.producer.businessName
         self.teamName.text = "\(self.inboundDeliveryDetail?.team.name ?? "") 􀱀"
         self.category.text = self.inboundDeliveryDetail?.team.producer.categories.first?.category.name
-        self.orderNumber.text = ""
+        self.orderNumber.text = self.inboundDeliveryDetail?.id.firstAndLastFour().uppercased()
         let isoDateFormatter = ISO8601DateFormatter()
         isoDateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         
@@ -74,6 +73,8 @@ class DeliveryDetailsViewController: UIViewController {
         } else {
             print("Failed to parse date")
         }
+        
+        self.tableView.reloadData()
         
     }
 
@@ -89,14 +90,19 @@ class DeliveryDetailsViewController: UIViewController {
 extension DeliveryDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.inboundDeliveryDetail?.basket?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryDetailsTableViewCell", for: indexPath) as? DeliveryDetailsTableViewCell else {
             return UITableViewCell()
         }
-
+        
+        let basket = self.inboundDeliveryDetail?.basket?[indexPath.row]
+        
+        cell.productNameLabel.text = basket?.product.name
+        cell.subtitleLabel.text = "\(basket?.product.measuresPerSubUnit ?? 0) \(basket?.product.unitsOfMeasurePerSubUnit ?? "")"
+        cell.quantityLabel.text = "x\(basket?.quantity ?? 0)"
         return cell
     }
 }

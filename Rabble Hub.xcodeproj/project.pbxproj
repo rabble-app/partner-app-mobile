@@ -12,6 +12,7 @@
 		8617C4D52BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8617C4D42BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard */; };
 		8617C4D72BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */; };
 		8617C4D92BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */; };
+		861A57C72C104E0A0026263A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A57C62C104E0A0026263A /* StringExtension.swift */; };
 		861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */; };
 		861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC572BD66D5A007AB919 /* ViewExtension.swift */; };
 		861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */; };
@@ -178,6 +179,7 @@
 		8617C4D42BD0D9CE007A0BA6 /* CustomerCollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCollectionView.storyboard; sourceTree = "<group>"; };
 		8617C4D62BD0DA50007A0BA6 /* CustomerCollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionListViewController.swift; sourceTree = "<group>"; };
 		8617C4D82BD0E706007A0BA6 /* CustomerCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		861A57C62C104E0A0026263A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		861EFC512BD5349D007AB919 /* PartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsViewController.swift; sourceTree = "<group>"; };
 		861EFC572BD66D5A007AB919 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamViewController.swift; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 				ACC28D332BEF52AE006C6CAE /* Image.swift */,
 				861EFC572BD66D5A007AB919 /* ViewExtension.swift */,
 				AC0EE1E62C04686E0047293F /* DateExtension.swift */,
+				861A57C62C104E0A0026263A /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1120,6 +1123,7 @@
 				ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
 				ACC28D342BEF52AE006C6CAE /* Image.swift in Sources */,
+				861A57C72C104E0A0026263A /* StringExtension.swift in Sources */,
 				AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */,
 				AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */,
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
