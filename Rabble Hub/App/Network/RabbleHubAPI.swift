@@ -18,6 +18,7 @@ public enum RabbleHubAPI {
     case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
     case getDeliveryDays(supplierId: String?, postalCode: String?)
     case getCustomerCollection(storeId: String, offset: Int, period: String, search: String)
+    case getInboundDelivery(storeId: String, offset: Int, period: String, search: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -45,6 +46,8 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.getDaysOfDelivery)/\(supplierId!)/\(postalCode!)"
         case .getCustomerCollection(let storeId, let offset, let period, let search):
             return "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
+        case .getInboundDelivery(let storeId, let offset, let period, let search):
+            return "\(URLConfig.getCustomerCollection)/\(storeId)/deliveries"
 
         }
     }
@@ -55,7 +58,7 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .updateUserRecord, .addStoreHours:
             return .patch
-        case .getSuppliers, .getDeliveryDays, .getCustomerCollection:
+        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery:
             return .get
         }
     }
@@ -128,7 +131,16 @@ extension RabbleHubAPI: TargetType {
             }
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-
+        case .getInboundDelivery(let storeId, let offset, let period, let search):
+            var parameters: [String: Any] = [:]
+            parameters["offset"] = offset
+            parameters["period"] = period
+            if !search.isEmpty {
+                parameters["search"] = search
+            }
+            
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            
         }
     }
     

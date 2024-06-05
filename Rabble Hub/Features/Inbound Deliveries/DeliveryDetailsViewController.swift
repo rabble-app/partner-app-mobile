@@ -15,19 +15,27 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet weak var tableViewConstraintHeight: NSLayoutConstraint!
     
+    @IBOutlet var producerName: UILabel!
+    @IBOutlet var teamName: UILabel!
+    @IBOutlet var orderNumber: UILabel!
+    @IBOutlet var category: UILabel!
+    @IBOutlet var deliveryDate: UILabel!
+    
+    
+    var inboundDeliveryDetail: InboundDelivery?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.tableView.reloadData()
     }
     
-    func setupView() {
+    private func setupView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.iconBackgroundView.layer.cornerRadius = 28.0
@@ -47,6 +55,28 @@ class DeliveryDetailsViewController: UIViewController {
         self.title = "Delivery Details"
 
     }
+    
+    private func loadData() {
+        self.producerName.text = self.inboundDeliveryDetail?.team.producer.businessName
+        self.teamName.text = "\(self.inboundDeliveryDetail?.team.name ?? "") 􀱀"
+        self.category.text = self.inboundDeliveryDetail?.team.producer.categories.first?.category.name
+        self.orderNumber.text = self.inboundDeliveryDetail?.id.firstAndLastFour().uppercased()
+        let isoDateFormatter = ISO8601DateFormatter()
+        isoDateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        
+        let dateString = self.inboundDeliveryDetail?.deliveryDate ?? ""
+        if let date = isoDateFormatter.date(from: dateString) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM, HH:mm"
+            let formattedDate = dateFormatter.string(from: date)
+            self.deliveryDate.text = formattedDate
+        } else {
+            print("Failed to parse date")
+        }
+        
+        self.tableView.reloadData()
+        
+    }
 
     @IBAction func confirmButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
@@ -60,14 +90,19 @@ class DeliveryDetailsViewController: UIViewController {
 extension DeliveryDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.inboundDeliveryDetail?.basket?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryDetailsTableViewCell", for: indexPath) as? DeliveryDetailsTableViewCell else {
             return UITableViewCell()
         }
-
+        
+        let basket = self.inboundDeliveryDetail?.basket?[indexPath.row]
+        
+        cell.productNameLabel.text = basket?.product.name
+        cell.subtitleLabel.text = "\(basket?.product.measuresPerSubUnit ?? 0) \(basket?.product.unitsOfMeasurePerSubUnit ?? "")"
+        cell.quantityLabel.text = "x\(basket?.quantity ?? 0)"
         return cell
     }
 }
