@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -78,9 +78,6 @@
                                     <segment title="Upcoming"/>
                                     <segment title="Completed"/>
                                 </segments>
-                                <connections>
-                                    <action selector="deliveriesSegmentedControlTap:" destination="Y6W-OH-hqX" eventType="valueChanged" id="KK0-49-Xuo"/>
-                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" rowHeight="77" estimatedRowHeight="77" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Prq-kK-qBP">
                                 <rect key="frame" x="0.0" y="239" width="393" height="595"/>
@@ -190,8 +187,13 @@
                                         <inset key="separatorInset" minX="24" minY="0.0" maxX="22" maxY="0.0"/>
                                         <connections>
                                             <outlet property="calendarImg" destination="GMU-gi-Jr9" id="eiv-bA-S9Z"/>
+                                            <outlet property="date" destination="AMw-UA-e0Y" id="io5-Pz-Mwn"/>
                                             <outlet property="dateValue" destination="AMw-UA-e0Y" id="eaE-xg-8li"/>
                                             <outlet property="initialBackgroundView" destination="2si-yO-5uA" id="drI-bk-ACQ"/>
+                                            <outlet property="initialLetter" destination="1aK-RU-zCr" id="uti-G2-yga"/>
+                                            <outlet property="itemsCount" destination="KMl-hW-002" id="KEp-Fn-ZfN"/>
+                                            <outlet property="producerName" destination="zgB-wg-jFK" id="bPf-Bn-PHM"/>
+                                            <outlet property="teamName" destination="gSW-va-R8V" id="Lzh-kJ-wbQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -217,6 +219,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="K90-Ak-Hl3"/>
                     <connections>
+                        <outlet property="searchBar" destination="0GV-fx-l7l" id="INb-9v-kLY"/>
                         <outlet property="segmentedController" destination="2eA-SH-2Lh" id="oYb-mm-SDJ"/>
                         <outlet property="tableView" destination="Prq-kK-qBP" id="3au-Gz-wyc"/>
                     </connections>
@@ -532,10 +535,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Cc-iR-M9I"/>
                     <connections>
+                        <outlet property="category" destination="Nus-CP-6Uh" id="gwh-XX-pg3"/>
+                        <outlet property="deliveryDate" destination="XUp-MT-Jnf" id="aBb-pg-iHs"/>
                         <outlet property="iconBackgroundView" destination="oZS-qd-40E" id="aBx-4l-Gyq"/>
+                        <outlet property="orderNumber" destination="IMm-nn-WJK" id="QfD-Tm-1CU"/>
+                        <outlet property="producerName" destination="thJ-BB-5G4" id="WBl-RC-ru0"/>
                         <outlet property="tableView" destination="fWr-4c-uVv" id="DB9-Vh-hPQ"/>
                         <outlet property="tableViewConstraintHeight" destination="j7v-Mb-1Ey" id="i7s-Xx-Lzg"/>
                         <outlet property="tableviewHeaderContainer" destination="kP5-mm-B1U" id="HPw-6h-AMu"/>
+                        <outlet property="teamName" destination="2m0-Z2-4i2" id="KQ3-Or-1Jg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fiO-Ci-K9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1007,7 +1015,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-jj-xO5">
-                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333326" height="38.666666666666629"/>
+                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333331" height="38.666666666666629"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Delivery Checked In!">
                                         <attributes>

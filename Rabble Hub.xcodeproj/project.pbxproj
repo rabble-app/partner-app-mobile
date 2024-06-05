@@ -23,6 +23,7 @@
 		8656189C2BFF99BA001E65EB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189B2BFF99BA001E65EB /* ToastView.swift */; };
 		8656189E2BFFA475001E65EB /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189D2BFFA475001E65EB /* Snackbar.swift */; };
 		865618A02BFFA9E8001E65EB /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189F2BFFA9E8001E65EB /* LoadingViewController.swift */; };
+		865EBA612C100C41004E5798 /* InboundDeliveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865EBA602C100C41004E5798 /* InboundDeliveryResponse.swift */; };
 		865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */; };
 		865F76AC2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */; };
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
@@ -188,6 +189,7 @@
 		8656189B2BFF99BA001E65EB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		8656189D2BFFA475001E65EB /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		8656189F2BFFA9E8001E65EB /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		865EBA602C100C41004E5798 /* InboundDeliveryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundDeliveryResponse.swift; sourceTree = "<group>"; };
 		865F76A92BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamTableViewCell.swift; sourceTree = "<group>"; };
 		865F76AB2BD67E03009DEEA5 /* TeamSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationFailedViewController.swift; path = Subviews/VerificationFailedViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				AC6417F72C00D8C000B8A61B /* StandardResponse.swift */,
 				AC6418062C0378DA00B8A61B /* DeliveryDayResponse.swift */,
 				86E08F782C0DE32500AE6D58 /* CustomerCollectionResponse.swift */,
+				865EBA602C100C41004E5798 /* InboundDeliveryResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1113,6 +1116,7 @@
 				AC6417F42BFCBDB400B8A61B /* CustomOpenHoursModel.swift in Sources */,
 				865F76AA2BD67AE1009DEEA5 /* ManageTeamTableViewCell.swift in Sources */,
 				AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */,
+				865EBA612C100C41004E5798 /* InboundDeliveryResponse.swift in Sources */,
 				ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */,
 				86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */,
 				ACC28D342BEF52AE006C6CAE /* Image.swift in Sources */,

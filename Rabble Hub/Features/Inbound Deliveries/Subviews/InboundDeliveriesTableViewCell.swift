@@ -9,6 +9,11 @@ import UIKit
 
 class InboundDeliveriesTableViewCell: UITableViewCell {
 
+    @IBOutlet var initialLetter: UILabel!
+    @IBOutlet var itemsCount: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var teamName: UILabel!
+    @IBOutlet var producerName: UILabel!
     @IBOutlet var dateValue: UILabel!
     @IBOutlet var calendarImg: UIImageView!
     

@@ -6,31 +6,103 @@
 //
 
 import UIKit
+import Moya
 
 class InboundDeliveriesViewController: UIViewController {
-
+    
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var segmentedController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
+    
+    var period = "today"
+    var searchStr = ""
+    
+    var inboundDeliveryData = [InboundDelivery]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        searchBar.delegate = self
+        
+        segmentedController.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        fetchInboundDelivery()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.tableView.reloadData()
     }
+    
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        self.tableView.reloadData()
+        switch sender.selectedSegmentIndex {
+        case 0:
+            period = "today"
+        case 1:
+            period = "upcoming"
+        case 2:
+            period = "past"
+        default:
+            period = "today"
+        }
+        fetchInboundDelivery()
     }
     
-
-    @IBAction func deliveriesSegmentedControlTap(_ sender: Any) {
+    
+    func fetchInboundDelivery() {
+        LoadingViewController.present(from: self)
+        let id = userDataManager.getUserData()?.partner?.id ?? ""
+        apiProvider.request(.getInboundDelivery(storeId: id, offset: 0, period: period, search: searchStr)) { result in
+            LoadingViewController.dismiss(from: self)
+            self.handleSuppliersResponse(result)
+        }
+    }
+    
+    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            if let jsonString = String(data: response.data, encoding: .utf8) {
+                            print("Raw JSON response: \(jsonString)")
+                        }
+            self.handleSuccessResponse(response)
+        case .failure(let error):
+            self.showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessResponse(_ response: Response) {
+        do {
+            let inboundDeliveryResponse = try response.map(InboundDeliveryResponse.self)
+            if inboundDeliveryResponse.statusCode == 200 {
+                self.updateCollectionData(inboundDeliveryResponse.data)
+            } else {
+                self.showError(inboundDeliveryResponse.message)
+            }
+        } catch {
+            self.handleMappingError(response)
+        }
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            self.showError(errorResponse.message)
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
+    }
+    
+    private func updateCollectionData(_ collectionData: [InboundDelivery]) {
+        self.inboundDeliveryData = collectionData
         self.tableView.reloadData()
     }
 
@@ -39,7 +111,7 @@ class InboundDeliveriesViewController: UIViewController {
 extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return inboundDeliveryData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +130,32 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
             cell.calendarImg.tintColor = Colors.Past
             cell.dateValue.textColor = Colors.Past
         }
+        
+        let inboundDelivery = self.inboundDeliveryData[indexPath.row]
+        cell.producerName.text = inboundDelivery.team.producer.businessName
+        cell.teamName.text = inboundDelivery.team.name
+        let totalQuantity = inboundDelivery.basket?.reduce(0) { $0 + $1.quantity }
+        cell.itemsCount.text = "\(totalQuantity ?? 0) items"
+        
+        let word = inboundDelivery.team.producer.businessName.prefix(1).uppercased()
+        if let firstLetter = word.first {
+            cell.initialLetter.text = String(firstLetter).uppercased()
+        }
+        
+        let isoDateFormatter = ISO8601DateFormatter()
+        isoDateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
 
+        let dateString = inboundDelivery.deliveryDate
+        if let date = isoDateFormatter.date(from: dateString) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM, HH:mm"
+            let formattedDate = dateFormatter.string(from: date)
+            cell.date.text = formattedDate
+        } else {
+            print("Failed to parse date")
+        }
+
+        
         return cell
     }
     
@@ -67,6 +164,7 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         if let vc = storyboard.instantiateViewController(withIdentifier: "DeliveryDetailsViewController") as? DeliveryDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
             vc.deliveryNavigationController = self.navigationController
+            vc.inboundDeliveryDetail = self.inboundDeliveryData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -83,4 +181,22 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
        return 24
     }
     
+}
+
+
+extension InboundDeliveriesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchStr = searchText
+        if searchText.count >= 3 {
+            fetchInboundDelivery()
+        }else{
+            searchStr = ""
+            fetchInboundDelivery()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        fetchInboundDelivery()
+    }
 }
