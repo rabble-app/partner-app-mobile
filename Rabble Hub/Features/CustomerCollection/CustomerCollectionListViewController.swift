@@ -14,6 +14,10 @@ class CustomerCollectionListViewController: UIViewController {
     @IBOutlet var segmentedBar: UISegmentedControl!
     @IBOutlet var collectionTableview: UITableView!
     
+    @IBOutlet var emptyStateDesc: UILabel!
+    @IBOutlet var emptyStateTitle: UILabel!
+    @IBOutlet var emptyStateContainer: UIView!
+    
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var collectionData = [CollectionData]()
     
@@ -29,8 +33,23 @@ class CustomerCollectionListViewController: UIViewController {
         collectionTableview.dataSource = self
         searchBar.delegate = self
         
+        emptyStateContainer.isHidden = true
+        
         fetchCustomerCollections()
         segmentedBar.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+    }
+    
+    private func loadEmptyState() {
+        if period == "today" {
+            emptyStateTitle.text = "No Collections Today"
+            emptyStateDesc.text = "You have no customer collections scheduled for today."
+        }else if period == "upcoming" {
+            emptyStateTitle.text = "No Upcoming Collections"
+            emptyStateDesc.text = "You have no customer collections scheduled in the near future."
+        }else{
+            emptyStateTitle.text = "No Completed Collections"
+            emptyStateDesc.text = "You have no completed customer collections."
+        }
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -88,12 +107,25 @@ class CustomerCollectionListViewController: UIViewController {
     }
     
     private func showError(_ message: String) {
+        self.showEmptyState()
         SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
     }
     
     private func updateCollectionData(_ collectionData: [CollectionData]) {
         self.collectionData = collectionData
-        self.collectionTableview.reloadData()
+        if collectionData.count > 0 {
+            self.emptyStateContainer.isHidden = true
+            self.collectionTableview.isHidden = false
+            self.collectionTableview.reloadData()
+        }else{
+            self.showEmptyState()
+        }
+    }
+    
+    private func showEmptyState() {
+        self.collectionTableview.isHidden = true
+        self.emptyStateContainer.isHidden = false
+        loadEmptyState()
     }
 }
 

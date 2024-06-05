@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GoshaSansBold.otf">
+            <string>GoshaSans-Bold</string>
+        </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Regular</string>
         </array>
@@ -81,7 +84,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" rowHeight="77" estimatedRowHeight="77" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UdD-YS-kSM">
-                                <rect key="frame" x="0.0" y="223" width="393" height="542"/>
+                                <rect key="frame" x="0.0" y="223" width="393" height="540"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CustomerCollectionTableViewCell" rowHeight="77" id="WND-9t-5ho" customClass="CustomerCollectionTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
@@ -168,23 +171,62 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPW-JV-YKk">
+                                <rect key="frame" x="0.0" y="223" width="393" height="542"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_state_collection" translatesAutoresizingMaskIntoConstraints="NO" id="rFC-Qq-KVq">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="xTk-UJ-9p7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Upcoming Collections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFT-47-v8u">
+                                        <rect key="frame" x="16" y="300" width="361" height="29"/>
+                                        <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="24"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no customer collections scheduled in the near future." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCb-7s-UTz">
+                                        <rect key="frame" x="16" y="337" width="361" height="38.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="16"/>
+                                        <color key="textColor" name="gray_3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NFT-47-v8u" secondAttribute="trailing" constant="16" id="0W7-vM-Dqz"/>
+                                    <constraint firstItem="sCb-7s-UTz" firstAttribute="top" secondItem="NFT-47-v8u" secondAttribute="bottom" constant="8" id="5Qh-Nr-8J6"/>
+                                    <constraint firstAttribute="trailing" secondItem="rFC-Qq-KVq" secondAttribute="trailing" id="C2a-Zh-vyE"/>
+                                    <constraint firstItem="rFC-Qq-KVq" firstAttribute="leading" secondItem="VPW-JV-YKk" secondAttribute="leading" id="LjQ-Ao-b8v"/>
+                                    <constraint firstItem="NFT-47-v8u" firstAttribute="centerX" secondItem="VPW-JV-YKk" secondAttribute="centerX" id="SS2-d4-laD"/>
+                                    <constraint firstItem="rFC-Qq-KVq" firstAttribute="top" secondItem="VPW-JV-YKk" secondAttribute="top" id="Vbi-B9-5lC"/>
+                                    <constraint firstItem="NFT-47-v8u" firstAttribute="top" secondItem="rFC-Qq-KVq" secondAttribute="bottom" constant="-50" id="YFN-Sd-Sid"/>
+                                    <constraint firstItem="sCb-7s-UTz" firstAttribute="leading" secondItem="VPW-JV-YKk" secondAttribute="leading" constant="16" id="ZC9-a9-eeN"/>
+                                    <constraint firstItem="NFT-47-v8u" firstAttribute="leading" secondItem="VPW-JV-YKk" secondAttribute="leading" constant="16" id="i8e-wD-i8D"/>
+                                    <constraint firstAttribute="trailing" secondItem="sCb-7s-UTz" secondAttribute="trailing" constant="16" id="sHx-n2-FzL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pKY-Zk-RLB" secondAttribute="trailing" constant="16" id="BhB-r7-u0q"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nSk-gQ-rLq" secondAttribute="trailing" id="E3z-mD-xkS"/>
-                            <constraint firstItem="UdD-YS-kSM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GqG-tj-O3s"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UdD-YS-kSM" secondAttribute="trailing" id="KaG-sN-pku"/>
-                            <constraint firstItem="UdD-YS-kSM" firstAttribute="top" secondItem="pKY-Zk-RLB" secondAttribute="bottom" constant="8" id="PXt-1F-8ou"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UdD-YS-kSM" secondAttribute="bottom" constant="4" id="SDe-W6-HEr"/>
+                            <constraint firstItem="UdD-YS-kSM" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="H4u-aj-scP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VPW-JV-YKk" secondAttribute="trailing" id="JvI-xb-a8I"/>
                             <constraint firstItem="pKY-Zk-RLB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VAN-Q5-BHO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UdD-YS-kSM" secondAttribute="bottom" constant="6" id="ZM8-qS-MLu"/>
                             <constraint firstItem="pKY-Zk-RLB" firstAttribute="top" secondItem="nSk-gQ-rLq" secondAttribute="bottom" constant="16" id="aBa-yd-Jxc"/>
+                            <constraint firstItem="UdD-YS-kSM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bnv-vR-IeU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VPW-JV-YKk" secondAttribute="bottom" constant="4" id="cfP-G3-Aug"/>
                             <constraint firstItem="nSk-gQ-rLq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fhX-9O-Q9d"/>
                             <constraint firstItem="nSk-gQ-rLq" firstAttribute="top" secondItem="fNz-Mz-49G" secondAttribute="bottom" id="nJp-y4-abS"/>
                             <constraint firstItem="fNz-Mz-49G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="q1j-K9-VER"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fNz-Mz-49G" secondAttribute="trailing" id="snB-Bs-bST"/>
+                            <constraint firstItem="VPW-JV-YKk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="spJ-ts-8DU"/>
+                            <constraint firstItem="UdD-YS-kSM" firstAttribute="top" secondItem="pKY-Zk-RLB" secondAttribute="bottom" constant="8" id="taD-nb-aGU"/>
                             <constraint firstItem="fNz-Mz-49G" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="yBi-lR-uh7"/>
+                            <constraint firstItem="VPW-JV-YKk" firstAttribute="top" secondItem="pKY-Zk-RLB" secondAttribute="bottom" constant="8" id="zhe-Uj-GFy"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -192,6 +234,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionTableview" destination="UdD-YS-kSM" id="P22-Xj-jH3"/>
+                        <outlet property="emptyStateContainer" destination="VPW-JV-YKk" id="fts-3g-CUM"/>
+                        <outlet property="emptyStateDesc" destination="sCb-7s-UTz" id="H9T-FI-xff"/>
+                        <outlet property="emptyStateTitle" destination="NFT-47-v8u" id="d4d-rR-yPA"/>
                         <outlet property="searchBar" destination="vls-Pk-7C7" id="e0k-Mc-Bt9"/>
                         <outlet property="segmentedBar" destination="pKY-Zk-RLB" id="gg8-kS-2Jb"/>
                         <segue destination="xCm-Ag-o3o" kind="show" id="dUY-gC-zkw"/>
@@ -366,7 +411,7 @@
                                                 <rect key="frame" x="16" y="308.66666666666669" width="361" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llG-qU-s1c">
-                                                        <rect key="frame" x="14" y="23" width="87.666666666666671" height="17"/>
+                                                        <rect key="frame" x="14" y="23" width="87.333333333333329" height="17"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Order details">
                                                                 <attributes>
@@ -478,6 +523,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="empty_state_collection" width="428" height="429"/>
         <image name="icon_order" width="24" height="27"/>
         <namedColor name="background_primary">
             <color red="0.97600001096725464" green="0.97299998998641968" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -487,6 +533,9 @@
         </namedColor>
         <namedColor name="button_secondary">
             <color red="0.039000000804662704" green="0.51800000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_3">
+            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

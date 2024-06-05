@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GoshaSansBold.otf">
+            <string>GoshaSans-Bold</string>
+        </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
@@ -80,7 +83,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" rowHeight="77" estimatedRowHeight="77" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Prq-kK-qBP">
-                                <rect key="frame" x="0.0" y="239" width="393" height="595"/>
+                                <rect key="frame" x="0.0" y="223" width="393" height="599"/>
                                 <color key="backgroundColor" name="background_primary"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="InboundDeliveriesTableViewCell" rowHeight="77" id="62c-mO-PFX" customClass="InboundDeliveriesTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
@@ -198,16 +201,54 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn9-z0-LW2">
+                                <rect key="frame" x="0.0" y="223" width="393" height="591"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_state_delivery" translatesAutoresizingMaskIntoConstraints="NO" id="oxG-b6-PnJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="0yv-Eq-TVa"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Deliveries Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-zm-Jv7">
+                                        <rect key="frame" x="16" y="300" width="361" height="29"/>
+                                        <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="24"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no inbound deliveries scheduled for today." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-EH-cF7">
+                                        <rect key="frame" x="16" y="337" width="361" height="38.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="16"/>
+                                        <color key="textColor" name="gray_3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oxG-b6-PnJ" firstAttribute="top" secondItem="Bn9-z0-LW2" secondAttribute="top" id="2iH-MJ-fLq"/>
+                                    <constraint firstItem="l0X-EH-cF7" firstAttribute="top" secondItem="hyH-zm-Jv7" secondAttribute="bottom" constant="8" id="4yP-It-gkq"/>
+                                    <constraint firstItem="hyH-zm-Jv7" firstAttribute="leading" secondItem="Bn9-z0-LW2" secondAttribute="leading" constant="16" id="6GD-Xg-SmT"/>
+                                    <constraint firstItem="hyH-zm-Jv7" firstAttribute="top" secondItem="oxG-b6-PnJ" secondAttribute="bottom" constant="-50" id="IwR-Nj-XD7"/>
+                                    <constraint firstItem="l0X-EH-cF7" firstAttribute="leading" secondItem="Bn9-z0-LW2" secondAttribute="leading" constant="16" id="X4G-7K-PGl"/>
+                                    <constraint firstAttribute="trailing" secondItem="hyH-zm-Jv7" secondAttribute="trailing" constant="16" id="YOO-V7-hNa"/>
+                                    <constraint firstAttribute="trailing" secondItem="oxG-b6-PnJ" secondAttribute="trailing" id="YjD-8S-cRH"/>
+                                    <constraint firstItem="oxG-b6-PnJ" firstAttribute="leading" secondItem="Bn9-z0-LW2" secondAttribute="leading" id="bfB-HO-DpJ"/>
+                                    <constraint firstItem="hyH-zm-Jv7" firstAttribute="centerX" secondItem="Bn9-z0-LW2" secondAttribute="centerX" id="qLJ-HO-zcs"/>
+                                    <constraint firstAttribute="trailing" secondItem="l0X-EH-cF7" secondAttribute="trailing" constant="16" id="sD5-KE-RJr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="background_primary"/>
                         <constraints>
                             <constraint firstItem="UsR-Ti-pap" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="0Ng-Se-riE"/>
-                            <constraint firstItem="Prq-kK-qBP" firstAttribute="top" secondItem="2eA-SH-2Lh" secondAttribute="bottom" constant="24" id="5tb-IJ-3lW"/>
+                            <constraint firstItem="Prq-kK-qBP" firstAttribute="top" secondItem="2eA-SH-2Lh" secondAttribute="bottom" constant="8" id="5tb-IJ-3lW"/>
                             <constraint firstItem="Prq-kK-qBP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6K4-3o-vkO"/>
+                            <constraint firstItem="Bn9-z0-LW2" firstAttribute="top" secondItem="2eA-SH-2Lh" secondAttribute="bottom" constant="8" id="6SF-iF-9a5"/>
                             <constraint firstItem="2eA-SH-2Lh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="8bS-9w-OOV"/>
+                            <constraint firstItem="Bn9-z0-LW2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BSU-Kj-ncI"/>
                             <constraint firstItem="bGO-mn-IbY" firstAttribute="top" secondItem="UsR-Ti-pap" secondAttribute="bottom" id="Ll3-wi-qRC"/>
-                            <constraint firstItem="Prq-kK-qBP" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="16" id="Owg-J2-WeJ"/>
+                            <constraint firstItem="Prq-kK-qBP" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="4" id="Owg-J2-WeJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Bn9-z0-LW2" secondAttribute="bottom" constant="4" id="TyN-Zq-W4T"/>
                             <constraint firstItem="2eA-SH-2Lh" firstAttribute="top" secondItem="bGO-mn-IbY" secondAttribute="bottom" constant="16" id="UCD-RE-VKE"/>
                             <constraint firstItem="bGO-mn-IbY" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="aV2-0d-sYo"/>
                             <constraint firstAttribute="trailing" secondItem="bGO-mn-IbY" secondAttribute="trailing" id="cT5-AD-Tc0"/>
@@ -215,10 +256,14 @@
                             <constraint firstItem="UsR-Ti-pap" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="plF-P2-PdE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2eA-SH-2Lh" secondAttribute="trailing" constant="16" id="psf-F9-tQq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Prq-kK-qBP" secondAttribute="trailing" id="tLz-W1-ROR"/>
+                            <constraint firstItem="Bn9-z0-LW2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wVE-8v-ahy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K90-Ak-Hl3"/>
                     <connections>
+                        <outlet property="emptyStateContainer" destination="Bn9-z0-LW2" id="Zhr-AW-7D3"/>
+                        <outlet property="emptyStateDesc" destination="l0X-EH-cF7" id="5V8-lE-puU"/>
+                        <outlet property="emptyStateTitle" destination="hyH-zm-Jv7" id="cq8-EV-UWl"/>
                         <outlet property="searchBar" destination="0GV-fx-l7l" id="INb-9v-kLY"/>
                         <outlet property="segmentedController" destination="2eA-SH-2Lh" id="oYb-mm-SDJ"/>
                         <outlet property="tableView" destination="Prq-kK-qBP" id="3au-Gz-wyc"/>
@@ -226,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2877.0992366412211" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="2875.5725190839694" y="-2.1126760563380285"/>
         </scene>
         <!--Delivery Details-->
         <scene sceneID="qCi-vB-8zV">
@@ -1015,7 +1060,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-jj-xO5">
-                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333331" height="38.666666666666629"/>
+                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333326" height="38.666666666666629"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Delivery Checked In!">
                                         <attributes>
@@ -1272,6 +1317,7 @@
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <image name="empty_state_delivery" width="428" height="429"/>
         <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="109"/>
         <image name="icon_back" width="12" height="20"/>
         <image name="icon_close" width="30" height="30"/>

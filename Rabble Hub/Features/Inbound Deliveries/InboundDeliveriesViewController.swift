@@ -22,6 +22,10 @@ class InboundDeliveriesViewController: UIViewController {
     
     var inboundDeliveryData = [InboundDelivery]()
     
+    @IBOutlet var emptyStateDesc: UILabel!
+    @IBOutlet var emptyStateTitle: UILabel!
+    @IBOutlet var emptyStateContainer: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +36,19 @@ class InboundDeliveriesViewController: UIViewController {
         segmentedController.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         fetchInboundDelivery()
         
+    }
+    
+    private func loadEmptyState() {
+        if period == "today" {
+            emptyStateTitle.text = "No Deliveries Today"
+            emptyStateDesc.text = "You have no inbound deliveries scheduled for today."
+        }else if period == "upcoming" {
+            emptyStateTitle.text = "No Upcoming Deliveries"
+            emptyStateDesc.text = "You have no inbound deliveries scheduled in the near future."
+        }else{
+            emptyStateTitle.text = "No Past Deliveries"
+            emptyStateDesc.text = "You have no past inbound deliveries."
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +96,7 @@ class InboundDeliveriesViewController: UIViewController {
         do {
             let inboundDeliveryResponse = try response.map(InboundDeliveryResponse.self)
             if inboundDeliveryResponse.statusCode == 200 {
-                self.updateCollectionData(inboundDeliveryResponse.data)
+                self.updateInboundDelivery(inboundDeliveryResponse.data)
             } else {
                 self.showError(inboundDeliveryResponse.message)
             }
@@ -98,12 +115,25 @@ class InboundDeliveriesViewController: UIViewController {
     }
     
     private func showError(_ message: String) {
+        showEmptyState()
         SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
     }
     
-    private func updateCollectionData(_ collectionData: [InboundDelivery]) {
-        self.inboundDeliveryData = collectionData
-        self.tableView.reloadData()
+    private func updateInboundDelivery(_ inboundDelivery: [InboundDelivery]) {
+        if inboundDelivery.count > 0 {
+            self.inboundDeliveryData = inboundDelivery
+            self.emptyStateContainer.isHidden = true
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }else{
+            self.showEmptyState()
+        }
+    }
+    
+    private func showEmptyState() {
+        self.tableView.isHidden = true
+        self.emptyStateContainer.isHidden = false
+        loadEmptyState()
     }
 
 }
