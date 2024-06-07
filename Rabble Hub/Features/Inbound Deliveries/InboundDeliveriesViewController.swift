@@ -164,8 +164,8 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         let inboundDelivery = self.inboundDeliveryData[indexPath.row]
         cell.producerName.text = inboundDelivery.team.producer.businessName
         cell.teamName.text = inboundDelivery.team.name
-        let totalQuantity = inboundDelivery.basket?.reduce(0) { $0 + $1.quantity }
-        cell.itemsCount.text = "\(totalQuantity ?? 0) items"
+       // let totalQuantity = inboundDelivery.basket?.reduce(0) { $0 + $1.quantity }
+        //cell.itemsCount.text = "\(totalQuantity ?? 0) items"
         
         let word = inboundDelivery.team.producer.businessName.prefix(1).uppercased()
         if let firstLetter = word.first {
@@ -178,7 +178,7 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         let dateString = inboundDelivery.deliveryDate
         if let date = isoDateFormatter.date(from: dateString) {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM, HH:mm"
+            dateFormatter.dateFormat = "dd MMM"
             let formattedDate = dateFormatter.string(from: date)
             cell.date.text = formattedDate
         } else {

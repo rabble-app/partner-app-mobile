@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class DeliveryDetailsViewController: UIViewController {
 
@@ -21,8 +22,11 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet var category: UILabel!
     @IBOutlet var deliveryDate: UILabel!
     
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
     
     var inboundDeliveryDetail: InboundDelivery?
+    var orderDetails = [OrderDetail]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +55,66 @@ class DeliveryDetailsViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         
         self.tableViewConstraintHeight.constant = 77 * 5 // 5 is the number of orders
+        fetchInboundDeliveryDetails()
         
         self.title = "Delivery Details"
-
+    }
+    
+    func fetchInboundDeliveryDetails() {
+        LoadingViewController.present(from: self)
+        
+        let id = self.inboundDeliveryDetail?.team.id ?? ""
+        
+        apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
+            LoadingViewController.dismiss(from: self)
+            self.handleSuppliersResponse(result)
+        }
+    }
+    
+    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            if let jsonString = String(data: response.data, encoding: .utf8) {
+                            print("Raw JSON response: \(jsonString)")
+                        }
+            self.handleSuccessResponse(response)
+        case .failure(let error):
+            self.showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessResponse(_ response: Response) {
+        do {
+            let orderDetailsResponse = try response.map(OrderDetailsResponse.self)
+            if orderDetailsResponse.statusCode == 200 {
+                self.updateInboundDeliveryDetails(orderDetailsResponse.data)
+            } else {
+                self.showError(orderDetailsResponse.message)
+            }
+        } catch {
+            self.handleMappingError(response)
+        }
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            self.showError(errorResponse.message)
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
+    }
+    
+    private func updateInboundDeliveryDetails(_ orderDetailsResponse: [OrderDetail]) {
+        if orderDetailsResponse.count > 0 {
+            self.orderDetails = orderDetailsResponse
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
     }
     
     private func loadData() {
@@ -90,7 +151,7 @@ class DeliveryDetailsViewController: UIViewController {
 extension DeliveryDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.inboundDeliveryDetail?.basket?.count ?? 0
+        return orderDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,11 +159,11 @@ extension DeliveryDetailsViewController: UITableViewDelegate, UITableViewDataSou
             return UITableViewCell()
         }
         
-        let basket = self.inboundDeliveryDetail?.basket?[indexPath.row]
+        let orderDetail = orderDetails[indexPath.row]
         
-        cell.productNameLabel.text = basket?.product.name
-        cell.subtitleLabel.text = "\(basket?.product.measuresPerSubUnit ?? 0) \(basket?.product.unitsOfMeasurePerSubUnit ?? "")"
-        cell.quantityLabel.text = "x\(basket?.quantity ?? 0)"
+        cell.productNameLabel.text = orderDetail.name
+        cell.subtitleLabel.text = "\(orderDetail.measuresPerSubunit) \(orderDetail.unitsOfMeasurePerSubunit)"
+        cell.quantityLabel.text = "x\(orderDetail.totalQuantity)"
         return cell
     }
 }

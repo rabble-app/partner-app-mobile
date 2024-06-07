@@ -19,6 +19,7 @@ public enum RabbleHubAPI {
     case getDeliveryDays(supplierId: String?, postalCode: String?)
     case getCustomerCollection(storeId: String, offset: Int, period: String, search: String)
     case getInboundDelivery(storeId: String, offset: Int, period: String, search: String)
+    case getInboundDeliveryDetails(id: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -47,7 +48,9 @@ extension RabbleHubAPI: TargetType {
         case .getCustomerCollection(let storeId, let offset, let period, let search):
             return "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
         case .getInboundDelivery(let storeId, let offset, let period, let search):
-            return "\(URLConfig.getCustomerCollection)/\(storeId)/deliveries"
+            return "\(URLConfig.getInboundelivery)/\(storeId)/deliveries"
+        case .getInboundDeliveryDetails(let id):
+            return "\(URLConfig.getInboundeliveryDetails)/\(id)/order-details"
 
         }
     }
@@ -58,7 +61,7 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .updateUserRecord, .addStoreHours:
             return .patch
-        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery:
+        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails:
             return .get
         }
     }
@@ -140,7 +143,11 @@ extension RabbleHubAPI: TargetType {
             }
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .getInboundDeliveryDetails(let id):
+            var parameters: [String: Any] = [:]
+            parameters["id"] = id
             
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
     
