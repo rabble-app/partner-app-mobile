@@ -12,7 +12,6 @@ class DeliveryDetailsViewController: UIViewController {
 
     @IBOutlet weak var iconBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var deliveryNavigationController: UINavigationController?
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet weak var tableViewConstraintHeight: NSLayoutConstraint!
     
@@ -22,48 +21,53 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet var category: UILabel!
     @IBOutlet var deliveryDate: UILabel!
     
+    var deliveryNavigationController: UINavigationController?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
     
     var inboundDeliveryDetail: InboundDelivery?
     var orderDetails = [OrderDetail]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupView()
         loadData()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
+
     private func setupView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.iconBackgroundView.layer.cornerRadius = 28.0
+        tableView.delegate = self
+        tableView.dataSource = self
+        iconBackgroundView.layer.cornerRadius = 28.0
         
+        setupHeaderView()
+        setupTableView()
+        
+        fetchInboundDeliveryDetails()
+        title = "Delivery Details"
+    }
+    
+    private func setupHeaderView() {
         tableviewHeaderContainer.clipsToBounds = true
         tableviewHeaderContainer.layer.cornerRadius = 10
         tableviewHeaderContainer.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        
+    }
+    
+    private func setupTableView() {
         tableView.clipsToBounds = true
         tableView.layer.cornerRadius = 10
         tableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
         tableView.showsVerticalScrollIndicator = false
-        
-        self.tableViewConstraintHeight.constant = 77 * 5 // 5 is the number of orders
-        fetchInboundDeliveryDetails()
-        
-        self.title = "Delivery Details"
+        tableView.reloadData()
     }
-    
-    func fetchInboundDeliveryDetails() {
-        LoadingViewController.present(from: self)
+
+    private func fetchInboundDeliveryDetails() {
+        guard let id = inboundDeliveryDetail?.team.id else { return }
         
-        let id = self.inboundDeliveryDetail?.team.id ?? ""
+        LoadingViewController.present(from: self)
         
         apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
             LoadingViewController.dismiss(from: self)
@@ -74,12 +78,9 @@ class DeliveryDetailsViewController: UIViewController {
     private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
-            if let jsonString = String(data: response.data, encoding: .utf8) {
-                            print("Raw JSON response: \(jsonString)")
-                        }
-            self.handleSuccessResponse(response)
+            handleSuccessResponse(response)
         case .failure(let error):
-            self.showError(error.localizedDescription)
+            showError(error.localizedDescription)
         }
     }
     
@@ -87,19 +88,19 @@ class DeliveryDetailsViewController: UIViewController {
         do {
             let orderDetailsResponse = try response.map(OrderDetailsResponse.self)
             if orderDetailsResponse.statusCode == 200 {
-                self.updateInboundDeliveryDetails(orderDetailsResponse.data)
+                updateInboundDeliveryDetails(orderDetailsResponse.data)
             } else {
-                self.showError(orderDetailsResponse.message)
+                showError(orderDetailsResponse.message)
             }
         } catch {
-            self.handleMappingError(response)
+            handleMappingError(response)
         }
     }
     
     private func handleMappingError(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            self.showError(errorResponse.message)
+            showError(errorResponse.message)
         } catch {
             print("Failed to map response data: \(error)")
         }
@@ -110,39 +111,35 @@ class DeliveryDetailsViewController: UIViewController {
     }
     
     private func updateInboundDeliveryDetails(_ orderDetailsResponse: [OrderDetail]) {
-        if orderDetailsResponse.count > 0 {
-            self.orderDetails = orderDetailsResponse
-            self.tableView.isHidden = false
-            self.tableView.reloadData()
-        }
+        orderDetails = orderDetailsResponse
+        tableViewConstraintHeight.constant = CGFloat(77 * orderDetails.count)
+        tableView.isHidden = orderDetails.isEmpty
+        tableView.reloadData()
     }
-    
+
     private func loadData() {
-        self.producerName.text = self.inboundDeliveryDetail?.team.producer.businessName
-        self.teamName.text = "\(self.inboundDeliveryDetail?.team.name ?? "") 􀱀"
-        self.category.text = self.inboundDeliveryDetail?.team.producer.categories.first?.category.name
-        self.orderNumber.text = self.inboundDeliveryDetail?.id.firstAndLastFour().uppercased()
-        let isoDateFormatter = ISO8601DateFormatter()
-        isoDateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let detail = inboundDeliveryDetail else { return }
         
-        let dateString = self.inboundDeliveryDetail?.deliveryDate ?? ""
-        if let date = isoDateFormatter.date(from: dateString) {
+        producerName.text = detail.team.producer.businessName
+        teamName.text = "\(detail.team.name) 􀱀"
+        category.text = detail.team.producer.categories.first?.category.name
+        orderNumber.text = detail.id.firstAndLastFour().uppercased()
+        
+        if let deliveryDate = ISO8601DateFormatter().date(from: detail.deliveryDate) {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd MMM, HH:mm"
-            let formattedDate = dateFormatter.string(from: date)
-            self.deliveryDate.text = formattedDate
+            self.deliveryDate.text = dateFormatter.string(from: deliveryDate)
         } else {
             print("Failed to parse date")
         }
         
-        self.tableView.reloadData()
-        
+        tableView.reloadData()
     }
 
     @IBAction func confirmButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "ManuallyCheckItemsViewController") as! ManuallyCheckItemsViewController
-        vc.deliveryNavigationController = self.deliveryNavigationController
+        vc.deliveryNavigationController = deliveryNavigationController
         vc.modalPresentationStyle = .automatic
         present(vc, animated: true, completion: nil)
     }
@@ -160,7 +157,6 @@ extension DeliveryDetailsViewController: UITableViewDelegate, UITableViewDataSou
         }
         
         let orderDetail = orderDetails[indexPath.row]
-        
         cell.productNameLabel.text = orderDetail.name
         cell.subtitleLabel.text = "\(orderDetail.measuresPerSubunit) \(orderDetail.unitsOfMeasurePerSubunit)"
         cell.quantityLabel.text = "x\(orderDetail.totalQuantity)"
