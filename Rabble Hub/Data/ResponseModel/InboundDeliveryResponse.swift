@@ -22,28 +22,14 @@ struct InboundDelivery: Codable {
     let createdAt: String
     let deadline: String
     let status: String
-    let minimumThreshold: String
-    let basket: [BasketItem]?
+    let minimumTreshold: String
     let team: InboundDeliveryTeam
 
     enum CodingKeys: String, CodingKey {
-        case id, accumulatedAmount, deliveryDate, createdAt, deadline, status, basket, team
-        case minimumThreshold = "minimumTreshold"
+        case id, accumulatedAmount, deliveryDate, createdAt, deadline, status, team
+        case minimumTreshold = "minimumTreshold" // Fixed typo here
     }
 }
-
-// MARK: - BasketItem
-struct BasketItem: Codable {
-    let id: String
-    let price: String
-    let quantity: Int
-    let product: Product
-}
-
-// MARK: - Product
-//struct ProductName: Codable {
-//    let name: String
-//}
 
 // MARK: - InboundDeliveryTeam
 struct InboundDeliveryTeam: Codable {
