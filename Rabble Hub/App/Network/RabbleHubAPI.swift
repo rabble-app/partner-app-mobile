@@ -20,6 +20,7 @@ public enum RabbleHubAPI {
     case getCustomerCollection(storeId: String, offset: Int, period: String, search: String)
     case getInboundDelivery(storeId: String, offset: Int, period: String, search: String)
     case getInboundDeliveryDetails(id: String)
+    case confirmOrderReceipt(storeId: String, orderId: String, products: [Dictionary<String, Any>], note: String?, file: Data?)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -51,13 +52,14 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.getInboundelivery)/\(storeId)/deliveries"
         case .getInboundDeliveryDetails(let id):
             return "\(URLConfig.getInboundeliveryDetails)/\(id)/order-details"
-
+        case .confirmOrderReceipt(storeId: let storeId):
+            return "store/\(storeId)\(URLConfig.confirmOrderReceipt)"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam:
+        case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt:
             return .post
         case .updateUserRecord, .addStoreHours:
             return .patch
@@ -148,6 +150,42 @@ extension RabbleHubAPI: TargetType {
             parameters["id"] = id
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .confirmOrderReceipt(storeId: _, orderId: let orderId, products: let products, note: let note, file: let file):
+            var parameters: [String: Any] = [:]
+            parameters["orderId"] = orderId
+            parameters["products"] = products
+            parameters["note"] = note
+
+            var formData: [MultipartFormData] = []
+            let mimeType = "image/png"
+            
+            // Ensure file is not nil
+            guard let imageDataUnwrapped = file else {
+                return .requestPlain // Handle this case as needed
+            }
+            
+            // Add image part
+            let imagePart = MultipartFormData(provider: .data(imageDataUnwrapped), name: "file", fileName: "item_image", mimeType: mimeType)
+            formData.append(imagePart)
+            
+            // Add additional parameters
+            for (key, value) in parameters {
+                let paramData: Data
+                if let stringValue = value as? String {
+                    paramData = stringValue.data(using: .utf8) ?? Data()
+                } else if let intValue = value as? Int {
+                    paramData = String(intValue).data(using: .utf8) ?? Data()
+                } else if let arrayValue = value as? [Any] {
+                    let arrayData = try? JSONSerialization.data(withJSONObject: arrayValue, options: [])
+                    paramData = arrayData ?? Data()
+                } else {
+                    continue // Skip this parameter if it can't be converted
+                }
+                let paramPart = MultipartFormData(provider: .data(paramData), name: key)
+                formData.append(paramPart)
+            }
+            
+            return .uploadMultipart(formData)
         }
     }
     

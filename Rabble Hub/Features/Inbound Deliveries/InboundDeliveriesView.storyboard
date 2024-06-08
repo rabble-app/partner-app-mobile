@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4VR-jG-9uk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4VR-jG-9uk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -656,7 +656,7 @@
                                                     <constraint firstAttribute="height" constant="300" id="SdM-nr-DiJ"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeliveryDetailsTableViewCell" rowHeight="70" id="OTG-GO-Em9" customClass="DeliveryDetailsTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConfirmDeliveryTableViewCell" rowHeight="70" id="OTG-GO-Em9" customClass="ConfirmDeliveryTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="55.333332061767578" width="353" height="70"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OTG-GO-Em9" id="8QR-f0-QIU">
@@ -707,6 +707,11 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="itemSubtitleLabel" destination="Hcq-FJ-whm" id="jYx-Iy-jK2"/>
+                                                            <outlet property="itemTitleLabel" destination="ntd-JG-A4Z" id="o4y-wY-C0Z"/>
+                                                            <outlet property="quantityTextField" destination="wvG-A5-OwL" id="hOc-xG-1uZ"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -1014,8 +1019,10 @@
                         <outlet property="imageContainerViewHeightConstraint" destination="RwB-lY-1cX" id="2gL-bv-1UO"/>
                         <outlet property="imageView" destination="oMi-B5-8jT" id="jNb-pi-7oR"/>
                         <outlet property="noImageView" destination="eMk-ry-fkq" id="pfG-Ov-rmi"/>
+                        <outlet property="noteTextView" destination="CN4-8f-Y2n" id="djG-D8-7vl"/>
                         <outlet property="tableView" destination="zyD-iB-IgF" id="Syc-i9-v5q"/>
                         <outlet property="tableViewConstraintHeight" destination="SdM-nr-DiJ" id="J66-CX-1N6"/>
+                        <outlet property="totalQuantityChecked" destination="xTZ-Hv-dFR" id="fMU-uQ-WkS"/>
                         <outlet property="withImageView" destination="fe6-fr-y9Y" id="jfv-7G-6oz"/>
                     </connections>
                 </viewController>

@@ -38,4 +38,5 @@ struct URLConfig {
     static let getCustomerCollection = "/store"
     static let getInboundelivery = "/store"
     static let getInboundeliveryDetails = "/store"
+    static let confirmOrderReceipt = "/confirm-order-receipt"
 }

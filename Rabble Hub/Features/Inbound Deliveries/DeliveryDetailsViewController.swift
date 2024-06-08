@@ -139,7 +139,9 @@ class DeliveryDetailsViewController: UIViewController {
     @IBAction func confirmButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "ManuallyCheckItemsViewController") as! ManuallyCheckItemsViewController
-        vc.deliveryNavigationController = deliveryNavigationController
+        vc.deliveryNavigationController = self.deliveryNavigationController
+        vc.orderDetails = self.orderDetails
+        vc.inboundDeliveryDetail = self.inboundDeliveryDetail
         vc.modalPresentationStyle = .automatic
         present(vc, animated: true, completion: nil)
     }
