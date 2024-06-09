@@ -130,7 +130,7 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teamname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSW-va-R8V">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teamname" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSW-va-R8V">
                                                     <rect key="frame" x="60" y="39.333333333333336" width="61.333333333333343" height="14"/>
                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -146,6 +146,9 @@
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMw-UA-e0Y">
                                                     <rect key="frame" x="264.66666666666669" y="30" width="42" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="7rw-WP-e7m"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
                                                     <color key="textColor" name="calendar_today"/>
                                                     <nil key="highlightedColor"/>
@@ -160,6 +163,9 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMl-hW-002">
                                                     <rect key="frame" x="141.33333333333334" y="39.333333333333336" width="47.333333333333343" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47.329999999999998" id="h5F-Yx-IOA"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -168,6 +174,7 @@
                                             <constraints>
                                                 <constraint firstItem="KMl-hW-002" firstAttribute="centerY" secondItem="xHh-yl-SRY" secondAttribute="centerY" id="Ji8-5e-wex"/>
                                                 <constraint firstItem="AMw-UA-e0Y" firstAttribute="centerY" secondItem="PG2-WC-hkg" secondAttribute="centerY" id="Jkg-ci-uCj"/>
+                                                <constraint firstItem="GMU-gi-Jr9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KMl-hW-002" secondAttribute="trailing" constant="4" id="LaN-bX-HSD"/>
                                                 <constraint firstItem="2si-yO-5uA" firstAttribute="centerY" secondItem="PG2-WC-hkg" secondAttribute="centerY" id="aJn-KN-3NM"/>
                                                 <constraint firstItem="zgB-wg-jFK" firstAttribute="leading" secondItem="2si-yO-5uA" secondAttribute="trailing" constant="8" id="bOw-a4-ljk"/>
                                                 <constraint firstItem="xHh-yl-SRY" firstAttribute="leading" secondItem="gSW-va-R8V" secondAttribute="trailing" constant="8" id="c1O-WO-H3H"/>
@@ -196,6 +203,7 @@
                                             <outlet property="initialLetter" destination="1aK-RU-zCr" id="uti-G2-yga"/>
                                             <outlet property="itemsCount" destination="KMl-hW-002" id="KEp-Fn-ZfN"/>
                                             <outlet property="producerName" destination="zgB-wg-jFK" id="bPf-Bn-PHM"/>
+                                            <outlet property="separatorView" destination="xHh-yl-SRY" id="qOs-6R-AlT"/>
                                             <outlet property="teamName" destination="gSW-va-R8V" id="Lzh-kJ-wbQ"/>
                                         </connections>
                                     </tableViewCell>
@@ -666,15 +674,15 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-9Y-SLF">
                                                                     <rect key="frame" x="0.0" y="0.0" width="353" height="70"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cacklebean Eggs." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-JG-A4Z">
-                                                                            <rect key="frame" x="16" y="16" width="157.33333333333334" height="24"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cacklebean Eggs." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-JG-A4Z">
+                                                                            <rect key="frame" x="16" y="16" width="246" height="24"/>
                                                                             <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
                                                                             <color key="textColor" name="gray_2"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Eggs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcq-FJ-whm">
-                                                                            <rect key="frame" x="16.000000000000004" y="40" width="39.333333333333343" height="14"/>
-                                                                            <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Eggs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcq-FJ-whm">
+                                                                            <rect key="frame" x="16" y="40" width="238" height="17"/>
+                                                                            <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="14"/>
                                                                             <color key="textColor" name="blue_1"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -690,12 +698,14 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstItem="ntd-JG-A4Z" firstAttribute="leading" secondItem="fcn-9Y-SLF" secondAttribute="leading" constant="16" id="7uF-bZ-QwR"/>
+                                                                        <constraint firstItem="wvG-A5-OwL" firstAttribute="leading" secondItem="Hcq-FJ-whm" secondAttribute="trailing" constant="16" id="GHQ-ON-VFo"/>
                                                                         <constraint firstAttribute="trailing" secondItem="wvG-A5-OwL" secondAttribute="trailing" constant="18" id="GiQ-LF-FWK"/>
                                                                         <constraint firstItem="ntd-JG-A4Z" firstAttribute="top" secondItem="fcn-9Y-SLF" secondAttribute="top" constant="16" id="Hql-Br-qXS"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="Hcq-FJ-whm" secondAttribute="bottom" constant="16" id="Ypi-UL-BTg"/>
                                                                         <constraint firstItem="Hcq-FJ-whm" firstAttribute="leading" secondItem="ntd-JG-A4Z" secondAttribute="leading" id="e4f-Ih-dh6"/>
                                                                         <constraint firstItem="Hcq-FJ-whm" firstAttribute="top" secondItem="ntd-JG-A4Z" secondAttribute="bottom" id="i5e-kl-FgL"/>
                                                                         <constraint firstItem="wvG-A5-OwL" firstAttribute="centerY" secondItem="fcn-9Y-SLF" secondAttribute="centerY" id="nNa-mk-XYV"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Hcq-FJ-whm" secondAttribute="bottom" constant="13" id="tlv-Kz-5Q2"/>
+                                                                        <constraint firstItem="wvG-A5-OwL" firstAttribute="leading" secondItem="ntd-JG-A4Z" secondAttribute="trailing" constant="8" id="wPM-y0-okL"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -1067,7 +1077,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-jj-xO5">
-                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333326" height="38.666666666666629"/>
+                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333331" height="38.666666666666629"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Delivery Checked In!">
                                         <attributes>
@@ -1127,7 +1137,7 @@
         <!--Verification Failed View Controller-->
         <scene sceneID="1eN-50-EQI">
             <objects>
-                <viewController storyboardIdentifier="QrCodeErrorPopViewController" id="4ag-RG-Y09" customClass="VerificationFailedViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerificationFailedViewController" id="4ag-RG-Y09" customClass="VerificationFailedViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GDf-s1-2os">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1144,7 +1154,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icon_close" title=" "/>
                                         <connections>
-                                            <action selector="closeButtonTap:" destination="4ag-RG-Y09" eventType="touchUpInside" id="gnv-27-sbm"/>
+                                            <action selector="closeButtonTap:" destination="4ag-RG-Y09" eventType="touchUpInside" id="Nrj-jW-uXk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-nw-HWC">
@@ -1189,7 +1199,6 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="connectButtonTap:" destination="4ag-RG-Y09" eventType="touchUpInside" id="aOo-Ej-D9f"/>
                                             <action selector="retryButtonTap:" destination="4ag-RG-Y09" eventType="touchUpInside" id="l2M-6S-XXs"/>
                                         </connections>
                                     </button>

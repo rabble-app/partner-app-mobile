@@ -19,6 +19,8 @@ class OtpInputViewController: UIViewController {
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var ontpContainer: UIView!
     
+    @IBOutlet weak var continueButtonBottomConstraint: NSLayoutConstraint!
+    
     private let userDataManager = UserDataManager()
     
     lazy var otpField: EliteOTPField = {
@@ -48,6 +50,20 @@ class OtpInputViewController: UIViewController {
         setupOtpField()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowNotif(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideNotif(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     private func setupView() {
         view.backgroundColor = Colors.BackgroundPrimary
         descLabel.text = "Enter the 6 digit verification code we sent to you on \(phoneNumber)"
@@ -73,6 +89,32 @@ class OtpInputViewController: UIViewController {
             otpField.widthAnchor.constraint(equalTo: ontpContainer.widthAnchor),
             otpField.heightAnchor.constraint(equalTo: ontpContainer.heightAnchor)
         ])
+    }
+    
+    // MARK: - Keyboard notifications
+    
+    @objc private func keyboardWillShowNotif(notification: NSNotification) {
+        
+        guard let userInfo = notification.userInfo,
+              let size = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        var offset: CGFloat = 0.0
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.first
+            offset = window?.safeAreaInsets.bottom ?? 0.0
+        }
+        
+        if (size.height - offset) > self.continueButtonBottomConstraint.constant {
+            self.continueButtonBottomConstraint.constant = size.height - offset
+            view.layoutIfNeeded()
+        }
+    }
+
+    @objc private func keyboardWillHideNotif(notification: NSNotification) {
+        self.continueButtonBottomConstraint.constant = 0
+        view.layoutIfNeeded()
     }
     
     private func handleSuccessResponse<T: Decodable>(_ response: Response, modelType: T.Type, onSuccess: @escaping (T) -> Void) {

@@ -169,7 +169,9 @@ class ManuallyCheckItemsViewController: UIViewController {
                         self.gotoSuccessState()
                     }
                 } else {
-                    self.showSnackBar(message: createResponse.message, isSuccess: false)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.gotoFailedState()
+                    }
                 }
             } catch {
                 self.handleErrorResponse(response)
@@ -199,6 +201,14 @@ class ManuallyCheckItemsViewController: UIViewController {
         vc.isModalInPresentation = true
         vc.deliveryNavigationController = self.deliveryNavigationController
         present(vc, animated: true, completion: nil)
+    }
+    
+    private func gotoFailedState() {
+        let inboundView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
+        let vc = inboundView.instantiateViewController(withIdentifier: "VerificationFailedViewController") as! VerificationFailedViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.isModalInPresentation = true
+        present(vc, animated: false, completion: nil)
     }
 }
 

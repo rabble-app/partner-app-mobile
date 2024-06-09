@@ -16,7 +16,11 @@ class VerificationFailedViewController: UIViewController {
     }
     
     @IBAction func retryButtonTap(_ sender: Any) {
-        
+        self.dismiss(animated: false)
+    }
+    
+    @IBAction func closeButtonTap(_ sender: Any) {
+        self.dismiss(animated: false)
     }
     
     @IBAction func contactSupportButtonTap(_ sender: Any) {

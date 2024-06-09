@@ -17,11 +17,13 @@ class InboundDeliveriesTableViewCell: UITableViewCell {
     @IBOutlet var dateValue: UILabel!
     @IBOutlet var calendarImg: UIImageView!
     
+    @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var initialBackgroundView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initialBackgroundView.layer.cornerRadius = self.initialBackgroundView.frame.size.height/2
+        self.separatorView.layer.cornerRadius = self.separatorView.frame.size.height/2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
