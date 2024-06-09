@@ -164,8 +164,7 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         let inboundDelivery = self.inboundDeliveryData[indexPath.row]
         cell.producerName.text = inboundDelivery.team.producer.businessName
         cell.teamName.text = inboundDelivery.team.name
-       // let totalQuantity = inboundDelivery.basket?.reduce(0) { $0 + $1.quantity }
-        //cell.itemsCount.text = "\(totalQuantity ?? 0) items"
+        cell.itemsCount.text = "\(inboundDelivery.count.basket) items"
         
         let word = inboundDelivery.team.producer.businessName.prefix(1).uppercased()
         if let firstLetter = word.first {

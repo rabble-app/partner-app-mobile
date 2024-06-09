@@ -24,11 +24,18 @@ struct InboundDelivery: Codable {
     let status: String
     let minimumTreshold: String
     let team: InboundDeliveryTeam
+    let count: InboundDeliveryCount
 
     enum CodingKeys: String, CodingKey {
         case id, accumulatedAmount, deliveryDate, createdAt, deadline, status, team
         case minimumTreshold = "minimumTreshold" // Fixed typo here
+        case count = "_count"
     }
+}
+
+// MARK: - InboundDeliveryCount
+struct InboundDeliveryCount: Codable {
+    let basket: Int
 }
 
 // MARK: - InboundDeliveryTeam
