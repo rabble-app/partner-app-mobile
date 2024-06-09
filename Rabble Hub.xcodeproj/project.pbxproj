@@ -106,6 +106,8 @@
 		AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC401FBD2BED225800FA2F3F /* StoryViewController.swift */; };
 		AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */; };
 		AC45D16E2C0E1A3C00731F1F /* RabbleSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */; };
+		AC5424822C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5424812C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift */; };
+		AC5424882C11A6EA00B31CCA /* IntExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5424872C11A6EA00B31CCA /* IntExtentions.swift */; };
 		AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */; };
 		AC5EF0002BCF98AB0002A8D7 /* SignUpScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */; };
 		AC5EF0022BD004050002A8D7 /* SignUpScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */; };
@@ -282,6 +284,8 @@
 		AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleSheetViewController.swift; sourceTree = "<group>"; };
 		AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RabbleSheetViewController.xib; sourceTree = "<group>"; };
 		AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepIndicatorViewController.swift; sourceTree = "<group>"; };
+		AC5424812C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeliveryTableViewCell.swift; sourceTree = "<group>"; };
+		AC5424872C11A6EA00B31CCA /* IntExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtentions.swift; sourceTree = "<group>"; };
 		AC5EEFFD2BCF63C50002A8D7 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
 		AC5EEFFF2BCF98AB0002A8D7 /* SignUpScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleViewController.swift; sourceTree = "<group>"; };
 		AC5EF0012BD004050002A8D7 /* SignUpScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScheduleTableViewCell.swift; sourceTree = "<group>"; };
@@ -556,6 +560,7 @@
 				861EFC572BD66D5A007AB919 /* ViewExtension.swift */,
 				AC0EE1E62C04686E0047293F /* DateExtension.swift */,
 				861A57C62C104E0A0026263A /* StringExtension.swift */,
+				AC5424872C11A6EA00B31CCA /* IntExtentions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 			children = (
 				AC5EF00E2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift */,
 				AC5EF0192BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift */,
+				AC5424812C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1179,6 +1185,7 @@
 				AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */,
 				AC8CDDEC2BE719640091882B /* PrimaryButton.swift in Sources */,
 				86A60DF02BCCEF8C00496390 /* SignUpViewController.swift in Sources */,
+				AC5424882C11A6EA00B31CCA /* IntExtentions.swift in Sources */,
 				861EFC522BD5349D007AB919 /* PartnerDetailsViewController.swift in Sources */,
 				86D17ABA2BCEB58D00464511 /* CreateATeamPopUpViewController.swift in Sources */,
 				8656189E2BFFA475001E65EB /* Snackbar.swift in Sources */,
@@ -1199,6 +1206,7 @@
 				8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
+				AC5424822C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

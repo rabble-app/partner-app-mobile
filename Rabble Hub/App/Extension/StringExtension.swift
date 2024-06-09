@@ -14,4 +14,8 @@ extension String {
         let end = self.suffix(4)
         return "\(start)...\(end)"
     }
+    
+    func toInt() -> Int? {
+        return Int(self)
+    }
 }
