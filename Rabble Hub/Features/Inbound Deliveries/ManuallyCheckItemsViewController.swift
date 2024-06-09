@@ -147,7 +147,7 @@ class ManuallyCheckItemsViewController: UIViewController {
     
     func updateCheckInButtonStatus() {
         self.checkInButton.isEnabled = false
-        guard let imageJpg = self.imageView.image, let orders = self.orderDetails else {
+        guard let _ = self.imageView.image, let orders = self.orderDetails else {
             return
         }
         
