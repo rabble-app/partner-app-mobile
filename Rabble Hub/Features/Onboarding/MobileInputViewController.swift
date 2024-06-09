@@ -40,9 +40,9 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideNotification(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,26 +81,26 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Keyboard notifications
     
-    @objc private func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShowNotification(notification: NSNotification) {
         
         guard let userInfo = notification.userInfo,
-              let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+              let kSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
         
-        var safeAreaOffSet: CGFloat = 0.0
+        var sOffset: CGFloat = 0.0
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows.first
-            safeAreaOffSet = window?.safeAreaInsets.bottom ?? 0.0
+            sOffset = window?.safeAreaInsets.bottom ?? 0.0
         }
         
-        if (keyboardSize.height - safeAreaOffSet) > self.continueButtonBottomConstraint.constant {
-            self.continueButtonBottomConstraint.constant = keyboardSize.height - safeAreaOffSet
+        if (kSize.height - sOffset) > self.continueButtonBottomConstraint.constant {
+            self.continueButtonBottomConstraint.constant = kSize.height - sOffset
             view.layoutIfNeeded()
         }
     }
 
-    @objc private func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHideNotification(notification: NSNotification) {
         self.continueButtonBottomConstraint.constant = 0
         view.layoutIfNeeded()
     }
