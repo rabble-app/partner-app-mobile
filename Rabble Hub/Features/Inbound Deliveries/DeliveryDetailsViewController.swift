@@ -112,7 +112,7 @@ class DeliveryDetailsViewController: UIViewController {
     
     private func updateInboundDeliveryDetails(_ orderDetailsResponse: [OrderDetail]) {
         orderDetails = orderDetailsResponse
-        tableViewConstraintHeight.constant = CGFloat(77 * orderDetails.count)
+        tableViewConstraintHeight.constant = CGFloat(77 * orderDetails.count) + 20
         tableView.isHidden = orderDetails.isEmpty
         tableView.reloadData()
     }
