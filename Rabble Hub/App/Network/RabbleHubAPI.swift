@@ -51,9 +51,11 @@ extension RabbleHubAPI: TargetType {
         case .getInboundDelivery(let storeId, let offset, let period, let search):
             return "\(URLConfig.getInboundelivery)/\(storeId)/deliveries"
         case .getInboundDeliveryDetails(let id):
+            print("\(URLConfig.getInboundeliveryDetails)/\(id)/order-details")
             return "\(URLConfig.getInboundeliveryDetails)/\(id)/order-details"
-        case .confirmOrderReceipt(storeId: let storeId):
-            return "store/\(storeId)\(URLConfig.confirmOrderReceipt)"
+        case .confirmOrderReceipt(let storeId, _, _, _, _):
+            let url = "store/" + "\(storeId)\(URLConfig.confirmOrderReceipt)"
+            return url
         }
     }
     
@@ -150,25 +152,15 @@ extension RabbleHubAPI: TargetType {
             parameters["id"] = id
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case .confirmOrderReceipt(storeId: _, orderId: let orderId, products: let products, note: let note, file: let file):
+        case .confirmOrderReceipt(_, let orderId, let products, let note, let file):
             var parameters: [String: Any] = [:]
             parameters["orderId"] = orderId
             parameters["products"] = products
             parameters["note"] = note
-
+            
             var formData: [MultipartFormData] = []
-            let mimeType = "image/png"
-            
-            // Ensure file is not nil
-            guard let imageDataUnwrapped = file else {
-                return .requestPlain // Handle this case as needed
-            }
-            
-            // Add image part
-            let imagePart = MultipartFormData(provider: .data(imageDataUnwrapped), name: "file", fileName: "item_image", mimeType: mimeType)
-            formData.append(imagePart)
-            
-            // Add additional parameters
+  
+            // Convert and Add additional parameters to form-data type
             for (key, value) in parameters {
                 let paramData: Data
                 if let stringValue = value as? String {
@@ -184,6 +176,15 @@ extension RabbleHubAPI: TargetType {
                 let paramPart = MultipartFormData(provider: .data(paramData), name: key)
                 formData.append(paramPart)
             }
+            
+            // Ensure file is not nil
+            guard let imageDataUnwrapped = file else {
+                return .uploadMultipart(formData)
+            }
+            
+            // Add image part
+            let imagePart = MultipartFormData(provider: .data(imageDataUnwrapped), name: "file", fileName: "item_image", mimeType: "image/jpg")
+            formData.append(imagePart)
             
             return .uploadMultipart(formData)
         }

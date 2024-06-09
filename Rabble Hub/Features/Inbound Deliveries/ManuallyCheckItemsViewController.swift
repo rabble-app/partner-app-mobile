@@ -15,7 +15,7 @@ class ManuallyCheckItemsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var checkInButton: UIButton!
+    @IBOutlet weak var checkInButton: PrimaryButton!
     @IBOutlet weak var noteTextView: RabbleTextView!
     var imagePicker = UIImagePickerController()
     
@@ -35,12 +35,17 @@ class ManuallyCheckItemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
+    }
+    
+    func setupUI() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.reloadData()
         self.imagePicker.delegate = self
         
+        self.checkInButton.isEnabled = false
         self.imageContainerViewHeightConstraint.constant = 76
         self.withImageView.isHidden = true
         self.cameraButton.setTitle("", for: .normal)
@@ -52,7 +57,6 @@ class ManuallyCheckItemsViewController: UIViewController {
         }
         
         self.tableViewConstraintHeight.constant = CGFloat(70 * orderCount)
-
     }
     
     @IBAction func cameraButtonTap(_ sender: Any) {
@@ -121,8 +125,8 @@ class ManuallyCheckItemsViewController: UIViewController {
         }
         
         var imageData: Data?
-        if let imagePng = self.imageView.image?.pngData() {
-            imageData = imagePng
+        if let imageJpg = self.imageView.image?.jpegData(compressionQuality: 0.8) {
+            imageData = imageJpg
         }
         let products = OrderDetailsProcessor.getProductIdsAndQuantities(from: orders)
         if products.count == 0 {
@@ -139,6 +143,19 @@ class ManuallyCheckItemsViewController: UIViewController {
                 LoadingViewController.dismiss(from: self)
                 self.handleResponse(result)
             }
+    }
+    
+    func updateCheckInButtonStatus() {
+        self.checkInButton.isEnabled = false
+        guard let imageJpg = self.imageView.image, let orders = self.orderDetails else {
+            return
+        }
+        
+        let products = OrderDetailsProcessor.getProductIdsAndQuantities(from: orders)
+        if products.count != self.orderDetails?.count {
+            return
+        }
+        self.checkInButton.isEnabled = true
     }
     
     private func handleResponse(_ result: Result<Response, MoyaError>) {
@@ -208,6 +225,8 @@ extension ManuallyCheckItemsViewController: UITableViewDelegate, UITableViewData
             if let indexPath = tableView.indexPath(for: cell) {
                 self.orderDetails?[indexPath.row].quantity = quantity
                 self.totalQuantityChecked.text = OrderDetailsProcessor.getTotalQuantity(from: self.orderDetails).toString()
+                
+                self.updateCheckInButtonStatus()
             }
         }
         cell.itemTitleLabel.text = orderDetail.name
@@ -225,7 +244,7 @@ extension ManuallyCheckItemsViewController: UINavigationControllerDelegate, UIIm
             self.withImageView.isHidden = false
             self.noImageView.isHidden = true
             self.imageView.image = editedImage
-            self.checkInButton.isEnabled = true
+            self.updateCheckInButtonStatus()
         }
         
         // Dismiss the UIImagePicker after selection

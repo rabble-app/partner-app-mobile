@@ -1015,7 +1015,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="fEL-Ml-mLW" id="K6Z-FU-WTf"/>
-                        <outlet property="checkInButton" destination="OWs-Ya-8yE" id="wrq-Ka-R75"/>
+                        <outlet property="checkInButton" destination="OWs-Ya-8yE" id="peC-T8-wkP"/>
                         <outlet property="imageContainerViewHeightConstraint" destination="RwB-lY-1cX" id="2gL-bv-1UO"/>
                         <outlet property="imageView" destination="oMi-B5-8jT" id="jNb-pi-7oR"/>
                         <outlet property="noImageView" destination="eMk-ry-fkq" id="pfG-Ov-rmi"/>

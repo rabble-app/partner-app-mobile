@@ -39,13 +39,14 @@ struct OrderDetail: Decodable {
 // MARK: - OrderDetailsProcessor
 /// A processor for handling order details.
 class OrderDetailsProcessor {
+    
     /// Returns an array of dictionaries containing product IDs and their corresponding quantities.
     ///
     /// - Parameter orderDetails: An optional array of `OrderDetail` objects. Defaults to an empty array if `nil`.
     /// - Returns: An array of dictionaries where each dictionary has keys "productId" and "quantity".
     static func getProductIdsAndQuantities(from orderDetails: [OrderDetail]) -> [[String: String]] {
         return orderDetails.compactMap { orderDetail in
-            guard let quantity = orderDetail.quantity else {
+            guard let quantity = orderDetail.quantity, !quantity.isEmpty else {
                 return nil
             }
             return ["productId": orderDetail.productId, "quantity": quantity]
