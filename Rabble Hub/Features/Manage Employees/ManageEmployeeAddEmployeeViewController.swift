@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import DialCountries
+import DialCountries
 
 class ManageEmployeeAddEmployeeViewController: UIViewController {
 
@@ -21,10 +21,15 @@ class ManageEmployeeAddEmployeeViewController: UIViewController {
         super.viewDidLoad()
 
         setUpView()
-//        let country = Country.getCurrentCountry()
-//        self.codeLabel.text = country?.dialCode
-//        self.flag.text = country?.flag
+        setUpDefaultCountry()
         
+    }
+    
+    func setUpDefaultCountry() {
+        if let country = Country.getCurrentCountry() {
+            codeLabel.text = country.dialCode
+            flag.text = country.flag
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,11 +87,11 @@ class ManageEmployeeAddEmployeeViewController: UIViewController {
     }
     
     @IBAction func countryPickerButtonTap(_ sender: Any) {
-//        DispatchQueue.main.async {
-//            let cv = DialCountriesController(locale: Locale(identifier: "en"))
-//            cv.delegate = self
-//            cv.show(vc: self)
-//        }
+        DispatchQueue.main.async {
+            let cv = DialCountriesController(locale: Locale(identifier: "en"))
+            cv.delegate = self
+            cv.show(vc: self)
+        }
     }
     
     // MARK: - Actions
@@ -111,10 +116,10 @@ class ManageEmployeeAddEmployeeViewController: UIViewController {
 
 // MARK: - DialCountriesControllerDelegate methods
 
-//extension ManageEmployeeAddEmployeeViewController: DialCountriesControllerDelegate {
-//    
-//    func didSelected(with country: Country) {
-//        self.codeLabel.text = country.dialCode
-//        self.flag.text = country.flag
-//    }
-//}
+extension ManageEmployeeAddEmployeeViewController: DialCountriesControllerDelegate {
+    
+    func didSelected(with country: Country) {
+        self.codeLabel.text = country.dialCode
+        self.flag.text = country.flag
+    }
+}
