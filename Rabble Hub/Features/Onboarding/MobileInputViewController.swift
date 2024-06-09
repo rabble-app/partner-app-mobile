@@ -23,6 +23,7 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var phoneNumberTextfield: UITextField!
     @IBOutlet var phoneNumberContainer: UIView!
     
+    @IBOutlet weak var continueButtonBottomConstraint: NSLayoutConstraint!
     private var phoneNumber: String = ""
     private var sid: String = ""
     var isTickBoxSelected = false
@@ -34,6 +35,20 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
         setUpView()
         setUpDefaultCountry()
         printUserId()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     func setUpView() {
@@ -63,6 +78,34 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
         
         continueButton.isEnabled = false
     }
+    
+    // MARK: - Keyboard notifications
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        
+        guard let userInfo = notification.userInfo,
+              let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        var safeAreaOffSet: CGFloat = 0.0
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.first
+            safeAreaOffSet = window?.safeAreaInsets.bottom ?? 0.0
+        }
+        
+        if (keyboardSize.height - safeAreaOffSet) > self.continueButtonBottomConstraint.constant {
+            self.continueButtonBottomConstraint.constant = keyboardSize.height - safeAreaOffSet
+            view.layoutIfNeeded()
+        }
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        self.continueButtonBottomConstraint.constant = 0
+        view.layoutIfNeeded()
+    }
+    
+    // MARK: - UITextField delegate
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Call updateContinueButtonState after text is changed in the text field
