@@ -393,11 +393,11 @@
             <objects>
                 <viewController storyboardIdentifier="PartnerDetailsViewController" id="wNU-gU-CPV" customClass="PartnerDetailsViewController" customModule="Rabble_Hub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hNY-Go-C5Z">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Te-FM-d3b">
-                                <rect key="frame" x="0.0" y="103" width="393" height="1363"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30o-IL-iwv" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="968"/>
@@ -735,7 +735,6 @@
                     <navigationItem key="navigationItem" title="Cacklebean Farm" id="iyY-iF-Kug">
                         <barButtonItem key="rightBarButtonItem" image="icon_share" id="hZV-tl-FgX"/>
                     </navigationItem>
-                    <size key="freeformSize" width="393" height="1500"/>
                     <connections>
                         <outlet property="contentView_height" destination="ik2-Ln-29O" id="HzS-NO-wIC"/>
                         <outlet property="deliveryFrequency" destination="XRf-Hm-yEv" id="xBy-8Q-snG"/>

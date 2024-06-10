@@ -24,11 +24,12 @@ class PartnersViewController: UIViewController {
         partnerTableview.delegate = self
         partnerTableview.dataSource = self
         searchBar.delegate = self
+        fetchPartnerTeams()
        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        fetchPartnerTeams()
+       
     }
 
     @IBAction func setupNewBuyingTeamButtonTap(_ sender: Any) {
