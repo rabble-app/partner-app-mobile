@@ -21,6 +21,7 @@ public enum RabbleHubAPI {
     case getInboundDelivery(storeId: String, offset: Int, period: String, search: String)
     case getInboundDeliveryDetails(id: String)
     case confirmOrderReceipt(storeId: String, orderId: String, products: [Dictionary<String, Any>], note: String?, file: Data?)
+    case getPartnerTeams(storeId: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -56,6 +57,8 @@ extension RabbleHubAPI: TargetType {
         case .confirmOrderReceipt(let storeId, _, _, _, _):
             let url = "store/" + "\(storeId)\(URLConfig.confirmOrderReceipt)"
             return url
+        case .getPartnerTeams(let storeId):
+            return "\(URLConfig.getPartnerTeams)/\(storeId)"
         }
     }
     
@@ -65,7 +68,7 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .updateUserRecord, .addStoreHours:
             return .patch
-        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails:
+        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams:
             return .get
         }
     }
@@ -187,6 +190,8 @@ extension RabbleHubAPI: TargetType {
             formData.append(imagePart)
             
             return .uploadMultipart(formData)
+        case .getPartnerTeams:
+            return .requestPlain
         }
     }
     

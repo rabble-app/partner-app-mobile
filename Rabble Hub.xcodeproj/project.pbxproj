@@ -33,6 +33,7 @@
 		867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349572BF5300A00F82570 /* VerifyOTPResponse.swift */; };
 		8673495A2BF535FB00F82570 /* GetSuppliersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349592BF535FB00F82570 /* GetSuppliersResponse.swift */; };
 		868C2D122C13739A009295BA /* OrderDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C2D112C13739A009295BA /* OrderDetailsResponse.swift */; };
+		868C2D292C172C36009295BA /* GetPartnerTeamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -207,6 +208,7 @@
 		867349572BF5300A00F82570 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
 		867349592BF535FB00F82570 /* GetSuppliersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuppliersResponse.swift; sourceTree = "<group>"; };
 		868C2D112C13739A009295BA /* OrderDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsResponse.swift; sourceTree = "<group>"; };
+		868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartnerTeamsResponse.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				86E08F782C0DE32500AE6D58 /* CustomerCollectionResponse.swift */,
 				865EBA602C100C41004E5798 /* InboundDeliveryResponse.swift */,
 				868C2D112C13739A009295BA /* OrderDetailsResponse.swift */,
+				868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1127,6 +1130,7 @@
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
 				AC6417ED2BFB7CE500B8A61B /* APIService.swift in Sources */,
+				868C2D292C172C36009295BA /* GetPartnerTeamsResponse.swift in Sources */,
 				AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */,
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
@@ -1395,7 +1399,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1435,7 +1439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

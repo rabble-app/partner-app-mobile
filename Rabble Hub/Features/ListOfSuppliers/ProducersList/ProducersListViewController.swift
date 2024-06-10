@@ -21,7 +21,6 @@ class ProducersListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         fetchSuppliers()
     }
@@ -74,7 +73,7 @@ class ProducersListViewController: UIViewController {
     private func handleMappingError(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            self.showError(errorResponse.message ?? "An error occurred")
+            self.showError(errorResponse.message)
         } catch {
             print("Failed to map response data: \(error)")
         }

@@ -9,6 +9,7 @@ import UIKit
 
 class PartnerTableViewCell: UITableViewCell {
     
+    @IBOutlet var supplierName: UILabel!
     @IBOutlet var container: UIView!
     @IBOutlet var img: UIImageView!
     @IBOutlet var hostContainer: UIView!
