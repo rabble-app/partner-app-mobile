@@ -15,8 +15,8 @@ class PartnersViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
-    private var partnerTeams = [Team]()
-    private var filteredpartnerTeams = [Team]()
+    private var partnerTeams = [PartnerTeam]()
+    private var filteredpartnerTeams = [PartnerTeam]()
     
     
     override func viewDidLoad() {
@@ -86,7 +86,7 @@ class PartnersViewController: UIViewController {
         SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
     }
     
-    private func updatePartnerTeams(_ partnerTeams: [Team]) {
+    private func updatePartnerTeams(_ partnerTeams: [PartnerTeam]) {
         self.partnerTeams = partnerTeams
         self.filteredpartnerTeams = partnerTeams
         self.partnerTableview.reloadData()
@@ -127,7 +127,7 @@ extension PartnersViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - ProducersListTableViewCell Extension
 extension PartnerTableViewCell {
-    func configure(with team: Team) {
+    func configure(with team: PartnerTeam) {
         if let imageUrl = URL(string: team.imageUrl) {
             img?.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
         }

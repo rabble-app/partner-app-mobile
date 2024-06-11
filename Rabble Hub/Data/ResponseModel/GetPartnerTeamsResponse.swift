@@ -11,11 +11,11 @@ import Foundation
 struct GetPartnerTeamsResponse: Codable {
     let statusCode: Int
     let message: String
-    let data: [Team]
+    let data: [PartnerTeam]
 }
 
 // MARK: - Team
-struct Team: Codable {
+struct PartnerTeam: Codable {
     let id: String
     let name: String
     let postalCode: String
@@ -69,21 +69,21 @@ struct PartnerTeamsProducer: Codable {
     let createdAt: String
     let updatedAt: String
     let user: PartnerUser
-    let categories: [CategoryContainer]
+    let categories: [PartnerTeamsCategoryContainer]
 }
 
 // MARK: - CategoryContainer
-struct CategoryContainer: Codable {
+struct PartnerTeamsCategoryContainer: Codable {
     let id: String
     let producerId: String
     let producerCategoryOptionId: String
     let createdAt: String
     let updatedAt: String
-    let category: Category
+    let category: PartnerTeamsCategory
 }
 
 // MARK: - Category
-struct Category: Codable {
+struct PartnerTeamsCategory: Codable {
     let id: String
     let name: String
     let createdAt: String

@@ -26,7 +26,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet var imageContainer: UIView!
     
-    var partnerTeam: Team?
+    var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var orderDetails = [OrderDetail]()
     
@@ -144,6 +144,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func manageTeamButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ManageTeamViewController") as? ManageTeamViewController {
+            vc.partnerTeam = self.partnerTeam
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -22,6 +22,7 @@ class ManageTeamViewController: UIViewController {
     @IBOutlet var tableView_bottom: NSLayoutConstraint!
     
     var sections: [Section] = []
+    var partnerTeam: PartnerTeam?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +79,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return 3
         }else{
-            return 10
+            return partnerTeam?.members.count ?? 0
         }
     }
     
@@ -113,6 +114,8 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
                 cell.border.isHidden = true
             }
+            let member = partnerTeam?.members[indexPath.row]
+            cell.memberName.text = "\(member?.user.firstName ?? "") \(member?.user.lastName ?? "")"
             return cell
         }
     }
