@@ -145,7 +145,10 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         ordersTableview.reloadData()
     }
     
-
+    @IBAction func shareButtonTap(_ sender: Any) {
+        
+    }
+    
     @IBAction func manageTeamButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ManageTeamViewController") as? ManageTeamViewController {

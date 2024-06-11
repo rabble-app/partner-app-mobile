@@ -22,12 +22,17 @@ class ManageTeamViewController: UIViewController {
     @IBOutlet var tableView_bottom_button: NSLayoutConstraint!
     @IBOutlet var tableView_bottom: NSLayoutConstraint!
     
+    @IBOutlet var emptyStateContainer: UIView!
+    
     var sections: [Section] = []
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emptyStateContainer.isHidden = true
+        
         teamTableview.delegate = self
         teamTableview.dataSource = self
         segmentedController.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
@@ -41,9 +46,31 @@ class ManageTeamViewController: UIViewController {
             TeamSetting(title: "Product limit", imageName: "icon_product_limit")
         ])
         sections = [teamInfoSection, teamSettingsSection]
+        
+    }
+    
+    private func loadEmptyState() {
+        if segmentedController.selectedSegmentIndex == 0 {
+            if partnerTeam?.members.count ?? 0 < 0 {
+                showEmptyState()
+                return
+            }
+        }
+        hideEmptyState()
+    }
+    
+    private func showEmptyState() {
+        self.teamTableview.isHidden = true
+        self.emptyStateContainer.isHidden = false
+    }
+    
+    private func hideEmptyState() {
+        self.teamTableview.isHidden = false
+        self.emptyStateContainer.isHidden = true
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        loadEmptyState()
         teamTableview.reloadData()
         
         if segmentedController.selectedSegmentIndex == 0 {
@@ -60,7 +87,6 @@ class ManageTeamViewController: UIViewController {
     }
     
     private func deleteMember(_ member: Member) {
-        print(member)
         LoadingViewController.present(from: self)
         apiProvider.request(.deleteMember(id: member.id)) { result in
             LoadingViewController.dismiss(from: self)
@@ -68,6 +94,7 @@ class ManageTeamViewController: UIViewController {
         }
     }
     
+
     private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
@@ -81,6 +108,7 @@ class ManageTeamViewController: UIViewController {
         do {
             let deleteMemberResponse = try response.map(DeleteMemberResponse.self)
             if deleteMemberResponse.statusCode == 200 {
+                self.loadEmptyState()
                 self.showSuccessMessage(deleteMemberResponse.message)
                 self.teamTableview.reloadData()
             } else {
@@ -167,6 +195,11 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             }
             let member = partnerTeam?.members[indexPath.row]
             cell.memberName.text = "\(member?.user.firstName ?? "") \(member?.user.lastName ?? "")"
+            
+            let word = member?.user.firstName?.prefix(1).uppercased()
+            if let firstLetter = word?.first {
+                cell.initialLabel.text = String(firstLetter).uppercased()
+            }
             return cell
         }
     }
