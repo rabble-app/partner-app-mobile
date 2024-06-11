@@ -28,7 +28,7 @@ class CustomerCollectionListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoadingViewController.dismiss(from: self)
+        
         collectionTableview.delegate = self
         collectionTableview.dataSource = self
         searchBar.delegate = self
@@ -67,10 +67,10 @@ class CustomerCollectionListViewController: UIViewController {
     }
     
     func fetchCustomerCollections() {
-        LoadingViewController.present(from: self)
+       // LoadingViewController.present(from: self)
         let id = userDataManager.getUserData()?.partner?.id ?? ""
         apiProvider.request(.getCustomerCollection(storeId: id, offset: 0, period: period, search: searchStr)) { result in
-            LoadingViewController.dismiss(from: self)
+            //LoadingViewController.dismiss(from: self)
             self.handleSuppliersResponse(result)
         }
     }
