@@ -70,6 +70,11 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         partnerName.text = partnerTeam?.name
         descLabel.text = partnerTeam?.description
         
+        let word = partnerTeam?.name.prefix(1).uppercased()
+        if let firstLetter = word?.first {
+            initialLabel.text = String(firstLetter).uppercased()
+        }
+        
         if let imageUrl = URL(string: partnerTeam?.imageUrl ?? "placeholderImage") {
             img?.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
         }

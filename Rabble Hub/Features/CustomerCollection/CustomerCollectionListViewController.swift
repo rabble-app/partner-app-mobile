@@ -20,7 +20,7 @@ class CustomerCollectionListViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var collectionData = [CollectionData]()
-    
+  
     var period = "today"
     var searchStr = ""
     
@@ -28,7 +28,7 @@ class CustomerCollectionListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        LoadingViewController.dismiss(from: self)
         collectionTableview.delegate = self
         collectionTableview.dataSource = self
         searchBar.delegate = self

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 struct Section {
     var title: String
@@ -23,6 +24,7 @@ class ManageTeamViewController: UIViewController {
     
     var sections: [Section] = []
     var partnerTeam: PartnerTeam?
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,55 @@ class ManageTeamViewController: UIViewController {
             deleteTeamButton.isHidden = true
             teamTableview.isScrollEnabled = true
         }
+    }
+    
+    private func deleteMember(_ member: Member) {
+        print(member)
+        LoadingViewController.present(from: self)
+        apiProvider.request(.deleteMember(id: member.id)) { result in
+            LoadingViewController.dismiss(from: self)
+            self.handleSuppliersResponse(result)
+        }
+    }
+    
+    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            handleSuccessResponse(response)
+        case .failure(let error):
+            showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessResponse(_ response: Response) {
+        do {
+            let deleteMemberResponse = try response.map(DeleteMemberResponse.self)
+            if deleteMemberResponse.statusCode == 200 {
+                self.showSuccessMessage(deleteMemberResponse.message)
+                self.teamTableview.reloadData()
+            } else {
+                showError(deleteMemberResponse.message)
+            }
+        } catch {
+            handleMappingError(response)
+        }
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            showError(errorResponse.message)
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    func showSuccessMessage(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: true, parent: self.view)
+    }
+    
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
     }
     
     @IBAction func deleteTeamButtonTap(_ sender: Any) {
@@ -160,7 +211,11 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                 // Perform remove action here
                 // For example, you can delete the selected item from your data source and reload the table view
                 // dataSourceArray.remove(at: indexPath.row)
-                // tableView.reloadData()
+                if let member = self.partnerTeam?.members[indexPath.row] {
+                    self.deleteMember(member)
+                }
+                
+               
             }
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -170,9 +225,6 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             
             present(alertController, animated: true, completion: nil)
         }
-        
-        
-      
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -205,8 +257,4 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return 0
     }
-
-
-    
-    
 }

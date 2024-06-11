@@ -18,6 +18,7 @@ class ProducersListViewController: UIViewController {
     private var filteredSuppliers = [Supplier]()
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,8 @@ class ProducersListViewController: UIViewController {
     }
     
     private func fetchSuppliers() {
-        guard let postalCode = StoreManager.shared.postalCode else { return }
-        
+        guard let postalCode = userDataManager.getUserData()?.postalCode else { return }
+
         LoadingViewController.present(from: self)
         
         apiProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in

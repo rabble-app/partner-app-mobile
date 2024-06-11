@@ -57,6 +57,7 @@
 		86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */; };
 		86C2E2A72BEC8F2700DB4494 /* TertiaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */; };
 		86C2E2A92BECA5C700DB4494 /* OrderCollectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2E2A82BECA5C700DB4494 /* OrderCollectedViewController.swift */; };
+		86CE75852C182BC7009702FA /* DeleteMemberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */; };
 		86D014412BEA14220004B1C6 /* GoshaSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86D0143F2BEA14220004B1C6 /* GoshaSansBold.otf */; };
 		86D014422BEA14220004B1C6 /* GoshaSansRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86D014402BEA14220004B1C6 /* GoshaSansRegular.otf */; };
 		86D014552BEA14350004B1C6 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86D014432BEA14340004B1C6 /* Poppins-ExtraLight.ttf */; };
@@ -234,6 +235,7 @@
 		86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateALimitViewController.swift; sourceTree = "<group>"; };
 		86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TertiaryButton.swift; sourceTree = "<group>"; };
 		86C2E2A82BECA5C700DB4494 /* OrderCollectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectedViewController.swift; sourceTree = "<group>"; };
+		86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMemberResponse.swift; sourceTree = "<group>"; };
 		86D0143F2BEA14220004B1C6 /* GoshaSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoshaSansBold.otf; sourceTree = "<group>"; };
 		86D014402BEA14220004B1C6 /* GoshaSansRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoshaSansRegular.otf; sourceTree = "<group>"; };
 		86D014432BEA14340004B1C6 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				865EBA602C100C41004E5798 /* InboundDeliveryResponse.swift */,
 				868C2D112C13739A009295BA /* OrderDetailsResponse.swift */,
 				868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */,
+				86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1146,6 +1149,7 @@
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
 				8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */,
 				8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */,
+				86CE75852C182BC7009702FA /* DeleteMemberResponse.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				86E08F772C0DDF0200AE6D58 /* UserDataManager.swift in Sources */,
 				AC6418072C0378DA00B8A61B /* DeliveryDayResponse.swift in Sources */,
