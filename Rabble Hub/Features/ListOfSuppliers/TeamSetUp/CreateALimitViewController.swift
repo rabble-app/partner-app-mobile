@@ -10,6 +10,8 @@ import Moya
 
 class CreateALimitViewController: UIViewController {
 
+    weak var dismissalDelegate: ChooseDeliveryDayViewControllerDelegate?
+    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet var selectOptionButton: UIButton!
@@ -19,10 +21,12 @@ class CreateALimitViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var stepContainer_height: NSLayoutConstraint!
     @IBOutlet var stepContainer: UIView!
+    @IBOutlet weak var selectionLabel: UILabel!
     
     var isFromEdit: Bool = false
     var frequency: Int = 0
     var selectedSupplier: Supplier?
+    var partnerTeam: PartnerTeam?
     var deliveryDay: DeliveryDay?
     var deliveryDate: Date?
     
@@ -65,14 +69,14 @@ class CreateALimitViewController: UIViewController {
         rabbleSheetViewController.headerTitle = "Select an option"
         rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
         rabbleSheetViewController.itemSelected = { item in
-            self.selectOptionButton.setTitle(item, for: .normal)
+            self.selectionLabel.text = item
         }
         present(rabbleSheetViewController, animated: true, completion: nil)
     }
     
     @IBAction private func nextButtonTap(_ sender: Any) {
         if isFromEdit {
-            dismiss(animated: true, completion: nil)
+            updateBuyingTeam()
         } else {
             createBuyingTeam()
         }
@@ -85,6 +89,54 @@ class CreateALimitViewController: UIViewController {
             let pushAnimator = PushAnimator()
             vc.transitioningDelegate = pushAnimator
             present(vc, animated: true)
+        }
+    }
+    
+    private func updateBuyingTeam() {
+        guard let teamId = partnerTeam?.id,
+              let partnerName = partnerTeam?.name,
+              let frequency = partnerTeam?.frequency.toString(),
+              let deliveryDay = partnerTeam?.deliveryDay
+        else { return }
+        
+        var productLimit = self.partnerTeam?.productLimit.toInt()
+        if let limit = self.selectionLabel.text {
+            productLimit = limit.components(separatedBy: " ").first?.toInt()
+        }
+        
+        LoadingViewController.present(from: self)
+        apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequency, deliveryDay: deliveryDay, productLimit: productLimit!)) { result in
+            LoadingViewController.dismiss(from: self)
+            switch result {
+            case let .success(response):
+                // Handle successful response
+                do {
+                    let response = try response.map(GetPartnerTeamResponse.self)
+                    if response.statusCode == 200 || response.statusCode == 201 {
+                        print(response.data as Any)
+                        self.partnerTeam = response.data
+                        SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            self.dismiss(animated: false) {
+                                self.dismissalDelegate?.dismissViewController()
+                            }
+                        }
+                    } else {
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+                    }
+                    
+                } catch {
+                    do {
+                        let response = try response.map(StandardResponse.self)
+                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+                    } catch {
+                        print("Failed to map response data: \(error)")
+                    }
+                }
+            case let .failure(error):
+                // Handle error
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
+            }
         }
     }
     

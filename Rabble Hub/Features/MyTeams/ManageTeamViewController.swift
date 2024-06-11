@@ -216,6 +216,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                     if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseFrequencyViewController") as? ChooseFrequencyViewController {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
+                        vc.partnerTeam = self.partnerTeam
                         vc.title = "Edit Shipment Frequency"
                         self.present(vc, animated: true)
                     }
@@ -223,6 +224,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                     if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseDeliveryDayViewController") as? ChooseDeliveryDayViewController {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
+                        vc.partnerTeam = self.partnerTeam
                         vc.title = "Adjust Delivery Day"
                         self.present(vc, animated: true)
                     }
@@ -230,6 +232,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                     if let vc = storyboard.instantiateViewController(withIdentifier: "CreateALimitViewController") as? CreateALimitViewController {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
+                        vc.partnerTeam = self.partnerTeam
                         vc.title = "Edit Product Limit"
                         self.present(vc, animated: true)
                     }

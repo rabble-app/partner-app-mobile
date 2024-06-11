@@ -41,4 +41,5 @@ struct URLConfig {
     static let confirmOrderReceipt = "/confirm-order-receipt"
     static let getPartnerTeams = "/users/my-teams"
     static let deleteMember = "/teams/quit"
+    static let updateBuyingTeam = "/teams"
 }
