@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GoshaSansBold.otf">
+            <string>GoshaSans-Bold</string>
+        </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Bold</string>
             <string>SFPro-Regular</string>
@@ -72,6 +75,41 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vse-YH-QDr">
                                 <rect key="frame" x="0.0" y="159" width="393" height="655"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlZ-rR-OP7">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="573"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_state_partner_members" translatesAutoresizingMaskIntoConstraints="NO" id="mkS-E0-hqy">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="350" id="I9e-mF-2yI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Teams Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-1v-u1Y">
+                                                <rect key="frame" x="16" y="300" width="361" height="29"/>
+                                                <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your first buying team to get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpJ-AU-TAk">
+                                                <rect key="frame" x="16" y="337" width="361" height="19.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="16"/>
+                                                <color key="textColor" name="gray_3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="WpJ-AU-TAk" firstAttribute="leading" secondItem="nlZ-rR-OP7" secondAttribute="leading" constant="16" id="2HD-h5-1hR"/>
+                                            <constraint firstAttribute="trailing" secondItem="WpJ-AU-TAk" secondAttribute="trailing" constant="16" id="2yJ-ZP-Og8"/>
+                                            <constraint firstItem="7mn-1v-u1Y" firstAttribute="centerX" secondItem="nlZ-rR-OP7" secondAttribute="centerX" id="8lQ-S5-6xC"/>
+                                            <constraint firstAttribute="trailing" secondItem="7mn-1v-u1Y" secondAttribute="trailing" constant="16" id="G6V-T8-1Hh"/>
+                                            <constraint firstItem="mkS-E0-hqy" firstAttribute="top" secondItem="nlZ-rR-OP7" secondAttribute="top" id="UnK-ej-uqd"/>
+                                            <constraint firstAttribute="trailing" secondItem="mkS-E0-hqy" secondAttribute="trailing" id="YmB-x8-fiX"/>
+                                            <constraint firstItem="7mn-1v-u1Y" firstAttribute="leading" secondItem="nlZ-rR-OP7" secondAttribute="leading" constant="16" id="bzh-DH-iZQ"/>
+                                            <constraint firstItem="7mn-1v-u1Y" firstAttribute="top" secondItem="mkS-E0-hqy" secondAttribute="bottom" constant="-50" id="iQl-9Q-5id"/>
+                                            <constraint firstItem="mkS-E0-hqy" firstAttribute="leading" secondItem="nlZ-rR-OP7" secondAttribute="leading" id="kNP-tZ-Imu"/>
+                                            <constraint firstItem="WpJ-AU-TAk" firstAttribute="top" secondItem="7mn-1v-u1Y" secondAttribute="bottom" constant="8" id="yyK-90-bMv"/>
+                                        </constraints>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WLg-wy-cA3">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="573"/>
                                         <color key="backgroundColor" name="background_primary"/>
@@ -317,9 +355,13 @@
                                 <constraints>
                                     <constraint firstItem="dFE-Dq-x1t" firstAttribute="leading" secondItem="vse-YH-QDr" secondAttribute="leading" constant="16" id="70y-pg-3U3"/>
                                     <constraint firstItem="WLg-wy-cA3" firstAttribute="leading" secondItem="vse-YH-QDr" secondAttribute="leading" id="79b-rb-aHM"/>
+                                    <constraint firstItem="nlZ-rR-OP7" firstAttribute="top" secondItem="vse-YH-QDr" secondAttribute="top" id="DNq-b1-3vx"/>
                                     <constraint firstItem="WLg-wy-cA3" firstAttribute="top" secondItem="vse-YH-QDr" secondAttribute="top" id="GbJ-Ld-LFI"/>
                                     <constraint firstAttribute="bottom" secondItem="dFE-Dq-x1t" secondAttribute="bottom" constant="16" id="UVb-LE-ct5"/>
                                     <constraint firstAttribute="trailing" secondItem="WLg-wy-cA3" secondAttribute="trailing" id="WYi-mB-Q1F"/>
+                                    <constraint firstItem="nlZ-rR-OP7" firstAttribute="leading" secondItem="vse-YH-QDr" secondAttribute="leading" id="Z4U-w1-HOg"/>
+                                    <constraint firstAttribute="trailing" secondItem="nlZ-rR-OP7" secondAttribute="trailing" id="jUn-do-IgR"/>
+                                    <constraint firstItem="dFE-Dq-x1t" firstAttribute="top" secondItem="nlZ-rR-OP7" secondAttribute="bottom" constant="16" id="tkQ-Mu-4xd"/>
                                     <constraint firstAttribute="trailing" secondItem="dFE-Dq-x1t" secondAttribute="trailing" constant="16" id="ujf-Lo-131"/>
                                     <constraint firstItem="dFE-Dq-x1t" firstAttribute="top" secondItem="WLg-wy-cA3" secondAttribute="bottom" constant="16" id="xNV-Tu-QAX"/>
                                 </constraints>
@@ -342,6 +384,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="EcB-Az-ilb"/>
                     <connections>
+                        <outlet property="emptyStateContainer" destination="nlZ-rR-OP7" id="D9s-DY-LCN"/>
                         <outlet property="partnerTableview" destination="WLg-wy-cA3" id="SRL-2M-Oqs"/>
                         <outlet property="searchBar" destination="Dta-ro-qDi" id="n4b-Q5-6RS"/>
                         <segue destination="wNU-gU-CPV" kind="show" id="Skr-j1-ZM8"/>
@@ -1045,6 +1088,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="empty_state_partner_members" width="428" height="429"/>
         <image name="icon_bookmark" width="20" height="20"/>
         <image name="icon_delivery" width="20" height="20"/>
         <image name="icon_delivery_filled" width="24" height="17"/>
@@ -1072,6 +1116,9 @@
         </namedColor>
         <namedColor name="gray_2">
             <color red="0.31000000238418579" green="0.31000000238418579" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_3">
+            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_5">
             <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

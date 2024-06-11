@@ -12,12 +12,15 @@ class PartnersViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var partnerTableview: UITableView!
+    @IBOutlet var emptyStateContainer: UIView!
+    
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
     private var partnerTeams = [PartnerTeam]()
     private var filteredpartnerTeams = [PartnerTeam]()
     
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,8 @@ class PartnersViewController: UIViewController {
         partnerTableview.dataSource = self
         searchBar.delegate = self
         fetchPartnerTeams()
+        
+        emptyStateContainer.isHidden = true
        
     }
     
@@ -89,7 +94,19 @@ class PartnersViewController: UIViewController {
     private func updatePartnerTeams(_ partnerTeams: [PartnerTeam]) {
         self.partnerTeams = partnerTeams
         self.filteredpartnerTeams = partnerTeams
-        self.partnerTableview.reloadData()
+        
+        if partnerTeams.count > 0 {
+            self.emptyStateContainer.isHidden = true
+            self.partnerTableview.isHidden = false
+            self.partnerTableview.reloadData()
+        }else{
+            self.showEmptyState()
+        }
+    }
+    
+    private func showEmptyState() {
+        self.partnerTableview.isHidden = true
+        self.emptyStateContainer.isHidden = false
     }
 }
 
