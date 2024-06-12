@@ -34,7 +34,6 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setUpView()
         setUpDefaultCountry()
-        printUserId()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,12 +134,6 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
         if let country = Country.getCurrentCountry() {
             codeLabel.text = country.dialCode
             flag.text = country.flag
-        }
-    }
-    
-    func printUserId() {
-        if let userId = StoreManager.shared.userId {
-            print(userId)
         }
     }
     
