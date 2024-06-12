@@ -105,6 +105,7 @@
 		AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12289E2BE73AFF001EC15F /* Properties.swift */; };
 		AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1228A02BE74635001EC15F /* RabbleTextView.swift */; };
 		AC159FA92BED145E00926222 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC159FA82BED145E00926222 /* Media.xcassets */; };
+		AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */; };
 		AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC401FBD2BED225800FA2F3F /* StoryViewController.swift */; };
 		AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */; };
 		AC45D16E2C0E1A3C00731F1F /* RabbleSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */; };
@@ -284,6 +285,7 @@
 		AC12289E2BE73AFF001EC15F /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		AC1228A02BE74635001EC15F /* RabbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextView.swift; sourceTree = "<group>"; };
 		AC159FA82BED145E00926222 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamResponse.swift; sourceTree = "<group>"; };
 		AC401FBD2BED225800FA2F3F /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleSheetViewController.swift; sourceTree = "<group>"; };
 		AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RabbleSheetViewController.xib; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				868C2D112C13739A009295BA /* OrderDetailsResponse.swift */,
 				868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */,
 				86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */,
+				AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1172,6 +1175,7 @@
 				AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */,
 				AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */,
 				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
+				AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */,
 				ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */,
 				868C2D122C13739A009295BA /* OrderDetailsResponse.swift in Sources */,
 				AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */,

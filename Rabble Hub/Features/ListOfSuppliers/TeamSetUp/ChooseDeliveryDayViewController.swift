@@ -9,7 +9,13 @@ import UIKit
 import Moya
 import JTAppleCalendar
 
+protocol ChooseDeliveryDayViewControllerDelegate: AnyObject {
+    func dismissViewController()
+}
+
 class ChooseDeliveryDayViewController: UIViewController {
+    
+    weak var dismissalDelegate: ChooseFrequencyViewControllerDelegate?
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var progressBar: UIView!
@@ -26,6 +32,7 @@ class ChooseDeliveryDayViewController: UIViewController {
     var isFromEdit: Bool = false
     var frequency = Int()
     var selectedSupplier: Supplier?
+    var partnerTeam: PartnerTeam?
     var selectedDate: Date?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var deliveryDays: [DeliveryDay]?
@@ -57,7 +64,7 @@ class ChooseDeliveryDayViewController: UIViewController {
         
         calendarContainer.layer.cornerRadius = 10
         calendarContainer.clipsToBounds = true
-        
+        nextButton.isEnabled = false
         if isFromEdit {
             nextButton.setTitle("Save Changes", for: .normal)
             self.titleLabel.text = "Adjust Delivery Day"
@@ -65,11 +72,20 @@ class ChooseDeliveryDayViewController: UIViewController {
             self.stepContainer_height.constant = 0
         }
         
-        if let supplierName = selectedSupplier?.businessName != nil ? selectedSupplier?.businessName : "{supplier.name}" {
-            self.deliveryDayInstructionsLabel.text = "Choose the first delivery day you would like \(supplierName) to deliver on. We allow a minimum of two weeks from creating the team for customers to sign up to your buying team"
-            self.suppliersAvailableDaysLabel.text = "\(supplierName)'s available delivery days"
+        var supplierName = "{supplier.name}"
+        if isFromEdit {
+            if let name = partnerTeam?.name != nil ? partnerTeam?.name : "{supplier.name}" {
+                supplierName = name
+            }
+        }
+        else {
+            if let name = selectedSupplier?.businessName != nil ? selectedSupplier?.businessName : "{supplier.name}" {
+                supplierName = name
+            }
         }
         
+        self.deliveryDayInstructionsLabel.text = "Choose the first delivery day you would like \(supplierName) to deliver on. We allow a minimum of two weeks from creating the team for customers to sign up to your buying team"
+        self.suppliersAvailableDaysLabel.text = "\(supplierName)'s available delivery days"
         self.calendarCollectionView.calendarDelegate = self
         self.calendarCollectionView.calendarDataSource = self
         
@@ -87,43 +103,55 @@ class ChooseDeliveryDayViewController: UIViewController {
     }
     
     func getDeliveryDays() {
+        var supplierId = ""
+        if isFromEdit {
+            guard let producerId = partnerTeam?.producerId else { return }
+            supplierId = producerId
+        }
+        else {
+            guard let selectedSupplierId = selectedSupplier?.id else { return }
+            supplierId = selectedSupplierId
+        }
         
-        guard let supplierId = selectedSupplier?.id else { return }
-        guard let postalCode = StoreManager.shared.postalCode else { return }
+        var postalCode = "SE154NX"
+        if let code = StoreManager.shared.postalCode {
+            postalCode = code
+        }
         
         LoadingViewController.present(from: self)
         apiProvider.request(.getDeliveryDays(supplierId: supplierId, postalCode: postalCode)) { result in
             LoadingViewController.dismiss(from: self)
-            
-            switch result {
-            case let .success(response):
-                // Handle successful response
-                do {
-                    let response = try response.map(DeliveryDaysResponse.self)
-                    if response.statusCode == 200 || response.statusCode == 201 {
-                        print(response.data as Any)
-                        self.deliveryDays = response.data
-                        DispatchQueue.main.async {
-                            self.calendarCollectionView.reloadData()
-                        }
-                    } else {
-                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
-                        print("Error Message: \(response.message)")
+            self.handleResponse(result: result)
+        }
+    }
+    
+    private func handleResponse(result: Result<Response, MoyaError>) {
+        switch result {
+        case let .success(response):
+            // Handle successful response
+            do {
+                let response = try response.map(DeliveryDaysResponse.self)
+                if response.statusCode == 200 || response.statusCode == 201 {
+                    print(response.data as Any)
+                    self.deliveryDays = response.data
+                    DispatchQueue.main.async {
+                        self.calendarCollectionView.reloadData()
                     }
-                    
-                } catch {
-                    do {
-                        let response = try response.map(StandardResponse.self)
-                        SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
-                    } catch {
-                        print("Failed to map response data: \(error)")
-                    }
+                } else {
+                    SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
                 }
-            case let .failure(error):
-                // Handle error
-                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
-                print("Request failed with error: \(error)")
+                
+            } catch {
+                do {
+                    let response = try response.map(StandardResponse.self)
+                    SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+                } catch {
+                    print("Failed to map response data: \(error)")
+                }
             }
+        case let .failure(error):
+            // Handle error
+            SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
         }
     }
     
@@ -148,28 +176,77 @@ class ChooseDeliveryDayViewController: UIViewController {
     
     @IBAction func nextButtonTap(_ sender: Any) {
         if isFromEdit {
-            dismiss(animated: true, completion: nil)
-        }else{
+            
+            guard let teamId = partnerTeam?.id,
+                  let partnerName = partnerTeam?.name,
+                  let frequency = partnerTeam?.frequency,
+                  let deliveryDay = selectedDate?.getDayOfWeek()?.rawValue,
+                  let productLimit = partnerTeam?.productLimit.toInt()
+            else { return }
+            
+            LoadingViewController.present(from: self)
+            apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequency, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
+                LoadingViewController.dismiss(from: self)
+                switch result {
+                case let .success(response):
+                    // Handle successful response
+                    do {
+                        let response = try response.map(UpdateTeamResponse.self)
+                        if response.statusCode == 200 || response.statusCode == 201 {
+                            print(response.data as Any)
+                            self.partnerTeam?.deliveryDay = deliveryDay
+                            DispatchQueue.main.async {
+                                self.goToCreateALimitViewController(deliveryDay: nil)
+                            }
+                        } else {
+                            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+                        }
+                        
+                    } catch {
+                        do {
+                            let response = try response.map(StandardResponse.self)
+                            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+                        } catch {
+                            print("Failed to map response data: \(error)")
+                        }
+                    }
+                case let .failure(error):
+                    // Handle error
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
+                }
+            }
+        } else {
             
             if let deliveryDay = getDeliveryDay(for: selectedDate!, deliveryDays: self.deliveryDays!) {
-                let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
-                if let vc = storyboard.instantiateViewController(withIdentifier: "CreateALimitViewController") as? CreateALimitViewController {
-                    vc.modalPresentationStyle = .custom
-                    let pushAnimator = PushAnimator()
-                    vc.transitioningDelegate = pushAnimator
-                    vc.frequency = self.frequency
-                    vc.selectedSupplier = self.selectedSupplier
-                    vc.deliveryDate = selectedDate
-                    vc.deliveryDay = deliveryDay
-                    self.title = "Team Settings"
-                    self.present(vc, animated: true)
-                }
+                goToCreateALimitViewController(deliveryDay: deliveryDay)
             } else {
                 print("No delivery on this date")
             }
         }
     }
     
+    func goToCreateALimitViewController(deliveryDay: DeliveryDay?) {
+        
+        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "CreateALimitViewController") as? CreateALimitViewController {
+            vc.modalPresentationStyle = .custom
+            let pushAnimator = PushAnimator()
+            vc.transitioningDelegate = pushAnimator
+            if isFromEdit {
+                vc.partnerTeam = self.partnerTeam
+                vc.isFromEdit = isFromEdit
+                vc.dismissalDelegate = self
+            }
+            else {
+                vc.frequency = self.frequency
+                vc.selectedSupplier = self.selectedSupplier
+                vc.deliveryDate = selectedDate
+                vc.deliveryDay = deliveryDay
+            }
+            self.title = "Team Settings"
+            self.present(vc, animated: true)
+        }
+    }
 }
 
 
@@ -203,6 +280,7 @@ extension ChooseDeliveryDayViewController: JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         selectedDate = date
+        nextButton.isEnabled = true
         calendar.reloadData()
     }
     
@@ -210,5 +288,13 @@ extension ChooseDeliveryDayViewController: JTAppleCalendarViewDelegate {
         let date = visibleDates.monthDates.first!.date
         formatter.dateFormat = "MMM yyyy"
         self.monthYearLabel.text = formatter.string(from: date)
+    }
+}
+
+extension ChooseDeliveryDayViewController: ChooseDeliveryDayViewControllerDelegate {
+    func dismissViewController() {
+        self.dismiss(animated: false) {
+            self.dismissalDelegate?.dismissViewController()
+        }
     }
 }

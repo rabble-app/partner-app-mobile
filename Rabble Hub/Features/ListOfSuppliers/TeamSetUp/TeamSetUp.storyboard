@@ -221,6 +221,11 @@
                                             <constraint firstAttribute="height" constant="50" id="nw7-4p-PXU"/>
                                             <constraint firstItem="An1-zr-vZP" firstAttribute="centerY" secondItem="MOn-Et-NgK" secondAttribute="centerY" id="w6V-S6-Umf"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH1-lN-BAA">
                                         <rect key="frame" x="0.0" y="66" width="323" height="50"/>
@@ -258,6 +263,11 @@
                                             <constraint firstItem="GH7-XU-Cj3" firstAttribute="centerY" secondItem="KH1-lN-BAA" secondAttribute="centerY" id="e0j-e1-pya"/>
                                             <constraint firstItem="Ul3-u9-LkX" firstAttribute="centerY" secondItem="KH1-lN-BAA" secondAttribute="centerY" id="zfe-d9-7sm"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Naj-aT-JYO">
                                         <rect key="frame" x="0.0" y="132" width="323" height="50"/>
@@ -295,6 +305,11 @@
                                             <constraint firstItem="4jd-rP-NhI" firstAttribute="centerY" secondItem="Naj-aT-JYO" secondAttribute="centerY" id="XX7-vg-x06"/>
                                             <constraint firstAttribute="trailing" secondItem="Y9q-AJ-VGx" secondAttribute="trailing" constant="16" id="w7q-q1-yaR"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -1001,6 +1016,7 @@
                         <outlet property="reminderLabel" destination="jk0-L6-5p2" id="QxT-an-Q16"/>
                         <outlet property="secondaryDescLabel" destination="iNT-kc-qdQ" id="qIC-9F-M0p"/>
                         <outlet property="selectOptionButton" destination="ppm-1V-oJ7" id="EY3-ZZ-HR2"/>
+                        <outlet property="selectionLabel" destination="t8s-zV-aug" id="jDV-Rx-7aE"/>
                         <outlet property="stepContainer" destination="a9k-Hm-g89" id="hEc-6S-Ct7"/>
                         <outlet property="stepContainer_height" destination="coY-Qz-DmG" id="507-h9-cwf"/>
                         <outlet property="titleLabel" destination="KuV-JK-EH7" id="Y7i-eK-F6u"/>

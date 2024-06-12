@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import Moya
+
+protocol ChooseFrequencyViewControllerDelegate: AnyObject {
+    func dismissViewController()
+}
 
 class ChooseFrequencyViewController: UIViewController {
     
@@ -25,6 +30,8 @@ class ChooseFrequencyViewController: UIViewController {
     
     var selectedFrequency: DeliveryFrequency?
     var selectedSupplier: Supplier?
+    var partnerTeam: PartnerTeam?
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,20 +78,67 @@ class ChooseFrequencyViewController: UIViewController {
         let deliveryFrequencyInSeconds = selectedFrequency.seconds
         
         if isFromEdit {
-            dismiss(animated: true, completion: nil)
-        }else{
-            let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
-            if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseDeliveryDayViewController") as? ChooseDeliveryDayViewController {
-                vc.modalPresentationStyle = .custom
-                let pushAnimator = PushAnimator()
-                vc.transitioningDelegate = pushAnimator
-                vc.frequency = deliveryFrequencyInSeconds
-                vc.selectedSupplier = selectedSupplier
-                self.title = "Team Settings"
-                self.present(vc, animated: true)
+            guard let teamId = partnerTeam?.id,
+                  let partnerName = partnerTeam?.name,
+                  let deliveryDay = partnerTeam?.deliveryDay,
+                  let productLimit = partnerTeam?.productLimit.toInt()
+            else { return }
+            
+            LoadingViewController.present(from: self)
+            apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: deliveryFrequencyInSeconds, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
+                LoadingViewController.dismiss(from: self)
+                switch result {
+                case let .success(response):
+                    // Handle successful response
+                    do {
+                        let response = try response.map(UpdateTeamResponse.self)
+                        if response.statusCode == 200 || response.statusCode == 201 {
+                            self.partnerTeam?.frequency = deliveryFrequencyInSeconds
+                            DispatchQueue.main.async {
+                                self.goToChooseDeliveryDayViewController(frequency: nil)
+                            }
+                        } else {
+                            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+                        }
+                        
+                    } catch {
+                        do {
+                            let response = try response.map(StandardResponse.self)
+                            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+                        } catch {
+                            print("Failed to map response data: \(error)")
+                        }
+                    }
+                case let .failure(error):
+                    // Handle error
+                    SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
+                }
+                
             }
+        } else {
+            goToChooseDeliveryDayViewController(frequency: deliveryFrequencyInSeconds)
         }
         
+    }
+    
+    func goToChooseDeliveryDayViewController(frequency: Int?) {
+        let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ChooseDeliveryDayViewController") as? ChooseDeliveryDayViewController {
+            vc.modalPresentationStyle = .custom
+            let pushAnimator = PushAnimator()
+            vc.transitioningDelegate = pushAnimator
+            if isFromEdit {
+                vc.partnerTeam = self.partnerTeam
+                vc.isFromEdit = isFromEdit
+                vc.dismissalDelegate = self
+            }
+            else {
+                vc.frequency = frequency!
+                vc.selectedSupplier = selectedSupplier
+            }
+            self.title = "Team Settings"
+            self.present(vc, animated: true)
+        }
     }
     
     func updateButtonStates(selectedButton: UIButton) {
@@ -124,6 +178,11 @@ class ChooseFrequencyViewController: UIViewController {
     }
 }
 
+extension ChooseFrequencyViewController: ChooseFrequencyViewControllerDelegate {
+    func dismissViewController() {
+        self.dismiss(animated: false)
+    }
+}
 
 enum DeliveryFrequency: String {
     case everyWeek = "every week"

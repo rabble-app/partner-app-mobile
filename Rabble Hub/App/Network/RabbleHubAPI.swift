@@ -24,6 +24,7 @@ public enum RabbleHubAPI {
     case getPartnerTeams(storeId: String)
     case deleteMember(id: String)
     case updateUserOnboardingRecord
+    case updateBuyingTeam(teamId: String, name: String, frequency: Int, deliveryDay: String, productLimit: Int)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -63,6 +64,8 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.getPartnerTeams)/\(storeId)"
         case .deleteMember(let id):
             return "\(URLConfig.deleteMember)/\(id)"
+        case .updateBuyingTeam(let teamId, _, _, _, _):
+            return "\(URLConfig.updateBuyingTeam)/\(teamId)"
         }
     }
     
@@ -70,7 +73,7 @@ extension RabbleHubAPI: TargetType {
         switch self {
         case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt:
             return .post
-        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord:
+        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam:
             return .patch
         case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams:
             return .get
@@ -205,6 +208,14 @@ extension RabbleHubAPI: TargetType {
             return .requestPlain
         case .deleteMember:
             return .requestPlain
+        case .updateBuyingTeam(_, let name, let frequency, let deliveryDay, let productLimit):
+            var parameters: [String: Any] = [:]
+            parameters["name"] = name
+            parameters["frequency"] = frequency
+            parameters["deliveryDay"] = deliveryDay
+            parameters["productLimit"] = productLimit
+                               
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

@@ -14,6 +14,12 @@ struct GetPartnerTeamsResponse: Codable {
     let data: [PartnerTeam]
 }
 
+struct GetPartnerTeamResponse: Codable {
+    let statusCode: Int
+    let message: String
+    let data: PartnerTeam
+}
+
 // MARK: - Team
 struct PartnerTeam: Codable {
     let id: String
@@ -21,14 +27,14 @@ struct PartnerTeam: Codable {
     let postalCode: String
     let producerId: String
     let hostId: String
-    let frequency: Int
+    var frequency: Int
     let description: String?
     let isPublic: Bool
     let imageUrl: String
     let imageKey: String?
     let nextDeliveryDate: String
-    let productLimit: String
-    let deliveryDay: String
+    var productLimit: String
+    var deliveryDay: String
     let createdAt: String
     let updatedAt: String
     let partnerId: String?
