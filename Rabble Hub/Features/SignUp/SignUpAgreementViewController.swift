@@ -6,18 +6,24 @@
 //
 
 import UIKit
+import Moya
 
 class SignUpAgreementViewController: UIViewController, PaymentPopUpDelegate {
     
-    
-    
+    @IBOutlet var previousStepButton: TertiaryButton!
     @IBOutlet weak var firstAgreementLabel: UILabel!
     @IBOutlet weak var secondAgreementLabel: UILabel!
-    
+    var isFromOnboardingStage = Bool()
+    private let userDataManager = UserDataManager()
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpView()
+        
+        if isFromOnboardingStage {
+            self.previousStepButton.isEnabled = false
+        }
     }
     
     func setUpView() {
@@ -41,6 +47,75 @@ class SignUpAgreementViewController: UIViewController, PaymentPopUpDelegate {
     }
     
     @IBAction func acceptButtonTap(_ sender: Any) {
+        self.updateUserRecord()
+    }
+    
+    
+    func updateUserRecord() {
+        LoadingViewController.present(from: self)
+        apiProvider.request(.updateUserOnboardingRecord) { [weak self] result in
+            guard let self = self else { return }
+            
+            LoadingViewController.dismiss(from: self)
+            
+            switch result {
+            case let .success(response):
+                self.handleSuccessResponse(response)
+            case let .failure(error):
+                self.handleFailure(error)
+            }
+        }
+    }
+    
+    private func handleSuccessResponse(_ response: Response) {
+        do {
+            let response = try response.map(UpdateUserRecordResponse.self)
+            if response.statusCode == 200 || response.statusCode == 201 {
+                if let user = response.data {
+                    self.updateUserData(with: user)
+                    self.gotoMainTab()
+                } else {
+                    SnackBar().alert(withMessage: "Failed to update user record", isSuccess: false, parent: view)
+                }
+            } else {
+                SnackBar().alert(withMessage: response.message, isSuccess: false, parent: view)
+            }
+        } catch {
+            handleErrorResponse(response)
+        }
+    }
+
+    private func handleErrorResponse(_ response: Response) {
+        do {
+            let response = try response.map(StandardResponse.self)
+            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: view)
+        } catch {
+            SnackBar().alert(withMessage: "An error occurred", isSuccess: false, parent: view)
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func handleFailure(_ error: MoyaError) {
+        SnackBar().alert(withMessage: error.localizedDescription, isSuccess: false, parent: view)
+        print("Request failed with error: \(error)")
+    }
+    
+    
+    private func updateUserData(with userRecord: UserRecord) {
+        if var userData = userDataManager.getUserData() {
+            userData.phone = userRecord.phone
+            userData.email = userRecord.email
+            userData.firstName = userRecord.firstName
+            userData.lastName = userRecord.lastName
+            userData.postalCode = userRecord.postalCode
+            userData.stripeCustomerId = userRecord.stripeCustomerId
+            userData.partner?.id = userRecord.id
+            userData.onboardingStage = userRecord.onboardingStage ?? 4
+            userDataManager.saveUserData(userData)
+        }
+    }
+    
+    private func gotoMainTab() {
         let storyboard = UIStoryboard(name: "PaymentPopView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "PaymentPopUpViewController") as? PaymentPopUpViewController {
             vc.modalPresentationStyle = .overFullScreen
@@ -48,7 +123,6 @@ class SignUpAgreementViewController: UIViewController, PaymentPopUpDelegate {
             self.present(vc, animated: true)
         }
     }
-    
     // Helper
     
     func configureString(fullString: NSString, boldPartOfString: NSString) -> NSAttributedString? {

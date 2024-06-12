@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let initialViewController: UIViewController
-        if userDataManager.isUserDataEmpty() {
+       
+        if userDataManager.getUserData()?.onboardingStage != 4 {
             initialViewController = UIStoryboard(name: "OnboardingView", bundle: nil).instantiateViewController(identifier: "OnboardingViewController")
         } else {
             initialViewController = UIStoryboard(name: "MainTabStoryboard", bundle: nil).instantiateViewController(identifier: "MainTabViewController")

@@ -25,6 +25,7 @@ class CustomerCollectionListViewController: UIViewController {
     var searchStr = ""
     
     private let userDataManager = UserDataManager()
+   // private let userRecordManager = UserRecordManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,10 +69,16 @@ class CustomerCollectionListViewController: UIViewController {
     
     func fetchCustomerCollections() {
        // LoadingViewController.present(from: self)
-        let id = userDataManager.getUserData()?.partner?.id ?? ""
-        apiProvider.request(.getCustomerCollection(storeId: id, offset: 0, period: period, search: searchStr)) { result in
-            //LoadingViewController.dismiss(from: self)
-            self.handleSuppliersResponse(result)
+        var id: String? = userDataManager.getUserData()?.partner?.id
+
+        if let storeId = id {
+            apiProvider.request(.getCustomerCollection(storeId: storeId, offset: 0, period: period, search: searchStr)) { result in
+                // LoadingViewController.dismiss(from: self)
+                self.handleSuppliersResponse(result)
+            }
+        } else {
+            // Handle the case where both ids are nil, if necessary
+            print("Error: No valid id found")
         }
     }
     

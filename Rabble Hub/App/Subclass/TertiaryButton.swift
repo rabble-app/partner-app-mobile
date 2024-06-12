@@ -32,7 +32,7 @@ class TertiaryButton: UIButton {
     /// Ex
     /// if self.tag == 1001 { configureForButton2() }
     private func configure() {
-        self.backgroundColor = Colors.ButtonPrimary
+        self.backgroundColor = Colors.ButtonTertiary
         self.layer.cornerRadius = 12
         self.setTitleColor(Colors.ButtonTitleColor, for: .normal)
       //  self.titleLabel?.font = UIFont(name: Properties.Font.GOSHANSANS_BOLD, size: 16)
@@ -45,5 +45,15 @@ class TertiaryButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         // Additional layout customization can be performed here if needed.
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            updatTitleColor()
+        }
+    }
+    
+    private func updatTitleColor() {
+        self.setTitleColor(isEnabled ? Colors.ButtonTitleColor : Colors.ButtonTitleColor.withAlphaComponent(0.40), for: .normal)
     }
 }

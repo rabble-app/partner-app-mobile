@@ -53,7 +53,7 @@ struct Category: Codable {
 
 struct Item: Codable {
     let id: String
-    let amount: String
+    let quantity: String
     let product: Product
 }
 

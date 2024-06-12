@@ -11,7 +11,7 @@ class ProfileMainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let viewModel = ProfileMainViewModel()
-    
+    private let userDataManager = UserDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -78,7 +78,7 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         var cell = self.viewModel.getCellForMode(mode: self.viewModel.menus[indexPath.row].mode ?? .infoUI, tableView: tableView, indexPath: indexPath)
         if let cell = cell as? ProfileButtonTableViewCell {
             cell.buttonTapped = {
-                UserManager.shared.logoutUser()
+                self.userDataManager.logoutUser()
                 DispatchQueue.main.async {
                     self.navigateToLoginScreen()
                 }

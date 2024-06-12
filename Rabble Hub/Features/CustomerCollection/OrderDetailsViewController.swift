@@ -101,7 +101,7 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
         
         let items = selectedCollectionData?.items[indexPath.row]
         cell.supplierLabel.text = items?.product.name
-        cell.quantityLabel.text = "x \(items?.amount ?? "")"
+        cell.quantityLabel.text = "x \(items?.quantity ?? "")"
         cell.descLabel.text = "\(items?.product.measuresPerSubUnit ?? 0) \(items?.product.unitsOfMeasurePerSubUnit ?? "")"
         
         return cell

@@ -22,6 +22,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shelfSpaceButton: UIButton!
     @IBOutlet var dryStorageSpace: RabbleTextField!
     @IBOutlet weak var dryStorageButton: UIButton!
+    @IBAction func previousStepButton(_ sender: Any) {
+    }
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
@@ -123,6 +125,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 SnackBar().alert(withMessage: mappedResponse.message, isSuccess: true, parent: self.view)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     self.saveStore(store)
+                    self.updateUserDataPostalCode()
                     self.goToCreateUserProfile()
                 }
             } else {
@@ -150,6 +153,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func saveStore(_ store: Store) {
         StoreManager.shared.store = store
+    }
+    
+    private func updateUserDataPostalCode() {
+        let userDataManager = UserDataManager()
+        if var userData = userDataManager.getUserData() {
+            userData.postalCode = self.postalCode.text
+            userDataManager.saveUserData(userData)
+        }
     }
     
     private func goToCreateUserProfile() {

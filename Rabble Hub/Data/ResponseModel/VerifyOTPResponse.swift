@@ -15,13 +15,13 @@ struct VerifyOTPResponse: Codable {
 
 struct UserData: Codable {
     let id: String
-    let phone: String
-    let email: String?
+    var phone: String
+    var email: String?
     let password: String?
-    let firstName: String?
-    let lastName: String?
-    let postalCode: String?
-    let stripeCustomerId: String?
+    var firstName: String?
+    var lastName: String?
+    var postalCode: String?
+    var stripeCustomerId: String?
     let stripeDefaultPaymentMethodId: String?
     let cardLastFourDigits: String?
     let imageUrl: String?
@@ -31,17 +31,18 @@ struct UserData: Codable {
     let updatedAt: Date
     let notificationToken: String?
     let producer: String?
-    let partner: PartnerData?
+    var partner: PartnerData?
     let token: String
+    var onboardingStage: Int
 }
 
 struct PartnerData: Codable {
-    let id: String
+    var id: String
 }
 
 extension UserData {
     private enum CodingKeys: String, CodingKey {
-        case id, phone, email, password, firstName, lastName, postalCode, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token
+        case id, phone, email, password, firstName, lastName, postalCode, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token, onboardingStage
         case createdAt = "createdAt"
         case updatedAt = "updatedAt"
     }
@@ -65,6 +66,7 @@ extension UserData {
         producer = try container.decodeIfPresent(String.self, forKey: .producer)
         partner = try container.decodeIfPresent(PartnerData.self, forKey: .partner)
         token = try container.decode(String.self, forKey: .token)
+        onboardingStage = try container.decode(Int.self, forKey: .onboardingStage)
         
         let createdAtString = try container.decode(String.self, forKey: .createdAt)
         let updatedAtString = try container.decode(String.self, forKey: .updatedAt)

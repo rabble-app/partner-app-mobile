@@ -23,6 +23,7 @@ public enum RabbleHubAPI {
     case confirmOrderReceipt(storeId: String, orderId: String, products: [Dictionary<String, Any>], note: String?, file: Data?)
     case getPartnerTeams(storeId: String)
     case deleteMember(id: String)
+    case updateUserOnboardingRecord
 }
 
 extension RabbleHubAPI: TargetType {
@@ -38,7 +39,7 @@ extension RabbleHubAPI: TargetType {
             return URLConfig.verifyOtp
         case .saveStoreProfile:
             return URLConfig.saveStoreProfile
-        case .updateUserRecord:
+        case .updateUserRecord, .updateUserOnboardingRecord:
             return URLConfig.updateUserRecord
         case .getSuppliers:
             return URLConfig.getSuppliers
@@ -48,9 +49,9 @@ extension RabbleHubAPI: TargetType {
             return URLConfig.addStoreHours
         case .getDeliveryDays(let supplierId, let postalCode):
             return "\(URLConfig.getDaysOfDelivery)/\(supplierId!)/\(postalCode!)"
-        case .getCustomerCollection(let storeId, let offset, let period, let search):
+        case .getCustomerCollection(let storeId, _, _, _):
             return "\(URLConfig.getCustomerCollection)/\(storeId)/collections"
-        case .getInboundDelivery(let storeId, let offset, let period, let search):
+        case .getInboundDelivery(let storeId, _, _, _):
             return "\(URLConfig.getInboundelivery)/\(storeId)/deliveries"
         case .getInboundDeliveryDetails(let id):
             print("\(URLConfig.getInboundeliveryDetails)/\(id)/order-details")
@@ -69,7 +70,7 @@ extension RabbleHubAPI: TargetType {
         switch self {
         case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt:
             return .post
-        case .updateUserRecord, .addStoreHours:
+        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord:
             return .patch
         case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams:
             return .get
@@ -112,6 +113,11 @@ extension RabbleHubAPI: TargetType {
                 "email": email
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .updateUserOnboardingRecord:
+            let parameters: [String: Any] = [
+                "onboardingStage": 4
+            ]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .getSuppliers(let offset, let postalId):
             let parameters: [String: Any] = [
                 "offset": offset,
@@ -137,7 +143,7 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: (customOpenHoursModel?.asDictionary())!, encoding: JSONEncoding.default)
         case .getDeliveryDays:
             return .requestPlain
-        case .getCustomerCollection(let storeId, let offset, let period, let search):
+        case .getCustomerCollection(_, let offset, let period, let search):
             var parameters: [String: Any] = [:]
             parameters["offset"] = offset
             parameters["period"] = period
@@ -146,7 +152,7 @@ extension RabbleHubAPI: TargetType {
             }
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case .getInboundDelivery(let storeId, let offset, let period, let search):
+        case .getInboundDelivery(_, let offset, let period, let search):
             var parameters: [String: Any] = [:]
             parameters["offset"] = offset
             parameters["period"] = period

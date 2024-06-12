@@ -34,17 +34,17 @@ class ProducersListViewController: UIViewController {
     }
     
     private func fetchSuppliers() {
-        guard let postalCode = userDataManager.getUserData()?.postalCode else { return }
+       // guard let postalCode = userDataManager.getUserData()?.postalCode else { return }
 
-        LoadingViewController.present(from: self)
+       // LoadingViewController.present(from: self)
         
-        apiProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in
+        apiProvider.request(.getSuppliers(offset: 0, postalId: "SE154NX")) { result in
             guard let presentingViewController = self.presentingViewController else {
                 // Unable to get presenting view controller
                 return
             }
             
-            LoadingViewController.present(from: presentingViewController)
+           // LoadingViewController.dismiss(from: self)
             self.handleSuppliersResponse(result)
         }
     }

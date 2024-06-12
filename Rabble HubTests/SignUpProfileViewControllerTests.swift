@@ -77,10 +77,10 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.updateUserRecord()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(UserManager.shared.user)
-            XCTAssertEqual(UserManager.shared.user?.firstName, "John")
-            XCTAssertEqual(UserManager.shared.user?.lastName, "Doe")
-            XCTAssertEqual(UserManager.shared.user?.email, "john.doe@example.com")
+            XCTAssertNotNil(UserRecordManager.shared.user)
+            XCTAssertEqual(UserRecordManager.shared.user?.firstName, "John")
+            XCTAssertEqual(UserRecordManager.shared.user?.lastName, "Doe")
+            XCTAssertEqual(UserRecordManager.shared.user?.email, "john.doe@example.com")
             expectation.fulfill()
         }
 
@@ -129,10 +129,10 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.nextButtonTap(self)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(UserManager.shared.user)
-            XCTAssertEqual(UserManager.shared.user?.firstName, "John")
-            XCTAssertEqual(UserManager.shared.user?.lastName, "Doe")
-            XCTAssertEqual(UserManager.shared.user?.email, "john.doe@example.com")
+            XCTAssertNotNil(UserRecordManager.shared.user)
+            XCTAssertEqual(UserRecordManager.shared.user?.firstName, "John")
+            XCTAssertEqual(UserRecordManager.shared.user?.lastName, "Doe")
+            XCTAssertEqual(UserRecordManager.shared.user?.email, "john.doe@example.com")
             XCTAssertNotNil(self.viewController.presentedViewController as? SignUpScheduleViewController)
             expectation.fulfill()
         }

@@ -19,7 +19,7 @@
 		8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */; };
 		8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3532BF8CAEC00DF5045 /* StoreManager.swift */; };
 		8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */; };
-		8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3572BF8D0D200DF5045 /* UserManager.swift */; };
+		8631B3582BF8D0D200DF5045 /* UserRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3572BF8D0D200DF5045 /* UserRecordManager.swift */; };
 		865618922BFE18FC001E65EB /* CreateBuyingTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */; };
 		8656189C2BFF99BA001E65EB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189B2BFF99BA001E65EB /* ToastView.swift */; };
 		8656189E2BFFA475001E65EB /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189D2BFFA475001E65EB /* Snackbar.swift */; };
@@ -195,7 +195,7 @@
 		8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStoreProfileResponse.swift; sourceTree = "<group>"; };
 		8631B3532BF8CAEC00DF5045 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRecordResponse.swift; sourceTree = "<group>"; };
-		8631B3572BF8D0D200DF5045 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		8631B3572BF8D0D200DF5045 /* UserRecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordManager.swift; sourceTree = "<group>"; };
 		865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBuyingTeamResponse.swift; sourceTree = "<group>"; };
 		8656189B2BFF99BA001E65EB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		8656189D2BFFA475001E65EB /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
@@ -396,10 +396,10 @@
 		8631B3522BF8CAD700DF5045 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				8631B3572BF8D0D200DF5045 /* UserManager.swift */,
+				86E08F762C0DDF0200AE6D58 /* UserDataManager.swift */,
+				8631B3572BF8D0D200DF5045 /* UserRecordManager.swift */,
 				8631B3532BF8CAEC00DF5045 /* StoreManager.swift */,
 				867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */,
-				86E08F762C0DDF0200AE6D58 /* UserDataManager.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -419,9 +419,9 @@
 			children = (
 				867349532BF5287200F82570 /* SendOTPResponse.swift */,
 				867349572BF5300A00F82570 /* VerifyOTPResponse.swift */,
-				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
 				8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */,
 				8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */,
+				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
 				865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */,
 				AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */,
 				AC6417F72C00D8C000B8A61B /* StandardResponse.swift */,
@@ -1138,7 +1138,7 @@
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				AC0EE1E52C04168A0047293F /* CalendarViewCell.swift in Sources */,
-				8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */,
+				8631B3582BF8D0D200DF5045 /* UserRecordManager.swift in Sources */,
 				867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */,
 				AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,

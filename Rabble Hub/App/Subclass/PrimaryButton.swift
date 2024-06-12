@@ -17,6 +17,7 @@ class PrimaryButton: UIButton {
         }
     }
     
+    
     /// Set the default background colors for enabled and disabled states
     private let enabledBackgroundColor: UIColor = Colors.ButtonPrimary
     private let disabledBackgroundColor: UIColor = Colors.ButtonTertiary
