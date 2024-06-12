@@ -179,7 +179,7 @@ class ChooseDeliveryDayViewController: UIViewController {
             
             guard let teamId = partnerTeam?.id,
                   let partnerName = partnerTeam?.name,
-                  let frequency = partnerTeam?.frequency.toString(),
+                  let frequency = partnerTeam?.frequency,
                   let deliveryDay = selectedDate?.getDayOfWeek()?.rawValue,
                   let productLimit = partnerTeam?.productLimit.toInt()
             else { return }
@@ -191,10 +191,10 @@ class ChooseDeliveryDayViewController: UIViewController {
                 case let .success(response):
                     // Handle successful response
                     do {
-                        let response = try response.map(GetPartnerTeamResponse.self)
+                        let response = try response.map(UpdateTeamResponse.self)
                         if response.statusCode == 200 || response.statusCode == 201 {
                             print(response.data as Any)
-                            self.partnerTeam = response.data
+                            self.partnerTeam?.deliveryDay = deliveryDay
                             DispatchQueue.main.async {
                                 self.goToCreateALimitViewController(deliveryDay: nil)
                             }

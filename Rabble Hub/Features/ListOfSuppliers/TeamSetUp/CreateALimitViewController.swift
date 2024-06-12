@@ -47,6 +47,8 @@ class CreateALimitViewController: UIViewController {
             stepContainer.isHidden = true
             stepContainer_height.constant = 0
         }
+        
+        nextButton.isEnabled = false
     }
     
     private func configureProgressBar() {
@@ -70,6 +72,7 @@ class CreateALimitViewController: UIViewController {
         rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
         rabbleSheetViewController.itemSelected = { item in
             self.selectionLabel.text = item
+            self.nextButton.isEnabled = true
         }
         present(rabbleSheetViewController, animated: true, completion: nil)
     }
@@ -95,7 +98,7 @@ class CreateALimitViewController: UIViewController {
     private func updateBuyingTeam() {
         guard let teamId = partnerTeam?.id,
               let partnerName = partnerTeam?.name,
-              let frequency = partnerTeam?.frequency.toString(),
+              let frequency = partnerTeam?.frequency,
               let deliveryDay = partnerTeam?.deliveryDay
         else { return }
         
@@ -111,10 +114,12 @@ class CreateALimitViewController: UIViewController {
             case let .success(response):
                 // Handle successful response
                 do {
-                    let response = try response.map(GetPartnerTeamResponse.self)
+                    let response = try response.map(UpdateTeamResponse.self)
                     if response.statusCode == 200 || response.statusCode == 201 {
                         print(response.data as Any)
-                        self.partnerTeam = response.data
+                        if let limit = productLimit?.toString() {
+                            self.partnerTeam?.productLimit = limit
+                        }
                         SnackBar().alert(withMessage: response.message, isSuccess: true, parent: self.view)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             self.dismiss(animated: false) {

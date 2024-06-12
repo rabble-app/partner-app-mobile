@@ -85,16 +85,15 @@ class ChooseFrequencyViewController: UIViewController {
             else { return }
             
             LoadingViewController.present(from: self)
-            apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: deliveryFrequencyInSeconds.toString(), deliveryDay: deliveryDay, productLimit: productLimit)) { result in
+            apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: deliveryFrequencyInSeconds, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
                 LoadingViewController.dismiss(from: self)
                 switch result {
                 case let .success(response):
                     // Handle successful response
                     do {
-                        let response = try response.map(GetPartnerTeamResponse.self)
+                        let response = try response.map(UpdateTeamResponse.self)
                         if response.statusCode == 200 || response.statusCode == 201 {
-                            print(response.data as Any)
-                            self.partnerTeam = response.data
+                            self.partnerTeam?.frequency = deliveryFrequencyInSeconds
                             DispatchQueue.main.async {
                                 self.goToChooseDeliveryDayViewController(frequency: nil)
                             }

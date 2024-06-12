@@ -27,14 +27,14 @@ struct PartnerTeam: Codable {
     let postalCode: String
     let producerId: String
     let hostId: String
-    let frequency: Int
+    var frequency: Int
     let description: String?
     let isPublic: Bool
     let imageUrl: String
     let imageKey: String?
     let nextDeliveryDate: String
-    let productLimit: String
-    let deliveryDay: String
+    var productLimit: String
+    var deliveryDay: String
     let createdAt: String
     let updatedAt: String
     let partnerId: String?
