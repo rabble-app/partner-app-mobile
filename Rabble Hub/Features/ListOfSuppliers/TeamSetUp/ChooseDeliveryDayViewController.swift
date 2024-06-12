@@ -113,11 +113,12 @@ class ChooseDeliveryDayViewController: UIViewController {
             supplierId = selectedSupplierId
         }
         
-        var postalCode = "SE154NX"
-        if let code = StoreManager.shared.postalCode {
-            postalCode = code
-        }
-        
+//        var postalCode = "SE154NX"
+//        if let code = StoreManager.shared.postalCode {
+//            postalCode = code
+//        }
+        let userDataManager = UserDataManager()
+        let postalCode = userDataManager.getUserData()?.postalCode ?? ""
         LoadingViewController.present(from: self)
         apiProvider.request(.getDeliveryDays(supplierId: supplierId, postalCode: postalCode)) { result in
             LoadingViewController.dismiss(from: self)

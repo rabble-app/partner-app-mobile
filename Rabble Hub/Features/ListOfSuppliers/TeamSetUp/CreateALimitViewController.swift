@@ -146,9 +146,16 @@ class CreateALimitViewController: UIViewController {
     }
     
     private func createBuyingTeam() {
-        guard let postalCode = StoreManager.shared.postalCode,
-              let storeId = StoreManager.shared.storeId,
-              let userId = StoreManager.shared.userId else { return }
+        
+        let userDataManager = UserDataManager()
+//        if var userData = userDataManager.getUserData() {
+//            userData.postalCode = self.postalCode.text
+//            userDataManager.saveUserData(userData)
+//        }
+        
+        guard let postalCode = userDataManager.getUserData()?.postalCode,
+              let storeId = userDataManager.getUserData()?.partner?.id,
+              let userId = userDataManager.getUserData()?.id else { return }
         
         guard let deliveryDayStr = self.deliveryDay?.day,
               let deliveryDateStr = self.deliveryDate?.toString(),

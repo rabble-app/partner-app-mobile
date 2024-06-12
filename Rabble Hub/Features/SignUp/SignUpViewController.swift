@@ -124,8 +124,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 guard let store = mappedResponse.data else { return }
                 SnackBar().alert(withMessage: mappedResponse.message, isSuccess: true, parent: self.view)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    self.saveStore(store)
-                    self.updateUserDataPostalCode()
+                    self.updateUserDataPostalCode(store)
                     self.goToCreateUserProfile()
                 }
             } else {
@@ -151,14 +150,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func saveStore(_ store: Store) {
-        StoreManager.shared.store = store
-    }
-    
-    private func updateUserDataPostalCode() {
+    private func updateUserDataPostalCode(_ store: Store) {
         let userDataManager = UserDataManager()
         if var userData = userDataManager.getUserData() {
             userData.postalCode = self.postalCode.text
+            userData.partner?.id = store.id
             userDataManager.saveUserData(userData)
         }
     }

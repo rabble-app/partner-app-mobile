@@ -37,7 +37,9 @@ class ProfileOpenHoursViewController: UIViewController {
     }
     
     func initiateCustomDaysObjects() {
-        let storeId = StoreManager.shared.store?.id ?? ""
+        let userDataManager = UserDataManager()
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+//        let storeId = StoreManager.shared.store?.id ?? ""
         self.customMonToFri = CustomOpenHoursModel(storeId: storeId, type: .monToFri, customOpenHours: [])
         self.customMonToFri?.populateCustomOpenHours()
         

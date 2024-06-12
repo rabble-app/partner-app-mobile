@@ -52,6 +52,5 @@ class UserDataManager {
     func logoutUser() {
         clearUserData()
         UserDefaultsTokenManager().removeToken()
-        StoreManager().removeStore()
     }
 }
