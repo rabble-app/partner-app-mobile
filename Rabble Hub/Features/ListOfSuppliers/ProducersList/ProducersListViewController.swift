@@ -37,8 +37,9 @@ class ProducersListViewController: UIViewController {
        // guard let postalCode = userDataManager.getUserData()?.postalCode else { return }
 
        // LoadingViewController.present(from: self)
-        
-        apiProvider.request(.getSuppliers(offset: 0, postalId: "SE154NX")) { result in
+        var postalId: String? = userDataManager.getUserData()?.postalCode
+
+        apiProvider.request(.getSuppliers(offset: 0, postalId: postalId)) { result in
             guard let presentingViewController = self.presentingViewController else {
                 // Unable to get presenting view controller
                 return

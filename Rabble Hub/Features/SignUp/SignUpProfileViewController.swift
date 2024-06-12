@@ -130,7 +130,7 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
             userData.lastName = userRecord.lastName
             userData.postalCode = userRecord.postalCode
             userData.stripeCustomerId = userRecord.stripeCustomerId
-            userData.partner?.id = userRecord.id
+//            userData.partner?.id = userRecord.id
             userDataManager.saveUserData(userData)
         }
     }
