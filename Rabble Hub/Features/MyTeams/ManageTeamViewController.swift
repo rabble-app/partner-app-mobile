@@ -177,7 +177,9 @@ class ManageTeamViewController: UIViewController {
             let deleteTeamResponse = try response.map(DeleteTeamResponse.self)
             if deleteTeamResponse.statusCode == 200 {
                 self.showSuccessMessage(deleteTeamResponse.message)
-                self.goToMainTab()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.goToMainTab()
+                }
             } else {
                 showError(deleteTeamResponse.message)
             }
