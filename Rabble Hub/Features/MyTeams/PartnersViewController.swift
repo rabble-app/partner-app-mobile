@@ -53,7 +53,7 @@ class PartnersViewController: UIViewController {
          //   LoadingViewController.dismiss(from: self)
             self.handleSuppliersResponse(result)
         }
-    }
+    } 
     
     private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
         switch result {
