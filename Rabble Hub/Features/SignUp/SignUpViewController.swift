@@ -48,10 +48,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updateContinueButtonState() {
+        // Define the default values for storeType, shelfSpace, and dryStorageSpace
+        let defaultStoreType = "Store Type"
+        let defaultShelfSpace = "Select an option"
+        let defaultDryStorageSpace = "Select an option"
+
         // Check if all text fields have input
         let allFieldsFilled = [storeName, postalCode, city, street, storeType, shelfSpace, dryStorageSpace].compactMap { $0 }.allSatisfy { textField in
             guard let text = textField.text else { return false }
-            return !text.isEmpty
+            // Check if the field is not empty and does not contain the default value
+            return !text.isEmpty && !(textField == storeType && text == defaultStoreType) && !(textField == shelfSpace && text == defaultShelfSpace) && !(textField == dryStorageSpace && text == defaultDryStorageSpace)
         }
         continueButton.isEnabled = allFieldsFilled
     }
@@ -72,6 +78,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         rabbleSheetViewController.items =  ["Item 1", "Item 2", "Item 3", "Item 4"]
         rabbleSheetViewController.itemSelected = { item in
             self.storeType.text = item
+            self.updateContinueButtonState()
         }
         present(rabbleSheetViewController, animated: true, completion: nil)
     }
@@ -82,6 +89,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         rabbleSheetViewController.items =  ["5 cubic feet", "10 cubic feet", "15 cubic feet", "20 cubic feet", "25 cubic feet"]
         rabbleSheetViewController.itemSelected = { item in
             self.shelfSpace.text = item
+            self.updateContinueButtonState()
         }
         present(rabbleSheetViewController, animated: true, completion: nil)
     }
@@ -92,6 +100,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
         rabbleSheetViewController.itemSelected = { item in
             self.dryStorageSpace.text = item
+            self.updateContinueButtonState()
         }
         present(rabbleSheetViewController, animated: true, completion: nil)
     }
