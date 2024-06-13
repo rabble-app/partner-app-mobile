@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -346,6 +346,7 @@
                         <outlet property="progressBar" destination="Ym2-wv-wgh" id="GvM-rU-fkU"/>
                         <outlet property="stepContainer" destination="3Pp-6S-k9w" id="V41-8k-fAI"/>
                         <outlet property="stepContainer_height" destination="5gd-yH-Rat" id="dfk-BN-fLA"/>
+                        <outlet property="supplierpartnernameLabel" destination="ZaE-SL-LVz" id="rdK-SI-m1C"/>
                         <outlet property="titelLabel" destination="d9e-35-IOk" id="5La-g7-689"/>
                         <outlet property="twoWeekButton" destination="GH7-XU-Cj3" id="bnT-NI-XLj"/>
                         <outlet property="twoWeekButtonContainer" destination="KH1-lN-BAA" id="Fkx-8I-dZN"/>
@@ -755,6 +756,7 @@
                         <outlet property="progressBar" destination="9RD-ho-bPx" id="DU3-Mi-Sbq"/>
                         <outlet property="stepContainer" destination="EFm-HI-3eP" id="7NQ-Za-Dq3"/>
                         <outlet property="stepContainer_height" destination="jtZ-Po-fZd" id="zAV-53-4PT"/>
+                        <outlet property="supplierpartnernameLabel" destination="cXT-Tq-4UK" id="VlV-1i-mnK"/>
                         <outlet property="suppliersAvailableDaysLabel" destination="JES-xd-rsc" id="88S-su-7l4"/>
                         <outlet property="titleLabel" destination="E6I-2G-a4Z" id="DfC-D5-BYB"/>
                     </connections>
@@ -1019,6 +1021,7 @@
                         <outlet property="selectionLabel" destination="t8s-zV-aug" id="jDV-Rx-7aE"/>
                         <outlet property="stepContainer" destination="a9k-Hm-g89" id="hEc-6S-Ct7"/>
                         <outlet property="stepContainer_height" destination="coY-Qz-DmG" id="507-h9-cwf"/>
+                        <outlet property="supplierpartnernameLabel" destination="uBf-aL-ACs" id="DvQ-gp-POC"/>
                         <outlet property="titleLabel" destination="KuV-JK-EH7" id="Y7i-eK-F6u"/>
                     </connections>
                 </viewController>

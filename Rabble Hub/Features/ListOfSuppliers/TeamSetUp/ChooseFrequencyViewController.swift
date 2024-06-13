@@ -14,6 +14,7 @@ protocol ChooseFrequencyViewControllerDelegate: AnyObject {
 
 class ChooseFrequencyViewController: UIViewController {
     
+    @IBOutlet var supplierpartnernameLabel: UILabel!
     @IBOutlet var titelLabel: UILabel!
     @IBOutlet var monthButton: UIButton!
     @IBOutlet var twoWeekButton: UIButton!
@@ -32,6 +33,8 @@ class ChooseFrequencyViewController: UIViewController {
     var selectedSupplier: Supplier?
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    
+    let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,7 @@ class ChooseFrequencyViewController: UIViewController {
         
         nextButton.isEnabled = false
         
+        supplierpartnernameLabel.text = "\(selectedSupplier?.businessName ?? "")@\(userDataManager.getUserData()?.partner?.name ?? "")"
     }
     
     @IBAction func backButtonTap(_ sender: Any) {

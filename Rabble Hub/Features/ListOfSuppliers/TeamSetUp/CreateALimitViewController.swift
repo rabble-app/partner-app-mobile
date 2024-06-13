@@ -12,6 +12,7 @@ class CreateALimitViewController: UIViewController {
 
     weak var dismissalDelegate: ChooseDeliveryDayViewControllerDelegate?
     
+    @IBOutlet var supplierpartnernameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet var selectOptionButton: UIButton!
@@ -32,6 +33,8 @@ class CreateALimitViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
+    let userDataManager = UserDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -49,6 +52,8 @@ class CreateALimitViewController: UIViewController {
         }
         
         nextButton.isEnabled = false
+        
+        supplierpartnernameLabel.text = "\(selectedSupplier?.businessName ?? "")@\(userDataManager.getUserData()?.partner?.name ?? "")"
     }
     
     private func configureProgressBar() {
@@ -147,14 +152,11 @@ class CreateALimitViewController: UIViewController {
     
     private func createBuyingTeam() {
         
-        let userDataManager = UserDataManager()
-//        if var userData = userDataManager.getUserData() {
-//            userData.postalCode = self.postalCode.text
-//            userDataManager.saveUserData(userData)
-//        }
+       
         
         guard let postalCode = userDataManager.getUserData()?.postalCode,
               let storeId = userDataManager.getUserData()?.partner?.id,
+              let partnerName = userDataManager.getUserData()?.partner?.name,
               let userId = userDataManager.getUserData()?.id else { return }
         
         guard let deliveryDayStr = self.deliveryDay?.day,
@@ -165,7 +167,7 @@ class CreateALimitViewController: UIViewController {
         LoadingViewController.present(from: self)
         
         apiProvider.request(.createBuyingTeam(
-            name: selectedSupplier?.businessName ?? "",
+            name: "\(selectedSupplier?.businessName ?? "")@\(partnerName)",
             postalCode: postalCode,
             producerId: selectedSupplier?.id ?? "",
             hostId: userId,

@@ -17,6 +17,7 @@ class ChooseDeliveryDayViewController: UIViewController {
     
     weak var dismissalDelegate: ChooseFrequencyViewControllerDelegate?
     
+    @IBOutlet var supplierpartnernameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet var calendarContainer: UIView!
@@ -39,6 +40,8 @@ class ChooseDeliveryDayViewController: UIViewController {
     
     @IBOutlet weak var calendarCollectionView: JTAppleCalendarView!
     let formatter = DateFormatter()
+    
+    let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +103,8 @@ class ChooseDeliveryDayViewController: UIViewController {
             self.formatter.dateFormat = "MMM yyyy"
             self.monthYearLabel.text = self.formatter.string(from: date)
         }
+        
+        supplierpartnernameLabel.text = "\(selectedSupplier?.businessName ?? "")@\(userDataManager.getUserData()?.partner?.name ?? "")"
     }
     
     func getDeliveryDays() {
@@ -117,7 +122,6 @@ class ChooseDeliveryDayViewController: UIViewController {
 //        if let code = StoreManager.shared.postalCode {
 //            postalCode = code
 //        }
-        let userDataManager = UserDataManager()
         let postalCode = userDataManager.getUserData()?.postalCode ?? ""
         LoadingViewController.present(from: self)
         apiProvider.request(.getDeliveryDays(supplierId: supplierId, postalCode: postalCode)) { result in

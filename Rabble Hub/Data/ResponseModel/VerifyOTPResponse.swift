@@ -38,6 +38,7 @@ struct UserData: Codable {
 
 struct PartnerData: Codable {
     var id: String
+    var name: String
 }
 
 extension UserData {
