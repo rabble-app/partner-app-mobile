@@ -104,6 +104,7 @@
 		AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1228A02BE74635001EC15F /* RabbleTextView.swift */; };
 		AC159FA92BED145E00926222 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC159FA82BED145E00926222 /* Media.xcassets */; };
 		AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */; };
+		AC3691B72C1ACCAC007557A4 /* DeleteTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */; };
 		AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC401FBD2BED225800FA2F3F /* StoryViewController.swift */; };
 		AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */; };
 		AC45D16E2C0E1A3C00731F1F /* RabbleSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */; };
@@ -282,6 +283,7 @@
 		AC1228A02BE74635001EC15F /* RabbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextView.swift; sourceTree = "<group>"; };
 		AC159FA82BED145E00926222 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamResponse.swift; sourceTree = "<group>"; };
+		AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamResponse.swift; sourceTree = "<group>"; };
 		AC401FBD2BED225800FA2F3F /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleSheetViewController.swift; sourceTree = "<group>"; };
 		AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RabbleSheetViewController.xib; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */,
 				86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */,
 				AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */,
+				AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1209,6 +1212,7 @@
 				AC6417EF2BFB7D2C00B8A61B /* RabbleHubAPI.swift in Sources */,
 				8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
+				AC3691B72C1ACCAC007557A4 /* DeleteTeamResponse.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 				AC5424822C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift in Sources */,
 			);

@@ -25,6 +25,7 @@ public enum RabbleHubAPI {
     case deleteMember(id: String)
     case updateUserOnboardingRecord
     case updateBuyingTeam(teamId: String, name: String, frequency: Int, deliveryDay: String, productLimit: Int)
+    case deleteBuyingTeam(teamId: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -66,6 +67,8 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.deleteMember)/\(id)"
         case .updateBuyingTeam(let teamId, _, _, _, _):
             return "\(URLConfig.updateBuyingTeam)/\(teamId)"
+        case .deleteBuyingTeam(let teamId):
+            return "\(URLConfig.deleteBuyingTeam)/\(teamId)"
         }
     }
     
@@ -77,7 +80,7 @@ extension RabbleHubAPI: TargetType {
             return .patch
         case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams:
             return .get
-        case .deleteMember:
+        case .deleteMember, .deleteBuyingTeam:
             return .delete
         }
     }
@@ -176,7 +179,7 @@ extension RabbleHubAPI: TargetType {
             parameters["note"] = note
             
             var formData: [MultipartFormData] = []
-  
+            
             // Convert and Add additional parameters to form-data type
             for (key, value) in parameters {
                 let paramData: Data
@@ -214,8 +217,10 @@ extension RabbleHubAPI: TargetType {
             parameters["frequency"] = frequency
             parameters["deliveryDay"] = deliveryDay
             parameters["productLimit"] = productLimit
-                               
+            
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .deleteBuyingTeam:
+            return .requestPlain
         }
     }
     

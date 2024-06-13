@@ -26,6 +26,7 @@ class SetupTeamSuccessViewController: UIViewController {
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: false)
             vc.selectedIndex = 3
+            vc.reloadSelectedTab()
         }
     }
 

@@ -42,4 +42,5 @@ struct URLConfig {
     static let getPartnerTeams = "/users/my-teams"
     static let deleteMember = "/teams/quit"
     static let updateBuyingTeam = "/teams"
+    static let deleteBuyingTeam = "/teams"
 }

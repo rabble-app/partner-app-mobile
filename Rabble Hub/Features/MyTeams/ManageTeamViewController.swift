@@ -137,9 +137,64 @@ class ManageTeamViewController: UIViewController {
     }
     
     @IBAction func deleteTeamButtonTap(_ sender: Any) {
+        let alertController = UIAlertController(title: "Warning", message: "Are you sure you want to delete this team?", preferredStyle: .actionSheet)
         
+        let removeAction = UIAlertAction(title: "Delete Team", style: .destructive) { _ in
+            self.deleteTeam()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(removeAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
+    func deleteTeam() {
+        LoadingViewController.present(from: self)
+        guard let teamId = partnerTeam?.id else {
+            return
+        }
+        
+        apiProvider.request(.deleteBuyingTeam(teamId: teamId)) { result in
+            self.handleDeleteTeamResponse(result)
+            LoadingViewController.dismiss(from: self)
+        }
+    }
+    
+    private func handleDeleteTeamResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            handleDeleteSuccessResponse(response)
+        case .failure(let error):
+            showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleDeleteSuccessResponse(_ response: Response) {
+        do {
+            let deleteTeamResponse = try response.map(DeleteTeamResponse.self)
+            if deleteTeamResponse.statusCode == 200 {
+                self.showSuccessMessage(deleteTeamResponse.message)
+                self.goToMainTab()
+            } else {
+                showError(deleteTeamResponse.message)
+            }
+        } catch {
+            handleMappingError(response)
+        }
+    }
+    
+    func goToMainTab() {
+        let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false)
+            vc.selectedIndex = 3
+            vc.reloadSelectedTab()
+        }
+    }
 }
 
 extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
