@@ -4,7 +4,6 @@
 //
 //  Created by Franz Henri De Guzman on 5/16/24.
 //
-
 import Foundation
 
 struct VerifyOTPResponse: Codable {
@@ -20,7 +19,6 @@ struct UserData: Codable {
     let password: String?
     var firstName: String?
     var lastName: String?
-    var postalCode: String?
     var stripeCustomerId: String?
     let stripeDefaultPaymentMethodId: String?
     let cardLastFourDigits: String?
@@ -34,20 +32,32 @@ struct UserData: Codable {
     var partner: PartnerData?
     let token: String
     var onboardingStage: Int
+    let employeeCount: Count?
 }
 
 struct PartnerData: Codable {
     var id: String
+    var openHours: OpenHours?
     var name: String
+    var postalCode: String?
+}
+
+struct OpenHours: Codable {
+    var type: String
+}
+
+struct Count: Codable {
+    var employee: Int
 }
 
 extension UserData {
     private enum CodingKeys: String, CodingKey {
-        case id, phone, email, password, firstName, lastName, postalCode, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token, onboardingStage
+        case id, phone, email, password, firstName, lastName, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token, onboardingStage, employeeCount
         case createdAt = "createdAt"
         case updatedAt = "updatedAt"
+        case _count
     }
-
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
@@ -56,7 +66,6 @@ extension UserData {
         password = try container.decodeIfPresent(String.self, forKey: .password)
         firstName = try container.decodeIfPresent(String.self, forKey: .firstName)
         lastName = try container.decodeIfPresent(String.self, forKey: .lastName)
-        postalCode = try container.decodeIfPresent(String.self, forKey: .postalCode)
         stripeCustomerId = try container.decodeIfPresent(String.self, forKey: .stripeCustomerId)
         stripeDefaultPaymentMethodId = try container.decodeIfPresent(String.self, forKey: .stripeDefaultPaymentMethodId)
         cardLastFourDigits = try container.decodeIfPresent(String.self, forKey: .cardLastFourDigits)
@@ -68,14 +77,42 @@ extension UserData {
         partner = try container.decodeIfPresent(PartnerData.self, forKey: .partner)
         token = try container.decode(String.self, forKey: .token)
         onboardingStage = try container.decode(Int.self, forKey: .onboardingStage)
+        employeeCount = try container.decodeIfPresent(Count.self, forKey: ._count)
         
         let createdAtString = try container.decode(String.self, forKey: .createdAt)
         let updatedAtString = try container.decode(String.self, forKey: .updatedAt)
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        
+        let formatter = ISO8601DateFormatter()
         createdAt = formatter.date(from: createdAtString) ?? Date()
         updatedAt = formatter.date(from: updatedAtString) ?? Date()
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(phone, forKey: .phone)
+        try container.encode(email, forKey: .email)
+        try container.encode(password, forKey: .password)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(lastName, forKey: .lastName)
+        try container.encode(stripeCustomerId, forKey: .stripeCustomerId)
+        try container.encode(stripeDefaultPaymentMethodId, forKey: .stripeDefaultPaymentMethodId)
+        try container.encode(cardLastFourDigits, forKey: .cardLastFourDigits)
+        try container.encode(imageUrl, forKey: .imageUrl)
+        try container.encode(imageKey, forKey: .imageKey)
+        try container.encode(role, forKey: .role)
+        try container.encode(notificationToken, forKey: .notificationToken)
+        try container.encode(producer, forKey: .producer)
+        try container.encode(partner, forKey: .partner)
+        try container.encode(token, forKey: .token)
+        try container.encode(onboardingStage, forKey: .onboardingStage)
+        try container.encode(employeeCount, forKey: ._count)
+        
+        let formatter = ISO8601DateFormatter()
+        let createdAtString = formatter.string(from: createdAt)
+        let updatedAtString = formatter.string(from: updatedAt)
+        
+        try container.encode(createdAtString, forKey: .createdAt)
+        try container.encode(updatedAtString, forKey: .updatedAt)
     }
 }

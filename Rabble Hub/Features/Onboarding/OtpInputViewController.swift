@@ -181,6 +181,7 @@ class OtpInputViewController: UIViewController {
                     self.goToSignUpProfile()
                 } else if onboardingStage == 2 {
                     self.goToSignUpSchedule()
+                    
                 } else if onboardingStage == 3 {
                     self.goToSignUpAgreement()
                 } else {
