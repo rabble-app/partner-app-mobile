@@ -85,7 +85,6 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
             let response = try response.map(UpdateUserRecordResponse.self)
             if response.statusCode == 200 || response.statusCode == 201 {
                 if let user = response.data {
-                    saveUser(user)
                     updateUserData(with: user)
                     SnackBar().alert(withMessage: response.message, isSuccess: true, parent: view)
                     
@@ -116,10 +115,6 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
     private func handleFailure(_ error: MoyaError) {
         SnackBar().alert(withMessage: error.localizedDescription, isSuccess: false, parent: view)
         print("Request failed with error: \(error)")
-    }
-    
-    func saveUser(_ user: UserRecord) {
-        //userRecordManager.user = user
     }
     
     private func updateUserData(with userRecord: UserRecord) {

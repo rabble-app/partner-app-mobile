@@ -26,6 +26,7 @@ public enum RabbleHubAPI {
     case updateUserOnboardingRecord
     case updateBuyingTeam(teamId: String, name: String, frequency: Int, deliveryDay: String, productLimit: Int)
     case deleteBuyingTeam(teamId: String)
+    case updateUserProfile(firstName: String, lastName: String, email: String, phone: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -41,7 +42,7 @@ extension RabbleHubAPI: TargetType {
             return URLConfig.verifyOtp
         case .saveStoreProfile:
             return URLConfig.saveStoreProfile
-        case .updateUserRecord, .updateUserOnboardingRecord:
+        case .updateUserRecord, .updateUserOnboardingRecord, .updateUserProfile:
             return URLConfig.updateUserRecord
         case .getSuppliers:
             return URLConfig.getSuppliers
@@ -76,7 +77,7 @@ extension RabbleHubAPI: TargetType {
         switch self {
         case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt:
             return .post
-        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam:
+        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateUserProfile:
             return .patch
         case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams:
             return .get
@@ -221,6 +222,14 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .deleteBuyingTeam:
             return .requestPlain
+        case .updateUserProfile(let firstName, let lastName, let email, let phone):
+            let parameters: [String: Any] = [
+                "firstName": firstName,
+                "lastName": lastName,
+                "email": email,
+                "phone": phone
+            ]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

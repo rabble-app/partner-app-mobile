@@ -9,17 +9,17 @@ import UIKit
 
 class ProfileMainViewController: UIViewController {
 
-    @IBOutlet var email: UILabel!
-    @IBOutlet var storeName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     let viewModel = ProfileMainViewModel()
     private let userDataManager = UserDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
     
@@ -96,8 +96,7 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         switch mode {
         case .headerUI:
             if let cell = cell as? ProfileStoreInfoTableViewCell {
-                cell.titleLabel.text = userDataManager.getUserData()?.partner?.name
-                cell.subtitleLabel.text = userDataManager.getUserData()?.email
+                cell.configureCell(menu: self.viewModel.menus[indexPath.row])
             }
             break
         case .sectionUI:
@@ -109,14 +108,6 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         case .textUI:
             if let cell = cell as? ProfileMenuTableViewCell {
                 cell.configureCell(menu: self.viewModel.menus[indexPath.row])
-                if indexPath.row == 1 {
-                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.firstName ?? "") \(userDataManager.getUserData()?.lastName ?? "")"
-                }else if indexPath.row == 2 {
-                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.postalCode ?? "")"
-                }else if indexPath.row == 3 {
-                    //Open hours
-                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.postalCode ?? "")"
-                }
             }
             break
         case .switchUI, .infoUI:
