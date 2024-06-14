@@ -40,11 +40,11 @@ class ProfileMainViewModel {
         // Section: STORE PROFILE
         let sectionProfile = Menu(titleName: "STORE PROFILE", mode: .sectionUI, separatorLine: false)
         let ownerProfile = Menu(titleName: "Owner profile", subtitleNameLabel: "\(userDataManager.getUserData()?.firstName ?? "") \(userDataManager.getUserData()?.lastName ?? "")", mode: .textUI, iconImageName: "person", iconViewBgColor: .black, separatorLine: true, controllerName: "ProfileOwnerViewController")
-        let partnerDetails = Menu(titleName: "Partner details", subtitleNameLabel: "\(userDataManager.getUserData()?.postalCode ?? "")", mode: .textUI, iconImageName: "partner", iconViewBgColor: .black, separatorLine: true, controllerName: "ProfilePartnerDetailsViewController")
+        let partnerDetails = Menu(titleName: "Partner details", subtitleNameLabel: "\(userDataManager.getUserData()?.partner?.postalCode ?? "")", mode: .textUI, iconImageName: "partner", iconViewBgColor: .black, separatorLine: true, controllerName: "ProfilePartnerDetailsViewController")
         let openHours = Menu(titleName: "Open hours", subtitleNameLabel: "24/7", mode: .textUI, iconImageName: "openhrs", iconViewBgColor: .black, separatorLine: false, controllerName: "ProfileOpenHoursViewController")
         // Section: MANAGE EMPLOYEES
         let sectionManageEmployees = Menu(titleName: "MANAGE EMPLOYEES", mode: .sectionUI, separatorLine: false)
-        let employees = Menu(titleName: "Employees", subtitleNameLabel: "3", mode: .textUI, iconImageName: "employees", iconViewBgColor: .black, separatorLine: false, controllerName: "ManageEmployeeViewController")
+        let employees = Menu(titleName: "Employees", subtitleNameLabel: "\(userDataManager.getUserData()?.employeeCount?.employee ?? "")", mode: .textUI, iconImageName: "employees", iconViewBgColor: .black, separatorLine: false, controllerName: "ManageEmployeeViewController")
         // Section: SYSTEM
         let sectionSystem = Menu(titleName: "SYSTEM", mode: .sectionUI, separatorLine: true)
         let darkMode = Menu(titleName: "Dark mode", mode: .switchUI, iconImageName: "darkmode", iconViewBgColor: .iconBgPurple, separatorLine: true)

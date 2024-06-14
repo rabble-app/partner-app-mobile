@@ -107,7 +107,7 @@ class SignUpAgreementViewController: UIViewController, PaymentPopUpDelegate {
             userData.email = userRecord.email
             userData.firstName = userRecord.firstName
             userData.lastName = userRecord.lastName
-            userData.postalCode = userRecord.postalCode
+            userData.partner?.postalCode = userRecord.postalCode
             userData.stripeCustomerId = userRecord.stripeCustomerId
            // userData.partner?.id = userRecord.id
             userData.onboardingStage = userRecord.onboardingStage ?? 4
