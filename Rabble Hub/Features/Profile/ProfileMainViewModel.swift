@@ -44,7 +44,7 @@ class ProfileMainViewModel {
         let openHours = Menu(titleName: "Open hours", subtitleNameLabel: "24/7", mode: .textUI, iconImageName: "openhrs", iconViewBgColor: .black, separatorLine: false, controllerName: "ProfileOpenHoursViewController")
         // Section: MANAGE EMPLOYEES
         let sectionManageEmployees = Menu(titleName: "MANAGE EMPLOYEES", mode: .sectionUI, separatorLine: false)
-        let employees = Menu(titleName: "Employees", subtitleNameLabel: "\(userDataManager.getUserData()?.employeeCount?.employee ?? "")", mode: .textUI, iconImageName: "employees", iconViewBgColor: .black, separatorLine: false, controllerName: "ManageEmployeeViewController")
+        let employees = Menu(titleName: "Employees", subtitleNameLabel: "\(userDataManager.getUserData()?.employeeCount?.employee ?? 0)", mode: .textUI, iconImageName: "employees", iconViewBgColor: .black, separatorLine: false, controllerName: "ManageEmployeeViewController")
         // Section: SYSTEM
         let sectionSystem = Menu(titleName: "SYSTEM", mode: .sectionUI, separatorLine: true)
         let darkMode = Menu(titleName: "Dark mode", mode: .switchUI, iconImageName: "darkmode", iconViewBgColor: .iconBgPurple, separatorLine: true)
