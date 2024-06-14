@@ -26,6 +26,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    let selectAnOptionText = "Select an option"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     private func updateContinueButtonState() {
         // Define the default values for storeType, shelfSpace, and dryStorageSpace
         let defaultStoreType = "Store Type"
-        let defaultShelfSpace = "Select an option"
-        let defaultDryStorageSpace = "Select an option"
+        let defaultShelfSpace = selectAnOptionText
+        let defaultDryStorageSpace = selectAnOptionText
 
         // Check if all text fields have input
         let allFieldsFilled = [storeName, postalCode, city, street, storeType, shelfSpace, dryStorageSpace].compactMap { $0 }.allSatisfy { textField in
@@ -85,7 +86,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func shelfSpaceButtonTapped(_ sender: Any) {
         let rabbleSheetViewController = RabbleSheetViewController()
-        rabbleSheetViewController.headerTitle = "Select an option"
+        rabbleSheetViewController.headerTitle = selectAnOptionText
         rabbleSheetViewController.items =  ["5 cubic feet", "10 cubic feet", "15 cubic feet", "20 cubic feet", "25 cubic feet"]
         rabbleSheetViewController.itemSelected = { item in
             self.shelfSpace.text = item
@@ -96,7 +97,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func dryStorageButtonTapped(_ sender: Any) {
         let rabbleSheetViewController = RabbleSheetViewController()
-        rabbleSheetViewController.headerTitle = "Select an option"
+        rabbleSheetViewController.headerTitle = selectAnOptionText
         rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
         rabbleSheetViewController.itemSelected = { item in
             self.dryStorageSpace.text = item

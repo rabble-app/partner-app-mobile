@@ -68,12 +68,12 @@ class CustomerCollectionListViewController: UIViewController {
     }
     
     func fetchCustomerCollections() {
-       // LoadingViewController.present(from: self)
-        var id: String? = userDataManager.getUserData()?.partner?.id
+   
+        let id: String? = userDataManager.getUserData()?.partner?.id
 
         if let storeId = id {
             apiProvider.request(.getCustomerCollection(storeId: storeId, offset: 0, period: period, search: searchStr)) { result in
-                // LoadingViewController.dismiss(from: self)
+
                 self.handleSuppliersResponse(result)
             }
         } else {

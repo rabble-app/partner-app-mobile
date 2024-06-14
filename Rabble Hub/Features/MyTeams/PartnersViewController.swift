@@ -33,9 +33,6 @@ class PartnersViewController: UIViewController {
        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-       
-    }
 
     @IBAction func setupNewBuyingTeamButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "ProducersListView", bundle: Bundle.main)

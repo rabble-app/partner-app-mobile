@@ -88,11 +88,12 @@ class ChooseDeliveryDayViewController: UIViewController {
     }
     
     private func configureLabels() {
-        var supplierName = "{supplier.name}"
+        var supplierNameDefault = "{supplier.name}"
+        var supplierName = supplierNameDefault
         if isFromEdit {
-            supplierName = partnerTeam?.name ?? "{supplier.name}"
+            supplierName = partnerTeam?.name ?? supplierNameDefault
         } else {
-            supplierName = selectedSupplier?.businessName ?? "{supplier.name}"
+            supplierName = selectedSupplier?.businessName ?? supplierNameDefault
         }
         
         deliveryDayInstructionsLabel.text = "Choose the first delivery day you would like \(supplierName) to deliver on. We allow a minimum of two weeks from creating the team for customers to sign up to your buying team"
@@ -250,7 +251,7 @@ extension ChooseDeliveryDayViewController: JTAppleCalendarViewDataSource {
 extension ChooseDeliveryDayViewController: JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendar.JTAppleCalendarView, willDisplay cell: JTAppleCalendar.JTAppleCell, forItemAt date: Date, cellState: JTAppleCalendar.CellState, indexPath: IndexPath) {
-        
+        // Configure cell here before the UI loads
     }
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
