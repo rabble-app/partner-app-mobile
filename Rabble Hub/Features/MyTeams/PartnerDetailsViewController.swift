@@ -146,7 +146,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func shareButtonTap(_ sender: Any) {
-        
+        // Add Share functionality here
     }
     
     @IBAction func manageTeamButtonTap(_ sender: Any) {

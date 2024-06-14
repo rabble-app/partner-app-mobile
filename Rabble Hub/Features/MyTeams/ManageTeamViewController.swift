@@ -50,11 +50,9 @@ class ManageTeamViewController: UIViewController {
     }
     
     private func loadEmptyState() {
-        if segmentedController.selectedSegmentIndex == 0 {
-            if partnerTeam?.members.count ?? 0 < 0 {
-                showEmptyState()
-                return
-            }
+        if segmentedController.selectedSegmentIndex == 0 && partnerTeam?.members.count ?? 0 < 0 {
+            showEmptyState()
+            return
         }
         hideEmptyState()
     }

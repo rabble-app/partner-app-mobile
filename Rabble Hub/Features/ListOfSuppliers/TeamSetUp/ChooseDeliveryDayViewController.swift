@@ -88,7 +88,7 @@ class ChooseDeliveryDayViewController: UIViewController {
     }
     
     private func configureLabels() {
-        var supplierNameDefault = "{supplier.name}"
+        let supplierNameDefault = "{supplier.name}"
         var supplierName = supplierNameDefault
         if isFromEdit {
             supplierName = partnerTeam?.name ?? supplierNameDefault

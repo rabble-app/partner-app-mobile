@@ -22,8 +22,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shelfSpaceButton: UIButton!
     @IBOutlet var dryStorageSpace: RabbleTextField!
     @IBOutlet weak var dryStorageButton: UIButton!
-    @IBAction func previousStepButton(_ sender: Any) {
-    }
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     let selectAnOptionText = "Select an option"
