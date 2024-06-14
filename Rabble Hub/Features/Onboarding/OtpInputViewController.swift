@@ -19,6 +19,8 @@ class OtpInputViewController: UIViewController {
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var ontpContainer: UIView!
     
+  
+    
     @IBOutlet weak var continueButtonBottomConstraint: NSLayoutConstraint!
     
     private let userDataManager = UserDataManager()
@@ -172,11 +174,21 @@ class OtpInputViewController: UIViewController {
             let tokenManager = UserDefaultsTokenManager()
             let token = response.data?.token
             tokenManager.saveToken(token ?? "")
-            if let _ = response.data?.partner?.id {
-                self.goToMainTab()
-            } else {
-                self.goToSignUp()
+            if let onboardingStage = response.data?.onboardingStage {
+                if onboardingStage == 0 {
+                    self.goToSignUp()
+                } else if onboardingStage == 1 {
+                    self.goToSignUpProfile()
+                } else if onboardingStage == 2 {
+                    self.goToSignUpSchedule()
+                } else if onboardingStage == 3 {
+                    self.goToSignUpAgreement()
+                } else {
+                    self.goToMainTab()
+                }
             }
+            
+            
         }
     }
     
@@ -184,6 +196,30 @@ class OtpInputViewController: UIViewController {
         let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
+    }
+    
+    func goToSignUpProfile() {
+        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpProfileViewController") as! SignUpProfileViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.isFromOnboardingStage = true
+        present(vc, animated: false)
+    }
+    
+    func goToSignUpSchedule() {
+        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpScheduleViewController") as! SignUpScheduleViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.isFromOnboardingStage = true
+        present(vc, animated: false)
+    }
+    
+    func goToSignUpAgreement() {
+        let signUpView = UIStoryboard(name: "SignUpView", bundle: nil)
+        let vc = signUpView.instantiateViewController(withIdentifier: "SignUpAgreementViewController") as! SignUpAgreementViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.isFromOnboardingStage = true
         present(vc, animated: false)
     }
     

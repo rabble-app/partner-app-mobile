@@ -18,6 +18,7 @@ class SignUpScheduleViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
+    @IBOutlet var previousStepButton: TertiaryButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentContentViewConstraintHeight: NSLayoutConstraint!
     
@@ -31,7 +32,7 @@ class SignUpScheduleViewController: UIViewController {
     
     @IBOutlet weak var tableViewContainerView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
+    var isFromOnboardingStage = Bool()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,10 +46,16 @@ class SignUpScheduleViewController: UIViewController {
         
         initiateCustomDaysObjects() // call this once to initiate the schedules
         self.tableView.reloadData()
+        
+        if isFromOnboardingStage {
+            self.previousStepButton.isEnabled = false
+        }
     }
     
     func initiateCustomDaysObjects() {
-        let storeId = StoreManager.shared.store?.id ?? ""
+//        let storeId = StoreManager.shared.store?.id ?? ""
+        let userDataManager = UserDataManager()
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
         self.customMonToFri = CustomOpenHoursModel(storeId: storeId, type: .monToFri, customOpenHours: [])
         self.customMonToFri.populateCustomOpenHours()
         

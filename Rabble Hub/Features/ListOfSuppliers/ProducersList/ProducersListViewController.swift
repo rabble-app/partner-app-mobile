@@ -18,10 +18,10 @@ class ProducersListViewController: UIViewController {
     private var filteredSuppliers = [Supplier]()
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         fetchSuppliers()
     }
@@ -34,17 +34,13 @@ class ProducersListViewController: UIViewController {
     }
     
     private func fetchSuppliers() {
-        guard let postalCode = StoreManager.shared.postalCode else { return }
-        
-        LoadingViewController.present(from: self)
-        
-        apiProvider.request(.getSuppliers(offset: 0, postalId: postalCode)) { result in
-            guard let presentingViewController = self.presentingViewController else {
-                // Unable to get presenting view controller
+        let postalId: String? = userDataManager.getUserData()?.postalCode
+
+        apiProvider.request(.getSuppliers(offset: 0, postalId: postalId ?? "")) { result in
+            guard let _ = self.presentingViewController else {
                 return
             }
             
-            LoadingViewController.present(from: presentingViewController)
             self.handleSuppliersResponse(result)
         }
     }
@@ -74,7 +70,7 @@ class ProducersListViewController: UIViewController {
     private func handleMappingError(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            self.showError(errorResponse.message ?? "An error occurred")
+            self.showError(errorResponse.message)
         } catch {
             print("Failed to map response data: \(error)")
         }

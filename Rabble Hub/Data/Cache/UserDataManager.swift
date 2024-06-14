@@ -7,11 +7,13 @@
 
 import Foundation
 
+//MARK: from verify OTP
+import Foundation
+
 class UserDataManager {
 
     private let userDefaults = UserDefaults.standard
     private let userDataKey = "UserData"
-    
 
     func saveUserData(_ userData: UserData) {
         do {
@@ -42,9 +44,13 @@ class UserDataManager {
     func clearUserData() {
         userDefaults.removeObject(forKey: userDataKey)
     }
-    
-    
+
     func isUserDataEmpty() -> Bool {
         return userDefaults.data(forKey: userDataKey) == nil
+    }
+    
+    func logoutUser() {
+        clearUserData()
+        UserDefaultsTokenManager().removeToken()
     }
 }

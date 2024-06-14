@@ -9,9 +9,11 @@ import UIKit
 
 class ProfileMainViewController: UIViewController {
 
+    @IBOutlet var email: UILabel!
+    @IBOutlet var storeName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     let viewModel = ProfileMainViewModel()
-    
+    private let userDataManager = UserDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,6 @@ class ProfileMainViewController: UIViewController {
         
         self.tableView.reloadData()
     }
-    
     
     func navigateToLoginScreen() {
 
@@ -78,7 +79,7 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         var cell = self.viewModel.getCellForMode(mode: self.viewModel.menus[indexPath.row].mode ?? .infoUI, tableView: tableView, indexPath: indexPath)
         if let cell = cell as? ProfileButtonTableViewCell {
             cell.buttonTapped = {
-                UserManager.shared.logoutUser()
+                self.userDataManager.logoutUser()
                 DispatchQueue.main.async {
                     self.navigateToLoginScreen()
                 }
@@ -95,9 +96,9 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         switch mode {
         case .headerUI:
             if let cell = cell as? ProfileStoreInfoTableViewCell {
-                cell.configureCell(menu: self.viewModel.menus[indexPath.row])
+                cell.titleLabel.text = userDataManager.getUserData()?.partner?.name
+                cell.subtitleLabel.text = userDataManager.getUserData()?.email
             }
-            
             break
         case .sectionUI:
             if let cell = cell as? ProfileSectionHeaderTableViewCell {
@@ -105,7 +106,20 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
             }
             
             break
-        case .textUI, .switchUI, .infoUI:
+        case .textUI:
+            if let cell = cell as? ProfileMenuTableViewCell {
+                cell.configureCell(menu: self.viewModel.menus[indexPath.row])
+                if indexPath.row == 1 {
+                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.firstName ?? "") \(userDataManager.getUserData()?.lastName ?? "")"
+                }else if indexPath.row == 2 {
+                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.postalCode ?? "")"
+                }else if indexPath.row == 3 {
+                    //Open hours
+                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.postalCode ?? "")"
+                }
+            }
+            break
+        case .switchUI, .infoUI:
             if let cell = cell as? ProfileMenuTableViewCell {
                 cell.configureCell(menu: self.viewModel.menus[indexPath.row])
             }

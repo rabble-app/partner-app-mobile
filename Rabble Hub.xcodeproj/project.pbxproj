@@ -17,9 +17,7 @@
 		861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC572BD66D5A007AB919 /* ViewExtension.swift */; };
 		861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */; };
 		8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */; };
-		8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3532BF8CAEC00DF5045 /* StoreManager.swift */; };
 		8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */; };
-		8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631B3572BF8D0D200DF5045 /* UserManager.swift */; };
 		865618922BFE18FC001E65EB /* CreateBuyingTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */; };
 		8656189C2BFF99BA001E65EB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189B2BFF99BA001E65EB /* ToastView.swift */; };
 		8656189E2BFFA475001E65EB /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656189D2BFFA475001E65EB /* Snackbar.swift */; };
@@ -33,6 +31,7 @@
 		867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349572BF5300A00F82570 /* VerifyOTPResponse.swift */; };
 		8673495A2BF535FB00F82570 /* GetSuppliersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349592BF535FB00F82570 /* GetSuppliersResponse.swift */; };
 		868C2D122C13739A009295BA /* OrderDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C2D112C13739A009295BA /* OrderDetailsResponse.swift */; };
+		868C2D292C172C36009295BA /* GetPartnerTeamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */; };
 		86A60DB62BCCEE3200496390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB52BCCEE3200496390 /* AppDelegate.swift */; };
 		86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB72BCCEE3200496390 /* SceneDelegate.swift */; };
 		86A60DBA2BCCEE3200496390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60DB92BCCEE3200496390 /* ViewController.swift */; };
@@ -56,6 +55,7 @@
 		86C0F5E12BCFCF8D00B78747 /* CreateALimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */; };
 		86C2E2A72BEC8F2700DB4494 /* TertiaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */; };
 		86C2E2A92BECA5C700DB4494 /* OrderCollectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2E2A82BECA5C700DB4494 /* OrderCollectedViewController.swift */; };
+		86CE75852C182BC7009702FA /* DeleteMemberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */; };
 		86D014412BEA14220004B1C6 /* GoshaSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86D0143F2BEA14220004B1C6 /* GoshaSansBold.otf */; };
 		86D014422BEA14220004B1C6 /* GoshaSansRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86D014402BEA14220004B1C6 /* GoshaSansRegular.otf */; };
 		86D014552BEA14350004B1C6 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86D014432BEA14340004B1C6 /* Poppins-ExtraLight.ttf */; };
@@ -103,6 +103,8 @@
 		AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12289E2BE73AFF001EC15F /* Properties.swift */; };
 		AC1228A12BE74635001EC15F /* RabbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1228A02BE74635001EC15F /* RabbleTextView.swift */; };
 		AC159FA92BED145E00926222 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC159FA82BED145E00926222 /* Media.xcassets */; };
+		AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */; };
+		AC3691B72C1ACCAC007557A4 /* DeleteTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */; };
 		AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC401FBD2BED225800FA2F3F /* StoryViewController.swift */; };
 		AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */; };
 		AC45D16E2C0E1A3C00731F1F /* RabbleSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */; };
@@ -191,9 +193,7 @@
 		861EFC572BD66D5A007AB919 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		861EFC592BD670E5007AB919 /* ManageTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTeamViewController.swift; sourceTree = "<group>"; };
 		8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStoreProfileResponse.swift; sourceTree = "<group>"; };
-		8631B3532BF8CAEC00DF5045 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRecordResponse.swift; sourceTree = "<group>"; };
-		8631B3572BF8D0D200DF5045 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBuyingTeamResponse.swift; sourceTree = "<group>"; };
 		8656189B2BFF99BA001E65EB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		8656189D2BFFA475001E65EB /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
@@ -207,6 +207,7 @@
 		867349572BF5300A00F82570 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
 		867349592BF535FB00F82570 /* GetSuppliersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSuppliersResponse.swift; sourceTree = "<group>"; };
 		868C2D112C13739A009295BA /* OrderDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsResponse.swift; sourceTree = "<group>"; };
+		868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartnerTeamsResponse.swift; sourceTree = "<group>"; };
 		86A60DB22BCCEE3200496390 /* Rabble Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabble Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A60DB52BCCEE3200496390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A60DB72BCCEE3200496390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 		86C0F5E02BCFCF8D00B78747 /* CreateALimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateALimitViewController.swift; sourceTree = "<group>"; };
 		86C2E2A62BEC8F2700DB4494 /* TertiaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TertiaryButton.swift; sourceTree = "<group>"; };
 		86C2E2A82BECA5C700DB4494 /* OrderCollectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectedViewController.swift; sourceTree = "<group>"; };
+		86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMemberResponse.swift; sourceTree = "<group>"; };
 		86D0143F2BEA14220004B1C6 /* GoshaSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoshaSansBold.otf; sourceTree = "<group>"; };
 		86D014402BEA14220004B1C6 /* GoshaSansRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoshaSansRegular.otf; sourceTree = "<group>"; };
 		86D014432BEA14340004B1C6 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -280,6 +282,8 @@
 		AC12289E2BE73AFF001EC15F /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		AC1228A02BE74635001EC15F /* RabbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleTextView.swift; sourceTree = "<group>"; };
 		AC159FA82BED145E00926222 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamResponse.swift; sourceTree = "<group>"; };
+		AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamResponse.swift; sourceTree = "<group>"; };
 		AC401FBD2BED225800FA2F3F /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		AC45D16B2C0E1A3C00731F1F /* RabbleSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleSheetViewController.swift; sourceTree = "<group>"; };
 		AC45D16C2C0E1A3C00731F1F /* RabbleSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RabbleSheetViewController.xib; sourceTree = "<group>"; };
@@ -392,10 +396,8 @@
 		8631B3522BF8CAD700DF5045 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				8631B3572BF8D0D200DF5045 /* UserManager.swift */,
-				8631B3532BF8CAEC00DF5045 /* StoreManager.swift */,
-				867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */,
 				86E08F762C0DDF0200AE6D58 /* UserDataManager.swift */,
+				867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -415,9 +417,9 @@
 			children = (
 				867349532BF5287200F82570 /* SendOTPResponse.swift */,
 				867349572BF5300A00F82570 /* VerifyOTPResponse.swift */,
-				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
 				8631B3502BF8C9D500DF5045 /* SaveStoreProfileResponse.swift */,
 				8631B3552BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift */,
+				867349592BF535FB00F82570 /* GetSuppliersResponse.swift */,
 				865618912BFE18FC001E65EB /* CreateBuyingTeamResponse.swift */,
 				AC6417F02BFB910D00B8A61B /* AddStoreHoursResponse.swift */,
 				AC6417F72C00D8C000B8A61B /* StandardResponse.swift */,
@@ -425,6 +427,10 @@
 				86E08F782C0DE32500AE6D58 /* CustomerCollectionResponse.swift */,
 				865EBA602C100C41004E5798 /* InboundDeliveryResponse.swift */,
 				868C2D112C13739A009295BA /* OrderDetailsResponse.swift */,
+				868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */,
+				86CE75842C182BC7009702FA /* DeleteMemberResponse.swift */,
+				AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */,
+				AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1127,11 +1133,11 @@
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
 				AC6417ED2BFB7CE500B8A61B /* APIService.swift in Sources */,
+				868C2D292C172C36009295BA /* GetPartnerTeamsResponse.swift in Sources */,
 				AC8CDDEA2BE70B1E0091882B /* RabbleTextField.swift in Sources */,
 				AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */,
 				86D17ABB2BCEB58D00464511 /* PaymentPopUpViewController.swift in Sources */,
 				AC0EE1E52C04168A0047293F /* CalendarViewCell.swift in Sources */,
-				8631B3582BF8D0D200DF5045 /* UserManager.swift in Sources */,
 				867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */,
 				AC45D16D2C0E1A3C00731F1F /* RabbleSheetViewController.swift in Sources */,
 				86DD74B62BD2419C001FEBBD /* QrCodeErrorPopViewController.swift in Sources */,
@@ -1140,8 +1146,8 @@
 				861EFC582BD66D5A007AB919 /* ViewExtension.swift in Sources */,
 				ACC719922BDA87EF00CF78DC /* ProfilePartnerDetailsViewController.swift in Sources */,
 				86DD74AD2BD107D0001FEBBD /* OrderDetailsViewController.swift in Sources */,
-				8631B3542BF8CAEC00DF5045 /* StoreManager.swift in Sources */,
 				8631B3562BF8D0AB00DF5045 /* UpdateUserRecordResponse.swift in Sources */,
+				86CE75852C182BC7009702FA /* DeleteMemberResponse.swift in Sources */,
 				AC5EF00F2BD148F50002A8D7 /* InboundDeliveriesTableViewCell.swift in Sources */,
 				86E08F772C0DDF0200AE6D58 /* UserDataManager.swift in Sources */,
 				AC6418072C0378DA00B8A61B /* DeliveryDayResponse.swift in Sources */,
@@ -1164,6 +1170,7 @@
 				AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */,
 				AC12289F2BE73AFF001EC15F /* Properties.swift in Sources */,
 				86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */,
+				AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */,
 				ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */,
 				868C2D122C13739A009295BA /* OrderDetailsResponse.swift in Sources */,
 				AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */,
@@ -1205,6 +1212,7 @@
 				AC6417EF2BFB7D2C00B8A61B /* RabbleHubAPI.swift in Sources */,
 				8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
+				AC3691B72C1ACCAC007557A4 /* DeleteTeamResponse.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 				AC5424822C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift in Sources */,
 			);
@@ -1395,7 +1403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1435,7 +1443,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = M463L9U7L5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

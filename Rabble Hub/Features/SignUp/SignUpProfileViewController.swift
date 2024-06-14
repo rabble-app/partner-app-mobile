@@ -10,12 +10,17 @@ import Moya
 
 class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
     
+   
+    @IBOutlet var backButton: TertiaryButton!
     @IBOutlet var continueButton: PrimaryButton!
     @IBOutlet var firstName: RabbleTextField!
     @IBOutlet var lastName: RabbleTextField!
     @IBOutlet var email: RabbleTextField!
-    
+    //private let userRecordManager = UserRecordManager()
+    private let userDataManager = UserDataManager()
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    
+    var isFromOnboardingStage = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +34,10 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
         // Add observers for text change events in text fields
         [firstName, lastName, email].compactMap { $0 }.forEach { textField in
             textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
+        
+        if isFromOnboardingStage {
+            self.backButton.isEnabled = false
         }
     }
     
@@ -77,6 +86,7 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
             if response.statusCode == 200 || response.statusCode == 201 {
                 if let user = response.data {
                     saveUser(user)
+                    updateUserData(with: user)
                     SnackBar().alert(withMessage: response.message, isSuccess: true, parent: view)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -108,8 +118,21 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
         print("Request failed with error: \(error)")
     }
     
-    func saveUser(_ user: User) {
-        UserManager.shared.user = user
+    func saveUser(_ user: UserRecord) {
+        //userRecordManager.user = user
+    }
+    
+    private func updateUserData(with userRecord: UserRecord) {
+        if var userData = userDataManager.getUserData() {
+            userData.phone = userRecord.phone
+            userData.email = userRecord.email
+            userData.firstName = userRecord.firstName
+            userData.lastName = userRecord.lastName
+            userData.postalCode = userRecord.postalCode
+            userData.stripeCustomerId = userRecord.stripeCustomerId
+//            userData.partner?.id = userRecord.id
+            userDataManager.saveUserData(userData)
+        }
     }
     
     @IBAction func previousStepButtonTap(_ sender: Any) {

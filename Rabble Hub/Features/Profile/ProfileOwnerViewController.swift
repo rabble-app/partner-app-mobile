@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import Moya
 
 class ProfileOwnerViewController: UIViewController {
+    
+    @IBOutlet var firstName: RabbleTextField!
+    @IBOutlet var lastName: RabbleTextField!
+    @IBOutlet var email: RabbleTextField!
+    @IBOutlet var phone: RabbleTextField!
+    @IBOutlet var saveBtn: PrimaryButton!
+    
+    private let userDataManager = UserDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()

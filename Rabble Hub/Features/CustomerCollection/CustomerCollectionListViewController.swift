@@ -20,15 +20,16 @@ class CustomerCollectionListViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var collectionData = [CollectionData]()
-    
+  
     var period = "today"
     var searchStr = ""
     
     private let userDataManager = UserDataManager()
+   // private let userRecordManager = UserRecordManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         collectionTableview.delegate = self
         collectionTableview.dataSource = self
         searchBar.delegate = self
@@ -67,11 +68,17 @@ class CustomerCollectionListViewController: UIViewController {
     }
     
     func fetchCustomerCollections() {
-        LoadingViewController.present(from: self)
-        let id = userDataManager.getUserData()?.partner?.id ?? ""
-        apiProvider.request(.getCustomerCollection(storeId: id, offset: 0, period: period, search: searchStr)) { result in
-            LoadingViewController.dismiss(from: self)
-            self.handleSuppliersResponse(result)
+   
+        let id: String? = userDataManager.getUserData()?.partner?.id
+
+        if let storeId = id {
+            apiProvider.request(.getCustomerCollection(storeId: storeId, offset: 0, period: period, search: searchStr)) { result in
+
+                self.handleSuppliersResponse(result)
+            }
+        } else {
+            // Handle the case where both ids are nil, if necessary
+            print("Error: No valid id found")
         }
     }
     

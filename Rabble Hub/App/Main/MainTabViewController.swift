@@ -38,4 +38,15 @@ class MainTabViewController: UITabBarController {
         fifthViewController.tabBarItem =  UITabBarItem(title: "Profile", image: UIImage(named: "icon_tab_profile"), tag: 4)
     }
 
+    func reloadSelectedTab() {
+        guard let selectedVC = self.selectedViewController else { return }
+        
+        // Remove the selected view controller
+        var viewControllers = self.viewControllers
+        viewControllers?.remove(at: self.selectedIndex)
+        
+        // Re-add the selected view controller
+        viewControllers?.insert(selectedVC, at: self.selectedIndex)
+        self.viewControllers = viewControllers
+    }
 }

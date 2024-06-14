@@ -10,10 +10,10 @@ import Foundation
 struct UpdateUserRecordResponse: Codable {
     let statusCode: Int
     let message: String
-    let data: User?
+    let data: UserRecord?
 }
 
-struct User: Codable {
+struct UserRecord: Codable {
     let id: String
     let phone: String
     let email: String?
@@ -25,4 +25,5 @@ struct User: Codable {
     let role: String
     let createdAt: String
     let updatedAt: String
+    let onboardingStage: Int?
 }

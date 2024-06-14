@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfl-J7-uND">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfl-J7-uND">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -503,6 +503,13 @@
                             <constraint firstItem="vxZ-wt-I71" firstAttribute="leading" secondItem="2t0-fZ-YE1" secondAttribute="leading" id="jje-fg-Z7a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="5CK-Jc-dj5" id="vqS-qY-COD"/>
+                        <outlet property="firstName" destination="1Em-3O-FBX" id="Jqj-p4-7BJ"/>
+                        <outlet property="lastName" destination="lI6-Q7-Ngb" id="Mgn-MA-8im"/>
+                        <outlet property="phone" destination="Bvw-nr-daf" id="PPw-YA-ACc"/>
+                        <outlet property="saveBtn" destination="Xil-0E-9NB" id="SyT-Kv-OkN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nwg-2O-OrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

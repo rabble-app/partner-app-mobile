@@ -197,15 +197,18 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfI-eE-xLQ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected_radioButton" translatesAutoresizingMaskIntoConstraints="NO" id="FjE-uM-sN2" userLabel="Every Week Image View">
                                                 <rect key="frame" x="289" y="16" width="18" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="18" id="BpD-HB-fl2"/>
-                                                    <constraint firstAttribute="width" constant="18" id="G5c-rC-liq"/>
+                                                    <constraint firstAttribute="height" constant="18" id="OeH-Ur-L7O"/>
+                                                    <constraint firstAttribute="width" constant="18" id="fPL-99-zm3"/>
                                                 </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfI-eE-xLQ">
+                                                <rect key="frame" x="8" y="8" width="307" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " backgroundImage="unselected_radioButton">
+                                                <state key="normal" title=" ">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -215,12 +218,21 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="cfI-eE-xLQ" firstAttribute="centerY" secondItem="MOn-Et-NgK" secondAttribute="centerY" id="G6u-JF-LUC"/>
+                                            <constraint firstItem="FjE-uM-sN2" firstAttribute="centerY" secondItem="MOn-Et-NgK" secondAttribute="centerY" id="BX2-XL-fMd"/>
                                             <constraint firstItem="An1-zr-vZP" firstAttribute="leading" secondItem="MOn-Et-NgK" secondAttribute="leading" constant="16" id="HYR-qy-XQ6"/>
-                                            <constraint firstAttribute="trailing" secondItem="cfI-eE-xLQ" secondAttribute="trailing" constant="16" id="Rak-MN-dpe"/>
+                                            <constraint firstItem="cfI-eE-xLQ" firstAttribute="leading" secondItem="MOn-Et-NgK" secondAttribute="leading" constant="8" id="VCJ-Ch-Pkt"/>
+                                            <constraint firstAttribute="trailing" secondItem="FjE-uM-sN2" secondAttribute="trailing" constant="16" id="feE-U4-tFn"/>
+                                            <constraint firstAttribute="bottom" secondItem="cfI-eE-xLQ" secondAttribute="bottom" constant="8" id="gTD-uT-aY1"/>
+                                            <constraint firstAttribute="trailing" secondItem="cfI-eE-xLQ" secondAttribute="trailing" constant="8" id="hOz-3n-gTu"/>
                                             <constraint firstAttribute="height" constant="50" id="nw7-4p-PXU"/>
                                             <constraint firstItem="An1-zr-vZP" firstAttribute="centerY" secondItem="MOn-Et-NgK" secondAttribute="centerY" id="w6V-S6-Umf"/>
+                                            <constraint firstItem="cfI-eE-xLQ" firstAttribute="top" secondItem="MOn-Et-NgK" secondAttribute="top" constant="8" id="ye4-me-fpC"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH1-lN-BAA">
                                         <rect key="frame" x="0.0" y="66" width="323" height="50"/>
@@ -236,15 +248,18 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GH7-XU-Cj3">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected_radioButton" translatesAutoresizingMaskIntoConstraints="NO" id="awx-g8-kOp" userLabel="Every 2 Week Image View">
                                                 <rect key="frame" x="289" y="16" width="18" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="18" id="5Qq-pu-Ebh"/>
-                                                    <constraint firstAttribute="width" constant="18" id="rzl-SY-15Y"/>
+                                                    <constraint firstAttribute="width" constant="18" id="FwC-J4-Kdj"/>
+                                                    <constraint firstAttribute="height" constant="18" id="QVg-cS-lah"/>
                                                 </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GH7-XU-Cj3">
+                                                <rect key="frame" x="8" y="8" width="307" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " backgroundImage="unselected_radioButton"/>
+                                                <state key="normal" title=" "/>
                                                 <connections>
                                                     <action selector="twoWeekButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MdU-F3-pAs"/>
                                                 </connections>
@@ -253,11 +268,20 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Ul3-u9-LkX" firstAttribute="leading" secondItem="KH1-lN-BAA" secondAttribute="leading" constant="16" id="2nh-Uh-m5q"/>
-                                            <constraint firstAttribute="trailing" secondItem="GH7-XU-Cj3" secondAttribute="trailing" constant="16" id="64k-Kl-vTm"/>
+                                            <constraint firstItem="GH7-XU-Cj3" firstAttribute="top" secondItem="KH1-lN-BAA" secondAttribute="top" constant="8" id="7k2-EJ-U70"/>
                                             <constraint firstAttribute="height" constant="50" id="DiP-12-Krx"/>
-                                            <constraint firstItem="GH7-XU-Cj3" firstAttribute="centerY" secondItem="KH1-lN-BAA" secondAttribute="centerY" id="e0j-e1-pya"/>
+                                            <constraint firstAttribute="trailing" secondItem="awx-g8-kOp" secondAttribute="trailing" constant="16" id="FuP-xj-zyS"/>
+                                            <constraint firstItem="GH7-XU-Cj3" firstAttribute="leading" secondItem="KH1-lN-BAA" secondAttribute="leading" constant="8" id="SUO-tj-Lpc"/>
+                                            <constraint firstAttribute="trailing" secondItem="GH7-XU-Cj3" secondAttribute="trailing" constant="8" id="Zrq-2y-Ws0"/>
+                                            <constraint firstAttribute="bottom" secondItem="GH7-XU-Cj3" secondAttribute="bottom" constant="8" id="aL1-ea-YKr"/>
+                                            <constraint firstItem="awx-g8-kOp" firstAttribute="centerY" secondItem="KH1-lN-BAA" secondAttribute="centerY" id="kht-t6-aIq"/>
                                             <constraint firstItem="Ul3-u9-LkX" firstAttribute="centerY" secondItem="KH1-lN-BAA" secondAttribute="centerY" id="zfe-d9-7sm"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Naj-aT-JYO">
                                         <rect key="frame" x="0.0" y="132" width="323" height="50"/>
@@ -273,15 +297,18 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9q-AJ-VGx">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected_radioButton" translatesAutoresizingMaskIntoConstraints="NO" id="x3b-Dt-Fgq" userLabel="Every Month Image View">
                                                 <rect key="frame" x="289" y="16" width="18" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="18" id="78M-tw-MrA"/>
-                                                    <constraint firstAttribute="height" constant="18" id="xq3-Dt-oes"/>
+                                                    <constraint firstAttribute="height" constant="18" id="np1-qV-Dej"/>
+                                                    <constraint firstAttribute="width" constant="18" id="ozM-fa-VSA"/>
                                                 </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9q-AJ-VGx">
+                                                <rect key="frame" x="8" y="8" width="307" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " backgroundImage="unselected_radioButton"/>
+                                                <state key="normal" title=" "/>
                                                 <connections>
                                                     <action selector="monthButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jIF-ZA-OYq"/>
                                                 </connections>
@@ -289,12 +316,21 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Y9q-AJ-VGx" secondAttribute="trailing" constant="8" id="2s1-Ve-fMK"/>
                                             <constraint firstAttribute="height" constant="50" id="6e7-CT-IdF"/>
                                             <constraint firstItem="4jd-rP-NhI" firstAttribute="leading" secondItem="Naj-aT-JYO" secondAttribute="leading" constant="16" id="7re-aI-Ogz"/>
-                                            <constraint firstItem="Y9q-AJ-VGx" firstAttribute="centerY" secondItem="Naj-aT-JYO" secondAttribute="centerY" id="D3X-5o-Gsy"/>
+                                            <constraint firstItem="Y9q-AJ-VGx" firstAttribute="leading" secondItem="Naj-aT-JYO" secondAttribute="leading" constant="8" id="Cd0-IV-zee"/>
+                                            <constraint firstItem="Y9q-AJ-VGx" firstAttribute="top" secondItem="Naj-aT-JYO" secondAttribute="top" constant="8" id="Gxs-x5-CPD"/>
                                             <constraint firstItem="4jd-rP-NhI" firstAttribute="centerY" secondItem="Naj-aT-JYO" secondAttribute="centerY" id="XX7-vg-x06"/>
-                                            <constraint firstAttribute="trailing" secondItem="Y9q-AJ-VGx" secondAttribute="trailing" constant="16" id="w7q-q1-yaR"/>
+                                            <constraint firstAttribute="bottom" secondItem="Y9q-AJ-VGx" secondAttribute="bottom" constant="8" id="hoN-1R-wbc"/>
+                                            <constraint firstAttribute="trailing" secondItem="x3b-Dt-Fgq" secondAttribute="trailing" constant="16" id="kNj-RI-2EA"/>
+                                            <constraint firstItem="x3b-Dt-Fgq" firstAttribute="centerY" secondItem="Naj-aT-JYO" secondAttribute="centerY" id="rJc-Gm-v7v"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -327,15 +363,19 @@
                     <connections>
                         <outlet property="monthButton" destination="Y9q-AJ-VGx" id="GS8-h7-DSC"/>
                         <outlet property="monthButtonContainer" destination="Naj-aT-JYO" id="ZiU-b0-hTc"/>
+                        <outlet property="monthImageView" destination="x3b-Dt-Fgq" id="gny-bC-tzk"/>
                         <outlet property="nextButton" destination="g7Q-6D-XcP" id="Asu-vi-0SH"/>
                         <outlet property="progressBar" destination="Ym2-wv-wgh" id="GvM-rU-fkU"/>
                         <outlet property="stepContainer" destination="3Pp-6S-k9w" id="V41-8k-fAI"/>
                         <outlet property="stepContainer_height" destination="5gd-yH-Rat" id="dfk-BN-fLA"/>
+                        <outlet property="supplierpartnernameLabel" destination="ZaE-SL-LVz" id="rdK-SI-m1C"/>
                         <outlet property="titelLabel" destination="d9e-35-IOk" id="5La-g7-689"/>
                         <outlet property="twoWeekButton" destination="GH7-XU-Cj3" id="bnT-NI-XLj"/>
                         <outlet property="twoWeekButtonContainer" destination="KH1-lN-BAA" id="Fkx-8I-dZN"/>
+                        <outlet property="twoWeekImageView" destination="awx-g8-kOp" id="V8g-rk-qr4"/>
                         <outlet property="weekButton" destination="cfI-eE-xLQ" id="MmQ-Tj-kyG"/>
                         <outlet property="weekButtonContainer" destination="MOn-Et-NgK" id="aZd-jP-Ql3"/>
+                        <outlet property="weekImageView" destination="FjE-uM-sN2" id="Ava-eS-yUg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -740,6 +780,7 @@
                         <outlet property="progressBar" destination="9RD-ho-bPx" id="DU3-Mi-Sbq"/>
                         <outlet property="stepContainer" destination="EFm-HI-3eP" id="7NQ-Za-Dq3"/>
                         <outlet property="stepContainer_height" destination="jtZ-Po-fZd" id="zAV-53-4PT"/>
+                        <outlet property="supplierpartnernameLabel" destination="cXT-Tq-4UK" id="VlV-1i-mnK"/>
                         <outlet property="suppliersAvailableDaysLabel" destination="JES-xd-rsc" id="88S-su-7l4"/>
                         <outlet property="titleLabel" destination="E6I-2G-a4Z" id="DfC-D5-BYB"/>
                     </connections>
@@ -1001,8 +1042,10 @@
                         <outlet property="reminderLabel" destination="jk0-L6-5p2" id="QxT-an-Q16"/>
                         <outlet property="secondaryDescLabel" destination="iNT-kc-qdQ" id="qIC-9F-M0p"/>
                         <outlet property="selectOptionButton" destination="ppm-1V-oJ7" id="EY3-ZZ-HR2"/>
+                        <outlet property="selectionLabel" destination="t8s-zV-aug" id="jDV-Rx-7aE"/>
                         <outlet property="stepContainer" destination="a9k-Hm-g89" id="hEc-6S-Ct7"/>
                         <outlet property="stepContainer_height" destination="coY-Qz-DmG" id="507-h9-cwf"/>
+                        <outlet property="supplierpartnernameLabel" destination="uBf-aL-ACs" id="DvQ-gp-POC"/>
                         <outlet property="titleLabel" destination="KuV-JK-EH7" id="Y7i-eK-F6u"/>
                     </connections>
                 </viewController>

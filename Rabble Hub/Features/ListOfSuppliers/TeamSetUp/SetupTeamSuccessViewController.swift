@@ -24,17 +24,10 @@ class SetupTeamSuccessViewController: UIViewController {
         let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
             vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
+            self.present(vc, animated: false)
+            vc.selectedIndex = 3
+            vc.reloadSelectedTab()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
