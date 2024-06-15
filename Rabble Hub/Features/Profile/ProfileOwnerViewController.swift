@@ -17,27 +17,49 @@ class ProfileOwnerViewController: UIViewController {
     @IBOutlet var saveBtn: PrimaryButton!
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
+    
+    private var originalFirstName: String?
+    private var originalLastName: String?
+    private var originalEmail: String?
+    private var originalPhone: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        // Do any additional setup after loading the view.
     }
     
     func loadData() {
-        self.firstName.text = userDataManager.getUserData()?.firstName
-        self.lastName.text = userDataManager.getUserData()?.lastName
-        self.email.text = userDataManager.getUserData()?.email
-        self.phone.text = userDataManager.getUserData()?.phone
+        if let userData = userDataManager.getUserData() {
+            self.firstName.text = userData.firstName
+            self.lastName.text = userData.lastName
+            self.email.text = userData.email
+            self.phone.text = userData.phone
+            
+            // Store original values
+            self.originalFirstName = userData.firstName
+            self.originalLastName = userData.lastName
+            self.originalEmail = userData.email
+            self.originalPhone = userData.phone
+        }
     }
     
     func updateUserRecord() {
-        guard let firstName = firstName.text, let lastName = lastName.text, let email = email.text, let phone = phone.text else {
+        // Unwrap optional text field values
+        guard let currentFirstName = firstName.text,
+              let currentLastName = lastName.text,
+              let currentEmail = email.text,
+              let currentPhone = phone.text else {
             return
         }
         
+        // Compare with original values and set to nil if unchanged
+        let firstNameToSend = currentFirstName == originalFirstName ? nil : currentFirstName
+        let lastNameToSend = currentLastName == originalLastName ? nil : currentLastName
+        let emailToSend = currentEmail == originalEmail ? nil : currentEmail
+        let phoneToSend = currentPhone == originalPhone ? nil : currentPhone
+        
         LoadingViewController.present(from: self)
-        apiProvider.request(.updateUserProfile(firstName: firstName, lastName: lastName, email: email, phone: phone)) { [weak self] result in
+        apiProvider.request(.updateUserRecord(firstName: firstNameToSend, lastName: lastNameToSend, email: emailToSend, phone: phoneToSend)) { [weak self] result in
             guard let self = self else { return }
             
             LoadingViewController.dismiss(from: self)
@@ -58,6 +80,7 @@ class ProfileOwnerViewController: UIViewController {
                 if let user = response.data {
                     updateUserData(with: user)
                     SnackBar().alert(withMessage: response.message, isSuccess: true, parent: view)
+                    NotificationCenter.default.post(name: NSNotification.Name("UserRecordUpdated"), object: nil)
                     self.dismiss(animated: true)
                     
                 } else {
@@ -94,7 +117,6 @@ class ProfileOwnerViewController: UIViewController {
             userData.lastName = userRecord.lastName
             userData.partner?.postalCode = userRecord.postalCode
             userData.stripeCustomerId = userRecord.stripeCustomerId
-//            userData.partner?.id = userRecord.id
             userDataManager.saveUserData(userData)
         }
     }
@@ -106,5 +128,4 @@ class ProfileOwnerViewController: UIViewController {
     @IBAction func backButtonTap(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
 }

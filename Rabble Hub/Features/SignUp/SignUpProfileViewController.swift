@@ -66,7 +66,7 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate  {
         }
         
         LoadingViewController.present(from: self)
-        apiProvider.request(.updateUserRecord(firstName: firstName, lastName: lastName, email: email)) { [weak self] result in
+        apiProvider.request(.updateUserRecord(firstName: firstName, lastName: lastName, email: email, phone: nil)) { [weak self] result in
             guard let self = self else { return }
             
             LoadingViewController.dismiss(from: self)
