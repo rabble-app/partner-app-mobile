@@ -212,10 +212,10 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn9-z0-LW2">
                                 <rect key="frame" x="0.0" y="223" width="393" height="591"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_state_delivery" translatesAutoresizingMaskIntoConstraints="NO" id="oxG-b6-PnJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_state_delivery" translatesAutoresizingMaskIntoConstraints="NO" id="oxG-b6-PnJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="350" id="0yv-Eq-TVa"/>
+                                            <constraint firstAttribute="height" constant="300" id="0yv-Eq-TVa"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Deliveries Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-zm-Jv7">
@@ -225,8 +225,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no inbound deliveries scheduled for today." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-EH-cF7">
-                                        <rect key="frame" x="16" y="337" width="361" height="38.666666666666686"/>
-                                        <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="16"/>
+                                        <rect key="frame" x="16" y="337" width="361" height="38.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
                                         <color key="textColor" name="gray_3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -235,7 +235,7 @@
                                     <constraint firstItem="oxG-b6-PnJ" firstAttribute="top" secondItem="Bn9-z0-LW2" secondAttribute="top" id="2iH-MJ-fLq"/>
                                     <constraint firstItem="l0X-EH-cF7" firstAttribute="top" secondItem="hyH-zm-Jv7" secondAttribute="bottom" constant="8" id="4yP-It-gkq"/>
                                     <constraint firstItem="hyH-zm-Jv7" firstAttribute="leading" secondItem="Bn9-z0-LW2" secondAttribute="leading" constant="16" id="6GD-Xg-SmT"/>
-                                    <constraint firstItem="hyH-zm-Jv7" firstAttribute="top" secondItem="oxG-b6-PnJ" secondAttribute="bottom" constant="-50" id="IwR-Nj-XD7"/>
+                                    <constraint firstItem="hyH-zm-Jv7" firstAttribute="top" secondItem="oxG-b6-PnJ" secondAttribute="bottom" id="IwR-Nj-XD7"/>
                                     <constraint firstItem="l0X-EH-cF7" firstAttribute="leading" secondItem="Bn9-z0-LW2" secondAttribute="leading" constant="16" id="X4G-7K-PGl"/>
                                     <constraint firstAttribute="trailing" secondItem="hyH-zm-Jv7" secondAttribute="trailing" constant="16" id="YOO-V7-hNa"/>
                                     <constraint firstAttribute="trailing" secondItem="oxG-b6-PnJ" secondAttribute="trailing" id="YjD-8S-cRH"/>
@@ -1077,7 +1077,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-jj-xO5">
-                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333331" height="38.666666666666629"/>
+                                <rect key="frame" x="42" y="551.66666666666663" width="309.33333333333326" height="38.666666666666629"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Delivery Checked In!">
                                         <attributes>
