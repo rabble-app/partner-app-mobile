@@ -18,14 +18,19 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate {
     
     private let userDataManager = UserDataManager()
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
-    
     var isFromOnboardingStage = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI() {
         continueButton.isEnabled = false
-        [firstName, lastName, email].forEach { $0.delegate = self }
-        [firstName, lastName, email].forEach { $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged) }
+        [firstName, lastName, email].forEach {
+            $0.delegate = self
+            $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
         backButton.isEnabled = !isFromOnboardingStage
     }
     
@@ -45,7 +50,11 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updateUserRecord() {
-        guard let firstName = firstName.text, let lastName = lastName.text, let email = email.text else { return }
+        guard let firstName = firstName.text,
+              let lastName = lastName.text,
+              let email = email.text else {
+            return
+        }
         
         LoadingViewController.present(from: self)
         apiProvider.request(.updateUserRecord(firstName: firstName, lastName: lastName, email: email, phone: nil)) { [weak self] result in
@@ -54,14 +63,14 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate {
             
             switch result {
             case .success(let response):
-                self.handleSuccessResponse(response)
+                self.handleResponse(response)
             case .failure(let error):
                 self.handleFailure(error)
             }
         }
     }
     
-    private func handleSuccessResponse(_ response: Response) {
+    private func handleResponse(_ response: Response) {
         do {
             let userResponse = try response.map(UpdateUserRecordResponse.self)
             if userResponse.statusCode == 200 || userResponse.statusCode == 201, let user = userResponse.data {
@@ -94,15 +103,14 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updateUserData(with userRecord: UserRecord) {
-        if var userData = userDataManager.getUserData() {
-            userData.firstName = userRecord.firstName
-            userData.lastName = userRecord.lastName
-            userData.email = userRecord.email
-            userData.phone = userRecord.phone
-            userData.partner?.postalCode = userRecord.postalCode
-            userData.stripeCustomerId = userRecord.stripeCustomerId
-            userDataManager.saveUserData(userData)
-        }
+        guard var userData = userDataManager.getUserData() else { return }
+        userData.firstName = userRecord.firstName
+        userData.lastName = userRecord.lastName
+        userData.email = userRecord.email
+        userData.phone = userRecord.phone
+        userData.partner?.postalCode = userRecord.postalCode
+        userData.stripeCustomerId = userRecord.stripeCustomerId
+        userDataManager.saveUserData(userData)
     }
     
     @IBAction func previousStepButtonTap(_ sender: Any) {
