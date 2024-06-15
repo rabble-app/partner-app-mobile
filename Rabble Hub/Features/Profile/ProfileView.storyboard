@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfl-J7-uND">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfl-J7-uND">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -843,6 +843,10 @@
                                     <constraint firstItem="5Wb-ZJ-jV4" firstAttribute="top" secondItem="c7W-xg-j5j" secondAttribute="top" id="ViF-rI-ZNY"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDN-dM-Uoa" userLabel="Popup Background View">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rQT-a3-e1f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -852,9 +856,13 @@
                             <constraint firstItem="HeD-Uu-SuJ" firstAttribute="width" secondItem="J98-JB-Hjf" secondAttribute="width" id="8m0-MX-xRH"/>
                             <constraint firstItem="Xtr-lu-gPP" firstAttribute="leading" secondItem="J98-JB-Hjf" secondAttribute="leading" id="CWe-bj-kEC"/>
                             <constraint firstItem="rQT-a3-e1f" firstAttribute="trailing" secondItem="G4R-Q2-E5r" secondAttribute="trailing" id="Cgx-9T-NIH"/>
+                            <constraint firstItem="SDN-dM-Uoa" firstAttribute="leading" secondItem="rQT-a3-e1f" secondAttribute="leading" id="DnK-jZ-xjz"/>
                             <constraint firstItem="Xtr-lu-gPP" firstAttribute="top" secondItem="0Tg-Tt-ewn" secondAttribute="bottom" constant="8" id="Gmc-Oa-BsJ"/>
                             <constraint firstAttribute="trailing" secondItem="0Tg-Tt-ewn" secondAttribute="trailing" constant="16" id="Os5-4W-7Cn"/>
+                            <constraint firstItem="rQT-a3-e1f" firstAttribute="trailing" secondItem="SDN-dM-Uoa" secondAttribute="trailing" id="RL9-R7-JHn"/>
+                            <constraint firstItem="SDN-dM-Uoa" firstAttribute="top" secondItem="J98-JB-Hjf" secondAttribute="top" id="RUB-NN-4ae"/>
                             <constraint firstItem="c7W-xg-j5j" firstAttribute="trailing" secondItem="rQT-a3-e1f" secondAttribute="trailing" id="cQ3-KL-cSD"/>
+                            <constraint firstAttribute="bottom" secondItem="SDN-dM-Uoa" secondAttribute="bottom" id="hjJ-rl-xE5"/>
                             <constraint firstItem="c7W-xg-j5j" firstAttribute="top" secondItem="Xtr-lu-gPP" secondAttribute="bottom" id="lgD-TE-Svl"/>
                             <constraint firstItem="G4R-Q2-E5r" firstAttribute="top" secondItem="rQT-a3-e1f" secondAttribute="top" id="mlh-7b-RL4"/>
                             <constraint firstItem="rQT-a3-e1f" firstAttribute="bottom" secondItem="c7W-xg-j5j" secondAttribute="bottom" id="pC7-Ey-1Ut"/>
@@ -869,6 +877,7 @@
                         <outlet property="dryStorageTextField" destination="AXP-2d-FpI" id="TIg-9p-6oj"/>
                         <outlet property="fridgeSpaceButton" destination="rcS-qe-W1k" id="AUI-Jd-9wR"/>
                         <outlet property="fridgeSpaceTextField" destination="Pi5-oG-YkK" id="BTj-ru-Jwa"/>
+                        <outlet property="popupBackgroundView" destination="SDN-dM-Uoa" id="ZKU-vX-LfB"/>
                         <outlet property="storeTypeButton" destination="fyh-k2-NJA" id="eRU-WN-Id6"/>
                         <outlet property="storeTypeTextfield" destination="s2K-Ve-LUN" id="wiX-UC-nbD"/>
                     </connections>
