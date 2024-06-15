@@ -108,8 +108,10 @@ class OtpInputViewController: UIViewController {
             offset = window?.safeAreaInsets.bottom ?? 0.0
         }
         
+        let bottomPadding: CGFloat = 8.0
+        
         if (size.height - offset) > self.continueButtonBottomConstraint.constant {
-            self.continueButtonBottomConstraint.constant = size.height - offset
+            self.continueButtonBottomConstraint.constant = size.height - offset + bottomPadding
             view.layoutIfNeeded()
         }
     }

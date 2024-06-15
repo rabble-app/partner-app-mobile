@@ -93,8 +93,10 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
             sOffset = window?.safeAreaInsets.bottom ?? 0.0
         }
         
+        let bottomPadding: CGFloat = 8.0
+        
         if (kSize.height - sOffset) > self.continueButtonBottomConstraint.constant {
-            self.continueButtonBottomConstraint.constant = kSize.height - sOffset
+            self.continueButtonBottomConstraint.constant = kSize.height - sOffset + bottomPadding
             view.layoutIfNeeded()
         }
     }
