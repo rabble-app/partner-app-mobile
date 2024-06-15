@@ -11,17 +11,25 @@ class ProfileMainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = ProfileMainViewModel()
+    var viewModel = ProfileMainViewModel()
     private let userDataManager = UserDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(userRecordUpdated), name: NSNotification.Name("UserRecordUpdated"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
+    
+    @objc func userRecordUpdated() {
+            DispatchQueue.main.async {
+                self.viewModel = ProfileMainViewModel()
+                self.tableView.reloadData()
+            }
+        }
     
     func navigateToLoginScreen() {
 
@@ -97,6 +105,11 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         case .headerUI:
             if let cell = cell as? ProfileStoreInfoTableViewCell {
                 cell.configureCell(menu: self.viewModel.menus[indexPath.row])
+                
+                let word = cell.titleLabel.text?.prefix(1).uppercased()
+                if let firstLetter = word?.first {
+                    cell.initialLabel.text = String(firstLetter).uppercased()
+                }
             }
             break
         case .sectionUI:

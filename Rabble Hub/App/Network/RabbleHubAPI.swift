@@ -12,7 +12,7 @@ public enum RabbleHubAPI {
     case sendOtp(phone: String)
     case verifyOtp(phone: String, sid: String, code: String)
     case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
-    case updateUserRecord(firstName: String, lastName: String, email: String)
+    case updateUserRecord(firstName: String?, lastName: String?, email: String?, phone: String?)
     case getSuppliers(offset: Int, postalId: String)
     case createBuyingTeam(name: String, postalCode: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
     case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
@@ -113,12 +113,26 @@ extension RabbleHubAPI: TargetType {
                 "dryStorageSpace": dryStorageSpace
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .updateUserRecord(let firstName, let lastName, let email):
-            let parameters: [String: Any] = [
-                "firstName": firstName,
-                "lastName": lastName,
-                "email": email
-            ]
+        case .updateUserRecord(let firstName, let lastName, let email, let phone):
+            var parameters: [String: Any] = [:]
+            
+            if let firstName = firstName {
+                parameters["firstName"] = firstName
+            }
+            
+            if let lastName = lastName {
+                parameters["lastName"] = lastName
+            }
+            
+            if let email = email {
+                parameters["email"] = email
+            }
+            
+            if let phone = phone {
+                parameters["phone"] = phone
+            }
+    
+            
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .updateUserOnboardingRecord:
             let parameters: [String: Any] = [
