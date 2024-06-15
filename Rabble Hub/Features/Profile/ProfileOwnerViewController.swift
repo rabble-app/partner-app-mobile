@@ -27,29 +27,29 @@ class ProfileOwnerViewController: UIViewController {
     }
     
     private func loadData() {
-        if let userData = userDataManager.getUserData() {
-            originalUserData = userData
-            firstName.text = userData.firstName
-            lastName.text = userData.lastName
-            email.text = userData.email
-            phone.text = userData.phone
-        }
+        guard let userData = userDataManager.getUserData() else { return }
+        originalUserData = userData
+        populateFields(with: userData)
+    }
+    
+    private func populateFields(with userData: UserData) {
+        firstName.text = userData.firstName
+        lastName.text = userData.lastName
+        email.text = userData.email
+        phone.text = userData.phone
     }
     
     private func updateUserRecord() {
-        guard let currentFirstName = firstName.text,
-              let currentLastName = lastName.text,
-              let currentEmail = email.text,
-              let currentPhone = phone.text,
-              let originalUserData = originalUserData else { return }
-        
-        let firstNameToSend = currentFirstName != originalUserData.firstName ? currentFirstName : nil
-        let lastNameToSend = currentLastName != originalUserData.lastName ? currentLastName : nil
-        let emailToSend = currentEmail != originalUserData.email ? currentEmail : nil
-        let phoneToSend = currentPhone != originalUserData.phone ? currentPhone : nil
+        guard let originalUserData = originalUserData else { return }
+        let fieldsToUpdate = getFieldsToUpdate(originalUserData: originalUserData)
         
         LoadingViewController.present(from: self)
-        apiProvider.request(.updateUserRecord(firstName: firstNameToSend, lastName: lastNameToSend, email: emailToSend, phone: phoneToSend)) { [weak self] result in
+        apiProvider.request(.updateUserRecord(
+            firstName: fieldsToUpdate.firstName,
+            lastName: fieldsToUpdate.lastName,
+            email: fieldsToUpdate.email,
+            phone: fieldsToUpdate.phone
+        )) { [weak self] result in
             guard let self = self else { return }
             LoadingViewController.dismiss(from: self)
             
@@ -60,6 +60,15 @@ class ProfileOwnerViewController: UIViewController {
                 self.handleFailure(error)
             }
         }
+    }
+    
+    private func getFieldsToUpdate(originalUserData: UserData) -> (firstName: String?, lastName: String?, email: String?, phone: String?) {
+        return (
+            firstName: firstName.text != originalUserData.firstName ? firstName.text : nil,
+            lastName: lastName.text != originalUserData.lastName ? lastName.text : nil,
+            email: email.text != originalUserData.email ? email.text : nil,
+            phone: phone.text != originalUserData.phone ? phone.text : nil
+        )
     }
     
     private func handleSuccessResponse(_ response: Response) {
@@ -94,15 +103,14 @@ class ProfileOwnerViewController: UIViewController {
     }
     
     private func updateUserData(with userRecord: UserRecord) {
-        if var userData = userDataManager.getUserData() {
-            userData.firstName = userRecord.firstName
-            userData.lastName = userRecord.lastName
-            userData.email = userRecord.email
-            userData.phone = userRecord.phone
-            userData.partner?.postalCode = userRecord.postalCode
-            userData.stripeCustomerId = userRecord.stripeCustomerId
-            userDataManager.saveUserData(userData)
-        }
+        guard var userData = userDataManager.getUserData() else { return }
+        userData.firstName = userRecord.firstName
+        userData.lastName = userRecord.lastName
+        userData.email = userRecord.email
+        userData.phone = userRecord.phone
+        userData.partner?.postalCode = userRecord.postalCode
+        userData.stripeCustomerId = userRecord.stripeCustomerId
+        userDataManager.saveUserData(userData)
     }
     
     @IBAction func saveChangesButtonTap(_ sender: Any) {
