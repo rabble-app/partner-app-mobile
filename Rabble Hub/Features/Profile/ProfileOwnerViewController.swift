@@ -15,6 +15,7 @@ class ProfileOwnerViewController: UIViewController {
     @IBOutlet var email: RabbleTextField!
     @IBOutlet var phone: RabbleTextField!
     @IBOutlet var saveBtn: PrimaryButton!
+    
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
     
@@ -28,14 +29,13 @@ class ProfileOwnerViewController: UIViewController {
         loadData()
     }
     
-    func loadData() {
+    private func loadData() {
         if let userData = userDataManager.getUserData() {
             self.firstName.text = userData.firstName
             self.lastName.text = userData.lastName
             self.email.text = userData.email
             self.phone.text = userData.phone
             
-            // Store original values
             self.originalFirstName = userData.firstName
             self.originalLastName = userData.lastName
             self.originalEmail = userData.email
@@ -43,8 +43,7 @@ class ProfileOwnerViewController: UIViewController {
         }
     }
     
-    func updateUserRecord() {
-        // Unwrap optional text field values
+    private func updateUserRecord() {
         guard let currentFirstName = firstName.text,
               let currentLastName = lastName.text,
               let currentEmail = email.text,
@@ -52,7 +51,6 @@ class ProfileOwnerViewController: UIViewController {
             return
         }
         
-        // Compare with original values and set to nil if unchanged
         let firstNameToSend = currentFirstName == originalFirstName ? nil : currentFirstName
         let lastNameToSend = currentLastName == originalLastName ? nil : currentLastName
         let emailToSend = currentEmail == originalEmail ? nil : currentEmail
@@ -61,13 +59,12 @@ class ProfileOwnerViewController: UIViewController {
         LoadingViewController.present(from: self)
         apiProvider.request(.updateUserRecord(firstName: firstNameToSend, lastName: lastNameToSend, email: emailToSend, phone: phoneToSend)) { [weak self] result in
             guard let self = self else { return }
-            
             LoadingViewController.dismiss(from: self)
             
             switch result {
-            case let .success(response):
+            case .success(let response):
                 self.handleSuccessResponse(response)
-            case let .failure(error):
+            case .failure(let error):
                 self.handleFailure(error)
             }
         }
@@ -76,18 +73,13 @@ class ProfileOwnerViewController: UIViewController {
     private func handleSuccessResponse(_ response: Response) {
         do {
             let response = try response.map(UpdateUserRecordResponse.self)
-            if response.statusCode == 200 || response.statusCode == 201 {
-                if let user = response.data {
-                    updateUserData(with: user)
-                    SnackBar().alert(withMessage: response.message, isSuccess: true, parent: view)
-                    NotificationCenter.default.post(name: NSNotification.Name("UserRecordUpdated"), object: nil)
-                    self.dismiss(animated: true)
-                    
-                } else {
-                    SnackBar().alert(withMessage: "Failed to update user record", isSuccess: false, parent: view)
-                }
+            if response.statusCode == 200 || response.statusCode == 201, let user = response.data {
+                updateUserData(with: user)
+                SnackBar().alert(withMessage: response.message, isSuccess: true, parent: view)
+                NotificationCenter.default.post(name: NSNotification.Name("UserRecordUpdated"), object: nil)
+                self.dismiss(animated: true)
             } else {
-                SnackBar().alert(withMessage: response.message, isSuccess: false, parent: view)
+                SnackBar().alert(withMessage: "Failed to update user record", isSuccess: false, parent: view)
             }
         } catch {
             handleErrorResponse(response)
@@ -111,10 +103,10 @@ class ProfileOwnerViewController: UIViewController {
     
     private func updateUserData(with userRecord: UserRecord) {
         if var userData = userDataManager.getUserData() {
-            userData.phone = userRecord.phone
-            userData.email = userRecord.email
             userData.firstName = userRecord.firstName
             userData.lastName = userRecord.lastName
+            userData.email = userRecord.email
+            userData.phone = userRecord.phone
             userData.partner?.postalCode = userRecord.postalCode
             userData.stripeCustomerId = userRecord.stripeCustomerId
             userDataManager.saveUserData(userData)
@@ -122,7 +114,7 @@ class ProfileOwnerViewController: UIViewController {
     }
 
     @IBAction func saveChangesButtonTap(_ sender: Any) {
-        self.updateUserRecord()
+        updateUserRecord()
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
