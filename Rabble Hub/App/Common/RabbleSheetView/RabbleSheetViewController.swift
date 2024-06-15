@@ -17,6 +17,7 @@ class RabbleSheetViewController: UIViewController {
     var headerTitle: String?
     var selectedIndex: IndexPath?
     var itemSelected: ((String) -> ())?
+    var dismissed: (() -> ())?
     
     var items: [String]?
     
@@ -24,6 +25,11 @@ class RabbleSheetViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.dismissed?()
     }
     
     func setupUI() {
