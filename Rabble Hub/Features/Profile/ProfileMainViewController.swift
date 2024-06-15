@@ -118,12 +118,7 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
             }
             
             break
-        case .textUI:
-            if let cell = cell as? ProfileMenuTableViewCell {
-                cell.configureCell(menu: self.viewModel.menus[indexPath.row])
-            }
-            break
-        case .switchUI, .infoUI:
+        case .textUI, .switchUI, .infoUI:
             if let cell = cell as? ProfileMenuTableViewCell {
                 cell.configureCell(menu: self.viewModel.menus[indexPath.row])
             }
