@@ -50,18 +50,29 @@ class SignUpProfileViewControllerTests: XCTestCase {
                 "statusCode": 200,
                 "message": "Success",
                 "data": {
-                    "id": "1",
-                    "phone": "1234567890",
-                    "email": "john.doe@example.com",
-                    "firstName": "John",
-                    "lastName": "Doe",
-                    "postalCode": "12345",
-                    "stripeCustomerId": "cust_123",
-                    "imageUrl": null,
-                    "role": "user",
-                    "createdAt": "2024-05-21T00:00:00.000Z",
-                    "updatedAt": "2024-05-21T00:00:00.000Z"
-                }
+                        "id": "1",
+                        "phone": "1234567890",
+                        "email": "john.doe@example.com",
+                        "password": "securepassword123",
+                        "firstName": "John",
+                        "lastName": "Doe",
+                        "postalCode": "12345",
+                        "stripeCustomerId": "cust_123",
+                        "stripeDefaultPaymentMethodId": "pm_123456",
+                        "cardLastFourDigits": "1234",
+                        "imageUrl": null,
+                        "imageKey": "images/12345.png",
+                        "role": "user",
+                        "createdAt": "2024-05-21T00:00:00.000Z",
+                        "updatedAt": "2024-05-21T00:00:00.000Z",
+                        "notificationToken": "token_abc123",
+                        "producer": "Producer Name",
+                        "token": "jwt_token_123",
+                        "onboardingStage": 2,
+                        "employeeCount": {
+                            "count": 50
+                        }
+                    }
             }
         """.data(using: .utf8)!)
         
