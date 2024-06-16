@@ -49,7 +49,7 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func updateUserRecord() {
+    func updateUserRecord() {
         guard let firstName = firstName.text,
               let lastName = lastName.text,
               let email = email.text else {

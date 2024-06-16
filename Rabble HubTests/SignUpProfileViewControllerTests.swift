@@ -13,7 +13,8 @@ class SignUpProfileViewControllerTests: XCTestCase {
 
     var viewController: SignUpProfileViewController!
     var window: UIWindow!
-
+    let userDataManager = UserDataManager()
+    
     override func setUp() {
         super.setUp()
         window = UIWindow()
@@ -77,10 +78,10 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.updateUserRecord()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(UserRecordManager.shared.user)
-            XCTAssertEqual(UserRecordManager.shared.user?.firstName, "John")
-            XCTAssertEqual(UserRecordManager.shared.user?.lastName, "Doe")
-            XCTAssertEqual(UserRecordManager.shared.user?.email, "john.doe@example.com")
+            XCTAssertNotNil(self.userDataManager.getUserData()?.id)
+            XCTAssertEqual(self.userDataManager.getUserData()?.firstName, "John")
+            XCTAssertEqual(self.userDataManager.getUserData()?.lastName, "Doe")
+            XCTAssertEqual(self.userDataManager.getUserData()?.email, "john.doe@example.com")
             expectation.fulfill()
         }
 
@@ -129,10 +130,11 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.nextButtonTap(self)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(UserRecordManager.shared.user)
-            XCTAssertEqual(UserRecordManager.shared.user?.firstName, "John")
-            XCTAssertEqual(UserRecordManager.shared.user?.lastName, "Doe")
-            XCTAssertEqual(UserRecordManager.shared.user?.email, "john.doe@example.com")
+            XCTAssertNotNil(self.userDataManager.getUserData()?.id)
+            XCTAssertEqual(self.userDataManager.getUserData()?.firstName, "John")
+            XCTAssertEqual(self.userDataManager.getUserData()?.lastName, "Doe")
+            XCTAssertEqual(self.userDataManager.getUserData()?.email, "john.doe@example.com")
+            
             XCTAssertNotNil(self.viewController.presentedViewController as? SignUpScheduleViewController)
             expectation.fulfill()
         }
