@@ -23,105 +23,105 @@ class ProfileOwnerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        fetchUserData()
     }
     
-    private func loadData() {
+    private func fetchUserData() {
         guard let userData = userDataManager.getUserData() else { return }
         originalUserData = userData
-        populateFields(with: userData)
+        fillUserFields(with: userData)
     }
     
-    private func populateFields(with userData: UserData) {
+    private func fillUserFields(with userData: UserData) {
         firstName.text = userData.firstName
         lastName.text = userData.lastName
         email.text = userData.email
         phone.text = userData.phone
     }
     
-    private func updateUserRecord() {
-        guard let originalUserData = originalUserData else { return }
-        let fieldsToUpdate = getFieldsToUpdate(originalUserData: originalUserData)
+    private func submitUserUpdates() {
+        guard let originalUser = originalUserData else { return }
+        let updatedFields = extractChangedFields(from: originalUser)
         
         LoadingViewController.present(from: self)
         apiProvider.request(.updateUserRecord(
-            firstName: fieldsToUpdate.firstName,
-            lastName: fieldsToUpdate.lastName,
-            email: fieldsToUpdate.email,
-            phone: fieldsToUpdate.phone
+            firstName: updatedFields.newFirstName,
+            lastName: updatedFields.newLastName,
+            email: updatedFields.newEmail,
+            phone: updatedFields.newPhone
         )) { [weak self] result in
             guard let self = self else { return }
             LoadingViewController.dismiss(from: self)
             
             switch result {
             case .success(let response):
-                self.handleSuccessResponse(response)
+                self.processSuccessResponse(response)
             case .failure(let error):
-                self.handleFailure(error)
+                self.processFailure(error)
             }
         }
     }
     
-    private func getFieldsToUpdate(originalUserData: UserData) -> (firstName: String?, lastName: String?, email: String?, phone: String?) {
+    private func extractChangedFields(from originalUser: UserData) -> (newFirstName: String?, newLastName: String?, newEmail: String?, newPhone: String?) {
         return (
-            firstName: firstName.text != originalUserData.firstName ? firstName.text : nil,
-            lastName: lastName.text != originalUserData.lastName ? lastName.text : nil,
-            email: email.text != originalUserData.email ? email.text : nil,
-            phone: phone.text != originalUserData.phone ? phone.text : nil
+            newFirstName: firstName.text != originalUser.firstName ? firstName.text : nil,
+            newLastName: lastName.text != originalUser.lastName ? lastName.text : nil,
+            newEmail: email.text != originalUser.email ? email.text : nil,
+            newPhone: phone.text != originalUser.phone ? phone.text : nil
         )
     }
     
-    private func handleSuccessResponse(_ response: Response) {
+    private func processSuccessResponse(_ response: Response) {
         do {
-            let userResponse = try response.map(UpdateUserRecordResponse.self)
-            if userResponse.statusCode == 200 || userResponse.statusCode == 201, let user = userResponse.data {
-                updateUserData(with: user)
-                showSnackBar(message: userResponse.message, isSuccess: true)
+            let updateResponse = try response.map(UpdateUserRecordResponse.self)
+            if updateResponse.statusCode == 200 || updateResponse.statusCode == 201, let updatedUser = updateResponse.data {
+                refreshUserData(with: updatedUser)
+                displaySnackBar(message: updateResponse.message, isSuccess: true)
                 NotificationCenter.default.post(name: NSNotification.Name("UserRecordUpdated"), object: nil)
                 dismiss(animated: true)
             } else {
-                showSnackBar(message: "Failed to update user record")
+                displaySnackBar(message: "Failed to update user record")
             }
         } catch {
-            handleErrorResponse(response)
+            processErrorResponse(response)
         }
     }
     
-    private func handleErrorResponse(_ response: Response) {
+    private func processErrorResponse(_ response: Response) {
         do {
             let errorResponse = try response.map(StandardResponse.self)
-            showSnackBar(message: errorResponse.message)
+            displaySnackBar(message: errorResponse.message)
         } catch {
-            showSnackBar(message: "An error occurred")
+            displaySnackBar(message: "An error occurred")
             print("Failed to map response data: \(error)")
         }
     }
     
-    private func handleFailure(_ error: MoyaError) {
-        showSnackBar(message: error.localizedDescription)
+    private func processFailure(_ error: MoyaError) {
+        displaySnackBar(message: error.localizedDescription)
         print("Request failed with error: \(error)")
     }
     
-    private func updateUserData(with userRecord: UserRecord) {
+    private func refreshUserData(with updatedUser: UserRecord) {
         guard var userData = userDataManager.getUserData() else { return }
-        userData.firstName = userRecord.firstName
-        userData.lastName = userRecord.lastName
-        userData.email = userRecord.email
-        userData.phone = userRecord.phone
-        userData.partner?.postalCode = userRecord.postalCode
-        userData.stripeCustomerId = userRecord.stripeCustomerId
+        userData.firstName = updatedUser.firstName
+        userData.lastName = updatedUser.lastName
+        userData.email = updatedUser.email
+        userData.phone = updatedUser.phone
+        userData.partner?.postalCode = updatedUser.postalCode
+        userData.stripeCustomerId = updatedUser.stripeCustomerId
         userDataManager.saveUserData(userData)
     }
     
     @IBAction func saveChangesButtonTap(_ sender: Any) {
-        updateUserRecord()
+        submitUserUpdates()
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
         dismiss(animated: true)
     }
     
-    private func showSnackBar(message: String, isSuccess: Bool = false) {
+    private func displaySnackBar(message: String, isSuccess: Bool = false) {
         SnackBar().alert(withMessage: message, isSuccess: isSuccess, parent: view)
     }
 }
