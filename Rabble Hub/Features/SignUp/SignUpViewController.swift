@@ -161,7 +161,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     private func updateUserDataPostalCode(_ store: Store) {
         let userDataManager = UserDataManager()
         if var userData = userDataManager.getUserData() {
-            userData.postalCode = self.postalCode.text
+            userData.partner?.postalCode = self.postalCode.text
             userData.partner?.id = store.id
             userDataManager.saveUserData(userData)
         }

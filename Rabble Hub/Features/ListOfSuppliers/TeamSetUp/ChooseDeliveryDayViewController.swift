@@ -121,7 +121,7 @@ class ChooseDeliveryDayViewController: UIViewController {
             supplierId = selectedSupplier?.id ?? ""
         }
         
-        let postalCode = userDataManager.getUserData()?.postalCode ?? ""
+        let postalCode = userDataManager.getUserData()?.partner?.postalCode ?? ""
         LoadingViewController.present(from: self)
         apiProvider.request(.getDeliveryDays(supplierId: supplierId, postalCode: postalCode)) { result in
             LoadingViewController.dismiss(from: self)

@@ -34,7 +34,7 @@ class ProducersListViewController: UIViewController {
     }
     
     private func fetchSuppliers() {
-        let postalId: String? = userDataManager.getUserData()?.postalCode
+        let postalId: String? = userDataManager.getUserData()?.partner?.postalCode
 
         apiProvider.request(.getSuppliers(offset: 0, postalId: postalId ?? "")) { result in
             guard let _ = self.presentingViewController else {

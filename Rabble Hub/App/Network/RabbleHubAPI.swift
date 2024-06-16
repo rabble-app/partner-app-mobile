@@ -12,7 +12,7 @@ public enum RabbleHubAPI {
     case sendOtp(phone: String)
     case verifyOtp(phone: String, sid: String, code: String)
     case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
-    case updateUserRecord(firstName: String, lastName: String, email: String)
+    case updateUserRecord(firstName: String?, lastName: String?, email: String?, phone: String?)
     case getSuppliers(offset: Int, postalId: String)
     case createBuyingTeam(name: String, postalCode: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
     case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
@@ -26,6 +26,7 @@ public enum RabbleHubAPI {
     case updateUserOnboardingRecord
     case updateBuyingTeam(teamId: String, name: String, frequency: Int, deliveryDay: String, productLimit: Int)
     case deleteBuyingTeam(teamId: String)
+    case updateUserProfile(firstName: String, lastName: String, email: String, phone: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -41,7 +42,7 @@ extension RabbleHubAPI: TargetType {
             return URLConfig.verifyOtp
         case .saveStoreProfile:
             return URLConfig.saveStoreProfile
-        case .updateUserRecord, .updateUserOnboardingRecord:
+        case .updateUserRecord, .updateUserOnboardingRecord, .updateUserProfile:
             return URLConfig.updateUserRecord
         case .getSuppliers:
             return URLConfig.getSuppliers
@@ -76,7 +77,7 @@ extension RabbleHubAPI: TargetType {
         switch self {
         case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt:
             return .post
-        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam:
+        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateUserProfile:
             return .patch
         case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams:
             return .get
@@ -112,12 +113,26 @@ extension RabbleHubAPI: TargetType {
                 "dryStorageSpace": dryStorageSpace
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .updateUserRecord(let firstName, let lastName, let email):
-            let parameters: [String: Any] = [
-                "firstName": firstName,
-                "lastName": lastName,
-                "email": email
-            ]
+        case .updateUserRecord(let firstName, let lastName, let email, let phone):
+            var parameters: [String: Any] = [:]
+            
+            if let firstName = firstName {
+                parameters["firstName"] = firstName
+            }
+            
+            if let lastName = lastName {
+                parameters["lastName"] = lastName
+            }
+            
+            if let email = email {
+                parameters["email"] = email
+            }
+            
+            if let phone = phone {
+                parameters["phone"] = phone
+            }
+    
+            
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .updateUserOnboardingRecord:
             let parameters: [String: Any] = [
@@ -221,6 +236,14 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .deleteBuyingTeam:
             return .requestPlain
+        case .updateUserProfile(let firstName, let lastName, let email, let phone):
+            let parameters: [String: Any] = [
+                "firstName": firstName,
+                "lastName": lastName,
+                "email": email,
+                "phone": phone
+            ]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

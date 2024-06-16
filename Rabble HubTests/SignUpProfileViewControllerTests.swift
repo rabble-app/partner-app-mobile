@@ -13,7 +13,8 @@ class SignUpProfileViewControllerTests: XCTestCase {
 
     var viewController: SignUpProfileViewController!
     var window: UIWindow!
-
+    let userDataManager = UserDataManager()
+    
     override func setUp() {
         super.setUp()
         window = UIWindow()
@@ -42,31 +43,10 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.firstName.text = "John"
         viewController.lastName.text = "Doe"
         viewController.email.text = "john.doe@example.com"
-
-        // Mock the API response
-        let response = Response(statusCode: 200, data: """
-            {
-                "statusCode": 200,
-                "message": "Success",
-                "data": {
-                    "id": "1",
-                    "phone": "1234567890",
-                    "email": "john.doe@example.com",
-                    "firstName": "John",
-                    "lastName": "Doe",
-                    "postalCode": "12345",
-                    "stripeCustomerId": "cust_123",
-                    "imageUrl": null,
-                    "role": "user",
-                    "createdAt": "2024-05-21T00:00:00.000Z",
-                    "updatedAt": "2024-05-21T00:00:00.000Z"
-                }
-            }
-        """.data(using: .utf8)!)
         
         let provider = MoyaProvider<RabbleHubAPI>(endpointClosure: { (target) -> Endpoint in
             return Endpoint(url: URL(target: target).absoluteString,
-                            sampleResponseClosure: {.networkResponse(200, response.data)},
+                            sampleResponseClosure: {.networkResponse(200, profileRegistrationResponseSample.data)},
                             method: target.method,
                             task: target.task,
                             httpHeaderFields: target.headers)
@@ -77,10 +57,7 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.updateUserRecord()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(UserRecordManager.shared.user)
-            XCTAssertEqual(UserRecordManager.shared.user?.firstName, "John")
-            XCTAssertEqual(UserRecordManager.shared.user?.lastName, "Doe")
-            XCTAssertEqual(UserRecordManager.shared.user?.email, "john.doe@example.com")
+            self.runTestUserData()
             expectation.fulfill()
         }
 
@@ -129,10 +106,8 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.nextButtonTap(self)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(UserRecordManager.shared.user)
-            XCTAssertEqual(UserRecordManager.shared.user?.firstName, "John")
-            XCTAssertEqual(UserRecordManager.shared.user?.lastName, "Doe")
-            XCTAssertEqual(UserRecordManager.shared.user?.email, "john.doe@example.com")
+            self.runTestUserData()
+            
             XCTAssertNotNil(self.viewController.presentedViewController as? SignUpScheduleViewController)
             expectation.fulfill()
         }
@@ -140,6 +115,13 @@ class SignUpProfileViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 
+    func runTestUserData() {
+        XCTAssertNotNil(self.userDataManager.getUserData()?.id)
+        XCTAssertEqual(self.userDataManager.getUserData()?.firstName, "John")
+        XCTAssertEqual(self.userDataManager.getUserData()?.lastName, "Doe")
+        XCTAssertEqual(self.userDataManager.getUserData()?.email, "john.doe@example.com")
+    }
+    
     func testPreviousStepButtonTap() {
         viewController.previousStepButtonTap(self)
         XCTAssertNil(viewController.presentedViewController)

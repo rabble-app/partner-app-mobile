@@ -29,7 +29,7 @@ struct Supplier: Codable {
     let userId: String
     let salesEmail: String?
     let minimumTreshold: String
-    let count: Count
+    let count: BuyingTeamCount
     let imageKey: String?
     let website: String?
     let createdAt: String
@@ -40,7 +40,7 @@ struct Supplier: Codable {
         case count = "_count"
     }
     
-    struct Count: Codable {
+    struct BuyingTeamCount: Codable {
         let buyingteams: Int
     }
     

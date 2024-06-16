@@ -9,19 +9,27 @@ import UIKit
 
 class ProfileMainViewController: UIViewController {
 
-    @IBOutlet var email: UILabel!
-    @IBOutlet var storeName: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    let viewModel = ProfileMainViewModel()
+    
+    var viewModel = ProfileMainViewModel()
     private let userDataManager = UserDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(userRecordUpdated), name: NSNotification.Name("UserRecordUpdated"), object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
+    
+    @objc func userRecordUpdated() {
+            DispatchQueue.main.async {
+                self.viewModel = ProfileMainViewModel()
+                self.tableView.reloadData()
+            }
+        }
     
     func navigateToLoginScreen() {
 
@@ -96,8 +104,12 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         switch mode {
         case .headerUI:
             if let cell = cell as? ProfileStoreInfoTableViewCell {
-                cell.titleLabel.text = userDataManager.getUserData()?.partner?.name
-                cell.subtitleLabel.text = userDataManager.getUserData()?.email
+                cell.configureCell(menu: self.viewModel.menus[indexPath.row])
+                
+                let word = cell.titleLabel.text?.prefix(1).uppercased()
+                if let firstLetter = word?.first {
+                    cell.initialLabel.text = String(firstLetter).uppercased()
+                }
             }
             break
         case .sectionUI:
@@ -106,20 +118,7 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
             }
             
             break
-        case .textUI:
-            if let cell = cell as? ProfileMenuTableViewCell {
-                cell.configureCell(menu: self.viewModel.menus[indexPath.row])
-                if indexPath.row == 1 {
-                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.firstName ?? "") \(userDataManager.getUserData()?.lastName ?? "")"
-                }else if indexPath.row == 2 {
-                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.postalCode ?? "")"
-                }else if indexPath.row == 3 {
-                    //Open hours
-                    cell.subtitleLabel.text = "\(userDataManager.getUserData()?.postalCode ?? "")"
-                }
-            }
-            break
-        case .switchUI, .infoUI:
+        case .textUI, .switchUI, .infoUI:
             if let cell = cell as? ProfileMenuTableViewCell {
                 cell.configureCell(menu: self.viewModel.menus[indexPath.row])
             }
