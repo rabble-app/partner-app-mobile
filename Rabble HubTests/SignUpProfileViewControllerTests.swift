@@ -89,10 +89,7 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.updateUserRecord()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(self.userDataManager.getUserData()?.id)
-            XCTAssertEqual(self.userDataManager.getUserData()?.firstName, "John")
-            XCTAssertEqual(self.userDataManager.getUserData()?.lastName, "Doe")
-            XCTAssertEqual(self.userDataManager.getUserData()?.email, "john.doe@example.com")
+            self.runTestUserData()
             expectation.fulfill()
         }
 
@@ -141,10 +138,7 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.nextButtonTap(self)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(self.userDataManager.getUserData()?.id)
-            XCTAssertEqual(self.userDataManager.getUserData()?.firstName, "John")
-            XCTAssertEqual(self.userDataManager.getUserData()?.lastName, "Doe")
-            XCTAssertEqual(self.userDataManager.getUserData()?.email, "john.doe@example.com")
+            self.runTestUserData()
             
             XCTAssertNotNil(self.viewController.presentedViewController as? SignUpScheduleViewController)
             expectation.fulfill()
@@ -153,6 +147,13 @@ class SignUpProfileViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 
+    func runTestUserData() {
+        XCTAssertNotNil(self.userDataManager.getUserData()?.id)
+        XCTAssertEqual(self.userDataManager.getUserData()?.firstName, "John")
+        XCTAssertEqual(self.userDataManager.getUserData()?.lastName, "Doe")
+        XCTAssertEqual(self.userDataManager.getUserData()?.email, "john.doe@example.com")
+    }
+    
     func testPreviousStepButtonTap() {
         viewController.previousStepButtonTap(self)
         XCTAssertNil(viewController.presentedViewController)
