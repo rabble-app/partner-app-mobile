@@ -43,42 +43,10 @@ class SignUpProfileViewControllerTests: XCTestCase {
         viewController.firstName.text = "John"
         viewController.lastName.text = "Doe"
         viewController.email.text = "john.doe@example.com"
-
-        // Mock the API response
-        let response = Response(statusCode: 200, data: """
-            {
-                "statusCode": 200,
-                "message": "Success",
-                "data": {
-                        "id": "1",
-                        "phone": "1234567890",
-                        "email": "john.doe@example.com",
-                        "password": "securepassword123",
-                        "firstName": "John",
-                        "lastName": "Doe",
-                        "postalCode": "12345",
-                        "stripeCustomerId": "cust_123",
-                        "stripeDefaultPaymentMethodId": "pm_123456",
-                        "cardLastFourDigits": "1234",
-                        "imageUrl": null,
-                        "imageKey": "images/12345.png",
-                        "role": "user",
-                        "createdAt": "2024-05-21T00:00:00.000Z",
-                        "updatedAt": "2024-05-21T00:00:00.000Z",
-                        "notificationToken": "token_abc123",
-                        "producer": "Producer Name",
-                        "token": "jwt_token_123",
-                        "onboardingStage": 2,
-                        "employeeCount": {
-                            "count": 50
-                        }
-                    }
-            }
-        """.data(using: .utf8)!)
         
         let provider = MoyaProvider<RabbleHubAPI>(endpointClosure: { (target) -> Endpoint in
             return Endpoint(url: URL(target: target).absoluteString,
-                            sampleResponseClosure: {.networkResponse(200, response.data)},
+                            sampleResponseClosure: {.networkResponse(200, profileRegistrationResponseSample.data)},
                             method: target.method,
                             task: target.task,
                             httpHeaderFields: target.headers)
