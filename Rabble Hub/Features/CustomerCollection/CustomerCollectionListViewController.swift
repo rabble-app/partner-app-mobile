@@ -72,9 +72,10 @@ class CustomerCollectionListViewController: UIViewController {
         let id: String? = userDataManager.getUserData()?.partner?.id
 
         if let storeId = id {
+            self.showLoadingIndicator()
             apiProvider.request(.getCustomerCollection(storeId: storeId, offset: 0, period: period, search: searchStr)) { result in
-
                 self.handleSuppliersResponse(result)
+                self.dismissLoadingIndicator()
             }
         } else {
             // Handle the case where both ids are nil, if necessary

@@ -105,7 +105,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func fetchSuppliers() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.saveStoreProfile(name: storeName.text ?? "",
                                               postalCode: postalCode.text ?? "",
                                               city: city.text ?? "",
@@ -115,7 +115,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                                               shelfSpace: shelfSpace.text ?? "",
                                               dryStorageSpace: dryStorageSpace.text ?? "")) { [weak self] result in
             guard let self = self else { return }
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             switch result {
             case .success(let response):
                 self.handleResponse(response)

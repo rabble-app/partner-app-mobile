@@ -146,9 +146,9 @@ class OtpInputViewController: UIViewController {
     }
     
     func verifyOTP() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.verifyOtp(phone: phoneNumber, sid: sid, code: code)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             switch result {
             case let .success(response):
                 self.handleSuccessResponse(response, modelType: VerifyOTPResponse.self) { response in
@@ -243,9 +243,9 @@ class OtpInputViewController: UIViewController {
     }
     
     func sendOTP() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.sendOtp(phone: phoneNumber)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             switch result {
             case let .success(response):
                 self.handleSuccessResponse(response, modelType: SendOTPResponse.self) { response in

@@ -27,6 +27,7 @@ public enum RabbleHubAPI {
     case updateBuyingTeam(teamId: String, name: String, frequency: Int, deliveryDay: String, productLimit: Int)
     case deleteBuyingTeam(teamId: String)
     case updateUserProfile(firstName: String, lastName: String, email: String, phone: String)
+    case getStoreInformation(partnerId: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -70,6 +71,8 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.updateBuyingTeam)/\(teamId)"
         case .deleteBuyingTeam(let teamId):
             return "\(URLConfig.deleteBuyingTeam)/\(teamId)"
+        case .getStoreInformation(let partnerId):
+            return "\(URLConfig.getStoreInformation)/\(partnerId)"
         }
     }
     
@@ -79,7 +82,7 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateUserProfile:
             return .patch
-        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams:
+        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams, .getStoreInformation:
             return .get
         case .deleteMember, .deleteBuyingTeam:
             return .delete
@@ -244,6 +247,8 @@ extension RabbleHubAPI: TargetType {
                 "phone": phone
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .getStoreInformation:
+            return .requestPlain
         }
     }
     

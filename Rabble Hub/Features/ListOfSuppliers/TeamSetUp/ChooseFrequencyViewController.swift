@@ -105,9 +105,9 @@ class ChooseFrequencyViewController: UIViewController {
               let deliveryDay = partnerTeam?.deliveryDay,
               let productLimit = partnerTeam?.productLimit.toInt() else { return }
         
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequencyInSeconds, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             switch result {
             case let .success(response):
                 self.handleSuccessResponse(response, frequencyInSeconds)

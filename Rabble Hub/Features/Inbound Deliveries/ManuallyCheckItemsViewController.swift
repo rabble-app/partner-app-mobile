@@ -114,13 +114,13 @@ class ManuallyCheckItemsViewController: UIViewController {
     }
     
     func checkInStore() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
    
         guard let storeId = UserDataManager().getUserData()?.partner?.id,
               let orderId = inboundDeliveryDetail?.id,
               let orders = self.orderDetails
         else {
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             return
         }
         
@@ -130,7 +130,7 @@ class ManuallyCheckItemsViewController: UIViewController {
         }
         let products = OrderDetailsProcessor.getProductIdsAndQuantities(from: orders)
         if products.count == 0 {
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             return
         }
         
@@ -140,7 +140,7 @@ class ManuallyCheckItemsViewController: UIViewController {
             products: products,
             note: noteTextView.text,
             file: imageData)) { result in
-                LoadingViewController.dismiss(from: self)
+                self.dismissLoadingIndicator()
                 self.handleResponse(result)
             }
     }

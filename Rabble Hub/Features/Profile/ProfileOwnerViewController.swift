@@ -43,7 +43,7 @@ class ProfileOwnerViewController: UIViewController {
         guard let originalUser = originalUserData else { return }
         let updatedFields = extractChangedFields(from: originalUser)
         
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.updateUserRecord(
             firstName: updatedFields.newFirstName,
             lastName: updatedFields.newLastName,
@@ -51,7 +51,7 @@ class ProfileOwnerViewController: UIViewController {
             phone: updatedFields.newPhone
         )) { [weak self] result in
             guard let self = self else { return }
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             
             switch result {
             case .success(let response):

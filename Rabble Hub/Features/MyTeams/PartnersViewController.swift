@@ -44,10 +44,10 @@ class PartnersViewController: UIViewController {
     
     
     private func fetchPartnerTeams() {
-       // LoadingViewController.present(from: self)
+       self.showLoadingIndicator()
         let id = userDataManager.getUserData()?.id ?? ""
         apiProvider.request(.getPartnerTeams(storeId: id)) { result in
-         //   LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleSuppliersResponse(result)
         }
     } 

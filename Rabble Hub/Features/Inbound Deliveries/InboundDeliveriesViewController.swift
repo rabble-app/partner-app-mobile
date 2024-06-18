@@ -72,10 +72,10 @@ class InboundDeliveriesViewController: UIViewController {
     
     
     func fetchInboundDelivery() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         let id = userDataManager.getUserData()?.partner?.id ?? ""
         apiProvider.request(.getInboundDelivery(storeId: id, offset: 0, period: period, search: searchStr)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleSuppliersResponse(result)
         }
     }

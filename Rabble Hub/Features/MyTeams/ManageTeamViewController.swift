@@ -85,9 +85,9 @@ class ManageTeamViewController: UIViewController {
     }
     
     private func deleteMember(_ member: Member) {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.deleteMember(id: member.id)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleSuppliersResponse(result)
         }
     }
@@ -150,14 +150,14 @@ class ManageTeamViewController: UIViewController {
     }
     
     func deleteTeam() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         guard let teamId = partnerTeam?.id else {
             return
         }
         
         apiProvider.request(.deleteBuyingTeam(teamId: teamId)) { result in
             self.handleDeleteTeamResponse(result)
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
         }
     }
     
