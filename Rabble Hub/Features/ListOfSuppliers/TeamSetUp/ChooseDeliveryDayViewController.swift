@@ -122,9 +122,9 @@ class ChooseDeliveryDayViewController: UIViewController {
         }
         
         let postalCode = userDataManager.getUserData()?.partner?.postalCode ?? ""
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.getDeliveryDays(supplierId: supplierId, postalCode: postalCode)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleDeliveryDaysResponse(result)
         }
     }
@@ -190,9 +190,9 @@ class ChooseDeliveryDayViewController: UIViewController {
               let deliveryDay = selectedDate?.getDayOfWeek()?.rawValue,
               let productLimit = partnerTeam?.productLimit.toInt() else { return }
         
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequency, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleUpdateResponse(result, deliveryDay: deliveryDay)
         }
     }

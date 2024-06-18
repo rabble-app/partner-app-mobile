@@ -55,10 +55,10 @@ class SignUpAgreementViewController: UIViewController, PaymentPopUpDelegate {
     }
     
     private func updateUserRecord() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.updateUserOnboardingRecord) { [weak self] result in
             guard let self = self else { return }
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             
             switch result {
             case .success(let response):

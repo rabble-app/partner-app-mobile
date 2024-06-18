@@ -131,9 +131,9 @@ class SignUpScheduleViewController: UIViewController {
             param = self.allTheTimeSched
         }
         
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.addStoreHours(customOpenHoursModel: param)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             switch result {
             case let .success(response):
                 // Handle successful response

@@ -102,9 +102,9 @@ class CreateALimitViewController: UIViewController {
             productLimit = limit.components(separatedBy: " ").first?.toInt()
         }
         
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequency, deliveryDay: deliveryDay, productLimit: productLimit!)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleUpdateResponse(result, productLimit: productLimit)
         }
     }
@@ -148,7 +148,7 @@ class CreateALimitViewController: UIViewController {
             productLimit = limit.components(separatedBy: " ").first ?? "100"
         }
         
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         
         apiProvider.request(.createBuyingTeam(
             name: "\(selectedSupplier?.businessName ?? "")@\(partnerName)",
@@ -163,7 +163,7 @@ class CreateALimitViewController: UIViewController {
             nextDeliveryDate: deliveryDateStr,
             orderCutOffDate: nextCutOffDateStr
         )) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleCreateResponse(result)
         }
     }

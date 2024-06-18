@@ -46,8 +46,10 @@ class ProfilePartnerDetailsViewController: UIViewController {
    
     private func fetchPartnerDetails() {
         guard let partner = userDataManager.getUserData()?.partner else { return }
+        self.showLoadingIndicator()
         apiProvider.request(.getStoreInformation(partnerId: partner.id)) { result in
             self.handleSuppliersResponse(result)
+            self.dismissLoadingIndicator()
         }
     }
     

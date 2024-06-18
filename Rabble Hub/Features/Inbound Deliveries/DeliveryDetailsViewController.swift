@@ -67,10 +67,10 @@ class DeliveryDetailsViewController: UIViewController {
     private func fetchInboundDeliveryDetails() {
         guard let id = inboundDeliveryDetail?.team.id else { return }
         
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         
         apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleSuppliersResponse(result)
         }
     }

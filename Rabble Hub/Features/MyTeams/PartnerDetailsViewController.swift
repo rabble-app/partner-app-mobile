@@ -96,9 +96,9 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     private func fetchPartnerDetails() {
         guard let id = partnerTeam?.id else { return }
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             self.handleSuppliersResponse(result)
         }
     }

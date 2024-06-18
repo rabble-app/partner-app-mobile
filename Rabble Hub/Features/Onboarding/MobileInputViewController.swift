@@ -184,11 +184,11 @@ class MobileInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     func sendOTP() {
-        LoadingViewController.present(from: self)
+        self.showLoadingIndicator()
         guard let phoneNumber = phoneNumberTextfield.text, let dialCode = codeLabel.text else { return }
         self.phoneNumber = "\(dialCode)\(phoneNumber)"
         apiProvider.request(.sendOtp(phone: self.phoneNumber)) { result in
-            LoadingViewController.dismiss(from: self)
+            self.dismissLoadingIndicator()
             switch result {
             case let .success(response):
                 self.handleSuccessResponse(response)
