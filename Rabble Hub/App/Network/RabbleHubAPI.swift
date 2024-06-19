@@ -30,6 +30,7 @@ public enum RabbleHubAPI {
     case getStoreInformation(partnerId: String)
     case getStoreOpenHours(partnerId: String)
     case updateStoreHours(storeId: String, customOpenHoursModel: CustomOpenHoursModel?)
+    case updateStoreProfile(storeId: String, name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -79,6 +80,8 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.getStoreOpenHours)/\(partnerId)"
         case .updateStoreHours(let storeId, _):
             return "\(URLConfig.updateStoreHours)/\(storeId)/open-hour"
+        case .updateStoreProfile(let storeId, _, _, _, _, _, _, _, _):
+            return "\(URLConfig.updateStoreHours)/\(storeId)"
         }
     }
     
@@ -86,7 +89,7 @@ extension RabbleHubAPI: TargetType {
         switch self {
         case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt:
             return .post
-        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateUserProfile:
+        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateUserProfile, .updateStoreProfile:
             return .patch
         case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams, .getStoreInformation, .getStoreOpenHours:
             return .get
@@ -265,6 +268,20 @@ extension RabbleHubAPI: TargetType {
             return .requestPlain
         case .updateStoreHours(_, let customOpenHoursModel):
             return .requestParameters(parameters: (customOpenHoursModel?.asUpdateDictionary())!, encoding: JSONEncoding.default)
+        case .updateStoreProfile( let storeId, let name, let postalCode, let city, let streetAddress, let direction, let storeType, let shelfSpace, let dryStorageSpace):
+            
+            let parameters: [String: Any] = [
+                "name": name,
+                "postalCode": postalCode,
+                "city": city,
+                "streetAddress": streetAddress,
+                "direction": direction,
+                "storeType": storeType,
+                "shelfSpace": shelfSpace,
+                "dryStorageSpace": dryStorageSpace
+            ]
+            
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

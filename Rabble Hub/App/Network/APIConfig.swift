@@ -46,4 +46,5 @@ struct URLConfig {
     static let getStoreInformation = "/store/profile"
     static let getStoreOpenHours = "/store/open-hours"
     static let updateStoreHours = "/store"
+    static let updateStoreProfile = "/store"
 }

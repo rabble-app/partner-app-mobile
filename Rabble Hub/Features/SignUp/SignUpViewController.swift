@@ -68,7 +68,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
-        fetchSuppliers()
+        saveStoreProfile()
     }
     
     @IBAction func storeTypeButtonTapped(_ sender: Any) {
@@ -104,7 +104,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         present(rabbleSheetViewController, animated: true, completion: nil)
     }
     
-    private func fetchSuppliers() {
+    private func saveStoreProfile() {
         self.showLoadingIndicator()
         apiProvider.request(.saveStoreProfile(name: storeName.text ?? "",
                                               postalCode: postalCode.text ?? "",

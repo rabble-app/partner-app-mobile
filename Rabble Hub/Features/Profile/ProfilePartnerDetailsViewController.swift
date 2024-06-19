@@ -160,10 +160,84 @@ class ProfilePartnerDetailsViewController: UIViewController {
     }
 
     @IBAction func saveChangesButtonTap(_ sender: Any) {
+        saveStoreProfile()
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("UserRecordUpdated"), object: nil)
         self.dismiss(animated: true)
+    }
+    
+    private func saveStoreProfile() {
+        self.showLoadingIndicator()
+        let userDataManager = UserDataManager()
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+        apiProvider.request(.updateStoreProfile(storeId: storeId,
+                                              name: storeNameTextField.text ?? "",
+                                              postalCode: postalCodeTextField.text ?? "",
+                                              city: cityTextField.text ?? "",
+                                              streetAddress: streetAddressTextField.text ?? "",
+                                              direction: directionsTextView.text ?? "",
+                                              storeType: storeTypeTextfield.text ?? "",
+                                              shelfSpace: fridgeSpaceTextField.text ?? "",
+                                              dryStorageSpace: dryStorageTextField.text ?? "")) { [weak self] result in
+            guard let self = self else { return }
+            self.dismissLoadingIndicator()
+            switch result {
+            case .success(let response):
+                self.handleResponse(response)
+            case .failure(let error):
+                self.handleError(error)
+            }
+        }
+    }
+    
+    private func handleResponse(_ response: Response) {
+        do {
+            let mappedResponse = try response.map(SaveStoreProfileResponse.self)
+            if mappedResponse.statusCode == 200 || mappedResponse.statusCode == 201 {
+                guard let store = mappedResponse.data else { return }
+                SnackBar().alert(withMessage: mappedResponse.message, isSuccess: true, parent: self.view)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.updateUserDataPostalCode(store)
+                }
+            } else {
+                self.handleErrorResponse(response)
+            }
+        } catch {
+            self.handleErrorResponse(response)
+        }
+    }
+    
+    private func handleError(_ error: Error) {
+        SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
+        print("Request failed with error: \(error)")
+    }
+    
+    private func handleErrorResponse(_ response: Response) {
+        do {
+            let response = try response.map(StandardResponse.self)
+            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
+        } catch {
+            SnackBar().alert(withMessage: "An error has occurred", isSuccess: false, parent: self.view)
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func updateUserDataPostalCode(_ store: Store) {
+        let userDataManager = UserDataManager()
+        if var userData = userDataManager.getUserData() {
+            // Check if partner is nil, if so, initialize it
+            if userData.partner == nil {
+                userData.partner = PartnerData(id: store.id, openHours: userData.partner?.openHours, name: store.name, postalCode: self.postalCodeTextField.text)
+            } else {
+                // Update existing partner data
+                userData.partner?.postalCode = self.postalCodeTextField.text
+                userData.partner?.id = store.id
+            }
+            
+            userDataManager.saveUserData(userData)
+        }
     }
 }
 
