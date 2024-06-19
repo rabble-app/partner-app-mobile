@@ -31,6 +31,7 @@ public enum RabbleHubAPI {
     case getStoreOpenHours(partnerId: String)
     case updateStoreHours(storeId: String, customOpenHoursModel: CustomOpenHoursModel?)
     case updateStoreProfile(storeId: String, name: String?, postalCode: String?, city: String?, streetAddress: String?, direction: String?, storeType: String?, shelfSpace: String?, dryStorageSpace: String?)
+    case getEmployees(storeId: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -82,6 +83,8 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.updateStoreHours)/\(storeId)/open-hour"
         case .updateStoreProfile(let storeId, _, _, _, _, _, _, _, _):
             return "\(URLConfig.updateStoreHours)/\(storeId)"
+        case .getEmployees(let storeId):
+            return "\(URLConfig.getEmployees)/\(storeId)/employees"
         }
     }
     
@@ -91,7 +94,7 @@ extension RabbleHubAPI: TargetType {
             return .post
         case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateUserProfile, .updateStoreProfile:
             return .patch
-        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams, .getStoreInformation, .getStoreOpenHours:
+        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams, .getStoreInformation, .getStoreOpenHours, .getEmployees:
             return .get
         case .updateStoreHours:
             return .put
@@ -270,17 +273,6 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: (customOpenHoursModel?.asUpdateDictionary())!, encoding: JSONEncoding.default)
         case .updateStoreProfile( let storeId, let name, let postalCode, let city, let streetAddress, let direction, let storeType, let shelfSpace, let dryStorageSpace):
             
-//            let parameters: [String: Any] = [
-//                "name": name,
-//                "postalCode": postalCode,
-//                "city": city,
-//                "streetAddress": streetAddress,
-//                "direction": direction,
-//                "storeType": storeType,
-//                "shelfSpace": shelfSpace,
-//                "dryStorageSpace": dryStorageSpace
-//            ]
-            
             var parameters: [String: Any] = [:]
             
             if let name = name {
@@ -317,6 +309,9 @@ extension RabbleHubAPI: TargetType {
     
             
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case .getEmployees(storeId: _):
+            return .requestPlain
         }
     }
     

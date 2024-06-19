@@ -6,18 +6,27 @@
 //
 
 import UIKit
+import Moya
 
 class ManageEmployeeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var emptyStateContainer: UIView!
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
+    var employees = [Employee]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        self.emptyStateContainer.isHidden = true
         self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.getEmployees()
     }
     
     @IBAction func addEmployeeButtonTap(_ sender: Any) {
@@ -35,12 +44,73 @@ class ManageEmployeeViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    private func getEmployees() {
+       self.showLoadingIndicator()
+        let id = userDataManager.getUserData()?.id ?? ""
+        apiProvider.request(.getEmployees(storeId: id)) { result in
+            self.dismissLoadingIndicator()
+            self.handleSuppliersResponse(result)
+        }
+    }
+    
+    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            self.handleSuccessResponse(response)
+        case .failure(let error):
+            self.showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessResponse(_ response: Response) {
+        do {
+            let employeesResponse = try response.map(GetEmployeesResponse.self)
+            if employeesResponse.statusCode == 200 {
+                //MARK: Update table and reload
+                self.updateEmployees(employeesResponse.data)
+            } else {
+                self.showError(employeesResponse.message)
+            }
+        } catch {
+            self.handleMappingError(response)
+        }
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            self.showError(errorResponse.message)
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
+    }
+    
+    private func updateEmployees(_ employees: [Employee]) {
+        self.employees = employees
+        if employees.count > 0 {
+            self.emptyStateContainer.isHidden = true
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }else{
+            self.showEmptyState()
+        }
+    }
+    
+    private func showEmptyState() {
+        self.tableView.isHidden = true
+        self.emptyStateContainer.isHidden = false
+    }
+    
 }
 
 extension ManageEmployeeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return employees.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -3,13 +3,16 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GoshaSansBold.otf">
+            <string>GoshaSans-Bold</string>
+        </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Regular</string>
         </array>
@@ -75,27 +78,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjL-Pr-oVb">
                                 <rect key="frame" x="0.0" y="157" width="393" height="661"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1M-6U-vFP" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="595" width="361" height="50"/>
-                                        <color key="backgroundColor" name="button_primary"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="tAJ-O1-NW2"/>
-                                        </constraints>
-                                        <color key="tintColor" name="button_title_color"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Add Employee">
-                                                    <attributes>
-                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="addEmployeeButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e45-UG-z6r"/>
-                                        </connections>
-                                    </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="noS-gN-huy">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="587"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,15 +165,75 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-kG-v3f">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="529"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_state_members" translatesAutoresizingMaskIntoConstraints="NO" id="ACi-Jk-snw">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="350" id="LLj-z4-b34"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Employees Added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYd-fj-Lxy">
+                                                <rect key="frame" x="16" y="300" width="361" height="29"/>
+                                                <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start by adding your team members." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buZ-Lb-1iw">
+                                                <rect key="frame" x="16" y="337" width="361" height="19.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="GoshaSans-Bold" family="Gosha Sans" pointSize="16"/>
+                                                <color key="textColor" name="gray_3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="buZ-Lb-1iw" firstAttribute="top" secondItem="CYd-fj-Lxy" secondAttribute="bottom" constant="8" id="2Ni-Am-nIp"/>
+                                            <constraint firstItem="CYd-fj-Lxy" firstAttribute="centerX" secondItem="rXn-kG-v3f" secondAttribute="centerX" id="3dT-B0-MC4"/>
+                                            <constraint firstItem="CYd-fj-Lxy" firstAttribute="leading" secondItem="rXn-kG-v3f" secondAttribute="leading" constant="16" id="MdS-bz-IBI"/>
+                                            <constraint firstAttribute="trailing" secondItem="buZ-Lb-1iw" secondAttribute="trailing" constant="16" id="Wil-rI-WYv"/>
+                                            <constraint firstItem="CYd-fj-Lxy" firstAttribute="top" secondItem="ACi-Jk-snw" secondAttribute="bottom" constant="-50" id="XbF-hl-Y2b"/>
+                                            <constraint firstItem="ACi-Jk-snw" firstAttribute="leading" secondItem="rXn-kG-v3f" secondAttribute="leading" id="clH-A8-d7J"/>
+                                            <constraint firstAttribute="trailing" secondItem="CYd-fj-Lxy" secondAttribute="trailing" constant="16" id="de1-Pr-0oh"/>
+                                            <constraint firstItem="ACi-Jk-snw" firstAttribute="top" secondItem="rXn-kG-v3f" secondAttribute="top" id="hEj-O7-nLt"/>
+                                            <constraint firstItem="buZ-Lb-1iw" firstAttribute="leading" secondItem="rXn-kG-v3f" secondAttribute="leading" constant="16" id="hGn-4n-EgO"/>
+                                            <constraint firstAttribute="trailing" secondItem="ACi-Jk-snw" secondAttribute="trailing" id="jUZ-RO-7PZ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1M-6U-vFP" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="595" width="361" height="50"/>
+                                        <color key="backgroundColor" name="button_primary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="tAJ-O1-NW2"/>
+                                        </constraints>
+                                        <color key="tintColor" name="button_title_color"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Add Employee">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="addEmployeeButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e45-UG-z6r"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="background_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="noS-gN-huy" secondAttribute="trailing" id="5Vy-2p-UUn"/>
+                                    <constraint firstItem="rXn-kG-v3f" firstAttribute="leading" secondItem="ZjL-Pr-oVb" secondAttribute="leading" id="DGX-C9-Rsh"/>
                                     <constraint firstAttribute="bottom" secondItem="V1M-6U-vFP" secondAttribute="bottom" constant="16" id="TVr-aT-0bg"/>
                                     <constraint firstItem="noS-gN-huy" firstAttribute="top" secondItem="ZjL-Pr-oVb" secondAttribute="top" id="Vny-yP-HmZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="rXn-kG-v3f" secondAttribute="trailing" id="YfK-md-jqG"/>
                                     <constraint firstItem="noS-gN-huy" firstAttribute="leading" secondItem="ZjL-Pr-oVb" secondAttribute="leading" id="eFZ-lH-cig"/>
+                                    <constraint firstItem="V1M-6U-vFP" firstAttribute="top" secondItem="rXn-kG-v3f" secondAttribute="bottom" constant="16" id="fJp-gD-u8e"/>
                                     <constraint firstAttribute="trailing" secondItem="V1M-6U-vFP" secondAttribute="trailing" constant="16" id="jnY-Oq-I6D"/>
                                     <constraint firstItem="V1M-6U-vFP" firstAttribute="leading" secondItem="ZjL-Pr-oVb" secondAttribute="leading" constant="16" id="qQn-I3-3W7"/>
+                                    <constraint firstItem="rXn-kG-v3f" firstAttribute="top" secondItem="ZjL-Pr-oVb" secondAttribute="top" constant="50" id="xcl-Ea-yuy"/>
                                     <constraint firstItem="V1M-6U-vFP" firstAttribute="top" secondItem="noS-gN-huy" secondAttribute="bottom" constant="8" id="zb1-8T-OKe"/>
                                 </constraints>
                             </view>
@@ -215,6 +257,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyStateContainer" destination="rXn-kG-v3f" id="ftP-EE-BDZ"/>
                         <outlet property="tableView" destination="noS-gN-huy" id="LDD-cT-j6Q"/>
                     </connections>
                 </viewController>
@@ -290,7 +333,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="404.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfO-6x-caz">
-                                                <rect key="frame" x="15.999999999999986" y="24" width="248.66666666666663" height="24"/>
+                                                <rect key="frame" x="16.000000000000014" y="24" width="248.33333333333337" height="24"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Employee’s phone number">
                                                         <attributes>
@@ -384,7 +427,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kP-Ox-fgz">
-                                                <rect key="frame" x="16" y="198.33333333333331" width="164" height="24"/>
+                                                <rect key="frame" x="16" y="198.33333333333331" width="163.33333333333334" height="24"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Employee’s name">
                                                         <attributes>
@@ -519,6 +562,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="empty_state_members" width="428" height="429"/>
         <image name="icon_back" width="12" height="20"/>
         <image name="icon_dropdown" width="24" height="24"/>
         <namedColor name="background_primary">
