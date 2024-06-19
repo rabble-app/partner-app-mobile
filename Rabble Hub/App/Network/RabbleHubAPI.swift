@@ -29,6 +29,7 @@ public enum RabbleHubAPI {
     case updateUserProfile(firstName: String, lastName: String, email: String, phone: String)
     case getStoreInformation(partnerId: String)
     case getStoreOpenHours(partnerId: String)
+    case updateStoreHours(storeId: String, customOpenHoursModel: CustomOpenHoursModel?)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -76,6 +77,8 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.getStoreInformation)/\(partnerId)"
         case .getStoreOpenHours(let partnerId):
             return "\(URLConfig.getStoreOpenHours)/\(partnerId)"
+        case .updateStoreHours(let storeId, _):
+            return "\(URLConfig.updateStoreHours)/\(storeId)/open-hour"
         }
     }
     
@@ -87,6 +90,8 @@ extension RabbleHubAPI: TargetType {
             return .patch
         case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams, .getStoreInformation, .getStoreOpenHours:
             return .get
+        case .updateStoreHours:
+            return .put
         case .deleteMember, .deleteBuyingTeam:
             return .delete
         }
@@ -258,6 +263,8 @@ extension RabbleHubAPI: TargetType {
             return .requestPlain
         case .getStoreOpenHours:
             return .requestPlain
+        case .updateStoreHours(_, let customOpenHoursModel):
+            return .requestParameters(parameters: (customOpenHoursModel?.asUpdateDictionary())!, encoding: JSONEncoding.default)
         }
     }
     
