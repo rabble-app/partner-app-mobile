@@ -104,6 +104,7 @@
 		AC159FA92BED145E00926222 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC159FA82BED145E00926222 /* Media.xcassets */; };
 		AC19866F2C217E2700EDF5C5 /* StoreInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19866E2C217E2700EDF5C5 /* StoreInformationResponse.swift */; };
 		AC1986712C21ABA000EDF5C5 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1986702C21ABA000EDF5C5 /* LoadingIndicator.swift */; };
+		AC1986732C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1986722C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift */; };
 		AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */; };
 		AC3691B72C1ACCAC007557A4 /* DeleteTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */; };
 		AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC401FBD2BED225800FA2F3F /* StoryViewController.swift */; };
@@ -284,6 +285,7 @@
 		AC159FA82BED145E00926222 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		AC19866E2C217E2700EDF5C5 /* StoreInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInformationResponse.swift; sourceTree = "<group>"; };
 		AC1986702C21ABA000EDF5C5 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		AC1986722C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOpenHoursResponse.swift; sourceTree = "<group>"; };
 		AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamResponse.swift; sourceTree = "<group>"; };
 		AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTeamResponse.swift; sourceTree = "<group>"; };
 		AC401FBD2BED225800FA2F3F /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				AC3691B42C19C768007557A4 /* UpdateTeamResponse.swift */,
 				AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */,
 				AC19866E2C217E2700EDF5C5 /* StoreInformationResponse.swift */,
+				AC1986722C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1126,6 +1129,7 @@
 				861EFC5A2BD670E5007AB919 /* ManageTeamViewController.swift in Sources */,
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */,
+				AC1986732C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift in Sources */,
 				AC8CDDDD2BDBA2E30091882B /* EmployeeTableViewCell.swift in Sources */,
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,

@@ -1283,6 +1283,7 @@
                     <connections>
                         <outlet property="firstView" destination="xoe-Fn-mlM" id="n8X-mw-y7C"/>
                         <outlet property="segmentContentViewConstraintHeight" destination="tb1-7f-kQI" id="cKo-Wx-lha"/>
+                        <outlet property="segmentControlButton" destination="uF0-4D-Puf" id="L5c-c5-T4k"/>
                         <outlet property="tableView" destination="Hs3-jT-Xot" id="EXD-xJ-aGd"/>
                         <outlet property="tableViewContainerView" destination="qGR-Yg-2sA" id="XJq-VN-A1l"/>
                     </connections>
