@@ -98,7 +98,6 @@ class ManageEmployeeViewController: UIViewController {
     private func updateEmployees(_ employees: [Employee]) {
         self.employees = employees
         
-        let userDataManager = UserDataManager()
         if var userData = userDataManager.getUserData() {
             userData.employeeCount?.employee = self.employees.count
             userDataManager.saveUserData(userData)
