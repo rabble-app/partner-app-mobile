@@ -12,7 +12,7 @@ public enum RabbleHubAPI {
     case sendOtp(phone: String)
     case verifyOtp(phone: String, sid: String, code: String)
     case saveStoreProfile(name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
-    case updateUserRecord(firstName: String?, lastName: String?, email: String?, phone: String?)
+    case updateUserRecord(firstName: String?, lastName: String?, email: String?, phone: String?, onboardingStage: Int?)
     case getSuppliers(offset: Int, postalId: String)
     case createBuyingTeam(name: String, postalCode: String, producerId: String, hostId: String, partnerId: String, frequency: Int, description: String, productLimit: Int, deliveryDay: String, nextDeliveryDate: String, orderCutOffDate: String)
     case addStoreHours(customOpenHoursModel: CustomOpenHoursModel?)
@@ -119,7 +119,7 @@ extension RabbleHubAPI: TargetType {
                 "dryStorageSpace": dryStorageSpace
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .updateUserRecord(let firstName, let lastName, let email, let phone):
+        case .updateUserRecord(let firstName, let lastName, let email, let phone, let onboardingStage):
             var parameters: [String: Any] = [:]
             
             if let firstName = firstName {
@@ -136,6 +136,10 @@ extension RabbleHubAPI: TargetType {
             
             if let phone = phone {
                 parameters["phone"] = phone
+            }
+            
+            if let onboardingStage = onboardingStage {
+                parameters["onboardingStage"] = onboardingStage
             }
     
             

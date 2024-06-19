@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let defaultStoreType = "Store Type"
         let defaultShelfSpace = selectAnOptionText
         let defaultDryStorageSpace = selectAnOptionText
-
+        
         // Check if all text fields have input
         let allFieldsFilled = [storeName, postalCode, city, street, storeType, shelfSpace, dryStorageSpace].compactMap { $0 }.allSatisfy { textField in
             guard let text = textField.text else { return false }
@@ -161,8 +161,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     private func updateUserDataPostalCode(_ store: Store) {
         let userDataManager = UserDataManager()
         if var userData = userDataManager.getUserData() {
-            userData.partner?.postalCode = self.postalCode.text
-            userData.partner?.id = store.id
+            // Check if partner is nil, if so, initialize it
+            if userData.partner == nil {
+                userData.partner = PartnerData(id: store.id, openHours: nil, name: store.name, postalCode: self.postalCode.text)
+            } else {
+                // Update existing partner data
+                userData.partner?.postalCode = self.postalCode.text
+                userData.partner?.id = store.id
+            }
+            
             userDataManager.saveUserData(userData)
         }
     }

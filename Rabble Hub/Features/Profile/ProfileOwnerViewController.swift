@@ -48,7 +48,8 @@ class ProfileOwnerViewController: UIViewController {
             firstName: updatedFields.newFirstName,
             lastName: updatedFields.newLastName,
             email: updatedFields.newEmail,
-            phone: updatedFields.newPhone
+            phone: updatedFields.newPhone,
+            onboardingStage: nil
         )) { [weak self] result in
             guard let self = self else { return }
             self.dismissLoadingIndicator()

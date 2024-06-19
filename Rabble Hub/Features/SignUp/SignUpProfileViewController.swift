@@ -57,7 +57,7 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate {
         }
         
         self.showLoadingIndicator()
-        apiProvider.request(.updateUserRecord(firstName: firstName, lastName: lastName, email: email, phone: nil)) { [weak self] result in
+        apiProvider.request(.updateUserRecord(firstName: firstName, lastName: lastName, email: email, phone: nil, onboardingStage: 2)) { [weak self] result in
             guard let self = self else { return }
             self.dismissLoadingIndicator()
             
