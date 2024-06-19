@@ -143,6 +143,7 @@ class ProfileOpenHoursViewController: UIViewController {
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("UserRecordUpdated"), object: nil)
         self.dismiss(animated: true)
     }
     
@@ -204,6 +205,13 @@ extension ProfileOpenHoursViewController {
                 }
             } else if action == UPDATE_OPEN_HOURS {
                 let updateStoreHoursResponse = try response.map(UpdateStoreHoursResponse.self)
+                
+                let userDataManager = UserDataManager()
+                if var userData = userDataManager.getUserData() {
+                    userData.partner?.openHours = OpenHours(type: updateStoreHoursResponse.data.type)
+                    userDataManager.saveUserData(userData)
+                }
+                
                 if updateStoreHoursResponse.statusCode == 200 || updateStoreHoursResponse.statusCode == 201 {
                     displaySnackBar(message: updateStoreHoursResponse.message, isSuccess: true)
                 } else {
