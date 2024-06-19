@@ -147,7 +147,9 @@ class ProfileOpenHoursViewController: UIViewController {
     }
     
     private func displaySnackBar(message: String, isSuccess: Bool = false) {
-        SnackBar().alert(withMessage: message, isSuccess: isSuccess, parent: view)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in
+            SnackBar().alert(withMessage: message, isSuccess: isSuccess, parent: self!.view)
+        }
     }
 }
 
@@ -194,13 +196,19 @@ extension ProfileOpenHoursViewController {
         do {
             if action == GET_OPEN_HOURS {
                 let storeOpenHourResponse = try response.map(StoreOpenHourResponse.self)
-                if storeOpenHourResponse.statusCode == 200 {
+                if storeOpenHourResponse.statusCode == 200 || storeOpenHourResponse.statusCode == 201 {
                     self.loadStoreHourData(storeOpenHourData: storeOpenHourResponse.data)
-                } else {
                     displaySnackBar(message: storeOpenHourResponse.message, isSuccess: true)
+                } else {
+                    displaySnackBar(message: storeOpenHourResponse.message, isSuccess: false)
                 }
             } else if action == UPDATE_OPEN_HOURS {
-                
+                let updateStoreHoursResponse = try response.map(UpdateStoreHoursResponse.self)
+                if updateStoreHoursResponse.statusCode == 200 || updateStoreHoursResponse.statusCode == 201 {
+                    displaySnackBar(message: updateStoreHoursResponse.message, isSuccess: true)
+                } else {
+                    displaySnackBar(message: updateStoreHoursResponse.message, isSuccess: false)
+                }
             }
         } catch {
             handleMappingError(response)
@@ -280,7 +288,16 @@ extension ProfileOpenHoursViewController: UITableViewDelegate, UITableViewDataSo
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 117
+        var isExpanded = false
+        
+        if self.selectedStoreHoursType == .monToFri {
+            isExpanded = self.customMonToFri.customOpenHours[indexPath.row].startTimeExpanded || self.customMonToFri.customOpenHours[indexPath.row].endTimeExpanded
+        }
+        else if self.selectedStoreHoursType == .custom {
+            isExpanded =  self.customDays.customOpenHours[indexPath.row].startTimeExpanded || self.customDays.customOpenHours[indexPath.row].endTimeExpanded
+        }
+        
+        return isExpanded ? 311 : 117
     }
     
     // Helper

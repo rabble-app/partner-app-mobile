@@ -153,6 +153,7 @@
 		ACB78DBC2BD555500047D2AF /* SuccessStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */; };
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
 		ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */; };
+		ACC0B6A22C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0B6A12C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift */; };
 		ACC28D302BED2653006C6CAE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D2F2BED2653006C6CAE /* OnboardingViewController.swift */; };
 		ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */; };
 		ACC28D342BEF52AE006C6CAE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D332BEF52AE006C6CAE /* Image.swift */; };
@@ -335,6 +336,7 @@
 		ACB78DBB2BD555500047D2AF /* SuccessStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStateViewController.swift; sourceTree = "<group>"; };
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
+		ACC0B6A12C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStoreHoursResponse.swift; sourceTree = "<group>"; };
 		ACC28D2F2BED2653006C6CAE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleProgressView.swift; sourceTree = "<group>"; };
 		ACC28D332BEF52AE006C6CAE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				AC3691B62C1ACCAC007557A4 /* DeleteTeamResponse.swift */,
 				AC19866E2C217E2700EDF5C5 /* StoreInformationResponse.swift */,
 				AC1986722C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift */,
+				ACC0B6A12C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1221,6 +1224,7 @@
 				8631B3512BF8C9D500DF5045 /* SaveStoreProfileResponse.swift in Sources */,
 				AC5EF00D2BD148CE0002A8D7 /* InboundDeliveriesViewController.swift in Sources */,
 				AC3691B72C1ACCAC007557A4 /* DeleteTeamResponse.swift in Sources */,
+				ACC0B6A22C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift in Sources */,
 				8617C4D22BD0CE9B007A0BA6 /* SetupTeamSuccessViewController.swift in Sources */,
 				AC5424822C119FB800B31CCA /* ConfirmDeliveryTableViewCell.swift in Sources */,
 			);
