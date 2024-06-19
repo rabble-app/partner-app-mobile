@@ -74,7 +74,7 @@ class CustomerCollectionListViewController: UIViewController {
         if let storeId = id {
             self.showLoadingIndicator()
             apiProvider.request(.getCustomerCollection(storeId: storeId, offset: 0, period: period, search: searchStr)) { result in
-                self.handleSuppliersResponse(result)
+                self.handlecustomerCollectionResponse(result)
                 self.dismissLoadingIndicator()
             }
         } else {
@@ -83,7 +83,7 @@ class CustomerCollectionListViewController: UIViewController {
         }
     }
     
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handlecustomerCollectionResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             self.handleSuccessResponse(response)

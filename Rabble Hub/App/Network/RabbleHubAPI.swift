@@ -31,7 +31,8 @@ public enum RabbleHubAPI {
     case updateStoreHours(storeId: String, customOpenHoursModel: CustomOpenHoursModel?)
     case updateStoreProfile(storeId: String, name: String?, postalCode: String?, city: String?, streetAddress: String?, direction: String?, storeType: String?, shelfSpace: String?, dryStorageSpace: String?)
     case getEmployees(storeId: String)
-    case addEmployees(storeId: String, firstName: String, lastName: String, phone: String)
+    case addEmployee(storeId: String, firstName: String, lastName: String, phone: String)
+    case deleteEmployee(storeId: String, employeeId: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -62,7 +63,6 @@ extension RabbleHubAPI: TargetType {
         case .getInboundDelivery(let storeId, _, _, _):
             return "\(URLConfig.getInboundelivery)/\(storeId)/deliveries"
         case .getInboundDeliveryDetails(let id):
-            print("\(URLConfig.getInboundeliveryDetails)/\(id)/order-details")
             return "\(URLConfig.getInboundeliveryDetails)/\(id)/order-details"
         case .confirmOrderReceipt(let storeId, _, _, _, _):
             let url = "store/" + "\(storeId)\(URLConfig.confirmOrderReceipt)"
@@ -85,14 +85,16 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.updateStoreHours)/\(storeId)"
         case .getEmployees(let storeId):
             return "\(URLConfig.getEmployees)/\(storeId)/employees"
-        case .addEmployees(let storeId, _, _, _):
+        case .addEmployee(let storeId, _, _, _):
             return "\(URLConfig.getEmployees)/\(storeId)/add-employee"
+        case .deleteEmployee(let storeId, let employeeId):
+            return "\(URLConfig.getEmployees)/\(storeId)/remove-employee/\(employeeId)"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt, .addEmployees:
+        case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt, .addEmployee:
             return .post
         case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateStoreProfile:
             return .patch
@@ -100,7 +102,7 @@ extension RabbleHubAPI: TargetType {
             return .get
         case .updateStoreHours:
             return .put
-        case .deleteMember, .deleteBuyingTeam:
+        case .deleteMember, .deleteBuyingTeam, .deleteEmployee:
             return .delete
         }
     }
@@ -307,13 +309,15 @@ extension RabbleHubAPI: TargetType {
         case .getEmployees(storeId: _):
             return .requestPlain
             
-        case .addEmployees(_, let firstName, let lastName, let phone):
+        case .addEmployee(_, let firstName, let lastName, let phone):
             let parameters: [String: Any] = [
                 "firstName": firstName,
                 "lastName": lastName,
                 "phone": phone
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .deleteEmployee:
+            return .requestPlain
         }
     }
     

@@ -50,12 +50,12 @@ class ProfilePartnerDetailsViewController: UIViewController {
         guard let partner = userDataManager.getUserData()?.partner else { return }
         self.showLoadingIndicator()
         apiProvider.request(.getStoreInformation(partnerId: partner.id)) { result in
-            self.handleSuppliersResponse(result)
+            self.handlePartnerDetailsResponse(result)
             self.dismissLoadingIndicator()
         }
     }
     
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handlePartnerDetailsResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             handleSuccessResponse(response)

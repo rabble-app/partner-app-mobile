@@ -52,14 +52,14 @@ class ManageEmployeeViewController: UIViewController {
     
     private func getEmployees() {
        self.showLoadingIndicator()
-        let id = userDataManager.getUserData()?.partner?.id ?? ""
-        apiProvider.request(.getEmployees(storeId: id)) { result in
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+        apiProvider.request(.getEmployees(storeId: storeId)) { result in
             self.dismissLoadingIndicator()
-            self.handleSuppliersResponse(result)
+            self.handleEmployeesResponse(result)
         }
     }
     
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handleEmployeesResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             self.handleSuccessResponse(response)
@@ -118,6 +118,43 @@ class ManageEmployeeViewController: UIViewController {
         self.emptyStateContainer.isHidden = false
     }
     
+    private func deleteEmployee(_ employee: Employee) {
+        self.showLoadingIndicator()
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+        apiProvider.request(.deleteEmployee(storeId: storeId, employeeId: employee.id)) { result in
+            self.dismissLoadingIndicator()
+            self.handleDeleteEmployeeResponse(result)
+        }
+    }
+    
+
+    private func handleDeleteEmployeeResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            handleSuccessDeleteResponse(response)
+        case .failure(let error):
+            showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessDeleteResponse(_ response: Response) {
+        do {
+            let deleteMemberResponse = try response.map(DeleteEmployeeResponse.self)
+            if deleteMemberResponse.statusCode == 200 {
+                self.showSuccessMessage(deleteMemberResponse.message)
+                self.getEmployees()
+            } else {
+                showError(deleteMemberResponse.message)
+            }
+        } catch {
+            handleMappingError(response)
+        }
+    }
+    
+    func showSuccessMessage(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: true, parent: self.view)
+    }
+    
 }
 
 extension ManageEmployeeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -149,7 +186,7 @@ extension ManageEmployeeViewController: UITableViewDelegate, UITableViewDataSour
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let removeAction = UIAlertAction(title: "Remove Employee", style: .destructive) { _ in
-            // remove employee here then reload table view
+            self.deleteEmployee(self.employees[indexPath.row])
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

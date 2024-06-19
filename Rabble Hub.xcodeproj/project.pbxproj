@@ -27,6 +27,7 @@
 		865F76B52BDBA06E009DEEA5 /* VerificationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */; };
 		8665175A2C233FDC00EC4662 /* GetEmployeesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866517592C233FDC00EC4662 /* GetEmployeesResponse.swift */; };
 		8665175C2C234A7800EC4662 /* AddEmployeesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665175B2C234A7800EC4662 /* AddEmployeesResponse.swift */; };
+		8665175E2C235C5700EC4662 /* DeleteEmployeeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665175D2C235C5700EC4662 /* DeleteEmployeeResponse.swift */; };
 		867349542BF5287200F82570 /* SendOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349532BF5287200F82570 /* SendOTPResponse.swift */; };
 		867349562BF5293400F82570 /* UserDefaultsTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */; };
 		867349582BF5300A00F82570 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867349572BF5300A00F82570 /* VerifyOTPResponse.swift */; };
@@ -208,6 +209,7 @@
 		865F76B42BDBA06E009DEEA5 /* VerificationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationFailedViewController.swift; path = Subviews/VerificationFailedViewController.swift; sourceTree = "<group>"; };
 		866517592C233FDC00EC4662 /* GetEmployeesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmployeesResponse.swift; sourceTree = "<group>"; };
 		8665175B2C234A7800EC4662 /* AddEmployeesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeesResponse.swift; sourceTree = "<group>"; };
+		8665175D2C235C5700EC4662 /* DeleteEmployeeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEmployeeResponse.swift; sourceTree = "<group>"; };
 		867349532BF5287200F82570 /* SendOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOTPResponse.swift; sourceTree = "<group>"; };
 		867349552BF5293400F82570 /* UserDefaultsTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenManager.swift; sourceTree = "<group>"; };
 		867349572BF5300A00F82570 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				ACC0B6A12C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift */,
 				866517592C233FDC00EC4662 /* GetEmployeesResponse.swift */,
 				8665175B2C234A7800EC4662 /* AddEmployeesResponse.swift */,
+				8665175D2C235C5700EC4662 /* DeleteEmployeeResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				861A57C72C104E0A0026263A /* StringExtension.swift in Sources */,
 				AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */,
 				AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */,
+				8665175E2C235C5700EC4662 /* DeleteEmployeeResponse.swift in Sources */,
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
 				AC1986712C21ABA000EDF5C5 /* LoadingIndicator.swift in Sources */,
 				AC5EF01A2BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift in Sources */,

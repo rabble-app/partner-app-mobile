@@ -99,11 +99,11 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         self.showLoadingIndicator()
         apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
             self.dismissLoadingIndicator()
-            self.handleSuppliersResponse(result)
+            self.handlePartnerDetailsResponse(result)
         }
     }
     
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handlePartnerDetailsResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             handleSuccessResponse(response)

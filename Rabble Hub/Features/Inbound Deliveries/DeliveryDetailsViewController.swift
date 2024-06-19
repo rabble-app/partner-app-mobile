@@ -71,11 +71,11 @@ class DeliveryDetailsViewController: UIViewController {
         
         apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
             self.dismissLoadingIndicator()
-            self.handleSuppliersResponse(result)
+            self.handleDeliveryDetailsResponse(result)
         }
     }
     
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handleDeliveryDetailsResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             handleSuccessResponse(response)

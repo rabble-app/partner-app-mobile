@@ -145,7 +145,7 @@ class ManageEmployeeAddEmployeeViewController: UIViewController, UITextFieldDele
         
         self.showLoadingIndicator()
         let storeId = userDataManager.getUserData()?.partner?.id ?? ""
-        apiProvider.request(.addEmployees(storeId: storeId, firstName: firstName, lastName: lastName, phone: phone)) { [weak self] result in
+        apiProvider.request(.addEmployee(storeId: storeId, firstName: firstName, lastName: lastName, phone: phone)) { [weak self] result in
             guard let self = self else { return }
             self.dismissLoadingIndicator()
             

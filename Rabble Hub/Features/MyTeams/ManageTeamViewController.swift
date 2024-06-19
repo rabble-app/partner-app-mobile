@@ -88,12 +88,12 @@ class ManageTeamViewController: UIViewController {
         self.showLoadingIndicator()
         apiProvider.request(.deleteMember(id: member.id)) { result in
             self.dismissLoadingIndicator()
-            self.handleSuppliersResponse(result)
+            self.handleDeleteMemeberResponse(result)
         }
     }
     
 
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handleDeleteMemeberResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             handleSuccessResponse(response)
