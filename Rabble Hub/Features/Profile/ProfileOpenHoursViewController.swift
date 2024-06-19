@@ -13,6 +13,8 @@ class ProfileOpenHoursViewController: UIViewController {
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var tableViewContainerView: UIView!
     
+    @IBOutlet weak var openAllWeekSwitchButton: UISwitch!
+    @IBOutlet weak var saveChangesButton: PrimaryButton!
     @IBOutlet weak var segmentControlButton: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentContentViewConstraintHeight: NSLayoutConstraint!
@@ -27,6 +29,10 @@ class ProfileOpenHoursViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
+    
+    let GET_OPEN_HOURS = "GetOpenHours"
+    let UPDATE_OPEN_HOURS = "UpdateOpenHours"
+    var storeId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,48 +65,10 @@ class ProfileOpenHoursViewController: UIViewController {
         fetchStoreHours()
     }
     
-    func fetchStoreHours() {
-        guard let partner = userDataManager.getUserData()?.partner else { return }
-        self.showLoadingIndicator()
-
-        apiProvider.request(.getStoreOpenHours(partnerId: partner.id)) { result in
-            self.handleSuppliersResponse(result)
-            self.dismissLoadingIndicator()
-        }
-    }
-    
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
-        switch result {
-        case .success(let response):
-            handleSuccessResponse(response)
-        case .failure(let error):
-            displaySnackBar(message: (error.localizedDescription), isSuccess: false)
-        }
-    }
-    
-    private func handleSuccessResponse(_ response: Response) {
-        do {
-            let storeOpenHourResponse = try response.map(StoreOpenHourResponse.self)
-            if storeOpenHourResponse.statusCode == 200 {
-                self.loadStoreHourData(storeOpenHourData: storeOpenHourResponse.data)
-            } else {
-                displaySnackBar(message: storeOpenHourResponse.message, isSuccess: true)
-            }
-        } catch {
-            handleMappingError(response)
-        }
-    }
-    
-    private func handleMappingError(_ response: Response) {
-        do {
-            let errorResponse = try response.map(StandardResponse.self)
-            displaySnackBar(message: errorResponse.message, isSuccess: false)
-        } catch {
-            print("Failed to map response data: \(error)")
-        }
-    }
     
     func loadStoreHourData(storeOpenHourData: StoreOpenHourData) {
+        self.storeId = storeOpenHourData.id
+        
         switch storeOpenHourData.type {
         case StoreHoursType.allTheTime.rawValue:
             segmentControlButton.selectedSegmentIndex = 0
@@ -144,6 +112,7 @@ class ProfileOpenHoursViewController: UIViewController {
             firstView.isHidden = false
             tableViewContainerView.isHidden = true
             selectedStoreHoursType = .allTheTime
+            self.saveChangesButton.isEnabled = self.openAllWeekSwitchButton.isOn
         }
         // Mon - Fri
         else if index == 1 {
@@ -151,6 +120,7 @@ class ProfileOpenHoursViewController: UIViewController {
             firstView.isHidden = true
             tableViewContainerView.isHidden = false
             selectedStoreHoursType = .monToFri
+            self.saveChangesButton.isEnabled = true
         }
         // Custom
         else {
@@ -158,12 +128,18 @@ class ProfileOpenHoursViewController: UIViewController {
             firstView.isHidden = true
             tableViewContainerView.isHidden = false
             selectedStoreHoursType = .custom
+            self.saveChangesButton.isEnabled = true
         }
         
         self.tableView.reloadData()
     }
     
     @IBAction func open24HoursSwitchTap(_ sender: Any) {
+        self.saveChangesButton.isEnabled = self.openAllWeekSwitchButton.isOn
+    }
+    
+    @IBAction func saveChangesButtonTap(_ sender: Any) {
+        updateStoreHours()
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
@@ -175,6 +151,71 @@ class ProfileOpenHoursViewController: UIViewController {
     }
 }
 
+extension ProfileOpenHoursViewController {
+    
+    func updateStoreHours() {
+        let openHoursParam: CustomOpenHoursModel?
+        
+        if (selectedStoreHoursType == .custom) {
+            openHoursParam = self.customDays
+        } else if (selectedStoreHoursType == .monToFri) {
+            openHoursParam = self.customMonToFri
+        } else {
+            openHoursParam = self.allTheTimeSched
+        }
+        
+        self.showLoadingIndicator()
+        apiProvider.request(.updateStoreHours(storeId: self.storeId, customOpenHoursModel: openHoursParam)) { result in
+            self.handleResponse(result, action: self.UPDATE_OPEN_HOURS)
+            self.dismissLoadingIndicator()
+        }
+    }
+    
+    func fetchStoreHours() {
+        guard let partner = userDataManager.getUserData()?.partner else { return }
+        self.showLoadingIndicator()
+
+        apiProvider.request(.getStoreOpenHours(partnerId: partner.id)) { result in
+            self.handleResponse(result, action: self.GET_OPEN_HOURS)
+            self.dismissLoadingIndicator()
+        }
+    }
+    
+    private func handleResponse(_ result: Result<Response, MoyaError>, action: String) {
+        switch result {
+        case .success(let response):
+            handleSuccessResponse(response, action: action)
+        case .failure(let error):
+            displaySnackBar(message: (error.localizedDescription), isSuccess: false)
+        }
+    }
+    
+    private func handleSuccessResponse(_ response: Response, action: String) {
+        do {
+            if action == GET_OPEN_HOURS {
+                let storeOpenHourResponse = try response.map(StoreOpenHourResponse.self)
+                if storeOpenHourResponse.statusCode == 200 {
+                    self.loadStoreHourData(storeOpenHourData: storeOpenHourResponse.data)
+                } else {
+                    displaySnackBar(message: storeOpenHourResponse.message, isSuccess: true)
+                }
+            } else if action == UPDATE_OPEN_HOURS {
+                
+            }
+        } catch {
+            handleMappingError(response)
+        }
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            displaySnackBar(message: errorResponse.message, isSuccess: false)
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+}
 
 extension ProfileOpenHoursViewController: UITableViewDelegate, UITableViewDataSource {
     

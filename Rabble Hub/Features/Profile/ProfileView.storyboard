@@ -1225,6 +1225,9 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="saveChangesButtonTap:" destination="1Fy-yW-rio" eventType="touchUpInside" id="EjV-kM-UUG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1282,6 +1285,8 @@
                     </view>
                     <connections>
                         <outlet property="firstView" destination="xoe-Fn-mlM" id="n8X-mw-y7C"/>
+                        <outlet property="openAllWeekSwitchButton" destination="i78-0P-Bnn" id="RQZ-Fj-Qqt"/>
+                        <outlet property="saveChangesButton" destination="8eg-pd-8Cb" id="pYX-mj-0JE"/>
                         <outlet property="segmentContentViewConstraintHeight" destination="tb1-7f-kQI" id="cKo-Wx-lha"/>
                         <outlet property="segmentControlButton" destination="uF0-4D-Puf" id="L5c-c5-T4k"/>
                         <outlet property="tableView" destination="Hs3-jT-Xot" id="EXD-xJ-aGd"/>

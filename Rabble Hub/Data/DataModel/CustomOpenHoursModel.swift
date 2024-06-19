@@ -25,6 +25,19 @@ public class CustomOpenHoursModel {
         self.customOpenHours = customOpenHours
     }
 
+    func asUpdateDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [
+            "type": type.rawValue
+        ]
+        
+        if type != .allTheTime {
+            let enabledCustomOpenHours = customOpenHours.filter { $0.enabled }
+            dictionary["customOpenHours"] = enabledCustomOpenHours.map { $0.asDictionary() }
+        }
+        
+        return dictionary
+    }
+    
     func asDictionary() -> [String: Any] {
         var dictionary: [String: Any] = [
             "storeId": storeId,
