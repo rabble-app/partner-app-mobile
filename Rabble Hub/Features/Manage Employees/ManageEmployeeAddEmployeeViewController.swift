@@ -7,21 +7,29 @@
 
 import UIKit
 import DialCountries
+import Moya
 
-class ManageEmployeeAddEmployeeViewController: UIViewController {
+class ManageEmployeeAddEmployeeViewController: UIViewController, UITextFieldDelegate  {
 
     @IBOutlet var flag: UILabel!
     @IBOutlet var countryPickerButton: UIButton!
     @IBOutlet var codeLabel: UILabel!
     @IBOutlet var phoneNumberTextfield: UITextField!
     @IBOutlet var phoneNumberContainer: UIView!
-
+    @IBOutlet var name: RabbleTextField!
+    
+    @IBOutlet var addEmployeeBtn: PrimaryButton!
     @IBOutlet weak var addEmployeeViewBottomConstraint: NSLayoutConstraint!
+    
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpView()
         setUpDefaultCountry()
+        
         
     }
     
@@ -46,6 +54,15 @@ class ManageEmployeeAddEmployeeViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        updateContinueButtonState()
+    }
+    
+    private func updateContinueButtonState() {
+        let allFieldsFilled = [name, phoneNumberTextfield].allSatisfy { !($0.text?.isEmpty ?? true) }
+        addEmployeeBtn.isEnabled = allFieldsFilled
+    }
+    
     func setUpView() {
         
         phoneNumberContainer.layer.borderWidth = 1.0
@@ -57,6 +74,12 @@ class ManageEmployeeAddEmployeeViewController: UIViewController {
         countryPickerButton.layer.borderColor = Colors.Gray5.cgColor
         countryPickerButton.layer.cornerRadius = 12.0
         countryPickerButton.clipsToBounds = true
+        
+        addEmployeeBtn.isEnabled = false
+        [name, phoneNumberTextfield].forEach {
+            $0.delegate = self
+            $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
     }
     
     
@@ -106,11 +129,69 @@ class ManageEmployeeAddEmployeeViewController: UIViewController {
         
         // Reset border color of phoneNumberContainer
         phoneNumberContainer.layer.borderColor = Colors.Gray5.cgColor
-        
+        self.addEmployee()
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    func addEmployee() {
+        let phone = "\(codeLabel.text ?? "")\(phoneNumberTextfield.text ?? "")"
+        guard let firstName = name.text,
+              let lastName = name.text else {
+            return
+        }
+        
+        self.showLoadingIndicator()
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+        apiProvider.request(.addEmployees(storeId: storeId, firstName: firstName, lastName: lastName, phone: phone)) { [weak self] result in
+            guard let self = self else { return }
+            self.dismissLoadingIndicator()
+            
+            switch result {
+            case .success(let response):
+                self.handleResponse(response)
+            case .failure(let error):
+                self.handleFailure(error)
+            }
+        }
+    }
+    
+    private func handleResponse(_ response: Response) {
+        do {
+            let userResponse = try response.map(AddEmployeesResponse.self)
+            if userResponse.statusCode == 200 || userResponse.statusCode == 201 {
+                showSnackBar(message: userResponse.message, isSuccess: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    NotificationCenter.default.post(name: NSNotification.Name("EmployeesAdded"), object: nil)
+                    self.dismiss(animated: true)
+                }
+            } else {
+                showSnackBar(message: userResponse.message, isSuccess: false)
+            }
+        } catch {
+            handleErrorResponse(response)
+        }
+    }
+    
+    private func handleErrorResponse(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            showSnackBar(message: errorResponse.message)
+        } catch {
+            showSnackBar(message: "An error occurred")
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func handleFailure(_ error: MoyaError) {
+        showSnackBar(message: error.localizedDescription)
+        print("Request failed with error: \(error)")
+    }
+    
+    private func showSnackBar(message: String, isSuccess: Bool = false) {
+        SnackBar().alert(withMessage: message, isSuccess: isSuccess, parent: view)
     }
 }
 

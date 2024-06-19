@@ -19,15 +19,20 @@ class ManageEmployeeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(employeesAdded), name: NSNotification.Name("EmployeesAdded"), object: nil)
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.getEmployees()
         self.emptyStateContainer.isHidden = true
         self.tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.getEmployees()
-    }
+    @objc func employeesAdded() {
+            DispatchQueue.main.async {
+                self.getEmployees()
+            }
+        }
     
     @IBAction func addEmployeeButtonTap(_ sender: Any) {
         
@@ -41,12 +46,13 @@ class ManageEmployeeViewController: UIViewController {
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("UserRecordUpdated"), object: nil)
         self.dismiss(animated: true)
     }
     
     private func getEmployees() {
        self.showLoadingIndicator()
-        let id = userDataManager.getUserData()?.id ?? ""
+        let id = userDataManager.getUserData()?.partner?.id ?? ""
         apiProvider.request(.getEmployees(storeId: id)) { result in
             self.dismissLoadingIndicator()
             self.handleSuppliersResponse(result)
@@ -91,6 +97,13 @@ class ManageEmployeeViewController: UIViewController {
     
     private func updateEmployees(_ employees: [Employee]) {
         self.employees = employees
+        
+        let userDataManager = UserDataManager()
+        if var userData = userDataManager.getUserData() {
+            userData.employeeCount?.employee = self.employees.count
+            userDataManager.saveUserData(userData)
+        }
+        
         if employees.count > 0 {
             self.emptyStateContainer.isHidden = true
             self.tableView.isHidden = false
@@ -121,7 +134,14 @@ extension ManageEmployeeViewController: UITableViewDelegate, UITableViewDataSour
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell", for: indexPath) as? EmployeeTableViewCell else {
             return UITableViewCell()
         }
+        let employee = self.employees[indexPath.row]
+        cell.employeeNameLabel.text = "\(employee.user.firstName) \(employee.user.lastName)"
+        cell.employeeNumberLabel.text = employee.user.phone
         
+        let word = cell.employeeNameLabel.text?.prefix(1).uppercased()
+        if let firstLetter = word?.first {
+            cell.nameInitialLabel.text = String(firstLetter).uppercased()
+        }
         return cell
     }
     

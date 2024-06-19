@@ -32,7 +32,7 @@ struct UserData: Codable {
     var partner: PartnerData?
     let token: String
     var onboardingStage: Int
-    let employeeCount: Count?
+    var employeeCount: Count?
 }
 
 struct PartnerData: Codable {

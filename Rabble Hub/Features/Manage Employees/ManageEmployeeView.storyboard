@@ -508,8 +508,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="addEmployeeButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aNl-S9-H87"/>
-                                            <action selector="addEmployeeButtonTap:" destination="9SZ-FA-zga" eventType="touchUpInside" id="m1L-PS-kJC"/>
+                                            <action selector="addEmployeeButtonTap:" destination="9SZ-FA-zga" eventType="touchUpInside" id="Lue-n5-dff"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -548,10 +547,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addEmployeeBtn" destination="uGe-7M-Xgs" id="xq0-Xk-QrZ"/>
                         <outlet property="addEmployeeViewBottomConstraint" destination="zbm-fj-8A5" id="eQa-Tl-ABg"/>
                         <outlet property="codeLabel" destination="afZ-mR-8xb" id="Td5-Rt-y2p"/>
                         <outlet property="countryPickerButton" destination="cc7-rG-6D8" id="Vzr-dC-Kf8"/>
                         <outlet property="flag" destination="K0W-av-ybL" id="NrR-aQ-BPJ"/>
+                        <outlet property="name" destination="mss-nh-DMF" id="AOG-IV-GAc"/>
                         <outlet property="phoneNumberContainer" destination="KUP-RL-tCP" id="goP-0x-Vey"/>
                         <outlet property="phoneNumberTextfield" destination="301-xJ-uAD" id="U4x-1U-66c"/>
                     </connections>
