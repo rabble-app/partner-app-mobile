@@ -25,6 +25,8 @@ class ProfilePartnerDetailsViewController: UIViewController {
     
     @IBOutlet weak var popupBackgroundView: UIView!
     
+    private var originalStoreData: StoreData?
+    
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
     
@@ -66,6 +68,7 @@ class ProfilePartnerDetailsViewController: UIViewController {
         do {
             let storeInformationResponse = try response.map(StoreInformationResponse.self)
             if storeInformationResponse.statusCode == 200 {
+                self.originalStoreData = storeInformationResponse.data
                 self.configureStoreInformationUI(storeData: storeInformationResponse.data)
             } else {
                 displaySnackBar(message: storeInformationResponse.message, isSuccess: true)
@@ -169,29 +172,38 @@ class ProfilePartnerDetailsViewController: UIViewController {
     }
     
     private func saveStoreProfile() {
-        self.showLoadingIndicator()
-        let userDataManager = UserDataManager()
-        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
-        apiProvider.request(.updateStoreProfile(storeId: storeId,
-                                              name: storeNameTextField.text ?? "",
-                                              postalCode: postalCodeTextField.text ?? "",
-                                              city: cityTextField.text ?? "",
-                                              streetAddress: streetAddressTextField.text ?? "",
-                                              direction: directionsTextView.text ?? "",
-                                              storeType: storeTypeTextfield.text ?? "",
-                                              shelfSpace: fridgeSpaceTextField.text ?? "",
-                                              dryStorageSpace: dryStorageTextField.text ?? "")) { [weak self] result in
-            guard let self = self else { return }
-            self.dismissLoadingIndicator()
-            switch result {
-            case .success(let response):
-                self.handleResponse(response)
-            case .failure(let error):
-                self.handleError(error)
-            }
-        }
-    }
-    
+           self.showLoadingIndicator()
+           let userDataManager = UserDataManager()
+           let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+           
+           let name = storeNameTextField.text != originalStoreData?.name ? storeNameTextField.text : nil
+           let postalCode = postalCodeTextField.text != originalStoreData?.postalCode ? postalCodeTextField.text : nil
+           let city = cityTextField.text != originalStoreData?.city ? cityTextField.text : nil
+           let streetAddress = streetAddressTextField.text != originalStoreData?.streetAddress ? streetAddressTextField.text : nil
+           let direction = directionsTextView.text != originalStoreData?.direction ? directionsTextView.text : nil
+           let storeType = storeTypeTextfield.text != originalStoreData?.storeType ? storeTypeTextfield.text : nil
+           let shelfSpace = fridgeSpaceTextField.text != originalStoreData?.shelfSpace ? fridgeSpaceTextField.text : nil
+           let dryStorageSpace = dryStorageTextField.text != originalStoreData?.dryStorageSpace ? dryStorageTextField.text : nil
+           
+           apiProvider.request(.updateStoreProfile(storeId: storeId,
+                                                   name: name,
+                                                   postalCode: postalCode,
+                                                   city: city,
+                                                   streetAddress: streetAddress,
+                                                   direction: direction,
+                                                   storeType: storeType,
+                                                   shelfSpace: shelfSpace,
+                                                   dryStorageSpace: dryStorageSpace)) { [weak self] result in
+               guard let self = self else { return }
+               self.dismissLoadingIndicator()
+               switch result {
+               case .success(let response):
+                   self.handleResponse(response)
+               case .failure(let error):
+                   self.handleError(error)
+               }
+           }
+       }
     private func handleResponse(_ response: Response) {
         do {
             let mappedResponse = try response.map(SaveStoreProfileResponse.self)

@@ -30,7 +30,7 @@ public enum RabbleHubAPI {
     case getStoreInformation(partnerId: String)
     case getStoreOpenHours(partnerId: String)
     case updateStoreHours(storeId: String, customOpenHoursModel: CustomOpenHoursModel?)
-    case updateStoreProfile(storeId: String, name: String, postalCode: String, city: String, streetAddress: String, direction: String, storeType: String, shelfSpace: String, dryStorageSpace: String)
+    case updateStoreProfile(storeId: String, name: String?, postalCode: String?, city: String?, streetAddress: String?, direction: String?, storeType: String?, shelfSpace: String?, dryStorageSpace: String?)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -270,16 +270,51 @@ extension RabbleHubAPI: TargetType {
             return .requestParameters(parameters: (customOpenHoursModel?.asUpdateDictionary())!, encoding: JSONEncoding.default)
         case .updateStoreProfile( let storeId, let name, let postalCode, let city, let streetAddress, let direction, let storeType, let shelfSpace, let dryStorageSpace):
             
-            let parameters: [String: Any] = [
-                "name": name,
-                "postalCode": postalCode,
-                "city": city,
-                "streetAddress": streetAddress,
-                "direction": direction,
-                "storeType": storeType,
-                "shelfSpace": shelfSpace,
-                "dryStorageSpace": dryStorageSpace
-            ]
+//            let parameters: [String: Any] = [
+//                "name": name,
+//                "postalCode": postalCode,
+//                "city": city,
+//                "streetAddress": streetAddress,
+//                "direction": direction,
+//                "storeType": storeType,
+//                "shelfSpace": shelfSpace,
+//                "dryStorageSpace": dryStorageSpace
+//            ]
+            
+            var parameters: [String: Any] = [:]
+            
+            if let name = name {
+                parameters["name"] = name
+            }
+            
+            if let postalCode = postalCode {
+                parameters["postalCode"] = postalCode
+            }
+            
+            if let city = city {
+                parameters["city"] = city
+            }
+            
+            if let streetAddress = streetAddress {
+                parameters["streetAddress"] = streetAddress
+            }
+            
+            if let direction = direction {
+                parameters["direction"] = direction
+            }
+            
+            if let storeType = storeType {
+                parameters["storeType"] = storeType
+            }
+            
+            if let shelfSpace = shelfSpace {
+                parameters["shelfSpace"] = shelfSpace
+            }
+            
+            if let dryStorageSpace = dryStorageSpace {
+                parameters["dryStorageSpace"] = dryStorageSpace
+            }
+    
             
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
