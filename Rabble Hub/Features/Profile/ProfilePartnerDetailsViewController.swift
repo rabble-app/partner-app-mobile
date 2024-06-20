@@ -116,10 +116,13 @@ class ProfilePartnerDetailsViewController: UIViewController {
     
     @IBAction func storeTypeButtonTapped(_ sender: Any) {
         self.showViewWithAnimation(view: self.popupBackgroundView)
-        
+        let items = ["Item 1", "Item 2", "Item 3", "Item 4"]
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = "Store Type"
-        rabbleSheetViewController.items =  ["Item 1", "Item 2", "Item 3", "Item 4"]
+        rabbleSheetViewController.items =  items
+        if let index = items.indexOfIgnoringCase(self.storeTypeTextfield.text ?? "") {
+            rabbleSheetViewController.setIndex(index: index)
+        }
         rabbleSheetViewController.itemSelected = { item in
             self.storeTypeTextfield.text = item
         }
@@ -132,10 +135,13 @@ class ProfilePartnerDetailsViewController: UIViewController {
     
     @IBAction func fridgeSpaceButtonTapped(_ sender: Any) {
         self.showViewWithAnimation(view: self.popupBackgroundView)
-        
+        let items = ["5 cubic feet", "10 cubic feet", "15 cubic feet", "20 cubic feet", "25 cubic feet"]
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = "Select an option"
-        rabbleSheetViewController.items =  ["5 cubic feet", "10 cubic feet", "15 cubic feet", "20 cubic feet", "25 cubic feet"]
+        rabbleSheetViewController.items = items
+        if let index = items.indexOfIgnoringCase(self.fridgeSpaceTextField.text ?? "") {
+            rabbleSheetViewController.setIndex(index: index)
+        }
         rabbleSheetViewController.itemSelected = { item in
             self.fridgeSpaceTextField.text = item
         }
@@ -148,10 +154,13 @@ class ProfilePartnerDetailsViewController: UIViewController {
     
     @IBAction func dryStorageButtonTapped(_ sender: Any) {
         self.showViewWithAnimation(view: self.popupBackgroundView)
-        
+        let items = ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = "Select an option"
-        rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
+        rabbleSheetViewController.items = items
+        if let index = items.indexOfIgnoringCase(self.dryStorageTextField.text ?? "") {
+            rabbleSheetViewController.setIndex(index: index)
+        }
         rabbleSheetViewController.itemSelected = { item in
             self.dryStorageTextField.text = item
         }

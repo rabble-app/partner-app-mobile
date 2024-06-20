@@ -157,6 +157,7 @@
 		ACB78DBF2BD69AFF0047D2AF /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */; };
 		ACB78DC12BD69B6C0047D2AF /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */; };
 		ACC0B6A22C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0B6A12C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift */; };
+		ACC0B6A42C2471C500DA0F1F /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0B6A32C2471C500DA0F1F /* ArrayExtension.swift */; };
 		ACC28D302BED2653006C6CAE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D2F2BED2653006C6CAE /* OnboardingViewController.swift */; };
 		ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */; };
 		ACC28D342BEF52AE006C6CAE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC28D332BEF52AE006C6CAE /* Image.swift */; };
@@ -343,6 +344,7 @@
 		ACB78DBE2BD69AFF0047D2AF /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		ACB78DC02BD69B6C0047D2AF /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
 		ACC0B6A12C22EDE700DA0F1F /* UpdateStoreHoursResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStoreHoursResponse.swift; sourceTree = "<group>"; };
+		ACC0B6A32C2471C500DA0F1F /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		ACC28D2F2BED2653006C6CAE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		ACC28D312BEF4498006C6CAE /* RabbleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleProgressView.swift; sourceTree = "<group>"; };
 		ACC28D332BEF52AE006C6CAE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 				AC0EE1E62C04686E0047293F /* DateExtension.swift */,
 				861A57C62C104E0A0026263A /* StringExtension.swift */,
 				AC5424872C11A6EA00B31CCA /* IntExtentions.swift */,
+				ACC0B6A32C2471C500DA0F1F /* ArrayExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1223,6 +1226,7 @@
 				AC5EF0042BD0F1660002A8D7 /* RabbleEnums.swift in Sources */,
 				AC6417EB2BFB7C8000B8A61B /* APIConfig.swift in Sources */,
 				AC0EE1E72C04686E0047293F /* DateExtension.swift in Sources */,
+				ACC0B6A42C2471C500DA0F1F /* ArrayExtension.swift in Sources */,
 				865618922BFE18FC001E65EB /* CreateBuyingTeamResponse.swift in Sources */,
 				8656189C2BFF99BA001E65EB /* ToastView.swift in Sources */,
 				AC6417F82C00D8C000B8A61B /* StandardResponse.swift in Sources */,

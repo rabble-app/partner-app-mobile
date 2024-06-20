@@ -73,9 +73,14 @@ class CreateALimitViewController: UIViewController {
     }
     
     @IBAction private func selectOptionButtonTap(_ sender: Any) {
+        let items = ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
+        
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = "Select an option"
-        rabbleSheetViewController.items = ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
+        rabbleSheetViewController.items = items
+        if let index = items.indexOfIgnoringCase(self.selectionLabel.text ?? "") {
+            rabbleSheetViewController.setIndex(index: index)
+        }
         rabbleSheetViewController.itemSelected = { item in
             self.selectionLabel.text = item
             self.nextButton.isEnabled = true
