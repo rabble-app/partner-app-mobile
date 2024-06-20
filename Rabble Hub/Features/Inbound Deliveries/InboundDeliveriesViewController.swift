@@ -76,11 +76,11 @@ class InboundDeliveriesViewController: UIViewController {
         let id = userDataManager.getUserData()?.partner?.id ?? ""
         apiProvider.request(.getInboundDelivery(storeId: id, offset: 0, period: period, search: searchStr)) { result in
             self.dismissLoadingIndicator()
-            self.handleSuppliersResponse(result)
+            self.handleInboundDeliveryResponse(result)
         }
     }
     
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handleInboundDeliveryResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             if let jsonString = String(data: response.data, encoding: .utf8) {

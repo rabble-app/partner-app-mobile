@@ -48,11 +48,11 @@ class PartnersViewController: UIViewController {
         let id = userDataManager.getUserData()?.id ?? ""
         apiProvider.request(.getPartnerTeams(storeId: id)) { result in
             self.dismissLoadingIndicator()
-            self.handleSuppliersResponse(result)
+            self.handlePartnersResponse(result)
         }
     } 
     
-    private func handleSuppliersResponse(_ result: Result<Response, MoyaError>) {
+    private func handlePartnersResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
             print(response)
