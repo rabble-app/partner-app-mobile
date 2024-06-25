@@ -72,9 +72,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func storeTypeButtonTapped(_ sender: Any) {
+        let items = ["Item 1", "Item 2", "Item 3", "Item 4"]
+        
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = "Store Type"
-        rabbleSheetViewController.items =  ["Item 1", "Item 2", "Item 3", "Item 4"]
+        rabbleSheetViewController.items = items
+        if let index = items.indexOfIgnoringCase(self.storeType.text ?? "") {
+            rabbleSheetViewController.setIndex(index: index)
+        }
         rabbleSheetViewController.itemSelected = { item in
             self.storeType.text = item
             self.updateContinueButtonState()
@@ -83,9 +88,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func shelfSpaceButtonTapped(_ sender: Any) {
+        let items =  ["5 cubic feet", "10 cubic feet", "15 cubic feet", "20 cubic feet", "25 cubic feet"]
+        
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = selectAnOptionText
-        rabbleSheetViewController.items =  ["5 cubic feet", "10 cubic feet", "15 cubic feet", "20 cubic feet", "25 cubic feet"]
+        rabbleSheetViewController.items = items
+        if let index = items.indexOfIgnoringCase(self.shelfSpace.text ?? "") {
+            rabbleSheetViewController.setIndex(index: index)
+        }
         rabbleSheetViewController.itemSelected = { item in
             self.shelfSpace.text = item
             self.updateContinueButtonState()
@@ -94,9 +104,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func dryStorageButtonTapped(_ sender: Any) {
+        let items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
+        
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = selectAnOptionText
-        rabbleSheetViewController.items =  ["10 cubic feet", "20 cubic feet", "30 cubic feet", "40 cubic feet", "50 cubic feet"]
+        rabbleSheetViewController.items = items
+        if let index = items.indexOfIgnoringCase(self.dryStorageSpace.text ?? "") {
+            rabbleSheetViewController.setIndex(index: index)
+        }
         rabbleSheetViewController.itemSelected = { item in
             self.dryStorageSpace.text = item
             self.updateContinueButtonState()

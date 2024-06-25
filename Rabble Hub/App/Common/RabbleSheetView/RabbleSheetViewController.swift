@@ -32,6 +32,18 @@ class RabbleSheetViewController: UIViewController {
         self.dismissed?()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let selectedIndex = self.selectedIndex {
+            tableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .middle)
+        }
+    }
+    
+    func setIndex(index: Int) {
+        selectedIndex = IndexPath(row: index, section: 0)
+    }
+    
     func setupUI() {
         if #available(iOS 13.0, *) {
             self.isModalInPresentation = true
