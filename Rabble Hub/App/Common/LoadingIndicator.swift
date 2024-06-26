@@ -16,6 +16,8 @@ class LoadingIndicator {
     private var spinnerView: UIView?
     
     func show(in viewController: UIViewController) {
+        viewController.view.endEditing(true)
+        
         guard spinnerView == nil else { return }
         
         let spinnerView = UIView(frame: viewController.view.bounds)
