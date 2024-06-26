@@ -17,6 +17,7 @@ class ManageEmployeeAddEmployeeViewController: UIViewController, UITextFieldDele
     @IBOutlet var phoneNumberTextfield: UITextField!
     @IBOutlet var phoneNumberContainer: UIView!
     @IBOutlet var name: RabbleTextField!
+    @IBOutlet var lastName: RabbleTextField!
     
     @IBOutlet var addEmployeeBtn: PrimaryButton!
     @IBOutlet weak var addEmployeeViewBottomConstraint: NSLayoutConstraint!
@@ -59,7 +60,7 @@ class ManageEmployeeAddEmployeeViewController: UIViewController, UITextFieldDele
     }
     
     private func updateContinueButtonState() {
-        let allFieldsFilled = [name, phoneNumberTextfield].allSatisfy { !($0.text?.isEmpty ?? true) }
+        let allFieldsFilled = [name, lastName, phoneNumberTextfield].allSatisfy { !($0.text?.isEmpty ?? true) }
         addEmployeeBtn.isEnabled = allFieldsFilled
     }
     
@@ -76,7 +77,7 @@ class ManageEmployeeAddEmployeeViewController: UIViewController, UITextFieldDele
         countryPickerButton.clipsToBounds = true
         
         addEmployeeBtn.isEnabled = false
-        [name, phoneNumberTextfield].forEach {
+        [name, lastName, phoneNumberTextfield].forEach {
             $0.delegate = self
             $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
@@ -139,7 +140,7 @@ class ManageEmployeeAddEmployeeViewController: UIViewController, UITextFieldDele
     func addEmployee() {
         let phone = "\(codeLabel.text ?? "")\(phoneNumberTextfield.text ?? "")"
         guard let firstName = name.text,
-              let lastName = name.text else {
+              let lastName = lastName.text else {
             return
         }
         

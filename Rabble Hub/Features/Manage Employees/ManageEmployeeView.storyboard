@@ -330,7 +330,7 @@
                                 <rect key="frame" x="0.0" y="156" width="393" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDE-R3-1kM" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="404.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="476.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfO-6x-caz">
                                                 <rect key="frame" x="16.000000000000014" y="24" width="248.33333333333337" height="24"/>
@@ -444,10 +444,19 @@
                                                 <color key="textColor" name="gray_3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mss-nh-DMF" customClass="RabbleTextField" customModule="Rabble_Hub" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mss-nh-DMF" customClass="RabbleTextField" customModule="Rabble_Hub" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="284.66666666666669" width="361" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="bel-u4-9pg"/>
+                                                </constraints>
+                                                <color key="textColor" name="gray_2"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWi-KQ-Xde" customClass="RabbleTextField" customModule="Rabble_Hub" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="356.66666666666663" width="361" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="7Ks-9Z-yQo"/>
                                                 </constraints>
                                                 <color key="textColor" name="gray_2"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -458,15 +467,17 @@
                                         <constraints>
                                             <constraint firstItem="mss-nh-DMF" firstAttribute="top" secondItem="6wV-qf-7FY" secondAttribute="bottom" constant="16" id="1bQ-KN-hvi"/>
                                             <constraint firstAttribute="trailing" secondItem="mss-nh-DMF" secondAttribute="trailing" constant="16" id="2l6-l7-9op"/>
+                                            <constraint firstAttribute="bottom" secondItem="cWi-KQ-Xde" secondAttribute="bottom" constant="64" id="3J0-SY-FCK"/>
                                             <constraint firstItem="zfO-6x-caz" firstAttribute="leading" secondItem="fDE-R3-1kM" secondAttribute="leading" constant="16" id="3Oz-rs-jIV"/>
                                             <constraint firstItem="KUP-RL-tCP" firstAttribute="top" secondItem="8tt-K8-fYN" secondAttribute="bottom" constant="24" id="3kO-Pr-hUL"/>
                                             <constraint firstItem="6wV-qf-7FY" firstAttribute="leading" secondItem="fDE-R3-1kM" secondAttribute="leading" constant="16" id="5uz-uZ-inT"/>
-                                            <constraint firstAttribute="bottom" secondItem="mss-nh-DMF" secondAttribute="bottom" constant="64" id="6iW-l1-OrZ"/>
                                             <constraint firstItem="8tt-K8-fYN" firstAttribute="top" secondItem="zfO-6x-caz" secondAttribute="bottom" constant="8" id="72K-uX-SVn"/>
                                             <constraint firstItem="BFc-dD-b3K" firstAttribute="top" secondItem="8tt-K8-fYN" secondAttribute="bottom" constant="24" id="ARM-AM-kpY"/>
+                                            <constraint firstItem="cWi-KQ-Xde" firstAttribute="top" secondItem="mss-nh-DMF" secondAttribute="bottom" constant="16" id="BmB-3V-WjZ"/>
                                             <constraint firstAttribute="trailing" secondItem="8tt-K8-fYN" secondAttribute="trailing" constant="16" id="DGE-LX-s1A"/>
                                             <constraint firstItem="KUP-RL-tCP" firstAttribute="leading" secondItem="BFc-dD-b3K" secondAttribute="trailing" constant="8" id="DVy-MZ-bwb"/>
                                             <constraint firstItem="mss-nh-DMF" firstAttribute="leading" secondItem="fDE-R3-1kM" secondAttribute="leading" constant="16" id="FEI-vb-w9h"/>
+                                            <constraint firstItem="cWi-KQ-Xde" firstAttribute="leading" secondItem="fDE-R3-1kM" secondAttribute="leading" constant="16" id="Ica-Bi-Ekc"/>
                                             <constraint firstItem="BFc-dD-b3K" firstAttribute="leading" secondItem="fDE-R3-1kM" secondAttribute="leading" constant="14" id="IqJ-YI-HYy"/>
                                             <constraint firstItem="6wV-qf-7FY" firstAttribute="top" secondItem="7kP-Ox-fgz" secondAttribute="bottom" constant="8" id="Pv8-pR-tzU"/>
                                             <constraint firstItem="zfO-6x-caz" firstAttribute="top" secondItem="fDE-R3-1kM" secondAttribute="top" constant="24" id="ToT-nZ-Y1x"/>
@@ -475,6 +486,7 @@
                                             <constraint firstAttribute="trailing" secondItem="KUP-RL-tCP" secondAttribute="trailing" constant="16" id="lPA-GV-pbi"/>
                                             <constraint firstItem="8tt-K8-fYN" firstAttribute="leading" secondItem="fDE-R3-1kM" secondAttribute="leading" constant="16" id="mzO-Y9-6Jl"/>
                                             <constraint firstItem="7kP-Ox-fgz" firstAttribute="top" secondItem="BFc-dD-b3K" secondAttribute="bottom" constant="24" id="v6l-eu-jof"/>
+                                            <constraint firstAttribute="trailing" secondItem="cWi-KQ-Xde" secondAttribute="trailing" constant="16" id="zyM-z0-280"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -552,6 +564,7 @@
                         <outlet property="codeLabel" destination="afZ-mR-8xb" id="Td5-Rt-y2p"/>
                         <outlet property="countryPickerButton" destination="cc7-rG-6D8" id="Vzr-dC-Kf8"/>
                         <outlet property="flag" destination="K0W-av-ybL" id="NrR-aQ-BPJ"/>
+                        <outlet property="lastName" destination="cWi-KQ-Xde" id="viM-jS-beo"/>
                         <outlet property="name" destination="mss-nh-DMF" id="AOG-IV-GAc"/>
                         <outlet property="phoneNumberContainer" destination="KUP-RL-tCP" id="goP-0x-Vey"/>
                         <outlet property="phoneNumberTextfield" destination="301-xJ-uAD" id="U4x-1U-66c"/>
