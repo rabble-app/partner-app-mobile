@@ -14,6 +14,7 @@ class PartnersViewController: UIViewController {
     @IBOutlet var partnerTableview: UITableView!
     @IBOutlet var emptyStateContainer: UIView!
     
+    @IBOutlet weak var setupNewBuyingTeamButton: PrimaryButton!
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
@@ -30,7 +31,7 @@ class PartnersViewController: UIViewController {
         fetchPartnerTeams()
         
         emptyStateContainer.isHidden = true
-       
+        setupNewBuyingTeamButton.isEnabled = !userDataManager.isUserEmployee()
     }
     
 

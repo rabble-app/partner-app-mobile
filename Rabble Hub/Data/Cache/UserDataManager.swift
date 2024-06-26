@@ -49,6 +49,14 @@ class UserDataManager {
         return userDefaults.data(forKey: userDataKey) == nil
     }
     
+    func isUserEmployee() -> Bool {
+        guard let role = getUserData()?.role else {
+            return false
+        }
+        
+        return role.lowercased() == "EMPLOYEE".lowercased()
+    }
+    
     func logoutUser() {
         clearUserData()
         UserDefaultsTokenManager().removeToken()

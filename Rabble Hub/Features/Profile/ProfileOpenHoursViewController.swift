@@ -45,6 +45,14 @@ class ProfileOpenHoursViewController: UIViewController {
         tableView.dataSource = self
         
         initiateCustomDaysObjects()
+        setUpAccess()
+    }
+    
+    func setUpAccess() {
+        if userDataManager.isUserEmployee() {
+            openAllWeekSwitchButton.isEnabled = false
+            saveChangesButton.isEnabled = false
+        }
     }
     
     func initiateCustomDaysObjects() {
@@ -131,6 +139,9 @@ class ProfileOpenHoursViewController: UIViewController {
             self.saveChangesButton.isEnabled = true
         }
         
+        if userDataManager.isUserEmployee() {
+            saveChangesButton.isEnabled = false
+        }
         self.tableView.reloadData()
     }
     

@@ -881,6 +881,7 @@
                         <outlet property="fridgeSpaceTextField" destination="Pi5-oG-YkK" id="BTj-ru-Jwa"/>
                         <outlet property="popupBackgroundView" destination="SDN-dM-Uoa" id="ZKU-vX-LfB"/>
                         <outlet property="postalCodeTextField" destination="rO6-9U-B2S" id="MsO-61-5N2"/>
+                        <outlet property="saveChangesButton" destination="DnQ-bO-I6W" id="tgV-Jx-0Q8"/>
                         <outlet property="storeNameTextField" destination="Gwg-Wf-keY" id="BQd-FY-6fL"/>
                         <outlet property="storeTypeButton" destination="fyh-k2-NJA" id="eRU-WN-Id6"/>
                         <outlet property="storeTypeTextfield" destination="s2K-Ve-LUN" id="wiX-UC-nbD"/>

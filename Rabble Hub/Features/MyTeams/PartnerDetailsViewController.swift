@@ -25,10 +25,12 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var orderTableview_height: NSLayoutConstraint!
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet var imageContainer: UIView!
+    @IBOutlet weak var manageTeamButton: PrimaryButton!
     
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var orderDetails = [OrderDetail]()
+    private let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +66,8 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         
         tableviewHeaderContainer.roundCorners([.topLeft, .topRight], radius: 13)
         ordersTableview.roundCorners([.bottomLeft, .bottomRight], radius: 13)
+        
+        manageTeamButton.isEnabled = !userDataManager.isUserEmployee()
     }
     
     private func loadData() {

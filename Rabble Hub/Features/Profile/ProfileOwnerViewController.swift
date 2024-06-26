@@ -24,6 +24,17 @@ class ProfileOwnerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserData()
+        setUpAccess()
+    }
+    
+    func setUpAccess() {
+        if userDataManager.isUserEmployee() {
+            firstName.isEnabled = false
+            lastName.isEnabled = false
+            email.isEnabled = false
+            phone.isEnabled = false
+            saveBtn.isEnabled = false
+        }
     }
     
     private func fetchUserData() {

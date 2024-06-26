@@ -33,6 +33,7 @@ struct UserData: Codable {
     let token: String
     var onboardingStage: Int
     var employeeCount: Count?
+    var employees: [EmployeeData]?
 }
 
 struct PartnerData: Codable {
@@ -40,6 +41,10 @@ struct PartnerData: Codable {
     var openHours: OpenHours?
     var name: String
     var postalCode: String?
+}
+
+struct EmployeeData: Codable {
+    var partner: PartnerData
 }
 
 struct OpenHours: Codable {
@@ -52,7 +57,7 @@ struct Count: Codable {
 
 extension UserData {
     private enum CodingKeys: String, CodingKey {
-        case id, phone, email, password, firstName, lastName, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token, onboardingStage, employeeCount
+        case id, phone, email, password, firstName, lastName, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token, onboardingStage, employeeCount, employees
         case createdAt = "createdAt"
         case updatedAt = "updatedAt"
         case _count
@@ -78,6 +83,7 @@ extension UserData {
         token = try container.decode(String.self, forKey: .token)
         onboardingStage = try container.decode(Int.self, forKey: .onboardingStage)
         employeeCount = try container.decodeIfPresent(Count.self, forKey: ._count)
+        employees = try container.decodeIfPresent([EmployeeData].self, forKey: .employees)
         
         let createdAtString = try container.decode(String.self, forKey: .createdAt)
         let updatedAtString = try container.decode(String.self, forKey: .updatedAt)

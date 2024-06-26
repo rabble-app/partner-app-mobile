@@ -351,7 +351,6 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="deleteTeamButtonTap:" destination="jFa-Gf-6eK" eventType="touchUpInside" id="4Po-V2-zaf"/>
                                             <action selector="setupNewBuyingTeamButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4hN-RB-d6B"/>
                                         </connections>
                                     </button>
@@ -392,6 +391,7 @@
                         <outlet property="emptyStateContainer" destination="nlZ-rR-OP7" id="D9s-DY-LCN"/>
                         <outlet property="partnerTableview" destination="WLg-wy-cA3" id="SRL-2M-Oqs"/>
                         <outlet property="searchBar" destination="Dta-ro-qDi" id="n4b-Q5-6RS"/>
+                        <outlet property="setupNewBuyingTeamButton" destination="dFE-Dq-x1t" id="rkK-ZQ-1AX"/>
                         <segue destination="wNU-gU-CPV" kind="show" id="Skr-j1-ZM8"/>
                     </connections>
                 </viewController>
@@ -797,6 +797,7 @@
                         <outlet property="img" destination="a1i-qx-H1w" id="bhE-dK-8lh"/>
                         <outlet property="initialContainer" destination="sXe-fd-ejR" id="1lL-EL-8Vc"/>
                         <outlet property="initialLabel" destination="nF3-b1-EXY" id="vJb-sA-QHU"/>
+                        <outlet property="manageTeamButton" destination="Rgp-Fu-8Vf" id="9Lq-Pi-AyL"/>
                         <outlet property="nextDdeliveryContainer" destination="nGg-9e-jlx" id="WqW-53-SB8"/>
                         <outlet property="nextDeliveryDate" destination="fOj-JR-Oa9" id="qLa-mD-0H5"/>
                         <outlet property="orderTableview_height" destination="iXH-0R-hsZ" id="ip8-eL-Dbn"/>
