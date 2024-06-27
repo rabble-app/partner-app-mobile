@@ -33,6 +33,8 @@ public enum RabbleHubAPI {
     case getEmployees(storeId: String)
     case addEmployee(storeId: String, firstName: String, lastName: String, phone: String)
     case deleteEmployee(storeId: String, employeeId: String)
+    case getSingleCollection(storeId: String, collectionId: String)
+    case updateOrderAsCollected(storeId: String, collectionId: String)
 }
 
 extension RabbleHubAPI: TargetType {
@@ -89,6 +91,10 @@ extension RabbleHubAPI: TargetType {
             return "\(URLConfig.getEmployees)/\(storeId)/add-employee"
         case .deleteEmployee(let storeId, let employeeId):
             return "\(URLConfig.getEmployees)/\(storeId)/remove-employee/\(employeeId)"
+        case .getSingleCollection(let storeId, let collectionId):
+            return "\(URLConfig.getSingleCollection)/\(storeId)/collections/\(collectionId)"
+        case .updateOrderAsCollected(let storeId, let collectionId):
+            return "\(URLConfig.getSingleCollection)/\(storeId)/collections/\(collectionId)"
         }
     }
     
@@ -96,9 +102,9 @@ extension RabbleHubAPI: TargetType {
         switch self {
         case .sendOtp, .verifyOtp, .saveStoreProfile, .createBuyingTeam, .confirmOrderReceipt, .addEmployee:
             return .post
-        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateStoreProfile:
+        case .updateUserRecord, .addStoreHours, .updateUserOnboardingRecord, .updateBuyingTeam, .updateStoreProfile, .updateOrderAsCollected:
             return .patch
-        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams, .getStoreInformation, .getStoreOpenHours, .getEmployees:
+        case .getSuppliers, .getDeliveryDays, .getCustomerCollection, .getInboundDelivery, .getInboundDeliveryDetails, .getPartnerTeams, .getStoreInformation, .getStoreOpenHours, .getEmployees, .getSingleCollection:
             return .get
         case .updateStoreHours:
             return .put
@@ -317,6 +323,10 @@ extension RabbleHubAPI: TargetType {
             ]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .deleteEmployee:
+            return .requestPlain
+        case .getSingleCollection:
+            return .requestPlain
+        case .updateOrderAsCollected:
             return .requestPlain
         }
     }

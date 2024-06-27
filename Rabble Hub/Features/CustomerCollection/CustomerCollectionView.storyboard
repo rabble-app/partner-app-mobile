@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lBY-A0-Wch">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lBY-A0-Wch">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -266,7 +266,7 @@
                                 <rect key="frame" x="0.0" y="104" width="393" height="665"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pq4-QY-sW0">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="556.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="614.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knr-gQ-3vb">
                                                 <rect key="frame" x="16" y="30" width="56" height="56"/>
@@ -432,6 +432,28 @@
                                                     <constraint firstAttribute="height" constant="40" id="wfD-1x-2Zx"/>
                                                 </constraints>
                                             </view>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdt-25-XNj" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="556.66666666666663" width="361" height="50"/>
+                                                <color key="backgroundColor" name="button_primary"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="89i-p8-3Pb"/>
+                                                </constraints>
+                                                <color key="tintColor" name="button_title_color"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Mark Order Collected">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="GoshaSans-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <connections>
+                                                    <action selector="collectOrder:" destination="xCm-Ag-o3o" eventType="touchUpInside" id="M1y-as-WVG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="background_primary"/>
                                         <constraints>
@@ -446,6 +468,9 @@
                                             <constraint firstItem="YGh-O7-3p1" firstAttribute="centerY" secondItem="8Wi-VU-qCv" secondAttribute="centerY" id="NvI-go-sXG"/>
                                             <constraint firstItem="z8w-98-ZPZ" firstAttribute="leading" secondItem="pq4-QY-sW0" secondAttribute="leading" constant="16" id="O5D-BR-sqM"/>
                                             <constraint firstAttribute="trailing" secondItem="YGh-O7-3p1" secondAttribute="trailing" constant="16" id="UHH-i8-ghU"/>
+                                            <constraint firstItem="cdt-25-XNj" firstAttribute="top" secondItem="z8w-98-ZPZ" secondAttribute="bottom" constant="8" id="UjJ-6d-4Qf"/>
+                                            <constraint firstItem="cdt-25-XNj" firstAttribute="leading" secondItem="pq4-QY-sW0" secondAttribute="leading" constant="16" id="Ujb-Ky-FMp"/>
+                                            <constraint firstAttribute="bottom" secondItem="cdt-25-XNj" secondAttribute="bottom" constant="8" id="Yad-HT-YYx"/>
                                             <constraint firstItem="lv1-hW-eZW" firstAttribute="top" secondItem="fGu-Ni-1DR" secondAttribute="bottom" constant="4" id="ao5-cF-Pwh"/>
                                             <constraint firstAttribute="trailing" secondItem="z8w-98-ZPZ" secondAttribute="trailing" constant="16" id="azV-Ik-0VB"/>
                                             <constraint firstItem="Knr-gQ-3vb" firstAttribute="top" secondItem="pq4-QY-sW0" secondAttribute="top" constant="30" id="cQo-TT-uE8"/>
@@ -460,7 +485,7 @@
                                             <constraint firstItem="c9A-qS-Z8m" firstAttribute="leading" secondItem="pq4-QY-sW0" secondAttribute="leading" constant="16" id="oXn-WS-bPb"/>
                                             <constraint firstAttribute="trailing" secondItem="Bqs-VA-1dm" secondAttribute="trailing" constant="16" id="opu-gG-amF"/>
                                             <constraint firstItem="AO4-z5-oxI" firstAttribute="leading" secondItem="pq4-QY-sW0" secondAttribute="leading" constant="16" id="pqb-kP-NEB"/>
-                                            <constraint firstAttribute="bottom" secondItem="z8w-98-ZPZ" secondAttribute="bottom" constant="8" id="uc3-gD-gQT"/>
+                                            <constraint firstAttribute="trailing" secondItem="cdt-25-XNj" secondAttribute="trailing" constant="16" id="v5m-Xp-2ZB"/>
                                             <constraint firstAttribute="trailing" secondItem="c9A-qS-Z8m" secondAttribute="trailing" constant="16" id="xFz-BT-Maa"/>
                                             <constraint firstItem="fGu-Ni-1DR" firstAttribute="leading" secondItem="pq4-QY-sW0" secondAttribute="leading" constant="16" id="zCD-hw-4UD"/>
                                         </constraints>
@@ -491,6 +516,7 @@
                     <navigationItem key="navigationItem" title="Order Details" id="j0P-O9-FA4"/>
                     <connections>
                         <outlet property="categoryValueLabel" destination="YGh-O7-3p1" id="Z4Y-dY-KEd"/>
+                        <outlet property="collectOrderBtn" destination="cdt-25-XNj" id="qnU-Uk-fiZ"/>
                         <outlet property="dateTimeValueLabel" destination="Y7M-a9-fWi" id="Cmk-ig-Rgl"/>
                         <outlet property="iconContainer" destination="Knr-gQ-3vb" id="L37-iJ-Fth"/>
                         <outlet property="ordersTableview" destination="z8w-98-ZPZ" id="kE8-CM-ZRi"/>
@@ -534,6 +560,9 @@
         </namedColor>
         <namedColor name="button_secondary">
             <color red="0.039000000804662704" green="0.51800000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_title_color">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray_3">
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

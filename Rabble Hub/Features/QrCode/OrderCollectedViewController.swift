@@ -8,18 +8,28 @@
 import UIKit
 
 class OrderCollectedViewController: UIViewController {
-
+   
     @IBOutlet var descLabel: UILabel!
+    var selectedCollectionData: CollectionData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setUpView()
+    }
+    
+    private func setUpView() {
+        self.descLabel.text = "This order has been picked up by \(selectedCollectionData?.user.firstName ?? "") \(selectedCollectionData?.user.lastName ?? ""), make sure to see what else you could offer \(selectedCollectionData?.user.firstName ?? "") \(selectedCollectionData?.user.lastName ?? "") on their next collection on their next collection day."
     }
     
 
     @IBAction func newScan(_ sender: Any) {
-        self.dismiss(animated: true)
+        let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as? MainTabViewController {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false)
+            vc.selectedIndex = 2
+            vc.reloadSelectedTab()
+        }
     }
     /*
     // MARK: - Navigation

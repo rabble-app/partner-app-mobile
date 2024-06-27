@@ -24,7 +24,7 @@ struct CollectionData: Codable {
 }
 
 struct CollectionUser: Codable {
-    let id: String
+    let id: String?
     let firstName: String
     let lastName: String
 }
@@ -40,6 +40,7 @@ struct Team: Codable {
 }
 
 struct Producer: Codable {
+    let businessName: String? // Marked optional
     let categories: [CategoryContainer]
 }
 

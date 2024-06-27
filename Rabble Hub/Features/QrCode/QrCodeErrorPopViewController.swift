@@ -18,7 +18,6 @@ class QrCodeErrorPopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(white: 1, alpha: 0.6)
-        // Do any additional setup after loading the view.
     }
     
 

@@ -8,8 +8,12 @@
 import UIKit
 import QRCodeReader
 import AVFoundation
+import Moya
 
 class QrCodeViewController: UIViewController {
+    
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
     
     @IBOutlet var cameraView: QRCodeReaderView! {
         didSet {
@@ -81,8 +85,7 @@ class QrCodeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         reader.didFindCode = { [self] result in
             print("Completion with result: \(result.value) of type \(result.metadataType)")
-            
-            self.showErrorPop()
+            self.getSingleCollection(result.value)
         }
         
         reader.startScanning()
@@ -92,10 +95,62 @@ class QrCodeViewController: UIViewController {
         reader.stopScanning()
     }
     
-    func goToOrderDetails() {
+    private func getSingleCollection(_ collectionId: String) {
+        self.showLoadingIndicator()
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+        apiProvider.request(.getSingleCollection(storeId: storeId, collectionId: collectionId)) { result in
+            self.dismissLoadingIndicator()
+            self.handleGetSingleCollectionResponse(result)
+        }
+    }
+    
+
+    private func handleGetSingleCollectionResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            handleSuccessGetSingleCollectionResponse(response)
+        case .failure(let error):
+            showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessGetSingleCollectionResponse(_ response: Response) {
+        do {
+            let getSingleCollectionResponse = try response.map(GetSingleCollectionResponse.self)
+            if getSingleCollectionResponse.statusCode == 200 {
+                self.showSuccessMessage(getSingleCollectionResponse.message)
+                self.goToOrderDetails(getSingleCollectionResponse.data)
+            } else {
+                self.showErrorPop()
+                showError(getSingleCollectionResponse.message)
+            }
+        } catch {
+            handleMappingError(response)
+        }
+    }
+    
+    func showSuccessMessage(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: true, parent: self.view)
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            self.showError(errorResponse.message)
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
+    }
+    
+    func goToOrderDetails(_ collectionData: CollectionData) {
         let storyboard = UIStoryboard(name: "CustomerCollectionView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as? OrderDetailsViewController {
             vc.isFromScanning = true
+            vc.selectedCollectionData = collectionData
             vc.modalPresentationStyle = .overFullScreen
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -115,8 +170,7 @@ class QrCodeViewController: UIViewController {
 extension QrCodeViewController: QRCodeReaderViewControllerDelegate {
     
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
-        // reader.stopScanning()
-        
+        //reader.stopScanning()
 //        let alert = UIAlertController(
 //            title: "QRCodeReader",
 //            message: String (format:"%@ (of type %@)", result.value, result.metadataType),

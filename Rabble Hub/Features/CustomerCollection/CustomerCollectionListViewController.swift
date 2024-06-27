@@ -152,7 +152,7 @@ extension CustomerCollectionListViewController: UITableViewDelegate, UITableView
             return UITableViewCell()
         }
         let collection = self.collectionData[indexPath.row]
-        cell.usernameLabel.text = collection.user.firstName + " " + collection.user.lastName
+        cell.usernameLabel.text = (collection.user.firstName) + " " + (collection.user.lastName)
         cell.teammateNameLabel.text = collection.order.team.name
         cell.itemsCountLabel.text = "\(collection.items.count) Items"
         

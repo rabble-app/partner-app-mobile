@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class OrderDetailsViewController: UIViewController {
     
@@ -19,8 +20,12 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var tableViewConstraintHeight: NSLayoutConstraint!
     
     var isFromScanning: Bool = false
+    @IBOutlet var collectOrderBtn: PrimaryButton!
     
     var selectedCollectionData: CollectionData?
+    
+    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +35,7 @@ class OrderDetailsViewController: UIViewController {
     }
     
     private func loadData() {
-        if let data = selectedCollectionData {
-            // Update the UI with the data
-            print(data)
-            
+        if selectedCollectionData != nil {
             self.usernameLabel.text = (selectedCollectionData?.user.firstName ?? "") + " " + (selectedCollectionData?.user.lastName ?? "")
             self.teamnameLabel.text = selectedCollectionData?.order.team.name ?? ""
             
@@ -77,7 +79,74 @@ class OrderDetailsViewController: UIViewController {
         iconContainer.layer.cornerRadius = 28.0
         iconContainer.clipsToBounds = true
         ordersTableview.showsVerticalScrollIndicator = false
+        
+        if isFromScanning {
+            self.collectOrderBtn.isHidden = false
+        }
     }
+    
+    @IBAction func collectOrder(_ sender: Any) {
+        self.markOrderAsCollected()
+    }
+    
+    func markOrderAsCollected(){
+        self.showLoadingIndicator()
+        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+        apiProvider.request(.updateOrderAsCollected(storeId: storeId, collectionId: selectedCollectionData?.id ?? "")) { result in
+            self.dismissLoadingIndicator()
+            self.handleOrderCollectedResponse(result)
+        }
+    }
+    
+    private func handleOrderCollectedResponse(_ result: Result<Response, MoyaError>) {
+        switch result {
+        case .success(let response):
+            handleSuccessOrderCollectedResponse(response)
+        case .failure(let error):
+            showError(error.localizedDescription)
+        }
+    }
+    
+    private func handleSuccessOrderCollectedResponse(_ response: Response) {
+        do {
+            let orderCollectedResponse = try response.map(MarkOrderCollectedResponse.self)
+            if orderCollectedResponse.statusCode == 200 {
+                self.showSuccessMessage(orderCollectedResponse.message)
+                self.goToSuccessPage()
+            } else {
+                showError(orderCollectedResponse.message)
+            }
+        } catch {
+            handleMappingError(response)
+        }
+    }
+    
+    func showSuccessMessage(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: true, parent: self.view)
+    }
+    
+    private func handleMappingError(_ response: Response) {
+        do {
+            let errorResponse = try response.map(StandardResponse.self)
+            self.showError(errorResponse.message)
+        } catch {
+            print("Failed to map response data: \(error)")
+        }
+    }
+    
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: self.view)
+    }
+    
+    private func goToSuccessPage() {
+        let storyboard = UIStoryboard(name: "QrCodeView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "OrderCollectedViewController") as? OrderCollectedViewController {
+            vc.selectedCollectionData = self.selectedCollectionData
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
+    }
+    
 }
 
 extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {
