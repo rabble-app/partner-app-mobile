@@ -23,6 +23,7 @@ class ProfilePartnerDetailsViewController: UIViewController {
     @IBOutlet weak var fridgeSpaceButton: UIButton!
     @IBOutlet weak var dryStorageButton: UIButton!
     
+    @IBOutlet weak var saveChangesButton: PrimaryButton!
     @IBOutlet weak var popupBackgroundView: UIView!
     
     private var originalStoreData: StoreData?
@@ -44,6 +45,24 @@ class ProfilePartnerDetailsViewController: UIViewController {
         self.storeTypeButton.setTitle("", for: .normal)
         self.fridgeSpaceButton.setTitle("", for: .normal)
         self.dryStorageButton.setTitle("", for: .normal)
+        setUpAccess()
+    }
+    
+    func setUpAccess() {
+        if userDataManager.isUserEmployee() {
+            storeNameTextField.isEnabled = false
+            postalCodeTextField.isEnabled = false
+            cityTextField.isEnabled = false
+            streetAddressTextField.isEnabled = false
+            directionsTextView.isEditable = false
+            storeTypeTextfield.isEnabled = false
+            fridgeSpaceTextField.isEnabled = false
+            dryStorageTextField.isEnabled = false
+            storeTypeButton.isEnabled = false
+            fridgeSpaceButton.isEnabled = false
+            dryStorageButton.isEnabled = false
+            saveChangesButton.isEnabled = false
+        }
     }
    
     private func fetchPartnerDetails() {

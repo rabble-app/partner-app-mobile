@@ -28,6 +28,8 @@ class ProfileScheduleTableViewCell: UITableViewCell {
     var customObjectUpdated: ((CustomOpenHour) -> ())?
     var customObject: CustomOpenHour?
     
+    private let userDataManager = UserDataManager()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -93,6 +95,13 @@ class ProfileScheduleTableViewCell: UITableViewCell {
                 self.endTimeButton.isEnabled = isEnabled
                 self.dayButton.isEnabled = isEnabled
             }
+        }
+        
+        if userDataManager.isUserEmployee() {
+            startTimeButton.isEnabled = false
+            endTimeButton.isEnabled = false
+            daySwitch.isEnabled = false
+            dayButton.isEnabled = false
         }
     }
     

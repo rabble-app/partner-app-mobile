@@ -12,6 +12,7 @@ class ManageEmployeeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var emptyStateContainer: UIView!
+    @IBOutlet weak var addEmployeeButton: PrimaryButton!
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
     var employees = [Employee]()
@@ -26,6 +27,14 @@ class ManageEmployeeViewController: UIViewController {
         self.getEmployees()
         self.emptyStateContainer.isHidden = true
         self.tableView.reloadData()
+        setUpAccess()
+    }
+    
+    func setUpAccess() {
+        if userDataManager.isUserEmployee() {
+            addEmployeeButton.isEnabled = false
+            tableView.allowsSelection = false
+        }
     }
     
     @objc func employeesAdded() {
