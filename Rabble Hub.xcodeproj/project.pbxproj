@@ -47,6 +47,8 @@
 		86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52AB692BCD656100DB8135 /* SignUpStepIndicatorViewController.swift */; };
 		86A60E072BCE0F5A00496390 /* MobileInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */; };
 		86A60E0B2BCE2F5C00496390 /* OtpInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */; };
+		86A803E22C2D77F000FAFFD9 /* GetSingleCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A803E12C2D77F000FAFFD9 /* GetSingleCollectionResponse.swift */; };
+		86A803E42C2D8C8F00FAFFD9 /* MarkOrderCollectedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A803E32C2D8C8F00FAFFD9 /* MarkOrderCollectedResponse.swift */; };
 		86C0F5CE2BCFA2F700B78747 /* ProducersListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86C0F5CD2BCFA2F700B78747 /* ProducersListView.storyboard */; };
 		86C0F5D12BCFA30D00B78747 /* ProducersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5D02BCFA30D00B78747 /* ProducersListViewController.swift */; };
 		86C0F5D32BCFAFF400B78747 /* ProducersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F5D22BCFAFF400B78747 /* ProducersListTableViewCell.swift */; };
@@ -232,6 +234,8 @@
 		86A60DF72BCCF8C200496390 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
 		86A60E062BCE0F5A00496390 /* MobileInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileInputViewController.swift; sourceTree = "<group>"; };
 		86A60E0A2BCE2F5C00496390 /* OtpInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpInputViewController.swift; sourceTree = "<group>"; };
+		86A803E12C2D77F000FAFFD9 /* GetSingleCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSingleCollectionResponse.swift; sourceTree = "<group>"; };
+		86A803E32C2D8C8F00FAFFD9 /* MarkOrderCollectedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkOrderCollectedResponse.swift; sourceTree = "<group>"; };
 		86C0F5CD2BCFA2F700B78747 /* ProducersListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProducersListView.storyboard; sourceTree = "<group>"; };
 		86C0F5D02BCFA30D00B78747 /* ProducersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersListViewController.swift; sourceTree = "<group>"; };
 		86C0F5D22BCFAFF400B78747 /* ProducersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersListTableViewCell.swift; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 				AC6417F72C00D8C000B8A61B /* StandardResponse.swift */,
 				AC6418062C0378DA00B8A61B /* DeliveryDayResponse.swift */,
 				86E08F782C0DE32500AE6D58 /* CustomerCollectionResponse.swift */,
+				86A803E12C2D77F000FAFFD9 /* GetSingleCollectionResponse.swift */,
 				865EBA602C100C41004E5798 /* InboundDeliveryResponse.swift */,
 				868C2D112C13739A009295BA /* OrderDetailsResponse.swift */,
 				868C2D282C172C36009295BA /* GetPartnerTeamsResponse.swift */,
@@ -451,6 +456,7 @@
 				866517592C233FDC00EC4662 /* GetEmployeesResponse.swift */,
 				8665175B2C234A7800EC4662 /* AddEmployeesResponse.swift */,
 				8665175D2C235C5700EC4662 /* DeleteEmployeeResponse.swift */,
+				86A803E32C2D8C8F00FAFFD9 /* MarkOrderCollectedResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -1145,6 +1151,7 @@
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */,
 				AC1986732C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift in Sources */,
+				86A803E42C2D8C8F00FAFFD9 /* MarkOrderCollectedResponse.swift in Sources */,
 				AC8CDDDD2BDBA2E30091882B /* EmployeeTableViewCell.swift in Sources */,
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
 				86A60E052BCE0EFD00496390 /* SignUpStepIndicatorViewController.swift in Sources */,
@@ -1197,6 +1204,7 @@
 				8665175C2C234A7800EC4662 /* AddEmployeesResponse.swift in Sources */,
 				AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */,
 				ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */,
+				86A803E22C2D77F000FAFFD9 /* GetSingleCollectionResponse.swift in Sources */,
 				868C2D122C13739A009295BA /* OrderDetailsResponse.swift in Sources */,
 				AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,
