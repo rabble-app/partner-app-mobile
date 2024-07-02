@@ -41,10 +41,14 @@ class LoadingIndicator {
 
 extension UIViewController {
     func showLoadingIndicator() {
-        LoadingIndicator.shared.show(in: self)
+        DispatchQueue.main.async {
+            LoadingIndicator.shared.show(in: self)
+        }
     }
     
     func dismissLoadingIndicator() {
-        LoadingIndicator.shared.dismiss()
+        DispatchQueue.main.async {
+            LoadingIndicator.shared.dismiss()
+        }
     }
 }
