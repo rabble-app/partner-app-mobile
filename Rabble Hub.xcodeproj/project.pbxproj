@@ -100,6 +100,7 @@
 		86ED8D9E2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED8D9D2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift */; };
 		86FF72842BD276A4000F68B7 /* PartnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */; };
 		9EB5470129B8CF9D7E815131 /* Pods_Rabble_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10A02AB21778D0B99C393 /* Pods_Rabble_Hub.framework */; };
+		AC0C89DD2C34232000CCEA28 /* RabbleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0C89DC2C34232000CCEA28 /* RabbleHelper.swift */; };
 		AC0EE1E52C04168A0047293F /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE1E42C0416890047293F /* CalendarViewCell.swift */; };
 		AC0EE1E72C04686E0047293F /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE1E62C04686E0047293F /* DateExtension.swift */; };
 		AC119CB02C0EFE6A00056441 /* RabbleSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC119CAE2C0EFE6A00056441 /* RabbleSheetTableViewCell.swift */; };
@@ -288,6 +289,7 @@
 		86ED8D9D2BF9DEC00089E36A /* Rabble_HubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabble_HubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86FF72832BD276A4000F68B7 /* PartnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTableViewCell.swift; sourceTree = "<group>"; };
 		8EB23A055A884DC26BE88FA2 /* Pods-Rabble Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabble Partner.release.xcconfig"; path = "Target Support Files/Pods-Rabble Partner/Pods-Rabble Partner.release.xcconfig"; sourceTree = "<group>"; };
+		AC0C89DC2C34232000CCEA28 /* RabbleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleHelper.swift; sourceTree = "<group>"; };
 		AC0EE1E42C0416890047293F /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
 		AC0EE1E62C04686E0047293F /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		AC119CAE2C0EFE6A00056441 /* RabbleSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleSheetTableViewCell.swift; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 				8656189B2BFF99BA001E65EB /* ToastView.swift */,
 				8656189D2BFFA475001E65EB /* Snackbar.swift */,
 				AC1986702C21ABA000EDF5C5 /* LoadingIndicator.swift */,
+				AC0C89DC2C34232000CCEA28 /* RabbleHelper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1205,6 +1208,7 @@
 				AC3691B52C19C768007557A4 /* UpdateTeamResponse.swift in Sources */,
 				ACC28D322BEF4498006C6CAE /* RabbleProgressView.swift in Sources */,
 				86A803E22C2D77F000FAFFD9 /* GetSingleCollectionResponse.swift in Sources */,
+				AC0C89DD2C34232000CCEA28 /* RabbleHelper.swift in Sources */,
 				868C2D122C13739A009295BA /* OrderDetailsResponse.swift in Sources */,
 				AC8CDDE22BDBE34E0091882B /* ManageEmployeeAddEmployeeViewController.swift in Sources */,
 				86A60DB82BCCEE3200496390 /* SceneDelegate.swift in Sources */,

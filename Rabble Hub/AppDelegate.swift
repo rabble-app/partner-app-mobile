@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Branch
 import IQKeyboardManagerSwift
 
 @main
@@ -26,6 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fonts?.forEach({ url in
             CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
         })
+        
+        // Initialize Branch session
+        Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
+            if let error = error {
+                print("Branch initialization error: \(error.localizedDescription)")
+            } else if let params = params as? [String: AnyObject] {
+                // Optionally, handle deep link params
+                print("Branch initialization params: \(params)")
+            }
+        }
         
         let customerCollectionListViewController = CustomerCollectionListViewController()
         let navigationController = UINavigationController(rootViewController: customerCollectionListViewController)

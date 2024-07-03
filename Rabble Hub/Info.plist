@@ -28,5 +28,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>branch_key</key>
+	<dict>
+		<key>live</key>
+		<string>key_live_hFamvc9lj4PRkil4rQKsDmlbrBj7bb7n</string>
+	</dict>
 </dict>
 </plist>

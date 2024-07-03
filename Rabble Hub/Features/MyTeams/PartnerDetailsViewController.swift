@@ -30,6 +30,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var orderDetails = [OrderDetail]()
+    var generatedUrlString: String?
     private let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
@@ -150,7 +151,39 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func shareButtonTap(_ sender: Any) {
-        // Add Share functionality here
+        
+        getDeepLink { deepLink in
+            guard let urlToShare = deepLink, let finalLink = URL(string: urlToShare) else {
+                return
+            }
+            
+            let itemsToShare = [finalLink] as [Any]
+            
+            // Initialize UIActivityViewController with the content
+            let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            
+            DispatchQueue.main.async {
+                // Present the UIActivityViewController
+                self.present(activityViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func getDeepLink( completion: @escaping (String?) -> Void) {
+        if let generatedUrlString = self.generatedUrlString {
+            completion(generatedUrlString)
+        } else {
+            guard let partnerTeamData = self.partnerTeam else {
+                completion(nil)
+                return }
+            
+            self.showLoadingIndicator()
+            generateDeepLink(for: partnerTeamData) { url in
+                self.dismissLoadingIndicator()
+                self.generatedUrlString = url
+                completion(url)
+            }
+        }
     }
     
     @IBAction func manageTeamButtonTap(_ sender: Any) {
