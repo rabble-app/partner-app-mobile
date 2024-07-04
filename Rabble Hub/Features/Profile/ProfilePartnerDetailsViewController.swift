@@ -267,15 +267,7 @@ class ProfilePartnerDetailsViewController: UIViewController {
     private func updateUserDataPostalCode(_ store: Store) {
         let userDataManager = UserDataManager()
         if var userData = userDataManager.getUserData() {
-            // Check if partner is nil, if so, initialize it
-            if userData.partner == nil {
-                userData.partner = PartnerData(id: store.id, openHours: userData.partner?.openHours, name: store.name, postalCode: self.postalCodeTextField.text)
-            } else {
-                // Update existing partner data
-                userData.partner?.postalCode = self.postalCodeTextField.text
-                userData.partner?.id = store.id
-            }
-            
+            userData.partner = PartnerData(id: store.id, openHours: userData.partner?.openHours, name: store.name, postalCode: self.postalCodeTextField.text)
             userDataManager.saveUserData(userData)
         }
     }
