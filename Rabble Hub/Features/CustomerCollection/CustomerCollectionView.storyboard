@@ -15,7 +15,6 @@
         </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Regular</string>
-            <string>SFPro-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -187,10 +186,17 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no customer collections scheduled in the near future." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCb-7s-UTz">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCb-7s-UTz">
                                         <rect key="frame" x="16" y="337" width="361" height="38.333333333333314"/>
-                                        <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
-                                        <color key="textColor" name="gray_3"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="You have no customer collections scheduled in the near future.">
+                                                <attributes>
+                                                    <color key="NSColor" name="gray_3"/>
+                                                    <font key="NSFont" size="16" name="SFPro-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
