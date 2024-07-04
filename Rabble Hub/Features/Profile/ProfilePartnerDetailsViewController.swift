@@ -135,7 +135,7 @@ class ProfilePartnerDetailsViewController: UIViewController {
     
     @IBAction func storeTypeButtonTapped(_ sender: Any) {
         self.showViewWithAnimation(view: self.popupBackgroundView)
-        let items = ["Item 1", "Item 2", "Item 3", "Item 4"]
+        let items = ["Grocery Store", "Corner Store", "Butcher", "Fish Monger", "Other"]
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = "Store Type"
         rabbleSheetViewController.items =  items
