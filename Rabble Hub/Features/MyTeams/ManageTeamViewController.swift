@@ -46,10 +46,10 @@ class ManageTeamViewController: UIViewController {
         teamTableview.dataSource = self
         segmentedController.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         
-        let teamInfoSection = Section(title: "Team Info", items: [
+        let teamInfoSection = Section(title: "TEAM INFO", items: [
             TeamSetting(title: "Team Name", imageName: "icon_team")
         ])
-        let teamSettingsSection = Section(title: "Team Settings", items: [
+        let teamSettingsSection = Section(title: "TEAM SETTINGS", items: [
             TeamSetting(title: "Shipment frequency", imageName: "icon_frequency"),
             TeamSetting(title: "Adjust delivery date", imageName: "icon_calendar"),
             TeamSetting(title: "Product limit", imageName: "icon_product_limit")
@@ -345,7 +345,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             
             let label = UILabel(frame: CGRect(x: 16, y: 8, width: tableView.frame.width - 32, height: 24))
             label.font = UIFont(name: "SFPro-Regular", size: 12) // SF Pro Regular
-            label.textColor = Colors.Gray4
+            label.textColor = Colors.GraySectionHeader
             label.text = sections[section].title
             headerView.addSubview(label)
             
