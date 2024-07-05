@@ -28,12 +28,16 @@ class PartnersViewController: UIViewController {
         partnerTableview.delegate = self
         partnerTableview.dataSource = self
         searchBar.delegate = self
-        fetchPartnerTeams()
         
         emptyStateContainer.isHidden = true
         setupNewBuyingTeamButton.isEnabled = !userDataManager.isUserEmployee()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchPartnerTeams()
+    }
 
     @IBAction func setupNewBuyingTeamButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "ProducersListView", bundle: Bundle.main)

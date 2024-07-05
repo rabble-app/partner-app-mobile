@@ -16,6 +16,7 @@ protocol ChooseDeliveryDayViewControllerDelegate: AnyObject {
 class ChooseDeliveryDayViewController: UIViewController {
     
     weak var dismissalDelegate: ChooseFrequencyViewControllerDelegate?
+    weak var partnerManageDelegate: ManageTeamViewControllerDelegate?
     
     @IBOutlet var supplierpartnernameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
@@ -60,7 +61,8 @@ class ChooseDeliveryDayViewController: UIViewController {
         configureCalendarCollectionView()
         
         if isFromEdit {
-            nextButton.setTitle("Save Changes", for: .normal)
+            let newTitle = NSAttributedString(string: "Save Changes")
+            self.nextButton.setAttributedTitle(newTitle,for:.normal)
             titleLabel.text = "Adjust Delivery Day"
             stepContainer.isHidden = true
             stepContainer_height.constant = 0
@@ -205,7 +207,15 @@ class ChooseDeliveryDayViewController: UIViewController {
                 if updateResponse.statusCode == 200 || updateResponse.statusCode == 201 {
                     partnerTeam?.deliveryDay = deliveryDay
                     DispatchQueue.main.async {
-                        self.goToCreateALimitViewController(deliveryDay: nil)
+                        if self.isFromEdit {
+                            if let updatedPartnerTeam = self.partnerTeam {
+                                self.partnerManageDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
+                            }
+                            self.dismissViewController()
+                        }
+                        else {
+                            self.goToCreateALimitViewController(deliveryDay: nil)
+                        }
                     }
                 } else {
                     SnackBar().alert(withMessage: updateResponse.message, isSuccess: false, parent: view)

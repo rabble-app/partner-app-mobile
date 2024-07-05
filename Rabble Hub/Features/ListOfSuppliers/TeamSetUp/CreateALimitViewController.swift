@@ -11,6 +11,7 @@ import Moya
 class CreateALimitViewController: UIViewController {
 
     weak var dismissalDelegate: ChooseDeliveryDayViewControllerDelegate?
+    weak var partnerManageDelegate: ManageTeamViewControllerDelegate?
     
     @IBOutlet var supplierpartnernameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
@@ -60,10 +61,15 @@ class CreateALimitViewController: UIViewController {
     
     private func configureLabels() {
         if isFromEdit {
-            nextButton.setTitle("Save Changes", for: .normal)
+            let newTitle = NSAttributedString(string: "Save Changes")
+            self.nextButton.setAttributedTitle(newTitle,for:.normal)
             titleLabel.text = "Edit Product Limit"
             stepContainer.isHidden = true
             stepContainer_height.constant = 0
+            
+            if let currentProductLimit = self.partnerTeam?.productLimit {
+                self.selectionLabel.text = currentProductLimit + " cubic feet"
+            }
         }
         supplierpartnernameLabel.text = "\(selectedSupplier?.businessName ?? "")@\(userDataManager.getUserData()?.partner?.name ?? "")"
     }
@@ -125,6 +131,9 @@ class CreateALimitViewController: UIViewController {
                     self.showSnackBar(message: updateResponse.message, isSuccess: true)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.dismiss(animated: false) {
+                            if let updatedPartnerTeam = self.partnerTeam {
+                                self.partnerManageDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
+                            }
                             self.dismissalDelegate?.dismissViewController()
                         }
                     }

@@ -13,6 +13,14 @@ struct Section {
     var items: [TeamSetting]
 }
 
+protocol ManageTeamViewControllerDelegate: AnyObject {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam)
+}
+
+extension ManageTeamViewControllerDelegate {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) { }
+}
+
 class ManageTeamViewController: UIViewController {
     
     @IBOutlet var segmentedController: UISegmentedControl!
@@ -24,6 +32,7 @@ class ManageTeamViewController: UIViewController {
     
     @IBOutlet var emptyStateContainer: UIView!
     
+    weak var partnerDetailsDelegate: PartnerDetailsViewControllerDelegate?
     var sections: [Section] = []
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
@@ -272,6 +281,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
                         vc.partnerTeam = self.partnerTeam
+                        vc.partnerManageDelegate = self
                         vc.title = "Edit Shipment Frequency"
                         self.present(vc, animated: true)
                     }
@@ -280,6 +290,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
                         vc.partnerTeam = self.partnerTeam
+                        vc.partnerManageDelegate = self
                         vc.title = "Adjust Delivery Day"
                         self.present(vc, animated: true)
                     }
@@ -288,6 +299,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
                         vc.partnerTeam = self.partnerTeam
+                        vc.partnerManageDelegate = self
                         vc.title = "Edit Product Limit"
                         self.present(vc, animated: true)
                     }
@@ -347,5 +359,12 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             return 24
         }
         return 0
+    }
+}
+
+extension ManageTeamViewController: ManageTeamViewControllerDelegate {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) {
+        self.partnerTeam = updatedPartnerTeam
+        self.partnerDetailsDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
     }
 }

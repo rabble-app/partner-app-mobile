@@ -8,6 +8,14 @@
 import UIKit
 import Moya
 
+protocol PartnerDetailsViewControllerDelegate: AnyObject {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam)
+}
+
+extension PartnerDetailsViewControllerDelegate {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) { }
+}
+
 class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var img: UIImageView!
@@ -190,6 +198,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ManageTeamViewController") as? ManageTeamViewController {
             vc.partnerTeam = self.partnerTeam
+            vc.partnerDetailsDelegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -235,3 +244,9 @@ extension PartnerDetailsViewController: UITableViewDelegate, UITableViewDataSour
     
 }
 
+
+extension PartnerDetailsViewController: PartnerDetailsViewControllerDelegate {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) {
+        self.partnerTeam = updatedPartnerTeam
+    }
+}
