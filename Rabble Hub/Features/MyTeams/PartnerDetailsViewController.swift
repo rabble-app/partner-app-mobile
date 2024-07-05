@@ -91,6 +91,15 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
             initialLabel.text = String(firstLetter).uppercased()
         }
         
+        if let members = partnerTeam?.members {
+            if members.isEmpty {
+                self.membersTitleLabelWidthConstraint.constant = 0
+            }
+        }
+        else {
+            self.membersTitleLabelWidthConstraint.constant = 0
+        }
+        
         if let imageUrl = URL(string: partnerTeam?.imageUrl ?? "placeholderImage") {
             img?.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
         }
