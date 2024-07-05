@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHA-mA-duX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHA-mA-duX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,6 +12,9 @@
     <customFonts key="customFonts">
         <array key="GoshaSansBold.otf">
             <string>GoshaSans-Bold</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
         </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Bold</string>
@@ -457,7 +460,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30o-IL-iwv" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="968"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-qx-H1w">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-qx-H1w">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="297"/>
                                                 <color key="backgroundColor" name="gray_5"/>
                                                 <constraints>
@@ -533,7 +536,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWX-EV-a7O">
-                                                        <rect key="frame" x="80" y="8" width="112.66666666666669" height="24"/>
+                                                        <rect key="frame" x="80" y="8" width="224" height="24"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Store Name">
                                                                 <attributes>
@@ -558,8 +561,11 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32g-2A-8R0">
-                                                        <rect key="frame" x="308" y="13" width="53" height="14"/>
-                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                                        <rect key="frame" x="308" y="12.333333333333314" width="53" height="15.666666666666664"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="53" id="RBS-lF-dgj"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.25098039215686274" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -570,6 +576,7 @@
                                                     <constraint firstItem="32g-2A-8R0" firstAttribute="centerY" secondItem="lWX-EV-a7O" secondAttribute="centerY" id="ARu-nI-AgZ"/>
                                                     <constraint firstAttribute="height" constant="85" id="EE3-9h-HtK"/>
                                                     <constraint firstItem="XRf-Hm-yEv" firstAttribute="centerY" secondItem="MU3-dg-xLL" secondAttribute="centerY" id="JAY-jr-HM1"/>
+                                                    <constraint firstItem="32g-2A-8R0" firstAttribute="leading" secondItem="lWX-EV-a7O" secondAttribute="trailing" constant="4" id="UHK-wn-Zkh"/>
                                                     <constraint firstItem="Rvg-hO-5ep" firstAttribute="leading" secondItem="XZ1-1v-fr5" secondAttribute="leading" constant="-6" id="UYc-xZ-M7n"/>
                                                     <constraint firstAttribute="trailing" secondItem="32g-2A-8R0" secondAttribute="trailing" id="VtD-ol-SiM"/>
                                                     <constraint firstItem="sXe-fd-ejR" firstAttribute="top" secondItem="XZ1-1v-fr5" secondAttribute="top" id="eRe-eq-PWU"/>
@@ -805,6 +812,8 @@
                         <outlet property="initialContainer" destination="sXe-fd-ejR" id="1lL-EL-8Vc"/>
                         <outlet property="initialLabel" destination="nF3-b1-EXY" id="vJb-sA-QHU"/>
                         <outlet property="manageTeamButton" destination="Rgp-Fu-8Vf" id="9Lq-Pi-AyL"/>
+                        <outlet property="membersTitleLabel" destination="32g-2A-8R0" id="1R8-uU-fPD"/>
+                        <outlet property="membersTitleLabelWidthConstraint" destination="RBS-lF-dgj" id="U8U-aY-2ka"/>
                         <outlet property="nextDdeliveryContainer" destination="nGg-9e-jlx" id="WqW-53-SB8"/>
                         <outlet property="nextDeliveryDate" destination="fOj-JR-Oa9" id="qLa-mD-0H5"/>
                         <outlet property="orderTableview_height" destination="iXH-0R-hsZ" id="ip8-eL-Dbn"/>
