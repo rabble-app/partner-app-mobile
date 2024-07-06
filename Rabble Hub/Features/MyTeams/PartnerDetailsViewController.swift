@@ -33,10 +33,12 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var orderTableview_height: NSLayoutConstraint!
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet var imageContainer: UIView!
+    @IBOutlet weak var membersView: UIView!
     @IBOutlet weak var membersTitleLabel: UILabel!
     @IBOutlet weak var membersTitleLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var manageTeamButton: PrimaryButton!
     @IBOutlet weak var orderDetailsContainerView: UIView!
+    private let stackView = UIStackView()
     
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
@@ -94,9 +96,12 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         if let members = partnerTeam?.members {
             if members.isEmpty {
                 self.membersTitleLabelWidthConstraint.constant = 0
+            } else {
+                if let memberNames = partnerTeam?.memberNames() {
+                    self.addCircleStackView(with: memberNames)
+                }
             }
-        }
-        else {
+        } else {
             self.membersTitleLabelWidthConstraint.constant = 0
         }
         
@@ -223,6 +228,8 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     
 }
 
+// MARK: - UITableView delegates and datasource
+
 extension PartnerDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return orderDetails.count
@@ -262,9 +269,32 @@ extension PartnerDetailsViewController: UITableViewDelegate, UITableViewDataSour
     
 }
 
+// MARK: - PartnerDetailsViewController Delegate
 
 extension PartnerDetailsViewController: PartnerDetailsViewControllerDelegate {
+    
     func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) {
         self.partnerTeam = updatedPartnerTeam
+    }
+}
+
+// MARK: - External View Configurations
+
+extension PartnerDetailsViewController {
+    
+    /// Adds a RabbleCircleStackView to the membersView with the given names.
+    /// Creates a stack view of RabbleCircleView instances and adds it as a subview to the membersView,
+    /// then sets up Auto Layout constraints to position it.
+    /// - Parameter names: An array of names to display in the RabbleCircleStackView.
+    private func addCircleStackView(with names: [String]) {
+        let circleStackView = RabbleCircleStackView()
+        let stackView = circleStackView.createStackView(with: names)
+        
+        membersView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.trailingAnchor.constraint(equalTo: membersView.trailingAnchor),
+            stackView.centerYAnchor.constraint(equalTo: membersView.centerYAnchor)
+        ])
     }
 }

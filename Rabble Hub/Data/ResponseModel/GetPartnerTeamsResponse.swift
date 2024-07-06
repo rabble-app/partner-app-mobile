@@ -41,6 +41,26 @@ struct PartnerTeam: Codable {
     let members: [Member]
     let producer: PartnerTeamsProducer
     let host: Host
+    
+    
+    /// Returns an array of member names, combining first and last names.
+    ///
+    /// - Returns: An array of strings where each string is a combination of the first name and last name of a member.
+    ///            Members are skipped only if both first and last names are missing.
+    func memberNames() -> [String] {
+        return members.compactMap { member in
+            let firstName = member.user.firstName ?? ""
+            let lastName = member.user.lastName ?? ""
+            
+            // Skip this member only if both first and last names are missing.
+            if firstName.isEmpty && lastName.isEmpty {
+                return nil
+            }
+            
+            // Combine first and last names into a single string.
+            return "\(firstName) \(lastName)".trimmingCharacters(in: .whitespaces)
+        }
+    }
 }
 
 // MARK: - Member

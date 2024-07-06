@@ -24,6 +24,7 @@ class Colors: NSObject {
     static let Gray4 = Colors.getColor(named: "gray_4")
     static let Gray5 = Colors.getColor(named: "gray_5")
     static let GraySectionHeader = Colors.getColor(named: "gray_section_header")
+    static let GreenMembers = Colors.getColor(named: "green_members")
     
     static let Today = Colors.getColor(named: "calendar_today")
     static let Upcoming = Colors.getColor(named: "calendar_upcoming")

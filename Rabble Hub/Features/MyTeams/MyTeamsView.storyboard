@@ -167,7 +167,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" name="green_members"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="lo9-vP-8H8" secondAttribute="bottom" constant="6" id="3Zz-pD-HPF"/>
                                                                         <constraint firstAttribute="height" constant="25" id="MW5-c8-f4x"/>
@@ -569,12 +569,21 @@
                                                         <color key="textColor" red="0.20000000000000001" green="0.25098039215686274" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sv9-Rs-CHr" userLabel="Members View">
+                                                        <rect key="frame" x="278" y="32" width="83" height="32"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="83" id="YrG-PZ-drx"/>
+                                                            <constraint firstAttribute="height" constant="32" id="bRg-HH-dwX"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="lWX-EV-a7O" firstAttribute="top" secondItem="XZ1-1v-fr5" secondAttribute="top" constant="8" id="6ff-oT-yBq"/>
                                                     <constraint firstItem="MU3-dg-xLL" firstAttribute="top" secondItem="lWX-EV-a7O" secondAttribute="bottom" constant="4" id="9nL-T7-soA"/>
                                                     <constraint firstItem="32g-2A-8R0" firstAttribute="centerY" secondItem="lWX-EV-a7O" secondAttribute="centerY" id="ARu-nI-AgZ"/>
                                                     <constraint firstAttribute="height" constant="85" id="EE3-9h-HtK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Sv9-Rs-CHr" secondAttribute="trailing" id="FvP-Ae-v8u"/>
                                                     <constraint firstItem="XRf-Hm-yEv" firstAttribute="centerY" secondItem="MU3-dg-xLL" secondAttribute="centerY" id="JAY-jr-HM1"/>
                                                     <constraint firstItem="32g-2A-8R0" firstAttribute="leading" secondItem="lWX-EV-a7O" secondAttribute="trailing" constant="4" id="UHK-wn-Zkh"/>
                                                     <constraint firstItem="Rvg-hO-5ep" firstAttribute="leading" secondItem="XZ1-1v-fr5" secondAttribute="leading" constant="-6" id="UYc-xZ-M7n"/>
@@ -582,6 +591,7 @@
                                                     <constraint firstItem="sXe-fd-ejR" firstAttribute="top" secondItem="XZ1-1v-fr5" secondAttribute="top" id="eRe-eq-PWU"/>
                                                     <constraint firstItem="MU3-dg-xLL" firstAttribute="leading" secondItem="lWX-EV-a7O" secondAttribute="leading" id="iGu-Iy-XJY"/>
                                                     <constraint firstItem="lWX-EV-a7O" firstAttribute="leading" secondItem="sXe-fd-ejR" secondAttribute="trailing" constant="8" id="iJz-bg-n5W"/>
+                                                    <constraint firstItem="Sv9-Rs-CHr" firstAttribute="top" secondItem="lWX-EV-a7O" secondAttribute="bottom" id="qko-od-48p"/>
                                                     <constraint firstItem="XRf-Hm-yEv" firstAttribute="leading" secondItem="MU3-dg-xLL" secondAttribute="trailing" constant="4" id="tiE-zt-rbr"/>
                                                     <constraint firstItem="Rvg-hO-5ep" firstAttribute="top" secondItem="sXe-fd-ejR" secondAttribute="bottom" constant="-12" id="twF-e5-4XV"/>
                                                     <constraint firstItem="sXe-fd-ejR" firstAttribute="leading" secondItem="XZ1-1v-fr5" secondAttribute="leading" id="xIU-37-UD4"/>
@@ -827,6 +837,7 @@
                         <outlet property="manageTeamButton" destination="Rgp-Fu-8Vf" id="9Lq-Pi-AyL"/>
                         <outlet property="membersTitleLabel" destination="32g-2A-8R0" id="1R8-uU-fPD"/>
                         <outlet property="membersTitleLabelWidthConstraint" destination="RBS-lF-dgj" id="U8U-aY-2ka"/>
+                        <outlet property="membersView" destination="Sv9-Rs-CHr" id="uIB-0w-i0z"/>
                         <outlet property="nextDdeliveryContainer" destination="nGg-9e-jlx" id="WqW-53-SB8"/>
                         <outlet property="nextDeliveryDate" destination="fOj-JR-Oa9" id="qLa-mD-0H5"/>
                         <outlet property="orderDetailsContainerView" destination="XK5-14-r2e" id="A3T-Tr-dYc"/>
@@ -1191,7 +1202,7 @@
             <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.84299999475479126" green="0.95300000905990601" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_secondary">
             <color red="0.039000000804662704" green="0.51800000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1210,6 +1221,9 @@
         </namedColor>
         <namedColor name="gray_5">
             <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green_members">
+            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
