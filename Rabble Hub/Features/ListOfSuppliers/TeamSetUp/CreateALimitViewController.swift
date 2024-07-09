@@ -155,8 +155,17 @@ class CreateALimitViewController: UIViewController {
               let userId = userDataManager.getUserData()?.id,
               let deliveryDayStr = deliveryDay?.day,
               let deliveryDateStr = deliveryDate?.toString(),
-              let nextCutOffDateStr = deliveryDay?.getCutoffDate(from: deliveryDate!)?.toString() else { return }
-        
+              let nextCutOffDateStr = deliveryDay?.getCutoffDate(from: deliveryDate!)?.toString() 
+        else {
+            if let userData = userDataManager.getUserData(),
+               let errorMessage = checkBuyingTeamUserData(userData: userData, deliveryDay: deliveryDay, deliveryDate: deliveryDate) {
+                self.showSnackBar(message: "\(errorMessage)", isSuccess: false)
+            } else {
+                print("All properties are valid")
+            }
+            return
+        }
+      
         var productLimit = "100"
         if let limit = selectionLabel.text {
             productLimit = limit.components(separatedBy: " ").first ?? "100"

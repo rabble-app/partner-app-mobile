@@ -468,7 +468,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rgp-Fu-8Vf" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="878" width="361" height="50"/>
+                                                <rect key="frame" x="16" y="868.33333333333337" width="361" height="50"/>
                                                 <color key="backgroundColor" name="button_primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="HAB-4Q-ANd"/>
@@ -598,10 +598,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxG-rt-moJ">
-                                                <rect key="frame" x="16" y="422" width="361" height="60"/>
+                                                <rect key="frame" x="16" y="422" width="361" height="82.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9j-cu-O7f">
-                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50.333333333333336"/>
                                                         <string key="text">We are a buying team on Fremont street that runs every month. We are happy for anyone nearby to join. Feel free to give a message and introduce yourself</string>
                                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
                                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -611,13 +611,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="c9j-cu-O7f" secondAttribute="trailing" id="BQ5-fv-TPh"/>
                                                     <constraint firstItem="c9j-cu-O7f" firstAttribute="leading" secondItem="nxG-rt-moJ" secondAttribute="leading" id="GrV-mS-6cX"/>
-                                                    <constraint firstAttribute="height" constant="60" id="IbY-Lx-gM9"/>
                                                     <constraint firstItem="c9j-cu-O7f" firstAttribute="top" secondItem="nxG-rt-moJ" secondAttribute="top" id="VdO-PK-aOH"/>
-                                                    <constraint firstAttribute="bottom" secondItem="c9j-cu-O7f" secondAttribute="bottom" id="fsn-UW-o4g"/>
+                                                    <constraint firstAttribute="bottom" secondItem="c9j-cu-O7f" secondAttribute="bottom" constant="32" id="fsn-UW-o4g"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="iBa-q5-t7M"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-9e-jlx">
-                                                <rect key="frame" x="16" y="514" width="361" height="80"/>
+                                                <rect key="frame" x="16" y="504.33333333333337" width="361" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UhQ-L7-tvC">
                                                         <rect key="frame" x="16" y="16" width="48" height="48"/>
@@ -659,7 +659,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK5-14-r2e" userLabel="Order Details View">
-                                                <rect key="frame" x="16" y="618" width="361" height="236"/>
+                                                <rect key="frame" x="16" y="608.33333333333337" width="361" height="236"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT0-oJ-Qx1">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
@@ -765,6 +765,7 @@
                                                     <constraint firstItem="q6b-YM-1VQ" firstAttribute="top" secondItem="UT0-oJ-Qx1" secondAttribute="bottom" id="1ER-bw-RfB"/>
                                                     <constraint firstAttribute="bottom" secondItem="q6b-YM-1VQ" secondAttribute="bottom" constant="8" id="4pN-sC-7KW"/>
                                                     <constraint firstItem="UT0-oJ-Qx1" firstAttribute="top" secondItem="XK5-14-r2e" secondAttribute="top" id="fvp-xi-Zdw"/>
+                                                    <constraint firstAttribute="height" constant="236" id="j1T-WQ-L8y"/>
                                                     <constraint firstAttribute="trailing" secondItem="q6b-YM-1VQ" secondAttribute="trailing" constant="4" id="tD9-Jx-Yfs"/>
                                                     <constraint firstItem="q6b-YM-1VQ" firstAttribute="leading" secondItem="XK5-14-r2e" secondAttribute="leading" constant="4" id="ucY-Cz-Q6R"/>
                                                     <constraint firstAttribute="trailing" secondItem="UT0-oJ-Qx1" secondAttribute="trailing" id="v3j-56-gXn"/>
@@ -779,7 +780,7 @@
                                             <constraint firstItem="a1i-qx-H1w" firstAttribute="top" secondItem="30o-IL-iwv" secondAttribute="top" id="Aqn-Oc-NqE"/>
                                             <constraint firstAttribute="trailing" secondItem="XK5-14-r2e" secondAttribute="trailing" constant="16" id="ENA-KA-j1U"/>
                                             <constraint firstItem="XK5-14-r2e" firstAttribute="top" secondItem="nGg-9e-jlx" secondAttribute="bottom" constant="24" id="RRE-LD-JZh"/>
-                                            <constraint firstItem="nGg-9e-jlx" firstAttribute="top" secondItem="nxG-rt-moJ" secondAttribute="bottom" constant="32" id="XKp-ge-1iN"/>
+                                            <constraint firstItem="nGg-9e-jlx" firstAttribute="top" secondItem="nxG-rt-moJ" secondAttribute="bottom" id="XKp-ge-1iN"/>
                                             <constraint firstAttribute="trailing" secondItem="a1i-qx-H1w" secondAttribute="trailing" id="ZQA-91-y34"/>
                                             <constraint firstAttribute="trailing" secondItem="XZ1-1v-fr5" secondAttribute="trailing" constant="16" id="Ze8-Va-LDw"/>
                                             <constraint firstAttribute="trailing" secondItem="nGg-9e-jlx" secondAttribute="trailing" constant="16" id="au5-fx-1ha"/>
@@ -828,6 +829,7 @@
                         <outlet property="contentView_height" destination="ik2-Ln-29O" id="HzS-NO-wIC"/>
                         <outlet property="deliveryFrequency" destination="XRf-Hm-yEv" id="xBy-8Q-snG"/>
                         <outlet property="descLabel" destination="c9j-cu-O7f" id="1qa-A6-MZb"/>
+                        <outlet property="descriptionLabelContainerViewHeightConstraint" destination="iBa-q5-t7M" id="YhI-wR-xmn"/>
                         <outlet property="hostContainer" destination="Rvg-hO-5ep" id="eKS-zs-8jn"/>
                         <outlet property="hostLabel" destination="KA0-Ie-9Fe" id="zvq-Hl-Un0"/>
                         <outlet property="imageContainer" destination="UhQ-L7-tvC" id="nM2-4J-GcF"/>
@@ -841,6 +843,7 @@
                         <outlet property="nextDdeliveryContainer" destination="nGg-9e-jlx" id="WqW-53-SB8"/>
                         <outlet property="nextDeliveryDate" destination="fOj-JR-Oa9" id="qLa-mD-0H5"/>
                         <outlet property="orderDetailsContainerView" destination="XK5-14-r2e" id="A3T-Tr-dYc"/>
+                        <outlet property="orderDetailsHeightConstraint" destination="j1T-WQ-L8y" id="Fe5-Io-lfL"/>
                         <outlet property="orderTableview_height" destination="iXH-0R-hsZ" id="ip8-eL-Dbn"/>
                         <outlet property="ordersTableview" destination="q6b-YM-1VQ" id="xLS-Fz-qH5"/>
                         <outlet property="partnerName" destination="lWX-EV-a7O" id="wQZ-gs-15a"/>
@@ -1202,7 +1205,7 @@
             <color red="0.18400000035762787" green="0.50199997425079346" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_primary">
-            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84299999475479126" green="0.95300000905990601" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button_secondary">
             <color red="0.039000000804662704" green="0.51800000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1223,7 +1226,7 @@
             <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="green_members">
-            <color red="0.84313725490196079" green="0.95294117647058818" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84299999475479126" green="0.95300000905990601" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
