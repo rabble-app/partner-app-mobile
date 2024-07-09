@@ -38,6 +38,8 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var membersTitleLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var manageTeamButton: PrimaryButton!
     @IBOutlet weak var orderDetailsContainerView: UIView!
+    @IBOutlet weak var orderDetailsHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionLabelContainerViewHeightConstraint: NSLayoutConstraint!
     private let stackView = UIStackView()
     
     var partnerTeam: PartnerTeam?
@@ -86,7 +88,13 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     private func loadData() {
         partnerName.text = partnerTeam?.name
-        descLabel.text = partnerTeam?.description
+        if let descString = partnerTeam?.description, !descString.isEmpty {
+            descLabel.text = descString
+        } else {
+            descLabel.removeFromSuperview()
+            descriptionLabelContainerViewHeightConstraint.constant = 0
+        }
+        
         self.navigationItem.title = partnerTeam?.name
         let word = partnerTeam?.name.prefix(1).uppercased()
         if let firstLetter = word?.first {
@@ -162,6 +170,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
             
             self.orderTableview_height.constant = 0
             self.orderDetailsContainerView.isHidden = true
+            self.orderDetailsHeightConstraint.constant = 0
         } catch {
             print("Failed to map response data: \(error)")
         }
@@ -176,6 +185,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         if orderDetails.isEmpty {
             self.orderTableview_height.constant = 0
             self.orderDetailsContainerView.isHidden = true
+            self.orderDetailsHeightConstraint.constant = 0
         }
         
         ordersTableview.reloadData()
