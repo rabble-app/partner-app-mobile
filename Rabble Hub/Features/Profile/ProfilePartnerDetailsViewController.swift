@@ -66,13 +66,17 @@ class ProfilePartnerDetailsViewController: UIViewController {
     }
    
     private func fetchPartnerDetails() {
-        guard let partner = userDataManager.getUserData()?.partner else { return }
+        guard let userData = userDataManager.getUserData() else { return }
+        let partner = userDataManager.isUserEmployee() ? userData.employees?.first?.partner : userData.partner
+        guard let partnerId = partner?.id else { return }
+        
         self.showLoadingIndicator()
-        apiProvider.request(.getStoreInformation(partnerId: partner.id)) { result in
+        apiProvider.request(.getStoreInformation(partnerId: partnerId)) { result in
             self.handlePartnerDetailsResponse(result)
             self.dismissLoadingIndicator()
         }
     }
+
     
     private func handlePartnerDetailsResponse(_ result: Result<Response, MoyaError>) {
         switch result {
