@@ -24,7 +24,7 @@ struct UserData: Codable {
     let cardLastFourDigits: String?
     let imageUrl: String?
     let imageKey: String?
-    let role: String
+    let role: RoleType
     let createdAt: Date
     let updatedAt: Date
     let notificationToken: String?
@@ -36,11 +36,42 @@ struct UserData: Codable {
     var employees: [EmployeeData]?
 }
 
+
+enum RoleType: String, Codable {
+    case employee = "EMPLOYEE"
+    case partner = "PARTNER"
+    case unknown
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self = RoleType(rawValue: rawValue) ?? .unknown
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(self.rawValue)
+    }
+}
+
+
 struct PartnerData: Codable {
+    let user: EmployeePartnerUser?
     var id: String
     var openHours: OpenHours?
     var name: String
     var postalCode: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, user
+        case openHours = "openhour"
+        case name
+        case postalCode
+    }
+}
+
+struct EmployeePartnerUser: Codable {
+    let id: String
 }
 
 struct EmployeeData: Codable {
@@ -57,9 +88,10 @@ struct Count: Codable {
 
 extension UserData {
     private enum CodingKeys: String, CodingKey {
-        case id, phone, email, password, firstName, lastName, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token, onboardingStage, employeeCount, employees
+        case id, phone, email, password, firstName, lastName, stripeCustomerId, stripeDefaultPaymentMethodId, cardLastFourDigits, imageUrl, imageKey, role, notificationToken, producer, partner, token, onboardingStage, employeeCount
         case createdAt = "createdAt"
         case updatedAt = "updatedAt"
+        case employees = "employee"
         case _count
     }
     
@@ -76,7 +108,7 @@ extension UserData {
         cardLastFourDigits = try container.decodeIfPresent(String.self, forKey: .cardLastFourDigits)
         imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl)
         imageKey = try container.decodeIfPresent(String.self, forKey: .imageKey)
-        role = try container.decode(String.self, forKey: .role)
+        role = try container.decode(RoleType.self, forKey: .role)
         notificationToken = try container.decodeIfPresent(String.self, forKey: .notificationToken)
         producer = try container.decodeIfPresent(String.self, forKey: .producer)
         partner = try container.decodeIfPresent(PartnerData.self, forKey: .partner)
@@ -113,6 +145,7 @@ extension UserData {
         try container.encode(token, forKey: .token)
         try container.encode(onboardingStage, forKey: .onboardingStage)
         try container.encode(employeeCount, forKey: ._count)
+        try container.encode(employees, forKey: .employees)
         
         let formatter = ISO8601DateFormatter()
         let createdAtString = formatter.string(from: createdAt)

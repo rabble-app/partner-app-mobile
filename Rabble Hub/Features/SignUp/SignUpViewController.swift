@@ -178,7 +178,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         if var userData = userDataManager.getUserData() {
             // Check if partner is nil, if so, initialize it
             if userData.partner == nil {
-                userData.partner = PartnerData(id: store.id, openHours: nil, name: store.name, postalCode: self.postalCode.text)
+                userData.partner = PartnerData(user: nil, id: store.id, openHours: nil, name: store.name, postalCode: self.postalCode.text)
             } else {
                 // Update existing partner data
                 userData.partner?.postalCode = self.postalCode.text

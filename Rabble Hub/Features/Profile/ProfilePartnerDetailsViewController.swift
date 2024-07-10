@@ -267,7 +267,7 @@ class ProfilePartnerDetailsViewController: UIViewController {
     private func updateUserDataPostalCode(_ store: Store) {
         let userDataManager = UserDataManager()
         if var userData = userDataManager.getUserData() {
-            userData.partner = PartnerData(id: store.id, openHours: userData.partner?.openHours, name: store.name, postalCode: self.postalCodeTextField.text)
+            userData.partner = PartnerData(user: userData.partner?.user, id: store.id, openHours: userData.partner?.openHours, name: store.name, postalCode: self.postalCodeTextField.text)
             userDataManager.saveUserData(userData)
         }
     }
