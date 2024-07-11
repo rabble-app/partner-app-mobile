@@ -31,11 +31,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3U-ur-Cis">
-                                <rect key="frame" x="6" y="0.0" width="387" height="158"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3U-ur-Cis" userLabel="Header View">
+                                <rect key="frame" x="0.0" y="44" width="393" height="103"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-Mv-Vav">
-                                        <rect key="frame" x="16" y="57" width="355" height="41"/>
+                                        <rect key="frame" x="16" y="6" width="361" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="gdK-Y1-N95"/>
                                         </constraints>
@@ -50,7 +50,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-ro-qDi">
-                                        <rect key="frame" x="8" y="106" width="371" height="36"/>
+                                        <rect key="frame" x="8" y="59" width="377" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="9qk-fz-XY6"/>
                                         </constraints>
@@ -60,26 +60,26 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="kEL-Mv-Vav" firstAttribute="leading" secondItem="J3U-ur-Cis" secondAttribute="leading" constant="16" id="B4j-A0-nui"/>
-                                    <constraint firstItem="kEL-Mv-Vav" firstAttribute="top" secondItem="J3U-ur-Cis" secondAttribute="top" constant="57" id="IBV-U2-yVu"/>
-                                    <constraint firstItem="Dta-ro-qDi" firstAttribute="top" secondItem="kEL-Mv-Vav" secondAttribute="bottom" constant="8" id="Pi5-CN-zce"/>
+                                    <constraint firstItem="Dta-ro-qDi" firstAttribute="top" secondItem="kEL-Mv-Vav" secondAttribute="bottom" constant="12" id="Pi5-CN-zce"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dta-ro-qDi" secondAttribute="bottom" constant="8" id="Wo4-2b-nmw"/>
                                     <constraint firstItem="Dta-ro-qDi" firstAttribute="leading" secondItem="J3U-ur-Cis" secondAttribute="leading" constant="8" id="bF2-cu-tH9"/>
                                     <constraint firstAttribute="trailing" secondItem="Dta-ro-qDi" secondAttribute="trailing" constant="8" id="dR1-Mz-3Tz"/>
                                     <constraint firstAttribute="trailing" secondItem="kEL-Mv-Vav" secondAttribute="trailing" constant="16" id="dbu-FW-zC7"/>
-                                    <constraint firstAttribute="height" constant="158" id="el4-l6-zNe"/>
+                                    <constraint firstAttribute="height" constant="103" id="el4-l6-zNe"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcL-TH-AoC">
-                                <rect key="frame" x="0.0" y="158" width="393" height="1"/>
+                                <rect key="frame" x="0.0" y="147" width="393" height="1"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="2hk-uD-DzQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vse-YH-QDr">
-                                <rect key="frame" x="0.0" y="159" width="393" height="655"/>
+                                <rect key="frame" x="0.0" y="148" width="393" height="700"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlZ-rR-OP7">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="573"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="618"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_state_partner_members" translatesAutoresizingMaskIntoConstraints="NO" id="mkS-E0-hqy">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
@@ -121,7 +121,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WLg-wy-cA3">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="573"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="618"/>
                                         <color key="backgroundColor" name="background_primary"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PartnerTableViewCell" rowHeight="350" id="bSz-p3-wzx" customClass="PartnerTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
@@ -147,7 +147,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cacklebean Farm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbe-3C-Xo2">
-                                                                    <rect key="frame" x="8" y="240" width="134.33333333333334" height="19.333333333333314"/>
+                                                                    <rect key="frame" x="8" y="240" width="134.66666666666666" height="19.666666666666686"/>
                                                                     <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -204,7 +204,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbH-Z0-k4N">
-                                                                    <rect key="frame" x="8" y="267.33333333333331" width="20" height="20"/>
+                                                                    <rect key="frame" x="8" y="267.66666666666669" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="30Q-RA-Qsv"/>
                                                                         <constraint firstAttribute="width" constant="20" id="gsK-0b-agI"/>
@@ -213,14 +213,14 @@
                                                                     <state key="normal" title=" " image="icon_bookmark"/>
                                                                 </button>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_delivery" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-qn-YHq">
-                                                                    <rect key="frame" x="8" y="295.33333333333331" width="20" height="20"/>
+                                                                    <rect key="frame" x="8" y="295.66666666666669" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="20" id="Wej-IC-dUn"/>
                                                                         <constraint firstAttribute="height" constant="20" id="o5T-8r-l5p"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-9Y-MY5">
-                                                                    <rect key="frame" x="32.000000000000007" y="270.33333333333331" width="87.666666666666686" height="14"/>
+                                                                    <rect key="frame" x="32.000000000000007" y="270.66666666666669" width="87.666666666666686" height="14"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Farm and Dairy">
                                                                             <attributes>
@@ -233,7 +233,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbD-pz-dkd">
-                                                                    <rect key="frame" x="32" y="298.33333333333331" width="131.33333333333334" height="14"/>
+                                                                    <rect key="frame" x="32" y="298.66666666666669" width="131.66666666666666" height="14"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Next delivery in 5 days">
                                                                             <attributes>
@@ -343,7 +343,7 @@
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dFE-Dq-x1t" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="589" width="361" height="50"/>
+                                        <rect key="frame" x="16" y="634" width="361" height="50"/>
                                         <color key="backgroundColor" name="button_primary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="x3F-jj-MGk"/>
@@ -381,19 +381,19 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="GIp-GF-GVT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="J3U-ur-Cis" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="4Mc-2b-IHd"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vse-YH-QDr" secondAttribute="trailing" id="HBB-gV-NML"/>
+                            <constraint firstItem="J3U-ur-Cis" firstAttribute="top" secondItem="GIp-GF-GVT" secondAttribute="top" constant="-59" id="16h-lL-nrL"/>
+                            <constraint firstAttribute="trailing" secondItem="vse-YH-QDr" secondAttribute="trailing" id="HBB-gV-NML"/>
                             <constraint firstItem="bcL-TH-AoC" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="MOy-WB-tbH"/>
                             <constraint firstItem="vse-YH-QDr" firstAttribute="top" secondItem="bcL-TH-AoC" secondAttribute="bottom" id="Mfm-uk-aNT"/>
-                            <constraint firstItem="vse-YH-QDr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NeQ-9H-SPg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vse-YH-QDr" secondAttribute="bottom" constant="4" id="Nsk-re-pgN"/>
+                            <constraint firstItem="vse-YH-QDr" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="NeQ-9H-SPg"/>
+                            <constraint firstAttribute="bottom" secondItem="vse-YH-QDr" secondAttribute="bottom" constant="4" id="Nsk-re-pgN"/>
                             <constraint firstItem="bcL-TH-AoC" firstAttribute="top" secondItem="J3U-ur-Cis" secondAttribute="bottom" id="Qxl-jW-fbS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bcL-TH-AoC" secondAttribute="trailing" id="S56-AT-gft"/>
+                            <constraint firstAttribute="trailing" secondItem="bcL-TH-AoC" secondAttribute="trailing" id="S56-AT-gft"/>
                             <constraint firstAttribute="trailing" secondItem="J3U-ur-Cis" secondAttribute="trailing" id="hep-63-cY1"/>
-                            <constraint firstItem="J3U-ur-Cis" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="6" id="nfb-Tq-qSi"/>
+                            <constraint firstItem="J3U-ur-Cis" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="nfb-Tq-qSi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EcB-Az-ilb"/>
@@ -444,7 +444,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="970.2290076335878" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="969.375" y="-2.112676056338028"/>
         </scene>
         <!--Cacklebean Farm-->
         <scene sceneID="MzO-I5-I7h">
@@ -495,7 +495,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF3-b1-EXY">
-                                                                <rect key="frame" x="22.333333333333336" y="24" width="27.666666666666664" height="24"/>
+                                                                <rect key="frame" x="22" y="24" width="28" height="24"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="SN">
                                                                         <attributes>
@@ -548,7 +548,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivers Weekly" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRf-Hm-yEv">
-                                                        <rect key="frame" x="104" y="39" width="89.666666666666686" height="14"/>
+                                                        <rect key="frame" x="104" y="39" width="90" height="14"/>
                                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                         <color key="textColor" red="0.40000000000000002" green="0.43921568630000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -561,7 +561,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32g-2A-8R0">
-                                                        <rect key="frame" x="308" y="12.333333333333314" width="53" height="15.666666666666664"/>
+                                                        <rect key="frame" x="308" y="12" width="53" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="53" id="RBS-lF-dgj"/>
                                                         </constraints>
@@ -635,13 +635,13 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Delivery Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9x-em-yBm">
-                                                        <rect key="frame" x="72" y="19" width="120.33333333333331" height="17"/>
+                                                        <rect key="frame" x="72" y="19" width="120.66666666666669" height="17"/>
                                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.25098039220000001" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 January  2024" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-JR-Oa9">
-                                                        <rect key="frame" x="71.999999999999986" y="43" width="132.66666666666663" height="19.333333333333329"/>
+                                                        <rect key="frame" x="71.999999999999986" y="43" width="132.66666666666663" height="19.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
                                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -665,7 +665,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HS-2x-ERK">
-                                                                <rect key="frame" x="14" y="20.666666666666629" width="142.33333333333334" height="19.333333333333329"/>
+                                                                <rect key="frame" x="14" y="20.666666666666629" width="142.66666666666666" height="19.333333333333329"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Team order details">
                                                                         <attributes>
@@ -712,7 +712,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTg-iW-PJM">
-                                                                            <rect key="frame" x="16" y="27" width="157.33333333333334" height="24"/>
+                                                                            <rect key="frame" x="16" y="27" width="157.66666666666666" height="24"/>
                                                                             <attributedString key="attributedText">
                                                                                 <fragment content="Cacklebean Eggs.">
                                                                                     <attributes>
@@ -724,7 +724,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-24-Y6u">
-                                                                            <rect key="frame" x="16.000000000000004" y="51" width="46.333333333333343" height="17"/>
+                                                                            <rect key="frame" x="15.999999999999996" y="51" width="46.666666666666657" height="17"/>
                                                                             <attributedString key="attributedText">
                                                                                 <fragment content="6 Eggs">
                                                                                     <attributes>
@@ -911,7 +911,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uC0-mC-qdq">
-                                                    <rect key="frame" x="64" y="23" width="124.66666666666669" height="19.333333333333329"/>
+                                                    <rect key="frame" x="64" y="23" width="124.66666666666669" height="19.666666666666671"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Alfredo Johnson">
                                                             <attributes>
@@ -926,7 +926,7 @@
                                                     <rect key="frame" x="365" y="34" width="8" height="14"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVE-ro-3EC">
-                                                    <rect key="frame" x="64" y="44.333333333333336" width="73.666666666666686" height="17"/>
+                                                    <rect key="frame" x="64" y="44.666666666666664" width="73.666666666666686" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Store Visits">
                                                             <attributes>
@@ -947,7 +947,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKm-Il-H0K">
-                                                    <rect key="frame" x="157.66666666666666" y="44.333333333333336" width="15.333333333333343" height="17"/>
+                                                    <rect key="frame" x="157.66666666666666" y="44.666666666666664" width="15.333333333333343" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="10">
                                                             <attributes>
@@ -1018,7 +1018,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m42-Gh-ogQ">
-                                                    <rect key="frame" x="64" y="22.333333333333336" width="150" height="19.333333333333336"/>
+                                                    <rect key="frame" x="64" y="22.666666666666671" width="150" height="19"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Shipment Frequency">
                                                             <attributes>

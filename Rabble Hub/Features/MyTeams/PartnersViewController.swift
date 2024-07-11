@@ -207,4 +207,8 @@ extension PartnersViewController: UISearchBarDelegate {
         }
         partnerTableview.reloadData()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
