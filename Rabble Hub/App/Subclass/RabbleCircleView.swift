@@ -40,7 +40,7 @@ class RabbleCircleView: UIView {
         
         label.text = initials(for: name)
         label.font = UIFont(name: "SFPro-Bold", size: 14)
-        label.textColor = isLast ? Colors.GreenMembers : .white
+        label.textColor = isLast ? Colors.greenMembers : .white
         label.textAlignment = .center
         
         addSubview(label)

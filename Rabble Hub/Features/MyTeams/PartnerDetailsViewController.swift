@@ -13,7 +13,10 @@ protocol PartnerDetailsViewControllerDelegate: AnyObject {
 }
 
 extension PartnerDetailsViewControllerDelegate {
-    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) { }
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam)
+    {
+        //just for completion
+    }
 }
 
 class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {

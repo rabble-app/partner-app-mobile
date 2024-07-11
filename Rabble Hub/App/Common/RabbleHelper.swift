@@ -51,9 +51,9 @@ func checkBuyingTeamUserData(userData: UserData, deliveryDay: DeliveryDay?, deli
         return "Partner data is missing"
     }
 
-    guard let postalCode = partner.postalCode else {
-        return "Postal code is missing"
-    }
+//    guard let postalCode = partner.postalCode else {
+//        return "Postal code is missing"
+//    }
 
     if partner.id.isEmpty {
         return "Store ID is missing"
@@ -71,9 +71,9 @@ func checkBuyingTeamUserData(userData: UserData, deliveryDay: DeliveryDay?, deli
         return "Delivery day is missing"
     }
 
-    guard let deliveryDayStr = deliveryDay.day else {
-        return "Delivery day string is missing"
-    }
+//    guard let deliveryDayStr = deliveryDay.day else {
+//        return "Delivery day string is missing"
+//    }
 
     guard let deliveryDate = deliveryDate else {
         return "Delivery date is missing"

@@ -18,7 +18,10 @@ protocol ManageTeamViewControllerDelegate: AnyObject {
 }
 
 extension ManageTeamViewControllerDelegate {
-    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) { }
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) 
+    {
+        //just for completion
+    }
 }
 
 class ManageTeamViewController: UIViewController {
@@ -345,7 +348,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             
             let label = UILabel(frame: CGRect(x: 16, y: 8, width: tableView.frame.width - 32, height: 24))
             label.font = UIFont(name: "SFPro-Regular", size: 12) // SF Pro Regular
-            label.textColor = Colors.GraySectionHeader
+            label.textColor = Colors.graySectionHeader
             label.text = sections[section].title
             headerView.addSubview(label)
             

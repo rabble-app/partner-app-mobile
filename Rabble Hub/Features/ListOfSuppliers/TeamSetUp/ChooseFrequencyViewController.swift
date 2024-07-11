@@ -87,13 +87,10 @@ class ChooseFrequencyViewController: UIViewController {
             switch frequency {
             case DeliveryFrequency.everyWeek.seconds:
                 weekButtonTap(nil)
-                break
             case DeliveryFrequency.everyTwoWeeks.seconds:
                 twoWeekButtonTap(nil)
-                break
             case DeliveryFrequency.everyMonth.seconds:
                 monthButtonTap(nil)
-                break
             default:
                 break
             }
