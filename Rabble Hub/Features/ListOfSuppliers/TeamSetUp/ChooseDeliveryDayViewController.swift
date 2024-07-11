@@ -204,29 +204,30 @@ class ChooseDeliveryDayViewController: UIViewController {
         case .success(let response):
             do {
                 let updateResponse = try response.map(UpdateTeamResponse.self)
-                if updateResponse.statusCode == 200 || updateResponse.statusCode == 201 {
+                if [200, 201].contains(updateResponse.statusCode) {
                     partnerTeam?.deliveryDay = deliveryDay
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
                         if self.isFromEdit {
                             if let updatedPartnerTeam = self.partnerTeam {
                                 self.partnerManageDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
                             }
                             self.dismissViewController()
-                        }
-                        else {
+                        } else {
                             self.goToCreateALimitViewController(deliveryDay: nil)
                         }
                     }
                 } else {
-                    SnackBar().alert(withMessage: updateResponse.message, isSuccess: false, parent: view)
+                    SnackBar().alert(withMessage: updateResponse.message, isSuccess: false, parent: self.view)
                 }
             } catch {
-                handleStandardError(response)
+                self.handleStandardError(response)
             }
         case .failure(let error):
-            SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: view)
+            SnackBar().alert(withMessage: "\(error.localizedDescription)", isSuccess: false, parent: self.view)
         }
     }
+
     
     private func goToCreateALimitViewController(deliveryDay: DeliveryDay?) {
         let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)
