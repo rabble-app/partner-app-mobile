@@ -54,7 +54,7 @@ class UserDataManager {
             return false
         }
         
-        return role.lowercased() == "EMPLOYEE".lowercased()
+        return role == .employee
     }
     
     func logoutUser() {

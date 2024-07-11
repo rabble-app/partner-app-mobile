@@ -8,6 +8,17 @@
 import UIKit
 import Moya
 
+protocol PartnerDetailsViewControllerDelegate: AnyObject {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam)
+}
+
+extension PartnerDetailsViewControllerDelegate {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam)
+    {
+        //just for completion
+    }
+}
+
 class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var img: UIImageView!
@@ -25,7 +36,14 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var orderTableview_height: NSLayoutConstraint!
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet var imageContainer: UIView!
+    @IBOutlet weak var membersView: UIView!
+    @IBOutlet weak var membersTitleLabel: UILabel!
+    @IBOutlet weak var membersTitleLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var manageTeamButton: PrimaryButton!
+    @IBOutlet weak var orderDetailsContainerView: UIView!
+    @IBOutlet weak var orderDetailsHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionLabelContainerViewHeightConstraint: NSLayoutConstraint!
+    private let stackView = UIStackView()
     
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
@@ -73,11 +91,29 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     private func loadData() {
         partnerName.text = partnerTeam?.name
-        descLabel.text = partnerTeam?.description
+        if let descString = partnerTeam?.description, !descString.isEmpty {
+            descLabel.text = descString
+        } else {
+            descLabel.removeFromSuperview()
+            descriptionLabelContainerViewHeightConstraint.constant = 0
+        }
         
+        self.navigationItem.title = partnerTeam?.name
         let word = partnerTeam?.name.prefix(1).uppercased()
         if let firstLetter = word?.first {
             initialLabel.text = String(firstLetter).uppercased()
+        }
+        
+        if let members = partnerTeam?.members {
+            if members.isEmpty {
+                self.membersTitleLabelWidthConstraint.constant = 0
+            } else {
+                if let memberNames = partnerTeam?.memberNames() {
+                    self.addCircleStackView(with: memberNames)
+                }
+            }
+        } else {
+            self.membersTitleLabelWidthConstraint.constant = 0
         }
         
         if let imageUrl = URL(string: partnerTeam?.imageUrl ?? "placeholderImage") {
@@ -134,6 +170,10 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         do {
             let errorResponse = try response.map(StandardResponse.self)
             showError(errorResponse.message)
+            
+            self.orderTableview_height.constant = 0
+            self.orderDetailsContainerView.isHidden = true
+            self.orderDetailsHeightConstraint.constant = 0
         } catch {
             print("Failed to map response data: \(error)")
         }
@@ -145,8 +185,12 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     private func updateInboundDeliveryDetails(_ orderDetailsResponse: [OrderDetail]) {
         orderDetails = orderDetailsResponse
-//        tableViewConstraintHeight.constant = CGFloat(77 * orderDetails.count) + 20
-//        tableView.isHidden = orderDetails.isEmpty
+        if orderDetails.isEmpty {
+            self.orderTableview_height.constant = 0
+            self.orderDetailsContainerView.isHidden = true
+            self.orderDetailsHeightConstraint.constant = 0
+        }
+        
         ordersTableview.reloadData()
     }
     
@@ -190,11 +234,14 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ManageTeamViewController") as? ManageTeamViewController {
             vc.partnerTeam = self.partnerTeam
+            vc.partnerDetailsDelegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
 }
+
+// MARK: - UITableView delegates and datasource
 
 extension PartnerDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -235,3 +282,32 @@ extension PartnerDetailsViewController: UITableViewDelegate, UITableViewDataSour
     
 }
 
+// MARK: - PartnerDetailsViewController Delegate
+
+extension PartnerDetailsViewController: PartnerDetailsViewControllerDelegate {
+    
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) {
+        self.partnerTeam = updatedPartnerTeam
+    }
+}
+
+// MARK: - External View Configurations
+
+extension PartnerDetailsViewController {
+    
+    /// Adds a RabbleCircleStackView to the membersView with the given names.
+    /// Creates a stack view of RabbleCircleView instances and adds it as a subview to the membersView,
+    /// then sets up Auto Layout constraints to position it.
+    /// - Parameter names: An array of names to display in the RabbleCircleStackView.
+    private func addCircleStackView(with names: [String]) {
+        let circleStackView = RabbleCircleStackView()
+        let stackView = circleStackView.createStackView(with: names)
+        
+        membersView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.trailingAnchor.constraint(equalTo: membersView.trailingAnchor),
+            stackView.centerYAnchor.constraint(equalTo: membersView.centerYAnchor)
+        ])
+    }
+}

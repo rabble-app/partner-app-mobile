@@ -61,10 +61,18 @@ class ManageEmployeeViewController: UIViewController {
     
     private func getEmployees() {
        self.showLoadingIndicator()
-        let storeId = userDataManager.getUserData()?.partner?.id ?? ""
-        apiProvider.request(.getEmployees(storeId: storeId)) { result in
-            self.dismissLoadingIndicator()
-            self.handleEmployeesResponse(result)
+        if userDataManager.isUserEmployee() {
+            let storeId = userDataManager.getUserData()?.employees?.first?.partner.id ?? ""
+            apiProvider.request(.getEmployees(storeId: storeId)) { result in
+                self.dismissLoadingIndicator()
+                self.handleEmployeesResponse(result)
+            }
+        }else{
+            let storeId = userDataManager.getUserData()?.partner?.id ?? ""
+            apiProvider.request(.getEmployees(storeId: storeId)) { result in
+                self.dismissLoadingIndicator()
+                self.handleEmployeesResponse(result)
+            }
         }
     }
     

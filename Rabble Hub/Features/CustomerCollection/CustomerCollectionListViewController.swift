@@ -68,8 +68,17 @@ class CustomerCollectionListViewController: UIViewController {
     }
     
     func fetchCustomerCollections() {
-   
-        let id: String? = userDataManager.getUserData()?.partner?.id
+        guard let userData = userDataManager.getUserData() else {
+            showError("Invalid user data")
+            return }
+        
+        // Will use Partner ID id user is Partner
+        var id = userDataManager.getUserData()?.partner?.id
+        
+        // If user is Employee, use partner Id from Employees object
+        if userDataManager.isUserEmployee() {
+            id = userData.employees?.first?.partner.id
+        }
 
         if let storeId = id {
             self.showLoadingIndicator()
@@ -79,7 +88,7 @@ class CustomerCollectionListViewController: UIViewController {
             }
         } else {
             // Handle the case where both ids are nil, if necessary
-            print("Error: No valid id found")
+            showError("Invalid user")
         }
     }
     

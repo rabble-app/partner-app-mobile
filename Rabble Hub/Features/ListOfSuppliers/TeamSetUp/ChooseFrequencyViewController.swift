@@ -31,6 +31,7 @@ class ChooseFrequencyViewController: UIViewController {
     @IBOutlet var stepContainer: UIView!
     @IBOutlet var stepContainer_height: NSLayoutConstraint!
     var isFromEdit: Bool = false
+    weak var partnerManageDelegate: ManageTeamViewControllerDelegate?
     
     var selectedFrequency: DeliveryFrequency?
     var selectedSupplier: Supplier?
@@ -72,10 +73,27 @@ class ChooseFrequencyViewController: UIViewController {
     
     private func configureLabels() {
         if isFromEdit {
-            nextButton.setTitle("Save Changes", for: .normal)
+            let newTitle = NSAttributedString(string: "Save Changes")
+            self.nextButton.setAttributedTitle(newTitle,for:.normal)
+            
             titelLabel.text = "Edit Shipment Frequency"
             stepContainer.isHidden = true
             stepContainer_height.constant = 0
+            
+            guard let frequency = partnerTeam?.frequency else {
+                return
+            }
+            
+            switch frequency {
+            case DeliveryFrequency.everyWeek.seconds:
+                weekButtonTap(nil)
+            case DeliveryFrequency.everyTwoWeeks.seconds:
+                twoWeekButtonTap(nil)
+            case DeliveryFrequency.everyMonth.seconds:
+                monthButtonTap(nil)
+            default:
+                break
+            }
         }
         
         supplierpartnernameLabel.text = "\(selectedSupplier?.businessName ?? "")@\(userDataManager.getUserData()?.partner?.name ?? "")"
@@ -123,7 +141,15 @@ class ChooseFrequencyViewController: UIViewController {
             if response.statusCode == 200 || response.statusCode == 201 {
                 self.partnerTeam?.frequency = frequencyInSeconds
                 DispatchQueue.main.async {
-                    self.goToChooseDeliveryDayViewController(frequency: nil)
+                    if self.isFromEdit {
+                        if let updatedPartnerTeam = self.partnerTeam {
+                            self.partnerManageDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
+                        }
+                        self.dismissViewController()
+                    }
+                    else {
+                        self.goToChooseDeliveryDayViewController(frequency: nil)
+                    }
                 }
             } else {
                 SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
@@ -180,17 +206,17 @@ class ChooseFrequencyViewController: UIViewController {
         monthImageView.image = UIImage(named: monthButton.isSelected ? "selected_radioButton" : "unselected_radioButton")
     }
     
-    @IBAction func weekButtonTap(_ sender: Any) {
+    @IBAction func weekButtonTap(_ sender: Any?) {
         selectedFrequency = .everyWeek
         updateButtonStates(selectedButton: weekButton)
     }
     
-    @IBAction func twoWeekButtonTap(_ sender: Any) {
+    @IBAction func twoWeekButtonTap(_ sender: Any?) {
         selectedFrequency = .everyTwoWeeks
         updateButtonStates(selectedButton: twoWeekButton)
     }
     
-    @IBAction func monthButtonTap(_ sender: Any) {
+    @IBAction func monthButtonTap(_ sender: Any?) {
         selectedFrequency = .everyMonth
         updateButtonStates(selectedButton: monthButton)
     }

@@ -24,6 +24,11 @@ enum StoreHoursType: String {
     case custom = "CUSTOM"
 }
 
+enum Role: String {
+    case partner = "PARTNER"
+    case employee = "EMPLOYEE"
+}
+
 enum Step {
   case one, two, three, four
 }

@@ -20,83 +20,70 @@ class SnackBar {
         
         tparent = topWindow
         
-        var topPadding: CGFloat = 0
-        var bottomPadding: CGFloat = 0
-        var tx: CGFloat = 16
+        let topPadding: CGFloat = tparent?.safeAreaInsets.top ?? 0
+        let horizontalPadding: CGFloat = 16
+        let iconSize = CGSize(width: 20, height: 19)
         
-        if #available(iOS 11.0, *) {
-            topPadding = tparent?.safeAreaInsets.top ?? 0
-            bottomPadding = tparent?.safeAreaInsets.bottom ?? 0
-        }
+        let iconImageView = createIconImageView(isSuccess: isSuccess, iconSize: iconSize)
+        let messageLabel = createMessageLabel(message: msg, availableWidth: parent.bounds.size.width - (horizontalPadding * 2) - iconSize.width, horizontalPadding: horizontalPadding)
         
-        let iconv = UIImageView(frame: CGRect(x: 16, y: 17, width: 20, height: 19))
+        let snackbarHeight = max(messageLabel.bounds.height + 32, 54)
         
-        var backgroundColor: UIColor
-        var messageColor: UIColor
-        var image: UIImage?
-        var duration = 2.0
+        let initialFrame = CGRect(x: horizontalPadding / 2, y: -snackbarHeight, width: parent.bounds.size.width - horizontalPadding, height: snackbarHeight)
+        let finalFrame = CGRect(x: horizontalPadding / 2, y: topPadding + horizontalPadding / 2, width: parent.bounds.size.width - horizontalPadding, height: snackbarHeight)
+        
+        setupSnackbarView(initialFrame: initialFrame, finalFrame: finalFrame, backgroundColor: isSuccess ? Colors.ToastSuccessBackgroundColor : Colors.ToastErrorBackgroundColor, iconImageView: iconImageView, messageLabel: messageLabel, duration: isSuccess ? 2.0 : 3.0)
+    }
+    
+    private func createIconImageView(isSuccess: Bool, iconSize: CGSize) -> UIImageView {
+        let iconImageView = UIImageView(frame: CGRect(x: 12, y: 17, width: iconSize.width, height: iconSize.height))
         if isSuccess {
-            backgroundColor = Colors.ToastSuccessBackgroundColor
-            messageColor =  Colors.ToastSuccessFontColor
-            image = UIImage(named: "toast_success")
-            duration = 2.0
+            iconImageView.image = UIImage(named: "toast_success")
         } else {
-            backgroundColor = Colors.ToastErrorBackgroundColor
-            messageColor = Colors.ToastErrorFontColor
-            image = UIImage(named: "toast_error")
-            duration = 3.0
+            iconImageView.image = UIImage(named: "toast_error")
         }
+        return iconImageView
+    }
+    
+    private func createMessageLabel(message: String, availableWidth: CGFloat, horizontalPadding: CGFloat) -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.text = message
+        label.textColor = Colors.ToastErrorFontColor
         
-        if let image = image {
-            iconv.image = image
-            tx = 60
-        }
+        let labelSize = message.boundingRect(with: CGSize(width: availableWidth, height: .greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font!], context: nil).size
         
-        let w = parent.bounds.size.width - 16
-        let tw = w - (tx + 16)
-        var h: CGFloat = 54
-       
-        let labelSize2 = msg.boundingRect(with: CGSize(width: tw, height: .greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)], context: nil).size
-        let th2 = labelSize2.height
+        label.frame = CGRect(x: 24 + horizontalPadding, y: 18, width: availableWidth, height: labelSize.height)
         
-        if th2 > 22 {
-            h = th2 + 32
-        }
-        
-        let y = -h
-        let frame = CGRect(x: 8, y: y, width: w, height: h)
-        let frame2 = CGRect(x: 8, y: (topPadding + 8), width: w, height: h)
-        
+        return label
+    }
+    
+    private func setupSnackbarView(initialFrame: CGRect, finalFrame: CGRect, backgroundColor: UIColor, iconImageView: UIImageView, messageLabel: UILabel, duration: Double) {
         tview?.removeFromSuperview()
-        tview = UIView(frame: frame)
+        tview = UIView(frame: initialFrame)
+        tview?.backgroundColor = backgroundColor
         tview?.layer.cornerRadius = 8
         tview?.layer.masksToBounds = true
         
-        if let iconImage = iconv.image {
-            iconv.center.y = tview!.frame.height / 2
-            tview?.addSubview(iconv)
-        }
-        
-        let msglb = UILabel(frame: CGRect(x: tx - 16, y: 18, width: tw, height: th2))
-        msglb.textColor = messageColor
-        msglb.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        msglb.numberOfLines = 0
-        msglb.text = msg
-        tview?.addSubview(msglb)
+        tview?.addSubview(iconImageView)
+        tview?.addSubview(messageLabel)
         
         tparent?.addSubview(tview!)
-        tview?.snapshotView(afterScreenUpdates: true)
-        isAnimating = true
-        tview?.backgroundColor = backgroundColor
         
+        isAnimating = true
+        animateSnackbarView(to: finalFrame, duration: duration)
+    }
+    
+    private func animateSnackbarView(to finalFrame: CGRect, duration: Double) {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.3, animations: {
-                self.tview?.frame = frame2
+                self.tview?.frame = finalFrame
             }, completion: { finished in
                 if finished {
                     DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                         UIView.animate(withDuration: 1.0, animations: {
-                            self.tview?.frame = frame
+                            self.tview?.frame.origin.y = -finalFrame.height
                         }, completion: { finished in
                             if finished {
                                 self.isAnimating = false

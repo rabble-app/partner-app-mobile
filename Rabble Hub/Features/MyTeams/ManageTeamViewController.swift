@@ -13,6 +13,17 @@ struct Section {
     var items: [TeamSetting]
 }
 
+protocol ManageTeamViewControllerDelegate: AnyObject {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam)
+}
+
+extension ManageTeamViewControllerDelegate {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) 
+    {
+        //just for completion
+    }
+}
+
 class ManageTeamViewController: UIViewController {
     
     @IBOutlet var segmentedController: UISegmentedControl!
@@ -24,6 +35,7 @@ class ManageTeamViewController: UIViewController {
     
     @IBOutlet var emptyStateContainer: UIView!
     
+    weak var partnerDetailsDelegate: PartnerDetailsViewControllerDelegate?
     var sections: [Section] = []
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
@@ -37,10 +49,10 @@ class ManageTeamViewController: UIViewController {
         teamTableview.dataSource = self
         segmentedController.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         
-        let teamInfoSection = Section(title: "Team Info", items: [
+        let teamInfoSection = Section(title: "TEAM INFO", items: [
             TeamSetting(title: "Team Name", imageName: "icon_team")
         ])
-        let teamSettingsSection = Section(title: "Team Settings", items: [
+        let teamSettingsSection = Section(title: "TEAM SETTINGS", items: [
             TeamSetting(title: "Shipment frequency", imageName: "icon_frequency"),
             TeamSetting(title: "Adjust delivery date", imageName: "icon_calendar"),
             TeamSetting(title: "Product limit", imageName: "icon_product_limit")
@@ -272,6 +284,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
                         vc.partnerTeam = self.partnerTeam
+                        vc.partnerManageDelegate = self
                         vc.title = "Edit Shipment Frequency"
                         self.present(vc, animated: true)
                     }
@@ -280,6 +293,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
                         vc.partnerTeam = self.partnerTeam
+                        vc.partnerManageDelegate = self
                         vc.title = "Adjust Delivery Day"
                         self.present(vc, animated: true)
                     }
@@ -288,6 +302,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
                         vc.modalPresentationStyle = .custom
                         vc.isFromEdit = true
                         vc.partnerTeam = self.partnerTeam
+                        vc.partnerManageDelegate = self
                         vc.title = "Edit Product Limit"
                         self.present(vc, animated: true)
                     }
@@ -333,7 +348,7 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             
             let label = UILabel(frame: CGRect(x: 16, y: 8, width: tableView.frame.width - 32, height: 24))
             label.font = UIFont(name: "SFPro-Regular", size: 12) // SF Pro Regular
-            label.textColor = Colors.Gray4
+            label.textColor = Colors.graySectionHeader
             label.text = sections[section].title
             headerView.addSubview(label)
             
@@ -347,5 +362,12 @@ extension ManageTeamViewController: UITableViewDelegate, UITableViewDataSource {
             return 24
         }
         return 0
+    }
+}
+
+extension ManageTeamViewController: ManageTeamViewControllerDelegate {
+    func updatePartnerTeam(updatedPartnerTeam: PartnerTeam) {
+        self.partnerTeam = updatedPartnerTeam
+        self.partnerDetailsDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
     }
 }

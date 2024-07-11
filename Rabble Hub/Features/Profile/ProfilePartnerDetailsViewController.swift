@@ -66,13 +66,17 @@ class ProfilePartnerDetailsViewController: UIViewController {
     }
    
     private func fetchPartnerDetails() {
-        guard let partner = userDataManager.getUserData()?.partner else { return }
+        guard let userData = userDataManager.getUserData() else { return }
+        let partner = userDataManager.isUserEmployee() ? userData.employees?.first?.partner : userData.partner
+        guard let partnerId = partner?.id else { return }
+        
         self.showLoadingIndicator()
-        apiProvider.request(.getStoreInformation(partnerId: partner.id)) { result in
+        apiProvider.request(.getStoreInformation(partnerId: partnerId)) { result in
             self.handlePartnerDetailsResponse(result)
             self.dismissLoadingIndicator()
         }
     }
+
     
     private func handlePartnerDetailsResponse(_ result: Result<Response, MoyaError>) {
         switch result {
@@ -135,7 +139,7 @@ class ProfilePartnerDetailsViewController: UIViewController {
     
     @IBAction func storeTypeButtonTapped(_ sender: Any) {
         self.showViewWithAnimation(view: self.popupBackgroundView)
-        let items = ["Item 1", "Item 2", "Item 3", "Item 4"]
+        let items = ["Grocery Store", "Corner Store", "Butcher", "Fish Monger", "Other"]
         let rabbleSheetViewController = RabbleSheetViewController()
         rabbleSheetViewController.headerTitle = "Store Type"
         rabbleSheetViewController.items =  items
@@ -267,15 +271,7 @@ class ProfilePartnerDetailsViewController: UIViewController {
     private func updateUserDataPostalCode(_ store: Store) {
         let userDataManager = UserDataManager()
         if var userData = userDataManager.getUserData() {
-            // Check if partner is nil, if so, initialize it
-            if userData.partner == nil {
-                userData.partner = PartnerData(id: store.id, openHours: userData.partner?.openHours, name: store.name, postalCode: self.postalCodeTextField.text)
-            } else {
-                // Update existing partner data
-                userData.partner?.postalCode = self.postalCodeTextField.text
-                userData.partner?.id = store.id
-            }
-            
+            userData.partner = PartnerData(user: userData.partner?.user, id: store.id, openHours: userData.partner?.openHours, name: store.name, postalCode: self.postalCodeTextField.text)
             userDataManager.saveUserData(userData)
         }
     }

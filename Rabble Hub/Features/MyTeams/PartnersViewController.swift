@@ -28,12 +28,16 @@ class PartnersViewController: UIViewController {
         partnerTableview.delegate = self
         partnerTableview.dataSource = self
         searchBar.delegate = self
-        fetchPartnerTeams()
         
         emptyStateContainer.isHidden = true
         setupNewBuyingTeamButton.isEnabled = !userDataManager.isUserEmployee()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchPartnerTeams()
+    }
 
     @IBAction func setupNewBuyingTeamButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "ProducersListView", bundle: Bundle.main)
@@ -45,14 +49,32 @@ class PartnersViewController: UIViewController {
     
     
     private func fetchPartnerTeams() {
-       self.showLoadingIndicator()
-        let id = userDataManager.getUserData()?.id ?? ""
-        apiProvider.request(.getPartnerTeams(storeId: id)) { result in
-            self.dismissLoadingIndicator()
-            self.handlePartnersResponse(result)
+        guard let userData = userDataManager.getUserData() else {
+            showError("Invalid user data")
+            self.showEmptyState()
+            return }
+        
+        // Get this ID of user is PARTNER
+        var id = userDataManager.getUserData()?.id
+
+        // Get this ID if user is EMPLOYEE
+        if userDataManager.isUserEmployee() {
+            id = userData.employees?.first?.partner.user?.id
+        }
+
+        if let storeId = id {
+            self.showLoadingIndicator()
+            apiProvider.request(.getPartnerTeams(storeId: storeId)) { result in
+                self.dismissLoadingIndicator()
+                self.handlePartnersResponse(result)
+            }
+        } else {
+            // Handle the case where both ids are nil, if necessary
+            showError("Invalid user")
+            self.showEmptyState()
         }
     } 
-    
+     
     private func handlePartnersResponse(_ result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
@@ -184,5 +206,9 @@ extension PartnersViewController: UISearchBarDelegate {
             $0.name.localizedCaseInsensitiveContains(searchText)
         }
         partnerTableview.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }

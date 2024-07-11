@@ -16,6 +16,7 @@ protocol ChooseDeliveryDayViewControllerDelegate: AnyObject {
 class ChooseDeliveryDayViewController: UIViewController {
     
     weak var dismissalDelegate: ChooseFrequencyViewControllerDelegate?
+    weak var partnerManageDelegate: ManageTeamViewControllerDelegate?
     
     @IBOutlet var supplierpartnernameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
@@ -60,7 +61,8 @@ class ChooseDeliveryDayViewController: UIViewController {
         configureCalendarCollectionView()
         
         if isFromEdit {
-            nextButton.setTitle("Save Changes", for: .normal)
+            let newTitle = NSAttributedString(string: "Save Changes")
+            self.nextButton.setAttributedTitle(newTitle,for:.normal)
             titleLabel.text = "Adjust Delivery Day"
             stepContainer.isHidden = true
             stepContainer_height.constant = 0
@@ -200,23 +202,60 @@ class ChooseDeliveryDayViewController: UIViewController {
     private func handleUpdateResponse(_ result: Result<Response, MoyaError>, deliveryDay: String) {
         switch result {
         case .success(let response):
-            do {
-                let updateResponse = try response.map(UpdateTeamResponse.self)
-                if updateResponse.statusCode == 200 || updateResponse.statusCode == 201 {
-                    partnerTeam?.deliveryDay = deliveryDay
-                    DispatchQueue.main.async {
-                        self.goToCreateALimitViewController(deliveryDay: nil)
-                    }
-                } else {
-                    SnackBar().alert(withMessage: updateResponse.message, isSuccess: false, parent: view)
-                }
-            } catch {
-                handleStandardError(response)
-            }
+            handleSuccessResponse(response, deliveryDay: deliveryDay)
         case .failure(let error):
-            SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: view)
+            handleFailure(error)
         }
     }
+
+    private func handleSuccessResponse(_ response: Response, deliveryDay: String) {
+        do {
+            let updateResponse = try response.map(UpdateTeamResponse.self)
+            if isSuccessStatusCode(updateResponse.statusCode) {
+                updateDeliveryDay(deliveryDay)
+                DispatchQueue.main.async { [weak self] in
+                    self?.handlePostUpdate()
+                }
+            } else {
+                showError(updateResponse.message)
+            }
+        } catch {
+            handleStandardError(response)
+        }
+    }
+
+    private func isSuccessStatusCode(_ statusCode: Int) -> Bool {
+        return [200, 201].contains(statusCode)
+    }
+
+    private func updateDeliveryDay(_ deliveryDay: String) {
+        partnerTeam?.deliveryDay = deliveryDay
+    }
+
+    private func handlePostUpdate() {
+        if isFromEdit {
+            updatePartnerTeam()
+            dismissViewController()
+        } else {
+            goToCreateALimitViewController(deliveryDay: nil)
+        }
+    }
+
+    private func updatePartnerTeam() {
+        if let updatedPartnerTeam = partnerTeam {
+            partnerManageDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
+        }
+    }
+
+    private func showError(_ message: String) {
+        SnackBar().alert(withMessage: message, isSuccess: false, parent: view)
+    }
+
+    private func handleFailure(_ error: MoyaError) {
+        SnackBar().alert(withMessage: "\(error.localizedDescription)", isSuccess: false, parent: view)
+    }
+
+
     
     private func goToCreateALimitViewController(deliveryDay: DeliveryDay?) {
         let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)

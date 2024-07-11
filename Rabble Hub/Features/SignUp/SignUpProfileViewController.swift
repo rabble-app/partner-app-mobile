@@ -31,7 +31,8 @@ class SignUpProfileViewController: UIViewController, UITextFieldDelegate {
             $0.delegate = self
             $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
-        backButton.isEnabled = !isFromOnboardingStage
+        //backButton.isEnabled = !isFromOnboardingStage
+        backButton.isEnabled = false
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {

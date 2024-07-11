@@ -72,11 +72,27 @@ class InboundDeliveriesViewController: UIViewController {
     
     
     func fetchInboundDelivery() {
-        self.showLoadingIndicator()
-        let id = userDataManager.getUserData()?.partner?.id ?? ""
-        apiProvider.request(.getInboundDelivery(storeId: id, offset: 0, period: period, search: searchStr)) { result in
-            self.dismissLoadingIndicator()
-            self.handleInboundDeliveryResponse(result)
+        guard let userData = userDataManager.getUserData() else { 
+            showError("Invalid user data")
+            return }
+        
+        // Use Partner ID if user is Partner
+        var id = userDataManager.getUserData()?.partner?.id
+
+        // User Employee partner ID if user is Employee
+        if userDataManager.isUserEmployee() {
+            id = userData.employees?.first?.partner.id
+        }
+
+        if let storeId = id {
+            self.showLoadingIndicator()
+            apiProvider.request(.getInboundDelivery(storeId: storeId, offset: 0, period: period, search: searchStr)) { result in
+                self.dismissLoadingIndicator()
+                self.handleInboundDeliveryResponse(result)
+            }
+        } else {
+            // Handle the case where both ids are nil, if necessary
+            showError("Invalid user")
         }
     }
     
