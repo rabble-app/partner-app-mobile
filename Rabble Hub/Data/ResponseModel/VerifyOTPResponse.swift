@@ -80,6 +80,18 @@ struct EmployeeData: Codable {
 
 struct OpenHours: Codable {
     var type: String
+    var displayString: String {
+        switch type {
+        case "ALL_THE_TIME":
+            return "24/7"
+        case "MON_TO_FRI":
+            return "Mon - Fri"
+        case "CUSTOM":
+            return "Custom"
+        default:
+            return "Unknown"
+        }
+    }
 }
 
 struct Count: Codable {
