@@ -32,7 +32,7 @@ struct PartnerTeam: Codable {
     let isPublic: Bool
     let imageUrl: String
     let imageKey: String?
-    let nextDeliveryDate: String
+    let nextDeliveryDate: String?
     var productLimit: String
     var deliveryDay: String
     let createdAt: String
@@ -41,7 +41,6 @@ struct PartnerTeam: Codable {
     let members: [Member]
     let producer: PartnerTeamsProducer
     let host: Host
-    
     
     /// Returns an array of member names, combining first and last names.
     ///
@@ -75,7 +74,7 @@ struct PartnerUser: Codable {
     let lastName: String?
 }
 
-// MARK: - Producer
+// MARK: - PartnerTeamsProducer
 struct PartnerTeamsProducer: Codable {
     let id: String
     let userId: String
@@ -98,7 +97,7 @@ struct PartnerTeamsProducer: Codable {
     let categories: [PartnerTeamsCategoryContainer]
 }
 
-// MARK: - CategoryContainer
+// MARK: - PartnerTeamsCategoryContainer
 struct PartnerTeamsCategoryContainer: Codable {
     let id: String
     let producerId: String
@@ -108,7 +107,7 @@ struct PartnerTeamsCategoryContainer: Codable {
     let category: PartnerTeamsCategory
 }
 
-// MARK: - Category
+// MARK: - PartnerTeamsCategory
 struct PartnerTeamsCategory: Codable {
     let id: String
     let name: String

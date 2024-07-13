@@ -21,10 +21,11 @@ class LoadingIndicator {
         guard spinnerView == nil else { return }
         
         let spinnerView = UIView(frame: viewController.view.bounds)
-        spinnerView.backgroundColor = UIColor(white: 0, alpha: 0.2)
+        spinnerView.backgroundColor = UIColor(white: 0, alpha: 0.3)
         
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.center = spinnerView.center
+        activityIndicator.color = .white.withAlphaComponent(0.8)
         activityIndicator.startAnimating()
         
         spinnerView.addSubview(activityIndicator)

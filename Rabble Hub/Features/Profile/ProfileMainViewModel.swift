@@ -43,11 +43,11 @@ class ProfileMainViewModel {
         if userDataManager.isUserEmployee() {
             name = userDataManager.getUserData()?.employees?.first?.partner.name ?? ""
             postalCode = "\(userDataManager.getUserData()?.employees?.first?.partner.postalCode ?? "")"
-            openHrs = "\(userDataManager.getUserData()?.employees?.first?.partner.openHours?.type ?? "")"
+            openHrs = "\(userDataManager.getUserData()?.employees?.first?.partner.openHours?.displayString ?? "")"
         }else {
             name = userDataManager.getUserData()?.partner?.name ?? ""
             postalCode = "\(userDataManager.getUserData()?.partner?.postalCode ?? "")"
-            openHrs = "\(userDataManager.getUserData()?.partner?.openHours?.type ?? "")"
+            openHrs = "\(userDataManager.getUserData()?.partner?.openHours?.displayString ?? "")"
         }
         
         let storeName = Menu(titleName: name, subtitleNameLabel: userDataManager.getUserData()?.email, mode: .headerUI, iconViewBgColor: .gray3, separatorLine: true)

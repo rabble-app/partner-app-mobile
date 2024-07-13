@@ -178,7 +178,7 @@ extension PartnerTableViewCell {
         
         let isoDateFormatter = ISO8601DateFormatter()
         isoDateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        let dateString = team.nextDeliveryDate
+        guard let dateString = team.nextDeliveryDate else { return }
 
         if let deliveryDate = isoDateFormatter.date(from: dateString) {
             let currentDate = Date()
