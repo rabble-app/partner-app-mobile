@@ -215,8 +215,28 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "DELIVERIES TODAY"
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        headerView.backgroundColor = Colors.BackgroundPrimary
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 8, width: tableView.frame.width - 32, height: 24))
+        label.font = UIFont(name: "SFPro-Regular", size: 12) // SF Pro Regular
+        label.textColor = Colors.graySectionHeader
+        
+        switch segmentedController.selectedSegmentIndex {
+        case 0:
+            label.text = "DELIVERIES TODAY"
+        case 1:
+            label.text = "UPCOMING DELIVERIES"
+        case 2:
+            label.text = "COMPLETED DELIVERIES"
+        default:
+            label.text = "DELIVERIES TODAY"
+        }
+
+        headerView.addSubview(label)
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -224,7 +244,7 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-       return 24
+       return 40
     }
     
 }
