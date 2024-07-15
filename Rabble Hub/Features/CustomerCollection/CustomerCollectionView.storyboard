@@ -271,6 +271,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWX-0q-k9c">
+                                <rect key="frame" x="0.0" y="104" width="393" height="748"/>
+                                <color key="backgroundColor" name="background_primary"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aab-IN-f5Q" userLabel="Separator Line View">
                                 <rect key="frame" x="0.0" y="103" width="393" height="1"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
@@ -348,7 +352,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7M-a9-fWi">
-                                                <rect key="frame" x="377" y="266" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="377" y="266.33333333333331" width="0.0" height="0.0"/>
                                                 <attributedString key="attributedText"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -519,11 +523,15 @@
                         <viewLayoutGuide key="safeArea" id="Vfs-HF-grW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oWX-0q-k9c" secondAttribute="bottom" id="CG3-Ys-o8e"/>
                             <constraint firstItem="Vfs-HF-grW" firstAttribute="trailing" secondItem="Ipm-ej-OAH" secondAttribute="trailing" id="D7R-kI-ZgP"/>
                             <constraint firstItem="Aab-IN-f5Q" firstAttribute="top" secondItem="Vfs-HF-grW" secondAttribute="top" id="MNp-Q0-P6c"/>
+                            <constraint firstItem="oWX-0q-k9c" firstAttribute="top" secondItem="Aab-IN-f5Q" secondAttribute="bottom" id="OFT-J8-xlB"/>
                             <constraint firstItem="Aab-IN-f5Q" firstAttribute="leading" secondItem="xQe-MP-tZ6" secondAttribute="leading" id="Qz1-w5-2oB"/>
+                            <constraint firstItem="oWX-0q-k9c" firstAttribute="leading" secondItem="Vfs-HF-grW" secondAttribute="leading" id="cJN-Sz-Nsh"/>
                             <constraint firstItem="Ipm-ej-OAH" firstAttribute="top" secondItem="Aab-IN-f5Q" secondAttribute="bottom" id="etS-xl-1jC"/>
                             <constraint firstItem="Vfs-HF-grW" firstAttribute="bottom" secondItem="Ipm-ej-OAH" secondAttribute="bottom" id="nOG-2D-yjA"/>
+                            <constraint firstItem="Vfs-HF-grW" firstAttribute="trailing" secondItem="oWX-0q-k9c" secondAttribute="trailing" id="tzS-E1-uYp"/>
                             <constraint firstAttribute="trailing" secondItem="Aab-IN-f5Q" secondAttribute="trailing" id="uUL-bY-qhP"/>
                             <constraint firstItem="Ipm-ej-OAH" firstAttribute="leading" secondItem="Vfs-HF-grW" secondAttribute="leading" id="xMW-vm-Pxn"/>
                             <constraint firstItem="pq4-QY-sW0" firstAttribute="width" secondItem="xQe-MP-tZ6" secondAttribute="width" id="zB3-I2-N48"/>

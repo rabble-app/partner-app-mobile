@@ -177,6 +177,7 @@ extension CustomerCollectionListViewController: UITableViewDelegate, UITableView
         let storyboard = UIStoryboard(name: "CustomerCollectionView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as? OrderDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
+            vc.hidesBottomBarWhenPushed = true
             vc.selectedCollectionData = self.collectionData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }

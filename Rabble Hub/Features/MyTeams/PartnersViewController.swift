@@ -154,6 +154,7 @@ extension PartnersViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "PartnerDetailsViewController") as? PartnerDetailsViewController {
             vc.partnerTeam = self.filteredpartnerTeams[indexPath.row]
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

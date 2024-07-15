@@ -37,7 +37,7 @@ class OrderDetailsViewController: UIViewController {
     private func loadData() {
         if selectedCollectionData != nil {
             self.usernameLabel.text = (selectedCollectionData?.user.firstName ?? "") + " " + (selectedCollectionData?.user.lastName ?? "")
-            self.teamnameLabel.text = selectedCollectionData?.order.team.name ?? ""
+            self.teamnameLabel.text = selectedCollectionData?.order.team.name ?? ""  + " 􀱀"
             
             self.categoryValueLabel.text = selectedCollectionData?.order.team.producer.categories.first?.category.name
             
