@@ -9,7 +9,7 @@ import UIKit
 import Moya
 
 class DeliveryDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var iconBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var tableviewHeaderContainer: UIView!
@@ -27,17 +27,17 @@ class DeliveryDetailsViewController: UIViewController {
     
     var inboundDeliveryDetail: InboundDelivery?
     var orderDetails = [OrderDetail]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         loadData()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
+    
     private func setupView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -63,7 +63,7 @@ class DeliveryDetailsViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         tableView.reloadData()
     }
-
+    
     private func fetchInboundDeliveryDetails() {
         guard let id = inboundDeliveryDetail?.team.id else { return }
         
@@ -116,7 +116,7 @@ class DeliveryDetailsViewController: UIViewController {
         tableView.isHidden = orderDetails.isEmpty
         tableView.reloadData()
     }
-
+    
     private func loadData() {
         guard let detail = inboundDeliveryDetail else { return }
         
@@ -135,7 +135,19 @@ class DeliveryDetailsViewController: UIViewController {
         
         tableView.reloadData()
     }
-
+    @IBAction func call(_ sender: Any) {
+        let phoneNumber = inboundDeliveryDetail?.team.producer.user.phone ?? ""
+        if let phoneURL = URL(string: "tel://\(phoneNumber)"),
+           UIApplication.shared.canOpenURL(phoneURL) {
+            UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+        } else {
+            // Handle the error (e.g., show an alert to the user)
+            let alert = UIAlertController(title: "Error", message: "Cannot make a call from this device.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func confirmButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "ManuallyCheckItemsViewController") as! ManuallyCheckItemsViewController
