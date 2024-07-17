@@ -174,7 +174,7 @@ class CreateALimitViewController: UIViewController {
         self.showLoadingIndicator()
         
         apiProvider.request(.createBuyingTeam(
-            name: "\(selectedSupplier?.businessName ?? "")@\(partnerName)",
+            name: "\(selectedSupplier?.businessName ?? "") @ \(partnerName)",
             postalCode: postalCode,
             producerId: selectedSupplier?.id ?? "",
             hostId: userId,
