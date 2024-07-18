@@ -20,13 +20,16 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet var orderNumber: UILabel!
     @IBOutlet var category: UILabel!
     @IBOutlet var deliveryDate: UILabel!
+    @IBOutlet weak var teamNameButton: UIButton!
     
     var deliveryNavigationController: UINavigationController?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
+    private let teamManager = TeamManager()
     
     var inboundDeliveryDetail: InboundDelivery?
     var orderDetails = [OrderDetail]()
+    var partnerTeam: PartnerTeam?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +50,9 @@ class DeliveryDetailsViewController: UIViewController {
         setupTableView()
         
         fetchInboundDeliveryDetails()
+        fetchPartnerTeams()
         title = "Delivery Details"
+        teamNameButton.setTitle("", for: .normal)
     }
     
     private func setupHeaderView() {
@@ -72,6 +77,31 @@ class DeliveryDetailsViewController: UIViewController {
         apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
             self.dismissLoadingIndicator()
             self.handleDeliveryDetailsResponse(result)
+        }
+    }
+    
+    private func fetchPartnerTeams() {
+        teamManager.fetchPartnerTeams(userDataManager: userDataManager) { result in
+            switch result {
+            case .success(let partnerTeamsResponse):
+                self.processPartnerTeams(partnerTeamsResponse.data)
+            case .failure(let error):
+                self.showError(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func processPartnerTeams(_ partnerTeams: [PartnerTeam]) {
+        
+        guard let id = inboundDeliveryDetail?.team.id else { return }
+        
+        let filteredTeams = partnerTeams.filter { $0.id == id }
+        
+        if filteredTeams.count > 0 {
+            partnerTeam = filteredTeams.first
+        } else {
+            // Handle empty teams
+            // Your logic here for handling empty filtered teams
         }
     }
     
@@ -135,6 +165,12 @@ class DeliveryDetailsViewController: UIViewController {
         
         tableView.reloadData()
     }
+    
+    @IBAction func teamNameButtonTapped(_ sender: Any) {
+        guard let partnerTeam = self.partnerTeam else { return }
+        goToTeamDetailView(team: partnerTeam)
+    }
+    
     @IBAction func call(_ sender: Any) {
         let phoneNumber = inboundDeliveryDetail?.team.producer.user.phone ?? ""
         if let phoneURL = URL(string: "tel://\(phoneNumber)"),
@@ -156,6 +192,15 @@ class DeliveryDetailsViewController: UIViewController {
         vc.inboundDeliveryDetail = self.inboundDeliveryDetail
         vc.modalPresentationStyle = .automatic
         present(vc, animated: true, completion: nil)
+    }
+    
+    func goToTeamDetailView(team: PartnerTeam) {
+        let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "PartnerDetailsViewController") as? PartnerDetailsViewController {
+            vc.partnerTeam = team
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
