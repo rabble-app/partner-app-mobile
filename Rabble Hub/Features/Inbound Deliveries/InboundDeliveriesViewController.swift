@@ -34,8 +34,12 @@ class InboundDeliveriesViewController: UIViewController {
         searchBar.delegate = self
         
         segmentedController.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
-        fetchInboundDelivery()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchInboundDelivery()
     }
     
     private func loadEmptyState() {

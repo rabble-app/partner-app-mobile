@@ -35,9 +35,12 @@ class CustomerCollectionListViewController: UIViewController {
         searchBar.delegate = self
         
         emptyStateContainer.isHidden = true
-        
-        fetchCustomerCollections()
         segmentedBar.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchCustomerCollections()
     }
     
     private func loadEmptyState() {
