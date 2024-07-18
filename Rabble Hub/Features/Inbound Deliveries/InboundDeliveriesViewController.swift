@@ -63,7 +63,7 @@ class InboundDeliveriesViewController: UIViewController {
         case 1:
             period = "upcoming"
         case 2:
-            period = "past"
+            period = "completed"
         default:
             period = "today"
         }
