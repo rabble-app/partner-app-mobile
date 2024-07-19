@@ -215,6 +215,9 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
             vc.hidesBottomBarWhenPushed = true
             vc.deliveryNavigationController = self.navigationController
             vc.inboundDeliveryDetail = self.inboundDeliveryData[indexPath.row]
+            if period == "completed" {
+                vc.isFromCompleted = true
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

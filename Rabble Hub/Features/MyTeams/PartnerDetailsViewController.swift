@@ -182,7 +182,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         if orderDetails.isEmpty {
             self.orderTableview_height.constant = 0
             self.orderDetailsContainerView.isHidden = true
-            SnackBar().alert(withMessage: "This order is still pending. The purchased products are returned when we have successfully charged the users.", isSuccess: false, parent: self.view)
+            SnackBar().alertInfo(withMessage: "This order is still pending. The purchased products are returned when we have successfully charged the users.", parent: self.view)
         } else {
             self.orderTableview_height.constant = CGFloat(95 * orderDetails.count) + 20
         }

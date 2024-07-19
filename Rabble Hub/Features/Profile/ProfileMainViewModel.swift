@@ -63,14 +63,19 @@ class ProfileMainViewModel {
         let sectionManageEmployees = Menu(titleName: "MANAGE EMPLOYEES", mode: .sectionUI, separatorLine: false)
         let employees = Menu(titleName: "Employees", subtitleNameLabel: "\(userDataManager.getUserData()?.employeeCount?.employee ?? 0)", mode: .textUI, iconImageName: "employees", iconViewBgColor: .black, separatorLine: false, controllerName: "ManageEmployeeViewController")
         // Section: SYSTEM
-        let sectionSystem = Menu(titleName: "SYSTEM", mode: .sectionUI, separatorLine: true)
-        let darkMode = Menu(titleName: "Dark mode", mode: .switchUI, iconImageName: "darkmode", iconViewBgColor: .iconBgPurple, separatorLine: true)
-        let notifications = Menu(titleName: "Notifications", subtitleNameLabel: "Enabled", mode: .textUI, iconImageName: "notifications", iconViewBgColor: .iconBgRed, separatorLine: true)
-        let help = Menu(titleName: "Help", mode: .infoUI, iconImageName: "help", iconViewBgColor: .black, separatorLine: false)
-        let logout = Menu(titleName: "Log out", mode: .buttonUI, separatorLine: false)
+        //MARK: Removing this section for now
+//        let sectionSystem = Menu(titleName: "SYSTEM", mode: .sectionUI, separatorLine: true)
+//        let darkMode = Menu(titleName: "Dark mode", mode: .switchUI, iconImageName: "darkmode", iconViewBgColor: .iconBgPurple, separatorLine: true)
+//        let notifications = Menu(titleName: "Notifications", subtitleNameLabel: "Enabled", mode: .textUI, iconImageName: "notifications", iconViewBgColor: .iconBgRed, separatorLine: true)
+//        let help = Menu(titleName: "Help", mode: .infoUI, iconImageName: "help", iconViewBgColor: .black, separatorLine: false)
+//        let logout = Menu(titleName: "Log out", mode: .buttonUI, separatorLine: false)
         
+        // Section: STRIPE
+        let sectionStripe = Menu(titleName: "GET PAID", mode: .sectionUI, separatorLine: true)
+        let connectStripe = Menu(titleName: "Connect Stripe", subtitleNameLabel: "", mode: .textUI, iconImageName: "icon_connect_stripe", iconViewBgColor: .black, separatorLine: false, controllerName: nil)
+        let logout = Menu(titleName: "Log out", mode: .buttonUI, separatorLine: false)
 
-        menus = [storeName, sectionProfile, ownerProfile, partnerDetails, openHours, sectionManageEmployees, employees, sectionSystem, darkMode, notifications, help, logout]
+        menus = [storeName, sectionProfile, ownerProfile, partnerDetails, openHours, sectionManageEmployees, employees, sectionStripe, connectStripe, logout]
     }
     
     func getCellHeightForMode(mode: ProfileMenuCellMode) -> CGFloat {

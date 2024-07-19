@@ -10,6 +10,7 @@ import Moya
 
 class DeliveryDetailsViewController: UIViewController {
     
+    @IBOutlet var confirmButton: PrimaryButton!
     @IBOutlet weak var iconBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var tableviewHeaderContainer: UIView!
@@ -30,6 +31,8 @@ class DeliveryDetailsViewController: UIViewController {
     var inboundDeliveryDetail: InboundDelivery?
     var orderDetails = [OrderDetail]()
     var partnerTeam: PartnerTeam?
+    
+    var isFromCompleted = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,10 @@ class DeliveryDetailsViewController: UIViewController {
         fetchPartnerTeams()
         title = "Delivery Details"
         teamNameButton.setTitle("", for: .normal)
+        
+        if isFromCompleted {
+            self.confirmButton.isHidden = true
+        }
     }
     
     private func setupHeaderView() {
