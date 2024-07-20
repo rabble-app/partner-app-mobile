@@ -44,10 +44,10 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     private let stackView = UIStackView()
     
     var partnerTeam: PartnerTeam?
-    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var orderDetails = [OrderDetail]()
     var generatedUrlString: String?
     private let userDataManager = UserDataManager()
+    private let teamManager = TeamManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,46 +130,21 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func fetchPartnerDetails() {
-        guard let id = partnerTeam?.id else { return }
+        guard let id = partnerTeam?.id else { 
+            self.showError("Invalid partner team ID.")
+            return }
         self.showLoadingIndicator()
-        apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
+        
+        teamManager.getInboundDeliveryDetails(teamId: id) { result in
             self.dismissLoadingIndicator()
-            self.handlePartnerDetailsResponse(result)
-        }
-    }
-    
-    private func handlePartnerDetailsResponse(_ result: Result<Response, MoyaError>) {
-        switch result {
-        case .success(let response):
-            handleSuccessResponse(response)
-        case .failure(let error):
-            showError(error.localizedDescription)
-        }
-    }
-    
-    private func handleSuccessResponse(_ response: Response) {
-       
-        do {
-            let orderDetailsResponse = try response.map(OrderDetailsResponse.self)
-            if orderDetailsResponse.statusCode == 200 {
-                updateInboundDeliveryDetails(orderDetailsResponse.data)
-            } else {
-                showError(orderDetailsResponse.message)
+            switch result {
+            case .success(let orderDetailsResponse):
+                self.updateInboundDeliveryDetails(orderDetailsResponse.data)
+            case .failure(let error):
+                self.showError(error.localizedDescription)
+                self.orderTableview_height.constant = 0
+                self.orderDetailsContainerView.isHidden = true
             }
-        } catch {
-            handleMappingError(response)
-        }
-    }
-    
-    private func handleMappingError(_ response: Response) {
-        do {
-            let errorResponse = try response.map(StandardResponse.self)
-            showError(errorResponse.message)
-            
-            self.orderTableview_height.constant = 0
-            self.orderDetailsContainerView.isHidden = true
-        } catch {
-            print("Failed to map response data: \(error)")
         }
     }
     

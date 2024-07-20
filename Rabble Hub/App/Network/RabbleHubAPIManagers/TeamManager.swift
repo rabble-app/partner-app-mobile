@@ -39,6 +39,17 @@ class TeamManager {
         }
     }
     
+    func getInboundDeliveryDetails(teamId: String?, completion: @escaping (Result<OrderDetailsResponse, Error>) -> Void) {
+        
+        guard let id = teamId else {
+            completion(.failure(NSError(domain: "Invalid team ID", code: -1, userInfo: nil)))
+            return
+        }
+        
+        apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
+            self.handleResponse(result, completion: completion)
+        }
+    }
     /// Handles the API response and decodes the data.
     ///
     /// - Parameters:
