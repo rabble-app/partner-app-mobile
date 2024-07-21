@@ -71,6 +71,57 @@ class TeamManager {
     }
     
     /**
+     Creates a new buying team with the given parameters.
+
+     - Parameters:
+        - selectedSupplier: An optional `Supplier` representing the selected supplier.
+        - partnerName: A `String` representing the partner name.
+        - postalCode: A `String` representing the postal code.
+        - userId: A `String` representing the user ID of the host.
+        - storeId: A `String` representing the partner ID.
+        - frequency: An `Int` representing the frequency.
+        - productLimit: An `Int` representing the product limit.
+        - deliveryDayStr: A `String` representing the delivery day.
+        - deliveryDateStr: A `String` representing the next delivery date.
+        - nextCutOffDateStr: A `String` representing the order cut-off date.
+        - completion: A closure to be executed once the request has finished. The closure takes a `Result` containing either a `CreateTeamResponse` object or an `Error`.
+
+     The function makes a network request to create the buying team with the provided details and handles the response.
+     */
+    func createBuyingTeam(
+        selectedSupplier: Supplier?,
+        partnerName: String,
+        postalCode: String,
+        userId: String,
+        storeId: String,
+        frequency: Int,
+        productLimit: Int,
+        deliveryDayStr: String,
+        deliveryDateStr: String,
+        nextCutOffDateStr: String,
+        completion: @escaping (Result<CreateBuyingTeamResponse, Error>) -> Void
+    ) {
+        let name = "\(selectedSupplier?.businessName ?? "") @ \(partnerName)"
+        let producerId = selectedSupplier?.id ?? ""
+        
+        apiProvider.request(.createBuyingTeam(
+            name: name,
+            postalCode: postalCode,
+            producerId: producerId,
+            hostId: userId,
+            partnerId: storeId,
+            frequency: frequency,
+            description: "",
+            productLimit: productLimit,
+            deliveryDay: deliveryDayStr,
+            nextDeliveryDate: deliveryDateStr,
+            orderCutOffDate: nextCutOffDateStr
+        )) { result in
+            self.handleResponse(result, completion: completion)
+        }
+    }
+
+    /**
      Deletes a buying team with the given team ID.
      
      - Parameters:
