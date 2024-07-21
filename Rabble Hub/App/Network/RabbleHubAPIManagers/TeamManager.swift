@@ -72,11 +72,11 @@ class TeamManager {
     
     /**
      Deletes a buying team with the given team ID.
-
+     
      - Parameters:
-        - teamId: A `String` representing the team ID to be deleted.
-        - completion: A closure to be executed once the request has finished. The closure takes a `Result` containing either a `DeleteTeamResponse` object or an `Error`.
-
+     - teamId: A `String` representing the team ID to be deleted.
+     - completion: A closure to be executed once the request has finished. The closure takes a `Result` containing either a `DeleteTeamResponse` object or an `Error`.
+     
      The function makes a network request to delete the buying team specified by the team ID and handles the response.
      */
     func deleteBuyingTeam(teamId: String, completion: @escaping (Result<DeleteTeamResponse, Error>) -> Void) {
@@ -86,13 +86,26 @@ class TeamManager {
         }
     }
     
+    /**
+     Updates the details of a buying team with the given parameters.
+     
+     - Parameters:
+     - teamId: A `String` representing the team ID to be updated.
+     - partnerName: A `String` representing the new partner name.
+     - frequencyInSeconds: An `Int` representing the frequency in seconds.
+     - deliveryDay: A `String` representing the delivery day.
+     - productLimit: An `Int` representing the product limit.
+     - completion: A closure to be executed once the request has finished. The closure takes a `Result` containing either an `UpdateTeamResponse` object or an `Error`.
+     
+     The function makes a network request to update the buying team with the provided details and handles the response.
+     */
     func updateBuyingTeam(teamId: String, partnerName: String, frequencyInSeconds: Int, deliveryDay: String, productLimit: Int, completion: @escaping (Result<UpdateTeamResponse, Error>) -> Void) {
         
         apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequencyInSeconds, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
             self.handleResponse(result, completion: completion)
         }
     }
-
+    
 }
 
 extension TeamManager {

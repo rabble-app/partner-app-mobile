@@ -42,7 +42,7 @@ class ChooseDeliveryDayViewController: UIViewController {
     
     let formatter = DateFormatter()
     let userDataManager = UserDataManager()
-    
+    private let teamManager = TeamManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -193,34 +193,22 @@ class ChooseDeliveryDayViewController: UIViewController {
               let productLimit = partnerTeam?.productLimit.toInt() else { return }
         
         self.showLoadingIndicator()
-        apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequency, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
+        teamManager.updateBuyingTeam(teamId: teamId, partnerName: partnerName, frequencyInSeconds: frequency, deliveryDay: deliveryDay, productLimit: productLimit) { result in
             self.dismissLoadingIndicator()
-            self.handleUpdateResponse(result, deliveryDay: deliveryDay)
-        }
-    }
-    
-    private func handleUpdateResponse(_ result: Result<Response, MoyaError>, deliveryDay: String) {
-        switch result {
-        case .success(let response):
-            handleSuccessResponse(response, deliveryDay: deliveryDay)
-        case .failure(let error):
-            handleFailure(error)
-        }
-    }
-
-    private func handleSuccessResponse(_ response: Response, deliveryDay: String) {
-        do {
-            let updateResponse = try response.map(UpdateTeamResponse.self)
-            if isSuccessStatusCode(updateResponse.statusCode) {
-                updateDeliveryDay(deliveryDay)
-                DispatchQueue.main.async { [weak self] in
-                    self?.handlePostUpdate()
+            switch result {
+            case .success(let updateTeamResponse):
+                if self.isSuccessStatusCode(updateTeamResponse.statusCode) {
+                    SnackBar().alert(withMessage: updateTeamResponse.message, isSuccess: true, parent: self.view)
+                    self.updateDeliveryDay(deliveryDay)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.handlePostUpdate()
+                    }
+                } else {
+                    self.showError(updateTeamResponse.message)
                 }
-            } else {
-                showError(updateResponse.message)
+            case let .failure(error):
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
             }
-        } catch {
-            handleStandardError(response)
         }
     }
 
