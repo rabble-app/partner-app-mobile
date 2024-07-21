@@ -35,6 +35,7 @@ class CreateALimitViewController: UIViewController {
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
     let userDataManager = UserDataManager()
+    private let teamManager = TeamManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,21 +115,15 @@ class CreateALimitViewController: UIViewController {
         }
         
         self.showLoadingIndicator()
-        apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequency, deliveryDay: deliveryDay, productLimit: productLimit!)) { result in
+        teamManager.updateBuyingTeam(teamId: teamId, partnerName: partnerName, frequencyInSeconds: frequency, deliveryDay: deliveryDay, productLimit: productLimit!) { result in
             self.dismissLoadingIndicator()
-            self.handleUpdateResponse(result, productLimit: productLimit)
-        }
-    }
-    private func handleUpdateResponse(_ result: Result<Response, MoyaError>, productLimit: Int?) {
-        switch result {
-        case .success(let response):
-            do {
-                let updateResponse = try response.map(UpdateTeamResponse.self)
-                if updateResponse.statusCode == 200 || updateResponse.statusCode == 201 {
+            switch result {
+            case .success(let updateTeamResponse):
+                if updateTeamResponse.statusCode == 200 || updateTeamResponse.statusCode == 201 {
                     if let limit = productLimit?.toString() {
-                        partnerTeam?.productLimit = limit
+                        self.partnerTeam?.productLimit = limit
                     }
-                    self.showSnackBar(message: updateResponse.message, isSuccess: true)
+                    self.showSnackBar(message: updateTeamResponse.message, isSuccess: true)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.dismiss(animated: false) {
                             if let updatedPartnerTeam = self.partnerTeam {
@@ -138,15 +133,14 @@ class CreateALimitViewController: UIViewController {
                         }
                     }
                 } else {
-                    self.showSnackBar(message: updateResponse.message, isSuccess: false)
+                    self.showSnackBar(message: updateTeamResponse.message, isSuccess: false)
                 }
-            } catch {
-                self.handleStandardError(response)
+            case let .failure(error):
+                SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
             }
-        case .failure(let error):
-            self.showSnackBar(message: "\(error)", isSuccess: false)
         }
     }
+    
     
     private func createBuyingTeam() {
         guard let postalCode = userDataManager.getUserData()?.partner?.postalCode,
