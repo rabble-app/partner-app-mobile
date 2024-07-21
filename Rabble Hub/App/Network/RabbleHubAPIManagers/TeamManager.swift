@@ -86,6 +86,12 @@ class TeamManager {
         }
     }
     
+    func updateBuyingTeam(teamId: String, partnerName: String, frequencyInSeconds: Int, deliveryDay: String, productLimit: Int, completion: @escaping (Result<UpdateTeamResponse, Error>) -> Void) {
+        
+        apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequencyInSeconds, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
+            self.handleResponse(result, completion: completion)
+        }
+    }
 
 }
 
