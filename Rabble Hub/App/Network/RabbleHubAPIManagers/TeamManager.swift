@@ -70,6 +70,23 @@ class TeamManager {
         }
     }
     
+    /**
+     Deletes a buying team with the given team ID.
+
+     - Parameters:
+        - teamId: A `String` representing the team ID to be deleted.
+        - completion: A closure to be executed once the request has finished. The closure takes a `Result` containing either a `DeleteTeamResponse` object or an `Error`.
+
+     The function makes a network request to delete the buying team specified by the team ID and handles the response.
+     */
+    func deleteBuyingTeam(teamId: String, completion: @escaping (Result<DeleteTeamResponse, Error>) -> Void) {
+        
+        apiProvider.request(.deleteBuyingTeam(teamId: teamId)) { result in
+            self.handleResponse(result, completion: completion)
+        }
+    }
+    
+
 }
 
 extension TeamManager {
