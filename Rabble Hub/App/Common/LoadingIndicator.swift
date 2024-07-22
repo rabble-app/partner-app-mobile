@@ -15,12 +15,13 @@ class LoadingIndicator {
     
     private var spinnerView: UIView?
     
-    func show(in viewController: UIViewController) {
-        viewController.view.endEditing(true)
+    func show() {
+        guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
+        window.endEditing(true)
         
         guard spinnerView == nil else { return }
         
-        let spinnerView = UIView(frame: viewController.view.bounds)
+        let spinnerView = UIView(frame: window.bounds)
         spinnerView.backgroundColor = UIColor(white: 0, alpha: 0.3)
         
         let activityIndicator = UIActivityIndicatorView(style: .large)
@@ -29,7 +30,7 @@ class LoadingIndicator {
         activityIndicator.startAnimating()
         
         spinnerView.addSubview(activityIndicator)
-        viewController.view.addSubview(spinnerView)
+        window.addSubview(spinnerView)
         
         self.spinnerView = spinnerView
     }
@@ -43,7 +44,7 @@ class LoadingIndicator {
 extension UIViewController {
     func showLoadingIndicator() {
         DispatchQueue.main.async {
-            LoadingIndicator.shared.show(in: self)
+            LoadingIndicator.shared.show()
         }
     }
     
