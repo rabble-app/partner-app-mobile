@@ -188,14 +188,17 @@ class DeliveryDetailsViewController: UIViewController {
             view.layoutIfNeeded()
         }
 
-        if !detail.team.description.isEmpty {
-            descriptionTextView.text = detail.team.description
-            adjustTextViewHeight()
-        } else {
-            descriptionTextContainerView.isHidden = true
-            descriptionTextViewHeightConstraint.constant = .zero
-            view.layoutIfNeeded()
-        }
+//        if !detail.team.description.isEmpty {
+//            descriptionTextView.text = detail.team.description
+//            adjustTextViewHeight()
+//        } else {
+//            descriptionTextContainerView.isHidden = true
+//            descriptionTextViewHeightConstraint.constant = .zero
+//            view.layoutIfNeeded()
+//        }
+        // WIP: Needs response from Order Confirmation
+        descriptionTextContainerView.isHidden = true
+        descriptionTextViewHeightConstraint.constant = .zero
         
         tableView.reloadData()
     }
