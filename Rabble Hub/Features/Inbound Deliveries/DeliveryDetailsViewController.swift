@@ -23,6 +23,14 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet var deliveryDate: UILabel!
     @IBOutlet weak var teamNameButton: UIButton!
     
+    @IBOutlet weak var imageContainerView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageContainerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionTextContainerView: UIView!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionTextViewTopConstraint: NSLayoutConstraint!
+    
     var deliveryNavigationController: UINavigationController?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
@@ -48,7 +56,7 @@ class DeliveryDetailsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         iconBackgroundView.layer.cornerRadius = 28.0
-        
+        descriptionTextContainerView.layer.borderColor = Colors.Gray5.cgColor
         setupHeaderView()
         setupTableView()
         
@@ -170,7 +178,33 @@ class DeliveryDetailsViewController: UIViewController {
             print("Failed to parse date")
         }
         
+        if let imageStr = detail.orderConfirmation?.imageUrl, !imageStr.isEmpty {
+            if let imageUrl = URL(string: imageStr) {
+                imageView?.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
+            }
+        } else {
+            imageContainerViewHeightConstraint.constant = .zero
+            descriptionTextViewTopConstraint.constant = .zero
+            view.layoutIfNeeded()
+        }
+
+        if !detail.team.description.isEmpty {
+            descriptionTextView.text = detail.team.description
+            adjustTextViewHeight()
+        } else {
+            descriptionTextContainerView.isHidden = true
+            descriptionTextViewHeightConstraint.constant = .zero
+            view.layoutIfNeeded()
+        }
+        
         tableView.reloadData()
+    }
+    
+    func adjustTextViewHeight() {
+        let fixedWidth = descriptionTextView.frame.size.width
+        let newSize = descriptionTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        descriptionTextViewHeightConstraint.constant = newSize.height
+        view.layoutIfNeeded()
     }
     
     @IBAction func teamNameButtonTapped(_ sender: Any) {
