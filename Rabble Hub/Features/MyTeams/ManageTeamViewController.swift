@@ -39,6 +39,7 @@ class ManageTeamViewController: UIViewController {
     var sections: [Section] = []
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let teamManager = TeamManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,41 +163,30 @@ class ManageTeamViewController: UIViewController {
     }
     
     func deleteTeam() {
-        self.showLoadingIndicator()
         guard let teamId = partnerTeam?.id else {
+            self.showError("Invalid team ID")
             return
         }
         
-        apiProvider.request(.deleteBuyingTeam(teamId: teamId)) { result in
-            self.handleDeleteTeamResponse(result)
+        self.showLoadingIndicator()
+        teamManager.deleteBuyingTeam(teamId: teamId) { result in
             self.dismissLoadingIndicator()
-        }
-    }
-    
-    private func handleDeleteTeamResponse(_ result: Result<Response, MoyaError>) {
-        switch result {
-        case .success(let response):
-            handleDeleteSuccessResponse(response)
-        case .failure(let error):
-            showError(error.localizedDescription)
-        }
-    }
-    
-    private func handleDeleteSuccessResponse(_ response: Response) {
-        do {
-            let deleteTeamResponse = try response.map(DeleteTeamResponse.self)
-            if deleteTeamResponse.statusCode == 200 {
-                self.showSuccessMessage(deleteTeamResponse.message)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    self.goToMainTab()
+            switch result {
+            case .success(let deleteTeamResponse):
+                if deleteTeamResponse.statusCode == 200 {
+                    self.showSuccessMessage(deleteTeamResponse.message)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.goToMainTab()
+                    }
+                } else {
+                    self.showError(deleteTeamResponse.message)
                 }
-            } else {
-                showError(deleteTeamResponse.message)
+            case .failure(let error):
+                self.showError(error.localizedDescription)
             }
-        } catch {
-            handleMappingError(response)
         }
     }
+
     
     func goToMainTab() {
         let storyboard = UIStoryboard(name: "MainTabStoryboard", bundle: Bundle.main)

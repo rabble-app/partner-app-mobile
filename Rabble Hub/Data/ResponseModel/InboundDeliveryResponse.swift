@@ -50,12 +50,18 @@ struct InboundDeliveryTeam: Codable {
 struct InboundDeliveryProducer: Codable {
     let businessName: String
     let id: String
+    let user: InboundDeliveryUser
     let categories: [InboundDeliveryCategory]
 }
 
 // MARK: - InboundDeliveryCategory
 struct InboundDeliveryCategory: Codable {
     let category: CategoryDetail
+}
+
+// MARK: - InboundDeliveryUser
+struct InboundDeliveryUser: Codable {
+    let phone: String
 }
 
 // MARK: - CategoryDetail

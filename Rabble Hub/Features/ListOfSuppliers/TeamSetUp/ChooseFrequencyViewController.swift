@@ -37,7 +37,7 @@ class ChooseFrequencyViewController: UIViewController {
     var selectedSupplier: Supplier?
     var partnerTeam: PartnerTeam?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
-    
+    private let teamManager = TeamManager()
     let userDataManager = UserDataManager()
     
     override func viewDidLoad() {
@@ -124,49 +124,33 @@ class ChooseFrequencyViewController: UIViewController {
               let productLimit = partnerTeam?.productLimit.toInt() else { return }
         
         self.showLoadingIndicator()
-        apiProvider.request(.updateBuyingTeam(teamId: teamId, name: partnerName, frequency: frequencyInSeconds, deliveryDay: deliveryDay, productLimit: productLimit)) { result in
+        teamManager.updateBuyingTeam(teamId: teamId, partnerName: partnerName, frequencyInSeconds: frequencyInSeconds, deliveryDay: deliveryDay, productLimit: productLimit) { result in
             self.dismissLoadingIndicator()
             switch result {
-            case let .success(response):
-                self.handleSuccessResponse(response, frequencyInSeconds)
+            case .success(let updateTeamResponse):
+                if updateTeamResponse.statusCode == 200 || updateTeamResponse.statusCode == 201 {
+                    SnackBar().alert(withMessage: updateTeamResponse.message, isSuccess: true, parent: self.view)
+                    
+                    self.partnerTeam?.frequency = frequencyInSeconds
+                    DispatchQueue.main.async {
+                        if self.isFromEdit {
+                            if let updatedPartnerTeam = self.partnerTeam {
+                                self.partnerManageDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
+                            }
+                            self.dismissViewController()
+                        } else {
+                            self.goToChooseDeliveryDayViewController(frequency: nil)
+                        }
+                    }
+                } else {
+                    SnackBar().alert(withMessage: updateTeamResponse.message, isSuccess: false, parent: self.view)
+                }
             case let .failure(error):
                 SnackBar().alert(withMessage: "\(error)", isSuccess: false, parent: self.view)
             }
         }
     }
-    
-    private func handleSuccessResponse(_ response: Response, _ frequencyInSeconds: Int) {
-        do {
-            let response = try response.map(UpdateTeamResponse.self)
-            if response.statusCode == 200 || response.statusCode == 201 {
-                self.partnerTeam?.frequency = frequencyInSeconds
-                DispatchQueue.main.async {
-                    if self.isFromEdit {
-                        if let updatedPartnerTeam = self.partnerTeam {
-                            self.partnerManageDelegate?.updatePartnerTeam(updatedPartnerTeam: updatedPartnerTeam)
-                        }
-                        self.dismissViewController()
-                    }
-                    else {
-                        self.goToChooseDeliveryDayViewController(frequency: nil)
-                    }
-                }
-            } else {
-                SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
-            }
-        } catch {
-            handleErrorResponse(response)
-        }
-    }
-    
-    private func handleErrorResponse(_ response: Response) {
-        do {
-            let response = try response.map(StandardResponse.self)
-            SnackBar().alert(withMessage: response.message, isSuccess: false, parent: self.view)
-        } catch {
-            print("Failed to map response data: \(error)")
-        }
-    }
+
     
     private func goToChooseDeliveryDayViewController(frequency: Int?) {
         let storyboard = UIStoryboard(name: "TeamSetUp", bundle: Bundle.main)

@@ -18,6 +18,7 @@ class Colors: NSObject {
     static let ButtonSecondary = Colors.getColor(named: "button_secondary")
     static let ButtonTertiary = Colors.getColor(named: "button_tertiary")
     static let ButtonTitleColor = Colors.getColor(named: "button_title_color")
+    static let ButtonDanger = Colors.getColor(named: "button_danger")
     static let Gray1 = Colors.getColor(named: "gray_1")
     static let Gray2 = Colors.getColor(named: "gray_2")
     static let Gray3 = Colors.getColor(named: "gray_3")

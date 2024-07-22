@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ProfileMainViewController: UIViewController {
 
@@ -49,6 +50,15 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
         let selectedMenu = self.viewModel.menus[indexPath.row]
         var vc: UIViewController?
         
+        if selectedMenu.titleName == "Connect Stripe" {
+            let userDataManager = UserDataManager()
+            let id = userDataManager.getUserData()?.partner?.id
+            guard let url = URL(string: "https://supplier.rabble.market/auth/stripe/onboard-user?partnerId=\(id ?? "")") else { return }
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.modalPresentationStyle = .overFullScreen
+            present(safariViewController, animated: true, completion: nil)
+        }
+        
         if let controllerName = selectedMenu.controllerName {
             if controllerName == "ProfileOwnerViewController" {
                 let profileView = UIStoryboard(name: "ProfileView", bundle: nil)
@@ -86,6 +96,8 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = self.viewModel.getCellForMode(mode: self.viewModel.menus[indexPath.row].mode ?? .infoUI, tableView: tableView, indexPath: indexPath)
         if let cell = cell as? ProfileButtonTableViewCell {
+            cell.button.backgroundColor = Colors.ButtonDanger
+            cell.button.titleLabel?.textColor = .white
             cell.buttonTapped = {
                 self.userDataManager.logoutUser()
                 DispatchQueue.main.async {

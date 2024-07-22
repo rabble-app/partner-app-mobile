@@ -35,9 +35,12 @@ class CustomerCollectionListViewController: UIViewController {
         searchBar.delegate = self
         
         emptyStateContainer.isHidden = true
-        
-        fetchCustomerCollections()
         segmentedBar.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchCustomerCollections()
     }
     
     private func loadEmptyState() {
@@ -60,7 +63,7 @@ class CustomerCollectionListViewController: UIViewController {
         case 1:
             period = "upcoming"
         case 2:
-            period = "past"
+            period = "completed"
         default:
             period = "today"
         }
@@ -177,6 +180,7 @@ extension CustomerCollectionListViewController: UITableViewDelegate, UITableView
         let storyboard = UIStoryboard(name: "CustomerCollectionView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as? OrderDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
+            vc.hidesBottomBarWhenPushed = true
             vc.selectedCollectionData = self.collectionData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }

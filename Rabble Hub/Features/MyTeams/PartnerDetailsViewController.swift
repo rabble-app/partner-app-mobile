@@ -32,7 +32,6 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var nextDdeliveryContainer: UIView!
     @IBOutlet var nextDeliveryDate: UILabel!
     @IBOutlet var ordersTableview: UITableView!
-    @IBOutlet var contentView_height: NSLayoutConstraint!
     @IBOutlet var orderTableview_height: NSLayoutConstraint!
     @IBOutlet var tableviewHeaderContainer: UIView!
     @IBOutlet var imageContainer: UIView!
@@ -41,15 +40,14 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var membersTitleLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var manageTeamButton: PrimaryButton!
     @IBOutlet weak var orderDetailsContainerView: UIView!
-    @IBOutlet weak var orderDetailsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabelContainerViewHeightConstraint: NSLayoutConstraint!
     private let stackView = UIStackView()
     
     var partnerTeam: PartnerTeam?
-    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     var orderDetails = [OrderDetail]()
     var generatedUrlString: String?
     private let userDataManager = UserDataManager()
+    private let teamManager = TeamManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,11 +63,7 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     
     func setUpView() {
-        orderTableview_height.constant = 2 * 95
         view.layoutIfNeeded()
-        
-        contentView_height.constant = 780 + orderTableview_height.constant
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: contentView_height.constant)
         
         initialContainer.layer.cornerRadius = 36.0
         initialContainer.clipsToBounds = true
@@ -78,10 +72,10 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         imageContainer.layer.cornerRadius = 8.0
         imageContainer.clipsToBounds = true
         
-//        nextDdeliveryContainer.layer.borderWidth = 1.0
-//        nextDdeliveryContainer.layer.borderColor = Colors.Gray5.cgColor
         nextDdeliveryContainer.layer.cornerRadius = 13.0
         nextDdeliveryContainer.clipsToBounds = true
+        orderDetailsContainerView.layer.cornerRadius = 13.0
+        orderDetailsContainerView.clipsToBounds = true
         
         tableviewHeaderContainer.roundCorners([.topLeft, .topRight], radius: 13)
         ordersTableview.roundCorners([.bottomLeft, .bottomRight], radius: 13)
@@ -136,46 +130,21 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func fetchPartnerDetails() {
-        guard let id = partnerTeam?.id else { return }
+        guard let id = partnerTeam?.id else { 
+            self.showError("Invalid partner team ID.")
+            return }
         self.showLoadingIndicator()
-        apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
+        
+        teamManager.getInboundDeliveryDetails(teamId: id) { result in
             self.dismissLoadingIndicator()
-            self.handlePartnerDetailsResponse(result)
-        }
-    }
-    
-    private func handlePartnerDetailsResponse(_ result: Result<Response, MoyaError>) {
-        switch result {
-        case .success(let response):
-            handleSuccessResponse(response)
-        case .failure(let error):
-            showError(error.localizedDescription)
-        }
-    }
-    
-    private func handleSuccessResponse(_ response: Response) {
-        do {
-            let orderDetailsResponse = try response.map(OrderDetailsResponse.self)
-            if orderDetailsResponse.statusCode == 200 {
-                updateInboundDeliveryDetails(orderDetailsResponse.data)
-            } else {
-                showError(orderDetailsResponse.message)
+            switch result {
+            case .success(let orderDetailsResponse):
+                self.updateInboundDeliveryDetails(orderDetailsResponse.data)
+            case .failure(let error):
+                self.showError(error.localizedDescription)
+                self.orderTableview_height.constant = 0
+                self.orderDetailsContainerView.isHidden = true
             }
-        } catch {
-            handleMappingError(response)
-        }
-    }
-    
-    private func handleMappingError(_ response: Response) {
-        do {
-            let errorResponse = try response.map(StandardResponse.self)
-            showError(errorResponse.message)
-            
-            self.orderTableview_height.constant = 0
-            self.orderDetailsContainerView.isHidden = true
-            self.orderDetailsHeightConstraint.constant = 0
-        } catch {
-            print("Failed to map response data: \(error)")
         }
     }
     
@@ -188,9 +157,10 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
         if orderDetails.isEmpty {
             self.orderTableview_height.constant = 0
             self.orderDetailsContainerView.isHidden = true
-            self.orderDetailsHeightConstraint.constant = 0
+            SnackBar().alertInfo(withMessage: "This order is still pending. The purchased products are returned when we have successfully charged the users.", parent: self.view)
+        } else {
+            self.orderTableview_height.constant = CGFloat(95 * orderDetails.count) + 20
         }
-        
         ordersTableview.reloadData()
     }
     

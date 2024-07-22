@@ -34,8 +34,12 @@ class InboundDeliveriesViewController: UIViewController {
         searchBar.delegate = self
         
         segmentedController.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
-        fetchInboundDelivery()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchInboundDelivery()
     }
     
     private func loadEmptyState() {
@@ -63,7 +67,7 @@ class InboundDeliveriesViewController: UIViewController {
         case 1:
             period = "upcoming"
         case 2:
-            period = "past"
+            period = "completed"
         default:
             period = "today"
         }
@@ -208,14 +212,38 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
         let storyboard = UIStoryboard(name: "InboundDeliveriesView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "DeliveryDetailsViewController") as? DeliveryDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
+            vc.hidesBottomBarWhenPushed = true
             vc.deliveryNavigationController = self.navigationController
             vc.inboundDeliveryDetail = self.inboundDeliveryData[indexPath.row]
+            if period == "completed" {
+                vc.isFromCompleted = true
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "DELIVERIES TODAY"
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        headerView.backgroundColor = Colors.BackgroundPrimary
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 8, width: tableView.frame.width - 32, height: 24))
+        label.font = UIFont(name: "SFPro-Regular", size: 12) // SF Pro Regular
+        label.textColor = Colors.graySectionHeader
+        
+        switch segmentedController.selectedSegmentIndex {
+        case 0:
+            label.text = "DELIVERIES TODAY"
+        case 1:
+            label.text = "UPCOMING DELIVERIES"
+        case 2:
+            label.text = "COMPLETED DELIVERIES"
+        default:
+            label.text = "DELIVERIES TODAY"
+        }
+
+        headerView.addSubview(label)
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -223,7 +251,7 @@ extension InboundDeliveriesViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-       return 24
+       return 40
     }
     
 }

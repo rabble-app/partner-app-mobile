@@ -25,8 +25,11 @@ struct DeliveryDay: Codable {
     /// - Returns: The cutoff date as a `Date` object, or `nil` if calculation fails.
     func getCutoffDate(from date: Date) -> Date? {
         guard let cutOffDayString = cutOffDay,
-              let cutOffDay = Weekday(rawValue: cutOffDayString.uppercased()),
-              let cutOffTime = cutOffTime else { return nil }
+              let cutOffDay = Weekday(rawValue: cutOffDayString.uppercased()) else { return nil }
+        
+        // Set a default cutoff time if it's empty
+        let defaultCutOffTime = "23:59"
+        let effectiveCutOffTime = cutOffTime?.isEmpty == false ? cutOffTime! : defaultCutOffTime
         
         let calendar = Calendar.current
         guard let selectedWeekday = Weekday.from(date: date) else { return nil }
@@ -41,7 +44,7 @@ struct DeliveryDay: Codable {
         
         guard let cutoffDate = calendar.date(byAdding: .day, value: dayDifference, to: date) else { return nil }
         
-        let timeComponents = cutOffTime.split(separator: ":").compactMap { Int($0) }
+        let timeComponents = effectiveCutOffTime.split(separator: ":").compactMap { Int($0) }
         guard timeComponents.count == 2 else { return nil }
         
         let hour = timeComponents[0]

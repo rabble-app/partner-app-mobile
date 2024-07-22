@@ -13,6 +13,7 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet var ordersTableview: UITableView!
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var teamnameLabel: UILabel!
+    @IBOutlet weak var teamNameButton: UIButton!
     @IBOutlet var categoryValueLabel: UILabel!
     @IBOutlet var dateTimeValueLabel: UILabel!
     @IBOutlet var tableviewHeaderContainer: UIView!
@@ -26,6 +27,8 @@ class OrderDetailsViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
+    private let teamManager = TeamManager()
+    var partnerTeam: PartnerTeam?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +39,10 @@ class OrderDetailsViewController: UIViewController {
     
     private func loadData() {
         if selectedCollectionData != nil {
+            fetchPartnerTeams()
+            
             self.usernameLabel.text = (selectedCollectionData?.user.firstName ?? "") + " " + (selectedCollectionData?.user.lastName ?? "")
-            self.teamnameLabel.text = selectedCollectionData?.order.team.name ?? ""
+            self.teamnameLabel.text = selectedCollectionData?.order.team.name ?? ""  + " 􀱀"
             
             self.categoryValueLabel.text = selectedCollectionData?.order.team.producer.categories.first?.category.name
             
@@ -80,6 +85,8 @@ class OrderDetailsViewController: UIViewController {
         iconContainer.clipsToBounds = true
         ordersTableview.showsVerticalScrollIndicator = false
         
+        teamNameButton.setTitle("", for: .normal)
+        
         if isFromScanning {
             self.collectOrderBtn.isHidden = false
         }
@@ -95,6 +102,31 @@ class OrderDetailsViewController: UIViewController {
         apiProvider.request(.updateOrderAsCollected(storeId: storeId, collectionId: selectedCollectionData?.id ?? "")) { result in
             self.dismissLoadingIndicator()
             self.handleOrderCollectedResponse(result)
+        }
+    }
+    
+    private func fetchPartnerTeams() {
+        self.showLoadingIndicator()
+        teamManager.fetchPartnerTeams(userDataManager: userDataManager) { result in
+            switch result {
+            case .success(let partnerTeamsResponse):
+                self.processPartnerTeams(partnerTeamsResponse.data)
+            case .failure(let error):
+                self.showError(error.localizedDescription)
+            }
+            self.dismissLoadingIndicator()
+        }
+    }
+    
+    private func processPartnerTeams(_ partnerTeams: [PartnerTeam]) {
+        guard let id = selectedCollectionData?.order.team.id else { return }
+
+        let filteredTeams = partnerTeams.filter { $0.id == id }
+        
+        if filteredTeams.count > 0 {
+            partnerTeam = filteredTeams.first
+        } else {
+            // Handle empty teams
         }
     }
     
@@ -147,6 +179,19 @@ class OrderDetailsViewController: UIViewController {
         }
     }
     
+    @IBAction func teamNameButtonTapped(_ sender: Any) {
+        guard let partnerTeam = self.partnerTeam else { return }
+        goToTeamDetailView(partnerTeamData: partnerTeam)
+    }
+    
+    func goToTeamDetailView(partnerTeamData: PartnerTeam) {
+        let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "PartnerDetailsViewController") as? PartnerDetailsViewController {
+            vc.partnerTeam = partnerTeamData
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {

@@ -16,7 +16,7 @@ class PartnersViewController: UIViewController {
     
     @IBOutlet weak var setupNewBuyingTeamButton: PrimaryButton!
     
-    var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    private let teamManager = TeamManager()
     private let userDataManager = UserDataManager()
     private var partnerTeams = [PartnerTeam]()
     private var filteredpartnerTeams = [PartnerTeam]()
@@ -49,61 +49,16 @@ class PartnersViewController: UIViewController {
     
     
     private func fetchPartnerTeams() {
-        guard let userData = userDataManager.getUserData() else {
-            showError("Invalid user data")
-            self.showEmptyState()
-            return }
-        
-        // Get this ID of user is PARTNER
-        var id = userDataManager.getUserData()?.id
-
-        // Get this ID if user is EMPLOYEE
-        if userDataManager.isUserEmployee() {
-            id = userData.employees?.first?.partner.user?.id
-        }
-
-        if let storeId = id {
-            self.showLoadingIndicator()
-            apiProvider.request(.getPartnerTeams(storeId: storeId)) { result in
-                self.dismissLoadingIndicator()
-                self.handlePartnersResponse(result)
-            }
-        } else {
-            // Handle the case where both ids are nil, if necessary
-            showError("Invalid user")
-            self.showEmptyState()
-        }
-    } 
-     
-    private func handlePartnersResponse(_ result: Result<Response, MoyaError>) {
-        switch result {
-        case .success(let response):
-            print(response)
-            self.handleSuccessResponse(response)
-        case .failure(let error):
-            self.showError(error.localizedDescription)
-        }
-    }
-    
-    private func handleSuccessResponse(_ response: Response) {
-        do {
-            let partnerTeamsResponse = try response.map(GetPartnerTeamsResponse.self)
-            if partnerTeamsResponse.statusCode == 200 {
+        self.showLoadingIndicator()
+        teamManager.fetchPartnerTeams(userDataManager: userDataManager) { result in
+            self.dismissLoadingIndicator()
+            switch result {
+            case .success(let partnerTeamsResponse):
                 self.updatePartnerTeams(partnerTeamsResponse.data)
-            } else {
-                self.showError(partnerTeamsResponse.message)
+            case .failure(let error):
+                self.showError(error.localizedDescription)
+                self.showEmptyState()
             }
-        } catch {
-            self.handleMappingError(response)
-        }
-    }
-    
-    private func handleMappingError(_ response: Response) {
-        do {
-            let errorResponse = try response.map(StandardResponse.self)
-            self.showError(errorResponse.message)
-        } catch {
-            print("Failed to map response data: \(error)")
         }
     }
     
@@ -154,6 +109,7 @@ extension PartnersViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
         if let vc = storyboard.instantiateViewController(withIdentifier: "PartnerDetailsViewController") as? PartnerDetailsViewController {
             vc.partnerTeam = self.filteredpartnerTeams[indexPath.row]
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

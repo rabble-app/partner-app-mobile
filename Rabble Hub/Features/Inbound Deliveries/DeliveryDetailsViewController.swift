@@ -9,7 +9,8 @@ import UIKit
 import Moya
 
 class DeliveryDetailsViewController: UIViewController {
-
+    
+    @IBOutlet var confirmButton: PrimaryButton!
     @IBOutlet weak var iconBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var tableviewHeaderContainer: UIView!
@@ -20,24 +21,29 @@ class DeliveryDetailsViewController: UIViewController {
     @IBOutlet var orderNumber: UILabel!
     @IBOutlet var category: UILabel!
     @IBOutlet var deliveryDate: UILabel!
+    @IBOutlet weak var teamNameButton: UIButton!
     
     var deliveryNavigationController: UINavigationController?
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     private let userDataManager = UserDataManager()
+    private let teamManager = TeamManager()
     
     var inboundDeliveryDetail: InboundDelivery?
     var orderDetails = [OrderDetail]()
-
+    var partnerTeam: PartnerTeam?
+    
+    var isFromCompleted = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         loadData()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
+    
     private func setupView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,7 +53,13 @@ class DeliveryDetailsViewController: UIViewController {
         setupTableView()
         
         fetchInboundDeliveryDetails()
+        fetchPartnerTeams()
         title = "Delivery Details"
+        teamNameButton.setTitle("", for: .normal)
+        
+        if isFromCompleted {
+            self.confirmButton.isHidden = true
+        }
     }
     
     private func setupHeaderView() {
@@ -63,7 +75,7 @@ class DeliveryDetailsViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         tableView.reloadData()
     }
-
+    
     private func fetchInboundDeliveryDetails() {
         guard let id = inboundDeliveryDetail?.team.id else { return }
         
@@ -72,6 +84,31 @@ class DeliveryDetailsViewController: UIViewController {
         apiProvider.request(.getInboundDeliveryDetails(id: id)) { result in
             self.dismissLoadingIndicator()
             self.handleDeliveryDetailsResponse(result)
+        }
+    }
+    
+    private func fetchPartnerTeams() {
+        teamManager.fetchPartnerTeams(userDataManager: userDataManager) { result in
+            switch result {
+            case .success(let partnerTeamsResponse):
+                self.processPartnerTeams(partnerTeamsResponse.data)
+            case .failure(let error):
+                self.showError(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func processPartnerTeams(_ partnerTeams: [PartnerTeam]) {
+        
+        guard let id = inboundDeliveryDetail?.team.id else { return }
+        
+        let filteredTeams = partnerTeams.filter { $0.id == id }
+        
+        if filteredTeams.count > 0 {
+            partnerTeam = filteredTeams.first
+        } else {
+            // Handle empty teams
+            // Your logic here for handling empty filtered teams
         }
     }
     
@@ -112,11 +149,11 @@ class DeliveryDetailsViewController: UIViewController {
     
     private func updateInboundDeliveryDetails(_ orderDetailsResponse: [OrderDetail]) {
         orderDetails = orderDetailsResponse
-        tableViewConstraintHeight.constant = CGFloat(77 * orderDetails.count) + 20
+        tableViewConstraintHeight.constant = CGFloat(77 * orderDetails.count) + 10 + 77
         tableView.isHidden = orderDetails.isEmpty
         tableView.reloadData()
     }
-
+    
     private func loadData() {
         guard let detail = inboundDeliveryDetail else { return }
         
@@ -135,7 +172,25 @@ class DeliveryDetailsViewController: UIViewController {
         
         tableView.reloadData()
     }
-
+    
+    @IBAction func teamNameButtonTapped(_ sender: Any) {
+        guard let partnerTeam = self.partnerTeam else { return }
+        goToTeamDetailView(team: partnerTeam)
+    }
+    
+    @IBAction func call(_ sender: Any) {
+        let phoneNumber = inboundDeliveryDetail?.team.producer.user.phone ?? ""
+        if let phoneURL = URL(string: "tel://\(phoneNumber)"),
+           UIApplication.shared.canOpenURL(phoneURL) {
+            UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+        } else {
+            // Handle the error (e.g., show an alert to the user)
+            let alert = UIAlertController(title: "Error", message: "Cannot make a call from this device.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func confirmButtonTap(_ sender: Any) {
         let signUpView = UIStoryboard(name: "InboundDeliveriesView", bundle: nil)
         let vc = signUpView.instantiateViewController(withIdentifier: "ManuallyCheckItemsViewController") as! ManuallyCheckItemsViewController
@@ -144,6 +199,15 @@ class DeliveryDetailsViewController: UIViewController {
         vc.inboundDeliveryDetail = self.inboundDeliveryDetail
         vc.modalPresentationStyle = .automatic
         present(vc, animated: true, completion: nil)
+    }
+    
+    func goToTeamDetailView(team: PartnerTeam) {
+        let storyboard = UIStoryboard(name: "MyTeamsView", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "PartnerDetailsViewController") as? PartnerDetailsViewController {
+            vc.partnerTeam = team
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
