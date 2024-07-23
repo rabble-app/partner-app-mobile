@@ -40,7 +40,6 @@ class OrderDetailsViewController: UIViewController {
     private func loadData() {
         if selectedCollectionData != nil {
             fetchPartnerTeams()
-            
             self.usernameLabel.text = (selectedCollectionData?.user.firstName ?? "") + " " + (selectedCollectionData?.user.lastName ?? "")
             self.teamnameLabel.text = selectedCollectionData?.order.team.name ?? ""  + " 􀱀"
             
@@ -87,7 +86,7 @@ class OrderDetailsViewController: UIViewController {
         
         teamNameButton.setTitle("", for: .normal)
         
-        if isFromScanning {
+        if isFromScanning && self.selectedCollectionData?.status != "PENDING"{
             self.collectOrderBtn.isHidden = false
         }
     }
