@@ -19,20 +19,20 @@ class LoadingIndicator {
         guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
         window.endEditing(true)
         
-        guard spinnerView == nil else { return }
+        guard self.spinnerView == nil else { return }
         
-        let spinnerView = UIView(frame: window.bounds)
-        spinnerView.backgroundColor = UIColor(white: 0, alpha: 0.3)
+        let newSpinnerView = UIView(frame: window.bounds)
+        newSpinnerView.backgroundColor = UIColor(white: 0, alpha: 0.3)
         
         let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.center = spinnerView.center
+        activityIndicator.center = newSpinnerView.center
         activityIndicator.color = .white.withAlphaComponent(0.8)
         activityIndicator.startAnimating()
         
-        spinnerView.addSubview(activityIndicator)
-        window.addSubview(spinnerView)
+        newSpinnerView.addSubview(activityIndicator)
+        window.addSubview(newSpinnerView)
         
-        self.spinnerView = spinnerView
+        self.spinnerView = newSpinnerView
     }
     
     func dismiss() {
