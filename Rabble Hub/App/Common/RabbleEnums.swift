@@ -39,5 +39,5 @@ enum CellMode {
 
 
 enum ProfileMenuCellMode {
-    case headerUI, textUI, switchUI, buttonUI, infoUI, sectionUI
+    case headerUI, textUI, switchUI, infoUI, sectionUI
 }

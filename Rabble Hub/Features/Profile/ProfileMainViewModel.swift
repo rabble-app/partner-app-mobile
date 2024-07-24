@@ -73,17 +73,15 @@ class ProfileMainViewModel {
         // Section: STRIPE
         let sectionStripe = Menu(titleName: "GET PAID", mode: .sectionUI, separatorLine: true)
         let connectStripe = Menu(titleName: "Connect Stripe", subtitleNameLabel: "", mode: .textUI, iconImageName: "icon_connect_stripe", iconViewBgColor: .black, separatorLine: false, controllerName: nil)
-        let logout = Menu(titleName: "Log out", mode: .buttonUI, separatorLine: false)
+        //let logout = Menu(titleName: "Log out", mode: .buttonUI, separatorLine: false)
 
-        menus = [storeName, sectionProfile, ownerProfile, partnerDetails, openHours, sectionManageEmployees, employees, sectionStripe, connectStripe, logout]
+        menus = [storeName, sectionProfile, ownerProfile, partnerDetails, openHours, sectionManageEmployees, employees, sectionStripe, connectStripe]
     }
     
     func getCellHeightForMode(mode: ProfileMenuCellMode) -> CGFloat {
         switch mode {
         case .headerUI:
             return 100.0
-        case .buttonUI:
-            return 90.0
         default:
             return 50.0
         }
@@ -104,12 +102,12 @@ class ProfileMainViewModel {
             
             return cell
             
-        case .buttonUI:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileButtonTableViewCell", for: indexPath) as? ProfileButtonTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            return cell
+//        case .buttonUI:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileButtonTableViewCell", for: indexPath) as? ProfileButtonTableViewCell else {
+//                return UITableViewCell()
+//            }
+//            
+//            return cell
             
         case .sectionUI:
             
