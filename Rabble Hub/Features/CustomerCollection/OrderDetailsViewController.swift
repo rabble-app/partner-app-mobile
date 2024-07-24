@@ -86,7 +86,7 @@ class OrderDetailsViewController: UIViewController {
         
         teamNameButton.setTitle("", for: .normal)
         
-        if isFromScanning && self.selectedCollectionData?.status != "PENDING"{
+        if isFromScanning && self.selectedCollectionData?.status == "PENDING"{
             self.collectOrderBtn.isHidden = false
         }
     }
