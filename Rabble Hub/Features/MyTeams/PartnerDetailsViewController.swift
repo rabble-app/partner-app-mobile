@@ -44,7 +44,11 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
     private let stackView = UIStackView()
     
     var partnerTeam: PartnerTeam?
-    var orderDetails = [OrderDetail]()
+    var orderDetails: [OrderDetail] = [] {
+           didSet {
+               updateTableViewHeight()
+           }
+       }
     var generatedUrlString: String?
     private let userDataManager = UserDataManager()
     private let teamManager = TeamManager()
@@ -129,6 +133,13 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
 
     }
     
+    private func updateTableViewHeight() {
+        DispatchQueue.main.async {
+            self.orderTableview_height.constant = CGFloat(95 * self.orderDetails.count) + 20
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     private func fetchPartnerDetails() {
         guard let id = partnerTeam?.id else { 
             self.showError("Invalid partner team ID.")
@@ -158,8 +169,6 @@ class PartnerDetailsViewController: UIViewController, UIScrollViewDelegate {
             self.orderTableview_height.constant = 0
             self.orderDetailsContainerView.isHidden = true
             SnackBar().alertInfo(withMessage: "This order is still pending. The purchased products are returned when we have successfully charged the users.", parent: self.view)
-        } else {
-            self.orderTableview_height.constant = CGFloat(95 * orderDetails.count) + 20
         }
         ordersTableview.reloadData()
     }
@@ -230,7 +239,6 @@ extension PartnerDetailsViewController: UITableViewDelegate, UITableViewDataSour
         if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             cell.border.isHidden = true
         }
-        
         let orderDetail = orderDetails[indexPath.row]
         cell.supplierLabel.text = orderDetail.name
         cell.descLabel.text = "\(orderDetail.measuresPerSubunit) \(orderDetail.unitsOfMeasurePerSubunit)"

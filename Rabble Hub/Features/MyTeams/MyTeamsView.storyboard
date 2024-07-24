@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHA-mA-duX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHA-mA-duX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -462,7 +462,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30o-IL-iwv" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="942.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="804.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-qx-H1w">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="297"/>
@@ -472,7 +472,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rgp-Fu-8Vf" customClass="PrimaryButton" customModule="Rabble_Hub" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="868.33333333333337" width="361" height="50"/>
+                                                <rect key="frame" x="16" y="730.33333333333337" width="361" height="50"/>
                                                 <color key="backgroundColor" name="button_primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="HAB-4Q-ANd"/>
@@ -663,7 +663,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK5-14-r2e" userLabel="Order Details View">
-                                                <rect key="frame" x="16" y="608.33333333333337" width="361" height="236"/>
+                                                <rect key="frame" x="16" y="608.33333333333337" width="361" height="98"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT0-oJ-Qx1">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
@@ -689,10 +689,10 @@
                                                         </constraints>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q6b-YM-1VQ">
-                                                        <rect key="frame" x="4" y="40" width="353" height="188"/>
+                                                        <rect key="frame" x="4" y="40" width="353" height="50"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="188" id="iXH-0R-hsZ"/>
+                                                            <constraint firstAttribute="height" constant="50" id="iXH-0R-hsZ"/>
                                                         </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderDetailsTableViewCell" rowHeight="95" id="p8L-9P-vBh" customClass="OrderDetailsTableViewCell" customModule="Rabble_Hub" customModuleProvider="target">
