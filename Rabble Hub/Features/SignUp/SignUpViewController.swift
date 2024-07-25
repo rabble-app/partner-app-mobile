@@ -8,8 +8,9 @@
 import UIKit
 import Moya
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var continueButton: PrimaryButton!
     @IBOutlet var storeName: RabbleTextField!
     @IBOutlet var postalCode: RabbleTextField!
@@ -35,7 +36,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         continueButton.isEnabled = false
-        postalCode.text = "SE154NX" // Postal code that returns suppliers
+        //postalCode.text = "SE154NX" // Postal code that returns suppliers
         selectAddressButton.isEnabled = false
         // Add observers for text change events in text fields
         [storeName, postalCode, city, street, storeType, shelfSpace, dryStorageSpace].compactMap { $0 }.forEach { textField in
@@ -47,6 +48,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.storeTypeButton.setTitle("", for: .normal)
         self.shelfSpaceButton.setTitle("", for: .normal)
         self.dryStorageButton.setTitle("", for: .normal)
+        self.scrollView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -268,5 +270,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let vc = signUpView.instantiateViewController(withIdentifier: "SignUpProfileViewController") as! SignUpProfileViewController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false, completion: nil)
+    }
+    
+    // UIScrollViewDelegate Method
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
 }

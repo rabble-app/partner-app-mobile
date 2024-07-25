@@ -8,7 +8,7 @@
 import UIKit
 import Moya
 
-class SignUpScheduleViewController: UIViewController {
+class SignUpScheduleViewController: UIViewController, UIScrollViewDelegate {
     
     var defaultHeight = 0.0
     var selectedStoreHoursType: StoreHoursType = .allTheTime
@@ -18,8 +18,8 @@ class SignUpScheduleViewController: UIViewController {
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
     
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var previousStepButton: TertiaryButton!
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentContentViewConstraintHeight: NSLayoutConstraint!
     
     @IBOutlet weak var segmentContentView: UIView!
@@ -50,6 +50,8 @@ class SignUpScheduleViewController: UIViewController {
         if isFromOnboardingStage {
             self.previousStepButton.isEnabled = false
         }
+        
+        self.scrollView.delegate = self
     }
     
     func initiateCustomDaysObjects() {
@@ -195,6 +197,12 @@ class SignUpScheduleViewController: UIViewController {
             return .mon
         }
     }
+    
+    // UIScrollViewDelegate Method
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
+        
 }
 
 extension SignUpScheduleViewController: UITableViewDelegate, UITableViewDataSource {
