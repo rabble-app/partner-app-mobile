@@ -399,6 +399,7 @@
                     <navigationItem key="navigationItem" id="EcB-Az-ilb"/>
                     <connections>
                         <outlet property="emptyStateContainer" destination="nlZ-rR-OP7" id="D9s-DY-LCN"/>
+                        <outlet property="headerTitleLabel" destination="kEL-Mv-Vav" id="R0b-04-4Ek"/>
                         <outlet property="partnerTableview" destination="WLg-wy-cA3" id="SRL-2M-Oqs"/>
                         <outlet property="searchBar" destination="Dta-ro-qDi" id="n4b-Q5-6RS"/>
                         <outlet property="setupNewBuyingTeamButton" destination="dFE-Dq-x1t" id="rkK-ZQ-1AX"/>
