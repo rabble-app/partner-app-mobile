@@ -147,6 +147,9 @@
 		AC84009F2BD9258200357E5D /* ProfileButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */; };
 		AC8400A12BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */; };
 		AC8406AE2C492EE70051650B /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8406AD2C492EE70051650B /* TeamManager.swift */; };
+		AC8996F12C5106B7002D6962 /* AddressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8996F02C5106B7002D6962 /* AddressManager.swift */; };
+		AC8996F32C51078E002D6962 /* GetAddressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8996F22C51078E002D6962 /* GetAddressAPI.swift */; };
+		AC8996F52C5114E1002D6962 /* NearestLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8996F42C5114E1002D6962 /* NearestLocationsResponse.swift */; };
 		AC8CDDDB2BDB85030091882B /* ManageEmployeeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8CDDDA2BDB85030091882B /* ManageEmployeeView.storyboard */; };
 		AC8CDDDD2BDBA2E30091882B /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDDC2BDBA2E30091882B /* EmployeeTableViewCell.swift */; };
 		AC8CDDDF2BDBA6E60091882B /* ManageEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDDDE2BDBA6E60091882B /* ManageEmployeeViewController.swift */; };
@@ -339,6 +342,9 @@
 		AC84009E2BD9258200357E5D /* ProfileButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonTableViewCell.swift; sourceTree = "<group>"; };
 		AC8400A02BD9369F00357E5D /* ProfileSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		AC8406AD2C492EE70051650B /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
+		AC8996F02C5106B7002D6962 /* AddressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressManager.swift; sourceTree = "<group>"; };
+		AC8996F22C51078E002D6962 /* GetAddressAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressAPI.swift; sourceTree = "<group>"; };
+		AC8996F42C5114E1002D6962 /* NearestLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestLocationsResponse.swift; sourceTree = "<group>"; };
 		AC8CDDDA2BDB85030091882B /* ManageEmployeeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageEmployeeView.storyboard; sourceTree = "<group>"; };
 		AC8CDDDC2BDBA2E30091882B /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		AC8CDDDE2BDBA6E60091882B /* ManageEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployeeViewController.swift; sourceTree = "<group>"; };
@@ -433,6 +439,7 @@
 				AC6417EA2BFB7C8000B8A61B /* APIConfig.swift */,
 				AC6417EC2BFB7CE500B8A61B /* APIService.swift */,
 				AC6417EE2BFB7D2C00B8A61B /* RabbleHubAPI.swift */,
+				AC8996F22C51078E002D6962 /* GetAddressAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -464,6 +471,7 @@
 				8665175B2C234A7800EC4662 /* AddEmployeesResponse.swift */,
 				8665175D2C235C5700EC4662 /* DeleteEmployeeResponse.swift */,
 				86A803E32C2D8C8F00FAFFD9 /* MarkOrderCollectedResponse.swift */,
+				AC8996F42C5114E1002D6962 /* NearestLocationsResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -819,6 +827,7 @@
 			isa = PBXGroup;
 			children = (
 				AC8406AD2C492EE70051650B /* TeamManager.swift */,
+				AC8996F02C5106B7002D6962 /* AddressManager.swift */,
 			);
 			path = RabbleHubAPIManagers;
 			sourceTree = "<group>";
@@ -1168,6 +1177,7 @@
 				86D17AA92BCE6ACB00464511 /* Colors.swift in Sources */,
 				ACB78DBA2BD4D3A70047D2AF /* ManuallyCheckItemsViewController.swift in Sources */,
 				AC1986732C21C6C100EDF5C5 /* StoreOpenHoursResponse.swift in Sources */,
+				AC8996F32C51078E002D6962 /* GetAddressAPI.swift in Sources */,
 				86A803E42C2D8C8F00FAFFD9 /* MarkOrderCollectedResponse.swift in Sources */,
 				AC8CDDDD2BDBA2E30091882B /* EmployeeTableViewCell.swift in Sources */,
 				86C0F5DF2BCFCBEB00B78747 /* ChooseDeliveryDayViewController.swift in Sources */,
@@ -1176,6 +1186,7 @@
 				86C2E2A72BEC8F2700DB4494 /* TertiaryButton.swift in Sources */,
 				86DD74AF2BD107F7001FEBBD /* OrderDetailsTableViewCell.swift in Sources */,
 				AC401FBE2BED225800FA2F3F /* StoryViewController.swift in Sources */,
+				AC8996F12C5106B7002D6962 /* AddressManager.swift in Sources */,
 				AC8400992BD8F35100357E5D /* ProfileStoreInfoTableViewCell.swift in Sources */,
 				ACC719902BDA87DB00CF78DC /* ProfileOwnerViewController.swift in Sources */,
 				AC6417ED2BFB7CE500B8A61B /* APIService.swift in Sources */,
@@ -1212,6 +1223,7 @@
 				AC84009D2BD918A000357E5D /* ProfileMainViewModel.swift in Sources */,
 				AC5EF0172BD2B5D80002A8D7 /* MainTabViewController.swift in Sources */,
 				8665175E2C235C5700EC4662 /* DeleteEmployeeResponse.swift in Sources */,
+				AC8996F52C5114E1002D6962 /* NearestLocationsResponse.swift in Sources */,
 				AC5EEFFE2BCF63C50002A8D7 /* SignUpProfileViewController.swift in Sources */,
 				AC1986712C21ABA000EDF5C5 /* LoadingIndicator.swift in Sources */,
 				AC5EF01A2BD4931A0002A8D7 /* DeliveryDetailsTableViewCell.swift in Sources */,

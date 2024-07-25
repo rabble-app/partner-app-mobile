@@ -13,6 +13,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var continueButton: PrimaryButton!
     @IBOutlet var storeName: RabbleTextField!
     @IBOutlet var postalCode: RabbleTextField!
+    @IBOutlet weak var selectAddressTextField: RabbleTextField!
+    @IBOutlet weak var selectAddressButton: UIButton!
     @IBOutlet var city: RabbleTextField!
     @IBOutlet var street: RabbleTextField!
     @IBOutlet var direction: RabbleTextView!
@@ -24,26 +26,78 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dryStorageButton: UIButton!
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    let addressManager = AddressManager()
     let selectAnOptionText = "Select an option"
+    var nearestLocationsData: NearestLocationsResponse?
+    var nearestLocationsSelectedData = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         continueButton.isEnabled = false
         postalCode.text = "SE154NX" // Postal code that returns suppliers
-        
+        selectAddressButton.isEnabled = false
         // Add observers for text change events in text fields
         [storeName, postalCode, city, street, storeType, shelfSpace, dryStorageSpace].compactMap { $0 }.forEach { textField in
             textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
         
+        postalCode.addTarget(self, action: #selector(textFieldDidEndEdit), for: .editingDidEnd)
+        self.selectAddressButton.setTitle("", for: .normal)
         self.storeTypeButton.setTitle("", for: .normal)
         self.shelfSpaceButton.setTitle("", for: .normal)
         self.dryStorageButton.setTitle("", for: .normal)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        fetchNearbyLocations()
+    }
+    
     @objc private func textFieldDidChange(_ textField: UITextField) {
         updateContinueButtonState()
+    }
+    
+    @objc private func textFieldDidEndEdit(_ textField: UITextField) {
+        if textField == postalCode {
+            fetchNearbyLocations()
+        }
+    }
+    
+    func fetchNearbyLocations() {
+        guard let code = self.postalCode.text, !code.isEmpty else { return }
+        
+        self.showLoadingIndicator()
+        addressManager.fetchNearbyLocation(postalCode: code) { result in
+  
+            self.dismissLoadingIndicator()
+            switch result {
+            case .success(let nearestLocationsResponse):
+                
+                self.nearestLocationsData = nearestLocationsResponse
+                self.selectAddressButton.isEnabled = !nearestLocationsResponse.combinedAddresses.isEmpty
+                
+                if self.nearestLocationsSelectedData.isEmpty {
+                    self.selectAddressTextField.text = "Select your address"
+                } else {
+                    self.selectAddressTextField.text = self.nearestLocationsSelectedData
+                    
+                    guard let selectedObject = self.nearestLocationsData?.address(for: self.nearestLocationsSelectedData) else {
+                        self.street.text = ""
+                        self.city.text = ""
+                        self.nearestLocationsSelectedData = ""
+                        self.selectAddressTextField.text = "Select your address"
+                        return }
+                }
+                
+            case .failure( _):
+                self.selectAddressTextField.text = ""
+                self.nearestLocationsData = nil
+                self.selectAddressButton.isEnabled = false
+                break
+            }
+        }
     }
     
     private func updateContinueButtonState() {
@@ -69,6 +123,26 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nextButtonTap(_ sender: Any) {
         saveStoreProfile()
+    }
+    
+    @IBAction func selectAddressButtonTapped(_ sender: Any) {
+        
+        let rabbleSheetViewController = RabbleSheetViewController()
+        rabbleSheetViewController.headerTitle = "Select your address"
+        rabbleSheetViewController.items = nearestLocationsData?.combinedAddresses
+        if let index = nearestLocationsData?.combinedAddresses.indexOfIgnoringCase(self.nearestLocationsSelectedData) {
+            rabbleSheetViewController.setIndex(index: index)
+        }
+        rabbleSheetViewController.itemSelected = { item in
+            guard let selectedObject = self.nearestLocationsData?.address(for: item) else { return }
+            self.nearestLocationsSelectedData = selectedObject.asString
+            self.street.text = selectedObject.street
+            self.city.text = selectedObject.city
+            
+            self.selectAddressTextField.text = self.nearestLocationsSelectedData
+            self.updateContinueButtonState()
+        }
+        present(rabbleSheetViewController, animated: true, completion: nil)
     }
     
     @IBAction func storeTypeButtonTapped(_ sender: Any) {
