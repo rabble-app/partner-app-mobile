@@ -97,7 +97,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIScrollViewD
                 self.selectAddressTextField.text = ""
                 self.nearestLocationsData = nil
                 self.selectAddressButton.isEnabled = false
-                break
             }
         }
     }

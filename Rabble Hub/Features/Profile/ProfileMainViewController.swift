@@ -101,16 +101,6 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = self.viewModel.getCellForMode(mode: self.viewModel.menus[indexPath.row].mode ?? .infoUI, tableView: tableView, indexPath: indexPath)
-//        if let cell = cell as? ProfileButtonTableViewCell {
-//            cell.button.backgroundColor = Colors.ButtonDanger
-//            cell.button.titleLabel?.textColor = .white
-//            cell.buttonTapped = {
-//                self.userDataManager.logoutUser()
-//                DispatchQueue.main.async {
-//                    self.navigateToLoginScreen()
-//                }
-//            }
-//        }
         return cell
     }
     
