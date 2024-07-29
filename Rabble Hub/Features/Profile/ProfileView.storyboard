@@ -315,6 +315,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wZW-Bt-0em"/>
                     <connections>
+                        <outlet property="logOutBtn" destination="oui-f0-pLf" id="yHT-rS-ORq"/>
                         <outlet property="tableView" destination="bfy-vU-Hkf" id="fpd-Uh-vis"/>
                     </connections>
                 </viewController>

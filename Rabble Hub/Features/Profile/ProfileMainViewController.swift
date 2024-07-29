@@ -10,6 +10,7 @@ import SafariServices
 
 class ProfileMainViewController: UIViewController {
     
+    @IBOutlet var logOutBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel = ProfileMainViewModel()
@@ -19,6 +20,9 @@ class ProfileMainViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(userRecordUpdated), name: NSNotification.Name("UserRecordUpdated"), object: nil)
+        logOutBtn.layer.cornerRadius = 10
+        logOutBtn.clipsToBounds = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
