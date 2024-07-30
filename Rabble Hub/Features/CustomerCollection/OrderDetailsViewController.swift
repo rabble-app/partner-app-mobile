@@ -41,8 +41,7 @@ class OrderDetailsViewController: UIViewController {
         if selectedCollectionData != nil {
             fetchPartnerTeams()
             self.usernameLabel.text = (selectedCollectionData?.user.firstName ?? "") + " " + (selectedCollectionData?.user.lastName ?? "")
-            self.teamnameLabel.text = selectedCollectionData?.order.team.name ?? ""  + " 􀱀"
-            
+            self.teamnameLabel.text = "\(selectedCollectionData?.order.team.name ?? "") 􀱀"
             self.categoryValueLabel.text = selectedCollectionData?.order.team.producer.categories.first?.category.name
             
             let isoDateFormatter = ISO8601DateFormatter()
@@ -86,7 +85,7 @@ class OrderDetailsViewController: UIViewController {
         
         teamNameButton.setTitle("", for: .normal)
         
-        if isFromScanning && self.selectedCollectionData?.status != "PENDING"{
+        if isFromScanning && self.selectedCollectionData?.status == "PENDING"{
             self.collectOrderBtn.isHidden = false
         }
     }
@@ -216,6 +215,7 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
         cell.supplierLabel.text = items?.product.name
         cell.quantityLabel.text = "x \(items?.quantity ?? "")"
         cell.descLabel.text = "\(items?.product.measuresPerSubUnit ?? 0) \(items?.product.unitsOfMeasurePerSubUnit ?? "")"
+        
         
         return cell
     }

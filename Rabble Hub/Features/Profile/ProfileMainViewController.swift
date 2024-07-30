@@ -9,7 +9,8 @@ import UIKit
 import SafariServices
 
 class ProfileMainViewController: UIViewController {
-
+    
+    @IBOutlet var logOutBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel = ProfileMainViewModel()
@@ -19,21 +20,30 @@ class ProfileMainViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(userRecordUpdated), name: NSNotification.Name("UserRecordUpdated"), object: nil)
+        logOutBtn.layer.cornerRadius = 10
+        logOutBtn.clipsToBounds = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
     
-    @objc func userRecordUpdated() {
-            DispatchQueue.main.async {
-                self.viewModel = ProfileMainViewModel()
-                self.tableView.reloadData()
-            }
+    @IBAction func logOutBtnTapped(_ sender: Any) {
+        self.userDataManager.logoutUser()
+        DispatchQueue.main.async {
+            self.navigateToLoginScreen()
         }
+    }
+    @objc func userRecordUpdated() {
+        DispatchQueue.main.async {
+            self.viewModel = ProfileMainViewModel()
+            self.tableView.reloadData()
+        }
+    }
     
     func navigateToLoginScreen() {
-
+        
         let storyboard = UIStoryboard(name: "OnboardingView", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingNavigationController") as? UINavigationController {
             if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
@@ -95,16 +105,6 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = self.viewModel.getCellForMode(mode: self.viewModel.menus[indexPath.row].mode ?? .infoUI, tableView: tableView, indexPath: indexPath)
-        if let cell = cell as? ProfileButtonTableViewCell {
-            cell.button.backgroundColor = Colors.ButtonDanger
-            cell.button.titleLabel?.textColor = .white
-            cell.buttonTapped = {
-                self.userDataManager.logoutUser()
-                DispatchQueue.main.async {
-                    self.navigateToLoginScreen()
-                }
-            }
-        }
         return cell
     }
     
@@ -135,9 +135,6 @@ extension ProfileMainViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.configureCell(menu: self.viewModel.menus[indexPath.row])
             }
             
-            break
-            
-        case .buttonUI:
             break
         }
     }

@@ -10,6 +10,7 @@ import Moya
 
 class PartnersViewController: UIViewController {
 
+    @IBOutlet var headerTitleLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var partnerTableview: UITableView!
     @IBOutlet var emptyStateContainer: UIView!
@@ -37,6 +38,8 @@ class PartnersViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchPartnerTeams()
+        
+        headerTitleLabel.text = userDataManager.getUserData()?.partner?.name
     }
 
     @IBAction func setupNewBuyingTeamButtonTap(_ sender: Any) {

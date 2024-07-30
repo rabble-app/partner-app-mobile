@@ -9,7 +9,9 @@ import UIKit
 
 /// A custom subclass of UITextField with a predefined style for use in Rabble's user interface.
 class RabbleTextField: UITextField {
-    
+
+    private var rightInset: CGFloat = 0.0 // Default right inset
+
     /// Initializes a new instance of the RabbleTextField class with the specified frame rectangle.
     ///
     /// - Parameter frame: The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it.
@@ -39,31 +41,36 @@ class RabbleTextField: UITextField {
         self.layer.borderColor = Colors.Gray5.cgColor
         self.layer.backgroundColor = UIColor.white.cgColor
         self.autocapitalizationType = .words
+
+        // Set right inset based on the tag
+        if self.tag == 1002 {
+            rightInset = 32
+        }
     }
 
     // MARK: - Overrides
-    
+
     /// Returns the drawing rectangle for the text area of the text field.
     ///
     /// - Parameter bounds: The bounds rectangle of the text field.
     /// - Returns: The drawing rectangle for the text area of the text field.
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 10))
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: rightInset))
     }
-    
+
     /// Returns the drawing rectangle for the placeholder text of the text field.
     ///
     /// - Parameter bounds: The bounds rectangle of the text field.
     /// - Returns: The drawing rectangle for the placeholder text of the text field.
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 10))
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: rightInset))
     }
-    
+
     /// Returns the drawing rectangle for the editable text area of the text field.
     ///
     /// - Parameter bounds: The bounds rectangle of the text field.
     /// - Returns: The drawing rectangle for the editable text area of the text field.
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 10))
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: rightInset))
     }
 }

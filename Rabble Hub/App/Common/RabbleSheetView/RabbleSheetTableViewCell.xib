@@ -23,8 +23,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="527" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r86-2o-dAg">
-                        <rect key="frame" x="0.0" y="24.666666666666671" width="495" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r86-2o-dAg">
+                        <rect key="frame" x="0.0" y="8" width="495" height="53"/>
                         <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="16"/>
                         <color key="textColor" name="gray_2"/>
                         <nil key="highlightedColor"/>
@@ -42,9 +42,11 @@
                 <constraints>
                     <constraint firstItem="ENt-Oe-NCg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8pV-wl-iOw"/>
                     <constraint firstItem="r86-2o-dAg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RkT-yd-7pc"/>
+                    <constraint firstItem="r86-2o-dAg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Sws-LB-ze7"/>
                     <constraint firstItem="r86-2o-dAg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UjS-xu-wYG"/>
                     <constraint firstAttribute="trailing" secondItem="ENt-Oe-NCg" secondAttribute="trailing" id="kLQ-q5-OfP"/>
                     <constraint firstItem="ENt-Oe-NCg" firstAttribute="leading" secondItem="r86-2o-dAg" secondAttribute="trailing" constant="8" id="kts-VU-VuU"/>
+                    <constraint firstAttribute="bottom" secondItem="r86-2o-dAg" secondAttribute="bottom" constant="8" id="xz2-hh-5Hp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
