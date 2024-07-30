@@ -82,7 +82,7 @@ class ProfileMainViewModel {
         if mode == .headerUI {
             return 100.0
         }
-        return 100.0
+        return 50.0
     }
     
     func getCellForMode(mode: ProfileMenuCellMode, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
