@@ -12,8 +12,10 @@ class ProfilePartnerDetailsViewController: UIViewController {
 
     @IBOutlet weak var storeNameTextField: RabbleTextField!
     @IBOutlet weak var postalCodeTextField: RabbleTextField!
+    @IBOutlet weak var selectAddressTextField: RabbleTextField!
     @IBOutlet weak var cityTextField: RabbleTextField!
     @IBOutlet weak var streetAddressTextField: RabbleTextField!
+    @IBOutlet weak var selectAddressButton: UIButton!
     @IBOutlet weak var directionsTextView: RabbleTextView!
     @IBOutlet weak var storeTypeTextfield: RabbleTextField!
     @IBOutlet weak var fridgeSpaceTextField: RabbleTextField!
@@ -29,7 +31,10 @@ class ProfilePartnerDetailsViewController: UIViewController {
     private var originalStoreData: StoreData?
     
     var apiProvider: MoyaProvider<RabbleHubAPI> = APIProvider
+    let addressManager = AddressManager()
     private let userDataManager = UserDataManager()
+    var nearestLocationsData: NearestLocationsResponse?
+    var nearestLocationsSelectedData = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +50,9 @@ class ProfilePartnerDetailsViewController: UIViewController {
         self.storeTypeButton.setTitle("", for: .normal)
         self.fridgeSpaceButton.setTitle("", for: .normal)
         self.dryStorageButton.setTitle("", for: .normal)
+        self.selectAddressButton.setTitle("", for: .normal)
+        selectAddressButton.isEnabled = false
+        postalCodeTextField.addTarget(self, action: #selector(textFieldDidEndEdit), for: .editingDidEnd)
         setUpAccess()
     }
     
@@ -65,6 +73,48 @@ class ProfilePartnerDetailsViewController: UIViewController {
         }
     }
    
+    @objc private func textFieldDidEndEdit(_ textField: UITextField) {
+        if textField == postalCodeTextField {
+            fetchNearbyLocations()
+        }
+    }
+    
+    private func fetchNearbyLocations() {
+        guard let code = self.postalCodeTextField.text, !code.isEmpty else { return }
+        
+        self.showLoadingIndicator()
+        addressManager.fetchNearbyLocation(postalCode: code) { result in
+  
+            self.dismissLoadingIndicator()
+            switch result {
+            case .success(let nearestLocationsResponse):
+                
+                self.nearestLocationsData = nearestLocationsResponse
+                self.selectAddressButton.isEnabled = !nearestLocationsResponse.combinedAddresses.isEmpty
+                
+                if self.nearestLocationsSelectedData.isEmpty {
+                    self.selectAddressTextField.text = "Select your address"
+                    
+                    self.nearestLocationsSelectedData = "\(self.streetAddressTextField.text ?? ""), \(self.cityTextField.text ?? "")"
+                } else {
+                    self.selectAddressTextField.text = self.nearestLocationsSelectedData
+                    
+                    guard let _ = self.nearestLocationsData?.address(for: self.nearestLocationsSelectedData) else {
+                        self.streetAddressTextField.text = ""
+                        self.cityTextField.text = ""
+                        self.nearestLocationsSelectedData = ""
+                        self.selectAddressTextField.text = "Select your address"
+                        return }
+                }
+                
+            case .failure( _):
+                self.selectAddressTextField.text = ""
+                self.nearestLocationsData = nil
+                self.selectAddressButton.isEnabled = false
+            }
+        }
+    }
+    
     private func fetchPartnerDetails() {
         guard let userData = userDataManager.getUserData() else { return }
         let partner = userDataManager.isUserEmployee() ? userData.employees?.first?.partner : userData.partner
@@ -93,6 +143,8 @@ class ProfilePartnerDetailsViewController: UIViewController {
             if storeInformationResponse.statusCode == 200 {
                 self.originalStoreData = storeInformationResponse.data
                 self.configureStoreInformationUI(storeData: storeInformationResponse.data)
+                
+                self.fetchNearbyLocations()
             } else {
                 displaySnackBar(message: storeInformationResponse.message, isSuccess: true)
             }
@@ -135,6 +187,24 @@ class ProfilePartnerDetailsViewController: UIViewController {
             self.dryStorageTextField.text = dryStorageSpace
         }
         
+    }
+    
+    @IBAction func selectAddressButtonTapped(_ sender: Any) {
+        let rabbleSheetViewController = RabbleSheetViewController()
+        rabbleSheetViewController.headerTitle = "Select your address"
+        rabbleSheetViewController.items = nearestLocationsData?.combinedAddresses
+        if let index = nearestLocationsData?.combinedAddresses.indexOfIgnoringCase(self.nearestLocationsSelectedData) {
+            rabbleSheetViewController.setIndex(index: index)
+        }
+        rabbleSheetViewController.itemSelected = { item in
+            guard let selectedObject = self.nearestLocationsData?.address(for: item) else { return }
+            self.nearestLocationsSelectedData = selectedObject.asString
+            self.streetAddressTextField.text = selectedObject.street
+            self.cityTextField.text = selectedObject.city
+            
+            self.selectAddressTextField.text = self.nearestLocationsSelectedData
+        }
+        present(rabbleSheetViewController, animated: true, completion: nil)
     }
     
     @IBAction func storeTypeButtonTapped(_ sender: Any) {
