@@ -19,7 +19,12 @@ private func jsonResponseDataFormatter(_ data: Data) -> String {
     }
 }
 
-let environment: Environment = .development // or .production
+#if PRODUCTION
+let environment: Environment = .production
+#else
+let environment: Environment = .development
+#endif
+
 let tokenManager = UserDefaultsTokenManager()
 let APIProvider = MoyaProvider<RabbleHubAPI>(plugins: [
     NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: jsonResponseDataFormatter), logOptions: .verbose)),
